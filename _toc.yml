@@ -1,0 +1,30 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Unit Guide
+    numbered: true
+    chapters:
+    - file: markdown
+  - caption: Lecture Notes and Tutorial Exericses
+    numbered: true      
+    chapters:
+    - file: chap00_0
+    - file: chap01_0
+      sections: 
+      - file: chap01_1
+      - file: chap01_2
+      - file: chap01_3  
+    - file: chap02_0
+      sections:
+      - file: chap02_1
+      - file: chap02_2
+      - file: chap02_3
+      - file: chap02_4
+    - file: notebooks
+  - caption: MATLAB Documentation for ODE solvers
+    numbered: true  
+    chapters:  
+    - file: markdown-notebooks

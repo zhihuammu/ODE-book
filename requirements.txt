@@ -1,0 +1,6 @@
+sphinx
+pandas
+quantecon
+jupyter-book
+matplotlib
+numpy
