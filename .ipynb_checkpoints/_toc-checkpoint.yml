@@ -1,0 +1,30 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Unit Guide
+    numbered: false
+    chapters:
+    - file: schedule
+    - file: readinglist
+  - caption: Lecture Notes and Tutorial Exericses
+    maxdepth: 3  # The displayed Table of Contents will only have two levels
+    numbered: true      
+    chapters:
+    - file: chaps/chap00_0
+      sections: 
+      - glob: chaps/chap00_*   
+      
+    - file: chaps/chap01_0
+      sections: 
+      - glob: chaps/chap01_*      
+    - file: chaps/chap02_0
+      sections:
+      - glob: chaps/chap02_*     
+    - file: notebooks
+  - caption: MATLAB Documentation for ODE solvers
+    numbered: true  
+    chapters:  
+    - file: markdown-notebooks

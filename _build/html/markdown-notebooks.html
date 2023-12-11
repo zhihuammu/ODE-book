@@ -1,14 +1,15 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1. Notebooks with MyST Markdown &#8212; Computational Methods in Ordinary Differential Equations</title>
+    <title>5. Notebooks with MyST Markdown &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
   
@@ -34,6 +35,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -41,8 +44,9 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -63,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="4. Content with notebooks" href="notebooks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -148,35 +152,42 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Introduction
+                    Linear Multi-step Methods
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">1. Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unitguide/schedule.html">Teaching Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unitguide/readinglist.html">Reading List</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Tutorial Exericses</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="chap00_0.html">1. Complex Numbers, Difference Equations</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="chap01_0.html">2. Interpolating Polynomial</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="chap01_1.html">2.1. Finite Difference Tables and Notations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap01_2.html">2.2. Gregory-Newton Interpolation Formulae</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap01_3.html">2.3. Exercise(1)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/chap00_0.html">1. Complex Numbers, Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap00_1_complexNumber.html">1.1. Complex Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap00_2_sequence.html">1.2. Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap00_3_differenceEquation.html">1.3. Difference Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap00_4_homogenous.html">1.4. Homogeneous Linear Difference Equations with Constant Coefficients</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="chap02_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="chap02_1.html">3.1. Multistep Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap02_2.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap02_3.html">3.3. Explicit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap02_4.html">3.4. Implicit or Closed Multistep Methods</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/chap01_0.html">2. Interpolating Polynomial</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap01_1.html">2.1. Finite Difference Tables and Notations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap01_2.html">2.2. Gregory-Newton Interpolation Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap01_3.html">2.3. Exercise(1)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/chap02_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap02_1.html">3.1. Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap02_2.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap02_3.html">3.3. Explicit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap02_4.html">3.4. Implicit or Closed Multistep Methods</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">4. Content with notebooks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">MATLAB Documentation for ODE solvers</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Notebooks with MyST Markdown</a></li>
 </ul>
 
     </div>
@@ -323,9 +334,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-cell">1.1. An example cell</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">1.2. Create a notebook with MyST Markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">1.3. Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-cell">5.1. An example cell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">5.2. Create a notebook with MyST Markdown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">5.3. Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#block-test">5.4. BLOCK TEST</a></li>
 </ul>
             </nav>
         </div>
@@ -337,13 +349,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="notebooks-with-myst-markdown">
-<h1><span class="section-number">1. </span>Notebooks with MyST Markdown<a class="headerlink" href="#notebooks-with-myst-markdown" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="notebooks-with-myst-markdown">
+<h1><span class="section-number">5. </span>Notebooks with MyST Markdown<a class="headerlink" href="#notebooks-with-myst-markdown" title="Permalink to this headline">#</a></h1>
 <p>Jupyter Book also lets you write text-based notebooks using MyST Markdown.
 See <a class="reference external" href="https://jupyterbook.org/file-types/myst-notebooks.html">the Notebooks with MyST Markdown documentation</a> for more detailed instructions.
 This page shows off a notebook written in MyST Markdown.</p>
 <section id="an-example-cell">
-<h2><span class="section-number">1.1. </span>An example cell<a class="headerlink" href="#an-example-cell" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.1. </span>An example cell<a class="headerlink" href="#an-example-cell" title="Permalink to this headline">#</a></h2>
 <p>With MyST Markdown, you can define code cells with a directive like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -366,7 +378,7 @@ in-line with the rest of your content.</p>
 </div>
 </section>
 <section id="create-a-notebook-with-myst-markdown">
-<h2><span class="section-number">1.2. </span>Create a notebook with MyST Markdown<a class="headerlink" href="#create-a-notebook-with-myst-markdown" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.2. </span>Create a notebook with MyST Markdown<a class="headerlink" href="#create-a-notebook-with-myst-markdown" title="Permalink to this headline">#</a></h2>
 <p>MyST Markdown notebooks are defined by two things:</p>
 <ol class="arabic simple">
 <li><p>YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
@@ -376,10 +388,46 @@ See the YAML at the top of this page for example.</p></li>
 <p>That’s all that is needed to get started!</p>
 </section>
 <section id="quickly-add-yaml-metadata-for-myst-notebooks">
-<h2><span class="section-number">1.3. </span>Quickly add YAML metadata for MyST Notebooks<a class="headerlink" href="#quickly-add-yaml-metadata-for-myst-notebooks" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.3. </span>Quickly add YAML metadata for MyST Notebooks<a class="headerlink" href="#quickly-add-yaml-metadata-for-myst-notebooks" title="Permalink to this headline">#</a></h2>
 <p>If you have a markdown file and you’d like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">myst</span> <span class="n">init</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">markdownfile</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
+</div>
+</section>
+<section id="block-test">
+<h2><span class="section-number">5.4. </span>BLOCK TEST<a class="headerlink" href="#block-test" title="Permalink to this headline">#</a></h2>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>blab</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>asaasa</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>asasas</p>
+</div>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 5.1 </span></p>
+<section class="example-content" id="proof-content">
+<p>xxxx</p>
+</section>
+</div><div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.13.0: </span><code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span></code> replaces previous configuration options:
+<code class="docutils literal notranslate"><span class="pre">admonition_enable</span></code>, <code class="docutils literal notranslate"><span class="pre">figure_enable</span></code>, <code class="docutils literal notranslate"><span class="pre">dmath_enable</span></code>, <code class="docutils literal notranslate"><span class="pre">amsmath_enable</span></code>, <code class="docutils literal notranslate"><span class="pre">deflist_enable</span></code>, <code class="docutils literal notranslate"><span class="pre">html_img_enable</span></code></p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">This <em>is</em> also <strong>Markdown</strong></p>
+<p>This text is <strong>standard</strong> <em>Markdown</em></p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Question</p>
+<p>How????</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">This <em>is</em> also <strong>Markdown</strong></p>
+<p>This text is <strong>standard</strong> <em>Markdown</em></p>
 </div>
 </section>
 </section>
@@ -442,9 +490,10 @@ See the YAML at the top of this page for example.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-cell">1.1. An example cell</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">1.2. Create a notebook with MyST Markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">1.3. Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-cell">5.1. An example cell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">5.2. Create a notebook with MyST Markdown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">5.3. Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#block-test">5.4. BLOCK TEST</a></li>
 </ul>
   </nav></div>
 

@@ -5,24 +5,24 @@ format: jb-book
 root: intro
 parts:
   - caption: Unit Guide
-    numbered: true
+    numbered: false
     chapters:
-    - file: markdown
+    - file: unitguide/schedule
+    - file: unitguide/readinglist
   - caption: Lecture Notes and Tutorial Exericses
+    maxdepth: 3  # The displayed Table of Contents will only have two levels
     numbered: true      
     chapters:
-    - file: chap00_0
-    - file: chap01_0
+    - file: chaps/chap00_0
       sections: 
-      - file: chap01_1
-      - file: chap01_2
-      - file: chap01_3  
-    - file: chap02_0
+      - glob: chaps/chap00_*   
+      
+    - file: chaps/chap01_0
+      sections: 
+      - glob: chaps/chap01_*      
+    - file: chaps/chap02_0
       sections:
-      - file: chap02_1
-      - file: chap02_2
-      - file: chap02_3
-      - file: chap02_4
+      - glob: chaps/chap02_*     
     - file: notebooks
   - caption: MATLAB Documentation for ODE solvers
     numbered: true  

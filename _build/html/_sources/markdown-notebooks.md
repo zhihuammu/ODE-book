@@ -51,3 +51,66 @@ If you have a markdown file and you'd like to quickly add YAML metadata to it, s
 ```
 jupyter-book myst init path/to/markdownfile.md
 ```
+
+
+## BLOCK TEST
+
+```{seealso}
+blab
+```
+
+```{warning}
+asaasa
+```
+
+```{important}
+asasas
+```
+
+
+```{question}
+how
+```
+
+
+```{example}
+
+qwqw
+```
+
+::::{prf:example}
+xxxx
+::::
+
+:::{versionchanged} 0.13.0
+`myst_enable_extensions` replaces previous configuration options:
+`admonition_enable`, `figure_enable`, `dmath_enable`, `amsmath_enable`, `deflist_enable`, `html_img_enable`
+:::
+
+:::{myst-example}
+:highlight: latex
+
+$$
+e = mc^2
+$$ (eqn:best)
+
+This is the best equation {eq}`eqn:best`
+:::
+
+:::{admonition} This *is* also **Markdown**
+:class: warning
+
+This text is **standard** _Markdown_
+:::
+
+:::{admonition} Question
+:class: important
+
+How????
+:::
+
+:::{admonition} This *is* also **Markdown**
+:class: important
+
+This text is **standard** _Markdown_
+:::
