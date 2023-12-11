@@ -1,8 +1,9 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
@@ -33,6 +34,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -40,8 +43,9 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -61,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -146,35 +150,42 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Introduction
+                    Linear Multi-step Methods
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">1. Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unitguide/schedule.html">Teaching Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unitguide/readinglist.html">Reading List</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Tutorial Exericses</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="chap00_0.html">1. Complex Numbers, Difference Equations</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="chap01_0.html">2. Interpolating Polynomial</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="chap01_1.html">2.1. Finite Difference Tables and Notations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap01_2.html">2.2. Gregory-Newton Interpolation Formulae</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap01_3.html">2.3. Exercise(1)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/chap00_0.html">1. Complex Numbers, Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap00_1_complexNumber.html">1.1. Complex Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap00_2_sequence.html">1.2. Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap00_3_differenceEquation.html">1.3. Difference Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap00_4_homogenous.html">1.4. Homogeneous Linear Difference Equations with Constant Coefficients</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="chap02_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="chap02_1.html">3.1. Multistep Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap02_2.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap02_3.html">3.3. Explicit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap02_4.html">3.4. Implicit or Closed Multistep Methods</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/chap01_0.html">2. Interpolating Polynomial</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap01_1.html">2.1. Finite Difference Tables and Notations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap01_2.html">2.2. Gregory-Newton Interpolation Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap01_3.html">2.3. Exercise(1)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/chap02_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap02_1.html">3.1. Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap02_2.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap02_3.html">3.3. Explicit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/chap02_4.html">3.4. Implicit or Closed Multistep Methods</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">4. Content with notebooks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">MATLAB Documentation for ODE solvers</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">1. Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">5. Notebooks with MyST Markdown</a></li>
 </ul>
 
     </div>
