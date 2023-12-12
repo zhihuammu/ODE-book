@@ -9,8 +9,8 @@ parts:
     chapters:
     - file: unitguide/schedule
     - file: unitguide/readinglist
+    
   - caption: Lecture Notes and Tutorial Exericses
-    maxdepth: 3  # The displayed Table of Contents will only have two levels
     numbered: true      
     chapters:
     - file: chaps/chap00_0
@@ -24,6 +24,7 @@ parts:
       sections:
       - glob: chaps/chap02_*     
     - file: notebooks
+    
   - caption: MATLAB Documentation for ODE solvers
     numbered: true  
     chapters:  

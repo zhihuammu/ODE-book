@@ -104,6 +104,3 @@ $$ y_{n+2} - 2y_{n+1} + y_n = \left( E^2 - 2E + 1\right) y_n.  $$
 ::::
 
 
-```{seealso}
-blabla
-```

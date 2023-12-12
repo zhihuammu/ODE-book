@@ -1,5 +1,0 @@
-# Teaching Schedule
-
-dasdsd
-
-sdsds
