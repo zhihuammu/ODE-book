@@ -1,7 +1,6 @@
 # Complex Numbers, Difference Equations
 
-<!-- ```{tableofcontents}
-``` -->
+
 
 **Learning Objectives**:
 
@@ -14,3 +13,6 @@ This chapter lays the basics for learning multi-step methods for solving ordinar
   * Homogeneity (homogeneous or non-homogeneous);      
 - Find the general solution to a homogeneous linear difference equation. 
 
+
+```{tableofcontents}
+``` 
