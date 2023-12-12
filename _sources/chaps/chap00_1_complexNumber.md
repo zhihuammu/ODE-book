@@ -69,7 +69,7 @@ For the real number set $\mathbb{R}$, we can use the number line to represent it
 
 ```{figure} ../images/figure01-1.png
 ---
-
+scale: 60%
 name: figure01-1
 ---
 The complex plane $\mathbb{C}$.
@@ -84,6 +84,16 @@ or the third form (exponential form)
 z  = r e^{i\theta},    
 \end{equation}
 where $r=|z|$, and $\theta$ is the angle defined by the real axis and the straight line connecting the origin and $z$ in the complex plane.
+
+```{note} Three forms of complex number
+
+- Standard form: $z=x+iy$
+- Polar form: $z=r(\cos\theta+i\sin\theta)$
+- Exponential form: $z=r e^{i\theta}$
+
+where $r=|z|=\sqrt{x^2+y^2}$, $\tan \theta = \dfrac{y}{x}$.
+
+```
 
 If we use the exponential form to represent complex numbers, then the multiplication and division of two complex numbers can be expressed in simpler ways. Let $z_1= r_1 e^{i\theta_1}$ and $z_2 = r_2 e^{i\theta_2}$, then
 \begin{align}
