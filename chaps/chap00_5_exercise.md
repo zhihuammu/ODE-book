@@ -1,4 +1,5 @@
-## Exercises
+(chap00:exercises)=
+# Chapter 1 Exercises
 
 :::{exercise}
 :label: ch0-ex-q1

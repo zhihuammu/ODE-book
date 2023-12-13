@@ -1,4 +1,5 @@
-# Complex Numbers, Difference Equations
+(chap00:complexNumber)=
+# Complex Numbers and Difference Equations
 
 
 

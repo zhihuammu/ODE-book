@@ -1,4 +1,4 @@
-## Sequences
+# Sequences
 
 In analysis, we often deal with functions defined on continuous domains. For example, a cubic function defined on the real number set $\mathbb{R}$ as 
 \begin{equation}

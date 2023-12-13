@@ -1,4 +1,4 @@
-## Complex Numbers
+# Complex Numbers
 
 ::::{prf:definition} Imaginary unit $i$
 The imaginary unit $i$ is defined as that   $i^2=-1$.

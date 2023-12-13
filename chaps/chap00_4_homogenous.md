@@ -1,4 +1,4 @@
-## Homogeneous Linear Difference Equations with Constant Coefficients
+# Homogeneous Linear Difference Equations with Constant Coefficients
 
 Here we focus on homogeneous linear difference equations with constant coefficients,
 
@@ -97,7 +97,7 @@ L(E) y_n  = ~ & L(E) \left(c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n\righ
 
 
 
-### First-order Difference Equations
+## First-order Difference Equations
 
 
 Find the solution to 
@@ -138,7 +138,7 @@ $$y_n = Q a^n.$$
 ````
 
 
-### Second-order Difference Equations
+## Second-order Difference Equations
 
 
 Find the solution to
@@ -259,7 +259,7 @@ $$ y_n = \left(\frac{1}{2}\right)^n \left(c_1 \cos \left(\frac{n \pi}{2}\right) 
 
 ````
 
-### Higher-order Difference Equations
+## Higher-order Difference Equations
 
 For a $k$-th order difference equation
 

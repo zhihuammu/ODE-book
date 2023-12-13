@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.3. Difference Equations &#8212; Computational Methods in Ordinary Differential Equations</title>
+    <title>2.2. Finite Difference Tables and Notations &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/chap00_3_differenceEquation';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/chap01_2_differenceOperator';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.4. Homogeneous Linear Difference Equations with Constant Coefficients" href="chap00_4_homogenous.html" />
-    <link rel="prev" title="1.2. Sequences" href="chap00_2_sequence.html" />
+    <link rel="next" title="3. Multistep Methods: Derivation by Finite Difference formulae" href="chap02_0.html" />
+    <link rel="prev" title="2.1. Introduction" href="chap01_1_introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -166,18 +166,17 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Tutorial Exericses</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap00_0.html">1. Complex Numbers and Difference Equations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="chap00_0.html">1. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chap00_1_complexNumber.html">1.1. Complex Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap00_2_sequence.html">1.2. Sequences</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.3. Difference Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap00_3_differenceEquation.html">1.3. Difference Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap00_4_homogenous.html">1.4. Homogeneous Linear Difference Equations with Constant Coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap00_5_exercise.html">1.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap00_5_exercise.html">1.5. Chapter 1 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="chap01_0.html">2. Interpolating Polynomial</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="chap01_1.html">2.1. Finite Difference Tables and Notations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap01_2.html">2.2. Gregory-Newton Interpolation Formulae</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap01_3.html">2.3. Exercise(1)</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap01_0.html">2. Interpolating Polynomial</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chap01_1_introduction.html">2.1. Introduction</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.2. Finite Difference Tables and Notations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="chap02_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -246,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/chaps/chap00_3_differenceEquation.md" target="_blank"
+      <li><a href="../_sources/chaps/chap01_2_differenceOperator.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -326,7 +325,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Difference Equations</h1>
+    <h1>Finite Difference Tables and Notations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -340,104 +339,72 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="difference-equations">
-<h1><span class="section-number">1.3. </span>Difference Equations<a class="headerlink" href="#difference-equations" title="Permalink to this headline">#</a></h1>
-<p>For some sequences, their algebraic expressions are directly given, such as the sequences we defined in <a class="reference internal" href="chap00_2_sequence.html#equation-eq-sequence-example-1">(1.10)</a> and <a class="reference internal" href="chap00_2_sequence.html#equation-eq-sequence-example-2">(1.11)</a>. While for some other sequences, a member of a sequence <span class="math notranslate nohighlight">\(y_n\)</span> is determined by one or several previous members of the sequence, e.g.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-594aff9b-cfcb-4cfc-8c6f-7e328be9d2d4">
-<span class="eqno">(1.12)<a class="headerlink" href="#equation-594aff9b-cfcb-4cfc-8c6f-7e328be9d2d4" title="Permalink to this equation">#</a></span>\[\begin{equation}
-\begin{split}
-&amp; y_n = y_{n-1}, \\
-&amp; y_n = y_{n-1}+3, \\
-&amp; y_n = 2y_{n-1}, \\
-&amp; y_n = y_{n-1} + y_{n-2}.
-\end{split}  
-\end{equation}\]</div>
-<p>We can call these algebraic expressions Difference Equations.</p>
-<div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 1.6 </span> (Difference Equation)</p>
-<section class="definition-content" id="proof-content">
-<p>A difference equation is an equation that defines a sequence recursively: each member of the sequence is defined as a function of previous terms of the sequence</p>
-<div class="math notranslate nohighlight" id="equation-eq-de-definition">
-<span class="eqno">(1.13)<a class="headerlink" href="#equation-eq-de-definition" title="Permalink to this equation">#</a></span>\[\begin{equation}
-y_{n+k} = F(n, y_{n}, y_{n+1}, y_{n+2} ..., y_{n+k-2}, y_{n+k-1}), \quad n \in \mathbb{N}_0
-\end{equation} \]</div>
-<p>where <span class="math notranslate nohighlight">\(y_{n+k}\)</span> is the current value in the sequence, <span class="math notranslate nohighlight">\(F\)</span> is a function, and <span class="math notranslate nohighlight">\(k\)</span> is the order of the equation (the difference between the highest and lowest indices that appear in the equation). The subscript <span class="math notranslate nohighlight">\(n+k\)</span> is an index representing the current time step, and the variables <span class="math notranslate nohighlight">\(y_{n}\)</span>, <span class="math notranslate nohighlight">\(y_{n+1}\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(y_{n+k-1}\)</span> represent previous members in the sequence.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="finite-difference-tables-and-notations">
+<h1><span class="section-number">2.2. </span>Finite Difference Tables and Notations<a class="headerlink" href="#finite-difference-tables-and-notations" title="Permalink to this headline">#</a></h1>
+<p>Consider the following difference table with given data:
+\begin{center}
+\renewcommand{\arraystretch}{0.8}
+\setlength{\tabcolsep}{10pt}
+\begin{tabular}{ccccccc}
+<span class="math notranslate nohighlight">\(i\)</span> &amp; <span class="math notranslate nohighlight">\(x\)</span> &amp; <span class="math notranslate nohighlight">\(y=f(x)\)</span> &amp; <span class="math notranslate nohighlight">\(1^\text{st}\)</span> diff &amp; <span class="math notranslate nohighlight">\(2^\text{nd}\)</span> diff &amp; <span class="math notranslate nohighlight">\(3^\text{rd}\)</span> diff &amp; <span class="math notranslate nohighlight">\(4^\text{th}\)</span> diff\
+\hline\
+0 &amp; 0.00 &amp; 1.0000\
+&amp;      &amp;        &amp; -0.0588\
+1 &amp; 0.25 &amp; 0.9412 &amp;         &amp; -0.0824\
+&amp;      &amp;        &amp; -0.1412 &amp;         &amp; 0.0636\
+2 &amp; 0.50 &amp; 0.8000 &amp;         &amp; -0.0188 &amp;        &amp; -0.0248\
+&amp;      &amp;        &amp; -0.1600 &amp;         &amp; 0.0388\
+3 &amp; 0.75 &amp; 0.6400 &amp;         &amp;  0.0200\
+&amp;      &amp;        &amp; -0.1400\
+4 &amp; 1.00 &amp; 0.5000 &amp; \multirow{2}{*}{<span class="math notranslate nohighlight">\(\Uparrow\)</span>}\
+\
+&amp;      &amp; \multicolumn{3}{c}{calculated by <span class="math notranslate nohighlight">\(f(x_{j+1}) - f(x_j)\)</span>}\
+\end{tabular}
+\end{center}</p>
+<table class="table" id="taylor-series-example-table">
+<caption><span class="caption-number">Table 2.1 </span><span class="caption-text">Taylor series approximations of <span class="math notranslate nohighlight">\(\cos(1.1)\)</span> up to fourth-order accuracy.</span><a class="headerlink" href="#taylor-series-example-table" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Order</p></th>
+<th class="head"><p>Approximation</p></th>
+<th class="head"><p>Error</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>first</p></td>
+<td><p>0.456155</p></td>
+<td><p>2.56e-03</p></td>
+</tr>
+<tr class="row-odd"><td><p>second</p></td>
+<td><p>0.453454</p></td>
+<td><p>1.42e-04</p></td>
+</tr>
+<tr class="row-even"><td><p>third</p></td>
+<td><p>0.453594</p></td>
+<td><p>2.18e-06</p></td>
+</tr>
+<tr class="row-odd"><td><p>fourth</p></td>
+<td><p>0.453596</p></td>
+<td><p>7.09e-08</p></td>
+</tr>
+</tbody>
+</table>
+<p>The difference tables can be used by various formulae, namely, <strong>forward</strong>,
+<strong>backward</strong> and <strong>central</strong> difference methods, to appropriately
+interpolate function and derivative values for the missing intermediate points
+in the table.</p>
+<p>Since we are going to construct formulae involving general finite differences,
+we need to introduce a notation to represent the numbers in a difference table.
+First, any <span class="math notranslate nohighlight">\(x\)</span>-value in a difference table can be labelled <span class="math notranslate nohighlight">\(x_0\)</span>, then those
+above this value are successively <span class="math notranslate nohighlight">\(\,x_{-1}, x_{-2}, ...\,\)</span> etc.\ and those
+below it are <span class="math notranslate nohighlight">\(\,x_1, x_2, ...\,\)</span> etc. To denote function values at <span class="math notranslate nohighlight">\(\,x_j\,\)</span> we
+write <span class="math notranslate nohighlight">\(\,f_j=f(x_j)\)</span>. Furthermore, to introduce a notation for the finite
+differences we first define some difference operators:</p>
 </section>
-</div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For a given difference equation, if we increase or decrease the subscript of each term by the same amount, the new equation actually represent the same sequence as the old equation does. Also, the properties of the new equation remain the same as the old one. So the new difference equation is equivalent to the old one (the roots of the two equations are the same). For example, we can increase the subscripts in the equation</p>
-<div class="math notranslate nohighlight">
-\[y_n = y_{n-1} + y_{n-2}\]</div>
-<p>by <span class="math notranslate nohighlight">\(2\)</span> to get an equivalent equation</p>
-<div class="math notranslate nohighlight">
-\[y_{n+2} = y_{n+1} + y_{n}\]</div>
-</div>
-<div class="proof theorem admonition" id="theorem-1">
-<p class="admonition-title"><span class="caption-number">Theorem 1.1 </span> (Existence and Uniqueness)</p>
-<section class="theorem-content" id="proof-content">
-<p>Equation <a class="reference internal" href="#equation-eq-de-definition">(1.13)</a> has one and only one solution corresponding to each arbitrary selection of the <span class="math notranslate nohighlight">\(k\)</span> initial values <span class="math notranslate nohighlight">\(y_0, y_1, y_2, \ldots, y_{k-1}\)</span>.</p>
-</section>
-</div><div class="proof definition admonition" id="definition-2">
-<p class="admonition-title"><span class="caption-number">Definition 1.7 </span> (Linear Difference Equation)</p>
-<section class="definition-content" id="proof-content">
-<p>A difference equation is linear if it can be expressed in the form</p>
-<div class="math notranslate nohighlight" id="equation-eq-de-linear">
-<span class="eqno">(1.14)<a class="headerlink" href="#equation-eq-de-linear" title="Permalink to this equation">#</a></span>\[\begin{equation}
-a_0(n) y_n + a_1(n) y_{n+1} + a_2(n) y_{n+2} + \ldots + a_k(n) y_{n+k} = R(n),
-\end{equation} \]</div>
-<p>where <span class="math notranslate nohighlight">\(a_p(n), p=1,2,\ldots, n\)</span> and <span class="math notranslate nohighlight">\(R(n)\)</span> are given functions of <span class="math notranslate nohighlight">\(n\)</span>.</p>
-</section>
-</div><div class="proof definition admonition" id="definition-3">
-<p class="admonition-title"><span class="caption-number">Definition 1.8 </span> (Homogeneous Linear Difference Equation)</p>
-<section class="definition-content" id="proof-content">
-<p>When the right hand side of Eq. <a class="reference internal" href="#equation-eq-de-linear">(1.14)</a> vanishes i.e. <span class="math notranslate nohighlight">\(R(n)=0\)</span>, we get</p>
-<div class="math notranslate nohighlight" id="equation-eq-de-linear-homogeneous">
-<span class="eqno">(1.15)<a class="headerlink" href="#equation-eq-de-linear-homogeneous" title="Permalink to this equation">#</a></span>\[\begin{equation}
-a_0(n) y_n + a_1(n) y_{n+1} + a_2(n) y_{n+2} + \ldots + a_k(n) y_{n+k} = 0,
-\end{equation} \]</div>
-<p>which is called a homogeneous (linear) difference equation.</p>
-</section>
-</div><div class="proof example admonition" id="example-4">
-<p class="admonition-title"><span class="caption-number">Example 1.2 </span></p>
-<section class="example-content" id="proof-content">
-<p>We indicate for each of the following difference equations its order, it is linear or nonlinear, and whether it is homogeneous or inhomogeneous.</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-&amp;y_{n+1} - 2 y_n = 0   &amp; \text{(first order, linear, homogeneous)} \\
-&amp;y_{n+1} - 3 y_n + y_{n-1} = e^{-n}   &amp; \text{(second order, linear, inhomogeneous)} \\
-&amp;y_{n+3} - y_n^2 = n 2^n &amp;  \text{(third order, nonlinear, inhomogeneous)}
-\end{align*}\]</div>
-</section>
-</div><div class="proof definition admonition" id="definition-5">
-<p class="admonition-title"><span class="caption-number">Definition 1.9 </span> (Shift Operator)</p>
-<section class="definition-content" id="proof-content">
-<p>We define <span class="math notranslate nohighlight">\(E\)</span> as an operator shifting a member in a sequence to the next member</p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-E y_n = y_{n+1}.
-\end{equation} \]</div>
-<p>If we apply the shift operator consecutively for <span class="math notranslate nohighlight">\(2\)</span> times, we write it as</p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-E^2 y_n = E(E y_n) = E y_{n+1} = y_{n+2}.
-\end{equation} \]</div>
-<p>If we apply the shift operator consecutively for <span class="math notranslate nohighlight">\(k\)</span> times, we write it as</p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-E^k y_n = y_{n+k}.
-\end{equation} \]</div>
-</section>
-</div><div class="proof example admonition" id="example-6">
-<p class="admonition-title"><span class="caption-number">Example 1.3 </span></p>
-<section class="example-content" id="proof-content">
-<p>We can apply multiple shifting operations on a member in a sequence</p>
-<div class="math notranslate nohighlight">
-\[\left(E^4 - E^2 +1 \right) y_n = y_{n+4} - y_{n+2} + y_n.\]</div>
-<p>We can also express algebraic operations on several members in a sequence as shifting operations on a single member, e.g.</p>
-<div class="math notranslate nohighlight">
-\[ y_{n+2} - 2y_{n+1} + y_n = \left( E^2 - 2E + 1\right) y_n.  \]</div>
-</section>
-</div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -471,20 +438,20 @@ E^k y_n = y_{n+k}.
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="chap00_2_sequence.html"
+       href="chap01_1_introduction.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.2. </span>Sequences</p>
+        <p class="prev-next-title"><span class="section-number">2.1. </span>Introduction</p>
       </div>
     </a>
     <a class="right-next"
-       href="chap00_4_homogenous.html"
+       href="chap02_0.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.4. </span>Homogeneous Linear Difference Equations with Constant Coefficients</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Multistep Methods: Derivation by Finite Difference formulae</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

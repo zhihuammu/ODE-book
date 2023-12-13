@@ -1,4 +1,4 @@
-## Difference Equations
+# Difference Equations
 
 For some sequences, their algebraic expressions are directly given, such as the sequences we defined in {eq}`eq:sequence:example:1` and {eq}`eq:sequence:example:2`. While for some other sequences, a member of a sequence $y_n$ is determined by one or several previous members of the sequence, e.g.
 
