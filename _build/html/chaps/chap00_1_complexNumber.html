@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1.1. Complex Numbers &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,13 +39,16 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -68,9 +70,9 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1.2. Sequences" href="chap00_2_sequence.html" />
-    <link rel="prev" title="1. Complex Numbers, Difference Equations" href="chap00_0.html" />
+    <link rel="prev" title="1. Complex Numbers and Difference Equations" href="chap00_0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -79,6 +81,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -132,9 +143,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -144,8 +157,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo4.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo4.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo4.png" class="logo__image only-light" alt="Computational Methods in Ordinary Differential Equations - Home"/>
+    <script>document.write(`<img src="../_static/logo4.png" class="logo__image only-dark" alt="Computational Methods in Ordinary Differential Equations - Home"/>`);</script>
   
   
 </a></div>
@@ -166,18 +179,21 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Tutorial Exericses</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap00_0.html">1. Complex Numbers, Difference Equations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap00_0.html">1. Complex Numbers and Difference Equations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1. Complex Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap00_2_sequence.html">1.2. Sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap00_3_differenceEquation.html">1.3. Difference Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap00_4_homogenous.html">1.4. Homogeneous Linear Difference Equations with Constant Coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap00_5_exercise.html">1.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap00_5_exercise.html">1.5. Chapter 1 Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="chap01_0.html">2. Interpolating Polynomial</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="chap01_1.html">2.1. Finite Difference Tables and Notations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap01_2.html">2.2. Gregory-Newton Interpolation Formulae</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap01_3.html">2.3. Exercise(1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap01_1_introduction.html">2.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap01_2_differenceTable.html">2.2. Finite Difference Operators</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="chap01_3_interpolation.html">2.5. Gregory-Newton Interpolation Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap01_4_exercise.html">2.6. Exercise ()</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="chap02_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -298,20 +314,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -340,13 +358,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="complex-numbers">
-<h1><span class="section-number">1.1. </span>Complex Numbers<a class="headerlink" href="#complex-numbers" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="complex-numbers">
+<h1><span class="section-number">1.1. </span>Complex Numbers<a class="headerlink" href="#complex-numbers" title="Permalink to this heading">#</a></h1>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 1.1 </span> (Imaginary unit <span class="math notranslate nohighlight">\(i\)</span>)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>The imaginary unit <span class="math notranslate nohighlight">\(i\)</span> is defined as that   <span class="math notranslate nohighlight">\(i^2=-1\)</span>.</p>
-</section>
+</div>
 </div><p>For example, if we have the following equation</p>
 <div class="math notranslate nohighlight">
 \[z^2=-4,\]</div>
@@ -355,39 +373,39 @@ document.write(`
 \[z=\pm\sqrt{-4}=\pm\sqrt{4i^2}=\pm 2 i.\]</div>
 <div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 1.2 </span> (Complex number and Complex conjugate)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>A complex number is a number in the form of</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f06b624a-b05e-46cc-b4e3-d29d9fbee1bf">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-f06b624a-b05e-46cc-b4e3-d29d9fbee1bf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8c7beab0-59e9-44ce-9c0b-cc226524dcb2">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-8c7beab0-59e9-44ce-9c0b-cc226524dcb2" title="Permalink to this equation">#</a></span>\[\begin{equation}
     z=x+iy,\qquad x, y\in \mathbb{R},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x\)</span> is the real component of the complex number and <span class="math notranslate nohighlight">\(iy\)</span> is its imaginary component. We often call <span class="math notranslate nohighlight">\(y\)</span> the imaginary component for simplicity. The modulus of the complex number is calculated as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9630c8f2-c6cf-433f-9ecb-961bac0f5989">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-9630c8f2-c6cf-433f-9ecb-961bac0f5989" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b32cdff3-01e1-432c-bd3c-b3898d3ba287">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-b32cdff3-01e1-432c-bd3c-b3898d3ba287" title="Permalink to this equation">#</a></span>\[\begin{equation}
     |z|=\sqrt{x^2+y^2}.
 \end{equation}\]</div>
 <p>Its complex conjugate is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e70bbb9b-e522-4ed0-a4af-1803a40172b4">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-e70bbb9b-e522-4ed0-a4af-1803a40172b4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-008c0b97-fcdc-44e6-a371-d9c618574d61">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-008c0b97-fcdc-44e6-a371-d9c618574d61" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \bar{z}=x-iy.
 \end{equation}\]</div>
-</section>
+</div>
 </div><p>For example <span class="math notranslate nohighlight">\(z_1= 2+ 3i\)</span> and <span class="math notranslate nohighlight">\(z_2=2-3i\)</span> are two complex numbers, and they are each other’s complex conjugate.</p>
 <div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 1.3 </span> (Complex Arithmetic)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>The arithmetic operations on two complex numbers given as <span class="math notranslate nohighlight">\(z_1=x_1+iy_1\)</span> and <span class="math notranslate nohighlight">\(z_2=x_2+iy_2\)</span> are defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1c6b7cce-9894-4d63-a4d2-41b82a8b5eec">
-<span class="eqno">(1.4)<a class="headerlink" href="#equation-1c6b7cce-9894-4d63-a4d2-41b82a8b5eec" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-20ca1757-1a2e-4a61-af3a-1c1a0f643b68">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-20ca1757-1a2e-4a61-af3a-1c1a0f643b68" title="Permalink to this equation">#</a></span>\[\begin{align}
 \text{``$+$''}:\quad ~ &amp; ~ z_1+z_2=(x_1+iy_1)+(x_2+iy_2)=(x_1+x_2)+i(y_1+y_2), \\
 \text{``$-$''}:\quad ~ &amp; ~ z_1-z_2=(x_1+iy_1)-(x_2+iy_2)=(x_1-x_2)+i(y_1-y_2), \\
 \text{``$\times$''}:\quad ~ &amp; ~ z_1\cdot z_2=(x_1+iy_1)\cdot(x_2+iy_2)=(x_1+x_2)+i(y_1+y_2), \\
 \text{``$\div$''}:\quad ~ &amp; ~ \frac{z_1}{z_2}=\frac{(x_1+iy_1)}{(x_2+iy_2)}=\frac{(x_1+iy_1)(x_2-iy_2)}{(x_2+iy_2)(x_2-iy_2)}=\frac{(x_1+iy_1)(x_2-iy_2)}{x_2^2 + y_2^2}.
 \end{align}\]</div>
-</section>
+</div>
 </div><div class="proof example admonition" id="example-3">
 <p class="admonition-title"><span class="caption-number">Example 1.1 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Applying four arithmetic operations on <span class="math notranslate nohighlight">\(1+2i\)</span> and <span class="math notranslate nohighlight">\(2-5i\)</span>, calculate</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\((1+2i) + (2-5i)\)</span></p></li>
@@ -410,31 +428,29 @@ Solution (click to show)<div class="sd-summary-down docutils">
 &amp; \frac{1+2i}{2-5i}=\frac{(1+2i)(2+5i)}{(2-5i)(2+5i)}=\frac{-8+9i}{29}
 \end{align*}\]</div>
 </div>
-</details></section>
+</details></div>
 </div><div class="proof definition admonition" id="definition-4">
 <p class="admonition-title"><span class="caption-number">Definition 1.4 </span> (Complex number set)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>We denote the set of all the complex numbers as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5131f072-6f7f-45ab-a541-cf69b8fc6cc4">
-<span class="eqno">(1.5)<a class="headerlink" href="#equation-5131f072-6f7f-45ab-a541-cf69b8fc6cc4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-38cf1a2f-971d-4882-bcd8-be2ed6541c52">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-38cf1a2f-971d-4882-bcd8-be2ed6541c52" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \mathbb{C}=\{z|z=x+iy, ~x, y\in \mathbb{R}\}.
 \end{equation}\]</div>
-</section>
+</div>
 </div><p>For the real number set <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, we can use the number line to represent it. For the complex number set <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>, we can use the complex plane to represent it.</p>
-<figure class="align-default" id="figure01-1">
+<div class="figure align-default" id="figure01-1">
 <a class="reference internal image-reference" href="../_images/figure01-1.png"><img alt="../_images/figure01-1.png" src="../_images/figure01-1.png" style="width: 423.59999999999997px; height: 420.59999999999997px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">The complex plane <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>.</span><a class="headerlink" href="#figure01-1" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text">The complex plane <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>.</span><a class="headerlink" href="#figure01-1" title="Permalink to this image">#</a></p>
+</div>
 <p>For <span class="math notranslate nohighlight">\(z=x+iy\)</span>, we can also write it in the second form (polar form) as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-024f43e8-d80d-4986-8e3c-fc41a7d0df85">
-<span class="eqno">(1.6)<a class="headerlink" href="#equation-024f43e8-d80d-4986-8e3c-fc41a7d0df85" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-be0c302c-a15d-4c9a-9ff7-73b9a7639852">
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-be0c302c-a15d-4c9a-9ff7-73b9a7639852" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z  =  r\left(\cos \theta + i \sin \theta\right)
 \end{equation}\]</div>
 <p>or the third form (exponential form)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-42bfdfd8-88c2-4811-8a10-61f2dfef8a30">
-<span class="eqno">(1.7)<a class="headerlink" href="#equation-42bfdfd8-88c2-4811-8a10-61f2dfef8a30" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-066249c8-35e4-4ad4-9707-7468873f3a73">
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-066249c8-35e4-4ad4-9707-7468873f3a73" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z  = r e^{i\theta},    
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(r=|z|\)</span>, and <span class="math notranslate nohighlight">\(\theta\)</span> is the angle defined by the real axis and the straight line connecting the origin and <span class="math notranslate nohighlight">\(z\)</span> in the complex plane.</p>
@@ -449,12 +465,12 @@ z  = r e^{i\theta},
 <p>where <span class="math notranslate nohighlight">\(r=|z|=\sqrt{x^2+y^2}\)</span>, <span class="math notranslate nohighlight">\(\tan \theta = \dfrac{y}{x}\)</span>.</p>
 </div>
 <p>If we use the exponential form to represent complex numbers, then the multiplication and division of two complex numbers can be expressed in simpler ways. Let <span class="math notranslate nohighlight">\(z_1= r_1 e^{i\theta_1}\)</span> and <span class="math notranslate nohighlight">\(z_2 = r_2 e^{i\theta_2}\)</span>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4ee97408-8efd-4167-97d8-f59d52f509e5">
-<span class="eqno">(1.8)<a class="headerlink" href="#equation-4ee97408-8efd-4167-97d8-f59d52f509e5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a7b84e41-25c6-473f-9f60-bb8882bc16f7">
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-a7b84e41-25c6-473f-9f60-bb8882bc16f7" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp; z_1 \cdot z_2  = r_1 e^{i\theta_1} \cdot r_2 e^{i\theta_2}=r_1 r_2 e^{i(\theta_1+\theta_2)}\\
 &amp; \frac{z_1}{z_2}  = \frac{r_1 e^{i\theta_1}}{r_2 e^{i\theta_2}}=\frac{r_1}{r_2}e^{i(\theta_1-\theta_2)}
 \end{align}\]</div>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -481,11 +497,10 @@ z  = r e^{i\theta},
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap00_0.html"
@@ -493,7 +508,7 @@ z  = r e^{i\theta},
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Complex Numbers, Difference Equations</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Complex Numbers and Difference Equations</p>
       </div>
     </a>
     <a class="right-next"
@@ -505,10 +520,7 @@ z  = r e^{i\theta},
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -531,6 +543,7 @@ By Zhihua Ma
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -557,8 +570,8 @@ By Zhihua Ma
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

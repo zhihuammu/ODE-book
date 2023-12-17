@@ -2,14 +2,12 @@
 
 For some sequences, their algebraic expressions are directly given, such as the sequences we defined in {eq}`eq:sequence:example:1` and {eq}`eq:sequence:example:2`. While for some other sequences, a member of a sequence $y_n$ is determined by one or several previous members of the sequence, e.g.
 
-\begin{equation}
-\begin{split}
+\begin{align}
 & y_n = y_{n-1}, \\
 & y_n = y_{n-1}+3, \\
 & y_n = 2y_{n-1}, \\
 & y_n = y_{n-1} + y_{n-2}.
-\end{split}  
-\end{equation}
+\end{align}
 
 We can call these algebraic expressions Difference Equations.
 

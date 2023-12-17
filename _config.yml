@@ -42,6 +42,7 @@ sphinx:
   extra_extensions:
     - sphinx_proof
     - sphinx_exercise    
+    - sphinxcontrib.tikz
   
 parse:
   myst_enable_extensions:

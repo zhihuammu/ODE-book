@@ -19,7 +19,8 @@ parts:
       
     - file: chaps/chap01_0
       sections: 
-      - glob: chaps/chap01_*      
+      - glob: chaps/chap01_*  
+          
     - file: chaps/chap02_0
       sections:
       - glob: chaps/chap02_*     

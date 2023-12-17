@@ -3,13 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-    <title>2.3. Exercise(1) &#8212; Computational Methods in Ordinary Differential Equations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.4. [Format for constructing differences]{.underline} &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,13 +39,16 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -62,13 +64,15 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/chap01_3';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/chap01_4_table';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Multistep Methods: Derivation by Finite Difference formulae" href="chap02_0.html" />
-    <link rel="prev" title="2.2. Gregory-Newton Interpolation Formulae" href="chap01_2.html" />
+    <link rel="next" title="2.5. Exercise ()" href="chap01_5_exercise.html" />
+    <link rel="prev" title="2.3. Gregory-Newton Interpolation Formulae" href="chap01_3_interpolation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -77,6 +81,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -130,9 +143,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -142,8 +157,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo4.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo4.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo4.png" class="logo__image only-light" alt="Computational Methods in Ordinary Differential Equations - Home"/>
+    <script>document.write(`<img src="../_static/logo4.png" class="logo__image only-dark" alt="Computational Methods in Ordinary Differential Equations - Home"/>`);</script>
   
   
 </a></div>
@@ -164,18 +179,20 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Tutorial Exericses</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="chap00_0.html">1. Complex Numbers, Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chap00_0.html">1. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chap00_1_complexNumber.html">1.1. Complex Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap00_2_sequence.html">1.2. Sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap00_3_differenceEquation.html">1.3. Difference Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap00_4_homogenous.html">1.4. Homogeneous Linear Difference Equations with Constant Coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap00_5_exercise.html">1.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap00_5_exercise.html">1.5. Chapter 1 Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chap01_0.html">2. Interpolating Polynomial</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chap01_1.html">2.1. Finite Difference Tables and Notations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap01_2.html">2.2. Gregory-Newton Interpolation Formulae</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.3. Exercise(1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap01_1_introduction.html">2.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap01_2_operator.html">2.2. Finite Difference Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap01_3_interpolation.html">2.3. Gregory-Newton Interpolation Formulae</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.4. [Format for constructing differences]{.underline}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap01_5_exercise.html">2.5. Exercise ()</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="chap02_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -244,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/chaps/chap01_3.ipynb" target="_blank"
+      <li><a href="../_sources/chaps/chap01_4_table.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -254,7 +271,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -296,20 +313,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -324,7 +343,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercise(1)</h1>
+    <h1>[Format for constructing differences]{.underline}</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -338,9 +357,82 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="exercise-1">
-<h1><span class="section-number">2.3. </span>Exercise(1)<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h1>
-</section>
+  <div class="tex2jax_ignore mathjax_ignore section" id="format-for-constructing-differences-underline">
+<h1><span class="section-number">2.4. </span>[Format for constructing differences]{.underline}<a class="headerlink" href="#format-for-constructing-differences-underline" title="Permalink to this heading">#</a></h1>
+<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>
+::: tabular
+LLLLLL x &amp; f(x) &amp; f &amp; \^2 f &amp; \^3 f &amp; \^4 f\
+\
+\
+x\_-2 &amp; f\_-2\
+&amp; &amp; f\_-2\
+x\_-1 &amp; f\_-1 &amp; &amp; \^ f\_-2\
+&amp; &amp; f\_-1 &amp; &amp; \^3 f\_-2\
+x_0 &amp; f_0 &amp; &amp; \^2 f\_-1 &amp; &amp; \^4 f\_-2\
+&amp; &amp; f_0 &amp; &amp; \^3 f\_-1\
+x_1 &amp; f_1 &amp; &amp; \^2 f_0\
+&amp; &amp; f_1\
+x_2 &amp; f_2\
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+where $\,\Delta f_0=f_1-f_0\,$;
+$\,\Delta^2 f_0=\Delta f_1-\Delta f_0\,$; \...\
+With this notation the same suffixes appear along diagonals running from
+top left to bottom right.
+
+[Format for constructing backward differences]{.underline}
+
+::: center
+::: tabular
+LLLLLL x &amp; f(x) &amp; f &amp; \^2 f &amp; \^3 f &amp; \^4 f\
+\
+\
+x\_-2 &amp; f\_-2\
+&amp; &amp; f\_-1\
+x\_-1 &amp; f\_-1 &amp; &amp; \^2 f_0\
+&amp; &amp; f_0 &amp; &amp; \^3 f_1\
+x_0 &amp; f_0 &amp; &amp; \^2 f_1 &amp; &amp; \^4 f_2\
+&amp; &amp; f_1 &amp; &amp; \^3 f_2\
+x_1 &amp; f_1 &amp; &amp; \^2 f_2\
+&amp; &amp; f_2\
+x_2 &amp; f_2\
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+where $\,\nabla f_0 = f_0 - f_{-1}\,$;
+$\,\nabla^2 f_0 = \nabla f_0 - \nabla f_{-1}\,$; \...\
+Note that with this notation the same suffixes appear along diagonals
+running from bottom left to top right of the difference table.\
+Note that $\,\Delta f_1\,=\nabla f_2\,\,$ and
+$\,\,\Delta^2 f_0\,=\nabla^2 f_\cort{2}\,.$
+
+
+
+
+# Finite Difference Tables and Notations
+
+Consider the following difference table with given data:
+
+:::{table} 
+:widths: 5 5 5 5 5 5 5
+:align: center
+| $i$ | $x$ | $y=f(x)$ | $1^\text{st}$ diff  | $2^\text{nd}$ diff |  $3^\text{rd}$ diff |  $4^\text{th}$ diff  |
+| --- | --- |----------|---------------------|--------------------|---------------------|----------------------|
+| 0   | 0.00| 1.0000   |                     |                    |                     |                      |  
+|     |     |          |-0.0588              |                    |                     |                      |
+|  1  | 0.25| 0.9412   |                     |   -0.0824          |                     |                      |   
+|     |     |          |  -0.1412            |                    |       0.0636        |                      |  
+|  2  | 0.50| 0.8000   |                     |   -0.0188          |                     |    -0.0248           |
+|     |     |          |  -0.1600            |                    |    0.0388           |                      |
+|  3  | 0.75| 0.6400   |                     |   0.0200           |                     |                      |
+|     |     |          |  -0.1400            |                    |                     |                      |
+|  4  | 1.00| 0.5000   |                     |                    |                     |                      |
+</pre></div>
+</div>
+<p>The difference tables can be used by various formulae, namely, <em>forward</em>, <em>backward</em> and <em>central</em> difference methods, to appropriately interpolate function and derivative values for the missing intermediate points in the table.</p>
+<p>Since we are going to construct formulae involving general finite differences, we need to introduce a notation to represent the numbers in a difference table. First, any <span class="math notranslate nohighlight">\(x\)</span>-value in a difference table can be labelled <span class="math notranslate nohighlight">\(x_0\)</span>, then those above this value are successively <span class="math notranslate nohighlight">\(\,x_{-1}, x_{-2}, ...\,\)</span> etc. and those below it are <span class="math notranslate nohighlight">\(\,x_1, x_2, ...\,\)</span> etc. To denote function values at <span class="math notranslate nohighlight">\(\,x_j\,\)</span> we write <span class="math notranslate nohighlight">\(\,f_j=f(x_j)\)</span>. Furthermore, to introduce a notation for the finite differences we first define some difference operators:</p>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -367,34 +459,30 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="chap01_2.html"
+       href="chap01_3_interpolation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.2. </span>Gregory-Newton Interpolation Formulae</p>
+        <p class="prev-next-title"><span class="section-number">2.3. </span>Gregory-Newton Interpolation Formulae</p>
       </div>
     </a>
     <a class="right-next"
-       href="chap02_0.html"
+       href="chap01_5_exercise.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Multistep Methods: Derivation by Finite Difference formulae</p>
+        <p class="prev-next-title"><span class="section-number">2.5. </span>Exercise ()</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -417,6 +505,7 @@ By Zhihua Ma
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -443,8 +532,8 @@ By Zhihua Ma
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
