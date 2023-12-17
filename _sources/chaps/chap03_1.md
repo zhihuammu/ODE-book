@@ -1,107 +1,76 @@
-## Multistep Methods
+# Multistep Methods
 
-The most general *linear multistep method* for solving the initial value
+Once the approximated solution at a number of mesh points has been
+computed they could be used to calculate more accurate computation of
+later points. Methods using more than one value of the dependent
+variable to determine the approximation at the next mesh points are
+called *multistep methods*.
 
-\begin{equation} 
-y ' = f(x,y) \qquad a\leq x\leq b, \qquad y(a)=\eta 
-\end{equation}
+::::{prf:definition} Linear Multistep Method
+The most general *linear multistep method* for solving the initial value problem 
 
-\begin{equation*} 
-y ' = f(x,y) \qquad a\leq x\leq b, \qquad y(a)=\eta 
-\end{equation*}
+:::{math}
+:label: eq:ch02:1.1
 
+y' = f(x,y) \hspace{1.5cm} a\leq x\leq b, \quad y(a)=\eta
+:::
 
-```{Note}
-Definition
+has the form 
 
-$$ y' = f(x,y) \qquad a\leq x\leq b, \qquad y(a)=\eta $$
+:::{math}
+:label: eq:ch02:1.2
 
-dfdfsdfs
-```
+\sum_{i=0}^{k} \alpha_i y_{j+i} = h\sum_{i=0}^{k}\beta_i f_{j+i},
+\hspace{1cm} \text{with}\ \alpha_k = 1
+:::
 
-$$ y' = f(x,y) \qquad a\leq x\leq b, \qquad y(a)=\eta $$
+where $k$ denotes the number of steps and $\alpha_i$ and
+$\beta_i$ are constants. In an expanded form we can write this as
 
-```{seealso}
-Jupyter Book uses [Jupytext](https://jupytext.readthedocs.io/en/latest/) to convert text-based files to notebooks, and can support [many other text-based notebook files](https://jupyterbook.org/file-types/jupytext.html).
-```
+:::{math}
+:label: eq:ch02:1.3
+\begin{aligned}
+    &\alpha_0 y_j + \alpha_1 y_{j+1} + \alpha_2 y_{j+2} + \dots +
+    \alpha_{k-1}y_{j+k-1} + \alpha_k y_{j+k}
+    \\
+    =~h\,[&\beta_0 f_j + \beta_1 f_{j+1} + \beta_2 f_{j+2} + \dots +
+    \beta_{k-1} f_{j+k-1} + \beta_k f_{j+k}]    
+\end{aligned}
+:::
 
-```{tip}
-Jupyter Book uses [Jupytext](https://jupytext.readthedocs.io/en/latest/) to convert text-based files to notebooks, and can support [many other text-based notebook files](https://jupyterbook.org/file-types/jupytext.html).
-```
+When $\,\beta_k=0\,$, the method is called an *explicit*
+or *open method* and equation {eq}`eq:ch02:1.2`
+gives $y_{j+k}$ explicitly in terms of
+previously determined values. When $\,\beta_k \neq 0\,$, the method is
+called an *implicit* or *closed method* because $y_{j+k}$ implicitly,
+through $f_{j+k}$, appears on the right hand side of equation{eq}`eq:ch02:1.2`.
+::::
 
-```{important}
-Jupyter Book uses [Jupytext](https://jupytext.readthedocs.io/en/latest/) to convert text-based files to notebooks, and can support [many other text-based notebook files](https://jupyterbook.org/file-types/jupytext.html).
-```
+Two well known multistep method formulae are:
 
-```{warning}
-Jupyter Book uses [Jupytext](https://jupytext.readthedocs.io/en/latest/) to convert text-based files to notebooks, and can support [many other text-based notebook files](https://jupyterbook.org/file-types/jupytext.html).
-```
+1.  Fourth--order Adams--Bashforth 
 
-```{python}
-print("Hallo I'm an RMarkdown block!")
-```
+    $$
+    \begin{aligned}
+            y_{j+4} ~=~ y_{j+3} + \frac{h}{24}\,
+            \bigl[ 55f_{j+3} - 59f_{j+2} + 37f_{j+1} - 9f_j \bigr]\,.            
+    \end{aligned}
+    $$ 
+    
+    Here $\,k = 4\,$ and $\,\beta_4 = 0\,$; thus, this
+    is an open formula and starting values are $\,y_{j+3}\,$,
+    $\,y_{j+2}\,$, $\,y_{j+1}\,$ and $\,y_j\,$.
 
-```{admonition} Definition
-:class: tip
-Here's the admonition content
-```
+2.  Fourth--order Adams--Moulton 
 
-```{prf:algorithm} Ford–Fulkerson
-:label: my-algorithm
-
-**Inputs** Given a Network $G=(V,E)$ with flow capacity $c$, a source node $s$, and a sink node $t$
-
-**Output** Compute a flow $f$ from $s$ to $t$ of maximum value
-
-1. $f(u, v) \leftarrow 0$ for all edges $(u,v)$
-2. While there is a path $p$ from $s$ to $t$ in $G_{f}$ such that $c_{f}(u,v)>0$
-    for all edges $(u,v) \in p$:
-
-    1. Find $c_{f}(p)= \min \{c_{f}(u,v):(u,v)\in p\}$
-    2. For each edge $(u,v) \in p$
-
-        1. $f(u,v) \leftarrow f(u,v) + c_{f}(p)$ *(Send flow along the path)*
-        2. $f(u,v) \leftarrow f(u,v) - c_{f}(p)$ *(The flow might be "returned" later)*
-```
-
-````{prf:proof}
-We'll omit the full proof.
-
-But we will prove sufficiency of the asserted conditions.
-
-To this end, let $y \in \mathbb R^n$ and let $S$ be a linear subspace of $\mathbb R^n$.
-
-Let $\hat y$ be a vector in $\mathbb R^n$ such that $\hat y \in S$ and $y - \hat y \perp S$.
-
-Let $z$ be any other point in $S$ and use the fact that $S$ is a linear subspace to deduce
-
-```{math}
-\| y - z \|^2
-= \| (y - \hat y) + (\hat y - z) \|^2
-= \| y - \hat y \|^2  + \| \hat y - z  \|^2
-```
-
-Hence $\| y - z \| \geq \| y - \hat y \|$, which completes the proof.
-````
-
-````{prf:theorem} Orthogonal-Projection-Theorem
-:label: my-theorem
-
-Given $y \in \mathbb R^n$ and linear subspace $S \subset \mathbb R^n$,
-there exists a unique solution to the minimization problem
-
-```{math}
-\hat y := \argmin_{z \in S} \|y - z\|
-```
-
-The minimizer $\hat y$ is the unique vector in $\mathbb R^n$ that satisfies
-
-* $\hat y \in S$
-
-* $y - \hat y \perp S$
-
-
-The vector $\hat y$ is called the **orthogonal projection** of $y$ onto $S$.
-````
-
-Since Pythagoras, we know that :math:`a^2 + b^2 = c^2`.
+    $$
+    \begin{aligned}
+            y_{j+4} ~=~ y_{j+3} + \frac{h}{24}\,
+            \bigl[ 9f_{j+4} + 19_{j+3} - 5f_{j+2} + f_{j+1} \bigr]\,.           
+    \end{aligned}
+    $$ 
+    
+    Here $\,k = 3\,$ and
+    $\,\beta_3 = \frac{9}{24} \neq 0\,$; thus, this is a closed formula
+    and starting values are $\,y_{j+3}\,$, $\,y_{j+2}\,$ and
+    $\,y_{j+1}\,$.

@@ -1,6 +1,6 @@
 # Introduction
 
-The one-step methods, like Runge-Kutta formulae, used for the solution of
+One-step methods, like Runge-Kutta formulae, used for solving
 Ordinary Differential Equations (ODEs) require the solution value at one mesh
 point to compute the solution at the next. The methods thus obtained are simple
 and easy to program. On the other hand, they are inefficient in that they do not

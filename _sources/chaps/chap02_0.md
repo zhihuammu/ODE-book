@@ -1,3 +1,4 @@
+(chap02:interpolating)=
 # Interpolating Polynomial
 
 **Learning Objectives:**

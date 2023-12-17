@@ -179,14 +179,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chap02_2_differenceOperator.html">2.2. Finite Difference Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap02_3_interpolation.html">2.3. Gregory-Newton Interpolation Formulae</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap02_4_differenceTable.html">2.4. Finite Difference Tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap02_5_exercise.html">2.5. Exercise ()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap02_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="chap03_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chap03_1.html">3.1. Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap03_2.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_3.html">3.3. Explicit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_4.html">3.4. Implicit or Closed Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_3.html">3.3. Explicit or Open Multistep Methods</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks.html">4. Content with notebooks</a></li>
@@ -345,8 +344,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="difference-equations">
 <h1><span class="section-number">1.3. </span>Difference Equations<a class="headerlink" href="#difference-equations" title="Permalink to this headline">#</a></h1>
 <p>For some sequences, their algebraic expressions are directly given, such as the sequences we defined in <a class="reference internal" href="chap01_2_sequence.html#equation-eq-sequence-example-1">(1.10)</a> and <a class="reference internal" href="chap01_2_sequence.html#equation-eq-sequence-example-2">(1.11)</a>. While for some other sequences, a member of a sequence <span class="math notranslate nohighlight">\(y_n\)</span> is determined by one or several previous members of the sequence, e.g.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc7392c9-ccff-42e8-9721-a58f3240b3c2">
-<span class="eqno">(1.12)<a class="headerlink" href="#equation-fc7392c9-ccff-42e8-9721-a58f3240b3c2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c90ea512-0e7e-4304-8f78-afb0994543d2">
+<span class="eqno">(1.12)<a class="headerlink" href="#equation-c90ea512-0e7e-4304-8f78-afb0994543d2" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp; y_n = y_{n-1}, \\
 &amp; y_n = y_{n-1}+3, \\
 &amp; y_n = 2y_{n-1}, \\

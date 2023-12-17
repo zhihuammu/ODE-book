@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/chap02_4_differenceTable';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.5. Exercise ()" href="chap02_5_exercise.html" />
+    <link rel="next" title="2.5. Chapter 2 Exercises" href="chap02_5_exercise.html" />
     <link rel="prev" title="2.3. Gregory-Newton Interpolation Formulae" href="chap02_3_interpolation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -179,14 +179,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chap02_2_differenceOperator.html">2.2. Finite Difference Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap02_3_interpolation.html">2.3. Gregory-Newton Interpolation Formulae</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.4. Finite Difference Tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap02_5_exercise.html">2.5. Exercise ()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap02_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="chap03_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chap03_1.html">3.1. Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap03_2.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_3.html">3.3. Explicit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_4.html">3.4. Implicit or Closed Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_3.html">3.3. Explicit or Open Multistep Methods</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks.html">4. Content with notebooks</a></li>
@@ -343,6 +342,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-difference-table">2.4.1. Forward Difference Table</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-difference-table">2.4.2. Backward Difference Table</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-difference-table-for-interpolation">2.4.3. Use Difference Table for interpolation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-table-and-polynomial-function">2.4.4. Difference Table and Polynomial Function</a></li>
 </ul>
             </nav>
         </div>
@@ -906,6 +906,122 @@ f(3.8)= &amp;  f_4 + s\nabla f_4 + \frac{s(s+1)}{2!}\nabla^2 f_4
 </div>
 </details></section>
 </div></section>
+<section id="difference-table-and-polynomial-function">
+<h2><span class="section-number">2.4.4. </span>Difference Table and Polynomial Function<a class="headerlink" href="#difference-table-and-polynomial-function" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(\Delta f\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(\Delta^2 f\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(\Delta^3 f\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(\Delta^4 f\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>7</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>8</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>12</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>19</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>27</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>18</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>37</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p>64</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>24</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>61</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>5</p></td>
+<td class="text-center"><p>125</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>30</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>91</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>6</p></td>
+<td class="text-center"><p>216</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(3^\text{rd}\)</span> order differences are constant;</p></li>
+<li><p>the function can be approximated by a <span class="math notranslate nohighlight">\(3^\text{rd}\)</span> order
+polynomial
+<span class="math notranslate nohighlight">\(f(x)=x^3\)</span>;</p></li>
+<li><p>In order to find a polynomial of degree <span class="math notranslate nohighlight">\(n\)</span> which approximates the
+tabulated function sufficiently accurate, we need to know the
+function values at <span class="math notranslate nohighlight">\((n+1)\)</span> points.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -953,7 +1069,7 @@ f(3.8)= &amp;  f_4 + s\nabla f_4 + \frac{s(s+1)}{2!}\nabla^2 f_4
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.5. </span>Exercise ()</p>
+        <p class="prev-next-title"><span class="section-number">2.5. </span>Chapter 2 Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -978,6 +1094,7 @@ f(3.8)= &amp;  f_4 + s\nabla f_4 + \frac{s(s+1)}{2!}\nabla^2 f_4
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-difference-table">2.4.1. Forward Difference Table</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-difference-table">2.4.2. Backward Difference Table</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-difference-table-for-interpolation">2.4.3. Use Difference Table for interpolation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-table-and-polynomial-function">2.4.4. Difference Table and Polynomial Function</a></li>
 </ul>
   </nav></div>
 

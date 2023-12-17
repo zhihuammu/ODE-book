@@ -1,8 +1,8 @@
-(chap00:exercises)=
+(chap01:exercises)=
 # Chapter 1 Exercises
 
 :::{exercise}
-:label: ch0-ex-q1
+:label: ch1-ex-q1
 
 Simplify the following expressions used to calculate $z$, and find the real and imaginary components of $z$:
 
@@ -13,7 +13,7 @@ Simplify the following expressions used to calculate $z$, and find the real and 
 
 :::
 
-:::{solution} ch0-ex-q1
+:::{solution} ch1-ex-q1
 :class: dropdown
 
 1.  $z=i$
@@ -28,7 +28,7 @@ Simplify the following expressions used to calculate $z$, and find the real and 
 
 
 :::{exercise}
-:label: ch0-ex-q2
+:label: ch1-ex-q2
 
 For each of the following difference equations, form the characteristic equation, and from its roots determine the corresponding general solution:
 
@@ -39,7 +39,7 @@ For each of the following difference equations, form the characteristic equation
 
 :::
 
-:::{solution} ch0-ex-q2
+:::{solution} ch1-ex-q2
 :class: dropdown
 
 1. $y_j = c_1 + c_2 (-1)^j$
@@ -54,7 +54,7 @@ For each of the following difference equations, form the characteristic equation
 
 
 :::{exercise}
-:label: ch0-ex-q3
+:label: ch1-ex-q3
 
 For each of the following difference equations, form the characteristic equation, and from its roots determine the corresponding general solution:
 		
@@ -68,7 +68,7 @@ For each of the following difference equations, form the characteristic equation
 
 :::
 
-:::{solution} ch0-ex-q3
+:::{solution} ch1-ex-q3
 :class: dropdown
 
 1. $y_n=c_1 (4)^n + c_2 (5)^n$
@@ -87,7 +87,7 @@ For each of the following difference equations, form the characteristic equation
 
 
 :::{exercise} 
-:label: ch0-ex-q4
+:label: ch1-ex-q4
 
 Find the general solution to the difference equation
 
@@ -97,7 +97,7 @@ where $y_0=0$ and $y_1=1$.
 
 :::
 
-:::{solution} ch0-ex-q4
+:::{solution} ch1-ex-q4
 :class: dropdown
 
 $\displaystyle y_n=\frac{1}{\sqrt{5}}\left[ \left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\frac{1-\sqrt{5}}{2}\right)^n \right]$
@@ -105,7 +105,7 @@ $\displaystyle y_n=\frac{1}{\sqrt{5}}\left[ \left(\frac{1+\sqrt{5}}{2}\right)^n 
 :::
 
 :::{exercise} 
-:label: ch0-ex-q5
+:label: ch1-ex-q5
 
 For the following second-order homogeneous linear difference equation
 
@@ -119,7 +119,7 @@ is the solution to the equation.
 
 :::
 
-:::{solution} ch0-ex-q5
+:::{solution} ch1-ex-q5
 :class: dropdown
 
 Substitute the general solution into the equation to prove that the equation can be satisfied.

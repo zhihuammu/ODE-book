@@ -179,14 +179,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chap02_2_differenceOperator.html">2.2. Finite Difference Operators</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.3. Gregory-Newton Interpolation Formulae</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap02_4_differenceTable.html">2.4. Finite Difference Tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap02_5_exercise.html">2.5. Exercise ()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap02_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="chap03_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chap03_1.html">3.1. Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap03_2.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_3.html">3.3. Explicit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_4.html">3.4. Implicit or Closed Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_3.html">3.3. Explicit or Open Multistep Methods</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks.html">4. Content with notebooks</a></li>
@@ -452,30 +451,32 @@ interpolating near the <em>beginning</em> of a sequence.</p>
 </section>
 <section id="gregory-newton-backward-interpolation">
 <h2><span class="section-number">2.3.3. </span>Gregory-Newton Backward Interpolation<a class="headerlink" href="#gregory-newton-backward-interpolation" title="Permalink to this headline">#</a></h2>
-<p>To find <span class="math notranslate nohighlight">\(f(x)=f(x_j+sh)\)</span> for <span class="math notranslate nohighlight">\(x_{j-1}&lt;x&lt;x_j\)</span>, we can also use backward
-shifting</p>
+<p>To find <span class="math notranslate nohighlight">\(f(x)=f(x_j+sh)\)</span> for <span class="math notranslate nohighlight">\(x_{j-1}&lt;x&lt;x_j\)</span>, we can use backward
+shifting to derive the interpolation formula:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-        f_{j+s} &amp; = E^{s} f_j  \hspace{4cm} \left(s=\frac{x-x_j}{h}&lt;0\right) \\
-        \&gt;&amp;=\&gt; (1 - \nabla)^{-s} f_j\\
-        \&gt;&amp;=\&gt; \left(1 + \frac{(-s)}{1!}(-\nabla)
-        + \frac{(-s)(-s-1)}{2!}\nabla^2
-        + \frac{(-s)(-s-1)(-s-2)}{3!}(-\nabla)^3
-        + \cdots\right) f_j\\
-        \&gt;&amp;=\&gt; f_j + s\nabla f_j + \frac{s(s+1)}{2!}\nabla^2 f_j + \cdots
-        + \frac{s(s+1)\cdots(s+k-1)}{k!}\nabla^k f_j + \dots
-    
-\end{aligned}
-\end{split}\]</div>
-<p>We can separate the whole polynomial into two parts:</p>
-<div class="math notranslate nohighlight">
-\[f(x_j + sh) = P_k(x_s) + e_k(x_s) \simeq P_k(x_s)\]</div>
-<p>Therefore the backward Gregory-Newton interpolation formula is</p>
+\[
+s=\frac{x-x_j}{h}&lt;0
+\]</div>
 <div class="math notranslate nohighlight" id="equation-eq-gn-backward">
 <span class="eqno">(2.8)<a class="headerlink" href="#equation-eq-gn-backward" title="Permalink to this equation">#</a></span>\[f_{j+s}= f_j + s\nabla f_j
             + \frac{s(s+1)}{2!}\nabla^2 f_j
             + \cdots
             + \frac{s(s+1)\cdots(s+k-1)}{k!}\nabla^k f_j + \cdots\]</div>
+<!-- $$\begin{aligned}
+        f_{j+s} & = E^{s} f_j  \hspace{4cm}  \\
+        \>&=\> (1 - \nabla)^{-s} f_j\\
+        \>&=\> \left(1 + \frac{(-s)}{1!}(-\nabla)
+        + \frac{(-s)(-s-1)}{2!}(-\nabla)^2
+        + \frac{(-s)(-s-1)(-s-2)}{3!}(-\nabla)^3
+        + \cdots\right) f_j\\
+        \>&=\> f_j + s\nabla f_j + \frac{s(s+1)}{2!}\nabla^2 f_j + \cdots
+        + \frac{s(s+1)\cdots(s+k-1)}{k!}\nabla^k f_j + \dots
+    
+\end{aligned}
+$$  -->
+<p>We can separate the whole polynomial into two parts:</p>
+<div class="math notranslate nohighlight">
+\[f(x_j + sh) = P_k(x_s) + e_k(x_s) \simeq P_k(x_s)\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The G-N backward interpolation formula (polynomial) is useful for

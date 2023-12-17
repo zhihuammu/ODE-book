@@ -168,3 +168,32 @@ $$
 
 ::::
 
+## Difference Table and Polynomial Function
+
+:::{table} 
+|   $x$ | $f(x)$|  $\Delta f$ |  $\Delta^2 f$     | $\Delta^3 f$      | $\Delta^4 f$  |
+|:-----:| :---: |:-----------:| :---------------: | :----------------:| :----------------: |
+|    0  |    0  |                                              
+|       |       |        1    |                                 
+|    1  |    1  |             |         6         |              
+|       |       |        7    |                   |     6             |
+|    2  |    8  |             |         12        |                   | 0   |
+|       |       |        19   |                   |     6             |
+|    3  |    27 |             |         18        |                   | 0   |
+|       |       |        37   |                   |     6             | 
+|    4  |    64 |             |         24        |                   | 0   |
+|       |       |        61   |                   |     6        
+|    5  |   125 |             |         30        |              
+|       |       |        91   |                                 
+|    6  |   216 |   
+:::
+
+-   $3^\text{rd}$ order differences are constant;
+
+-   the function can be approximated by a $3^\text{rd}$ order
+    polynomial 
+    $f(x)=x^3$;
+
+-   In order to find a polynomial of degree $n$ which approximates the
+    tabulated function sufficiently accurate, we need to know the
+    function values at $(n+1)$ points.

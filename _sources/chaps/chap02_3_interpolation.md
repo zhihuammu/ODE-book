@@ -118,26 +118,12 @@ interpolating near the *beginning* of a sequence.
 ## Gregory-Newton Backward Interpolation
 
 
-To find $f(x)=f(x_j+sh)$ for $x_{j-1}<x<x_j$, we can also use backward
-shifting 
+To find $f(x)=f(x_j+sh)$ for $x_{j-1}<x<x_j$, we can use backward
+shifting to derive the interpolation formula:
 
-$$\begin{aligned}
-        f_{j+s} & = E^{s} f_j  \hspace{4cm} \left(s=\frac{x-x_j}{h}<0\right) \\
-        \>&=\> (1 - \nabla)^{-s} f_j\\
-        \>&=\> \left(1 + \frac{(-s)}{1!}(-\nabla)
-        + \frac{(-s)(-s-1)}{2!}\nabla^2
-        + \frac{(-s)(-s-1)(-s-2)}{3!}(-\nabla)^3
-        + \cdots\right) f_j\\
-        \>&=\> f_j + s\nabla f_j + \frac{s(s+1)}{2!}\nabla^2 f_j + \cdots
-        + \frac{s(s+1)\cdots(s+k-1)}{k!}\nabla^k f_j + \dots
-    
-\end{aligned}
-$$ 
-We can separate the whole polynomial into two parts:
-
-$$f(x_j + sh) = P_k(x_s) + e_k(x_s) \simeq P_k(x_s)$$
-
-Therefore the backward Gregory-Newton interpolation formula is
+$$
+s=\frac{x-x_j}{h}<0
+$$
 
 :::{math}
 :label: eq:GN:backward
@@ -146,6 +132,27 @@ f_{j+s}= f_j + s\nabla f_j
             + \cdots
             + \frac{s(s+1)\cdots(s+k-1)}{k!}\nabla^k f_j + \cdots
 :::
+
+<!-- $$\begin{aligned}
+        f_{j+s} & = E^{s} f_j  \hspace{4cm}  \\
+        \>&=\> (1 - \nabla)^{-s} f_j\\
+        \>&=\> \left(1 + \frac{(-s)}{1!}(-\nabla)
+        + \frac{(-s)(-s-1)}{2!}(-\nabla)^2
+        + \frac{(-s)(-s-1)(-s-2)}{3!}(-\nabla)^3
+        + \cdots\right) f_j\\
+        \>&=\> f_j + s\nabla f_j + \frac{s(s+1)}{2!}\nabla^2 f_j + \cdots
+        + \frac{s(s+1)\cdots(s+k-1)}{k!}\nabla^k f_j + \dots
+    
+\end{aligned}
+$$  -->
+
+We can separate the whole polynomial into two parts:
+
+$$f(x_j + sh) = P_k(x_s) + e_k(x_s) \simeq P_k(x_s)$$
+
+
+
+
 
 :::{note}
 The G-N backward interpolation formula (polynomial) is useful for

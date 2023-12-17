@@ -67,10 +67,10 @@ We denote the set of all the complex numbers as
 
 For the real number set $\mathbb{R}$, we can use the number line to represent it. For the complex number set $\mathbb{C}$, we can use the complex plane to represent it.
 
-```{figure} ../images/figure01-1.png
+```{figure} ../images/fig-complexPlane.svg
 ---
-scale: 60%
-name: figure01-1
+width: 500px
+name: figure-complexPlane
 ---
 The complex plane $\mathbb{C}$.
 ```
