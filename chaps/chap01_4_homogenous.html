@@ -186,6 +186,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chap03_1.html">3.1. Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap03_2.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap03_3.html">3.3. Explicit or Open Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_4.html">3.4. Implicit or Closed Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_5.html">3.5. Predictor-Corrector Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_6.html">3.6. Chapter 3 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_7.html">3.7. Example MATLAB Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_8.html">3.8. Example Python Codes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks.html">4. Content with notebooks</a></li>
@@ -388,8 +393,8 @@ L(\xi)= a_0 + a_1 \xi + a_2 \xi^2 + \ldots + a_{k-1} \xi^{k-1} + a_k \xi^{k}=0.
 <p class="admonition-title"><span class="caption-number">Theorem 1.2 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\xi_p~(p=1,2,3,\ldots,k)\)</span> be any solution to the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(1.19)</a>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8b4b393e-5aa0-4f44-bfaa-8eb8d72688a4">
-<span class="eqno">(1.20)<a class="headerlink" href="#equation-8b4b393e-5aa0-4f44-bfaa-8eb8d72688a4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1853e322-8764-4eb7-abc3-e1bebd51cff4">
+<span class="eqno">(1.20)<a class="headerlink" href="#equation-1853e322-8764-4eb7-abc3-e1bebd51cff4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_n = \xi_p^n
 \end{equation}\]</div>
 <p>is a solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a>.</p>
@@ -418,8 +423,8 @@ L(E) \xi_p^n = ~ &amp; \left(a_0 + a_1 E + a_2 E^2 + \ldots + a_{k-1}E^{k-1}+a_k
 <p class="admonition-title"><span class="caption-number">Theorem 1.3 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Assume the <span class="math notranslate nohighlight">\(k\)</span> roots of  the characteristic equation are distinct, then a fundamental set of solutions is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2545589a-8686-43ab-91d6-c812698dcf31">
-<span class="eqno">(1.21)<a class="headerlink" href="#equation-2545589a-8686-43ab-91d6-c812698dcf31" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f7090a7f-b3eb-47dd-8d50-c5b8762b5efb">
+<span class="eqno">(1.21)<a class="headerlink" href="#equation-f7090a7f-b3eb-47dd-8d50-c5b8762b5efb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \xi_p^n \quad (p=1,2,\ldots,k).
 \end{equation}\]</div>
 <p>An immediate consequence of this theorem, for this particular case, is that the general solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a> is</p>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.3. Gregory-Newton Interpolation Formulae &#8212; Computational Methods in Ordinary Differential Equations</title>
+    <title>3.5. Predictor-Corrector Methods &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/chap02_3_interpolation';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/chap03_5';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.4. Finite Difference Tables" href="chap02_4_differenceTable.html" />
-    <link rel="prev" title="2.2. Finite Difference Operators" href="chap02_2_differenceOperator.html" />
+    <link rel="next" title="3.6. Chapter 3 Exercises" href="chap03_6.html" />
+    <link rel="prev" title="3.4. Implicit or Closed Multistep Methods" href="chap03_4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -174,20 +174,20 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chap01_5_exercise.html">1.5. Chapter 1 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap02_0.html">2. Interpolating Polynomial</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="chap02_0.html">2. Interpolating Polynomial</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chap02_1_introduction.html">2.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap02_2_differenceOperator.html">2.2. Finite Difference Operators</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.3. Gregory-Newton Interpolation Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap02_3_interpolation.html">2.3. Gregory-Newton Interpolation Formulae</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap02_4_differenceTable.html">2.4. Finite Difference Tables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap02_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="chap03_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap03_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chap03_1.html">3.1. Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap03_2.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap03_3.html">3.3. Explicit or Open Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap03_4.html">3.4. Implicit or Closed Multistep Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_5.html">3.5. Predictor-Corrector Methods</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.5. Predictor-Corrector Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap03_6.html">3.6. Chapter 3 Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap03_7.html">3.7. Example MATLAB Programs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap03_8.html">3.8. Example Python Codes</a></li>
@@ -252,7 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/chaps/chap02_3_interpolation.md" target="_blank"
+      <li><a href="../_sources/chaps/chap03_5.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,9 +321,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -334,21 +332,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Gregory-Newton Interpolation Formulae</h1>
+    <h1>Predictor-Corrector Methods</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-need-for-interpolation">2.3.1. The need for interpolation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gregory-newton-forward-interpolation">2.3.2. Gregory-Newton Forward Interpolation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gregory-newton-backward-interpolation">2.3.3. Gregory-Newton Backward Interpolation</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -358,136 +346,270 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="gregory-newton-interpolation-formulae">
-<h1><span class="section-number">2.3. </span>Gregory-Newton Interpolation Formulae<a class="headerlink" href="#gregory-newton-interpolation-formulae" title="Permalink to this headline">#</a></h1>
-<section id="the-need-for-interpolation">
-<h2><span class="section-number">2.3.1. </span>The need for interpolation<a class="headerlink" href="#the-need-for-interpolation" title="Permalink to this headline">#</a></h2>
-<div class="important admonition">
-<p class="admonition-title">Question</p>
-<p>Given a general sequence
-<span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, if we know the value of each
-member <span class="math notranslate nohighlight">\(f_j\)</span>, how can we find the value of <span class="math notranslate nohighlight">\(f(x)\)</span> for
-<span class="math notranslate nohighlight">\(x_j &lt; x &lt; x_{j+1}\)</span>?</p>
-</div>
-<figure class="align-default" id="figure-discretepoints">
-<a class="reference internal image-reference" href="../_images/fig-interpolation.svg"><img alt="../_images/fig-interpolation.svg" src="../_images/fig-interpolation.svg" width="600px" /></a>
-</figure>
-<p>Possiple options are:</p>
-<ul class="simple">
-<li><p>Take an average: <span class="math notranslate nohighlight">\(f(x)=\dfrac{f_j + f_{j+1}}{2}\)</span></p></li>
-<li><p>A precise forward-shift: <span class="math notranslate nohighlight">\(f(x)=E^{s} f_j\)</span>,
-<span class="math notranslate nohighlight">\(0&lt;s=\dfrac{x-x_j}{x_{j+1}-x_j}&lt;1\)</span></p></li>
-</ul>
-<p>For the first option, we may ask “Is this accurate?” For the second option, we may ask “How to SHIFT?”</p>
-</section>
-<section id="gregory-newton-forward-interpolation">
-<h2><span class="section-number">2.3.2. </span>Gregory-Newton Forward Interpolation<a class="headerlink" href="#gregory-newton-forward-interpolation" title="Permalink to this headline">#</a></h2>
-<p>Let <span class="math notranslate nohighlight">\(f_j\)</span> denote <span class="math notranslate nohighlight">\(f(x_j)\)</span>. We wish to obtain an approximate value for
-<span class="math notranslate nohighlight">\(f_{j+s}\)</span>, where: <span class="math notranslate nohighlight">\(s \&gt;=\&gt; \dfrac{x - x_j}{h}\)</span></p>
-<p>Note that we have <span class="math notranslate nohighlight">\(\,f_{j+s}=f(x_j\!+\!sh)=E^sf(x_j)=E^sf_j\,\)</span>.</p>
-<p>To obtain a formula involving forward differences we substitute
-<span class="math notranslate nohighlight">\(\,E=1+\Delta\,\)</span> therefore:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="predictor-corrector-methods">
+<h1><span class="section-number">3.5. </span>Predictor-Corrector Methods<a class="headerlink" href="#predictor-corrector-methods" title="Permalink to this headline">#</a></h1>
+<p>Implicit methods are useful for so-called stiff equations, to be
+discussed later. However, another use of implicit methods is to combine
+an explicit with an implicit formula to form a predictor-corrector
+method. A commonly used predictor-corrector method is the combination of
+the fourth–order Adams methods:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-        f_{j+s} &amp;= E^{s} f_j \\
-                &amp;= (1 + \Delta)^s f_j     
-\end{aligned}
-\end{split}\]</div>
-<p>We need to work out <span class="math notranslate nohighlight">\((1 + \Delta)^s=?\)</span> Let’s look at the Binomial Expansion first</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+    y^{(p)}_{j+1} ~&amp;=~ y_j + \frac{{h}}{24}\bigl[
+    55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}
+    \bigr]\\[4pt]
+    y_{j+1} ~&amp;=~ y_j + \frac{{h}}{24}\bigl[
+    9f^{(p)}_{j+1} + 19f_j - 5f_{j-1} + f_{j-2}
+    \bigr]    
+\end{aligned}\end{split}\]</div>
+<p>First a predicted value <span class="math notranslate nohighlight">\(y^{(p)}_{j+1}\)</span> of <span class="math notranslate nohighlight">\(y_{j+1}\)</span> is
+computed by the Adams–Bashforth formula, then <span class="math notranslate nohighlight">\(y^{(p)}_{j+1}\)</span> is used
+to give <span class="math notranslate nohighlight">\(f_{j+1}\)</span> (i.e can be denoted as <span class="math notranslate nohighlight">\(f^{(p)}_{j+1}\)</span>). The evaluated
+value of <span class="math notranslate nohighlight">\(f^{(p)}_{j+1}\)</span> is used in the Adams–Moulton formula to
+correct the approximation given by the Adams–Bashforth formula, and to
+evaluate an improved value of <span class="math notranslate nohighlight">\(f_{j+1}\)</span>. This is the most common
+procedure for applying predictor-corrector method used and is denoted by
+<em>PECE</em>; <span class="math notranslate nohighlight">\(P\)</span> for computing the Predictor value of <span class="math notranslate nohighlight">\(y_{j+1}\)</span>, <span class="math notranslate nohighlight">\(E\)</span> for
+Evaluating the function <span class="math notranslate nohighlight">\(f^{(p)}_{j+1}\)</span>, <span class="math notranslate nohighlight">\(C\)</span> for applying the Corrector
+formula and <span class="math notranslate nohighlight">\(E\)</span> for a new evaluation of the function.</p>
+<p>It is common to take additional corrector steps in order to improve the
+solution. For example, one possibility is <em>PECECE</em> (or PE(CE)<span class="math notranslate nohighlight">\(^2\)</span>)
+procedure (i.e. two fixed point iteration per step). Alternatively,
+corrector iterations can be carried out until the difference between two
+successive iterations is less than a pre-specified tolerance.</p>
+<div class="proof example admonition" id="example-3.2">
+<p class="admonition-title"><span class="caption-number">Example 3.2 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider the initial–value problem</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-	    (a+b)^n &amp; =  \sum_{k=0}^{n} \begin{pmatrix} n \\ k \end{pmatrix} a^{n-k}b^{k} \\
-			    &amp; = \begin{pmatrix} n \\ 0 \end{pmatrix} a^{n}b^{0} 
-					+ \begin{pmatrix} n \\ 1 \end{pmatrix} a^{n-1}b^{1}
-					+ \begin{pmatrix} n \\ 2 \end{pmatrix} a^{n-2}b^{2}
-					+ \cdots
-					+ \begin{pmatrix} n \\ n \end{pmatrix} a^{0}b^{n}
-\end{aligned}
-\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(\begin{pmatrix} n \\ k \end{pmatrix} = \dfrac{n!}{k!(n-k)!}
-	=\dfrac{n(n-1)(n-2)\cdots(n-k+1)}{k!}\)</span></p>
-</div>
-<p>So the shift operator can be expanded as</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align}
-E^{s} &amp; =  (1+\Delta)^s  \\
-      &amp; =  \sum_{n=0}^{\infty} \begin{pmatrix} s \\ n \end{pmatrix} 1^{s-n}\Delta^{n} \\
-      &amp; = \begin{pmatrix} s \\ 0 \end{pmatrix} \Delta^{0} 
-            + \begin{pmatrix} s \\ 1 \end{pmatrix} \Delta^{1}
-            + \begin{pmatrix} s \\ 2 \end{pmatrix} \Delta^{2}
-            + \cdots
-            + \begin{pmatrix} s \\ k \end{pmatrix} \Delta^{k}
-            + \cdots \\
-      &amp; = 1+ s\Delta + \frac{s(s-1)}{2!} \Delta^2 + \frac{s(s-1)(s-2)}{3!} \Delta^3 +\cdots + \frac{s(s-1)(s-2)\cdots(s-k+1)}{k!}\Delta^k + \cdots
-\end{align}
-\end{split}\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><span class="math notranslate nohighlight">\(\begin{pmatrix} s \\ k \end{pmatrix} = \dfrac{s!}{k!(s-k)!} =\dfrac{s(s-1)(s-2)\cdots(s-k+1)}{k!}\)</span>,</p>
-<p><span class="math notranslate nohighlight">\(\begin{pmatrix} s \\ 0 \end{pmatrix} = \dfrac{s!}{0!(s-0)!}=1\)</span>.</p>
-</div>
-<p>Therefore, the forward Gregory-Newton Interpolation formulae is</p>
-<div class="math notranslate nohighlight" id="equation-eq-gn-forward">
-<span class="eqno">(2.7)<a class="headerlink" href="#equation-eq-gn-forward" title="Permalink to this equation">#</a></span>\[f_{j+s} =  f_j + s\Delta f_j
-        + \frac{s(s-1)}{2!}\Delta^2 f_j + \cdots 
-        + \frac{s(s-1)(s-2)\cdots(s-k+1)}{k!}\Delta^k f_j + \cdots    \]</div>
-<p>This is an infinite series in <span class="math notranslate nohighlight">\(s\)</span> and in practice we terminate it after
-a finite number of terms <span class="math notranslate nohighlight">\(k\)</span>. Thus, we can write:</p>
-<div class="math notranslate nohighlight">
-\[f(x_j+sh) \&gt;=\&gt; P_k(x_s) + e_k(x_s) \&gt;\simeq\&gt; P_k(x_s)\]</div>
-<p>where <span class="math notranslate nohighlight">\(P_k(x_s)\)</span> represents the polynomial, and <span class="math notranslate nohighlight">\(e_k(x_s)\)</span> is the error caused by terminating the series</p>
-<div class="math notranslate nohighlight">
-\[
-P_k(x_s)\&gt;=\&gt; f_j
-            + s\Delta f_j
-            + \frac{s(s-1)}{2!}\Delta^2 f_j
-            + \dots
-            + \frac{s(s-1)(s-2)\dots(s-k+1)}{k!}\Delta^{k} f_j
-\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The G-N forward interpolation formula (polynomial) is useful for
-interpolating near the <em>beginning</em> of a sequence.</p>
-</div>
+\[\begin{aligned}
+        y' &amp;= -y + x + 1, &amp; 0 \leq x \leq 1,\quad y(0) &amp;= 1.       
+\end{aligned}\]</div>
+<p>Find approximate solutions using the
+Adams–Bashforth–Moulton fourth–order predictor-corrector method, with
+<span class="math notranslate nohighlight">\(\,h=0.1\,\)</span>. Find solution in the interval <span class="math notranslate nohighlight">\([0~~1]\)</span> and apply only one
+corrector iteration for each step.</p>
 </section>
-<section id="gregory-newton-backward-interpolation">
-<h2><span class="section-number">2.3.3. </span>Gregory-Newton Backward Interpolation<a class="headerlink" href="#gregory-newton-backward-interpolation" title="Permalink to this headline">#</a></h2>
-<p>To find <span class="math notranslate nohighlight">\(f(x)=f(x_j+sh)\)</span> for <span class="math notranslate nohighlight">\(x_{j-1}&lt;x&lt;x_j\)</span>, we can use backward
-shifting to derive the interpolation formula:</p>
+</div><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li><p>Step 1 - find the starting values</p>
+<p>First, we calculate the starting values from the exact solution
+<span class="math notranslate nohighlight">\(\,y(x) = e^{-x} + x\,\)</span> using <span class="math notranslate nohighlight">\(\,h = 0.1\,\)</span> (we could use any one–step
+method to find the starting values, see Matlab programs attached).</p>
+</li>
+<li><p>Step 2 - calculate the predictor solution</p>
+<p>Second, we use the <span class="math notranslate nohighlight">\(4^\text{th}\)</span>–order Adams–Bashforth method to
+predict a value for <span class="math notranslate nohighlight">\(y_{j+1}\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[
-s=\frac{x-x_j}{h}&lt;0
-\]</div>
-<div class="math notranslate nohighlight" id="equation-eq-gn-backward">
-<span class="eqno">(2.8)<a class="headerlink" href="#equation-eq-gn-backward" title="Permalink to this equation">#</a></span>\[f_{j+s}= f_j + s\nabla f_j
-            + \frac{s(s+1)}{2!}\nabla^2 f_j
-            + \cdots
-            + \frac{s(s+1)\cdots(s+k-1)}{k!}\nabla^k f_j + \cdots\]</div>
-<!-- $$\begin{aligned}
-        f_{j+s} & = E^{s} f_j  \hspace{4cm}  \\
-        \>&=\> (1 - \nabla)^{-s} f_j\\
-        \>&=\> \left(1 + \frac{(-s)}{1!}(-\nabla)
-        + \frac{(-s)(-s-1)}{2!}(-\nabla)^2
-        + \frac{(-s)(-s-1)(-s-2)}{3!}(-\nabla)^3
-        + \cdots\right) f_j\\
-        \>&=\> f_j + s\nabla f_j + \frac{s(s+1)}{2!}\nabla^2 f_j + \cdots
-        + \frac{s(s+1)\cdots(s+k-1)}{k!}\nabla^k f_j + \dots
-    
-\end{aligned}
-$$  -->
-<p>We can separate the whole polynomial into two parts:</p>
+\[\begin{aligned}
+            y_{j+1} ~&amp;=~ y_j + \frac{h}{24}\bigl[
+            55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}
+            \bigr]            
+    \end{aligned}\]</div>
+</li>
+<li><p>Step 3 - calculate the corrector solution
+and then use the <span class="math notranslate nohighlight">\(4^\text{th}\)</span>–order Adams–Moulton method:</p>
 <div class="math notranslate nohighlight">
-\[f(x_j + sh) = P_k(x_s) + e_k(x_s) \simeq P_k(x_s)\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The G-N backward interpolation formula (polynomial) is useful for
-interpolating near the <em>end</em> of a sequence.</p>
+\[\begin{aligned}
+            y_{j+1} ~&amp;=~ y_j + \frac{h}{24}\bigl[
+            9f_{j+1} + 19f_j - 5f_{j-1} + f_{j-2}
+            \bigr],            
+    \end{aligned}\]</div>
+<p>to correct the estimated value of <span class="math notranslate nohighlight">\(y_{j+1}\)</span>, using one
+corrector evaluation only.</p>
+</li>
+</ul>
 </div>
-</section>
+<p><strong>Solution</strong></p>
+<ul>
+<li><p>Step 1 - using the exact solution, <span class="math notranslate nohighlight">\(\,y(x) = e^{-x} + x\,\)</span>, the
+calculated starting values <span class="math notranslate nohighlight">\(y_0\)</span>, <span class="math notranslate nohighlight">\(y_1\)</span>, <span class="math notranslate nohighlight">\(y_2\)</span> and <span class="math notranslate nohighlight">\(y_3\)</span>, and the
+corresponding function values <span class="math notranslate nohighlight">\(f(x,y)\)</span> are shown in the table below:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(j\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(f(x,y)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0.0</p></td>
+<td><p>1.0000000</p></td>
+<td><p>0.0000000</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>1.0048374</p></td>
+<td><p>0.0951626</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>0.2</p></td>
+<td><p>1.0187308</p></td>
+<td><p>0.1812692</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>0.3</p></td>
+<td><p>1.0408182</p></td>
+<td><p>0.2591818</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Steps 2 and 3 - using the starting values we can now advance the
+solution to <span class="math notranslate nohighlight">\(x = {0.4}\)</span>, i.e. to calculate <span class="math notranslate nohighlight">\(y_4\)</span> using the
+following <span class="math notranslate nohighlight">\(4^\text{th}\)</span> Adams–Bashforth formula:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+        y_4^p ~&amp;=~ y_3 + \frac{{h}}{24}\bigl[
+        55f_3 - 59f_2 + 37f_1 - 9f_0
+        \bigr]        
+    \end{aligned}\]</div>
+<p>and then use the <span class="math notranslate nohighlight">\(4^\text{th}\)</span>–order Adams–Moulton formula:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+        y_4 ~&amp;=~ y_3 + \frac{{h}}{24}\bigl[
+        9f_4^p + 19f_3 - 5f_2 + f_1
+        \bigr],        
+    \end{aligned}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+        y_4^p ~&amp;=~ 1.0408182 + \frac{0.1}{24}\bigl[
+        55(0.2591818) - 59(0.1812692) + 37(0.0951626) - 9(0)
+        \bigr] \\
+         ~&amp;=~ 1.0408182 + \frac{0.1}{24}\bigl[
+        14.254998 - 10.694886 + 3.521016 + 0
+        \bigr] \\
+         ~&amp;=~ {1.0703229}       
+    \end{aligned}\end{split}\]</div>
+</li>
+</ul>
+<p>To calculate the function value, we substitute <span class="math notranslate nohighlight">\(\,y_4^p = 1.0703229\,\)</span>
+and <span class="math notranslate nohighlight">\(\,x = 0.4\,\)</span> in <span class="math notranslate nohighlight">\(\,f(x,y) = -y + x + 1\,\)</span>, to get
+<span class="math notranslate nohighlight">\(f_4^p = 0.3296671\)</span>. This completes the <span class="math notranslate nohighlight">\(PE\)</span> stage.</p>
+<p>We now use <span class="math notranslate nohighlight">\(\,f_4^p = 0.3296771\)</span> in the corrector formula to obtain a
+corrector value for <span class="math notranslate nohighlight">\(y_4\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+        y_4^c ~&amp;=~ 1.0408182 + \frac{0.1}{24}\bigl[
+        9(0.3296771) + 19(0.2591818) - 5(0.1812692) + 0.0951626
+        \bigr] \\
+         ~&amp;=~ 1.0408182 + \frac{0.1}{24}\bigl[
+        2.9670937 + 4.9244538 - 0.906346 + 0.0951626
+        \bigr] \\
+        ~&amp;=~ {1.0703197}        
+\end{aligned}\end{split}\]</div>
+<p>We now substitute the corrector value of <span class="math notranslate nohighlight">\(y_{4}^c = 1.0703197\)</span> and
+<span class="math notranslate nohighlight">\(x = 0.4\)</span> in <span class="math notranslate nohighlight">\(f(x,y) ~=~ -y + x + 1\)</span>, to get
+<span class="math notranslate nohighlight">\(f_4^c = 0.3296803\)</span>. This completes the <span class="math notranslate nohighlight">\(CE\)</span> stage. Check
+this value in the following completed table of results for <span class="math notranslate nohighlight">\(x_j = 0.4\)</span>.</p>
+<p>We then advance the solution to <span class="math notranslate nohighlight">\(x = 0.5\)</span> by repeating the <span class="math notranslate nohighlight">\(PE\)</span>
+procedure to calculate <span class="math notranslate nohighlight">\(y^{p}_{5}\)</span> and <span class="math notranslate nohighlight">\(f^{p}_5\)</span>, then <span class="math notranslate nohighlight">\(y_{5}\)</span> of
+corrector, and then <span class="math notranslate nohighlight">\(f_5\)</span>, and so on, (i.e. repeating steps 2 and 3).
+Remember, once the corrector value of <span class="math notranslate nohighlight">\(y\)</span> is calculated for each step in
+<span class="math notranslate nohighlight">\(x\)</span>, we take this as new <span class="math notranslate nohighlight">\(y\)</span> value and cross out the predictor
+estimates.</p>
+<p>The computed solution, including the absolute error, up to <span class="math notranslate nohighlight">\(x=1.0\)</span> are
+displayed in the following table. (Reproduce all the results using
+step-by-step <span class="math notranslate nohighlight">\(PECE\)</span> calculation to ensure that you follow the method
+completely).</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(j\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(x_j\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(y^{AB}_j\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(f^{AB}_j\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(y^{AM}_j\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(f^{AM}_j\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(y_{ex}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(|y_{ex} - y^{AM}_j|\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>0.4</p></td>
+<td><p>1.0703229</p></td>
+<td><p>0.3296771</p></td>
+<td><p>1.0703197</p></td>
+<td><p>0.3296803</p></td>
+<td><p>1.0703200</p></td>
+<td><p>0.0000003</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>0.5</p></td>
+<td><p>1.1065330</p></td>
+<td><p>0.3934670</p></td>
+<td><p>1.1065301</p></td>
+<td><p>0.3934699</p></td>
+<td><p>1.1065307</p></td>
+<td><p>0.0000006</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>0.6</p></td>
+<td><p>1.1488135</p></td>
+<td><p>0.4511865</p></td>
+<td><p>1.1488109</p></td>
+<td><p>0.4511891</p></td>
+<td><p>1.1488116</p></td>
+<td><p>0.0000007</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>0.7</p></td>
+<td><p>1.1965868</p></td>
+<td><p>0.5034132</p></td>
+<td><p>1.1965844</p></td>
+<td><p>0.5034156</p></td>
+<td><p>1.1965853</p></td>
+<td><p>0.0000009</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>0.8</p></td>
+<td><p>1.2493301</p></td>
+<td><p>0.5506699</p></td>
+<td><p>1.2493279</p></td>
+<td><p>0.5506721</p></td>
+<td><p>1.2493290</p></td>
+<td><p>0.0000010</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>0.9</p></td>
+<td><p>1.3065705</p></td>
+<td><p>0.5934295</p></td>
+<td><p>1.3065685</p></td>
+<td><p>0.5934315</p></td>
+<td><p>1.3065697</p></td>
+<td><p>0.0000011</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>1.0</p></td>
+<td><p>1.3678800</p></td>
+<td><p>0.6321200</p></td>
+<td><p>1.3678783</p></td>
+<td><p>0.6321217</p></td>
+<td><p>1.3678794</p></td>
+<td><p>0.0000012</p></td>
+</tr>
+</tbody>
+</table>
+<p>Note that the method produces an absolute error of the order <span class="math notranslate nohighlight">\(10^{-7}\)</span>
+to <span class="math notranslate nohighlight">\(10^{-6}\)</span>, which is expected for a <span class="math notranslate nohighlight">\(4^\text{th}\)</span>order ABM method,
+using <span class="math notranslate nohighlight">\(h = 0.1\)</span> – remember, the error should be of the <span class="math notranslate nohighlight">\(O(h^5)\)</span> from
+the truncation error terms listed for each ABM formulae above.</p>
+<p>In order to illustrate the predictor-corrector methods computationally,
+three Matlab programs with the corresponding function definitions and
+the solution tables are appended below:</p>
+<p><strong>Program 1</strong> - solves the problem using the exact solution to find the
+starting values, followed by the <span class="math notranslate nohighlight">\(4^\text{th}\)</span>order ABM method for the
+remaining integration points.</p>
+<p><strong>Program 2</strong> - implements the classic <span class="math notranslate nohighlight">\(4^{th}\)</span>–order Runge–Kutta
+method for computing the starting values, followed by the <span class="math notranslate nohighlight">\(4^{th}\)</span>order
+ABM method for the remaining integration points.</p>
+<p><strong>Program 3</strong> - uses the ODE solver ode113 (based on non-stiff ABM
+methods) from the ODE solver routines built-in Matlab. This will be
+discussed in detail using Matlab documentation attached. Run these
+programs to check your results for <em>Example 2</em>.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -522,20 +644,20 @@ interpolating near the <em>end</em> of a sequence.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="chap02_2_differenceOperator.html"
+       href="chap03_4.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.2. </span>Finite Difference Operators</p>
+        <p class="prev-next-title"><span class="section-number">3.4. </span>Implicit or Closed Multistep Methods</p>
       </div>
     </a>
     <a class="right-next"
-       href="chap02_4_differenceTable.html"
+       href="chap03_6.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>Finite Difference Tables</p>
+        <p class="prev-next-title"><span class="section-number">3.6. </span>Chapter 3 Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -548,22 +670,6 @@ interpolating near the <em>end</em> of a sequence.</p>
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-need-for-interpolation">2.3.1. The need for interpolation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gregory-newton-forward-interpolation">2.3.2. Gregory-Newton Forward Interpolation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gregory-newton-backward-interpolation">2.3.3. Gregory-Newton Backward Interpolation</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
