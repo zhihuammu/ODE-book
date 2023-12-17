@@ -178,7 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chap02_1_introduction.html">2.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap02_2_differenceOperator.html">2.2. Finite Difference Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap02_3_interpolation.html">2.3. Gregory-Newton Interpolation Formulae</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap02_4_differenceTable.html">2.4. [Format for constructing differences]{.underline}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap02_4_differenceTable.html">2.4. Finite Difference Tables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap02_5_exercise.html">2.5. Exercise ()</a></li>
 </ul>
 </li>
@@ -359,18 +359,18 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Definition 1.2 </span> (Complex number and Complex conjugate)</p>
 <section class="definition-content" id="proof-content">
 <p>A complex number is a number in the form of</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6d480ba7-6401-42eb-ae03-4a05ff373a75">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-6d480ba7-6401-42eb-ae03-4a05ff373a75" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4fb65d80-988f-4f0b-881c-0f2fbbacd904">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-4fb65d80-988f-4f0b-881c-0f2fbbacd904" title="Permalink to this equation">#</a></span>\[\begin{equation}
     z=x+iy,\qquad x, y\in \mathbb{R},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x\)</span> is the real component of the complex number and <span class="math notranslate nohighlight">\(iy\)</span> is its imaginary component. We often call <span class="math notranslate nohighlight">\(y\)</span> the imaginary component for simplicity. The modulus of the complex number is calculated as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e508dd53-7ddf-44b7-9153-3763a675cb66">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-e508dd53-7ddf-44b7-9153-3763a675cb66" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-af03be63-ded4-4f4c-b88c-845a72d562a2">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-af03be63-ded4-4f4c-b88c-845a72d562a2" title="Permalink to this equation">#</a></span>\[\begin{equation}
     |z|=\sqrt{x^2+y^2}.
 \end{equation}\]</div>
 <p>Its complex conjugate is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e32511bd-663a-4762-b9f0-3ccf4a718c3b">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-e32511bd-663a-4762-b9f0-3ccf4a718c3b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f854ae07-d6eb-4194-b195-aef051d9dfca">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-f854ae07-d6eb-4194-b195-aef051d9dfca" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \bar{z}=x-iy.
 \end{equation}\]</div>
 </section>
@@ -379,8 +379,8 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Definition 1.3 </span> (Complex Arithmetic)</p>
 <section class="definition-content" id="proof-content">
 <p>The arithmetic operations on two complex numbers given as <span class="math notranslate nohighlight">\(z_1=x_1+iy_1\)</span> and <span class="math notranslate nohighlight">\(z_2=x_2+iy_2\)</span> are defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cec5ef93-cd49-46a8-b221-b86c9bacaeeb">
-<span class="eqno">(1.4)<a class="headerlink" href="#equation-cec5ef93-cd49-46a8-b221-b86c9bacaeeb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a73554ce-ee7e-48ec-ac21-1312df2f302b">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-a73554ce-ee7e-48ec-ac21-1312df2f302b" title="Permalink to this equation">#</a></span>\[\begin{align}
 \text{``$+$''}:\quad ~ &amp; ~ z_1+z_2=(x_1+iy_1)+(x_2+iy_2)=(x_1+x_2)+i(y_1+y_2), \\
 \text{``$-$''}:\quad ~ &amp; ~ z_1-z_2=(x_1+iy_1)-(x_2+iy_2)=(x_1-x_2)+i(y_1-y_2), \\
 \text{``$\times$''}:\quad ~ &amp; ~ z_1\cdot z_2=(x_1+iy_1)\cdot(x_2+iy_2)=(x_1+x_2)+i(y_1+y_2), \\
@@ -417,8 +417,8 @@ Solution (click to show)<div class="sd-summary-down docutils">
 <p class="admonition-title"><span class="caption-number">Definition 1.4 </span> (Complex number set)</p>
 <section class="definition-content" id="proof-content">
 <p>We denote the set of all the complex numbers as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5ce1b3b5-e00c-4b67-a44c-ad3af228033d">
-<span class="eqno">(1.5)<a class="headerlink" href="#equation-5ce1b3b5-e00c-4b67-a44c-ad3af228033d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-697c7d10-3840-4698-b63c-12a0dbbb3380">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-697c7d10-3840-4698-b63c-12a0dbbb3380" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \mathbb{C}=\{z|z=x+iy, ~x, y\in \mathbb{R}\}.
 \end{equation}\]</div>
 </section>
@@ -430,13 +430,13 @@ Solution (click to show)<div class="sd-summary-down docutils">
 </figcaption>
 </figure>
 <p>For <span class="math notranslate nohighlight">\(z=x+iy\)</span>, we can also write it in the second form (polar form) as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5a2f3ba-849b-4f43-a6a4-8ccd2485efd0">
-<span class="eqno">(1.6)<a class="headerlink" href="#equation-b5a2f3ba-849b-4f43-a6a4-8ccd2485efd0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-48944ca3-1c7c-4b91-b948-2d80ceaffea4">
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-48944ca3-1c7c-4b91-b948-2d80ceaffea4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z  =  r\left(\cos \theta + i \sin \theta\right)
 \end{equation}\]</div>
 <p>or the third form (exponential form)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c3b16e4a-8582-4f77-bdba-99271cf8d3b3">
-<span class="eqno">(1.7)<a class="headerlink" href="#equation-c3b16e4a-8582-4f77-bdba-99271cf8d3b3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a616fd44-071b-41f2-a852-1fd4019268c0">
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-a616fd44-071b-41f2-a852-1fd4019268c0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z  = r e^{i\theta},    
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(r=|z|\)</span>, and <span class="math notranslate nohighlight">\(\theta\)</span> is the angle defined by the real axis and the straight line connecting the origin and <span class="math notranslate nohighlight">\(z\)</span> in the complex plane.</p>
@@ -451,8 +451,8 @@ z  = r e^{i\theta},
 <p>where <span class="math notranslate nohighlight">\(r=|z|=\sqrt{x^2+y^2}\)</span>, <span class="math notranslate nohighlight">\(\tan \theta = \dfrac{y}{x}\)</span>.</p>
 </div>
 <p>If we use the exponential form to represent complex numbers, then the multiplication and division of two complex numbers can be expressed in simpler ways. Let <span class="math notranslate nohighlight">\(z_1= r_1 e^{i\theta_1}\)</span> and <span class="math notranslate nohighlight">\(z_2 = r_2 e^{i\theta_2}\)</span>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0d9c5ae2-5d4d-44ef-b9d0-6a94f9ba4395">
-<span class="eqno">(1.8)<a class="headerlink" href="#equation-0d9c5ae2-5d4d-44ef-b9d0-6a94f9ba4395" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-41138b47-dfb7-47c1-ba02-85f0bb009d86">
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-41138b47-dfb7-47c1-ba02-85f0bb009d86" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp; z_1 \cdot z_2  = r_1 e^{i\theta_1} \cdot r_2 e^{i\theta_2}=r_1 r_2 e^{i(\theta_1+\theta_2)}\\
 &amp; \frac{z_1}{z_2}  = \frac{r_1 e^{i\theta_1}}{r_2 e^{i\theta_2}}=\frac{r_1}{r_2}e^{i(\theta_1-\theta_2)}
 \end{align}\]</div>
