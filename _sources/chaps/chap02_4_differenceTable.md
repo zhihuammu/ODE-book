@@ -1,5 +1,102 @@
 # Finite Difference Tables
 
+## Forward Difference Table
+
+
+:::{table} A forward difference table
+:align: center
+|   $x$   |  $f(x)$  |    $\Delta f$    |  $\Delta^2 f$     | $\Delta^3 f$       |  $\Delta^4 f$     |
+| :------:| :------: |:----------------:| :---------------: | :-----------------:| :---------------: |
+|$x_{-2}$ | $f_{-2}$ |
+|         |          | $\Delta f_{-2}$  |
+| $x_{-1}$| $f_{-1}$ |                  | $\Delta^2 f_{-2}$ |
+|         |          | $\Delta f_{-1}$  |                   | $\Delta^3 f_{-2}$  |
+| $x_0$   | $f_0$    |                  | $\Delta^2 f_{-1}$ |                    | $\Delta^4 f_{-2}$ |
+|         |          | $\Delta f_0$     |                   |  $\Delta^3 f_{-1}$ |  
+| $x_1$   | $f_1$    |                  |  $\Delta^2 f_0$   |                       
+|         |          | $\Delta f_1$     |
+| $x_2$   | $f_2$    |  
+:::
+
+where $ \Delta f_0=f_1-f_0 $;
+$ \Delta^2 f_0=\Delta f_1-\Delta f_0 $; 
+With this notation the same suffixes appear along diagonals running from
+top left to bottom right.
+
+## Backward Difference Table
+
+:::{table} A backward difference table
+:align: center
+|   $x$   |  $f(x)$  |    $\nabla f$    |  $\nabla^2 f$     | $\nabla^3 f$       |  $\nabla^4 f$     |
+| :------:| :------: |:----------------:| :---------------: | :-----------------:| :---------------: |
+|$x_{-2}$ | $f_{-2}$ |
+|         |          | $\nabla f_{-2}$  |
+| $x_{-1}$| $f_{-1}$ |                  | $\nabla^2 f_{-2}$ |
+|         |          | $\nabla f_{-1}$  |                   | $\nabla^3 f_{-2}$  |
+| $x_0$   | $f_0$    |                  | $\nabla^2 f_{-1}$ |                    | $\nabla^4 f_{-2}$ |
+|         |          | $\nabla f_0$     |                   |  $\nabla^3 f_{-1}$ |  
+| $x_1$   | $f_1$    |                  |  $\nabla^2 f_0$   |                       
+|         |          | $\nabla f_1$     |
+| $x_2$   | $f_2$    |  
+:::
+
+where $ \nabla f_0 = f_0 - f_{-1} $;
+$ \nabla^2 f_0 = \nabla f_0 - \nabla f_{-1} $; 
+Note that with this notation the same suffixes appear along diagonals running
+from bottom left to top right of the difference table.
+Note that $ \Delta f_1 =\nabla f_2  $ and
+$  \Delta^2 f_0 =\nabla^2 f_2 .$
+
+## Use Difference Table for interpolation
+
+From the tabulated values of the function $f(x)$ given below interpolate a value for $f(0.55)$.
+
+:::{table} 
+:align: center
+|$x$ |  $f(x)$  |  $\Delta f$ |  $\Delta^2 f$ |  $\Delta^3 f$ |  $\Delta^4 f$ |  $\Delta^5 f$ |  $\Delta^6 f$ |
+|:--:| :------: |:-----------:| :-----------: | :------------:| :-----------: | :------------:| :-----------: |
+|0.5 |  0.47943 |             |                                                             
+|    |          |  0.16479    |                                                            
+|0.7 |  0.64422 |             |    -0.02568   |                                              
+|    |          |  0.13911    |               |   -0.00555    |                             
+|0.9 |  0.78333 |             |    -0.03123   |               |    0.00124    |                
+|    |          |  0.10788    |               |   -0.00430    |               |   0.00017     |
+|1.1 |  0.89121 |             |    -0.03553   |               |    0.00142    |               |    -0.00006   |
+|    |          |  0.07235    |               |   -0.00288    |               |   0.00011     |
+|1.3 |  0.96356 |             |    -0.03841   |               |    0.00153    |                
+|    |          |  0.03394    |               |   -0.00135    |                              
+|1.5 |  0.99749 |             |    -0.03976   |                                              
+|    |          |  -0.00583   |                                                            
+|1.7 |  0.99166 | 
+:::
+
+Solution:
+
+- Choose $x_j=x_0=0.5$;
+
+- Calculate $\displaystyle s=\frac{x-x_0}{h}=\frac{0.55-0.5}{0.2}=0.25$;
+
+- Using $\displaystyle f_s  =   f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0 +
+	\frac{s(s-1)(s-2)}{3!}\Delta^3 f_0 + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_0  +\cdots$
+
+- We can keep up to 4-th order difference for this question:
+
+$$
+\begin{aligned}
+		f(0.55) = P_4(0.55) = &  0.47943 + 0.25\times 0.16479 	+ \frac{0.25\times(-0.75)}{2}\times(-0.02568) \\
+		                      & + \frac{0.25\times(-0.75)\times(-1.75)}{6}\times(-0.00555) \\
+		                      & + \frac{0.25\times(-0.75)\times(-1.75)\times(-2.75)}{24}\times(0.00124) \\
+		                    = & 0.47943 + 0.04120 + 0.00241 - 0.00030 - 0.00005\\
+		                    = & 0.52268 = 0.5227~~\text{to 4 decimal places.}		
+\end{aligned}
+$$
+
+:::{note}
+The tabulated function is in fact $\, f(x)=\sin x\,$ and note that\
+$\,\sin(0.55) = 0.5227\,$ to $4$ decimal places.
+:::
+
+
 Consider the following example difference table:
 
 ::: center
@@ -39,10 +136,10 @@ $$\begin{aligned}
     s ~=~ \frac{x - x_j}{h}
 \end{aligned}$$
 
-Note that we have $\,y_{j+s}=f(x_j\!+\!sh)=E^sf(x_j)=E^sy_j\,$.
+Note that we have $ y_{j+s}=f(x_j\!+\!sh)=E^sf(x_j)=E^sy_j $.
 
 To obtain a formula involving forward differences we substitute
-$\,E=1+\Delta\,$ and, using the binomial expansion, therefore:
+$ E=1+\Delta $ and, using the binomial expansion, therefore:
 $$\begin{aligned}
     y_{j+s} ~&=~ (1 + \Delta)^s y_j \phantom{\left(\tfrac00\right)}\\
     y_{j+s} ~&=~ \left(1 + s\Delta + \tfrac{s(s-1)}{2!}\Delta^2
@@ -54,7 +151,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 This is an infinite series in $s$ (or equivalently in $x$ since
-$\,s=\frac{x-x_j}{h}\,$), and in practice we terminate it after a finite
+$ s=\frac{x-x_j}{h} $), and in practice we terminate it after a finite
 number of terms $k$. Thus, equivalently we may write:
 
 $$\begin{aligned}
@@ -70,8 +167,8 @@ with $$\begin{aligned}
     \numberthis\label{eq:ch01:2.2}
 \end{aligned}$$
 
-where $\,P_k(x_s)\,$ is the polynomial that represents the function and
-$\,e_k(x_s)\,$ is the error associated with terminating the infinite
+where $ P_k(x_s) $ is the polynomial that represents the function and
+$ e_k(x_s) $ is the error associated with terminating the infinite
 series. Equation ([\[eq:ch01:2.1\]](#eq:ch01:2.1){reference-type="ref"
 reference="eq:ch01:2.1"}) (or
 ([\[eq:ch01:2.2\]](#eq:ch01:2.2){reference-type="ref"
@@ -133,7 +230,7 @@ have: $$\begin{aligned}
 Note that it is sometimes more convenient to write the interpolating
 polynomial in terms of function definition. For example, the G-N
 backward interpolation polynomial can be written in terms of the forward
-difference operator $\,\Delta\,$, as:
+difference operator $ \Delta $, as:
 
 $$\begin{aligned}
     y(x_{j+s}) ~\approxeq~ P_k(x) ~=~ y_j + s\Delta y_{j-1}
@@ -180,7 +277,7 @@ x_4 & f_4\
 
 We see from the above table that the differences used form a diagonal
 row going upward and to the right. This ascending diagonal row of
-differences starting at $\,f_j\,$ is equal to the backward differences;
+differences starting at $ f_j $ is equal to the backward differences;
 those in the downward sloping row are forward differences.
 
 *From the tabulated values of the function $y$ given below interpolate a
@@ -211,9 +308,9 @@ CCCCCCCC x & y & y & \^2 y & \^3 y & \^4 y & \^5 y & \^6 y\
 
 *We need to use the formula $s=\dfrac{x-x_j}{h}$ to calculate $s$.*
 
-*First choose $\,x_0\,$ to be $0.5$; then, since $\,h = 0.2\,$ and
-$\,x = x_0 + sh\,$ (i.e. $0.55=0.5+s(0.2)$), we have*
-$\,s = \frac{0.05}{0.2} = 0.25$.
+*First choose $ x_0 $ to be $0.5$; then, since $ h = 0.2 $ and
+$ x = x_0 + sh $ (i.e. $0.55=0.5+s(0.2)$), we have*
+$ s = \frac{0.05}{0.2} = 0.25$.
 
 *Thus using* $y_s = y_0 + s\Delta y_0 + \frac{s(s-1)}{2!}\Delta^2 y_0
 + \frac{s(s-1)(s-2)}{3!}\Delta^3 y_0 + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 y_0
@@ -226,8 +323,8 @@ lL *gives,* $y(0.55)~$ & = + +\
 & = 0.52268 = 0.5227 *to 4 decimal places.*
 :::
 
-*The tabulated function is in fact $\,\sin x\,$ and note that
-$\,\sin(0.55) = 0.5227\,$ to $4$ decimal places.*
+*The tabulated function is in fact $ \sin x $ and note that
+$ \sin(0.55) = 0.5227 $ to $4$ decimal places.*
 
 *Note that since in the above calculations we used the terms of the
 Gregory-Newton forward interpolating polynomial up to and including
@@ -281,10 +378,10 @@ $$\begin{aligned}
     s ~=~ \frac{x - x_j}{h}
 \end{aligned}$$
 
-Note that we have $\,y_{j+s}=f(x_j\!+\!sh)=E^sf(x_j)=E^sy_j\,$.
+Note that we have $ y_{j+s}=f(x_j\!+\!sh)=E^sf(x_j)=E^sy_j $.
 
 To obtain a formula involving forward differences we substitute
-$\,E=1+\Delta\,$ and, using the binomial expansion, therefore:
+$ E=1+\Delta $ and, using the binomial expansion, therefore:
 $$\begin{aligned}
     y_{j+s} ~&=~ (1 + \Delta)^s y_j \phantom{\left(\tfrac00\right)}\\
     y_{j+s} ~&=~ \left(1 + s\Delta + \tfrac{s(s-1)}{2!}\Delta^2
@@ -296,7 +393,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 This is an infinite series in $s$ (or equivalently in $x$ since
-$\,s=\frac{x-x_j}{h}\,$), and in practice we terminate it after a finite
+$ s=\frac{x-x_j}{h} $), and in practice we terminate it after a finite
 number of terms $k$. Thus, equivalently we may write:
 
 $$\begin{aligned}
@@ -312,8 +409,8 @@ with $$\begin{aligned}
     \numberthis\label{eq:ch01:2.2}
 \end{aligned}$$
 
-where $\,P_k(x_s)\,$ is the polynomial that represents the function and
-$\,e_k(x_s)\,$ is the error associated with terminating the infinite
+where $ P_k(x_s) $ is the polynomial that represents the function and
+$ e_k(x_s) $ is the error associated with terminating the infinite
 series. Equation ([\[eq:ch01:2.1\]](#eq:ch01:2.1){reference-type="ref"
 reference="eq:ch01:2.1"}) (or
 ([\[eq:ch01:2.2\]](#eq:ch01:2.2){reference-type="ref"
@@ -375,7 +472,7 @@ have: $$\begin{aligned}
 Note that it is sometimes more convenient to write the interpolating
 polynomial in terms of function definition. For example, the G-N
 backward interpolation polynomial can be written in terms of the forward
-difference operator $\,\Delta\,$, as:
+difference operator $ \Delta $, as:
 
 $$\begin{aligned}
     y(x_{j+s}) ~\approxeq~ P_k(x) ~=~ y_j + s\Delta y_{j-1}
@@ -422,7 +519,7 @@ x_4 & f_4\
 
 We see from the above table that the differences used form a diagonal
 row going upward and to the right. This ascending diagonal row of
-differences starting at $\,f_j\,$ is equal to the backward differences;
+differences starting at $ f_j $ is equal to the backward differences;
 those in the downward sloping row are forward differences.
 
 *From the tabulated values of the function $y$ given below interpolate a
@@ -453,9 +550,9 @@ CCCCCCCC x & y & y & \^2 y & \^3 y & \^4 y & \^5 y & \^6 y\
 
 *We need to use the formula $s=\dfrac{x-x_j}{h}$ to calculate $s$.*
 
-*First choose $\,x_0\,$ to be $0.5$; then, since $\,h = 0.2\,$ and
-$\,x = x_0 + sh\,$ (i.e. $0.55=0.5+s(0.2)$), we have*
-$\,s = \frac{0.05}{0.2} = 0.25$.
+*First choose $ x_0 $ to be $0.5$; then, since $ h = 0.2 $ and
+$ x = x_0 + sh $ (i.e. $0.55=0.5+s(0.2)$), we have*
+$ s = \frac{0.05}{0.2} = 0.25$.
 
 *Thus using* $y_s = y_0 + s\Delta y_0 + \frac{s(s-1)}{2!}\Delta^2 y_0
 + \frac{s(s-1)(s-2)}{3!}\Delta^3 y_0 + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 y_0
@@ -468,8 +565,8 @@ lL *gives,* $y(0.55)~$ & = + +\
 & = 0.52268 = 0.5227 *to 4 decimal places.*
 :::
 
-*The tabulated function is in fact $\,\sin x\,$ and note that
-$\,\sin(0.55) = 0.5227\,$ to $4$ decimal places.*
+*The tabulated function is in fact $ \sin x $ and note that
+$ \sin(0.55) = 0.5227 $ to $4$ decimal places.*
 
 *Note that since in the above calculations we used the terms of the
 Gregory-Newton forward interpolating polynomial up to and including
@@ -499,8 +596,8 @@ x_2 & f_2\
 :::
 :::
 
-where $\,\Delta f_0=f_1-f_0\,$;
-$\,\Delta^2 f_0=\Delta f_1-\Delta f_0\,$; \...\
+where $ \Delta f_0=f_1-f_0 $;
+$ \Delta^2 f_0=\Delta f_1-\Delta f_0 $; \...\
 With this notation the same suffixes appear along diagonals running from
 top left to bottom right.
 
@@ -523,12 +620,12 @@ x_2 & f_2\
 :::
 :::
 
-where $\,\nabla f_0 = f_0 - f_{-1}\,$;
-$\,\nabla^2 f_0 = \nabla f_0 - \nabla f_{-1}\,$; \...\
+where $ \nabla f_0 = f_0 - f_{-1} $;
+$ \nabla^2 f_0 = \nabla f_0 - \nabla f_{-1} $; \...\
 Note that with this notation the same suffixes appear along diagonals
 running from bottom left to top right of the difference table.\
-Note that $\,\Delta f_1\,=\nabla f_2\,\,$ and
-$\,\,\Delta^2 f_0\,=\nabla^2 f_\cort{2}\,.$
+Note that $ \Delta f_1 =\nabla f_2  $ and
+$  \Delta^2 f_0 =\nabla^2 f_\cort{2} .$
 
 
 
@@ -555,4 +652,4 @@ Consider the following difference table with given data:
 
 The difference tables can be used by various formulae, namely, *forward*, *backward* and *central* difference methods, to appropriately interpolate function and derivative values for the missing intermediate points in the table.
 
-Since we are going to construct formulae involving general finite differences, we need to introduce a notation to represent the numbers in a difference table. First, any $x$-value in a difference table can be labelled $x_0$, then those above this value are successively $\,x_{-1}, x_{-2}, ...\,$ etc. and those below it are $\,x_1, x_2, ...\,$ etc. To denote function values at $\,x_j\,$ we write $\,f_j=f(x_j)$. Furthermore, to introduce a notation for the finite differences we first define some difference operators:
+Since we are going to construct formulae involving general finite differences, we need to introduce a notation to represent the numbers in a difference table. First, any $x$-value in a difference table can be labelled $x_0$, then those above this value are successively $ x_{-1}, x_{-2}, ... $ etc. and those below it are $ x_1, x_2, ... $ etc. To denote function values at $ x_j $ we write $ f_j=f(x_j)$. Furthermore, to introduce a notation for the finite differences we first define some difference operators:
