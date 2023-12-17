@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2. Interpolating Polynomial &#8212; Computational Methods in Ordinary Differential Equations</title>
+    <title>2.5. Exercise () &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
   
@@ -62,11 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/chap02_0';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/chap02_5_exercise';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.1. Introduction" href="chap02_1_introduction.html" />
-    <link rel="prev" title="1.5. Chapter 1 Exercises" href="chap01_5_exercise.html" />
+    <link rel="next" title="3. Multistep Methods: Derivation by Finite Difference formulae" href="chap03_0.html" />
+    <link rel="prev" title="2.4. [Format for constructing differences]{.underline}" href="chap02_4_differenceTable.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -172,12 +174,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chap01_5_exercise.html">1.5. Chapter 1 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">2. Interpolating Polynomial</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap02_0.html">2. Interpolating Polynomial</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chap02_1_introduction.html">2.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap02_2_differenceOperator.html">2.2. Finite Difference Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap02_3_interpolation.html">2.3. Gregory-Newton Interpolation Formulae</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap02_4_differenceTable.html">2.4. Finite Difference Tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap02_5_exercise.html">2.5. Exercise ()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap02_4_differenceTable.html">2.4. [Format for constructing differences]{.underline}</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. Exercise ()</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="chap03_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -246,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/chaps/chap02_0.md" target="_blank"
+      <li><a href="../_sources/chaps/chap02_5_exercise.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -326,7 +328,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Interpolating Polynomial</h1>
+    <h1>Exercise ()</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -340,24 +342,172 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="interpolating-polynomial">
-<h1><span class="section-number">2. </span>Interpolating Polynomial<a class="headerlink" href="#interpolating-polynomial" title="Permalink to this headline">#</a></h1>
-<p><strong>Learning Objectives:</strong></p>
-<p>After completing this chapter, you should be able to:</p>
-<ul class="simple">
-<li><p>Use a general sequence to represent a function on a discrete domain</p></li>
-<li><p>Calculate finite differences for a given sequence</p></li>
-<li><p>Estimate function values by using Gregory-Newton forward and backward interpolation formulae</p></li>
-</ul>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="chap02_1_introduction.html">2.1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02_2_differenceOperator.html">2.2. Finite Difference Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02_3_interpolation.html">2.3. Gregory-Newton Interpolation Formulae</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02_4_differenceTable.html">2.4. Finite Difference Tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap02_5_exercise.html">2.5. Exercise ()</a></li>
-</ul>
+  <section id="exercise">
+<h1><span class="section-number">2.5. </span>Exercise ()<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h1>
+<ol class="arabic">
+<li><p>Complete a difference table for the following data:</p>
+<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>
+::: tabular
+C\|CCCCCCC x &amp; 1.20 &amp; 1.25 &amp; 1.30 &amp; 1.35 &amp; 1.40 &amp; 1.45 &amp; 1.50\
+f(x) &amp; 0.1823 &amp; 0.2231 &amp; 0.2624 &amp; 0.3001 &amp; 0.3365 &amp; 0.3716 &amp; 0.4055\
+</pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+What degree of polynomial is required to fit exactly all seven data
+pairs? What lesser-degree polynomial will nearly fit the data?
+Justify your answer.
+
+</pre></div>
+</div>
+</li>
+<li><p>Complete the difference table for the following data and by using
+the Gregory-Newton backward interpolating polynomial of degree 1, 2,
+3, 4 and 5 estimate <span class="math notranslate nohighlight">\(\,f(4.12)\)</span>, using <span class="math notranslate nohighlight">\(\,x_j=5\,\)</span>. By comparing the
+results, explain briefly how the computed results can be checked and
+improved.</p>
+<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>
+::: tabular
+C\|CCCCCCC x &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5\
+f(x) &amp; 1 &amp; 2 &amp; 4 &amp; 8 &amp; 16 &amp; 32\
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</li>
+<li><p>Use the table below and the Gregory-Newton forward-interpolating
+polynomials of degree 3 and 4 to estimate <span class="math notranslate nohighlight">\(\,f(0.158)\,\)</span>. Choose
+<span class="math notranslate nohighlight">\(\,x_0=0.125\,\)</span>. Compare the two estimates and comment on the
+results.</p>
+<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>
+::: tabular
+CCCCCCCC x &amp; f(x) &amp; f &amp; \^2 f &amp; \^3 f &amp; \^4 f\
+\
+\
+0.125 &amp; 0.79168\
+&amp; &amp; -0.01834\
+0.250 &amp; 0.77334 &amp; &amp; -0.01129\
+&amp; &amp; -0.02963 &amp; &amp; 0.00134\
+0.375 &amp; 0.74371 &amp; &amp; -0.00995 &amp; &amp; 0.00038\
+&amp; &amp; -0.03958 &amp; &amp; 0.00172 &amp;\
+0.500 &amp; 0.70413 &amp; &amp; -0.00823 &amp; &amp; 0.00028\
+&amp; &amp; -0.04781 &amp; &amp; 0.00200\
+0.625 &amp; 0.65632 &amp; &amp; -0.00623\
+&amp; &amp; -0.05404\
+0.750 &amp; 0.60228\
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</li>
+<li><p>By using the binomial coefficients <span class="math notranslate nohighlight">\(\genfrac(){0pt}{1}{-s}{i}\)</span> and a
+formula similar to equation <span class="math notranslate nohighlight">\((2.6)\)</span> given in Chapter 1, derive the
+Gregory-Newton backward difference interpolation formula (i.e.
+equation (<span class="xref myst">[eq:ch01:2.3]</span>{reference-type=”ref”
+reference=”eq:ch01:2.3”}) in Chapter 1).</p></li>
+<li><p>Complete the difference table for the following data and by using
+the Gregory-Newton forward interpolating polynomial find
+<span class="math notranslate nohighlight">\(\,f(1.72)\)</span>.</p>
+<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>
+::: tabular
+C\|CCCCCCC x &amp; 1.7 &amp; 1.8 &amp; 1.9 &amp; 2.0 &amp; 2.1\
+f(x) &amp; 0.39798486 &amp; 0.33998641 &amp; 0.28181856 &amp; 0.22389078 &amp;
+0.16660698\
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+Note: the function representing this set of data is derived from
+Bessel function of order 0 for given $x$ values. Note that you can
+find the solution in MATLAB, using the command *besselj*$(0,x)$,
+which evaluates the function *besselj* of order 0 at a given $x$
+value. Compare your result with the MATLAB answer, and comment
+whether the accuracy of your solution is within the expected range.
+
+</pre></div>
+</div>
+</li>
+<li><p>Given the finite difference table below, find <span class="math notranslate nohighlight">\(\,f(2.25)\,\)</span> using
+the Gregory-Newton</p>
+<ol class="arabic simple">
+<li><p>forward difference interpolation formula</p></li>
+<li><p>backward difference interpolation formula</p></li>
+</ol>
+<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>  ----- ---------- -------------------- -------------------- -------------------- -------------------- --
+   $x$    $f(x)$    $1^\text{st}$ diff   $2^\text{nd}$ diff   $3^\text{rd}$ diff   $4^\text{th}$ diff  
+                                                                                                       
+                                                                                                       
+   1.0   2.287355                                                                                      
+                         2.183107                                                                      
+   1.5   4.470462                             0.065280                                                 
+                         2.248387                                 -1.741634                            
+   2.0   6.718850                            -1.676354                                 -1.610458       
+                         0.572034                                 -3.352092                            
+   2.5   7.290883                            -5.028446                                                 
+                        -4.456412                                                                      
+   3.0   2.834471                                                                                      
+  ----- ---------- -------------------- -------------------- -------------------- -------------------- --
+</pre></div>
+</div>
+<p>For each case use an appropriate <span class="math notranslate nohighlight">\(\,x_j\,\)</span> when calculating
+<span class="math notranslate nohighlight">\(s ~=~ \frac{x-x_j}{h}\)</span>. Compare the two estimates and comment on
+the results. The exact value of <span class="math notranslate nohighlight">\(\,f(2.25) = 7.382153\)</span>. Compare your
+estimated solutions with the exact value together with the data
+provided in the difference table, comment on the behaviour of the
+corresponding polynomial function. Can you suggest a way of
+improving the approximated solution.</p>
+</li>
+<li><p>Repeat Exercise 6, using the finite difference table below which is
+drawn from the same function, but in the interval <span class="math notranslate nohighlight">\([0,\,2.0]\)</span>, to
+find <span class="math notranslate nohighlight">\(\,f(0.75)\,\)</span>, including comments on the results and analysis.
+The exact value of <span class="math notranslate nohighlight">\(\,f(0.75) = 1.437778\)</span>.</p>
+<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>  ----- ---------- -------------------- -------------------- -------------------- -------------------- --
+   $x$    $f(x)$    $1^\text{st}$ diff   $2^\text{nd}$ diff   $3^\text{rd}$ diff   $4^\text{th}$ diff  
+                                                                                                       
+                                                                                                       
+   0.0   0.000000                                                                                      
+                         0.790439                                                                      
+   0.5   0.790439                             0.706477                                                 
+                         1.496916                                 -0.020286                            
+   1.0   2.287355                             0.686191                                 -0.600624       
+                         2.183107                                 -0.620911                            
+   1.5   4.470462                             0.065280                                                 
+                         2.248387                                                                      
+   2.0   6.718850                                                                                      
+  ----- ---------- -------------------- -------------------- -------------------- -------------------- --
+</pre></div>
+</div>
+<p>You will find that your answer for <span class="math notranslate nohighlight">\(\,f(0.75)\,\)</span> is correct to 6
+decimal places. However, from Exercise 6, the estimated solution for
+<span class="math notranslate nohighlight">\(\,f(2.25)\,\)</span> is only correct to 2 decimal places. By giving at
+least one reason, explain why there is such a difference in the
+accuracy of the estimated solutions.</p>
+</li>
+</ol>
+<p>[<strong>Answers to Tutorial Exercises - Chapter</strong> ]{.underline}</p>
+<ol class="arabic simple">
+<li><p>A sixth-degree polynomial is required to fit exactly all the 7 data
+points; however, since the third order differences are small and
+nearly constant, a third degree polynomial will almost fit all seven
+points.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P_1(4.12) = 17.92\)</span>, <span class="math notranslate nohighlight">\(P_2 = 17.4976\)</span>, <span class="math notranslate nohighlight">\(P_3 = 17.41875\)</span>,
+<span class="math notranslate nohighlight">\(P_4 = 17.39785\)</span>, <span class="math notranslate nohighlight">\(P_5 = 17.39135\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P_3(0.158) = 0.78801\)</span> for degree 3, and <span class="math notranslate nohighlight">\(P_4(0.158) = 0.78800\)</span> for
+degree 4.</p></li>
+<li><p>The answer is equation 2.3, page 5 in Chapter 1.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(1.72) = 0.38641856\)</span>, MATLAB answer is
+<span class="math notranslate nohighlight">\(besselj(0,1.72) = 0.38641848\)</span>.</p></li>
+<li><ol class="arabic simple">
+<li><p>Forward <span class="math notranslate nohighlight">\(f(2.25) = 7.386171\)</span></p></li>
+<li><p>Backward <span class="math notranslate nohighlight">\(f(2.25) = 7.386171\)</span>.</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple">
+<li><p>Forward <span class="math notranslate nohighlight">\(f(0.75) = 1.437778\)</span></p></li>
+<li><p>Backward <span class="math notranslate nohighlight">\(f(0.75) = 1.437778\)</span>.</p></li>
+</ol>
+</li>
+</ol>
 </section>
 
     <script type="text/x-thebe-config">
@@ -392,20 +542,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="chap01_5_exercise.html"
+       href="chap02_4_differenceTable.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.5. </span>Chapter 1 Exercises</p>
+        <p class="prev-next-title"><span class="section-number">2.4. </span>[Format for constructing differences]{.underline}</p>
       </div>
     </a>
     <a class="right-next"
-       href="chap02_1_introduction.html"
+       href="chap03_0.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.1. </span>Introduction</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Multistep Methods: Derivation by Finite Difference formulae</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
