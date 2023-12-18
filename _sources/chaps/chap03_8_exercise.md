@@ -121,8 +121,7 @@ $$\begin{aligned}
     values for *AbsTol* and *RelTol* and comment on your findings.
 ::::
 
-
-## **Answers to Tutorial Exercises - Chapter** 
+## Answers to Tutorial Exercises - Chapter
 
 2.  $y_1 = -0.9000$, $y_2 = -0.8450$, $y_3 = -0.8114$, $y_4 = -0.8019$,
     $y_5 = -0.8102$.
@@ -165,3 +164,4 @@ $$\begin{aligned}
 
         $x = 0.5$, $y = 0.6434693$, $y_{ex} = 0.6434693$,
         $|y_{ex} - y| = 0.00000001$
+

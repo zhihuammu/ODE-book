@@ -92,7 +92,7 @@ $$
 $$
 
 :::{note}
-The tabulated function is in fact $\, f(x)=\sin x\,$ and note that\
+The tabulated function is in fact $\, f(x)=\sin x\,$ and note that
 $\,\sin(0.55) = 0.5227\,$ to $4$ decimal places.
 :::
 
@@ -136,35 +136,35 @@ find $f(0.1)$ and $f(3.8)$.
 
 - $x=0.1$
 
-$\displaystyle s=\frac{x-x_0}{h}=\frac{0.1-0}{1}=0.1$
+  $\displaystyle s=\frac{x-x_0}{h}=\frac{0.1-0}{1}=0.1$,
 
-$$
-\begin{aligned}
-f(0.1) = & f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0 + \frac{s(s-1)(s-2)}{3!}\Delta^3 f_0 \\
-         & + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_0 \\
-       = & 1+0.1(1)+\frac{0.1(0.1-1)}{2}(1) + \frac{0.1(0.1-1)(0.1-2)}{6}(1) \\
-         & + \frac{0.1(0.1-1)(0.1-2)(0.1-3)}{24}(0.1) \\
-       = & 1+0.1 - 0.045 +0.0285 -0.0206625 \\
-       = & 1.0628375
-\end{aligned}
-$$
+  $$
+  \begin{aligned}
+  f(0.1) = & f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0 + \frac{s(s-1)(s-2)}{3!}\Delta^3 f_0 \\
+          & + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_0 \\
+        = & 1+0.1(1)+\frac{0.1(0.1-1)}{2}(1) + \frac{0.1(0.1-1)(0.1-2)}{6}(1) \\
+          & + \frac{0.1(0.1-1)(0.1-2)(0.1-3)}{24}(0.1) \\
+        = & 1+0.1 - 0.045 +0.0285 -0.0206625 \\
+        = & 1.0628375
+  \end{aligned}
+  $$
 
 - $x=3.8$
 
-$\displaystyle s=\frac{x-x_4}{h}=\frac{3.8-4}{1}=-0.2$
+  $\displaystyle s=\frac{x-x_4}{h}=\frac{3.8-4}{1}=-0.2$,
 
-$$
-\begin{aligned}
-f(3.8)= &  f_4 + s\nabla f_4 + \frac{s(s+1)}{2!}\nabla^2 f_4            
-            + \frac{s(s+1)(s+2)}{3!}\nabla^3 f_4 \\
-        &    + \frac{s(s+1)(s+2)(s+3)}{4!}\nabla^4 f_4 \\
-      = & 16+(-0.2)(8) + \frac{(-0.2)(-0.2+1)}{2}(4) 
-                       + \frac{(-0.2)(-0.2+1)(-0.2+2)}{6}(2)  \\
-        &              + \frac{(-0.2)(-0.2+1)(-0.2+2)(-0.2+3)}{24}(1) \\
-      = & 16-1.6-0.32-0.096-0.0336 \\
-      = & 13.9504
-\end{aligned}
-$$
+  $$
+  \begin{aligned}
+  f(3.8)= &  f_4 + s\nabla f_4 + \frac{s(s+1)}{2!}\nabla^2 f_4            
+              + \frac{s(s+1)(s+2)}{3!}\nabla^3 f_4 \\
+          &    + \frac{s(s+1)(s+2)(s+3)}{4!}\nabla^4 f_4 \\
+        = & 16+(-0.2)(8) + \frac{(-0.2)(-0.2+1)}{2}(4) 
+                        + \frac{(-0.2)(-0.2+1)(-0.2+2)}{6}(2)  \\
+          &              + \frac{(-0.2)(-0.2+1)(-0.2+2)(-0.2+3)}{24}(1) \\
+        = & 16-1.6-0.32-0.096-0.0336 \\
+        = & 13.9504
+  \end{aligned}
+  $$
 
 ::::
 

@@ -87,15 +87,16 @@ xxxx
 `admonition_enable`, `figure_enable`, `dmath_enable`, `amsmath_enable`, `deflist_enable`, `html_img_enable`
 :::
 
-:::{myst-example}
-:highlight: latex
 
-$$
+:::{math}
+:label: eqn:best
+
 e = mc^2
-$$ (eqn:best)
+
+:::
 
 This is the best equation {eq}`eqn:best`
-:::
+
 
 :::{admonition} This *is* also **Markdown**
 :class: warning
@@ -114,3 +115,36 @@ How????
 
 This text is **standard** _Markdown_
 :::
+
+
+::::{tab-set}
+
+:::{tab-item} Label1
+Content 1
+:::
+
+:::{tab-item} Label2
+Content 2
+:::
+
+::::
+
+:::bg-primary
+This is a container with a custom CSS class.
+
+- It can contain multiple blocks
+:::
+
+:::{card} Card Title
+Header
+^^^
+Card content
++++
+Footer
+:::
+
+```{literalinclude} /codes/ch2_prog1.py
+```
+
+```{literalinclude} /codes/example3b.m
+```

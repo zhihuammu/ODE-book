@@ -33,7 +33,7 @@ $\beta_i$ are constants. In an expanded form we can write this as
     &\alpha_0 y_j + \alpha_1 y_{j+1} + \alpha_2 y_{j+2} + \dots +
     \alpha_{k-1}y_{j+k-1} + \alpha_k y_{j+k}
     \\
-    =~h\,[&\beta_0 f_j + \beta_1 f_{j+1} + \beta_2 f_{j+2} + \dots +
+    &\hspace{2cm}~=~h\,[\beta_0 f_j + \beta_1 f_{j+1} + \beta_2 f_{j+2} + \dots +
     \beta_{k-1} f_{j+k-1} + \beta_k f_{j+k}]    
 \end{aligned}
 :::

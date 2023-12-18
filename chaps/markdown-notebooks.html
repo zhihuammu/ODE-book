@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.8. Example Python Codes &#8212; Computational Methods in Ordinary Differential Equations</title>
+    <title>Notebooks with MyST Markdown &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
   
@@ -62,11 +62,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/chap03_8';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/markdown-notebooks';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Content with notebooks" href="../notebooks.html" />
-    <link rel="prev" title="3.7. Example MATLAB Programs" href="chap03_7.html" />
+    <link rel="prev" title="Matlab ODE Solvers" href="chapX_odeSolvers.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -163,7 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../unitguide/readinglist.html">Reading List</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Tutorial Exericses</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="chap01_0.html">1. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chap01_1_complexNumber.html">1.1. Complex Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap01_2_sequence.html">1.2. Sequences</a></li>
@@ -180,22 +181,44 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chap02_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap03_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chap03_1.html">3.1. Multistep Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_2.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_3.html">3.3. Explicit or Open Multistep Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_4.html">3.4. Implicit or Closed Multistep Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_5.html">3.5. Predictor-Corrector Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_6.html">3.6. Chapter 3 Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_7.html">3.7. Example MATLAB Programs</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.8. Example Python Codes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chap03_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chap03_1_multistepMethod.html">3.1. Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_2_derivation.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_3_explicit.html">3.3. Explicit or Open Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_4_implicit.html">3.4. Implicit or Closed Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_5_predictorCorrector.html">3.5. Predictor-Corrector Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_6_matlab.html">3.6. Example MATLAB Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_7_python.html">3.7. Example Python Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_8_exercise.html">3.8. Chapter 3 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">4. Content with notebooks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chap04_0.html">4. Multistep Methods: Order and Error Constants</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chap04_1_errorIntegration.html">4.1. Derivation of Local Error Terms for Integration Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap04_2_errorConstant.html">4.2. Order and Error Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap04_3_MilineDevice.html">4.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap04_4_exercise.html">4.4. Exercises</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">MATLAB Documentation for ODE solvers</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">5. Notebooks with MyST Markdown</a></li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chap05_0.html">5. Multistep Methods: Stability I</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chap05_1_rootCondition.html">5.1. Characteristic Polynomials and Root Condition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap05_2_convergence.html">5.2. Zero-Stability, Consistency and Convergence Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap05_3_exercise.html">5.3. Chapter 5 Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chap06_0.html">6. Multistep Methods: Stability II</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chap06_1_stabilityInterval.html">6.1. Interval and Region of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap06_2_rootLocus.html">6.2. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap06_3_boundaryRootLocus.html">6.3. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap06_4_exampleCode.html">6.4. Example MATLAB Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap06_5_exercise.html">6.5. Chapter 6 Exercises</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapX_odeSolvers.html">Matlab ODE Solvers</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Notebooks with MyST Markdown</a></li>
 </ul>
 
     </div>
@@ -250,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/chaps/chap03_8.ipynb" target="_blank"
+      <li><a href="../_sources/chaps/markdown-notebooks.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -260,7 +283,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -332,7 +355,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Example Python Codes</h1>
+    <h1>Notebooks with MyST Markdown</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -342,8 +365,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-program-1">3.8.1. Python Program 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-program-2">3.8.2. Python Program 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-cell">An example cell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">Create a notebook with MyST Markdown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#block-test">BLOCK TEST</a></li>
 </ul>
             </nav>
         </div>
@@ -355,13 +380,120 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="example-python-codes">
-<h1><span class="section-number">3.8. </span>Example Python Codes<a class="headerlink" href="#example-python-codes" title="Permalink to this headline">#</a></h1>
-<section id="python-program-1">
-<h2><span class="section-number">3.8.1. </span>Python Program 1<a class="headerlink" href="#python-program-1" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="notebooks-with-myst-markdown">
+<h1>Notebooks with MyST Markdown<a class="headerlink" href="#notebooks-with-myst-markdown" title="Permalink to this headline">#</a></h1>
+<p>Jupyter Book also lets you write text-based notebooks using MyST Markdown.
+See <a class="reference external" href="https://jupyterbook.org/file-types/myst-notebooks.html">the Notebooks with MyST Markdown documentation</a> for more detailed instructions.
+This page shows off a notebook written in MyST Markdown.</p>
+<section id="an-example-cell">
+<h2>An example cell<a class="headerlink" href="#an-example-cell" title="Permalink to this headline">#</a></h2>
+<p>With MyST Markdown, you can define code cells with a directive like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#6G6Z3002 Computational Methods in ODEs - Chapter 2, Example 2(Python Program 1)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>When your book is built, the contents of any <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> blocks will be
+executed with your default Jupyter kernel, and their outputs will be displayed
+in-line with the rest of your content.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Jupyter Book uses <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/">Jupytext</a> to convert text-based files to notebooks, and can support <a class="reference external" href="https://jupyterbook.org/file-types/jupytext.html">many other text-based notebook files</a>.</p>
+</div>
+</section>
+<section id="create-a-notebook-with-myst-markdown">
+<h2>Create a notebook with MyST Markdown<a class="headerlink" href="#create-a-notebook-with-myst-markdown" title="Permalink to this headline">#</a></h2>
+<p>MyST Markdown notebooks are defined by two things:</p>
+<ol class="arabic simple">
+<li><p>YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
+See the YAML at the top of this page for example.</p></li>
+<li><p>The presence of <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> directives, which will be executed with your book.</p></li>
+</ol>
+<p>That’s all that is needed to get started!</p>
+</section>
+<section id="quickly-add-yaml-metadata-for-myst-notebooks">
+<h2>Quickly add YAML metadata for MyST Notebooks<a class="headerlink" href="#quickly-add-yaml-metadata-for-myst-notebooks" title="Permalink to this headline">#</a></h2>
+<p>If you have a markdown file and you’d like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">myst</span> <span class="n">init</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">markdownfile</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+</section>
+<section id="block-test">
+<h2>BLOCK TEST<a class="headerlink" href="#block-test" title="Permalink to this headline">#</a></h2>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>blab</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>asaasa</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>asasas</p>
+</div>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 1 </span></p>
+<section class="example-content" id="proof-content">
+<p>xxxx</p>
+</section>
+</div><div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.13.0: </span><code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span></code> replaces previous configuration options:
+<code class="docutils literal notranslate"><span class="pre">admonition_enable</span></code>, <code class="docutils literal notranslate"><span class="pre">figure_enable</span></code>, <code class="docutils literal notranslate"><span class="pre">dmath_enable</span></code>, <code class="docutils literal notranslate"><span class="pre">amsmath_enable</span></code>, <code class="docutils literal notranslate"><span class="pre">deflist_enable</span></code>, <code class="docutils literal notranslate"><span class="pre">html_img_enable</span></code></p>
+</div>
+<div class="math notranslate nohighlight" id="equation-eqn-best">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-best" title="Permalink to this equation">#</a></span>\[e = mc^2\]</div>
+<p>This is the best equation <a class="reference internal" href="#equation-eqn-best">(1)</a></p>
+<div class="warning admonition">
+<p class="admonition-title">This <em>is</em> also <strong>Markdown</strong></p>
+<p>This text is <strong>standard</strong> <em>Markdown</em></p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Question</p>
+<p>How????</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">This <em>is</em> also <strong>Markdown</strong></p>
+<p>This text is <strong>standard</strong> <em>Markdown</em></p>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Label1</label><div class="sd-tab-content docutils">
+<p>Content 1</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Label2</label><div class="sd-tab-content docutils">
+<p>Content 2</p>
+</div>
+</div>
+<div class="highlight-bg-primary notranslate"><div class="highlight"><pre><span></span>This is a container with a custom CSS class.
+
+- It can contain multiple blocks
+</pre></div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Header</p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Card Title</div>
+<p class="sd-card-text">Card content</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text">Footer</p>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#6G6Z3017 Computational Methods in ODEs - Chapter 3, Example 2(Python Program 1)</span>
 <span class="c1">#Scriptfile to solve a single 1st order Ordinary Differential Equation,</span>
 <span class="c1">#using the exact solution to calculate the starting values and </span>
 <span class="c1"># the 4th order Adams-Bashforth-Moulton method </span>
@@ -400,7 +532,6 @@ document.write(`
     <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">9</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">19</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">3</span><span class="p">]);</span>        
     <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 <span class="c1">#screen output</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Code Output:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; t       yp         y          F         y_ex      AbsError&quot;</span><span class="p">);</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nsteps</span><span class="p">):</span>
     <span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
@@ -408,99 +539,22 @@ document.write(`
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%4.2f</span><span class="s2"> </span><span class="si">%10.7f</span><span class="s2"> </span><span class="si">%10.7f</span><span class="s2"> </span><span class="si">%10.7f</span><span class="s2"> </span><span class="si">%10.7f</span><span class="s2"> </span><span class="si">%11.8f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">yp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">abserror</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Code Output:
- t       yp         y          F         y_ex      AbsError
-0.00  0.0000000  1.0000000  0.0000000  1.0000000  0.00000000
-0.10  0.0000000  1.0048374  0.0951626  1.0048374  0.00000000
-0.20  0.0000000  1.0187308  0.1812692  1.0187308  0.00000000
-0.30  0.0000000  1.0408182  0.2591818  1.0408182  0.00000000
-0.40  1.0703229  1.0703197  0.3296803  1.0703200  0.00000031
-0.50  1.1065330  1.1065301  0.3934699  1.1065307  0.00000056
-0.60  1.1488135  1.1488109  0.4511891  1.1488116  0.00000075
-0.70  1.1965868  1.1965844  0.5034156  1.1965853  0.00000091
-0.80  1.2493301  1.2493279  0.5506721  1.2493290  0.00000103
-0.90  1.3065705  1.3065685  0.5934315  1.3065697  0.00000111
-1.00  1.3678800  1.3678783  0.6321217  1.3678794  0.00000117
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="python-program-2">
-<h2><span class="section-number">3.8.2. </span>Python Program 2<a class="headerlink" href="#python-program-2" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#6G6Z3002 Computational Methods in ODEs - Chapter 2, Example 2 (Python Program 2)</span>
-<span class="c1">#Scriptfile to solve a single 1st order Ordinary Differential Equation,</span>
-<span class="c1">#using the standard 4th order RK method to calculate the starting values and</span>
-<span class="c1">#4th order ABM method for the solution of the remaining integration time span.</span>
-<span class="c1">#The result is written to a file called &#39;c2ex2p2.res&#39;.</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matlab</span> <span class="n">code</span><span class="p">:</span> <span class="n">calculating</span> <span class="n">the</span> <span class="n">error</span> <span class="n">constant</span> <span class="k">for</span> <span class="n">chapter</span> <span class="mi">3</span> <span class="n">example</span> <span class="mi">3</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
+<span class="o">%</span><span class="n">show</span> <span class="n">results</span> <span class="ow">in</span> <span class="n">fractions</span>
+<span class="nb">format</span> <span class="n">rational</span>
 
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="o">-</span><span class="n">y</span><span class="o">+</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">a0</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">a1</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>  <span class="n">a2</span><span class="o">=-</span><span class="mi">1</span><span class="p">;</span>  <span class="n">a3</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> 
+<span class="n">b0</span><span class="o">=</span><span class="mi">5</span><span class="o">/</span><span class="mi">12</span><span class="p">;</span> <span class="n">b1</span><span class="o">=-</span><span class="mi">16</span><span class="o">/</span><span class="mi">12</span><span class="p">;</span> <span class="n">b2</span><span class="o">=</span><span class="mi">23</span><span class="o">/</span><span class="mi">12</span><span class="p">;</span> <span class="n">b3</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>  
 
-<span class="n">h</span><span class="o">=</span><span class="mf">0.1</span><span class="p">;</span>
-<span class="n">nsteps</span><span class="o">=</span><span class="mi">11</span><span class="p">;</span>
-<span class="c1">#declare arrays</span>
-<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
-<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
-<span class="n">yp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
-<span class="n">F</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
-<span class="n">yex</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
-<span class="n">abserror</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
-<span class="c1">#initial values</span>
-<span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">0.0</span><span class="p">;</span>
-<span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">1.0</span><span class="p">;</span>
-<span class="n">yp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">0.0</span><span class="p">;</span>
-<span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-<span class="c1">#calculate the next 3 starting values using RK 4th order method</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
-    <span class="n">k1</span><span class="o">=</span><span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
-    <span class="n">k2</span><span class="o">=</span><span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">k1</span><span class="o">*</span><span class="mf">0.5</span><span class="p">);</span>
-    <span class="n">k3</span><span class="o">=</span><span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">k2</span><span class="o">*</span><span class="mf">0.5</span><span class="p">);</span>
-    <span class="n">k4</span><span class="o">=</span><span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">k3</span><span class="p">);</span>
-    <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mf">1.0</span><span class="o">/</span><span class="mf">6.0</span><span class="o">*</span><span class="p">(</span><span class="n">k1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">k2</span><span class="o">+</span><span class="n">k3</span><span class="p">)</span><span class="o">+</span><span class="n">k4</span><span class="p">);</span>
-    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="p">;</span>
-    <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-    <span class="n">yp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>    
-<span class="c1">#use multiple-step method to calculate y</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">nsteps</span><span class="p">):</span>
-    <span class="n">yp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">55</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">59</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="mi">37</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="mi">9</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">4</span><span class="p">]);</span>
-    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="p">;</span>
-    <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">yp</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-    <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">9</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">19</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">3</span><span class="p">]);</span>        
-    <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-<span class="c1">#screen output</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Code Output:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; t       yp         y          F         y_ex      AbsError&quot;</span><span class="p">);</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nsteps</span><span class="p">):</span>
-    <span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-    <span class="n">abserror</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%4.2f</span><span class="s2"> </span><span class="si">%10.7f</span><span class="s2"> </span><span class="si">%10.7f</span><span class="s2"> </span><span class="si">%10.7f</span><span class="s2"> </span><span class="si">%10.7f</span><span class="s2"> </span><span class="si">%11.8f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">yp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">abserror</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+<span class="n">c0</span> <span class="o">=</span> <span class="n">a0</span><span class="o">+</span><span class="n">a1</span><span class="o">+</span><span class="n">a2</span><span class="o">+</span><span class="n">a3</span><span class="p">;</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">a3</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b0</span><span class="o">+</span><span class="n">b1</span><span class="o">+</span><span class="n">b2</span><span class="o">+</span><span class="n">b3</span><span class="p">);</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">a3</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">b3</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">c3</span> <span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">^</span><span class="mi">3</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">^</span><span class="mi">3</span><span class="o">*</span><span class="n">a3</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">b3</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">c4</span> <span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">^</span><span class="mi">4</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">^</span><span class="mi">4</span><span class="o">*</span><span class="n">a3</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">^</span><span class="mi">3</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span><span class="o">^</span><span class="mi">3</span><span class="o">*</span><span class="n">b3</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">c5</span> <span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">^</span><span class="mi">5</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">^</span><span class="mi">5</span><span class="o">*</span><span class="n">a3</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">^</span><span class="mi">4</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span><span class="o">^</span><span class="mi">4</span><span class="o">*</span><span class="n">b3</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+<span class="n">disp</span><span class="p">([</span><span class="n">c0</span> <span class="n">c1</span> <span class="n">c2</span> <span class="n">c3</span> <span class="n">c4</span> <span class="n">c5</span><span class="p">])</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Code Output:
- t       yp         y          F         y_ex      AbsError
-0.00  0.0000000  1.0000000  0.0000000  1.0000000  0.00000000
-0.10  0.0000000  1.0048375  0.0951625  1.0048374  0.00000008
-0.20  0.0000000  1.0187309  0.1812691  1.0187308  0.00000015
-0.30  0.0000000  1.0408184  0.2591816  1.0408182  0.00000020
-0.40  1.0703231  1.0703199  0.3296801  1.0703200  0.00000013
-0.50  1.1065332  1.1065303  0.3934697  1.1065307  0.00000039
-0.60  1.1488136  1.1488110  0.4511890  1.1488116  0.00000060
-0.70  1.1965869  1.1965845  0.5034155  1.1965853  0.00000077
-0.80  1.2493302  1.2493281  0.5506719  1.2493290  0.00000090
-0.90  1.3065706  1.3065687  0.5934313  1.3065697  0.00000100
-1.00  1.3678801  1.3678784  0.6321216  1.3678794  0.00000108
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -537,22 +591,13 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="chap03_7.html"
+       href="chapX_odeSolvers.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.7. </span>Example MATLAB Programs</p>
+        <p class="prev-next-title">Matlab ODE Solvers</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="../notebooks.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Content with notebooks</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -572,8 +617,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-program-1">3.8.1. Python Program 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-program-2">3.8.2. Python Program 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-cell">An example cell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">Create a notebook with MyST Markdown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#block-test">BLOCK TEST</a></li>
 </ul>
   </nav></div>
 

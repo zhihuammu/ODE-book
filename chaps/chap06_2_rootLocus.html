@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.3. Gregory-Newton Interpolation Formulae &#8212; Computational Methods in Ordinary Differential Equations</title>
+    <title>6.2. The Root Locus Method for Finding the Interval of Absolute Stability &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/chap02_3_interpolation';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/chap06_2_rootLocus';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.4. Finite Difference Tables" href="chap02_4_differenceTable.html" />
-    <link rel="prev" title="2.2. Finite Difference Operators" href="chap02_2_differenceOperator.html" />
+    <link rel="next" title="6.3. The Boundary Root Locus Method for Finding Regions of Absolute Stability" href="chap06_3_boundaryRootLocus.html" />
+    <link rel="prev" title="6.1. Interval and Region of Absolute Stability" href="chap06_1_stabilityInterval.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -174,10 +174,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chap01_5_exercise.html">1.5. Chapter 1 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap02_0.html">2. Interpolating Polynomial</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="chap02_0.html">2. Interpolating Polynomial</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chap02_1_introduction.html">2.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap02_2_differenceOperator.html">2.2. Finite Difference Operators</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.3. Gregory-Newton Interpolation Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap02_3_interpolation.html">2.3. Gregory-Newton Interpolation Formulae</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap02_4_differenceTable.html">2.4. Finite Difference Tables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap02_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
 </ul>
@@ -206,9 +206,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chap05_3_exercise.html">5.3. Chapter 5 Exercise</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="chap06_0.html">6. Multistep Methods: Stability II</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap06_0.html">6. Multistep Methods: Stability II</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chap06_1_stabilityInterval.html">6.1. Interval and Region of Absolute Stability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap06_2_rootLocus.html">6.2. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.2. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap06_3_boundaryRootLocus.html">6.3. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap06_4_exampleCode.html">6.4. Example MATLAB Programs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap06_5_exercise.html">6.5. Chapter 6 Exercises</a></li>
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/chaps/chap02_3_interpolation.md" target="_blank"
+      <li><a href="../_sources/chaps/chap06_2_rootLocus.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -343,9 +343,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -356,21 +354,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Gregory-Newton Interpolation Formulae</h1>
+    <h1>The Root Locus Method for Finding the Interval of Absolute Stability</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-need-for-interpolation">2.3.1. The need for interpolation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gregory-newton-forward-interpolation">2.3.2. Gregory-Newton Forward Interpolation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gregory-newton-backward-interpolation">2.3.3. Gregory-Newton Backward Interpolation</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -380,138 +368,235 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="gregory-newton-interpolation-formulae">
-<h1><span class="section-number">2.3. </span>Gregory-Newton Interpolation Formulae<a class="headerlink" href="#gregory-newton-interpolation-formulae" title="Permalink to this headline">#</a></h1>
-<section id="the-need-for-interpolation">
-<h2><span class="section-number">2.3.1. </span>The need for interpolation<a class="headerlink" href="#the-need-for-interpolation" title="Permalink to this headline">#</a></h2>
-<div class="important admonition">
-<p class="admonition-title">Question</p>
-<p>Given a general sequence
-<span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, if we know the value of each
-member <span class="math notranslate nohighlight">\(f_j\)</span>, how can we find the value of <span class="math notranslate nohighlight">\(f(x)\)</span> for
-<span class="math notranslate nohighlight">\(x_j &lt; x &lt; x_{j+1}\)</span>?</p>
-</div>
-<figure class="align-default" id="figure-discretepoints">
-<a class="reference internal image-reference" href="../_images/fig-interpolation.svg"><img alt="../_images/fig-interpolation.svg" src="../_images/fig-interpolation.svg" width="600px" /></a>
-</figure>
-<p>Possiple options are:</p>
-<ul class="simple">
-<li><p>Take an average: <span class="math notranslate nohighlight">\(f(x)=\dfrac{f_j + f_{j+1}}{2}\)</span></p></li>
-<li><p>A precise forward-shift: <span class="math notranslate nohighlight">\(f(x)=E^{s} f_j\)</span>,
-<span class="math notranslate nohighlight">\(0&lt;s=\dfrac{x-x_j}{x_{j+1}-x_j}&lt;1\)</span></p></li>
-</ul>
-<p>For the first option, we may ask “Is this accurate?” For the second option, we may ask “How to SHIFT?”</p>
-</section>
-<section id="gregory-newton-forward-interpolation">
-<h2><span class="section-number">2.3.2. </span>Gregory-Newton Forward Interpolation<a class="headerlink" href="#gregory-newton-forward-interpolation" title="Permalink to this headline">#</a></h2>
-<p>Let <span class="math notranslate nohighlight">\(f_j\)</span> denote <span class="math notranslate nohighlight">\(f(x_j)\)</span>. We wish to obtain an approximate value for
-<span class="math notranslate nohighlight">\(f_{j+s}\)</span>, where: <span class="math notranslate nohighlight">\(s \&gt;=\&gt; \dfrac{x - x_j}{h}\)</span></p>
-<p>Note that we have <span class="math notranslate nohighlight">\(\,f_{j+s}=f(x_j\!+\!sh)=E^sf(x_j)=E^sf_j\,\)</span>.</p>
-<p>To obtain a formula involving forward differences we substitute
-<span class="math notranslate nohighlight">\(\,E=1+\Delta\,\)</span> therefore:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-root-locus-method-for-finding-the-interval-of-absolute-stability">
+<h1><span class="section-number">6.2. </span>The Root Locus Method for Finding the Interval of Absolute Stability<a class="headerlink" href="#the-root-locus-method-for-finding-the-interval-of-absolute-stability" title="Permalink to this headline">#</a></h1>
+<p>This method consists of repeatedly solving the characteristic polynomial
+for various values of <span class="math notranslate nohighlight">\(\bar{h}\)</span> in the neighbourhood of the origin. Note
+that for simple linear and quadratic cases the resulting characteristic
+polynomial can be solved and a table or plots of values of
+<span class="math notranslate nohighlight">\(\,h\lambda\,\)</span> against roots <span class="math notranslate nohighlight">\(|\xi_1|\)</span> and <span class="math notranslate nohighlight">\(|\xi_2|\)</span> allows us to
+determine the interval of absolute stability. Any numerical method such
+as Newton Raphson iteration, or mathematics software packages like
+Matlab may be used for the approximate solution of the characteristic
+polynomial.</p>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 6.1 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the interval of absolute stability of the two-step explicit AB
+method,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-        f_{j+s} &amp;= E^{s} f_j \\
-                &amp;= (1 + \Delta)^s f_j     
+\[
+\begin{aligned}
+        y_{j+1} ~=~ y_j + \frac{h}{2}(3f_j - f_{j-1})    
 \end{aligned}
-\end{split}\]</div>
-<p>We need to work out <span class="math notranslate nohighlight">\((1 + \Delta)^s=?\)</span> Let’s look at the Binomial Expansion first</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+\]</div>
+<p>when applied to <span class="math notranslate nohighlight">\(y' = \lambda y\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Solution</p>
+<p>The characteristic equation is</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+        \pi(\xi,h\lambda) ~=~ \xi^2 - (1 + \frac{3}{2}\bar{h})\xi + \frac{1}{2}\bar{h} ~=~ 0    
+\end{aligned}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{h} = h\lambda\)</span>, and its roots are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-	    (a+b)^n &amp; =  \sum_{k=0}^{n} \begin{pmatrix} n \\ k \end{pmatrix} a^{n-k}b^{k} \\
-			    &amp; = \begin{pmatrix} n \\ 0 \end{pmatrix} a^{n}b^{0} 
-					+ \begin{pmatrix} n \\ 1 \end{pmatrix} a^{n-1}b^{1}
-					+ \begin{pmatrix} n \\ 2 \end{pmatrix} a^{n-2}b^{2}
-					+ \cdots
-					+ \begin{pmatrix} n \\ n \end{pmatrix} a^{0}b^{n}
+        \xi_1 ~&amp;=~ \frac{1}{2} \left(
+            1 + \frac{3}{2}\bar{h} + \sqrt{1 + \bar{h} + \frac{9}{4}\bar{h^2}}
+        \right)
+        \\[1ex]
+        \xi_2 ~&amp;=~ \frac{1}{2} \left(
+            1 + \frac{3}{2}\bar{h} - \sqrt{1 + \bar{h} + \frac{9}{4}\bar{h^2}}
+        \right)    
 \end{aligned}
 \end{split}\]</div>
-<p>where</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{pmatrix} n \\ k \end{pmatrix} = \dfrac{n!}{k!(n-k)!}
-	=\dfrac{n(n-1)(n-2)\cdots(n-k+1)}{k!}\end{split}\]</div>
-</div>
-<p>So the shift operator can be expanded as</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align}
-E^{s} &amp; =  (1+\Delta)^s  \\
-      &amp; =  \sum_{n=0}^{\infty} \begin{pmatrix} s \\ n \end{pmatrix} 1^{s-n}\Delta^{n} \\
-      &amp; = \begin{pmatrix} s \\ 0 \end{pmatrix} \Delta^{0} 
-            + \begin{pmatrix} s \\ 1 \end{pmatrix} \Delta^{1}
-            + \begin{pmatrix} s \\ 2 \end{pmatrix} \Delta^{2}
-            + \cdots
-            + \begin{pmatrix} s \\ k \end{pmatrix} \Delta^{k}
-            + \cdots \\
-      &amp; = 1+ s\Delta + \frac{s(s-1)}{2!} \Delta^2 + \frac{s(s-1)(s-2)}{3!} \Delta^3 +\cdots + \frac{s(s-1)(s-2)\cdots(s-k+1)}{k!}\Delta^k + \cdots
-\end{align}
-\end{split}\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><span class="math notranslate nohighlight">\(\begin{pmatrix} s \\ k \end{pmatrix} = \dfrac{s!}{k!(s-k)!} =\dfrac{s(s-1)(s-2)\cdots(s-k+1)}{k!}\)</span>,</p>
-<p><span class="math notranslate nohighlight">\(\begin{pmatrix} s \\ 0 \end{pmatrix} = \dfrac{s!}{0!(s-0)!}=1\)</span>.</p>
-</div>
-<p>Therefore, the forward Gregory-Newton Interpolation formulae is</p>
-<div class="math notranslate nohighlight" id="equation-eq-gn-forward">
-<span class="eqno">(2.7)<a class="headerlink" href="#equation-eq-gn-forward" title="Permalink to this equation">#</a></span>\[f_{j+s} =  f_j + s\Delta f_j
-        + \frac{s(s-1)}{2!}\Delta^2 f_j + \cdots 
-        + \frac{s(s-1)(s-2)\cdots(s-k+1)}{k!}\Delta^k f_j + \cdots    \]</div>
-<p>This is an infinite series in <span class="math notranslate nohighlight">\(s\)</span> and in practice we terminate it after
-a finite number of terms <span class="math notranslate nohighlight">\(k\)</span>. Thus, we can write:</p>
-<div class="math notranslate nohighlight">
-\[f(x_j+sh) \&gt;=\&gt; P_k(x_s) + e_k(x_s) \&gt;\simeq\&gt; P_k(x_s)\]</div>
-<p>where <span class="math notranslate nohighlight">\(P_k(x_s)\)</span> represents the polynomial, and <span class="math notranslate nohighlight">\(e_k(x_s)\)</span> is the error caused by terminating the series</p>
-<div class="math notranslate nohighlight">
-\[
-P_k(x_s)\&gt;=\&gt; f_j
-            + s\Delta f_j
-            + \frac{s(s-1)}{2!}\Delta^2 f_j
-            + \dots
-            + \frac{s(s-1)(s-2)\dots(s-k+1)}{k!}\Delta^{k} f_j
-\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The G-N forward interpolation formula (polynomial) is useful for
-interpolating near the <em>beginning</em> of a sequence.</p>
-</div>
-</section>
-<section id="gregory-newton-backward-interpolation">
-<h2><span class="section-number">2.3.3. </span>Gregory-Newton Backward Interpolation<a class="headerlink" href="#gregory-newton-backward-interpolation" title="Permalink to this headline">#</a></h2>
-<p>To find <span class="math notranslate nohighlight">\(f(x)=f(x_j+sh)\)</span> for <span class="math notranslate nohighlight">\(x_{j-1}&lt;x&lt;x_j\)</span>, we can use backward
-shifting to derive the interpolation formula:</p>
+<p>The following table gives the calculated values of
+<span class="math notranslate nohighlight">\(|\xi_1|\)</span> and <span class="math notranslate nohighlight">\(|\xi_2|\)</span> for various <span class="math notranslate nohighlight">\(h\lambda\)</span>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(h\lambda\)</span></p></th>
+<th class="head"><p>-1.1</p></th>
+<th class="head"><p>-1.0</p></th>
+<th class="head"><p>-0.67</p></th>
+<th class="head"><p>-0.50</p></th>
+<th class="head"><p>0.0</p></th>
+<th class="head"><p>0.50</p></th>
+<th class="head"><p>1.0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>|<span class="math notranslate nohighlight">\(\xi_1\)</span>|</p></td>
+<td><p>0.48</p></td>
+<td><p>0.50</p></td>
+<td><p>0.58</p></td>
+<td><p>0.39</p></td>
+<td><p>1.00</p></td>
+<td><p>0.16</p></td>
+<td><p>0.22</p></td>
+</tr>
+<tr class="row-odd"><td><p>|<span class="math notranslate nohighlight">\(\xi_2\)</span>|</p></td>
+<td><p>1.13</p></td>
+<td><p>1.00</p></td>
+<td><p>0.58</p></td>
+<td><p>0.64</p></td>
+<td><p>0.00</p></td>
+<td><p>1.59</p></td>
+<td><p>2.28</p></td>
+</tr>
+</tbody>
+</table>
+<p>By definition the interval of absolute stability is the set of <span class="math notranslate nohighlight">\(\bar{h}\)</span>
+for which</p>
 <div class="math notranslate nohighlight">
 \[
-s=\frac{x-x_j}{h}&lt;0
-\]</div>
-<div class="math notranslate nohighlight" id="equation-eq-gn-backward">
-<span class="eqno">(2.8)<a class="headerlink" href="#equation-eq-gn-backward" title="Permalink to this equation">#</a></span>\[f_{j+s}= f_j + s\nabla f_j
-            + \frac{s(s+1)}{2!}\nabla^2 f_j
-            + \cdots
-            + \frac{s(s+1)\cdots(s+k-1)}{k!}\nabla^k f_j + \cdots\]</div>
-<!-- $$\begin{aligned}
-        f_{j+s} & = E^{s} f_j  \hspace{4cm}  \\
-        \>&=\> (1 - \nabla)^{-s} f_j\\
-        \>&=\> \left(1 + \frac{(-s)}{1!}(-\nabla)
-        + \frac{(-s)(-s-1)}{2!}(-\nabla)^2
-        + \frac{(-s)(-s-1)(-s-2)}{3!}(-\nabla)^3
-        + \cdots\right) f_j\\
-        \>&=\> f_j + s\nabla f_j + \frac{s(s+1)}{2!}\nabla^2 f_j + \cdots
-        + \frac{s(s+1)\cdots(s+k-1)}{k!}\nabla^k f_j + \dots
-    
+\begin{aligned}
+        \left| \xi_1(\bar{h}) \right| &lt; 1,
+        \qquad \left| \xi_2(\bar{h}) \right| &lt; 1\,.    
 \end{aligned}
-$$  -->
-<p>We can separate the whole polynomial into two parts:</p>
-<div class="math notranslate nohighlight">
-\[f(x_j + sh) = P_k(x_s) + e_k(x_s) \simeq P_k(x_s)\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The G-N backward interpolation formula (polynomial) is useful for
-interpolating near the <em>end</em> of a sequence.</p>
+\]</div>
+<p>For <span class="math notranslate nohighlight">\(\lambda\)</span> real, the acceptable values of
+<span class="math notranslate nohighlight">\(\,\bar{h}\,\)</span> are <span class="math notranslate nohighlight">\(-1 \leq \bar{h} \leq 0\,\)</span>; i.e. the method is stable
+inside the interval <span class="math notranslate nohighlight">\(\,[-1,0]\,\)</span>.</p>
+<p>This result implies that if the 2-step <em>AB</em> method is used to solve the
+differential equation <span class="math notranslate nohighlight">\(\,y' = -100y\)</span>, with <span class="math notranslate nohighlight">\(\lambda = -100\)</span>, and
+<span class="math notranslate nohighlight">\(\,h\lambda &gt; -1\)</span>, then <span class="math notranslate nohighlight">\(\,h &lt; \dfrac{1}{100}\)</span> for the method to be
+absolutely stable.</p>
 </div>
 </section>
+</div><div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 6.2 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the interval of absolute stability for the implicit, two-step,
+Adams method</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+        y_{j+1} ~=~ y_j + \frac{h}{12}(5f_{j+1} + 8f_j - f_{j-1})    
+\end{aligned}
+\]</div>
+<p>when applied to <span class="math notranslate nohighlight">\(\,y' = \lambda y\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Solution</p>
+<p>The characteristic equation is</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+        \pi(\xi,h\lambda) ~=~ (1 - \frac{5}{12}h\lambda)\xi^2
+        - (1 + \frac{8}{12}h\lambda)\xi + \frac{1}{12}h\lambda ~=~ 0    
+\end{aligned}
+\]</div>
+<p>Let <span class="math notranslate nohighlight">\(\frac{h\lambda}{12} = a\)</span> and its roots are</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+        \xi_{1,2} = \frac{1 + 8a
+        \pm\sqrt{\left(1 + 8a\right)^2 - 4a\left(1 - 5a\right)}}{2(1 - 5a)}    
+\end{aligned}
+\]</div>
+<p>The following table gives the calculated values of
+<span class="math notranslate nohighlight">\(|\xi_1|\)</span> and <span class="math notranslate nohighlight">\(|\xi_2|\)</span> for various <span class="math notranslate nohighlight">\(h\lambda\)</span>. Note that the interval
+<span class="math notranslate nohighlight">\(-6 \leq h\lambda \leq 0\)</span> is an interval of absolute stability for the
+method which becomes partially unstable when <span class="math notranslate nohighlight">\(h &gt; \frac{6}{|\lambda|}\)</span>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(h\lambda\)</span></p></th>
+<th class="head"><p>-7.0</p></th>
+<th class="head"><p>-6.0</p></th>
+<th class="head"><p>-5.0</p></th>
+<th class="head"><p>-4.0</p></th>
+<th class="head"><p>-3.0</p></th>
+<th class="head"><p>-2.0</p></th>
+<th class="head"><p>-1.5</p></th>
+<th class="head"><p>-1.0</p></th>
+<th class="head"><p>-0.5</p></th>
+<th class="head"><p>0.0</p></th>
+<th class="head"><p>0.5</p></th>
+<th class="head"><p>1.0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>|<span class="math notranslate nohighlight">\(\xi_1\)</span>|</p></td>
+<td><p>0.14</p></td>
+<td><p>0.14</p></td>
+<td><p>0.15</p></td>
+<td><p>0.16</p></td>
+<td><p>0.18</p></td>
+<td><p>0.22</p></td>
+<td><p>0.28</p></td>
+<td><p>0.15</p></td>
+<td><p>0.06</p></td>
+<td><p>1.0</p></td>
+<td><p>0.03</p></td>
+<td><p>0.05</p></td>
+</tr>
+<tr class="row-odd"><td><p>|<span class="math notranslate nohighlight">\(\xi_2\)</span>|</p></td>
+<td><p>1.07</p></td>
+<td><p>1.00</p></td>
+<td><p>0.91</p></td>
+<td><p>0.78</p></td>
+<td><p>0.62</p></td>
+<td><p>0.41</p></td>
+<td><p>0.28</p></td>
+<td><p>0.39</p></td>
+<td><p>0.61</p></td>
+<td><p>0.0</p></td>
+<td><p>1.65</p></td>
+<td><p>2.81</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div><p>Note that the characteristic polynomials (particularly those with higher
+degree) have very often complex roots and therefore it is appropriate to
+use a mathematics package (e.g. Matlab) for the computation of the
+roots. To illustrate this, a Matlab program is attached that shows a
+simple way of finding the interval of absolute stability using a
+software package.</p>
+<p>The interval of absolute stability for various order Adams methods is
+shown in the following Table.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Order</p></th>
+<th class="head"><p>Admas-Bashforth</p></th>
+<th class="head"><p>Adams-Moulton</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\([ -2.00, 0 ]\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\([-\infty, 0 ]\cup [2.00, \infty]\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p><span class="math notranslate nohighlight">\([ -1.00, 0 ]\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\([ -\infty, 0 ]\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p><span class="math notranslate nohighlight">\([ -0.55, 0 ]\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\([ -6.00, 0 ]\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p><span class="math notranslate nohighlight">\([ -0.30, 0 ]\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\([ -3.00, 0 ]\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p><span class="math notranslate nohighlight">\([ -0.16, 0 ]\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\([ -1.84, 0 ]\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p><span class="math notranslate nohighlight">\([ -0.09, 0 ]\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\([ -1.19, 0 ]\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For all above methods as order increases, the interval of
+absolute stability decreases.</p>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -546,20 +631,20 @@ interpolating near the <em>end</em> of a sequence.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="chap02_2_differenceOperator.html"
+       href="chap06_1_stabilityInterval.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.2. </span>Finite Difference Operators</p>
+        <p class="prev-next-title"><span class="section-number">6.1. </span>Interval and Region of Absolute Stability</p>
       </div>
     </a>
     <a class="right-next"
-       href="chap02_4_differenceTable.html"
+       href="chap06_3_boundaryRootLocus.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>Finite Difference Tables</p>
+        <p class="prev-next-title"><span class="section-number">6.3. </span>The Boundary Root Locus Method for Finding Regions of Absolute Stability</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -572,22 +657,6 @@ interpolating near the <em>end</em> of a sequence.</p>
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-need-for-interpolation">2.3.1. The need for interpolation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gregory-newton-forward-interpolation">2.3.2. Gregory-Newton Forward Interpolation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gregory-newton-backward-interpolation">2.3.3. Gregory-Newton Backward Interpolation</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

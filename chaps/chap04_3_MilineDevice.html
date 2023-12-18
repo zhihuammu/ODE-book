@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.4. Implicit or Closed Multistep Methods &#8212; Computational Methods in Ordinary Differential Equations</title>
+    <title>4.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/chap03_4';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/chap04_3_MilineDevice';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.5. Predictor-Corrector Methods" href="chap03_5.html" />
-    <link rel="prev" title="3.3. Explicit or Open Multistep Methods" href="chap03_3.html" />
+    <link rel="next" title="4.4. Exercises" href="chap04_4_exercise.html" />
+    <link rel="prev" title="4.2. Order and Error Constants" href="chap04_2_errorConstant.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -182,22 +182,44 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chap02_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap03_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chap03_1.html">3.1. Multistep Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_2.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_3.html">3.3. Explicit or Open Multistep Methods</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.4. Implicit or Closed Multistep Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_5.html">3.5. Predictor-Corrector Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_6.html">3.6. Chapter 3 Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_7.html">3.7. Example MATLAB Programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_8.html">3.8. Example Python Codes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chap03_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chap03_1_multistepMethod.html">3.1. Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_2_derivation.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_3_explicit.html">3.3. Explicit or Open Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_4_implicit.html">3.4. Implicit or Closed Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_5_predictorCorrector.html">3.5. Predictor-Corrector Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_6_matlab.html">3.6. Example MATLAB Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_7_python.html">3.7. Example Python Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_8_exercise.html">3.8. Chapter 3 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">4. Content with notebooks</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap04_0.html">4. Multistep Methods: Order and Error Constants</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chap04_1_errorIntegration.html">4.1. Derivation of Local Error Terms for Integration Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap04_2_errorConstant.html">4.2. Order and Error Constants</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap04_4_exercise.html">4.4. Exercises</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">MATLAB Documentation for ODE solvers</span></p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chap05_0.html">5. Multistep Methods: Stability I</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chap05_1_rootCondition.html">5.1. Characteristic Polynomials and Root Condition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap05_2_convergence.html">5.2. Zero-Stability, Consistency and Convergence Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap05_3_exercise.html">5.3. Chapter 5 Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chap06_0.html">6. Multistep Methods: Stability II</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chap06_1_stabilityInterval.html">6.1. Interval and Region of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap06_2_rootLocus.html">6.2. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap06_3_boundaryRootLocus.html">6.3. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap06_4_exampleCode.html">6.4. Example MATLAB Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap06_5_exercise.html">6.5. Chapter 6 Exercises</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">5. Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapX_odeSolvers.html">Matlab ODE Solvers</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
 
     </div>
@@ -252,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/chaps/chap03_4.md" target="_blank"
+      <li><a href="../_sources/chaps/chap04_3_MilineDevice.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -332,7 +354,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Implicit or Closed Multistep Methods</h1>
+    <h1>Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -346,58 +368,174 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="implicit-or-closed-multistep-methods">
-<h1><span class="section-number">3.4. </span>Implicit or Closed Multistep Methods<a class="headerlink" href="#implicit-or-closed-multistep-methods" title="Permalink to this headline">#</a></h1>
-<p>Implict (closed) methods are derived by using the additional point
-<span class="math notranslate nohighlight">\(\,(x_{j+1},y_{j+1})\,\)</span> as an interpolation node in the approximation of
-the integral <span class="math notranslate nohighlight">\(\displaystyle \int_{x_j}^{x_{j+1}} f(x,y) dx\)</span>. The simplest of the
-implicit methods is the <em>Backward Euler</em> method:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="estimate-of-truncation-error-at-each-step-for-predictor-corrector-methods-milne-s-device">
+<h1><span class="section-number">4.3. </span>Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device<a class="headerlink" href="#estimate-of-truncation-error-at-each-step-for-predictor-corrector-methods-milne-s-device" title="Permalink to this headline">#</a></h1>
+<p>For Predictor-Corrector methods an estimate of error at each step can be
+found using the following procedure known as Milne’s device. We
+illustrate the technique by finding the error of the
+Adam-Bashforth-Moulton method. The Predictor formula is</p>
+<div class="math notranslate nohighlight" id="equation-eq-ch03-3-1">
+<span class="eqno">(4.5)<a class="headerlink" href="#equation-eq-ch03-3-1" title="Permalink to this equation">#</a></span>\[
+\begin{aligned}
+    y_{j+1}^{(p)} ~=~ y_j + \frac{h}{24} \left(
+        55f_{j} - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}
+    \right)
+\end{aligned}
+\]</div>
+<p>and the corrector is</p>
+<div class="math notranslate nohighlight" id="equation-eq-ch03-3-2">
+<span class="eqno">(4.6)<a class="headerlink" href="#equation-eq-ch03-3-2" title="Permalink to this equation">#</a></span>\[
+\begin{aligned}
+    y_{j+1} ~=~ y_j + \frac{h}{24} \left(
+        9f_{j+1} + 19f_{j} - 5f_{j-1} + f_{j-2}
+    \right)    
+\end{aligned}
+\]</div>
+<p>The exact solution of the differential equation at
+<span class="math notranslate nohighlight">\(x = x_{j+1},\, (Y_{j+1}),\,\)</span> satisfies the two similar equations:</p>
+<div class="math notranslate nohighlight" id="equation-eq-ch03-3-3">
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-eq-ch03-3-3" title="Permalink to this equation">#</a></span>\[
+\begin{aligned}
+    Y^{(p)}_{j+1} &amp;= y_j
+    + \frac{h}{24}(55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3})
+    + \frac{251}{720}h^5y^v(\xi_1), &amp; x_{{j-3}} &amp;\leq \xi_1 \leq x_{{j+1}}
+\end{aligned}
+\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-ch03-3-4">
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-eq-ch03-3-4" title="Permalink to this equation">#</a></span>\[
+\begin{aligned}
+    Y_{j+1} &amp;= y_j
+    + \frac{h}{24}(9F_{j+1} + 19f_j - 5f_{j-1} + f_{j-2})
+    - \frac{19}{720}h^5y^v(\xi_2), &amp; x_{{j-2}} &amp;\leq \xi_2 \leq x_{{j+1}}    
+\end{aligned}
+\]</div>
+<p>From equations <a class="reference internal" href="#equation-eq-ch03-3-1">(4.5)</a> and <a class="reference internal" href="#equation-eq-ch03-3-3">(4.7)</a></p>
+<div class="math notranslate nohighlight" id="equation-eq-ch03-3-5">
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-eq-ch03-3-5" title="Permalink to this equation">#</a></span>\[
+\begin{aligned}
+    Y_{j+1} - y^{(p)}_{j+1} ~=~ \frac{251}{720}h^5y^v(\xi_1)
+\end{aligned}
+\]</div>
+<p>and from equations <a class="reference internal" href="#equation-eq-ch03-3-2">(4.6)</a>and <a class="reference internal" href="#equation-eq-ch03-3-4">(4.8)</a> and using the mean value theorem</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    Y_{j+1} - y_{j+1} ~&amp;=~ \frac{9h}{24}
+    (f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1})) - \frac{19}{720}h^5y^v(\xi_2)\\[4pt]
+    &amp;=~ \frac{3h}{8}(Y_{j+1} - y_{j+1})f_y(x_{j+1},\eta_{j+1}){-\frac{19}{720}h^5y^v(\xi_2)}
+\end{aligned}\end{split}\]</div>
+<p>assuming that <span class="math notranslate nohighlight">\(\displaystyle \,f_y = \frac{\partial f}{\partial y} =
+\frac{f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1})}{(Y_{j+1} - y_{j+1})}\,\)</span>
+and <span class="math notranslate nohighlight">\(\,Y_{j+1} \leq \eta_{j+1} \leq y_{j+1}\,\)</span>. Thus</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    \left(Y_{j+1} - y_{j+1}\right) \left\{
+        1 - \frac{3h}{8}f_y(x_{j+1},\eta_{j+1})
+    \right\} ~=~ -\frac{19}{720}h^5h^v(\xi_2)
+\end{aligned}\]</div>
+<p>We can now assume that <span class="math notranslate nohighlight">\(h\)</span> is chosen sufficiently small
+to ensure that</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    \frac{3h}{8}\left|f_y(x_{j+1},\eta_{j+1})\right| \ll 1
+\end{aligned}\]</div>
+<p>thus</p>
+<div class="math notranslate nohighlight" id="equation-eq-ch03-3-6">
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-eq-ch03-3-6" title="Permalink to this equation">#</a></span>\[
+\begin{aligned}
+    Y_{j+1} - y_{j+1} ~\simeq~ -\frac{19}{720}h^5y^v(\xi_2)  
+\end{aligned}
+\]</div>
+<p>We also assume that <span class="math notranslate nohighlight">\(\,y^v(x)\,\)</span> does not vary strongly
+over the interval <span class="math notranslate nohighlight">\(\,(x_{j-3},x_{j+1})\,\)</span> so that <span class="math notranslate nohighlight">\(y^v(\xi_1)\,\)</span> and
+<span class="math notranslate nohighlight">\(\,y^v(\xi_2)\,\)</span> are approximately equal. Eliminating these fifth
+derivatives between <a class="reference internal" href="#equation-eq-ch03-3-5">(4.9)</a> and <a class="reference internal" href="#equation-eq-ch03-3-6">(4.10)</a>
+gives</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
-    y_{j+1} ~=~ y_j + hf_{j+1}
+    Y_{j+1} - y_{j+1} ~\simeq~
+    -\frac{19}{720}\frac{720}{251}(Y_{j+1} - y^{(p)}_{j+1})
 \end{aligned}
 \]</div>
-<p>with the local truncation error:
-<span class="math notranslate nohighlight">\(\displaystyle \tau_{j+1} = -\frac{1}{2}y^{(2)}(\xi_j)h^2,
-    ~\ x_j &lt; \xi_j &lt; x_{j+1}\)</span>.</p>
-<p>Some of the more common implicit methods are listed below:</p>
-<ul>
-<li><p>Adams–Moulton One–Step Method, <span class="math notranslate nohighlight">\(k=1\)</span></p>
-<p><span class="math notranslate nohighlight">\(\displaystyle y_{j+1} = y_j + \frac{h}{2}\bigl[\,f_{j+1} + f_j\,\bigr]\)</span>
-(this is the <em>Trapezoidal</em> method)<br />
-with the local truncation error:
-<span class="math notranslate nohighlight">\(\displaystyle \tau_{j+1} = -\frac{1}{12}y^{(3)}(\xi_j)h^3,
-  ~\ x_j &lt; \xi_j &lt; x_{j+1}\)</span>.</p>
-</li>
-<li><p>Adams–Moulton Two–Step Method, <span class="math notranslate nohighlight">\(k=2\)</span></p>
-<p><span class="math notranslate nohighlight">\(\displaystyle y_{j+1} = y_j + \frac{h}{12}\bigl[\,5f_{j+1} + 8f_j - f_{j-1}\,\bigr]\)</span><br />
-with the local truncation error:
-<span class="math notranslate nohighlight">\(\displaystyle \tau_{j+1} = -\frac{1}{24}y^{(4)}(\xi_j)h^4,
-  ~\ x_j &lt; \xi_j &lt; x_{j+1}\)</span>.</p>
-</li>
-<li><p>Adams–Moulton Three–Step Method, <span class="math notranslate nohighlight">\(k=3\)</span></p>
-<p><span class="math notranslate nohighlight">\(\displaystyle y_{j+1} = y_j + \frac{h}{24}\bigl[\,9f_{j+1} + 19f_j - 5f_{j-1} + f_{j-2}\,\bigr]\)</span><br />
-with the local truncation error:
-<span class="math notranslate nohighlight">\(\displaystyle \tau_{j+1} = -\frac{19}{720}y^{(5)}(\xi_j)h^5,
-  ~\ x_j &lt; \xi_j &lt; x_{j+1}\)</span>.</p>
-</li>
-<li><p>Adams–Moulton Four–Step Method, <span class="math notranslate nohighlight">\(k=4\)</span></p>
-<p><span class="math notranslate nohighlight">\(\displaystyle y_{j+1} = y_j + \frac{h}{720}\bigl[\,251f_{j+1} + 646f_j - 264f_{j-1} + 106f_{j-2} - 19f_{j-3}\,\bigr]\)</span><br />
-with the local truncation error:
-<span class="math notranslate nohighlight">\(\displaystyle \tau_{j+1} = -\frac{3}{160}y^{(6)}(\xi_j)h^6,
-  ~\ x_j &lt; \xi_j &lt; x_{j+1}\)</span>.</p>
-</li>
-</ul>
-<p>It is important to compare an <span class="math notranslate nohighlight">\(m\)</span>–step Adams–Bashforth open method to
-an <span class="math notranslate nohighlight">\((m\!-\!1)\)</span>–step Adams–Moulton closed method. Both require <span class="math notranslate nohighlight">\(m\)</span>
-evaluations of <span class="math notranslate nohighlight">\(f\)</span> per step, and both have the terms
-<span class="math notranslate nohighlight">\(\,y^{m\!+\!1}(\xi)\,h^{m\!+\!1}\,\)</span> in their local truncation errors. In
-general, the coefficients of the terms involving <span class="math notranslate nohighlight">\(f\)</span> and those in the
-local truncation error are smaller for the Adams–Moulton methods. This
-means a greater stability for the closed methods and smaller rounding
-errors.</p>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+    Y_{j+1} - y_{j+1} ~\simeq~ -\frac{19}{251}(Y_{j+1} - y^{(p)}_{j+1})
+\end{aligned}
+\]</div>
+<p>taking <span class="math notranslate nohighlight">\(-\dfrac{19}{251}\,Y_{j+1}\)</span> to the LHS, and adding
+<span class="math notranslate nohighlight">\(-\dfrac{19}{251}y_{j+1}\)</span> to both sides of the equation gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+    Y_{j+1} - y_{j+1} + \frac{19}{251}Y_{j+1} - \frac{19}{251}y_{j+1}
+    ~&amp;\simeq~ - \frac{19}{251}y_{j+1} + \frac{19}{251}y_{j+1}^{(p)}
+    \\
+    (Y_{j+1} - y_{j+1}) \left(1+\frac{19}{251}\right)
+    ~&amp;\simeq~ -\frac{19}{251} \left(y_{j+1} - y_{j+1}^{(p)}\right)
+    \\
+    \therefore~ \left(Y_{j+1}-y_{j+1}\right)
+    ~&amp;\simeq~ -\frac{19}{270} \left(y_{j+1} - y_{j+1}^{(p)}\right)
+\end{aligned}
+\end{split}\]</div>
+<p>Thus the error in the converged solution of the
+corrector formula, due to truncation, can be estimated by calculating</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+    -\frac{19}{270} \left(y_{j+1} - y_{j+1}^{(p)}\right)
+\end{aligned}
+\]</div>
+<p>Note that, the reliability of this estimate depends on
+the validity of the above assumptions including the assumption that the
+errors propagated from previous calculations are negligible.</p>
+<p>The above analysis easily generalizes to any predictor-corrector process
+in which the predictor formula has a truncation error of the form
+<span class="math notranslate nohighlight">\(\,C_1h^ny^{(n)}(\xi_1)\,\)</span> and the corrector formula has a truncation
+error of the form <span class="math notranslate nohighlight">\(\,-C_2h^ny^{(n)}(\xi_2)\,\)</span> with <span class="math notranslate nohighlight">\(\,C_1,C_2&gt;0\,\)</span> then
+an estimate of the error arising from the truncation is given by,</p>
+<div class="math notranslate nohighlight" id="equation-eq-ch03-3-7">
+<span class="eqno">(4.11)<a class="headerlink" href="#equation-eq-ch03-3-7" title="Permalink to this equation">#</a></span>\[
+\begin{aligned}
+    Y_{j+1}-y_{j+1}~\simeq~-\frac{C_2}{C_1+C_2} \left(
+        y_{j+1}-y_{j+1}^{(p)}
+    \right)
+\end{aligned}
+\]</div>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 4.5 </span></p>
+<section class="example-content" id="proof-content">
+<p>For the differential equation</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+        &amp;&amp; y' ~&amp;=~ -y + x + 1; &amp; y(0) ~&amp;=~ 1; &amp; &amp;0 \leq x \leq 1, &amp;&amp;   
+\end{aligned}
+\]</div>
+<p>calculate the error at <span class="math notranslate nohighlight">\(\,x \!=\! 1.0\)</span>, using
+<span class="math notranslate nohighlight">\(\,h \!=\! 0.1\)</span>, using the error formula <a class="reference internal" href="#equation-eq-ch03-3-7">(4.11)</a> above.
+Compare this with the actual error calculated using the analytic
+solution <span class="math notranslate nohighlight">\((y = e^{-x} + x)\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Solution</p>
+<p>At <span class="math notranslate nohighlight">\(\,x \!=\! 1.0\)</span>, using ABM method <span class="math notranslate nohighlight">\(\,y^{(p)} \!=\! 1.3678801\)</span>,
+<span class="math notranslate nohighlight">\(\,y^{(c)} \!=\! 1.3678784\,\)</span>. Using the error formula the error is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+        Y_{j+1} - y_{j+1} ~&amp;=~ -\frac{19}{270} \left(y^{(c)} - y^{(p)}\right)\\[4pt]
+        &amp;=~ -\frac{19}{270}(-1.7 \!\times\! 10^{-6})\\[4pt]
+        &amp;=~ 1.2 \!\times\! 10^{-7}.    
+\end{aligned}
+\end{split}\]</div>
+<p>At <span class="math notranslate nohighlight">\(\,x \!=\! 1.0\)</span>, the actual error is
+<span class="math notranslate nohighlight">\(\,1.0 \!\times\! 10^{-6}\)</span>. Hence, the error formula underestimate the
+error by approximating one order of magnitude, which is perfectly
+acceptable for this problem.</p>
+</div>
 </section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -431,20 +569,20 @@ errors.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="chap03_3.html"
+       href="chap04_2_errorConstant.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.3. </span>Explicit or Open Multistep Methods</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>Order and Error Constants</p>
       </div>
     </a>
     <a class="right-next"
-       href="chap03_5.html"
+       href="chap04_4_exercise.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.5. </span>Predictor-Corrector Methods</p>
+        <p class="prev-next-title"><span class="section-number">4.4. </span>Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
