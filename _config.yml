@@ -53,7 +53,6 @@ parse:
     - linkify
     - substitution
     - colon_fence
-    - amsmath
     - html_admonition    
     
 only_build_toc_files: true    

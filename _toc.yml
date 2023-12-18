@@ -24,9 +24,21 @@ parts:
     - file: chaps/chap03_0
       sections:
       - glob: chaps/chap03_*     
-    - file: notebooks
+      
+    - file: chaps/chap04_0
+      sections:
+      - glob: chaps/chap04_*       
     
-  - caption: MATLAB Documentation for ODE solvers
-    numbered: true  
+    - file: chaps/chap05_0
+      sections:
+      - glob: chaps/chap05_*        
+
+    - file: chaps/chap06_0
+      sections:
+      - glob: chaps/chap06_*    
+
+  - caption: Documentation of Ordinary Differential Equation Solvers
+    numbered: false
     chapters:  
-    - file: markdown-notebooks
+    - file: chaps/chapX_odeSolvers
+    - file: chaps/markdown-notebooks

@@ -1,0 +1,60 @@
+\documentclass{standalone}
+%\documentclass[convert={outfile=\fig-interpolation.svg}]{standalone}
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usepackage{calc}
+\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes}
+
+\usepackage{tkz-euclide}
+\usetikzlibrary{
+	angles,
+	quotes,
+}
+\usepackage{pgfplots}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}
+        [   width = 0.8\textwidth
+%        ,   title = {\rm Region of Absolute Stability for AM $k$-step methods}
+        ,   xlabel = {\rm Re}
+        ,   ylabel = {\rm Im}
+        ,   axis x line = center
+        ,   axis y line = center
+        ,   x label style =
+            {   at = {($(axis cs:-6.5,0) + (0pt,4pt)$)}
+            ,   anchor = south west
+            ,   inner sep = 0pt
+            }
+        ,   y label style =
+            {   at = {($(axis cs:0,4) + (-4pt,0pt)$)}
+            ,   anchor = north east
+            ,   inner sep = 0pt
+            }
+        ,   y tick label style =
+            {   anchor = west
+            ,   inner sep = 8pt
+            }
+        ,   xmin = -6.5
+        ,   xmax = 0
+        ,   ymin = -4
+        ,   ymax = 4
+        ]
+        \addplot [mark = none] table [col sep = comma] {am2.csv};
+        \node [anchor = south] at (axis cs:-5.6,0) {$k = 2$};
+
+        \addplot [mark = none] table [col sep = comma] {am3.csv};
+        \node [anchor = south] at (axis cs:-2.6,0) {$k = 3$};
+
+        \addplot [mark = none] table [col sep = comma] {am4.csv};
+        \node [anchor = south west] at (axis cs:-1.8,0) {$k = 4$};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

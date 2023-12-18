@@ -1,0 +1,59 @@
+\documentclass{standalone}
+%\documentclass[convert={outfile=\fig-interpolation.svg}]{standalone}
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usepackage{calc}
+\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes}
+
+\usepackage{tkz-euclide}
+\usetikzlibrary{
+	angles,
+	quotes,
+}
+\usepackage{pgfplots}
+
+\begin{document}
+%	\scriptsize
+	\begin{tikzpicture}
+		\begin{axis}
+			[   height = 0.7\textwidth
+			,   width = 0.7\textwidth
+			,   set layers = true
+			,   axis on top = true
+%			,   title = {\rm Region of Absolute Stability for AB 2-step methods}
+			,   xlabel = {\rm Re}
+			,   ylabel = {\rm Im}
+			,   axis x line = center
+			,   axis y line = center
+			,   x label style =
+			{   at = {($(axis cs:-2,0) + (0pt,4pt)$)}
+				,   anchor = south west
+				,   inner sep = 0pt
+			}
+			,   y label style =
+			{   at = {($(axis cs:0,1) + (-4pt,0pt)$)}
+				,   anchor = north east
+				,   inner sep = 0pt
+			}
+			,   y tick label style =
+			{   anchor = west
+				,   inner sep = 8pt
+			}
+			,   xmin = -2
+			,   xmax = 0
+			,   ymin = -1
+			,   ymax = 1,
+				axis equal
+			]
+			\addplot [mark = none, solid, fill = green, fill opacity=0.45]
+			table [col sep = comma] {example3.csv};
+		\end{axis}
+	\end{tikzpicture}
+\end{document}

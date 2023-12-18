@@ -1,0 +1,53 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usepackage{calc}
+\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes}
+
+\usepackage{tkz-euclide}
+\usetikzlibrary{
+	angles,
+	quotes,
+}
+\usepackage{pgfplots}
+
+\begin{document}
+
+\begin{tikzpicture}
+    \begin{axis}
+        [   width = 0.7\textwidth
+        ,   axis x line = center
+        ,   axis y line = center
+        ,   xmin = 0
+        ,   xmax = 6
+        ,   xtick = {0,1,2,3,4,5,6}
+        ,   ymin = -2
+        ,   ymax = 2
+        ,   legend style =
+            {   at = {(axis cs:6,0)}
+            ,   anchor = west
+            ,   outer sep = 1em
+            ,   draw = none
+            }
+        ]
+        \addplot [green, mark = none]
+            table [col sep = comma] {c4ans3_5.csv};
+        \addlegendentry{Mid-point}
+
+        \addplot [mark = none, smooth, thick]
+            table [col sep = comma] {c4ans3_ex.csv};
+        \addlegendentry{Exact}
+
+        \addplot [red, mark = none, smooth, thick, densely dashed]
+            table [col sep = comma] {c4ans3_ab.csv};
+        \addlegendentry{AB 2-step}
+    \end{axis}
+\end{tikzpicture}
+\end{document}

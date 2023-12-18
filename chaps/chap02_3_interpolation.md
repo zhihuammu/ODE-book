@@ -59,8 +59,10 @@ $$
 \end{aligned}
 $$
 
-$\begin{pmatrix} n \\ k \end{pmatrix} = \dfrac{n!}{k!(n-k)!}
-	=\dfrac{n(n-1)(n-2)\cdots(n-k+1)}{k!}$
+where
+
+$$\begin{pmatrix} n \\ k \end{pmatrix} = \dfrac{n!}{k!(n-k)!}
+	=\dfrac{n(n-1)(n-2)\cdots(n-k+1)}{k!}$$
 
 ::::
 

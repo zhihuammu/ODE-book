@@ -63,33 +63,28 @@ For function $f(x)$, $x\in\mathbb{R}$ with a step size $h$,
 $$\Delta f(x) = f(x+h)-f(x)$$
 ::::
 
-::::{admonition} **Second-order Forward Difference**:
-:class: tip
-\begin{align*}
-  \Delta^2 f_j & = \Delta(\Delta f_j) \\
-               & = \Delta(f_{j+1} - f_j) \\
-               & = \Delta(f_{j+1}) - \Delta(f_j) \\
-               & = (f_{j+2} - f_{j+1}) - (f_{j+1} - f_j) \\
-               & = f_{j+2} - 2f_{j+1} + f_j
-\end{align*}  
-::::
+- **Second-order Forward Difference**:
+  \begin{align*}
+    \Delta^2 f_j & = \Delta(\Delta f_j) \\
+                & = \Delta(f_{j+1} - f_j) \\
+                & = \Delta(f_{j+1}) - \Delta(f_j) \\
+                & = (f_{j+2} - f_{j+1}) - (f_{j+1} - f_j) \\
+                & = f_{j+2} - 2f_{j+1} + f_j
+  \end{align*}  
 
-::::{admonition} **Third-order Forward Difference**:
-:class: tip
-\begin{align*}
-  \Delta^3 f_j & = \Delta(\Delta^2 f_j)\\
-               & =\Delta(f_{j+2} - 2f_{j+1} + f_j)  \\
-               & = (f_{j+3}-f_{j+2}) - 2(f_{j+2}-f_{j+1}) + (f_{j+1} - f_{j}) \\
-               & = f_{j+3} - 3f_{j+2} + 3f_{j+1} - f_j
-\end{align*}  
-::::
+- **Third-order Forward Difference**:
+  \begin{align*}
+    \Delta^3 f_j & = \Delta(\Delta^2 f_j)\\
+                & =\Delta(f_{j+2} - 2f_{j+1} + f_j)  \\
+                & = (f_{j+3}-f_{j+2}) - 2(f_{j+2}-f_{j+1}) + (f_{j+1} - f_{j}) \\
+                & = f_{j+3} - 3f_{j+2} + 3f_{j+1} - f_j
+  \end{align*}  
 
-::::{admonition} **Higher-order Forward Difference**:
-:class: tip
-$$
-\Delta^n f_j = f_{j+n} - nf_{j+n-1} + \frac{n(n-1)}{2!}f_{j+n-2} - \frac{n(n-1)(n-2)}{3!}f_{j+n-3} + \dots
-$$    
-::::
+- **Higher-order Forward Difference**:
+
+  $$
+  \Delta^n f_j = f_{j+n} - nf_{j+n-1} + \frac{n(n-1)}{2!}f_{j+n-2} - \frac{n(n-1)(n-2)}{3!}f_{j+n-3} + \dots
+  $$    
 
 ## Backward difference operator $\nabla$
 
@@ -118,35 +113,33 @@ For function $f(x)$, $x\in\mathbb{R}$ with a step size $h$,
 $$\nabla f(x) = f(x)-f(x-h)$$
 ::::
 
-::::{admonition} **Second-order Backward Difference**:
-:class: tip
-\begin{align*}
-\nabla^2 f_j & = \nabla(\nabla(f_j)) \\
-             & = \nabla(f_j - f_{j-1}) \\
-             & = \nabla(f_j) - \nabla(f_{j-1}) \\
-             & = (f_j - f_{j-1}) - (f_{j-1} - f_{j-2}) \\
-             & = f_j - 2f_{j-1} + f_{j-2} 
-\end{align*}                     
-::::
+- **Second-order Backward Difference**:
+  \begin{align*}
+  \nabla^2 f_j & = \nabla(\nabla(f_j)) \\
+              & = \nabla(f_j - f_{j-1}) \\
+              & = \nabla(f_j) - \nabla(f_{j-1}) \\
+              & = (f_j - f_{j-1}) - (f_{j-1} - f_{j-2}) \\
+              & = f_j - 2f_{j-1} + f_{j-2} 
+  \end{align*}                     
 
-::::{admonition} **Third-order Backward Difference**:
-:class: tip
-\begin{align*}
-  \nabla^3 f_j & = \nabla(\nabla^2 f_j)\\
-               & =\nabla(f_{j} - 2f_{j-1} + f_{j-2})  \\
-               & = (f_{j}-f_{j-1}) - 2(f_{j-1}-f_{j-2}) + (f_{j-2} - f_{j-3}) \\
-               & = f_j - 3f_{j-1} + 3f_{j-2} - f_{j-3}
-\end{align*}  
-::::
 
-::::{admonition} **Higher-order Forward Difference**:
-:class: tip
- $$
- \nabla^n f_j = f_j - nf_{j-1}
-                     + \frac{n(n-1)}{2!}f_{j-2}
-                     + \frac{n(n-1)(n-2)}{3!}f_{j-3} + \dots
-$$  
-::::
+- **Third-order Backward Difference**:
+  \begin{align*}
+    \nabla^3 f_j & = \nabla(\nabla^2 f_j)\\
+                & =\nabla(f_{j} - 2f_{j-1} + f_{j-2})  \\
+                & = (f_{j}-f_{j-1}) - 2(f_{j-1}-f_{j-2}) + (f_{j-2} - f_{j-3}) \\
+                & = f_j - 3f_{j-1} + 3f_{j-2} - f_{j-3}
+  \end{align*}  
+
+
+- **Higher-order Forward Difference**:
+
+  $$
+  \nabla^n f_j = f_j - nf_{j-1}
+                      + \frac{n(n-1)}{2!}f_{j-2}
+                      + \frac{n(n-1)(n-2)}{3!}f_{j-3} + \dots
+  $$  
+
 
 
 ## Shift operators $E$ and $E^{-1}$
@@ -191,11 +184,11 @@ If we do shifting for $k$ times , then
 
 -   If we shift forward for $k=0.9$ steps, what we will get?
 
-$E^{0.9} f_j= E^{0.9} f(x_j)= f(x_j+0.9h)=?$
+  $$E^{0.9} f_j= E^{0.9} f(x_j)= f(x_j+0.9h)=?$$
 
 -   If we shift backward for $k=0.9$ steps, what we will get?
 
-$E^{-0.9} f_j= E^{-0.9} f(x_j)= f(x_j-0.9h)=?$
+  $$E^{-0.9} f_j= E^{-0.9} f(x_j)= f(x_j-0.9h)=?$$
 :::
 
 ::::{prf:theorem} 
