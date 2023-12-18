@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: index
 parts:
   - caption: Unit Guide
     numbered: false
@@ -13,29 +13,37 @@ parts:
   - caption: Lecture Notes and Tutorial Exericses
     numbered: true      
     chapters:
-    - file: chaps/chap01_0
+    - file: chaps/01/chap01_0
       sections: 
-      - glob: chaps/chap01_*   
+      - glob: chaps/01/chap01_*   
       
-    - file: chaps/chap02_0
+    - file: chaps/02/chap02_0
       sections: 
-      - glob: chaps/chap02_*  
+      - glob: chaps/02/chap02_*  
           
-    - file: chaps/chap03_0
+    - file: chaps/03/chap03_0
       sections:
-      - glob: chaps/chap03_*     
+      - glob: chaps/03/chap03_*     
       
-    - file: chaps/chap04_0
+    - file: chaps/04/chap04_0
       sections:
-      - glob: chaps/chap04_*       
+      - glob: chaps/04/chap04_*       
     
-    - file: chaps/chap05_0
+    - file: chaps/05/chap05_0
       sections:
-      - glob: chaps/chap05_*        
+      - glob: chaps/05/chap05_*        
 
-    - file: chaps/chap06_0
+    - file: chaps/06/chap06_0
       sections:
-      - glob: chaps/chap06_*    
+      - glob: chaps/06/chap06_*    
+
+    - file: chaps/07/chap07_0
+      sections:
+      - glob: chaps/07/chap07_*        
+
+    - file: chaps/08/chap08_0
+      sections:
+      - glob: chaps/08/chap08_*         
 
   - caption: Documentation of Ordinary Differential Equation Solvers
     numbered: false

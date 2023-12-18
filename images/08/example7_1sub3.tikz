@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+    \begin{axis}
+        [   unit vector ratio* = 1 1 1
+        ,   y dir = reverse
+        ,   xmin = 0
+        ,   ymin = 0
+        ,   xmax = 9
+        ,   ymax = 9
+        ,   xlabel = {nnz=22}
+        ,   xtick = {1,2,3,4,5,6,7,8}
+        ,   ytick = {1,2,3,4,5,6,7,8}
+        ,   title = {Fig 5c. Reordered Matrix $C$ by CM method}
+        ]
+        \addplot[only marks] coordinates
+        {   (1,1)(1,6)
+            (2,2)(2,4)
+            (3,3)(3,5)(3,6)
+            (4,2)(4,4)
+            (5,3)(5,5)(5,7)(5,8)
+            (6,1)(6,3)(6,6)
+            (7,5)(7,7)(7,8)
+            (8,5)(8,7)(8,8)
+        };
+    \end{axis}
+\end{tikzpicture}

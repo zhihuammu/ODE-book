@@ -1,0 +1,33 @@
+\begin{center}
+\scriptsize
+\begin{tikzpicture}
+    [   baseline = {(current bounding box.north)}
+    ]
+    \begin{axis}
+        [   unit vector ratio* = 1 1 1
+        ,   y dir = reverse
+        ,   xmin = 0
+        ,   ymin = 0
+        ,   xmax = 11
+        ,   ymax = 11
+        ,   title = {Matrix $A$ ordered by Column Count alogrithm}
+        ,   xlabel = {nnz=46}
+        ,   width = \linewidth
+        ,   xtick = {1,2,3,4,5,6,7,8,9,10}
+        ,   ytick = {1,2,3,4,5,6,7,8,9,10}
+        ]
+        \addplot[only marks] coordinates
+        {   (1,1)                              (8,1)
+                 (2,2)(3,2)                         (9,2)
+                 (2,3)(3,3)                         (9,3)
+                           (4,4)               (8,4)(9,4)(10,4)
+                                (5,5)(6,5)(7,5)          (10,5)
+                                (5,6)(6,6)(7,6)(8,6)     (10,6)
+                                (5,7)(6,7)(7,7)     (9,7)(10,7)
+            (1,8)          (4,8)     (6,8)     (8,8)(9,8)(10,8)
+                 (2,9)(3,9)(4,9)          (7,9)(8,9)(9,9)(10,9)
+                    (4,10)(5,10)(6,10)(7,10)(8,10)(9,10)(10,10)
+        };
+    \end{axis}
+\end{tikzpicture}
+\end{center}

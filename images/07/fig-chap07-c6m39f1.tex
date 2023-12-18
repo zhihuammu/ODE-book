@@ -1,0 +1,42 @@
+\documentclass{standalone}
+%\documentclass[convert={outfile=\fig-interpolation.svg}]{standalone}
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usepackage{calc}
+\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes}
+
+\usepackage{tkz-euclide}
+\usetikzlibrary{
+	angles,
+	quotes,
+}
+\usepackage{pgfplots}
+
+\begin{document}
+\begin{tikzpicture}
+    [   baseline = (current bounding box.north)
+    ]
+    \begin{axis}
+        [   width = 1\linewidth
+        ,   axis x line = center
+        ,   axis y line = center
+        ,   xlabel = $x$
+        ,   ylabel = $y$
+        ,   xmin = 0
+        ,   xmax = 2
+        ,   ymin = 0
+        ,   ymax = 5
+        ,   width= 5cm
+        ,   height=4cm
+        ]
+        \addplot [mark = none, smooth] table [col sep = comma] {example2.csv};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

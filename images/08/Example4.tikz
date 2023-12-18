@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+    \begin{axis}
+        [   unit vector ratio* = 1 1 1
+        ,   title = {Fig 4. Sparsity pattern for matrix $A$}
+        ,   y dir = reverse
+        ,   xmin = 0
+        ,   ymin = 0
+        ,   xmax = 7
+        ,   ymax = 7
+        ,   xlabel = {nnz=18}
+        ,   xtick = {1,2,3,4,5,6}
+        ,   ytick = {1,2,3,4,5,6}
+        ,   scale = 0.95
+        ]
+        \addplot[only marks] coordinates
+        {   (1,1)(1,2)(1,5)
+            (2,1)(2,2)(2,3)(2,6)
+            (3,2)(3,3)
+            (4,4)(4,5)
+            (5,1)(5,4)(5,5)(5,6)
+            (6,2)(6,5)(6,6)
+        };
+    \end{axis}
+\end{tikzpicture}

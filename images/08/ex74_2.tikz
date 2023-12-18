@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+    \foreach\n/\x/\y in {6/0/1,2/2/0,1/4/0,8/6/0,5/2/3,7/4/3,3/6/3,4/8/3}
+    {   \node[draw,circle] (N\n) at (\x,\y) {\n};
+    }
+    \foreach\n/\m in {1/2,1/7,1/8,2/5,2/6,2/7,3/4,3/7,3/8,5/7}
+    {   \draw (N\n) to (N\m);
+    }
+\end{tikzpicture}

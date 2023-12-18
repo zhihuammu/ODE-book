@@ -1,0 +1,62 @@
+\documentclass{standalone}
+%\documentclass[convert={outfile=\fig-interpolation.svg}]{standalone}
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usepackage{calc}
+\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes}
+
+\usepackage{tkz-euclide}
+\usetikzlibrary{
+	angles,
+	quotes,
+}
+\usepackage{pgfplots}
+
+\begin{document}
+\begin{tikzpicture}
+    [   baseline = (current bounding box.north)
+    ]
+    \begin{axis}
+        [   width = 0.9\linewidth
+        ,   axis x line = center
+        ,   axis y line = center
+        ,   xmin = -10
+        ,   xmax = 10
+        ,   ymin = -10
+        ,   ymax = 10
+        ,   xlabel = {Re}
+        ,   ylabel = {Im}
+        ,   x label style =
+            {   at = {($(axis cs:-10,0) + (0pt,4pt)$)}
+            ,   anchor = south west
+            ,   inner sep = 0pt
+            }
+        ,   y label style =
+            {   at = {($(axis cs:0,9) + (4pt,0pt)$)}
+            ,   anchor = north west
+            ,   inner sep = 0pt
+            },
+        	axis equal
+        ]
+        \addplot [mark = none, smooth] table [col sep = comma] {bdf1.csv};
+        \addplot [mark = none, smooth] table [col sep = comma] {bdf2.csv};
+        \addplot [mark = none, smooth] table [col sep = comma] {bdf3.csv};
+        \addplot [mark = none, smooth] table [col sep = comma] {bdf4.csv};
+        \addplot [mark = none, smooth] table [col sep = comma] {bdf5.csv};
+        \addplot [mark = none, smooth] table [col sep = comma] {bdf6.csv};
+        \node [anchor = south west, inner sep = 2pt] at (axis cs:2,0) {$k$=1};
+        \node [anchor = south west, inner sep = 2pt] at (axis cs:4,0) {$k$=2};
+        \node [anchor = south west, inner sep = 2pt] at (axis cs:6.8,0) {$k$=3};
+        \node [anchor = south west, inner sep = 4pt] at (axis cs:7,6) {$k$=4};
+        \node [anchor = north east, inner sep = 2pt] at (axis cs:-2.5,5) {$k$=5};
+        \node [anchor = north east, inner sep = 2pt] at (axis cs:-6,5) {$k$=6};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

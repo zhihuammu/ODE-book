@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+    \begin{axis}
+        [   unit vector ratio* = 1 1 1
+        ,   y dir = reverse
+        ,   xmin = 0
+        ,   ymin = 0
+        ,   xmax = 9
+        ,   ymax = 9
+        ,   xlabel = {nnz=28}
+        ,   xtick = {1,2,3,4,5,6,7,8}
+        ,   ytick = {1,2,3,4,5,6,7,8}
+        ,   title = {p=sysrcm(A); C=A(p,p); spy(C)}
+        ]
+        \addplot[only marks] coordinates {
+(1,1)(1,2)(2,1)(2,2)(2,3)(2,4)(2,5)(3,2)(3,3)(3,5)(4,2)(4,4)(4,5)(4,6)(5,2)(5,3)(5,4)(5,5)(5,7)(6,4)(6,6)(6,7)(7,5)(7,6)(7,7)(7,8)(8,7)(8,8)
+        };
+    \end{axis}
+\end{tikzpicture}

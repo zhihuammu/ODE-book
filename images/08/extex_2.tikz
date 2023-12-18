@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+    \coordinate (N1) at (1,0);
+    \coordinate (N2) at (2,0);
+    \coordinate (N3) at (3,0);
+    \coordinate (N4) at (0,1);
+    \coordinate (N5) at (1,1);
+    \coordinate (N6) at (2,1);
+    \foreach\n/\dir in {1/north,2/north,3/north,4/south,5/south,6/south}
+    {   \node at (N\n) [anchor=\dir] {\n};
+        \fill (N\n) circle (1pt);
+    }
+    \foreach\n/\m in {1/2,1/5,2/3,2/6,4/5,5/6}
+    {   \draw (N\n) to (N\m);
+    }
+\end{tikzpicture}

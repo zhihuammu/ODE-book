@@ -1,0 +1,33 @@
+\begin{center}
+\scriptsize
+\begin{tikzpicture}
+    [   baseline = {(current bounding box.north)}
+    ]
+    \begin{axis}
+        [   unit vector ratio* = 1 1 1
+        ,   y dir = reverse
+        ,   xmin = 0
+        ,   ymin = 0
+        ,   xmax = 11
+        ,   ymax = 11
+        ,   title = {$[L,U]$ of Matrix $D$, $U$}
+        ,   xlabel = {nonzeros=20 (20\%)}
+        ,   width = \linewidth
+        ,   xtick = {1,2,3,4,5,6,7,8,9,10}
+        ,   ytick = {1,2,3,4,5,6,7,8,9,10}
+        ]
+        \addplot[only marks] coordinates
+        {   (1,1)                              (8,1)
+                 (2,2)(3,2)                         (9,2)
+
+                           (4,4)               (8,4)(9,4)(10,4)
+                                (5,5)(6,5)(7,5)          (10,5)
+                                     (6,6)     (8,6)
+                                          (7,7)     (9,7)
+                                               (8,8)
+                                                    (9,9)
+                                                         (10,10)
+        };
+    \end{axis}
+\end{tikzpicture}
+\end{center}

@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+    \coordinate (N1) at (0,0);
+    \coordinate (N2) at (1,1);
+    \coordinate (N3) at (3,1);
+    \coordinate (N4) at (2,0);
+    \coordinate (N5) at (1,0);
+    \foreach\n/\dir in {1/north,2/south,3/south,4/north,5/north}
+    {   \node at (N\n) [anchor=\dir] {\n};
+        \fill (N\n) circle (1pt);
+    }
+    \foreach\n/\m in {1/2,1/5,2/3,2/4,3/4,4/5}
+    {   \draw (N\n) to (N\m);
+    }
+\end{tikzpicture}

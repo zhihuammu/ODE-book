@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+    \begin{axis}
+        [   unit vector ratio* = 1 1 1
+        ,   y dir = reverse
+        ,   xmin = 0
+        ,   ymin = 0
+        ,   xmax = 9
+        ,   ymax = 9
+        ,   xlabel = {nnz=34}
+        ,   xtick = {1,2,3,4,5,6,7,8}
+        ,   ytick = {1,2,3,4,5,6,7,8}
+        ,   title = {spy(lu(A)), LU original A}
+        ]
+        \addplot[only marks] coordinates {
+(1,1)(1,4)(1,5)(1,8)(2,1)(2,2)(2,6)(2,8)(3,3)(3,4)(3,7)(3,8)(4,3)(4,4)(4,8)(5,2)(5,4)(5,5)(5,6)(6,5)(6,6)(7,1)(7,2)(7,3)(7,4)(7,6)(7,7)(8,1)(8,3)(8,4)(8,5)(8,6)(8,7)(8,8)
+        };
+    \end{axis}
+\end{tikzpicture}

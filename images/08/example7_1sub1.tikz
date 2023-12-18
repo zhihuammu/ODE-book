@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+    \begin{axis}
+        [   unit vector ratio* = 1 1 1
+        ,   y dir = reverse
+        ,   xmin = 0
+        ,   ymin = 0
+        ,   xmax = 9
+        ,   ymax = 9
+        ,   xlabel = {nnz=22}
+        ,   xtick = {1,2,3,4,5,6,7,8}
+        ,   ytick = {1,2,3,4,5,6,7,8}
+        ,   title = {Fig 5a. Original 8$\times$8 Matrix $A$}
+        ]
+        \addplot[only marks] coordinates
+        {   (1,1)(1,5)
+            (2,2)(2,3)(2,6)(2,8)
+            (3,2)(3,3)(3,5)
+            (4,6)(4,7)
+            (5,1)(5,3)(5,5)
+            (6,2)(6,6)(6,8)
+            (7,4)(7,7)
+            (8,2)(8,6)(8,8)
+        };
+    \end{axis}
+\end{tikzpicture}

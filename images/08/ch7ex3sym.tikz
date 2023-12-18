@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+    \foreach\n/\x/\y in {6/0/0,2/3/0,3/1.5/1,4/1.5/2,5/4/3,1/6/3,7/2.5/3,8/1.5/4,9/0.5/5,10/2.5/5}
+    {   \node[draw
+        ,   circle
+        ,   text width = {width(10)}
+        ,   align = center
+        ,   inner sep = 2pt
+        ] (N\n) at (\x,\y) {\n};
+    }
+    \foreach\n/\m in {1/5,2/3,2/4,2/5,2/6,3/4,3/6,4/5,4/6,4/7,4/8,5/7,5/8,6/8,7/8,8/9,8/10,9/10}
+    {   \draw (N\n) to (N\m);
+    }
+
+    \node[anchor = south] at (current bounding box.north)
+    {\scriptsize Adjacency graph of $A$ ordered by \texttt{symrcm}};
+\end{tikzpicture}
