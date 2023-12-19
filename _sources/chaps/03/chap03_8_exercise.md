@@ -1,4 +1,4 @@
-(chap03:exercises)=
+(chap:derivation:exercises)=
 # Chapter 3 Exercises 
 
 ::::{exercise}

@@ -1,3 +1,4 @@
+(chap:stability2:exercise)=
 # Chapter 6 Exercises
 
 :::{exercise}

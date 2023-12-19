@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/markdown-notebooks';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Matlab ODE Solvers" href="chapX_odeSolvers.html" />
+    <link rel="prev" title="ODE Solvers in Matlab and SciPy" href="chapX_odeSolvers.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -161,7 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../unitguide/schedule.html">Teaching Schedule</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../unitguide/readinglist.html">Reading List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unitguide/readingList.html">Further Reading List</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Tutorial Exericses</span></p>
 <ul class="nav bd-sidenav">
@@ -213,7 +213,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="06/chap06_5_exercise.html">6.5. Chapter 6 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="07/chap07_0.html">7. An Introduction to Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="07/chap07_1_introduction.html">7.1. Introduction and background</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07/chap07_2_stiffSystem.html">7.2. Stiff Systems of Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07/chap07_3_method.html">7.3. Methods for Stiff Equations</a></li>
@@ -227,16 +227,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="08/chap08_3_graphTheory.html">8.3. Matrix Sparsity and Graph Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="08/chap08_4_storage.html">8.4. Sparse Matrices Storage and Reordering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="08/chap08_5_reordering.html">8.5. Reordering and Matrix Bandwidth</a></li>
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="08/chap08_6_exercise.html">8.9. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08/chap08_6_exercise.html">8.6. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08/chap08_7_answers.html">8.7. Answers to Tutorial Exercises Chapter 8</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="chapX_odeSolvers.html">Matlab ODE Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapX_odeSolvers.html">ODE Solvers in Matlab and SciPy</a></li>
+
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Notebooks with MyST Markdown</a></li>
 </ul>
@@ -576,7 +575,22 @@ Card Title</div>
 <span class="n">disp</span><span class="p">([</span><span class="n">c0</span> <span class="n">c1</span> <span class="n">c2</span> <span class="n">c3</span> <span class="n">c4</span> <span class="n">c5</span><span class="p">])</span>
 </pre></div>
 </div>
-</section>
+<div class="highlight-{tikz}:: notranslate"><div class="highlight"><pre><span></span>:libs: arrows
+\draw[-&gt;] (0,0) -- (1,1) -- (1,0) -- (2,0);
+   
+</pre></div>
+</div>
+<div class="figure" style="text-align: center"><p><img  src="../_images/tikz-63488c1415197e5073559c0d24845db25e7657fe.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../_images/tikz-5262b27a50cbb9f270a35d4cc524d5921c14b31a.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../_images/tikz-086a35dbc8bb14bebf1aa30e03136fd05f79ca8c.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../_images/tikz-ba724914bfa9cd62f2f146ed676ac664314d6ef3.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../_images/tikz-6111af12eefea9175535e9984c46518b60cb7cb4.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../_images/tikz-ab3a66aa768f155fcc80807e7dbe4114747ad51c.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../_images/tikz-5395f42ef82f2ae2a6337769f90896953d538e80.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../_images/tikz-8cd7bd18defa4f58f81e1a2213fbb30929ebcc4f.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../_images/tikz-ad2c7dce88fa0ab7fb79837b39eae691c0058496.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../_images/tikz-4ccb70a52e54bee5bf477884a9301f690d73c72f.svg" alt="Figure made with TikZ" /></p>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -616,7 +630,7 @@ Card Title</div>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Matlab ODE Solvers</p>
+        <p class="prev-next-title">ODE Solvers in Matlab and SciPy</p>
       </div>
     </a>
 </div></div>

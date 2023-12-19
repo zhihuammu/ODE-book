@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../unitguide/schedule.html">Teaching Schedule</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../unitguide/readinglist.html">Reading List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unitguide/readingList.html">Further Reading List</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Tutorial Exericses</span></p>
 <ul class="current nav bd-sidenav">
@@ -214,7 +214,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exercise.html">6.5. Chapter 6 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. An Introduction to Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_1_introduction.html">7.1. Introduction and background</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_2_stiffSystem.html">7.2. Stiff Systems of Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_3_method.html">7.3. Methods for Stiff Equations</a></li>
@@ -228,16 +228,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">8.3. Matrix Sparsity and Graph Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap08_4_storage.html">8.4. Sparse Matrices Storage and Reordering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap08_5_reordering.html">8.5. Reordering and Matrix Bandwidth</a></li>
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="chap08_6_exercise.html">8.9. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap08_6_exercise.html">8.6. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap08_7_answers.html">8.7. Answers to Tutorial Exercises Chapter 8</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">Matlab ODE Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">ODE Solvers in Matlab and SciPy</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
@@ -394,7 +393,7 @@ document.write(`
 and a set of edges <span class="math notranslate nohighlight">\(E\)</span> connecting the vertices. A graph can be used to
 represent the nonzero pattern of a sparse matrix. Any symmetric sparse
 matrix can be represented by a graph <span class="math notranslate nohighlight">\(G\)</span> where there is an edge from
-vertex <span class="math notranslate nohighlight">\(i\ts\text{(row)}\)</span> to vertex <span class="math notranslate nohighlight">\(j\ts\text{(column)}\)</span> and a letter
+vertex <span class="math notranslate nohighlight">\(i\text{(row)}\)</span> to vertex <span class="math notranslate nohighlight">\(j\text{(column)}\)</span> and a letter
 or symbol represents the nonzero entry, e.g. <span class="math notranslate nohighlight">\(a_{ij}\)</span>:</p>
 <p>Associated with each graph is an adjacency matrix <span class="math notranslate nohighlight">\(A = (a_{ij})\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -403,34 +402,72 @@ or symbol represents the nonzero entry, e.g. <span class="math notranslate nohig
         0, &amp; \text{otherwise}.
     \end{cases}\end{split}\]</div>
 <p>The degree of a node in a graph is the number of nodes adjacent to it
-(or the number of edges connected to it). <strong>[Example 1]{.underline}</strong>
-Consider the following matrix <span class="math notranslate nohighlight">\(A\)</span> and its corresponding adjacency graph.</p>
-<p><span class="math notranslate nohighlight">\(A=
+(or the number of edges connected to it).</p>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 8.1 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider the following matrix <span class="math notranslate nohighlight">\(A\)</span> and its corresponding adjacency graph.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Matrix</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=
     \begin{bmatrix}
       1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\
       1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \\
       0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \\
       0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
       1 &amp; 0 &amp; 0 &amp; 1 &amp; 1
-    \end{bmatrix}\)</span></p>
-<p><img alt="image" src="chaps/08/main/07/extex_1.tikz" />{width=”7cm”}</p>
+    \end{bmatrix}
+\end{split}\]</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Graph</div>
+<div class="figure" style="text-align: center"><p><img width="60%" src="../../_images/tikz-c218ed160db3f2c3dcf9da141a56c7c4124624ea.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</div>
+</div>
+</div>
+</div>
 <p>The following MATLAB .m file produces the adjacency graph of matrix A:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>%Example 1 - Adjacency graph using gplot function
-A=[1 1 0 0 1;1 1 1 1 0;0 1 1 1 0;0 1 1 1 1;1 0 0 1 1];
-% Enter the Cartesian coordinates for the vertices
-xy=[1 1; 2 2; 5 2; 4 1; 3 1];
-gplot(A,xy,&#39;k-*&#39;);% marking the elements using * in black font
-axis([0 6 0 3]);
-text(1,0.9,&#39;1&#39;);
-text(2,2.1,&#39;2&#39;);
-text(5,2.1,&#39;3&#39;);
-text(4,0.9,&#39;4&#39;);
-text(3,0.9,&#39;5&#39;);        
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Example 1 - Adjacency graph using gplot function</span><span class="w"></span>
+<span class="n">A</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="n">1</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">0</span><span class="p">;</span><span class="n">0</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">0</span><span class="p">;</span><span class="n">0</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">1</span><span class="p">;</span><span class="n">1</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">1]</span><span class="p">;</span><span class="w"></span>
+<span class="c">% Enter the Cartesian coordinates for the vertices</span><span class="w"></span>
+<span class="n">xy</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">2</span><span class="w"> </span><span class="s">2</span><span class="p">;</span><span class="w"> </span><span class="n">5</span><span class="w"> </span><span class="s">2</span><span class="p">;</span><span class="w"> </span><span class="n">4</span><span class="w"> </span><span class="s">1</span><span class="p">;</span><span class="w"> </span><span class="n">3</span><span class="w"> </span><span class="s">1]</span><span class="p">;</span><span class="w"></span>
+<span class="nb">gplot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">xy</span><span class="p">,</span><span class="s">&#39;k-*&#39;</span><span class="p">);</span><span class="c">% marking the elements using * in black font</span><span class="w"></span>
+<span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">3</span><span class="p">]);</span><span class="w"></span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;1&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="s">&#39;2&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="s">&#39;3&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;4&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;5&#39;</span><span class="p">);</span><span class="w">        </span>
 </pre></div>
 </div>
-<p><strong>[Example 2]{.underline}</strong></p>
+</section>
+</div><div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 8.2 </span></p>
+<section class="example-content" id="proof-content">
 <p>Consider the following matrix <span class="math notranslate nohighlight">\(A\)</span> and its corresponding adjacency graph.</p>
-<p><span class="math notranslate nohighlight">\(A=
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Matrix</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=
     \begin{bmatrix}
       1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\
       1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1\\
@@ -438,53 +475,76 @@ text(3,0.9,&#39;5&#39;);
       0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0\\
       1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1\\
       0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1\\
-    \end{bmatrix}\)</span></p>
-<p><img alt="image" src="chaps/08/main/07/extex_2.tikz" />{width=”7cm”}</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>%Example 2 - Adjacency plot
-A=[1 1 0 0 1 0;1 1 1 0 0 1;0 1 1 0 0 0;0 0 0 1 1 0;
-    1 0 0 1 1 1; 0 1 0 0 1 1];
-xy=[2 1;3 1;4 1;1 2;2 2;3 2];
-gplot(A,xy,&#39;k-*&#39;);
-axis([0 5 0 3]);
-text(2,0.9,&#39;1&#39;);
-text(3,0.9,&#39;2&#39;);
-text(4,0.9,&#39;3&#39;);
-text(1,2.1,&#39;4&#39;);
-text(2,2.1,&#39;5&#39;);
-text(3,2.1,&#39;6&#39;);
-%End                                            
+    \end{bmatrix}
+\end{split}\]</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Graph</div>
+<div class="figure" style="text-align: center"><p><img width="60%" src="../../_images/tikz-864756156e38069542588dd89486e81c4e9fa27a.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Example 2 - Adjacency plot</span><span class="w"></span>
+<span class="n">A</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="n">1</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="s">1</span><span class="p">;</span><span class="n">0</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="s">0</span><span class="p">;</span><span class="n">0</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">1</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">1</span><span class="p">;</span><span class="w"> </span><span class="n">0</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">1]</span><span class="p">;</span><span class="w"></span>
+<span class="n">xy</span><span class="p">=[</span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="n">3</span><span class="w"> </span><span class="s">1</span><span class="p">;</span><span class="n">4</span><span class="w"> </span><span class="s">1</span><span class="p">;</span><span class="n">1</span><span class="w"> </span><span class="s">2</span><span class="p">;</span><span class="n">2</span><span class="w"> </span><span class="s">2</span><span class="p">;</span><span class="n">3</span><span class="w"> </span><span class="s">2]</span><span class="p">;</span><span class="w"></span>
+<span class="nb">gplot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">xy</span><span class="p">,</span><span class="s">&#39;k-*&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">3</span><span class="p">]);</span><span class="w"></span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;1&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;2&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;3&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="s">&#39;4&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="s">&#39;5&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="s">&#39;6&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="c">%End                                            </span><span class="w"></span>
 </pre></div>
 </div>
-<p>In MATLAB the function <span class="math notranslate nohighlight">\(\emph{spy}\)</span> plots the sparsity pattern (i.e. the
-non-zero elements) of any matrix A. <strong>[Example 3]{.underline}</strong></p>
+<p>In MATLAB the function <strong>spy</strong> plots the sparsity pattern (i.e. the
+non-zero elements) of any matrix A.</p>
+</section>
+</div><div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 8.3 </span></p>
+<section class="example-content" id="proof-content">
 <p>Enter the matrix A in MATLAB</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt; A=[1 0 2 3 0
-      0 0 0 5 0
-      0 1 0 0 8
-      1 0 0 0 4
-      0 0 6 7 0]
-
-Followed by the command spy
-&gt;&gt; spy(A)
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w">   </span><span class="n">A</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">        </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">        </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">8</span><span class="w"></span>
+<span class="w">        </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="w">        </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="w"> </span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="nb">spy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>MATLAB will produce the sparsity pattern (nonzero elements) for matrix
 <span class="math notranslate nohighlight">\(A\)</span> as:</p>
-<p>The number of nonzero elements in matrix <span class="math notranslate nohighlight">\(A\)</span> is <span class="math notranslate nohighlight">\(10\)</span> and this is noted
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-8b999c3f16abc53e7b83696cc90cb754338aa07a.svg" alt="Figure made with TikZ" /></p>
+</div><p>The number of nonzero elements in matrix <span class="math notranslate nohighlight">\(A\)</span> is <span class="math notranslate nohighlight">\(10\)</span> and this is noted
 by <span class="math notranslate nohighlight">\(nnz=10\)</span> in Fig. 3.</p>
-<p><strong>[Example 4]{.underline}</strong> Define the matrix <span class="math notranslate nohighlight">\(A\)</span>, from Example 2, in
+</section>
+</div><div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 8.4 </span></p>
+<section class="example-content" id="proof-content">
+<p>Define the matrix <span class="math notranslate nohighlight">\(A\)</span>, from Example 2, in
 MATLAB, followed by the command spy(A), gives:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt; A=[1 1 0 0 1 0
-      1 1 1 0 0 1
-      0 1 1 0 0 0
-      0 0 0 1 1 0
-      1 0 0 1 1 1
-      0 1 0 0 1 1]
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w">   </span><span class="n">A</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">        </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">        </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">        </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"></span>
 
-&gt;&gt; spy(A)
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="nb">spy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-4db2435b232f7ee02ba35d3662cdd7429c3d261e.svg" alt="Figure made with TikZ" /></p>
+</div></section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {

@@ -6,6 +6,7 @@
 The following code has been tested under Matlab 2022
 
 ```{literalinclude} /codes/ch2_prog1.m
+:language: matlab
 ```
 
 The output of this code is:
@@ -29,6 +30,7 @@ x        yp         y          F         y_ex      AbsError
 The following code has been tested under Matlab 2022
 
 ```{literalinclude} /codes/ch2_prog2.m
+:language: matlab
 ```
 
 Output:
@@ -50,8 +52,9 @@ x        yp         y          F         y_ex      AbsError
 ## MATLAB Program 3
 The following code has been tested under Matlab 2022
 
-```{literalinclude} /codes/ch2_prog3.m
-```
+:::{literalinclude} /codes/ch2_prog3.m
+:language: matlab
+:::
 
 Output:
 ```
@@ -72,7 +75,7 @@ t        y          f(t)      y_ex     Abs_error
 ```{figure}
 ```
 
-```{figure} ../images/fig-ch3program3_result.svg
+```{figure} /images/fig-ch3program3_result.svg
 ---
 width: 600px
 name: fig-ch3program3_result

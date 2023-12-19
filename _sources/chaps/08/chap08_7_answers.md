@@ -1,74 +1,126 @@
-[**Answers to Tutorial Exercises - Chapter** ]{.underline}
+# Answers to Tutorial Exercises Chapter 8
 
-1.  1.  $$\begin{aligned}
-                        A = \begin{pmatrix}
-                            1 & 1 & 0 & 0 & 1 & 0\\
-                            1 & 1 & 1 & 0 & 0 & 1\\
-                            0 & 1 & 1 & 0 & 0 & 0\\
-                            0 & 0 & 0 & 1 & 1 & 0\\
-                            1 & 0 & 0 & 1 & 1 & 1\\
-                            0 & 1 & 0 & 0 & 1 & 1\\
-                        \end{pmatrix}
-                    
-        \end{aligned}$$
 
-            % Exercise 7-qn1(a)
-            A=[
-                1 1 0 0 1 0
-                1 1 1 0 0 1
-                0 1 1 0 0 0
-                0 0 0 1 1 0
-                1 0 0 1 1 1
-                0 1 0 0 1 1];
-            xy=[1 1;3 1;4 1;
-                1 2;2 2;4 2];
-            gplot(A,xy,'k-*');
-            axis([0 5 0 3]);
-            text(1,0.9,'1');
-            text(3,0.9,'2');
-            text(4,0.9,'3');
-            text(1,2.1,'4');
-            text(2,2.1,'5');
-            text(4,2.1,'6');
-            %End
+1.  1.  
 
-    2.  $$\begin{aligned}
-                        A = \begin{pmatrix}
-                            1 & 1 & 0 & 0 & 0 & 1\\
-                            1 & 1 & 0 & 0 & 1 & 0\\
-                            0 & 0 & 1 & 0 & 1 & 0\\
-                            0 & 0 & 0 & 1 & 0 & 1\\
-                            0 & 1 & 1 & 0 & 1 & 0\\
-                            1 & 0 & 0 & 1 & 0 & 1\\
-                        \end{pmatrix}
-                    
-        \end{aligned}$$
+    $$\begin{aligned}
+        A = \begin{pmatrix}
+            1 & 1 & 0 & 0 & 1 & 0\\
+            1 & 1 & 1 & 0 & 0 & 1\\
+            0 & 1 & 1 & 0 & 0 & 0\\
+            0 & 0 & 0 & 1 & 1 & 0\\
+            1 & 0 & 0 & 1 & 1 & 1\\
+            0 & 1 & 0 & 0 & 1 & 1\\
+        \end{pmatrix}
+    \end{aligned}$$
 
-            % Exercise 7-qn1(b)
-            A=[
-                1 1 0 0 0 1
-                1 1 0 0 1 0
-                0 0 1 0 1 0
-                0 0 0 1 0 1
-                0 1 1 0 1 0
-                1 0 0 1 0 1];
-            xy=[2 1;3 1;4 1;
-                1 1;3 2;2 2];
-            gplot(A,xy,'k-*');
-            axis([0 5 0 3]);
-            text(2,0.9,'1');
-            text(3,0.9,'2');
-            text(4,0.9,'3');
-            text(1,0.9,'4');
-            text(3,2.1,'5');
-            text(2,2.1,'6');
-            %End
+    ```matlab
+    % Exercise 7-qn1(a)
+    A=[
+        1 1 0 0 1 0
+        1 1 1 0 0 1
+        0 1 1 0 0 0
+        0 0 0 1 1 0
+        1 0 0 1 1 1
+        0 1 0 0 1 1];
+    xy=[1 1;3 1;4 1;
+        1 2;2 2;4 2];
+    gplot(A,xy,'k-*');
+    axis([0 5 0 3]);
+    text(1,0.9,'1');
+    text(3,0.9,'2');
+    text(4,0.9,'3');
+    text(1,2.1,'4');
+    text(2,2.1,'5');
+    text(4,2.1,'6');
+    %End
+    ```
+
+    ```{tikz}
+
+    \begin{axis}
+        [   
+            xmin = 0
+        ,   xmax = 5
+        ,   xtick = {0,1,2,3,4,5}
+        ,   ymin = 0
+        ,   ymax = 3
+        ,   ytick = {0,1,2,3}
+        ]
+        \plot [black, mark = *, mark options = {solid}]
+        coordinates {(2,2)(1,1)(4,1)};
+        \plot [black, mark = *, mark options = {solid}]
+        coordinates {(1,2)(4,2)(3,1)};
+        \node[anchor = north] at (axis cs:1,1) {1};
+        \node[anchor = north] at (axis cs:3,1) {2};
+        \node[anchor = north] at (axis cs:4,1) {3};
+        \node[anchor = south] at (axis cs:1,2) {4};
+        \node[anchor = south] at (axis cs:2,2) {5};
+        \node[anchor = south] at (axis cs:4,2) {6};
+    \end{axis}   
+    ```
+ 
+
+    2.  
+    
+    $$\begin{aligned}
+        A = \begin{pmatrix}
+            1 & 1 & 0 & 0 & 0 & 1\\
+            1 & 1 & 0 & 0 & 1 & 0\\
+            0 & 0 & 1 & 0 & 1 & 0\\
+            0 & 0 & 0 & 1 & 0 & 1\\
+            0 & 1 & 1 & 0 & 1 & 0\\
+            1 & 0 & 0 & 1 & 0 & 1\\
+        \end{pmatrix}                    
+    \end{aligned}$$
+
+    ```matlab
+    % Exercise 7-qn1(b)
+    A=[
+        1 1 0 0 0 1
+        1 1 0 0 1 0
+        0 0 1 0 1 0
+        0 0 0 1 0 1
+        0 1 1 0 1 0
+        1 0 0 1 0 1];
+    xy=[2 1;3 1;4 1;
+        1 1;3 2;2 2];
+    gplot(A,xy,'k-*');
+    axis([0 5 0 3]);
+    text(2,0.9,'1');
+    text(3,0.9,'2');
+    text(4,0.9,'3');
+    text(1,0.9,'4');
+    text(3,2.1,'5');
+    text(2,2.1,'6');
+    %End
+    ```
+
+    ```{tikz}
+    \begin{axis}
+    [   xmin = 0
+    ,   xmax = 5
+    ,   xtick = {0,1,2,3,4,5}
+    ,   ymin = 0
+    ,   ymax = 3
+    ,   ytick = {0,1,2,3}
+    ]
+    \plot [black, mark = *, mark options = {solid}]
+    coordinates {(1,1)(2,2)(2,1)(3,1)(3,2)(4,1)};
+    \node[anchor = north] at (axis cs:1,1) {4};
+    \node[anchor = north] at (axis cs:2,1) {1};
+    \node[anchor = north] at (axis cs:3,1) {2};
+    \node[anchor = north] at (axis cs:4,1) {3};
+    \node[anchor = south] at (axis cs:2,2) {6};
+    \node[anchor = south] at (axis cs:3,2) {5};
+    \end{axis}        
+    ```
 
 2.  Consider the following adjacency graph:
 
-    ::: center
-    ![image](main/07/ch7ex3.tikz)
-    :::
+    ```{tikz}
+    :include: /images/08/ch7ex3.tikz
+    ```
 
     First we write down the associated adjacency matrix - it is most
     efficient to create a script file in MATLAB and type all of your
@@ -86,6 +138,34 @@
             0 0 0 0 1 0 0 1 1 1
             1 0 0 0 1 0 0 1 1 1]
 
+    ```{tikz}
+     \begin{axis}
+        [   unit vector ratio* = 1 1 1
+        ,   y dir = reverse
+        ,   xmin = 0
+        ,   ymin = 0
+        ,   xmax = 11
+        ,   ymax = 11
+        ,   title = {$A$ original matrix, Question 2}
+        ,   xlabel = {nnz=46}
+        ,   xtick = {1,2,3,4,5,6,7,8,9,10}
+        ,   ytick = {1,2,3,4,5,6,7,8,9,10}
+        ]
+        \addplot[only marks] coordinates
+        {   (1,1)(2,1)(3,1)(4,1)     (6,1)     (8,1)     (10,1)
+            (1,2)(2,2)(3,2)
+            (1,3)(2,3)(3,3)
+            (1,4)          (4,4)     (6,4)     (8,4)
+                                (5,5)(6,5)     (8,5)(9,5)(10,5)
+            (1,6)          (4,6)(5,6)(6,6)(7,6)(8,6)
+                                     (6,7)(7,7)
+            (1,8)          (4,8)(5,8)(6,8)     (8,8)(9,8)(10,8)
+                                (5,9)          (8,9)(9,9)(10,9)
+            (1,10)              (5,10)      (8,10)(9,10)(10,10)
+        };
+    \end{axis}   
+    ```
+    
     In MATLAB use the command *spy(A)* to find the pattern and the
     number of nonzero elements: i.e.\
     `>> spy(A)`
@@ -173,12 +253,17 @@
 
     Repeat this for CM method.
 
-    ::: center
-    ![image](main/07/ch7ex3orig.tikz){width="0.45\\linewidth"}
+    ```{tikz}
+    :include: /images/08/ch7ex3orig.tikz
+    ```
 
-    ![image](main/07/ch7ex3cm.tikz){width="0.45\\linewidth"}
-    ![image](main/07/ch7ex3rcm.tikz){width="0.45\\linewidth"}
-    :::
+    ```{tikz}
+    :include: /images/08/ch7ex3cm.tikz
+    ```
+
+    ```{tikz}
+    :include: /images/08/ch7ex3rcm.tikz
+    ```
 
     Now use MATLAB to construct the adjacency matrix B and C associated
     with the reordered RCM adjacency plot:
@@ -194,6 +279,34 @@
             0 0 0 1 1 1 1 1 0 0
             0 0 0 0 0 1 0 0 1 1
             0 0 0 0 0 1 0 0 1 1];
+
+    ```{tikz}
+    \begin{axis}
+        [   unit vector ratio* = 1 1 1
+        ,   y dir = reverse
+        ,   xmin = 0
+        ,   ymin = 0
+        ,   xmax = 11
+        ,   ymax = 11
+        ,   title = {Matrix $B$, CM ordering}
+        ,   xlabel = {nnz=46}
+        ,   xtick = {1,2,3,4,5,6,7,8,9,10}
+        ,   ytick = {1,2,3,4,5,6,7,8,9,10}
+        ]
+        \addplot[only marks] coordinates
+        {   (1,1)(2,1)
+            (1,2)(2,2)(3,2)(4,2)(5,2)(6,2)
+                 (2,3)(3,3)     (5,3)(6,3)
+                 (2,4)     (4,4)(5,4)     (7,4)(8,4)
+                 (2,5)(3,5)(4,5)(5,5)(6,5)(7,5)(8,5)
+                 (2,6)(3,6)     (5,6)(6,6)     (8,6)(9,6)(10,6)
+                           (4,7)(5,7)     (7,7)(8,7)
+                           (4,8)(5,8)(6,8)(7,8)(8,8)
+                                     (6,9)          (9,9)(10,9)
+                                     (6,10)        (9,10)(10,10)
+        };
+    \end{axis}
+    ```
 
     We can now find the bandwidth for the reordered matrix:
 
@@ -222,6 +335,33 @@
 
         bw = 4
 
+    ```{tikz}
+    \begin{axis}
+        [   unit vector ratio* = 1 1 1
+        ,   y dir = reverse
+        ,   xmin = 0
+        ,   ymin = 0
+        ,   xmax = 11
+        ,   ymax = 11
+        ,   title = {Matrix $C$, RCM ordering}
+        ,   xlabel = {nnz=46}
+        ,   xtick = {1,2,3,4,5,6,7,8,9,10}
+        ,   ytick = {1,2,3,4,5,6,7,8,9,10}
+        ]
+        \addplot[only marks] coordinates
+        {   (1,1)(2,1)          (5,1)
+            (1,2)(2,2)          (5,2)
+                      (3,3)(4,3)(5,3)(6,3)(7,3)
+                      (3,4)(4,4)     (6,4)(7,4)
+            (1,5)(2,5)(3,5)     (5,5)(6,5)     (8,5)(9,5)
+                      (3,6)(4,6)(5,6)(6,6)(7,6)(8,6)(9,6)
+                      (3,7)(4,7)     (6,7)(7,7)     (9,7)
+                                (5,8)(6,8)     (8,8)(9,8)
+                                (5,9)(6,9)(7,9)(8,9)(9,9)(10,9)
+                                                   (10,9)(10,10)
+        };
+    \end{axis}   
+    ```
     Hence, the full bandwidth for the reordered matrix by CM method is
     $= 4 + 4 + 1 = 9$.
 
@@ -258,8 +398,10 @@
             0 0 0 0 0 0 0 1 1 1
             0 0 0 0 0 0 0 1 1 1]
 
-     \
-    ![image](main/07/ch7ex3sym.tikz){width="0.9\\linewidth"}
+    ```{tikz}
+    :include: /images/08/ch7ex3sym.tikz
+    ```
+    
 
     **Column Count reordering:**
 
