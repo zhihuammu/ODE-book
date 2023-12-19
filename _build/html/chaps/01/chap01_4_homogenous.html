@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../unitguide/schedule.html">Teaching Schedule</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../unitguide/readinglist.html">Reading List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unitguide/readingList.html">Further Reading List</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Tutorial Exericses</span></p>
 <ul class="current nav bd-sidenav">
@@ -214,7 +214,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exercise.html">6.5. Chapter 6 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. An Introduction to Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_1_introduction.html">7.1. Introduction and background</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_2_stiffSystem.html">7.2. Stiff Systems of Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_3_method.html">7.3. Methods for Stiff Equations</a></li>
@@ -228,16 +228,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../08/chap08_3_graphTheory.html">8.3. Matrix Sparsity and Graph Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../08/chap08_4_storage.html">8.4. Sparse Matrices Storage and Reordering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../08/chap08_5_reordering.html">8.5. Reordering and Matrix Bandwidth</a></li>
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_6_exercise.html">8.9. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_6_exercise.html">8.6. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_7_answers.html">8.7. Answers to Tutorial Exercises Chapter 8</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">Matlab ODE Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">ODE Solvers in Matlab and SciPy</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
@@ -435,8 +434,8 @@ L(\xi)= a_0 + a_1 \xi + a_2 \xi^2 + \ldots + a_{k-1} \xi^{k-1} + a_k \xi^{k}=0.
 <p class="admonition-title"><span class="caption-number">Theorem 1.2 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\xi_p~(p=1,2,3,\ldots,k)\)</span> be any solution to the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(1.19)</a>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9bf3ccff-d730-4c51-9db1-e7baa26afd2e">
-<span class="eqno">(1.20)<a class="headerlink" href="#equation-9bf3ccff-d730-4c51-9db1-e7baa26afd2e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a28b3e55-fbda-42c3-8f66-14bf569ac913">
+<span class="eqno">(1.20)<a class="headerlink" href="#equation-a28b3e55-fbda-42c3-8f66-14bf569ac913" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_n = \xi_p^n
 \end{equation}\]</div>
 <p>is a solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a>.</p>
@@ -465,8 +464,8 @@ L(E) \xi_p^n = ~ &amp; \left(a_0 + a_1 E + a_2 E^2 + \ldots + a_{k-1}E^{k-1}+a_k
 <p class="admonition-title"><span class="caption-number">Theorem 1.3 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Assume the <span class="math notranslate nohighlight">\(k\)</span> roots of  the characteristic equation are distinct, then a fundamental set of solutions is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-05db3832-638f-4bb2-9fce-ec6f993dde9d">
-<span class="eqno">(1.21)<a class="headerlink" href="#equation-05db3832-638f-4bb2-9fce-ec6f993dde9d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e97e7a18-5356-4fdb-929b-6758425dbeca">
+<span class="eqno">(1.21)<a class="headerlink" href="#equation-e97e7a18-5356-4fdb-929b-6758425dbeca" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \xi_p^n \quad (p=1,2,\ldots,k).
 \end{equation}\]</div>
 <p>An immediate consequence of this theorem, for this particular case, is that the general solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a> is</p>

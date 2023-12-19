@@ -9,7 +9,7 @@
         ,   xlabel = {nnz=22}
         ,   xtick = {1,2,3,4,5,6,7,8}
         ,   ytick = {1,2,3,4,5,6,7,8}
-        ,   title = {Fig 5d. Reordered Matrix $D$ by \texttt{symrcm} function}
+        ,   title = {Fig 5d. Reordered Matrix $D$ by \texttt{symrcm}}
         ]
         \addplot[only marks] coordinates
         {   (1,1)(1,2)

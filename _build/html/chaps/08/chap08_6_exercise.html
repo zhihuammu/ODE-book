@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>8.9. Chapter 8 Exercises &#8212; Computational Methods in Ordinary Differential Equations</title>
+    <title>8.6. Chapter 8 Exercises &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
   
@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/08/chap08_6_exercise';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="chap08_answers.html" />
+    <link rel="next" title="8.7. Answers to Tutorial Exercises Chapter 8" href="chap08_7_answers.html" />
     <link rel="prev" title="8.5. Reordering and Matrix Bandwidth" href="chap08_5_reordering.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../unitguide/schedule.html">Teaching Schedule</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../unitguide/readinglist.html">Reading List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unitguide/readingList.html">Further Reading List</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Tutorial Exericses</span></p>
 <ul class="current nav bd-sidenav">
@@ -214,7 +214,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exercise.html">6.5. Chapter 6 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. An Introduction to Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_1_introduction.html">7.1. Introduction and background</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_2_stiffSystem.html">7.2. Stiff Systems of Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_3_method.html">7.3. Methods for Stiff Equations</a></li>
@@ -228,16 +228,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chap08_3_graphTheory.html">8.3. Matrix Sparsity and Graph Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap08_4_storage.html">8.4. Sparse Matrices Storage and Reordering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap08_5_reordering.html">8.5. Reordering and Matrix Bandwidth</a></li>
-
-
-
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.9. Chapter 8 Exercises</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.6. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap08_7_answers.html">8.7. Answers to Tutorial Exercises Chapter 8</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">Matlab ODE Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">ODE Solvers in Matlab and SciPy</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
@@ -388,38 +387,37 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="chapter-8-exercises">
-<h1><span class="section-number">8.9. </span>Chapter 8 Exercises<a class="headerlink" href="#chapter-8-exercises" title="Permalink to this headline">#</a></h1>
-<p><strong>[Exercise (7)]{.underline}</strong></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-8-exercises">
+<span id="chap-sparsematrix-exercise"></span><h1><span class="section-number">8.6. </span>Chapter 8 Exercises<a class="headerlink" href="#chapter-8-exercises" title="Permalink to this headline">#</a></h1>
 <ol class="arabic">
-<li><p>(a) Write a Matlab mfile that produces the adjacency graph for the
-symmetric matrix A given in Example 4. (b) Modify your mfile and
-repeat for the matrix A: A=[1 1 0 0 0 1, 1 1 0 0 1 0, 0 0 1 0 1 0,
-0 0 0 1 0 1, 0 1 1 0 1 0, 1 0 0 1 0 1].</p></li>
+<li><ol class="arabic simple">
+<li><p>Write a Matlab mfile that produces the adjacency graph for the symmetric matrix A given in <a class="reference internal" href="chap08_5_reordering.html#ch08-example-comparison">Example 8.10</a>.</p></li>
+<li><p>Modify your mfile and repeat for the matrix :</p></li>
+</ol>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
 <li><p>Consider the following adjacency graph with 10 nodes:</p>
-<p><img alt="image" src="chaps/08/main/07/ch7ex3.tikz" /></p>
-<p>Show the corresponding adjacency matrix <span class="math notranslate nohighlight">\(A\)</span> and calculate its
-bandwidth using the MATLAB command <em>bandwidth</em>. Reorder the matrix
-<span class="math notranslate nohighlight">\(A\)</span> using the Cuthill-McKee (CM) algorithm and label the
-corresponding matrix <span class="math notranslate nohighlight">\(B\)</span>. Reorder the matrix <span class="math notranslate nohighlight">\(A\)</span> using the RCM
-algorithm and label the corresponding matrix C. Compare the
-bandwidths of matrices <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(C\)</span> and comment on the
-computational efficiency when using matrix re-ordering. Plot the
-sparsity pattern of matrices <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span>, and verify your
-results by using the MATLAB function <em>symrcm(A)</em>. Reorder the Matrix
-<span class="math notranslate nohighlight">\(A\)</span> by Column Count (label <span class="math notranslate nohighlight">\(D\)</span>) and Minimum Degree (label <span class="math notranslate nohighlight">\(M\)</span>)
-schemes, write down the corresponding adjacency matrices and plot
-the adjacency graphs. For the three schemes RCM, CC and MD (i.e.
-matrices <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span> and <span class="math notranslate nohighlight">\(M\)</span>), perform LU factorisation and record the
-number of fill-in elements in a table, prepare a summary result
-table (similar to Figure 6 shown in the lecture notes) and comment.</p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-ea1c5d3019c7476778c146c283b46223bbb3b3dd.svg" alt="Figure made with TikZ" /></p>
+</div><ol class="arabic simple">
+<li><p>Show the corresponding adjacency matrix <span class="math notranslate nohighlight">\(A\)</span> and calculate its bandwidth using the MATLAB command <em>bandwidth</em>.</p></li>
+<li><p>Reorder the matrix <span class="math notranslate nohighlight">\(A\)</span> using the Cuthill-McKee (CM) algorithm and label the corresponding matrix <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+<li><p>Reorder the matrix <span class="math notranslate nohighlight">\(A\)</span> using the RCM algorithm and label the corresponding matrix <span class="math notranslate nohighlight">\(C\)</span>.</p></li>
+<li><p>Compare the bandwidths of matrices <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(C\)</span> and comment on the computational efficiency when using matrix re-ordering.</p></li>
+<li><p>Plot the sparsity pattern of matrices <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span>, and verify your results by using the MATLAB function <code class="docutils literal notranslate"><span class="pre">symrcm(A)</span></code>.</p></li>
+<li><p>Reorder the Matrix <span class="math notranslate nohighlight">\(A\)</span> by Column Count (label <span class="math notranslate nohighlight">\(D\)</span>) and Minimum Degree (label <span class="math notranslate nohighlight">\(M\)</span>) schemes, write down the corresponding adjacency matrices and plot the adjacency graphs.</p></li>
+<li><p>For the three schemes RCM, CC and MD (i.e. matrices <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span> and <span class="math notranslate nohighlight">\(M\)</span>), perform LU factorisation and record the number of fill-in elements in a table, prepare a summary result table (similar to Figure 6 shown in the lecture notes) and comment.</p></li>
+</ol>
 </li>
 <li><p>Repeat question 2 with the following adjacency graph with 9 nodes.</p>
-<figure>
-<p><span
-class="math inline">$\includegraphics{main/07/ch7ex2v2.tikz}$</span></p>
-</figure>
-<p>Calculate the storage in units of bytes for the full and sparse
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-6278675852ac2da11609041a3389b0520a27440c.svg" alt="Figure made with TikZ" /></p>
+</div><p>Calculate the storage in units of bytes for the full and sparse
 matrix <span class="math notranslate nohighlight">\(A\)</span> and the reordered Matrices <span class="math notranslate nohighlight">\(D\)</span> (Column Count) and <span class="math notranslate nohighlight">\(M\)</span>
 (Minimum Degree), and comment.</p>
 </li>
@@ -467,11 +465,11 @@ matrix <span class="math notranslate nohighlight">\(A\)</span> and the reordered
       </div>
     </a>
     <a class="right-next"
-       href="chap08_answers.html"
+       href="chap08_7_answers.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title"><span class="section-number">8.7. </span>Answers to Tutorial Exercises Chapter 8</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

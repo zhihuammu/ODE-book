@@ -1,3 +1,4 @@
+(chap:errorConstant:exercise)=
 # Exercises
 
 :::{exercise}

@@ -1,3 +1,4 @@
+(chap:stability1:exercise)=
 # Chapter 5 Exercise
 
 1.  Find the first and second characteristic polynomials and investigate

@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../unitguide/schedule.html">Teaching Schedule</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../unitguide/readinglist.html">Reading List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unitguide/readingList.html">Further Reading List</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Tutorial Exericses</span></p>
 <ul class="current nav bd-sidenav">
@@ -214,7 +214,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exercise.html">6.5. Chapter 6 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. An Introduction to Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_1_introduction.html">7.1. Introduction and background</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_2_stiffSystem.html">7.2. Stiff Systems of Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_3_method.html">7.3. Methods for Stiff Equations</a></li>
@@ -228,16 +228,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../08/chap08_3_graphTheory.html">8.3. Matrix Sparsity and Graph Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../08/chap08_4_storage.html">8.4. Sparse Matrices Storage and Reordering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../08/chap08_5_reordering.html">8.5. Reordering and Matrix Bandwidth</a></li>
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_6_exercise.html">8.9. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_6_exercise.html">8.6. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_7_answers.html">8.7. Answers to Tutorial Exercises Chapter 8</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">Matlab ODE Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">ODE Solvers in Matlab and SciPy</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
@@ -417,7 +416,7 @@ document.write(`
 \[x_j= jh\]</div>
 <p>where <span class="math notranslate nohighlight">\(h=x_{j+1}-x_j\)</span> is called the step size (or step length), <span class="math notranslate nohighlight">\(h\in(0,+\infty)\)</span>.</p>
 <figure class="align-default" id="figure-discretepoints">
-<a class="reference internal image-reference" href="chaps/images/fig-discrete.svg"><img alt="chaps/images/fig-discrete.svg" src="chaps/images/fig-discrete.svg" width="600px" /></a>
+<a class="reference internal image-reference" href="../../_images/fig-discrete.svg"><img alt="../../_images/fig-discrete.svg" src="../../_images/fig-discrete.svg" width="600px" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Discrete data points and sequence.</span><a class="headerlink" href="#figure-discretepoints" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -435,13 +434,13 @@ Here we generalise this concept to use a sequence to represent the function at d
 <p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (Forward Difference)</p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order forward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between the next member and itself:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e35ca52f-e5d9-4c52-97b5-ae6801d50962">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-e35ca52f-e5d9-4c52-97b5-ae6801d50962" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1ad9168c-2636-4026-a6f9-27c87624c641">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-1ad9168c-2636-4026-a6f9-27c87624c641" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta f_j = f_{j+1} - f_j,
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k-\)</span>th order forward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-03cc943a-69ba-4812-bd46-6abdcc920884">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-03cc943a-69ba-4812-bd46-6abdcc920884" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9b5cf937-6c99-4363-9721-3f331e652584">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-9b5cf937-6c99-4363-9721-3f331e652584" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta^k f_j= \Delta\left(\Delta^{k-1} f_j \right).
 \end{equation}\]</div>
 </section>
@@ -493,13 +492,13 @@ Here we generalise this concept to use a sequence to represent the function at d
 <p class="admonition-title"><span class="caption-number">Definition 2.2 </span> (Backward Difference)</p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order backward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between itself and the previous member:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-84414585-5f1e-43cd-9c46-67e80f9e2f38">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-84414585-5f1e-43cd-9c46-67e80f9e2f38" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d731ea27-6dd0-4179-9261-e98f2ea68030">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-d731ea27-6dd0-4179-9261-e98f2ea68030" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla f_j = f_{j} - f_{j-1},
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k-\)</span>th order backward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b4aef5ec-ad8c-4a71-8bf8-dd5c062afb99">
-<span class="eqno">(2.4)<a class="headerlink" href="#equation-b4aef5ec-ad8c-4a71-8bf8-dd5c062afb99" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-015e688d-37ad-4e4a-8385-77b58c5993ab">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-015e688d-37ad-4e4a-8385-77b58c5993ab" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla^k f_j= \nabla\left(\nabla^{k-1} f_j \right).
 \end{equation}\]</div>
 </section>
@@ -554,8 +553,8 @@ Here we generalise this concept to use a sequence to represent the function at d
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>,
 we define <span class="math notranslate nohighlight">\(E\)</span> as an operator shifting a member in a sequence to the next member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bbdbf185-a3ad-4c6c-95d6-4ddd11c1f1bf">
-<span class="eqno">(2.5)<a class="headerlink" href="#equation-bbdbf185-a3ad-4c6c-95d6-4ddd11c1f1bf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-479e0008-e7a5-408c-a8a0-092a26cfbbca">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-479e0008-e7a5-408c-a8a0-092a26cfbbca" title="Permalink to this equation">#</a></span>\[\begin{equation}
   E f_j = f_{j+1},
 \end{equation}\]</div>
 <p>and shifting a member forward <span class="math notranslate nohighlight">\(k\)</span> times gives</p>
@@ -563,8 +562,8 @@ we define <span class="math notranslate nohighlight">\(E\)</span> as an operator
 \[E^k f_j= E(E^{k-1}f_j)= f_{j+k}.\]</div>
 <p>Similarly, we define <span class="math notranslate nohighlight">\(E^{-1}\)</span> as an operator shifting a member in a
 sequence to the previous member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d01d161b-c035-4d5f-abf8-ae94d0d9d940">
-<span class="eqno">(2.6)<a class="headerlink" href="#equation-d01d161b-c035-4d5f-abf8-ae94d0d9d940" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-81810ebf-012a-48dc-97f2-ab5b99e7b349">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-81810ebf-012a-48dc-97f2-ab5b99e7b349" title="Permalink to this equation">#</a></span>\[\begin{equation}
   E^{-1} f_j = f_{j-1}
 \end{equation}\]</div>
 <p>and shifting a member backward <span class="math notranslate nohighlight">\(k\)</span> (<span class="math notranslate nohighlight">\(k&gt;0\)</span>) times gives</p>

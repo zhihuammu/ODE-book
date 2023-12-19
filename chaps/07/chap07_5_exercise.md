@@ -1,3 +1,4 @@
+(chap:stiff:exercise)=
 # Chapter 7 Exercise
 
 :::{exercise}

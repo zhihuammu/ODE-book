@@ -12,7 +12,7 @@ member $f_j$, how can we find the value of $f(x)$ for
 $x_j < x < x_{j+1}$?
 :::
 
-:::{figure} ../images/fig-interpolation.svg
+:::{figure} /images/fig-interpolation.svg
 ---
 width: 600px
 name: figure-discretepoints

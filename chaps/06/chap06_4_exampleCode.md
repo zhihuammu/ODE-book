@@ -2,6 +2,7 @@
 
 ## Script 1
 ```{literalinclude} /codes/AM2_interval.m
+:language: matlab
 ```
 
 Output:
@@ -22,6 +23,7 @@ Output:
 ## Script 2
 
 ```{literalinclude} /codes/AM2_interval_v2.m
+:language: matlab
 ```
 Output
 
@@ -35,6 +37,7 @@ Output
 ## Script 3
 
 ```{literalinclude} /codes/AB2_lines.m
+:language: matlab
 ```
 
 Output
@@ -61,6 +64,7 @@ plot(z)
 
 ## Script 5
 ```{literalinclude} /codes/AB2shaded.m
+:language: matlab
 ```
 
 Output

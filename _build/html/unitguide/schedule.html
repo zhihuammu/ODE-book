@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'unitguide/schedule';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Reading List" href="readinglist.html" />
+    <link rel="next" title="Further Reading List" href="readingList.html" />
     <link rel="prev" title="Linear Multi-step Methods" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -160,7 +160,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Teaching Schedule</a></li>
-<li class="toctree-l1"><a class="reference internal" href="readinglist.html">Reading List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readingList.html">Further Reading List</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Tutorial Exericses</span></p>
 <ul class="nav bd-sidenav">
@@ -212,7 +212,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../chaps/06/chap06_5_exercise.html">6.5. Chapter 6 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../chaps/07/chap07_0.html">7. An Introduction to Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chaps/07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chaps/07/chap07_1_introduction.html">7.1. Introduction and background</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chaps/07/chap07_2_stiffSystem.html">7.2. Stiff Systems of Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chaps/07/chap07_3_method.html">7.3. Methods for Stiff Equations</a></li>
@@ -226,16 +226,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../chaps/08/chap08_3_graphTheory.html">8.3. Matrix Sparsity and Graph Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chaps/08/chap08_4_storage.html">8.4. Sparse Matrices Storage and Reordering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chaps/08/chap08_5_reordering.html">8.5. Reordering and Matrix Bandwidth</a></li>
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="../chaps/08/chap08_6_exercise.html">8.9. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chaps/08/chap08_6_exercise.html">8.6. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chaps/08/chap08_7_answers.html">8.7. Answers to Tutorial Exercises Chapter 8</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chaps/chapX_odeSolvers.html">Matlab ODE Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chaps/chapX_odeSolvers.html">ODE Solvers in Matlab and SciPy</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="../chaps/markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
@@ -391,22 +390,53 @@ document.write(`
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-center head"><p>Week</p></th>
-<th class="text-center head"><p>Lecture</p></th>
-<th class="text-center head"><p>Lab</p></th>
+<th class="head"><p>Lecture</p></th>
+<th class="head"><p>Lab</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-center"><p>1</p></td>
-<td class="text-center"><p><a class="reference internal" href="../chaps/01/chap01_0.html#chap01-complexnumber"><span class="std std-ref">Chapter 1: Complex Number and Difference Equations</span></a></p></td>
-<td class="text-center"><p><a class="reference internal" href="../chaps/01/chap01_5_exercise.html#chap01-exercises"><span class="std std-ref">Chapter 1 Exercises</span></a></p></td>
+<td><p><a class="reference internal" href="../chaps/01/chap01_0.html#chap01-complexnumber"><span class="std std-ref">Chapter 1: Complex Number and Difference Equations</span></a></p></td>
+<td><p><a class="reference internal" href="../chaps/01/chap01_5_exercise.html#chap01-exercises"><span class="std std-ref">Chapter 1 Exercises</span></a></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>2</p></td>
-<td class="text-center"><p><a class="reference internal" href="../chaps/02/chap02_0.html#chap02-interpolating"><span class="std std-ref">Chapter 2: Interpolating Polynomial</span></a></p></td>
-<td class="text-center"><p><a class="reference internal" href="../chaps/02/chap02_5_exercise.html#chap02-exercises"><span class="std std-ref">Chapter 2 Exercises</span></a></p></td>
+<td><p><a class="reference internal" href="../chaps/02/chap02_0.html#chap02-interpolating"><span class="std std-ref">Chapter 2: Interpolating Polynomial</span></a></p></td>
+<td><p><a class="reference internal" href="../chaps/02/chap02_5_exercise.html#chap02-exercises"><span class="std std-ref">Chapter 2 Exercises</span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td><p><a class="reference internal" href="../chaps/03/chap03_0.html#chap-derivation"><span class="std std-ref">Chapter 3: Multistep Methods: Derivation by Finite Difference formulae</span></a></p></td>
+<td><p><a class="reference internal" href="../chaps/03/chap03_8_exercise.html#chap-derivation-exercises"><span class="std std-ref">Chapter 3 Exercises</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td><p><a class="reference internal" href="../chaps/04/chap04_0.html#chap-errorconstant"><span class="std std-ref">Chapter 4: Multistep Methods: Order and Error Constants</span></a></p></td>
+<td><p><a class="reference internal" href="../chaps/04/chap04_4_exercise.html#chap-errorconstant-exercise"><span class="std std-ref">Chapter 4 Exercises</span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>5</p></td>
+<td><p><a class="reference internal" href="../chaps/05/chap05_0.html#chap-stability1"><span class="std std-ref">Chapter 5: Multistep Methods: Stability I</span></a></p></td>
+<td><p><a class="reference internal" href="../chaps/05/chap05_3_exercise.html#chap-stability1-exercise"><span class="std std-ref">Chapter 5 Exercises</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>6</p></td>
+<td><p><a class="reference internal" href="../chaps/06/chap06_0.html#chap-stability2"><span class="std std-ref">Chapter 6: Multistep Methods: Stability II</span></a></p></td>
+<td><p><a class="reference internal" href="../chaps/06/chap06_5_exercise.html#chap-stability2-exercise"><span class="std std-ref">Chapter 6 Exercises</span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>7</p></td>
+<td><p><a class="reference internal" href="../chaps/07/chap07_0.html#chap-stiff"><span class="std std-ref">Chapter 7: Stiff Differential Equations</span></a></p></td>
+<td><p><a class="reference internal" href="../chaps/07/chap07_5_exercise.html#chap-stiff-exercise"><span class="std std-ref">Chapter 7 Exercises</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>8–9</p></td>
+<td><p><a class="reference internal" href="../chaps/08/chap08_0.html#chap-sparsematrix"><span class="std std-ref">Chapter 8: Computational Methods with Sparse Matrices</span></a></p></td>
+<td><p><a class="reference internal" href="../chaps/08/chap08_6_exercise.html#chap-sparsematrix-exercise"><span class="std std-ref">Chapter 8 Exercises</span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>10</p></td>
+<td><p>Revision: Past exam Paper</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>11</p></td>
+<td><p>Consolidation: Mock exam questions</p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
-<p><a class="reference internal" href="../chaps/01/chap01_0.html#chap01-complexnumber"><span class="std std-numref">Section 1</span></a></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -450,11 +480,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="readinglist.html"
+       href="readingList.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Reading List</p>
+        <p class="prev-next-title">Further Reading List</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -1,5 +1,5 @@
 (chap:stiff)=
-# An Introduction to Stiff Differential Equations
+# Stiff Differential Equations
 
 **Learning Objective**
 

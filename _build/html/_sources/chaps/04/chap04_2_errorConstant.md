@@ -172,6 +172,7 @@ Find the order and the error constants of the following formulae,
     Matlab code for error constant calculation:
 
     :::{literalinclude} /codes/example3a.m
+    :language: matlab
     :::
 
 2.  $\displaystyle y_{j+3} ~=~ y_{j+2} + \frac{h}{12}(23f_{j+2} - 16f_{j+1} + 5f_j)$
@@ -210,6 +211,7 @@ Find the order and the error constants of the following formulae,
     Matlab code for error constant calculation:
 
     :::{literalinclude} /codes/example3b.m
+    :language: matlab
     :::
 :::
 

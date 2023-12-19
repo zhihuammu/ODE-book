@@ -164,7 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="unitguide/schedule.html">Teaching Schedule</a></li>
-<li class="toctree-l1"><a class="reference internal" href="unitguide/readinglist.html">Reading List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unitguide/readingList.html">Further Reading List</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Tutorial Exericses</span></p>
 <ul class="nav bd-sidenav">
@@ -216,7 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chaps/06/chap06_5_exercise.html">6.5. Chapter 6 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/07/chap07_0.html">7. An Introduction to Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chaps/07/chap07_1_introduction.html">7.1. Introduction and background</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/07/chap07_2_stiffSystem.html">7.2. Stiff Systems of Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/07/chap07_3_method.html">7.3. Methods for Stiff Equations</a></li>
@@ -230,16 +230,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chaps/08/chap08_3_graphTheory.html">8.3. Matrix Sparsity and Graph Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/08/chap08_4_storage.html">8.4. Sparse Matrices Storage and Reordering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/08/chap08_5_reordering.html">8.5. Reordering and Matrix Bandwidth</a></li>
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="chaps/08/chap08_6_exercise.html">8.9. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/08/chap08_6_exercise.html">8.6. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/08/chap08_7_answers.html">8.7. Answers to Tutorial Exercises Chapter 8</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="chaps/chapX_odeSolvers.html">Matlab ODE Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chaps/chapX_odeSolvers.html">ODE Solvers in Matlab and SciPy</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="chaps/markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
@@ -347,6 +346,10 @@ document.write(`
 
    <div class="modindex-jumpbox">
    <a href="#cap-ch04-example-4"><strong>ch04-example-4</strong></a> | 
+   <a href="#cap-ch08-example-columncount"><strong>ch08-example-columncount</strong></a> | 
+   <a href="#cap-ch08-example-comparison"><strong>ch08-example-comparison</strong></a> | 
+   <a href="#cap-ch08-example-mindegree"><strong>ch08-example-mindegree</strong></a> | 
+   <a href="#cap-ch08-example-rcm"><strong>ch08-example-rcm</strong></a> | 
    <a href="#cap-definition-0"><strong>definition-0</strong></a> | 
    <a href="#cap-definition-1"><strong>definition-1</strong></a> | 
    <a href="#cap-definition-2"><strong>definition-2</strong></a> | 
@@ -361,6 +364,7 @@ document.write(`
    <a href="#cap-example-4"><strong>example-4</strong></a> | 
    <a href="#cap-example-5"><strong>example-5</strong></a> | 
    <a href="#cap-example-6"><strong>example-6</strong></a> | 
+   <a href="#cap-example-8.5"><strong>example-8.5</strong></a> | 
    <a href="#cap-theorem-1"><strong>theorem-1</strong></a> | 
    <a href="#cap-theorem-2"><strong>theorem-2</strong></a> | 
    <a href="#cap-theorem-5"><strong>theorem-5</strong></a>
@@ -374,6 +378,38 @@ document.write(`
        <td></td>
        <td>
        <a href="chaps/04/chap04_2_errorConstant.html#ch04-example-4"><code class="xref">ch04-example-4</code></a> <em>(chaps/04/chap04_2_errorConstant)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ch08-example-columncount"><td></td><td>
+       <strong>ch08-example-columncount</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="chaps/08/chap08_5_reordering.html#ch08-example-columncount"><code class="xref">ch08-example-columncount</code></a> <em>(chaps/08/chap08_5_reordering)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ch08-example-comparison"><td></td><td>
+       <strong>ch08-example-comparison</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="chaps/08/chap08_5_reordering.html#ch08-example-comparison"><code class="xref">ch08-example-comparison</code></a> <em>(chaps/08/chap08_5_reordering)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ch08-example-mindegree"><td></td><td>
+       <strong>ch08-example-mindegree</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="chaps/08/chap08_5_reordering.html#ch08-example-mindegree"><code class="xref">ch08-example-mindegree</code></a> <em>(chaps/08/chap08_5_reordering)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ch08-example-rcm"><td></td><td>
+       <strong>ch08-example-rcm</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="chaps/08/chap08_5_reordering.html#ch08-example-rcm"><code class="xref">ch08-example-rcm</code></a> <em>(chaps/08/chap08_5_reordering)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-0"><td></td><td>
@@ -429,7 +465,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="chaps/markdown-notebooks.html#example-0"><code class="xref">example-0</code></a> <em>(chaps/markdown-notebooks)</em></td><td>
+       <a href="chaps/08/chap08_3_graphTheory.html#example-0"><code class="xref">example-0</code></a> <em>(chaps/08/chap08_3_graphTheory)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-1"><td></td><td>
@@ -437,7 +473,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="chaps/07/chap07_2_stiffSystem.html#example-1"><code class="xref">example-1</code></a> <em>(chaps/07/chap07_2_stiffSystem)</em></td><td>
+       <a href="chaps/08/chap08_3_graphTheory.html#example-1"><code class="xref">example-1</code></a> <em>(chaps/08/chap08_3_graphTheory)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-2"><td></td><td>
@@ -445,7 +481,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="chaps/06/chap06_3_boundaryRootLocus.html#example-2"><code class="xref">example-2</code></a> <em>(chaps/06/chap06_3_boundaryRootLocus)</em></td><td>
+       <a href="chaps/08/chap08_3_graphTheory.html#example-2"><code class="xref">example-2</code></a> <em>(chaps/08/chap08_3_graphTheory)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-3"><td></td><td>
@@ -453,7 +489,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="chaps/02/chap02_2_differenceOperator.html#example-3"><code class="xref">example-3</code></a> <em>(chaps/02/chap02_2_differenceOperator)</em></td><td>
+       <a href="chaps/08/chap08_3_graphTheory.html#example-3"><code class="xref">example-3</code></a> <em>(chaps/08/chap08_3_graphTheory)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-3.2"><td></td><td>
@@ -486,6 +522,14 @@ document.write(`
        <td></td>
        <td>
        <a href="chaps/01/chap01_4_homogenous.html#example-6"><code class="xref">example-6</code></a> <em>(chaps/01/chap01_4_homogenous)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-8.5"><td></td><td>
+       <strong>example-8.5</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="chaps/08/chap08_4_storage.html#example-8.5"><code class="xref">example-8.5</code></a> <em>(chaps/08/chap08_4_storage)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-1"><td></td><td>

@@ -1,6 +1,7 @@
 ## Example MATLAB Program
 
 ```{literalinclude} /codes/ch6_stiff_1.m
+:language: matlab
 ```
 
 

@@ -8,9 +8,10 @@ parts:
     numbered: false
     chapters:
     - file: unitguide/schedule
-    - file: unitguide/readinglist
+    - file: unitguide/readingList
     
   - caption: Lecture Notes and Tutorial Exericses
+    maxdepth: 1
     numbered: true      
     chapters:
     - file: chaps/01/chap01_0

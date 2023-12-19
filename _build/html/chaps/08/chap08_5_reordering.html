@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/08/chap08_5_reordering';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="8.9. Chapter 8 Exercises" href="chap08_6_exercise.html" />
+    <link rel="next" title="8.6. Chapter 8 Exercises" href="chap08_6_exercise.html" />
     <link rel="prev" title="8.4. Sparse Matrices Storage and Reordering" href="chap08_4_storage.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../unitguide/schedule.html">Teaching Schedule</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../unitguide/readinglist.html">Reading List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../unitguide/readingList.html">Further Reading List</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Tutorial Exericses</span></p>
 <ul class="current nav bd-sidenav">
@@ -214,7 +214,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exercise.html">6.5. Chapter 6 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. An Introduction to Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_1_introduction.html">7.1. Introduction and background</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_2_stiffSystem.html">7.2. Stiff Systems of Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_3_method.html">7.3. Methods for Stiff Equations</a></li>
@@ -228,16 +228,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chap08_3_graphTheory.html">8.3. Matrix Sparsity and Graph Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap08_4_storage.html">8.4. Sparse Matrices Storage and Reordering</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">8.5. Reordering and Matrix Bandwidth</a></li>
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="chap08_6_exercise.html">8.9. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap08_6_exercise.html">8.6. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap08_7_answers.html">8.7. Answers to Tutorial Exercises Chapter 8</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">Matlab ODE Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">ODE Solvers in Matlab and SciPy</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
@@ -386,15 +385,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8.5. Reordering and Matrix Bandwidth</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuthill-and-mckee-reordering">8.5.1. Cuthill and McKee Reordering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#column-count-reordering">8.5.2. Column Count Reordering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-degree-reordering">8.5.3. Minimum Degree Reordering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-between-various-ordering-schemes-and-fill-in-effect">8.5.4. Comparison between various ordering schemes and fill-in effect</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#column-count-reordering">8.6. Column Count Reordering</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-degree-reordering">8.7. Minimum Degree Reordering</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-between-various-ordering-schemes-and-fill-in-effect">8.8. Comparison between various ordering schemes and fill-in effect</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -405,7 +400,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="reordering-and-matrix-bandwidth">
+  <section class="tex2jax_ignore mathjax_ignore" id="reordering-and-matrix-bandwidth">
 <h1><span class="section-number">8.5. </span>Reordering and Matrix Bandwidth<a class="headerlink" href="#reordering-and-matrix-bandwidth" title="Permalink to this headline">#</a></h1>
 <p>During the process of matrix factorization into a product by methods
 such as Gaussian elimination and Cholesky factorization, there will
@@ -423,43 +418,89 @@ of the matrix.</p>
 <p>Consider an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix <span class="math notranslate nohighlight">\(A=(a_{ij})\)</span>. If all matrix elements are
 zero outside a diagonally confined band whose range is determined by
 constants <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span>;</p>
-<p><span class="math notranslate nohighlight">\(a_{ij}=0\)</span> <span class="math notranslate nohighlight">\(\text{if}\)</span> <span class="math notranslate nohighlight">\(j&lt;i-p\)</span> <span class="math notranslate nohighlight">\(\text{or}\)</span> <span class="math notranslate nohighlight">\(j&gt;i+q\)</span>; <span class="math notranslate nohighlight">\(p,q \geq 0\)</span> (or
-<span class="math notranslate nohighlight">\(j-i&gt;p\)</span>, or <span class="math notranslate nohighlight">\(i-j&gt;q\)</span>; <span class="math notranslate nohighlight">\(p, q \geq 0\)</span> ), where <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> are the
+<p><span class="math notranslate nohighlight">\(a_{ij}=0\)</span> <span class="math notranslate nohighlight">\(\text{if}\)</span> <span class="math notranslate nohighlight">\(j&lt;i-p\)</span> <span class="math notranslate nohighlight">\(\text{or}\)</span> <span class="math notranslate nohighlight">\(j&gt;i+q\)</span>; <span class="math notranslate nohighlight">\(p,q \geq 0\)</span></p>
+<p>(or <span class="math notranslate nohighlight">\(j-i&gt;p\)</span>, or <span class="math notranslate nohighlight">\(i-j&gt;q\)</span>; <span class="math notranslate nohighlight">\(p, q \geq 0\)</span> ),</p>
+<p>where <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> are the
 distances above and below the main diagonal, then the bandwidth <span class="math notranslate nohighlight">\(bw\)</span> is
 given by <span class="math notranslate nohighlight">\(bw=p+q+1\)</span> (in other words, it is the smallest number of
-adjacent diagonals to which the non-zero elements are confined). A
+adjacent diagonals to which the non-zero elements are confined).</p>
+<p>A
 matrix is called a band matrix or banded matrix if its bandwidth is
-reasonably small. A band matrix with <span class="math notranslate nohighlight">\(p=q=0\)</span> is a diagonal matrix; $A=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f2f6239f-b0ef-40d8-99b6-d85240459761">
-<span class="eqno">(8.7)<a class="headerlink" href="#equation-f2f6239f-b0ef-40d8-99b6-d85240459761" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+reasonably small.</p>
+<p>A band matrix with <span class="math notranslate nohighlight">\(p=q=0\)</span> is a diagonal matrix;</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=\begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 0  \\
 0 &amp; 1 &amp; 0 &amp; 0  \\
 0 &amp; 0 &amp; 1 &amp; 0  \\
 0 &amp; 0 &amp; 0 &amp; 1
-\end{bmatrix}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-8e1516ce-85b6-4c54-8d6f-ec27b7c8c400">
-<span class="eqno">(8.8)<a class="headerlink" href="#equation-8e1516ce-85b6-4c54-8d6f-ec27b7c8c400" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+\end{bmatrix}
+\end{split}\]</div>
+<p>A band matrix with <span class="math notranslate nohighlight">\(p=q=1\)</span> is a tridiagonal matrix;</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+B=
+\begin{bmatrix}
 1 &amp; 1 &amp; 0 &amp; 0  \\
 1 &amp; 1 &amp; 1 &amp; 0  \\
 0 &amp; 1 &amp; 1 &amp; 1  \\
 0 &amp; 0 &amp; 1 &amp; 1
-\end{bmatrix}\]</div>
-<p>given in the following table, using the conventional numbering used in
+\end{bmatrix}
+\end{split}\]</div>
+<p>The indices of the nonzero elements for matrix <span class="math notranslate nohighlight">\(B\)</span> are
+given in the following table, using the conventional numbering used in
 MATLAB.</p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>   $i$   $j$   $[i,j]$
-  ----- ----- ---------
-    1     1    \[1,1\]
-    2     1    \[2,1\]
-    1     2    \[1,2\]
-    2     2    \[2,2\]
-    3     2    \[3,2\]
-    2     3    \[2,3\]
-    3     3    \[3,3\]
-    4     3    \[4,3\]
-    3     4    \[3,4\]
-    4     4    \[4,4\]
-</pre></div>
-</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(i\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(j\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\([i,j]\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>[1,1]</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>[2,1]</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>[1,2]</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>[2,2]</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>[3,2]</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>[2,3]</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>3</p></td>
+<td><p>[3,3]</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>[4,3]</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>[3,4]</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>4</p></td>
+<td><p>[4,4]</p></td>
+</tr>
+</tbody>
+</table>
 <p>Therefore, the difference between i and j for each nonzero entry is
 either 0 or 1; hence the maximum distance is 1, i.e. in MATLAB the
 bandwidth calculation for a tridiagonal matrix <span class="math notranslate nohighlight">\(T\)</span> is performed by the
@@ -488,12 +529,15 @@ bw=max(i-j)    %returns an array the same size as i
                %the dimensions of i and j must match.
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Note - in some textbooks and articles the bandwidth is given as
 <span class="math notranslate nohighlight">\(bw=p+q+1\)</span> - the bandwidth of a tridiagonal matrix is given as 3 (i.e.
 <span class="math notranslate nohighlight">\(1(L) + 1(U) + 1(D)\)</span>). Also, when <span class="math notranslate nohighlight">\(p=q=2\)</span> one has a pentadiagonal matrix
 and so on. Also, an upper triangular matrix is obtained when <span class="math notranslate nohighlight">\(q=0\)</span>,
 <span class="math notranslate nohighlight">\(q=n-1\)</span>, and similarly, with <span class="math notranslate nohighlight">\(p=n-1\)</span>, <span class="math notranslate nohighlight">\(q=0\)</span>, a lower triangular matrix
 is obtained.</p>
+</div>
 <section id="cuthill-and-mckee-reordering">
 <h2><span class="section-number">8.5.1. </span>Cuthill and McKee Reordering<a class="headerlink" href="#cuthill-and-mckee-reordering" title="Permalink to this headline">#</a></h2>
 <p>The most simple and popular method of minimizing the bandwidth was
@@ -532,12 +576,27 @@ node numbers.</p></li>
 <li><p>Continue until the size of the array Result is <span class="math notranslate nohighlight">\(n\)</span> for an
 <span class="math notranslate nohighlight">\(n\times n\)</span> matrix (i.e. all nodes are included in the array).</p></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Note:- If the selected node in column Results is not connected to any
 other node, then we put a ‘-’ in the corresponding position in the queue
 column.</p>
-<p><strong>[Example 7.1]{.underline}</strong> Consider the following sparse matrix and
+</div>
+<div class="proof example admonition" id="ch08-example-rcm">
+<p class="admonition-title"><span class="caption-number">Example 8.7 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider the following sparse matrix and
 its corresponding adjacency plot:</p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>$A=
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Matrix</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=
       \begin{bmatrix}
         1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
         0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\
@@ -547,33 +606,102 @@ its corresponding adjacency plot:</p>
         0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\
         0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
         0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1
-      \end{bmatrix}$
-</pre></div>
+      \end{bmatrix}
+\end{split}\]</div>
 </div>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>![image](main/07/Fig7a.tikz){width=&quot;5cm&quot;}
-</pre></div>
 </div>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>
-::: tabular
-P2cm \| P2cm P2cm P2cm P2cm P2cm Original nodes &amp; No. of connections &amp;
-Results/ Head &amp; Queue &amp; RCM &amp; New nodes\
-1 &amp; 1 &amp; 1 &amp; 5 &amp;7 &amp;1\
-2 &amp; 3 &amp; 5 &amp; 3 &amp;4 &amp;2\
-3 &amp; 2 &amp; 3 &amp; 2 &amp;8 &amp;3\
-4 &amp; 1 &amp; 2 &amp; 6,8 &amp;6 &amp;4\
-5 &amp; 2 &amp; 6 &amp; - &amp;2 &amp;5\
-6 &amp; 2 &amp; 8 &amp; - &amp;3 &amp;6\
-7 &amp; 1 &amp; 4 &amp; 7 &amp;5 &amp;7\
-8 &amp; 2 &amp; 7 &amp; - &amp;1 &amp;8\
-</pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-Note that the labels of new nodes are the reverse of the elements in the
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Graph</div>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-c9c970a5f35bebf064d1e865b245392da367372b.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Original nodes</p></th>
+<th class="head"><p>No. of connections</p></th>
+<th class="head"><p>Results Head</p></th>
+<th class="head"><p>Queue</p></th>
+<th class="head"><p>RCM</p></th>
+<th class="head"><p>New nodes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>5</p></td>
+<td><p>7</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>5</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>8</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>6,8</p></td>
+<td><p>6</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>2</p></td>
+<td><p>6</p></td>
+<td><p>-</p></td>
+<td><p>2</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>8</p></td>
+<td><p>-</p></td>
+<td><p>3</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>1</p></td>
+<td><p>4</p></td>
+<td><p>7</p></td>
+<td><p>5</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>2</p></td>
+<td><p>7</p></td>
+<td><p>-</p></td>
+<td><p>1</p></td>
+<td><p>8</p></td>
+</tr>
+</tbody>
+</table>
+<p>Note that the labels of new nodes are the reverse of the elements in the
 array Results. See below the re-ordered matrix and the adjacency graph
-(note the diagram remains unchanged, but nodes are now relabelled).
-
-::: center
-$B=
+(note the diagram remains unchanged, but nodes are now relabelled).</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+B=
         \begin{bmatrix}
           1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
           1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -583,82 +711,149 @@ $B=
           0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \\
           0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 \\
           0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1
-        \end{bmatrix}$
-</pre></div>
+        \end{bmatrix}
+\end{split}\]</div>
 </div>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>![image](main/07/Fig7b.tikz){width=&quot;5cm&quot;}
-</pre></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-42115cd37bd1aae255efa352c022147eb3f2a7b9.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</div>
+</div>
+</div>
 </div>
 <p>It can be seen that the algorithm keeps all nonzero elements close to
 the diagonal. You can see visibly that there are more zero elements
 below and above the main diagonal and nonzero elements are close to the
-main diagonal and the re-ordered matrix exhibits a banded structure.
-Using MATLAB the bandwidths of the original matrix A and the reordered
+main diagonal and the re-ordered matrix exhibits a banded structure.</p>
+<p>Using MATLAB the bandwidths of the original matrix A and the reordered
 matrix B can be found as:-</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  &gt;&gt; [i,j]=find(A); %returns the row and col indices
-                    %of the nonzero entries
-  &gt;&gt; bw=max(i-j)
-  bw =6
-  
-  &gt;&gt; [i,j]=find(B);
-  &gt;&gt; bw=max(i-j)
-  bw =2
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">[</span><span class="nb">i</span><span class="p">,</span><span class="nb">j</span><span class="p">]=</span><span class="nb">find</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"> </span><span class="c">%returns the row and col indices</span><span class="w"></span>
+<span class="w">                  </span><span class="c">%of the nonzero entries</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">bw</span><span class="p">=</span><span class="nb">max</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="nb">j</span><span class="p">)</span><span class="w"></span>
+<span class="n">bw</span><span class="w"> </span><span class="p">=</span><span class="mi">6</span><span class="w"></span>
+
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">[</span><span class="nb">i</span><span class="p">,</span><span class="nb">j</span><span class="p">]=</span><span class="nb">find</span><span class="p">(</span><span class="n">B</span><span class="p">);</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">bw</span><span class="p">=</span><span class="nb">max</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="nb">j</span><span class="p">)</span><span class="w"></span>
+<span class="n">bw</span><span class="w"> </span><span class="p">=</span><span class="mi">2</span><span class="w"></span>
 </pre></div>
 </div>
 <p>i.e. The (half) bandwidth of the matrix has been reduced to 2 instead of
 6; hence, the full bandwidth of the matrices A and B are 13 and 5
-respectively. Note that the relabeling described above used the reverse
+respectively.</p>
+<p>Note that the relabeling described above used the reverse
 of the array RCM of the reordered nodes, hence this is the Reverse
 Cuthill-McKee (RCM) re-ordering technique. In the original Cuthill-McKee
 (CM) algorithm, the elements of array Results are relabelled without
 reversing the elements. i.e.</p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>    Original nodes 1   2   3   4   5   6   7   8      
-  ---------------- --- --- --- --- --- --- --- --- -- --
-     Cuthill-McKee 1   5   3   2   6   8   4   7      
-        Reverse CM 7   4   8   6   2   3   5   1      
-</pre></div>
-</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Original nodes</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>8</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Cuthill-McKee</p></td>
+<td><p>1</p></td>
+<td><p>5</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>6</p></td>
+<td><p>8</p></td>
+<td><p>4</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reverse CM</p></td>
+<td><p>7</p></td>
+<td><p>4</p></td>
+<td><p>8</p></td>
+<td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>5</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
 <p>In MATLAB, the command <span class="math notranslate nohighlight">\(symrcm(A)\)</span> returns the symmetric reverse
 Cuthill-McKee ordering of A. This is a permutation matrix p such that
 <span class="math notranslate nohighlight">\(A(p,p)\)</span> tends to have its nonzero elements closer to the main diagonal.
 Example MATLAB code:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  p = symrcm(A);
-  spy(A(p,p)), title(&#39;A(p,p) after Cuthill-McKee ordering&#39;)
-  nz = nnz(A);
-  pct = 100/numel(A);
-  xlabel(sprintf(&#39;nonzeros=%d (%.1f%%)&#39;,nz,nz*pct));
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">symrcm</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
+<span class="nb">spy</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">p</span><span class="p">)),</span><span class="w"> </span><span class="nb">title</span><span class="p">(</span><span class="s">&#39;A(p,p) after Cuthill-McKee ordering&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="n">nz</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">nnz</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
+<span class="n">pct</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="o">/</span><span class="nb">numel</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;nonzeros=%d (%.1f%%)&#39;</span><span class="p">,</span><span class="n">nz</span><span class="p">,</span><span class="n">nz</span><span class="o">*</span><span class="n">pct</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
-<figure>
-<div class="center">
-<img src="main/07/example7_1fig1.tikz" style="width:6cm" />
-</div>
-</figure>
-<p>Figure 5 below shows the nonzero pattern of the original matrix A, the
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-6111af12eefea9175535e9984c46518b60cb7cb4.svg" alt="Figure made with TikZ" /></p>
+</div><p>Figure 5 below shows the nonzero pattern of the original matrix A, the
 ordered matrix B, matrix C, ordered by the CM method, and matrix D is
-found by using the MATLAB function <span class="math notranslate nohighlight">\(\emph{symrcm}\)</span>:-</p>
-<figure>
+found by using the MATLAB function <code class="docutils literal notranslate"><span class="pre">symrcm</span></code></p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-713df8cca1ce93f95f50d1c95f8a3d4abf3ba47f.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-83ff1d9a6455dc6a0f1c2851df8b427b1ec52491.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-cf7fc766a86317718f788928fea4cc0c71da7c0a.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-9418f92b1523d57ede712cc7f639afc00601cdc4.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- <figure>
 <div class="center">
 <table>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><img src="main/07/example7_1sub1.tikz"
+<td style="text-align: center;"><img src="/images/08/example7_1sub1.svg"
 style="width:6cm" alt="image" /></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"><img src="main/07/example7_1sub2.tikz"
+<td style="text-align: center;"><img src="/images/08/example7_1sub2.svg"
 style="width:6cm" alt="image" /></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><img src="main/07/example7_1sub3.tikz"
+<td style="text-align: center;"><img src="/images/08/example7_1sub3.svg"
 style="width:6cm" alt="image" /></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"><img src="main/07/example7_1sub4.tikz"
+<td style="text-align: center;"><img src="/images/08/example7_1sub4.svg"
 style="width:6cm" alt="image" /></td>
 </tr>
 </tbody>
 </table>
 </div>
-</figure>
+</figure> -->
 <p>Note that the half bandwidth of the reordered matrix <span class="math notranslate nohighlight">\(C\)</span>, using the
 original Cuthill-Mckee method is <span class="math notranslate nohighlight">\(bw =5\)</span>, and the half bandwidth of the
 reordered matrix <span class="math notranslate nohighlight">\(D\)</span> is <span class="math notranslate nohighlight">\(bw =2\)</span>, using the MATLAB function <span class="math notranslate nohighlight">\(sysmrcm\)</span> for
@@ -666,17 +861,28 @@ the reverse Cuthill-Mckee is <span class="math notranslate nohighlight">\(bw =2\
 <span class="math notranslate nohighlight">\(B\)</span>. Hence, the Reverse Cuthill-Mckee algorithm for bandwidth reduction
 of sparse matrices seems to be the most effective reordering method.</p>
 </section>
-</section>
+</div></section>
 <section id="column-count-reordering">
-<h1><span class="section-number">8.6. </span>Column Count Reordering<a class="headerlink" href="#column-count-reordering" title="Permalink to this headline">#</a></h1>
+<h2><span class="section-number">8.5.2. </span>Column Count Reordering<a class="headerlink" href="#column-count-reordering" title="Permalink to this headline">#</a></h2>
 <p>The idea of the column count reordering algorithm is to move rows and
 columns with higher nonzero count towards the end of the matrix. This
 algorithm reduces the time and storage for computing matrix operations
 such as the LU factorization and the Cholesky factorization, but its
 performance is not consistent overall and depends on the original
-matrix. <strong>[Example 7.2]{.underline}</strong> Consider the sparse matrix and its
-corresponding adjacency graph from Example 7.1:</p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>$A=
+matrix.</p>
+<div class="proof example admonition" id="ch08-example-columncount">
+<p class="admonition-title"><span class="caption-number">Example 8.8 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider the sparse matrix and its
+corresponding adjacency graph from
+<a class="reference internal" href="#ch08-example-rcm">Example 8.7</a> :</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}A=
         \begin{bmatrix}
           1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
           0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\
@@ -686,18 +892,47 @@ corresponding adjacency graph from Example 7.1:</p>
           0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\
           0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
           0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1
-        \end{bmatrix}$
-</pre></div>
+        \end{bmatrix}
+\end{split}\]</div>
 </div>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>![image](main/07/Fig7a.tikz){width=&quot;5cm&quot;}
-</pre></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-2eab16d0894046785ee23b6689d2c345ce652696.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</div>
+</div>
+</div>
 </div>
 <p>The degrees of all vertices are obtained in the following:</p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>  vertex          1   2   3   4   5   6   7   8
-  --------------- --- --- --- --- --- --- --- ---
-  no. of degree   1   3   2   1   2   2   1   2
-</pre></div>
-</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>vertex</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>8</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no. of degree</p></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
 <p>Since vertex 7 has the least degrees, it is labelled as 1 - (Note: since
 vertices 1, 4, and 7 have the same number of degrees, therefore the new
 labels are interchangeable, as any of these vertices can be chosen in
@@ -705,13 +940,40 @@ any order) and then vertices 4 and 1 are labelled (again since vertices
 4 and 1 have the same number of degrees, therefore the new labels are
 interchangeable). The algorithm is then continued in the same steps
 until complete labelling is obtained as shown:</p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>  new vertex   1   2   3   4   5   6   7   8
-  ------------ --- --- --- --- --- --- --- ---
-  old vertex   7   4   1   8   6   5   3   2
-</pre></div>
-</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>new vertex</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>8</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>old vertex</p></td>
+<td><p>7</p></td>
+<td><p>4</p></td>
+<td><p>1</p></td>
+<td><p>8</p></td>
+<td><p>6</p></td>
+<td><p>5</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
 <p>The resulting adjacency matrix and graph are shown below:</p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>$CC=
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}CC=
         \begin{bmatrix}
           1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
           1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -721,24 +983,51 @@ until complete labelling is obtained as shown:</p>
           0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 \\
           0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 \\
           0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1
-        \end{bmatrix}$
-</pre></div>
+        \end{bmatrix}\end{split}\]</div>
 </div>
-<p><img alt="image" src="chaps/08/main/07/F7CCalog.tikz" />{width=”5cm”}</p>
-<p>Similar to the command <span class="math notranslate nohighlight">\(\emph{symrcm}\)</span> for RCM reordering, in MATLAB the
-command <span class="math notranslate nohighlight">\(\emph{colperm}\)</span> returns the column count reordering of A. This
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-787b539b7889cdf9bddf82b828e63018ecd560dd.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+<p>Similar to the command <strong>symrcm</strong> for RCM reordering, in MATLAB the
+command <strong>colperm</strong> returns the column count reordering of A. This
 is a permutation matrix q such that <span class="math notranslate nohighlight">\(A(q,q)\)</span> tends to move rows and
 columns with higher nonzero count towards the end of the matrix (a
 down-arrow effect).</p>
 <p>Example MATLAB code:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  q = colperm(A);
-  spy(A(q,q)),title(&#39;A(q,q)-Column Count ordering by colperm&#39;)
-  nz = nnz(A);
-  pct = 100 / numel(A);
-  xlabel(sprintf(&#39;nonzeros=%d (%.1f%%)&#39;,nz,nz*pct));
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">q</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">colperm</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
+<span class="nb">spy</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">)),</span><span class="nb">title</span><span class="p">(</span><span class="s">&#39;A(q,q)-Column Count ordering by colperm&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="n">nz</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">nnz</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
+<span class="n">pct</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">numel</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;nonzeros=%d (%.1f%%)&#39;</span><span class="p">,</span><span class="n">nz</span><span class="p">,</span><span class="n">nz</span><span class="o">*</span><span class="n">pct</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
-<figure>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-f2b296d7512483de453541a78d410b3c01e821ec.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-efadbe8ead4bba66ea0411b69ddcb3cc72a988bf.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- <figure>
 <div class="center">
 <table>
 <tbody>
@@ -752,10 +1041,11 @@ style="width:40.0%" alt="image" /></td>
 </tbody>
 </table>
 </div>
-</figure>
+</figure> -->
 </section>
+</div></section>
 <section id="minimum-degree-reordering">
-<h1><span class="section-number">8.7. </span>Minimum Degree Reordering<a class="headerlink" href="#minimum-degree-reordering" title="Permalink to this headline">#</a></h1>
+<h2><span class="section-number">8.5.3. </span>Minimum Degree Reordering<a class="headerlink" href="#minimum-degree-reordering" title="Permalink to this headline">#</a></h2>
 <p>The minimum degree algorithm attempts to reduce the fill-in caused by
 elimination such as Gaussian elimination, LU decomposition or the
 Cholesky decomposition. The computational costs of this algorithm is
@@ -766,9 +1056,13 @@ exact degree to minimise the computational costs. The minimum degree
 algorithm is re-labelling of the vertices in ascending degree order.
 Nodes with lower degrees are labelled early to reduce adding many
 fill-ins.</p>
-<p><strong>[Example 7.3]{.underline}</strong> Consider the sparse matrix and its
-corresponding adjacency graph from Example 7.1:</p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>$A=
+<div class="proof example admonition" id="ch08-example-mindegree">
+<p class="admonition-title"><span class="caption-number">Example 8.9 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider the sparse matrix and its
+corresponding adjacency graph from <a class="reference internal" href="#ch08-example-rcm">Example 8.7</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A=
         \begin{bmatrix}
           1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
           0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\
@@ -778,21 +1072,38 @@ corresponding adjacency graph from Example 7.1:</p>
           0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\
           0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
           0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1
-       \end{bmatrix}$
-</pre></div>
-</div>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>![image](main/07/Fig7a.tikz){width=&quot;4cm&quot;}
-</pre></div>
-</div>
-<p>The minimum degree algorithm is re-labelling of the vertices in
+       \end{bmatrix}\end{split}\]</div>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-2eab16d0894046785ee23b6689d2c345ce652696.svg" alt="Figure made with TikZ" /></p>
+</div><p>The minimum degree algorithm is re-labelling of the vertices in
 ascending degree order. Nodes with lower degrees are labelled early to
 reduce adding many fill-ins.</p>
 <p>The degrees of all vertices are shown in the following table:</p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>           vertex 1   2   3   4   5   6   7   8
-  --------------- --- --- --- --- --- --- --- ---
-    no. of degree 1   3   2   1   2   2   1   2
-</pre></div>
-</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>vertex</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>8</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no. of degree</p></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
 <p>where vertex 7 has the least degrees, then vertex 7 is numbered with
 first as 1. Since vertex 7 is connected to vertex 4, then vertex 4 must
 be updated by subtracting 1 (if it is already 1 then just write it down
@@ -803,22 +1114,24 @@ established, all three vertices 1, 4, and 7 can be selected in this
 case, and proceed to elimination. The completed ordering using the
 Minimum Degree algorithm is shown in the following table, together with
 the resulting adjacency matrix and graph:</p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>  --- -------------- -------------------------- --- --- --- --- --- --- ---
-                      vertex and no. of degree                          
-                                 1               2   3   4   5   6   7   8
-       New ordering              1               3   2   1   2   2   1   2
-   1      \(7\)                  1               3   2   1   2   2   X   2
-   2      \(4\)                  1               3   2   X   2   2   X   2
-   3      \(1\)                  X               3   2   X   1   2   X   2
-   4      \(5\)                  X               3   1   X   X   2   X   2
-   5      \(3\)                  X               2   X   X   X   2   X   2
-   6      \(6\)                  X               1   X   X   X   X   X   1
-   7      \(8\)                  X               1   X   X   X   X   X   X
-   8      \(2\)                  X               X   X   X   X   X   X   X
-  --- -------------- -------------------------- --- --- --- --- --- --- ---
+<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>  
+                    |    vertex and no. of degree                     
+                    |  1   2   3   4   5   6   7   8
+       New ordering |  1   3   2   1   2   2   1   2
+  ---------------------------------------------------    
+   1      (7)       |  1   3   2   1   2   2   X   2
+   2      (4)       |  1   3   2   X   2   2   X   2
+   3      (1)       |  X   3   2   X   1   2   X   2
+   4      (5)       |  X   3   1   X   X   2   X   2
+   5      (3)       |  X   2   X   X   X   2   X   2
+   6      (6)       |  X   1   X   X   X   X   X   1
+   7      (8)       |  X   1   X   X   X   X   X   X
+   8      (2)       |  X   X   X   X   X   X   X   X
+
 </pre></div>
 </div>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>$MD=
+<div class="math notranslate nohighlight">
+\[\begin{split}MD=
         \begin{bmatrix}
           1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
           1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -828,123 +1141,116 @@ the resulting adjacency matrix and graph:</p>
           0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 \\
           0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 \\
           0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1
-        \end{bmatrix}$
-</pre></div>
-</div>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>![image](main/07/F7MDalgo.tikz){width=&quot;4cm&quot;}
-</pre></div>
-</div>
-<p>Similar to the commands <span class="math notranslate nohighlight">\(\emph{symrcm}\)</span> and <span class="math notranslate nohighlight">\(\emph{colperm}\)</span>, in MATLAB
-the command <span class="math notranslate nohighlight">\(\emph{symamd}\)</span> returns the approximate Minimum Degree
+        \end{bmatrix}\end{split}\]</div>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-24fb31a4adb303b29896b786ef0475f491531831.svg" alt="Figure made with TikZ" /></p>
+</div><p>Similar to the commands <strong>symrcm</strong> and <strong>colperm</strong>, in MATLAB
+the command <strong>symamd</strong> returns the approximate Minimum Degree
 reordering of A to produce large blocks of zeros in the matrix. The
 permutation matrix r is calculated such that <span class="math notranslate nohighlight">\(A(r,r)\)</span> tends to move rows
 and columns with higher nonzero elements towards the end of the matrix -
 similar to the Column Count algorithm.</p>
 <p>Example MATLAB code:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  r = symamd(A);
-  spy(A(r,r)),title(&#39;A(r,r)-Minimum Degree ordering by symamd&#39;)
-  nz = nnz(A);
-  pct = 100 / numel(A);
-  xlabel(sprintf(&#39;nonzeros=%d (%.1f%%)&#39;,nz,nz*pct));
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">symamd</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
+<span class="nb">spy</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="p">)),</span><span class="nb">title</span><span class="p">(</span><span class="s">&#39;A(r,r)-Minimum Degree ordering by symamd&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="n">nz</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">nnz</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
+<span class="n">pct</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">numel</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;nonzeros=%d (%.1f%%)&#39;</span><span class="p">,</span><span class="n">nz</span><span class="p">,</span><span class="n">nz</span><span class="o">*</span><span class="n">pct</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
-<figure>
-<div class="center">
-<table>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img src="main/07/MD_comb_1.tikz"
-style="width:40.0%" alt="image" /></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><img src="main/07/MD_comb_2.tikz"
-style="width:40.0%" alt="image" /></td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</section>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-4ba84e976dbd2582fec5fcc39b055d1a4886622b.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-38861ba2d1c0bfddf14c9998307f11d090e98390.svg" alt="Figure made with TikZ" /></p>
+</div></section>
+</div></section>
 <section id="comparison-between-various-ordering-schemes-and-fill-in-effect">
-<h1><span class="section-number">8.8. </span>Comparison between various ordering schemes and fill-in effect<a class="headerlink" href="#comparison-between-various-ordering-schemes-and-fill-in-effect" title="Permalink to this headline">#</a></h1>
+<h2><span class="section-number">8.5.4. </span>Comparison between various ordering schemes and fill-in effect<a class="headerlink" href="#comparison-between-various-ordering-schemes-and-fill-in-effect" title="Permalink to this headline">#</a></h2>
 <p>For a more effective comparison we consider a symmetric <span class="math notranslate nohighlight">\(20 \times 20\)</span>
-sparse matrix A, which was generated by using MATLAB’s <em>rand</em> command:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  &gt;&gt; S = sparse(+(rand(20,20) &lt; 1/3)); % should allow &lt;10% nonzeros
-  &gt;&gt; B=full(S);
-  &gt;&gt; A=B&#39;*B  % makes A a symmetric matrix
+sparse matrix A, which was generated by using MATLAB’s <strong>rand</strong> command:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sparse</span><span class="p">(</span><span class="o">+</span><span class="p">(</span><span class="nb">rand</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">));</span><span class="w"> </span><span class="c">% should allow &lt;10% nonzeros</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">B</span><span class="p">=</span><span class="nb">full</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">A</span><span class="p">=</span><span class="n">B</span><span class="o">&#39;*</span><span class="n">B</span><span class="w">  </span><span class="c">% makes A a symmetric matrix</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Using the MATLAB <span class="math notranslate nohighlight">\(\emph{spy}\)</span> command the corresponding sparsity
+<p>Using the MATLAB *<em>spy</em> command the corresponding sparsity
 patterns from the results of the reordering by the RCM, CC and MD
 methods are summarised in Figure 6. Furthermore, using the MATLAB
 command <span class="math notranslate nohighlight">\([L,U] = lu(A)\)</span> the upper triangular matrix in <span class="math notranslate nohighlight">\(U\)</span> for the full
 matrix A and the reordered matrices are also shown in Figure 6. [ Note:
 for the original matrix <span class="math notranslate nohighlight">\(bw =18\)</span> and for the RCM reordered matrix
 <span class="math notranslate nohighlight">\(bw =7\)</span> were found using MATLAB]</p>
-<figure>
-<div class="center">
-<table>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img src="main/07/fig6a1.tikz"
-style="width:35.0%" alt="image" /></td>
-<td style="text-align: center;"><img src="main/07/fig6a2.tikz"
-style="width:35.0%" alt="image" /></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><img src="main/07/fig6a3.tikz"
-style="width:35.0%" alt="image" /></td>
-<td style="text-align: center;"><img src="main/07/fig6a4.tikz"
-style="width:35.0%" alt="image" /></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><img src="main/07/fig6a5.tikz"
-style="width:35.0%" alt="image" /></td>
-<td style="text-align: center;"><img src="main/07/fig6a6.tikz"
-style="width:35.0%" alt="image" /></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><img src="main/07/fig6a7.tikz"
-style="width:35.0%" alt="image" /></td>
-<td style="text-align: center;"><img src="main/07/fig6a8.tikz"
-style="width:35.0%" alt="image" /></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Figure 6. Comparison between reordering schemes for a <span
-class="math inline">20 × 20</span> symmetric matrix</p>
-</figure>
-<p>In summary, the re-ordering or permutation of matrices provides a
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-961aca406d2df38553c9dba22a5e539b898771cb.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-be8a54a002c5c7ff5fbed413e75429d950add1b0.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-de20332985e4ce71aa6a6c852aedf7ba131dbf86.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-703630afc392ee56370b7463284179e40cb83980.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-94414e0515194f2d582a5bcc901c95f9a5e488dc.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-9782ae7ebadc1d74060eba24a06ab71f67870d21.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-9b906dde14aeb9c3a8be0b67a5ee9686d888615f.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-c0621e8a57e90e83b775ee7e94a3b68107e78831.svg" alt="Figure made with TikZ" /></p>
+</div><p>In summary, the re-ordering or permutation of matrices provides a
 pre-conditioning for the solution of matrices and the resulting matrix
 is already nearly in LU factorization or banded form depending on the
 chosen ordering method. Applying methods for the solution of full
 matrices will produce more nonzero elements (fill-in effect) and no
-computational advantage from the sparsity of matrix can be achieved. For
-the <span class="math notranslate nohighlight">\(20 \times 20\)</span> matrix <span class="math notranslate nohighlight">\(A\)</span> the number of fill-in required to form the
+computational advantage from the sparsity of matrix can be achieved.</p>
+<p>For the <span class="math notranslate nohighlight">\(20 \times 20\)</span> matrix <span class="math notranslate nohighlight">\(A\)</span> the number of fill-in required to form the
 upper triangular using LU factorization of the permuted matrix is shown
 in the following table:</p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>   $20 \times 20$   Original Matrix   Reverse CM   Column Count   Min Degree
-  ---------------- ----------------- ------------ -------------- ------------
-   No. of nz in U        $66$            $54$          $53$          $58$
-</pre></div>
-</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p><span class="math notranslate nohighlight">\(20 \times 20\)</span></p></th>
+<th class="text-center head"><p>Original Matrix</p></th>
+<th class="text-center head"><p>Reverse CM</p></th>
+<th class="text-center head"><p>Column Count</p></th>
+<th class="text-center head"><p>Min Degree</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>No. of nz in U</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(66\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(54\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(53\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(58\)</span></p></td>
+</tr>
+</tbody>
+</table>
 <p>For large matrices with a high percentage of zero elements, reordering
 process of matrices significantly reduces the number of fill-in and the
 CPU processing time , as well as the amount of memory required for data
-storage when solving large sparse linear system of equations. For a
-<span class="math notranslate nohighlight">\(3000\times 3000\)</span> matrix as an example the effect of reordering on the
+storage when solving large sparse linear system of equations.</p>
+<p>For a <span class="math notranslate nohighlight">\(3000\times 3000\)</span> matrix as an example the effect of reordering on the
 LU factors are presented in the following table:</p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>   $3000 \times 3000$   nnz (percentage)               CPU$(sec)$
-  -------------------- ------------------ ----------- ------------
-    Original Matrix        $1783708$        $(100)\%$   $5.500$
-       Reverse CM           $862448$         $(48)\%$   $1.438$
-      Column Count          $521582$         $(29)\%$   $1.016$
-     Minimum Degree         $692034$         $(39)\%$   $1.047$
-</pre></div>
-</div>
-<p><strong>[Example 7.4]{.underline}</strong> Consider the following sparse matrix and
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(3000 \times 3000\)</span></p></th>
+<th class="head"><p>nnz (percentage)</p></th>
+<th class="head"><p>CPU<span class="math notranslate nohighlight">\((sec)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Original Matrix</p></td>
+<td><p><span class="math notranslate nohighlight">\(1783708\)</span>        <span class="math notranslate nohighlight">\((100)\%\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5.500\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Reverse CM</p></td>
+<td><p><span class="math notranslate nohighlight">\(862448\)</span>         <span class="math notranslate nohighlight">\((48)\%\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1.438\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Column Count</p></td>
+<td><p><span class="math notranslate nohighlight">\(521582\)</span>         <span class="math notranslate nohighlight">\((29)\%\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1.016\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Minimum Degree</p></td>
+<td><p><span class="math notranslate nohighlight">\(692034\)</span>         <span class="math notranslate nohighlight">\((39)\%\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1.047\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="proof example admonition" id="ch08-example-comparison">
+<p class="admonition-title"><span class="caption-number">Example 8.10 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider the following sparse matrix and
 its corresponding adjacency graph.</p>
-<p><span class="math notranslate nohighlight">\(A=
+<div class="math notranslate nohighlight">
+\[\begin{split}A=
           \begin{bmatrix}
         1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \\
         1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \\
@@ -954,9 +1260,9 @@ its corresponding adjacency graph.</p>
         0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
         1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\
         1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1
-      \end{bmatrix}\)</span></p>
-<p><img alt="image" src="chaps/08/main/07/ex74_2.tikz" />{width=”6cm”}</p>
-<p>For the RCM and Column Count reordering methods, use the MATLAB commands
+      \end{bmatrix}\end{split}\]</div>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-b7f8f9d3b05612433872e7c15bf779d9b9bc1c09.svg" alt="Figure made with TikZ" /></p>
+</div><p>For the RCM and Column Count reordering methods, use the MATLAB commands
 <span class="math notranslate nohighlight">\(symrcm(A)\)</span> and <span class="math notranslate nohighlight">\(colperm(A)\)</span> to find the corresponding reordered
 matrices <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(D\)</span>. Plot the pattern of matrices <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(D\)</span>.
 Apply the MATLAB command <span class="math notranslate nohighlight">\([L,U]=lu(A)\)</span> for finding the LU factorisation
@@ -969,47 +1275,35 @@ resulting upper triangular matrices in a table. Comment on the
 advantages of the LU factorisation and the effect of fill-in when using
 ordered matrices. The three stages of the required solution together
 with the MATLAB commands are summerised in Figure 7.</p>
-<figure>
-<div class="center">
-<table>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-b69c57e40ec7c147aded2518bf717a73de76d64d.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-25350b405f99468ffa4a3140e25fc23e7bd6073d.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-53824ecba7e308f1bb5212bbe0f364ab0de0476a.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-4cc699d69c475340368aee5438ff5deca4212173.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-c777cd5da65657120f4afa51c17e70d59515aa19.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-9cbbff5bb995a3502a3bd5f758c93606abd2ac6e.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-2f84f6be81188fda65fae56494a94ef141ceaf11.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-3530748538a4371f3a970d326b865b6c90e28692.svg" alt="Figure made with TikZ" /></p>
+</div><div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-aed90c3fd1e595a2c66d43a27b6751a3bc0eb750.svg" alt="Figure made with TikZ" /></p>
+</div><p>Figure 7. Comparison of the LU factorisation and fill-in effect on
+original and ordered matrices.</p></p>
+<p>Following LU factorisation, we find the number of non-zero elements in
+various reordering methods in <span class="math notranslate nohighlight">\(U\)</span> as:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(8 \times 8\)</span></p></th>
+<th class="head"><p>Original Matrix</p></th>
+<th class="head"><p>Reverse CM</p></th>
+<th class="head"><p>Column Count</p></th>
+</tr>
+</thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;"><img src="main/07/image_orig1.tikz"
-style="width:30.0%" alt="image" /></td>
-<td style="text-align: center;"><img src="main/07/image_rcm1.tikz"
-style="width:30.0%" alt="image" /></td>
-<td style="text-align: center;"><img src="main/07/image_col1.tikz"
-style="width:30.0%" alt="image" /></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><img src="main/07/image_orig2.tikz"
-style="width:30.0%" alt="image" /></td>
-<td style="text-align: center;"><img src="main/07/image_rcm2.tikz"
-style="width:30.0%" alt="image" /></td>
-<td style="text-align: center;"><img src="main/07/image_col2.tikz"
-style="width:30.0%" alt="image" /></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><img src="main/07/image_orig3.tikz"
-style="width:30.0%" alt="image" /></td>
-<td style="text-align: center;"><img src="main/07/image_rcm3.tikz"
-style="width:30.0%" alt="image" /></td>
-<td style="text-align: center;"><img src="main/07/image_col3.tikz"
-style="width:30.0%" alt="image" /></td>
+<tr class="row-even"><td><p>No. of nz in U</p></td>
+<td><p><span class="math notranslate nohighlight">\(24\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(17\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(18\)</span></p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<p>Figure 7. Comparison of the LU factorisation and fill-in effect on
-original and ordered matrices.</p>
-</figure>
-<p>Following LU factorisation, we find the number of non-zero elements in
-various reordering methods in <span class="math notranslate nohighlight">\(U\)</span> as:</p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>    $8 \times 8$    Original Matrix   Reverse CM   Column Count
-  ---------------- ----------------- ------------ --------------
-   No. of nz in U        $24$            $17$          $18$
-</pre></div>
-</div>
 <p>Hence, using the re-ordering methods, both RCM and Column Count,
 significantly reduces the generation of fill-in elements compared to the
 LU factorisation of the original matrix <span class="math notranslate nohighlight">\(A\)</span>, even for an <span class="math notranslate nohighlight">\(8\times8\)</span>
@@ -1027,14 +1321,16 @@ equations resulting from the Newton iteration will lead to the solution
 of a banded matrix instead of a full matrix treatment, and hence
 resulting in fewer fill-ins, more accurate solutions and shorter
 computing time.</p>
-<p><strong>[References]{.underline}</strong> MATLAB Help/documentation on Sparse
-Matrices, e.g.:</p>
-<p><a class="reference external" href="http://www.mathworks.co.uk/help/matlab/math/accessing-sparse-matrices.html">http://www.mathworks.co.uk/help/matlab/math/accessing-sparse-matrices.html</a></p>
-<p><a class="reference external" href="http://www.mathworks.co.uk/help/matlab/examples/sparse-matrices.html">http://www.mathworks.co.uk/help/matlab/examples/sparse-matrices.html</a></p>
-<p>Saad, Y., 2003. Iterative Methods for Sparse Linear System 2nd ed.
-Philadelphia: SIAM- Society for Industrial and Applied Mathematics</p>
-<p>Golub, G. and Van Loan, C., 1996g. Matrix Computations 3rd edition.
-London: The Johns Hopkins University Press</p>
+</section>
+</div><p><strong>References</strong></p>
+<p>MATLAB Help/documentation on Sparse Matrices, e.g.:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.mathworks.co.uk/help/matlab/math/accessing-sparse-matrices.html">http://www.mathworks.co.uk/help/matlab/math/accessing-sparse-matrices.html</a></p></li>
+<li><p><a class="reference external" href="http://www.mathworks.co.uk/help/matlab/examples/sparse-matrices.html">http://www.mathworks.co.uk/help/matlab/examples/sparse-matrices.html</a></p></li>
+<li><p>Saad, Y., 2003. Iterative Methods for Sparse Linear System 2nd ed. Philadelphia:    SIAM- Society for Industrial and Applied Mathematics</p></li>
+<li><p>Golub, G. and Van Loan, C., 1996g. Matrix Computations 3rd edition. London: The Johns Hopkins University Press</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1082,7 +1378,7 @@ London: The Johns Hopkins University Press</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8.9. </span>Chapter 8 Exercises</p>
+        <p class="prev-next-title"><span class="section-number">8.6. </span>Chapter 8 Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1104,15 +1400,11 @@ London: The Johns Hopkins University Press</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8.5. Reordering and Matrix Bandwidth</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuthill-and-mckee-reordering">8.5.1. Cuthill and McKee Reordering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#column-count-reordering">8.5.2. Column Count Reordering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-degree-reordering">8.5.3. Minimum Degree Reordering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-between-various-ordering-schemes-and-fill-in-effect">8.5.4. Comparison between various ordering schemes and fill-in effect</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#column-count-reordering">8.6. Column Count Reordering</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-degree-reordering">8.7. Minimum Degree Reordering</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-between-various-ordering-schemes-and-fill-in-effect">8.8. Comparison between various ordering schemes and fill-in effect</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
