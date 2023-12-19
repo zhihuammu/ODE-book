@@ -4,3 +4,8 @@ quantecon
 jupyter-book
 matplotlib
 numpy
+sphinx_proof
+sphinx_exercise    
+sphinxcontrib.tikz
+pdf2svg
+latex

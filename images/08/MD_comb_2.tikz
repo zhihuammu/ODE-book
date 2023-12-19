@@ -10,7 +10,7 @@
         ,   xtick = {1,2,3,4,5,6,7,8}
         ,   ytick = {1,2,3,4,5,6,7,8}
         ,   title style = {align = center}
-        ,   title = {Ordering by Minimum Degree\\[1ex]ordering algorithm}
+        ,   title = {Ordering by Minimum Degree}
         ]
         \addplot[only marks] coordinates
         {   (1,1)(1,2)

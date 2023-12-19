@@ -9,7 +9,7 @@
         ,   xlabel = {nnz=22}
         ,   xtick = {1,2,3,4,5,6,7,8}
         ,   ytick = {1,2,3,4,5,6,7,8}
-        ,   title = {Order by Column Count algorithm}
+        ,   title = {By Column Count algorithm}
         ]
         \addplot[only marks] coordinates
         {   (1,1)(1,2)

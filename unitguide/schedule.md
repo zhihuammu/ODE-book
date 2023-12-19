@@ -1,7 +1,7 @@
 # Teaching Schedule
 
 | Week | Lecture | Lab|
-|:----:|--------|---------|
+|----|--------|---------|
 |  1   | [Chapter 1: Complex Number and Difference Equations](chap01:complexNumber) | [Chapter 1 Exercises](chap01:exercises) |
 |  2   | [Chapter 2: Interpolating Polynomial](chap02:interpolating)                | [Chapter 2 Exercises](chap02:exercises) |
 |  3   | [Chapter 3: Multistep Methods: Derivation by Finite Difference formulae](chap:derivation) |   [Chapter 3 Exercises](chap:derivation:exercises)  |

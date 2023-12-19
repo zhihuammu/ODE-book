@@ -10,7 +10,7 @@
         ,   xtick = {1,2,3,4,5,6,7,8}
         ,   ytick = {1,2,3,4,5,6,7,8}
         ,   title style = {align = center}
-        ,   title = {$A(r,r)$ - Minimum Degree ordering\\[1ex]by \texttt{symamd}}
+        ,   title = {$A(r,r)$ by \texttt{symamd}}
         ]
         \addplot[only marks] coordinates
         {   (1,1)(1,2)

@@ -110,12 +110,7 @@ $$
 }
 ```
 :::
-
 ::::
-
-
-
-
 
 ```matlab
 %Example 2 - Adjacency plot

@@ -548,7 +548,8 @@ fill-ins.
 Consider the sparse matrix and its
 corresponding adjacency graph from {prf:ref}`ch08-example-rcm`:
 
-
+::::{grid}
+:::{grid-item-card}
 $$A=
         \begin{bmatrix}
           1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
@@ -560,10 +561,18 @@ $$A=
           0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 \\
           0 & 1 & 0 & 0 & 0 & 1 & 0 & 1
        \end{bmatrix}$$
+:::
 
+:::{grid-item-card}
 ```{tikz}
 :include:  /images/08/Fig7a.tikz
 ```
+:::
+::::
+
+
+
+
 
 
 The minimum degree algorithm is re-labelling of the vertices in
@@ -608,7 +617,8 @@ the resulting adjacency matrix and graph:
 
 :::
 
-
+::::{grid}
+:::{grid-item-card}
 $$MD=
         \begin{bmatrix}
           1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
@@ -620,10 +630,18 @@ $$MD=
           0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
           0 & 0 & 0 & 0 & 1 & 1 & 1 & 1
         \end{bmatrix}$$
+:::
 
+:::{grid-item-card}
 ```{tikz}
 :include:  /images/08/F7MDalgo.tikz
 ```
+:::
+::::
+
+
+
+
 
 
 Similar to the commands **symrcm** and **colperm**, in MATLAB
@@ -642,13 +660,20 @@ pct = 100 / numel(A);
 xlabel(sprintf('nonzeros=%d (%.1f%%)',nz,nz*pct));
 ```
 
+::::{grid}
+:::{grid-item-card}
 ```{tikz}
 :include:  /images/08/MD_comb_1.tikz
 ```
+:::
 
+:::{grid-item-card}
 ```{tikz}
 :include:  /images/08/MD_comb_2.tikz
 ```
+:::
+::::
+
 :::::
 
 ## Comparison between various ordering schemes and fill-in effect
@@ -670,39 +695,63 @@ matrix A and the reordered matrices are also shown in Figure 6. \[ Note:
 for the original matrix $bw =18$ and for the RCM reordered matrix
 $bw =7$ were found using MATLAB\]
 
+::::{grid}
+:::{grid-item-card}
+:columns: 6
 ```{tikz}
 :include: /images/08/fig6a1.tikz
 ```
+:::
 
+:::{grid-item-card}
+:columns: 6
 ```{tikz}
 :include: /images/08/fig6a2.tikz
 ```
+:::
 
+:::{grid-item-card}
+:columns: 6
 ```{tikz}
 :include: /images/08/fig6a3.tikz
 ```
+:::
 
+:::{grid-item-card}
+:columns: 6
 ```{tikz}
 :include: /images/08/fig6a4.tikz
 ```
+:::
 
+:::{grid-item-card}
+:columns: 6
 ```{tikz}
 :include: /images/08/fig6a5.tikz
 ```
+:::
 
+:::{grid-item-card}
+:columns: 6
 ```{tikz}
 :include: /images/08/fig6a6.tikz
 ```
+:::
 
+:::{grid-item-card}
+:columns: 6
 ```{tikz}
 :include: /images/08/fig6a7.tikz
 ```
+:::
 
+:::{grid-item-card}
+:columns: 6
 ```{tikz}
 :include: /images/08/fig6a8.tikz
 ```
-
-
+:::
+::::
 
 In summary, the re-ordering or permutation of matrices provides a
 pre-conditioning for the solution of matrices and the resulting matrix
@@ -744,6 +793,9 @@ LU factors are presented in the following table:
 Consider the following sparse matrix and
 its corresponding adjacency graph.
 
+::::{grid}
+:::{grid-item-card}
+:columns: 6
 $$A=
           \begin{bmatrix}
         1 & 1 & 0 & 0 & 0 & 0 & 1 & 1 \\
@@ -755,10 +807,20 @@ $$A=
         1 & 1 & 1 & 0 & 1 & 0 & 1 & 0 \\
         1 & 0 & 1 & 0 & 0 & 0 & 0 & 1
       \end{bmatrix}$$
+:::
 
+:::{grid-item-card}
+:columns: 6
 ```{tikz}
 :include: /images/08/ex74_2.tikz
 ```
+:::
+::::
+
+
+
+
+
 
 For the RCM and Column Count reordering methods, use the MATLAB commands
 $symrcm(A)$ and $colperm(A)$ to find the corresponding reordered
@@ -774,41 +836,71 @@ advantages of the LU factorisation and the effect of fill-in when using
 ordered matrices. The three stages of the required solution together
 with the MATLAB commands are summerised in Figure 7.
 
+::::{grid}
+:::{grid-item-card}
+:columns: 4
 ```{tikz}
 :include: /images/08/image_orig1.tikz
 ```
+:::
 
+:::{grid-item-card}
+:columns: 4
 ```{tikz}
 :include: /images/08/image_rcm1.tikz
 ```
+:::
 
+:::{grid-item-card}
+:columns: 4
 ```{tikz}
 :include: /images/08/image_col1.tikz
 ```
+:::
 
+:::{grid-item-card}
+:columns: 4
 ```{tikz}
 :include: /images/08/image_orig2.tikz
 ```
+:::
 
+:::{grid-item-card}
+:columns: 4
 ```{tikz}
 :include: /images/08/image_rcm2.tikz
 ```
+:::
 
+:::{grid-item-card}
+:columns: 4
 ```{tikz}
 :include: /images/08/image_col2.tikz
 ```
+:::
 
+:::{grid-item-card}
+:columns: 4
 ```{tikz}
 :include: /images/08/image_orig3.tikz
 ```
+:::
 
+:::{grid-item-card}
+:columns: 4
 ```{tikz}
 :include: /images/08/image_rcm3.tikz
 ```
+:::
 
+:::{grid-item-card}
+:columns: 4
 ```{tikz}
 :include: /images/08/image_col3.tikz
 ```
+:::
+::::
+
 
 Figure 7. Comparison of the LU factorisation and fill-in effect on
 original and ordered matrices.</p>
