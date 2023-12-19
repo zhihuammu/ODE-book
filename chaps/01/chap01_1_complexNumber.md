@@ -67,15 +67,18 @@ We denote the set of all the complex numbers as
 
 For the real number set $\mathbb{R}$, we can use the number line to represent it. For the complex number set $\mathbb{C}$, we can use the complex plane to represent it.
 
-```{figure} /images/fig-complexPlane.svg
+<!-- ```{figure} /images/fig-complexPlane.svg
 ---
 width: 500px
 name: figure-complexPlane
 ---
 The complex plane $\mathbb{C}$.
+``` -->
+
+```{tikz}
+:libs: angles,quotes
+:include: /images/01/complexPlane.tikz
 ```
-
-
 
 For $z=x+iy$, we can also write it in the second form (polar form) as
 \begin{equation}

@@ -209,12 +209,41 @@ roots (i.e. not repeated), then the difference method is said to satisfy
 the *root condition*.
 :::
 
-```{figure} /images/fig-chap05-C4M39F1.svg
+<!-- ```{figure} /images/fig-chap05-C4M39F1.svg
 ---
 width: 400px
 name: figure-chap05-rootCondition
 ---
 Unit cicle in the complex plane $\mathbb{C}$.
+``` -->
+
+```{tikz}
+:xscale: 48
+:libs: arrows.meta
+
+\draw (0mm,0mm) circle (20mm);
+\draw[-Stealth] (-24mm,0mm) -- (24mm,0mm);
+\draw[-Stealth] (0mm,-24mm) -- (0mm,24mm);
+\coordinate (Z) at (35:20mm);
+
+\node[anchor = north west, inner sep = 0pt] at (2mm,24mm)
+{\scriptsize Im$(\xi)$};
+\node[anchor = west] at (24mm,0mm) {\scriptsize Re$(\xi)$};
+
+\draw[domain=0:35, smooth] plot ({8mm*cos(\x)},{8mm*sin(\x)});
+\node at (17.5:6mm) {\scriptsize$\phi$};
+
+\draw
+(0mm,0mm)
+-- node[anchor = north, inner sep = 2pt] {\scriptsize\hspace*{2ex}cos$(\phi)$}
+({20mm*cos(35)},0mm)
+--
+(Z)
+-- node[anchor = south east, inner sep = 1pt] {\scriptsize$z$}
+(0mm,0mm);
+
+\node[anchor = south west, inner sep = 1pt] (S) at (20mm,8mm) {\scriptsize sin$(\phi)$};
+\draw[-Stealth] ({20mm*cos(35)},4mm) -- (S);
 ```
 
 :::{prf:definition} Stability
@@ -249,10 +278,34 @@ Find the roots associated with the following characteristic polynomials:
     there are more than one root on the unit circle, the method is
     weakly stable.
 
-    ```{image}  /images/fig-chap05-C4M39F2.svg    
+    <!-- ```{image}  /images/fig-chap05-C4M39F2.svg    
     :width: 300px
     :align: center
-    ```
+    ``` -->
+
+    ```{tikz}
+    :libs: arrows.meta
+    :xscale: 60
+
+    \draw[-Stealth] (-25mm,0mm) -- (25mm,0mm);
+    \draw[-Stealth] (0mm,-25mm) -- (0mm,25mm);
+    \node[inner sep = 0pt, anchor = west] at (27mm,0mm) {Re$(\xi)$};
+    \node[inner sep = 0pt, anchor = west] at (2mm,25mm) {Im$(\xi)$};
+    \draw (0mm,0mm) circle (20mm);
+
+    \coordinate (xi1) at (0:0mm);
+    \fill (xi1) circle (1mm);
+    \node[anchor = south west] at (xi1) {$\xi_1 = 0$};
+
+    \coordinate (xi2) at (90:20mm);
+    \fill (xi2) circle (1mm);
+    \node (l2) at (20mm,20mm) {$\xi_2 = i$};
+    \draw[-Stealth] (xi2) -- (l2);
+
+    \coordinate (xi3) at (270:20mm);
+    \fill (xi3) circle (1mm);
+    \node[anchor = north west] at (xi3) {$\xi_3 = -i$};
+    ```    
 
 2.  $\xi^4 + \xi ~=~ 0$\
     $\therefore\quad \xi(\xi^3 + 1) ~=~ 0$\
@@ -263,8 +316,29 @@ Find the roots associated with the following characteristic polynomials:
     Because there are more than one root on the unit circle, the method
     is weakly stable.
 
-    ```{image}  /images/fig-chap05-C4M39F3.svg    
+    <!-- ```{image}  /images/fig-chap05-C4M39F3.svg    
     :width: 300px
     :align: center
-    ```
+    ``` -->
+
+    ```{tikz}
+    :libs: arrows.meta
+    :xscale: 60
+
+    \draw[-Stealth] (-25mm,0mm) -- (25mm,0mm);
+    \draw[-Stealth] (0mm,-25mm) -- (0mm,25mm);
+    \node[inner sep = 0pt, anchor = west] at (27mm,0mm) {Re$(\xi)$};
+    \node[inner sep = 0pt, anchor = west] at (2mm,25mm) {Im$(\xi)$};
+    \draw (0mm,0mm) circle (20mm);
+
+    \coordinate (xi1) at (0:0mm);
+    \fill (xi1) circle (1mm);
+    \node[anchor = south west] at (xi1) {$\xi_1$};
+
+    \foreach\x/\a/\d in {2/180/south,3/60/west,4/300/west}
+    {
+        \fill (\a:20mm) circle (1mm);
+        \node[anchor = \d, inner sep = 1mm] at (\a:23mm) {$\xi_\x$};
+    }
+    ```   
 :::

@@ -1,33 +1,36 @@
 \documentclass{standalone}
 %\documentclass[convert={outfile=\fig-interpolation.svg}]{standalone}
 \usepackage{tikz}
-\usepackage{tikzscale}
-\usetikzlibrary{arrows}
-\usetikzlibrary{arrows.meta}
-\usetikzlibrary{patterns}
-\usetikzlibrary{shapes}
+%\usepackage{tikzscale}
+%\usetikzlibrary{arrows}
+%\usetikzlibrary{arrows.meta}
+%\usetikzlibrary{patterns}
+%\usetikzlibrary{shapes}
 \usetikzlibrary{calc}
-\usetikzlibrary{matrix}
-\usetikzlibrary{positioning}
-\usepackage{calc}
-\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes}
-
-\usepackage{tkz-euclide}
-\usetikzlibrary{
-	angles,
-	quotes,
-}
+%\usetikzlibrary{matrix}
+%\usetikzlibrary{positioning}
+%\usepackage{calc}
+%\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes}
+%
+%\usepackage{tkz-euclide}
+%\usetikzlibrary{
+%	angles,
+%	quotes,
+%}
 \usepackage{pgfplots}
 
 \begin{document}
 %	\scriptsize
 	\begin{tikzpicture}
 		\begin{axis}
-			[   height = 0.7\textwidth
-			,   width = 0.7\textwidth
-			,   set layers = true
-			,   axis on top = true
+			[   
+%				height = 0.7\textwidth
+%			,   width = 0.7\textwidth
+%			,   set layers = true
+%			,   axis on top = true
 %			,   title = {\rm Region of Absolute Stability for AB 2-step methods}
+%				height=8cm
+%			,	width=10cm
 			,   xlabel = {\rm Re}
 			,   ylabel = {\rm Im}
 			,   axis x line = center

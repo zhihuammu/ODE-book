@@ -238,7 +238,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">ODE Solvers in Matlab and SciPy</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
 
     </div>
@@ -415,13 +414,15 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[x_j= jh\]</div>
 <p>where <span class="math notranslate nohighlight">\(h=x_{j+1}-x_j\)</span> is called the step size (or step length), <span class="math notranslate nohighlight">\(h\in(0,+\infty)\)</span>.</p>
-<figure class="align-default" id="figure-discretepoints">
-<a class="reference internal image-reference" href="../../_images/fig-discrete.svg"><img alt="../../_images/fig-discrete.svg" src="../../_images/fig-discrete.svg" width="600px" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Discrete data points and sequence.</span><a class="headerlink" href="#figure-discretepoints" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<div class="admonition note">
+<!-- ```{figure} /images/fig-discrete.svg
+---
+width: 600px
+name: figure-discretepoints
+---
+Discrete data points and sequence.
+``` -->
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-7ad8c7ffa41c0f8b8ac6c96358e5b878e7136a8f.svg" alt="Figure made with TikZ" /></p>
+</div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In <span class="xref myst">Chapter 1</span>, a <span class="xref myst">sequence</span> is defined as a function of integers.
 Here we generalise this concept to use a sequence to represent the function at discrete points, whose
@@ -434,13 +435,13 @@ Here we generalise this concept to use a sequence to represent the function at d
 <p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (Forward Difference)</p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order forward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between the next member and itself:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-31441282-1468-41b6-88f6-87b816595a19">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-31441282-1468-41b6-88f6-87b816595a19" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-54dcd9d2-2a5e-4af0-b6bf-f88e422db016">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-54dcd9d2-2a5e-4af0-b6bf-f88e422db016" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta f_j = f_{j+1} - f_j,
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k-\)</span>th order forward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-868c13dc-0ac5-4d99-bcb4-1add0fb6fb0f">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-868c13dc-0ac5-4d99-bcb4-1add0fb6fb0f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-beb4d9a4-eacd-480d-ac95-329bef29fdda">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-beb4d9a4-eacd-480d-ac95-329bef29fdda" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta^k f_j= \Delta\left(\Delta^{k-1} f_j \right).
 \end{equation}\]</div>
 </section>
@@ -492,13 +493,13 @@ Here we generalise this concept to use a sequence to represent the function at d
 <p class="admonition-title"><span class="caption-number">Definition 2.2 </span> (Backward Difference)</p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order backward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between itself and the previous member:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f8b5b32f-150b-43a6-9fa5-bd60a401e10e">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-f8b5b32f-150b-43a6-9fa5-bd60a401e10e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7e4cfefd-7de1-4f90-9681-9328c4ecac9c">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-7e4cfefd-7de1-4f90-9681-9328c4ecac9c" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla f_j = f_{j} - f_{j-1},
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k-\)</span>th order backward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8197ec4f-e4ce-4807-927a-21388dda5940">
-<span class="eqno">(2.4)<a class="headerlink" href="#equation-8197ec4f-e4ce-4807-927a-21388dda5940" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ff9951c7-9e9d-4e45-afce-268c70e2d0a7">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-ff9951c7-9e9d-4e45-afce-268c70e2d0a7" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla^k f_j= \nabla\left(\nabla^{k-1} f_j \right).
 \end{equation}\]</div>
 </section>
@@ -553,8 +554,8 @@ Here we generalise this concept to use a sequence to represent the function at d
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>,
 we define <span class="math notranslate nohighlight">\(E\)</span> as an operator shifting a member in a sequence to the next member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bda86493-0e62-47b9-a0fe-44da4ffbb959">
-<span class="eqno">(2.5)<a class="headerlink" href="#equation-bda86493-0e62-47b9-a0fe-44da4ffbb959" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-486ef36e-367c-4398-91a7-209f13d578d6">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-486ef36e-367c-4398-91a7-209f13d578d6" title="Permalink to this equation">#</a></span>\[\begin{equation}
   E f_j = f_{j+1},
 \end{equation}\]</div>
 <p>and shifting a member forward <span class="math notranslate nohighlight">\(k\)</span> times gives</p>
@@ -562,8 +563,8 @@ we define <span class="math notranslate nohighlight">\(E\)</span> as an operator
 \[E^k f_j= E(E^{k-1}f_j)= f_{j+k}.\]</div>
 <p>Similarly, we define <span class="math notranslate nohighlight">\(E^{-1}\)</span> as an operator shifting a member in a
 sequence to the previous member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aee322b1-3afd-4ba1-bd34-b960156d8682">
-<span class="eqno">(2.6)<a class="headerlink" href="#equation-aee322b1-3afd-4ba1-bd34-b960156d8682" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f8b71abc-656b-4eaf-8821-1225db644735">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-f8b71abc-656b-4eaf-8821-1225db644735" title="Permalink to this equation">#</a></span>\[\begin{equation}
   E^{-1} f_j = f_{j-1}
 \end{equation}\]</div>
 <p>and shifting a member backward <span class="math notranslate nohighlight">\(k\)</span> (<span class="math notranslate nohighlight">\(k&gt;0\)</span>) times gives</p>

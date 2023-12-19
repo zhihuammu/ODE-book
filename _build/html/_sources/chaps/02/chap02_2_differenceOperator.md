@@ -18,12 +18,16 @@ $$x_j= jh$$
 
 where $h=x_{j+1}-x_j$ is called the step size (or step length), $h\in(0,+\infty)$.
 
-```{figure} /images/fig-discrete.svg
+<!-- ```{figure} /images/fig-discrete.svg
 ---
 width: 600px
 name: figure-discretepoints
 ---
 Discrete data points and sequence.
+``` -->
+
+```{tikz}
+:include: /images/02/discrete.tikz
 ```
 
 ::::{note}

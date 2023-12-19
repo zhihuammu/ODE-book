@@ -1,0 +1,27 @@
+\begin{axis}[
+	%set layers = standard,
+	xmin = -2, xmax = 11,
+	ymin = -0.2, ymax = 1.2,    
+	minor tick num = 1,        
+	axis lines=center,
+	axis line style = thick,          
+	xlabel = {$x$},
+	ylabel = {$y$},
+	disabledatascaling,
+	%axis equal,
+	width=12cm,
+	height=8cm	        
+	%width=0.9\textwidth,
+	%height=\textheight	        
+	]
+	\node[label={[text=blue]300:$f(x=0.9)=?$},circle,fill,blue,inner sep=2.0pt] at (axis cs:0.9,0.25*0.9^0.5) {};  
+	
+	\node[label={[text=red]250:$f_0$},circle,fill,red,inner sep=2.0pt] at (axis cs:0,0.25*0^0.5) {};  
+	\node[label={[text=red]270:$f_1$},circle,fill,red,inner sep=2.0pt] at (axis cs:2,0.25*2^0.5) {};  
+	\node[label={[text=red]270:$f_2$},circle,fill,red,inner sep=2.0pt] at (axis cs:4,0.25*4^0.5) {};  
+	\node[label={[text=red]270:$f_3$},circle,fill,red,inner sep=2.0pt] at (axis cs:6,0.25*6^0.5) {};  
+	\node[label={[text=red]270:$f_4$},circle,fill,red,inner sep=2.0pt] at (axis cs:8,0.25*8^0.5) {};  
+	\node[label={[text=red]270:$f_5$},circle,fill,red,inner sep=2.0pt] at (axis cs:10,0.25*10^0.5) {};  
+	
+	%\node[label={[text=red]270:${f_j=f(x_j),~x_j=jh}$},circle,red,inner sep=2.0pt] at (axis cs:10,0.3) {};
+\end{axis}

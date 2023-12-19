@@ -50,4 +50,3 @@ parts:
     numbered: false
     chapters:  
     - file: chaps/chapX_odeSolvers
-    - file: chaps/markdown-notebooks

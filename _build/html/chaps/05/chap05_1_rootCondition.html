@@ -238,7 +238,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">ODE Solvers in Matlab and SciPy</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
 
     </div>
@@ -572,13 +571,15 @@ linear multistep method. If <span class="math notranslate nohighlight">\(\,|\xi_
 roots (i.e. not repeated), then the difference method is said to satisfy
 the <em>root condition</em>.</p>
 </section>
-</div><figure class="align-default" id="figure-chap05-rootcondition">
-<a class="reference internal image-reference" href="../../_images/fig-chap05-C4M39F1.svg"><img alt="../../_images/fig-chap05-C4M39F1.svg" src="../../_images/fig-chap05-C4M39F1.svg" width="400px" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Unit cicle in the complex plane <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>.</span><a class="headerlink" href="#figure-chap05-rootcondition" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<div class="proof definition admonition" id="definition-2">
+</div><!-- ```{figure} /images/fig-chap05-C4M39F1.svg
+---
+width: 400px
+name: figure-chap05-rootCondition
+---
+Unit cicle in the complex plane $\mathbb{C}$.
+``` -->
+<div class="figure" style="text-align: center"><p><img width="48%" src="../../_images/tikz-8862abc5ed811de2ee79a90e762944da982410a6.svg" alt="Figure made with TikZ" /></p>
+</div><div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 5.2 </span> (Stability)</p>
 <section class="definition-content" id="proof-content">
 <p>A linear multistep method of order <span class="math notranslate nohighlight">\(\,\geq1\,\)</span> is called <em>stable</em> if the
@@ -613,8 +614,12 @@ condition) but has more than one root on the unit circle.</p>
 <p><span class="math notranslate nohighlight">\(\xi_1\)</span>, <span class="math notranslate nohighlight">\(\xi_2\)</span>, and <span class="math notranslate nohighlight">\(\xi_3\)</span> are shown on the unit circle. Because
 there are more than one root on the unit circle, the method is
 weakly stable.</p>
-<a class="reference internal image-reference" href="../../_images/fig-chap05-C4M39F2.svg"><img alt="../../_images/fig-chap05-C4M39F2.svg" class="align-center" src="../../_images/fig-chap05-C4M39F2.svg" width="300px" /></a>
-</li>
+<!-- ```{image}  /images/fig-chap05-C4M39F2.svg    
+:width: 300px
+:align: center
+``` -->
+<div class="figure" style="text-align: center"><p><img width="60%" src="../../_images/tikz-dc477b84e6a4ea67b9b44adac2b1ebd29b11e092.svg" alt="Figure made with TikZ" /></p>
+</div></li>
 <li><p><span class="math notranslate nohighlight">\(\xi^4 + \xi ~=~ 0\)</span><br />
 <span class="math notranslate nohighlight">\(\therefore\quad \xi(\xi^3 + 1) ~=~ 0\)</span><br />
 <span class="math notranslate nohighlight">\(\therefore\quad \xi_1 ~=~ 0,\ \xi{^3} + 1 ~=~ 0 \quad \Rightarrow\)</span><br />
@@ -622,8 +627,12 @@ weakly stable.</p>
 <span class="math notranslate nohighlight">\(\xi_4 = \dfrac{1}{2} - i\dfrac{\sqrt{3}}{2}\)</span>,</p>
 <p>Because there are more than one root on the unit circle, the method
 is weakly stable.</p>
-<a class="reference internal image-reference" href="../../_images/fig-chap05-C4M39F3.svg"><img alt="../../_images/fig-chap05-C4M39F3.svg" class="align-center" src="../../_images/fig-chap05-C4M39F3.svg" width="300px" /></a>
-</li>
+<!-- ```{image}  /images/fig-chap05-C4M39F3.svg    
+:width: 300px
+:align: center
+``` -->
+<div class="figure" style="text-align: center"><p><img width="60%" src="../../_images/tikz-6369f7b8f232e84417e6dc75519c8808009db481.svg" alt="Figure made with TikZ" /></p>
+</div></li>
 </ol>
 </section>
 </div></section>
