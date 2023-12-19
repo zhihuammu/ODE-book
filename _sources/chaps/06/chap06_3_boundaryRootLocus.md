@@ -103,7 +103,6 @@ name: figure-AB2
 Stability region of AB 2-step method.
 ```
 
-
 :::
 
 The region of absolute stability can be easily found by using a

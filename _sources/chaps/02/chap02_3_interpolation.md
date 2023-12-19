@@ -12,14 +12,16 @@ member $f_j$, how can we find the value of $f(x)$ for
 $x_j < x < x_{j+1}$?
 :::
 
-:::{figure} /images/fig-interpolation.svg
+<!-- :::{figure} /images/fig-interpolation.svg
 ---
 width: 600px
 name: figure-discretepoints
 ---
+::: -->
 
-:::
-
+```{tikz}
+:include: /images/02/interpolation.tikz
+```
 
 Possiple options are:
 -   Take an average: $f(x)=\dfrac{f_j + f_{j+1}}{2}$
