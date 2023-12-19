@@ -1,14 +1,14 @@
 (chap:errorConstant:exercise)=
-# Exercises
+# Chapter 4 Exercises
 
 :::{exercise}
 Use a Gregory-Newton interpolation formula to derive the error term
 for the following integration formulae:
 
-1.  $\displaystyle y_{{j}} ~=~ y_{j-1} + \frac{h}{12}(5f_{{j}} + 8f_{j-1} - f_{{j-2}})$
+1.  $\displaystyle y_{{j}} ~=~ y_{j-1} + \tfrac{h}{12}(5f_{{j}} + 8f_{j-1} - f_{{j-2}})$
     Hint: G-N backward $0$ to $-1$
 
-2.  $\displaystyle y_{j+1} ~=~ y_j + \frac{h}{2}(f_{j+1} + f_j)$
+2.  $\displaystyle y_{j+1} ~=~ y_j + \tfrac{h}{2}(f_{j+1} + f_j)$
 :::
 
 :::{exercise}
@@ -16,15 +16,15 @@ Use the method described in the text (see Example 3) to find the
 order and the error constants of the following formulae:
 
 1.  $\displaystyle y_{j+1} ~=~ y_j
-            + \frac{h}{12}(5f_{j+1} + 8f_j - f_{j-1})$
+            + \tfrac{h}{12}(5f_{j+1} + 8f_j - f_{j-1})$
 
 2.  $\displaystyle y_{j+1} ~=~ y_{j-1}
-            + \frac{h}{3}(f_{j+1} + 4f_j + f_{j-1})$
+            + \tfrac{h}{3}(f_{j+1} + 4f_j + f_{j-1})$
 
-3.  $\displaystyle y_{j+1} ~=~ y_j + \frac{h}{24}(55f_j - 59f_{j-1}
+3.  $\displaystyle y_{j+1} ~=~ y_j + \tfrac{h}{24}(55f_j - 59f_{j-1}
             + 37f_{j-2} - 9f_{j-3})$
 
-4.  $\displaystyle y_{j+1} ~=~ y_j + \frac{h}{720}(1901f_j - 2774f_{j-1}
+4.  $\displaystyle y_{j+1} ~=~ y_j + \tfrac{h}{720}(1901f_j - 2774f_{j-1}
             + 2616f_{j-2} - 1274f_{j-3} + 251f_{j-4})$
 :::
 
@@ -33,11 +33,11 @@ Derive a Milne's Device local error estimate for the Milne-Simpson
 Predictor-Corrector method: 
 
 $$\begin{aligned}
-        y^{(p)}_{j+1} ~&=~ y_{j-3} + \frac{h}{3}(8f_j - 4f_{j-1} + 8f_{j-2})
-        + \frac{28}{90}h^5y^v(\xi_1)
+        y^{(p)}_{j+1} ~&=~ y_{j-3} + \tfrac{h}{3}(8f_j - 4f_{j-1} + 8f_{j-2})
+        + \tfrac{28}{90}h^5y^v(\xi_1)
         \\
-        y^{(c)}_{j+1} ~&=~ y_{j-1} + \frac{h}{3}(f_{j+1} + 4f_j + f_{j-1})
-        - \frac{1}{90}h^5y^v(\xi_2)   
+        y^{(c)}_{j+1} ~&=~ y_{j-1} + \tfrac{h}{3}(f_{j+1} + 4f_j + f_{j-1})
+        - \tfrac{1}{90}h^5y^v(\xi_2)   
 \end{aligned}$$
 :::
 
@@ -62,16 +62,16 @@ notes, Example 5, and comment.
 ## Answers to Tutorial Exercises
 
 1.  
-    1. $\dfrac{-1}{24}h^4f'''(\xi)$,
-    1. $\dfrac{-1}{12}h^3f''(\xi)$
+    1. $\frac{-1}{24}h^4f'''(\xi)$,
+    1. $\frac{-1}{12}h^3f''(\xi)$
 
 2.  
-    1. $\dfrac{-1}{24}h^4f'''(\xi)$,
-    1. $\dfrac{-1}{90}h^5f^{iv}(\xi)$，
-    1. $\dfrac{251}{720}h^5f^{iv}(\xi)$,
-    1. $\dfrac{95}{288}h^6f^v(\xi)$
+    1. $\frac{-1}{24}h^4f'''(\xi)$,
+    1. $\frac{-1}{90}h^5f^{iv}(\xi)$，
+    1. $\frac{251}{720}h^5f^{iv}(\xi)$,
+    1. $\frac{95}{288}h^6f^v(\xi)$
 
-3.  $\dfrac{-1}{29}(y^c - y^p)$.
+3.  $\frac{-1}{29}(y^c - y^p)$.
 
 4.  At $x = 1.0$:
 

@@ -197,7 +197,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../04/chap04_1_errorIntegration.html">4.1. Derivation of Local Error Terms for Integration Formulae</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04/chap04_2_errorConstant.html">4.2. Order and Error Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04/chap04_3_MilineDevice.html">4.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04/chap04_4_exercise.html">4.4. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_4_exercise.html">4.4. Chapter 4 Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chap05_0.html">5. Multistep Methods: Stability I</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -236,8 +236,6 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">ODE Solvers in Matlab and SciPy</a></li>
-
-
 </ul>
 
     </div>
@@ -388,8 +386,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-5-exercise">
 <span id="chap-stability1-exercise"></span><h1><span class="section-number">5.3. </span>Chapter 5 Exercise<a class="headerlink" href="#chapter-5-exercise" title="Permalink to this headline">#</a></h1>
-<ol class="arabic">
-<li><p>Find the first and second characteristic polynomials and investigate
+<div class="exercise admonition" id="ch5-ex-q1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 5.1 </span></p>
+<section id="exercise-content">
+<p>Find the first and second characteristic polynomials and investigate
 the stability of the following multistep methods.</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(y_{j+1} ~=~ y_j + \frac{h}{2}(3f_j - f_{j-1})\)</span></p></li>
@@ -397,56 +398,101 @@ the stability of the following multistep methods.</p>
 <li><p><span class="math notranslate nohighlight">\(y_{j+1} ~=~ 4y_j - 3y_{j-1} - 2hf_{j-1}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y_{j+1} ~=~ 2y_{j-1} - y_j + \frac{h}{2}(5f_j + f_{j-1})\)</span></p></li>
 </ol>
-</li>
-<li><p>Consider the multistep methods in question (1) parts (a) to (d),
+</section>
+</div>
+<div class="solution dropdown admonition" id="chaps/05/chap05_3_exercise-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ch5-ex-q1"> Exercise 5.1</a></p>
+<section id="solution-content">
+<ol class="arabic simple">
+<li><p>Roots are 0 and 1</p></li>
+<li><p>Roots are 1, -0.1, -9.9</p></li>
+<li><p>Roots are 1 and 3</p></li>
+<li><p>Roots are 1 and -2</p></li>
+</ol>
+</section>
+</div>
+<div class="exercise admonition" id="ch5-ex-q2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 5.2 </span></p>
+<section id="exercise-content">
+<p>Consider the multistep methods in question (1) parts (a) to (d),
 determine their order and error constants using the techniques
-covered in Chapter 4.</p></li>
-<li><p>Investigate the stability of the following explicit 2-step method
+covered in Chapter 4.</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="chaps/05/chap05_3_exercise-solution-3">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ch5-ex-q2"> Exercise 5.2</a></p>
+<section id="solution-content">
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> order, <span class="math notranslate nohighlight">\(\frac{5}{12}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(4^\text{th}\)</span> order, <span class="math notranslate nohighlight">\(\frac{1}{10}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> order, <span class="math notranslate nohighlight">\(\frac{2}{3}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> order, <span class="math notranslate nohighlight">\(\frac{1}{4}\)</span></p></li>
+</ol>
+</section>
+</div>
+<div class="exercise admonition" id="ch5-ex-q3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 5.3 </span></p>
+<section id="exercise-content">
+<p>Investigate the stability of the following explicit 2-step method
 (i.e. mid-point rule):</p>
 <div class="math notranslate nohighlight">
-\[    \begin{aligned}
-                y_{j+1} ~=~ y_{j-1}+2hf_{j}
-            
-        \end{aligned}\]</div>
+\[\begin{aligned}
+            y_{j+1} ~=~ y_{j-1}+2hf_{j}
+        
+    \end{aligned}\]</div>
 <p>Use this method to approximate the solution to the
 following initial value problem:</p>
 <div class="math notranslate nohighlight">
-\[    \begin{aligned}
-                &amp;&amp; y'(x) \,&amp;=\, \lambda y &amp; y(0)\,&amp;=\,1 &amp; 0 &amp;\leq \,x\, \leq 5 &amp;&amp;
-            
-        \end{aligned}\]</div>
+\[\begin{aligned}
+            &amp;&amp; y'(x) \,&amp;=\, \lambda y &amp; y(0)\,&amp;=\,1 &amp; 0 &amp;\leq \,x\, \leq 5 &amp;&amp;
+        
+    \end{aligned}\]</div>
 <p>using <span class="math notranslate nohighlight">\(\lambda = -2\)</span>, with <span class="math notranslate nohighlight">\(h = 0.02\)</span> and
 <span class="math notranslate nohighlight">\(h = 0.05\)</span>. Use the analytic solution <span class="math notranslate nohighlight">\(y_{ex} = e^{-2x}\)</span> to find the
 starting values, and plot the solution curves. Next, solve the same
 problem with the same parameters using the two-step AB method. By
 considering the stability of the methods and the errors in the
 calculations, compare the two solution methods and comment on your
-results. [Note: you could simply use an Excel sheet to both find
-the approximate solution and plot the results.]</p>
-</li>
-</ol>
-<p><strong>Answers to Tutorial Exercises - Chapter</strong></p>
-<ol class="arabic">
-<li><ul class="simple">
-<li><p>Roots are 0 and 1</p></li>
-<li><p>Roots are 1, -0.1, -9.9</p></li>
-<li><p>Roots are 1 and 3</p></li>
-<li><p>Roots are 1 and -2</p></li>
-</ul>
-</li>
-<li><ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> order, <span class="math notranslate nohighlight">\(\dfrac{5}{12}\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(4^\text{th}\)</span> order, <span class="math notranslate nohighlight">\(\dfrac{1}{10}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> order, <span class="math notranslate nohighlight">\(\dfrac{2}{3}\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> order, <span class="math notranslate nohighlight">\(\dfrac{1}{4}\)</span></p></li>
-</ul>
-</li>
-<li><ul class="simple">
-<li></li>
-</ul>
+results.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You could simply use an Excel sheet to both find
+the approximate solution and plot the results.</p>
+</div>
+</section>
+</div>
+<div class="solution dropdown admonition" id="chaps/05/chap05_3_exercise-solution-5">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ch5-ex-q3"> Exercise 5.3</a></p>
+<section id="solution-content">
 <a class="reference internal image-reference" href="../../_images/fig-chap05-c4ans3.svg"><img alt="../../_images/fig-chap05-c4ans3.svg" class="align-center" src="../../_images/fig-chap05-c4ans3.svg" width="600px" /></a>
-</li>
-</ol>
+</section>
+</div>
+<!-- 
+**Answers to Tutorial Exercises - Chapter** 
+
+1.  
+    - Roots are 0 and 1
+    - Roots are 1, -0.1, -9.9
+    - Roots are 1 and 3
+    - Roots are 1 and -2
+
+2.  
+    - $2^\text{nd}$ order, $\frac{5}{12}$, 
+    - $4^\text{th}$ order, $\frac{1}{10}$
+    - $2^\text{nd}$ order, $\frac{2}{3}$, 
+    - $2^\text{nd}$ order, $\frac{1}{4}$
+
+3.  
+    -
+    ```{image}  /images/fig-chap05-c4ans3.svg    
+    :width: 600px
+    :align: center
+    ``` -->
 </section>
 
     <script type="text/x-thebe-config">
@@ -526,7 +572,7 @@ By Zhihua Ma
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
