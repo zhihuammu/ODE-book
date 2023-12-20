@@ -433,35 +433,56 @@ Adam-Bashforth-Moulton method. The Predictor formula is</p>
     Y_{j+1} - y^{(p)}_{j+1} ~=~ C^{(p)}_5 h^5y^{(5)}(\xi_1)
 \end{aligned}
 \]</div>
-<p>and from equations <a class="reference internal" href="#equation-eq-ch03-3-2">(4.6)</a>and <a class="reference internal" href="#equation-eq-ch03-3-4">(4.8)</a> and using the mean value theorem</p>
+<p>and from equations <a class="reference internal" href="#equation-eq-ch03-3-2">(4.6)</a>and <a class="reference internal" href="#equation-eq-ch03-3-4">(4.8)</a> we get</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
     Y_{j+1} - y_{j+1}^{(c)} ~&amp;=~  \frac{9h}{24}
     \left(F_{j+1} - f_{j+1}^{(p)}\right) +C^{(c)}_5 h^5y^{(5)}(\xi_2)\\[4pt]    
     &amp;=~ \frac{9h}{24}
     \left(f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(p)})\right) +C^{(c)}_5 h^5y^{(5)}(\xi_2)\\[4pt]
-    &amp;=~ \frac{3h}{8}(Y_{j+1} - y_{j+1}^{(c)})f_y(x_{j+1},\eta_{j+1}){+C^{(c)}_5 h^5y^{(5)}(\xi_2)}
+    &amp;=~ \frac{3h}{8}(Y_{j+1} - y_{j+1}^{(c)})f_y(x_{j+1},\eta){+C^{(c)}_5 h^5y^{(5)}(\xi_2)}
 \end{aligned}\end{split}\]</div>
-<p>assuming that <span class="math notranslate nohighlight">\(\displaystyle \,f_y = \frac{\partial f}{\partial y} =
-\frac{f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(p)})}{(Y_{j+1} - y_{j+1}^{(c)})}\,\)</span>
-and <span class="math notranslate nohighlight">\(\,Y_{j+1} \leq \eta_{j+1} \leq y_{j+1}\,\)</span>. Thus</p>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
+<p>Using the Mean Value Theorem, we can get</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(p)}) 
+&amp; = f_y (x_{j+1},\xi) \left( Y_{j+1} - y_{j+1}^{(p)} \right) \\
+&amp; = f_y (x_{j+1},\xi) \left( Y_{j+1} - y_{j+1}^{(c)} \right)  \left[1+ \frac{y_{j+1}^{(c)}-y_{j+1}^{(p)}}{Y_{j+1}-y_{j+1}^{(c)}}   \right] \\
+&amp; = \left( Y_{j+1} - y_{j+1}^{(c)} \right)  f_y (x_{j+1},\eta)   \\
+\end{aligned}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(Y_{j+1}\leq \xi \leq y_{j+1}^{(p)}\)</span>, <span class="math notranslate nohighlight">\(Y_{j+1}\leq \eta \leq y_{j+1}^{(c)}\)</span> and we assume</p>
+<div class="math notranslate nohighlight">
+\[
+f_y (x_{j+1},\eta) = f_y (x_{j+1},\xi) \left[1+ \frac{y_{j+1}^{(c)}-y_{j+1}^{(p)}}{Y_{j+1}-y_{j+1}^{(c)}}   \right]
+\]</div>
+</div>
+<!-- and using the mean value theorem
+
+ assuming that $\displaystyle \,f_y(x_{j+1},\eta) = \frac{\partial f}{\partial y} =
+\frac{f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(p)})}{(Y_{j+1} - y_{j+1}^{(c)})}\,$
+and $\,Y_{j+1} \leq \eta \leq y_{j+1}\,$.  -->
+<p>Thus</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-    \left(Y_{j+1} - y_{j+1}\right) \left\{
-        1 - \frac{3h}{8}f_y(x_{j+1},\eta_{j+1})
-    \right\} ~=~ -\frac{19}{720}h^5y^{(5)}(\xi_2)
+    \left(Y_{j+1} - y_{j+1}^{(c)}\right) \left\{
+        1 - \frac{3h}{8}f_y(x_{j+1},\eta)
+    \right\} ~=~ C_5^{(c)} h^5 y^{(5)}(\xi_2)
 \end{aligned}\]</div>
 <p>We can now assume that <span class="math notranslate nohighlight">\(h\)</span> is chosen sufficiently small
 to ensure that</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-    \frac{3h}{8}\left|f_y(x_{j+1},\eta_{j+1})\right| \ll 1
+    \frac{3h}{8}\left|f_y(x_{j+1},\eta)\right| \ll 1
 \end{aligned}\]</div>
 <p>thus</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch03-3-6">
 <span class="eqno">(4.10)<a class="headerlink" href="#equation-eq-ch03-3-6" title="Permalink to this equation">#</a></span>\[
 \begin{aligned}
-    Y_{j+1} - y_{j+1} ~\simeq~ -\frac{19}{720}h^5y^{(5)}(\xi_2)  
+    Y_{j+1} - y_{j+1}^{(c)} ~\simeq~ C_5^{(c)} h^5y^{(5)}(\xi_2)  
 \end{aligned}
 \]</div>
 <p>We also assume that <span class="math notranslate nohighlight">\(\,y^{(5)}(x)\,\)</span> does not vary strongly
@@ -471,39 +492,43 @@ derivatives between <a class="reference internal" href="#equation-eq-ch03-3-5">(
 gives</p>
 <div class="math notranslate nohighlight">
 \[
-\begin{aligned}
-    Y_{j+1} - y_{j+1} ~\simeq~
-    -\frac{19}{720}\frac{720}{251}(Y_{j+1} - y^{(p)}_{j+1})
-\end{aligned}
+\frac{Y_{j+1}-y_{j+1}^{(p)}}{C_5^{(p)}}=\frac{Y_{j+1}-y_{j+1}^{(c)}}{C_5^{(c)}}
 \]</div>
-<p>or</p>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
 <div class="math notranslate nohighlight">
 \[
-\begin{aligned}
-    Y_{j+1} - y_{j+1} ~\simeq~ -\frac{19}{251}(Y_{j+1} - y^{(p)}_{j+1})
-\end{aligned}
+C_5^{(c)}Y_{j+1}-C_5^{(c)}y_{j+1}^{(p)}
+=C_5^{(p)} Y_{j+1}-C_5^{(p)}y_{j+1}^{(c)}
 \]</div>
-<p>taking <span class="math notranslate nohighlight">\(-\dfrac{19}{251}\,Y_{j+1}\)</span> to the LHS, and adding
-<span class="math notranslate nohighlight">\(-\dfrac{19}{251}y_{j+1}\)</span> to both sides of the equation gives:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-    Y_{j+1} - y_{j+1} + \frac{19}{251}Y_{j+1} - \frac{19}{251}y_{j+1}
-    ~&amp;\simeq~ - \frac{19}{251}y_{j+1} + \frac{19}{251}y_{j+1}^{(p)}
-    \\
-    (Y_{j+1} - y_{j+1}) \left(1+\frac{19}{251}\right)
-    ~&amp;\simeq~ -\frac{19}{251} \left(y_{j+1} - y_{j+1}^{(p)}\right)
-    \\
-    \therefore~ \left(Y_{j+1}-y_{j+1}\right)
-    ~&amp;\simeq~ -\frac{19}{270} \left(y_{j+1} - y_{j+1}^{(p)}\right)
-\end{aligned}
-\end{split}\]</div>
+\[
+\left(C_5^{(c)}-C_5^{(p)}\right)Y_{j+1} + C_5^{(p)}y_{j+1}^{(c)}
+= C_5^{(c)}y_{j+1}^{(p)}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\left(C_5^{(c)}-C_5^{(p)}\right)Y_{j+1} + C_5^{(p)}y_{j+1}^{(c)}
+- C_5^{(c)} y_{j+1}^{(c)}
+= C_5^{(c)} \left( y_{j+1}^{(p)} - y_{j+1}^{(c)}\right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\left(C_5^{(c)}-C_5^{(p)}\right) \left(Y_{j+1} - y_{j+1}^{(c)}\right) 
+= C_5^{(c)} \left( y_{j+1}^{(p)} - y_{j+1}^{(c)}\right)
+\]</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\therefore \quad
+ Y_{j+1} - y_{j+1}^{(c)}
+= \frac{C_5^{(c)}}{C_5^{(p)}-C_5^{(c)}} \left( y_{j+1}^{(c)} - y_{j+1}^{(p)} \right) 
+\]</div>
 <p>Thus the error in the converged solution of the
 corrector formula, due to truncation, can be estimated by calculating</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
-    -\frac{19}{270} \left(y_{j+1} - y_{j+1}^{(p)}\right)
+\epsilon = \frac{C_5^{(c)}}{C_5^{(p)}-C_5^{(c)}} \left( y_{j+1}^{(c)} - y_{j+1}^{(p)} \right)
 \end{aligned}
 \]</div>
 <p>Note that, the reliability of this estimate depends on
@@ -511,16 +536,12 @@ the validity of the above assumptions including the assumption that the
 errors propagated from previous calculations are negligible.</p>
 <p>The above analysis easily generalizes to any predictor-corrector process
 in which the predictor formula has a truncation error of the form
-<span class="math notranslate nohighlight">\(\,C_1h^ny^{(n)}(\xi_1)\,\)</span> and the corrector formula has a truncation
-error of the form <span class="math notranslate nohighlight">\(\,-C_2h^ny^{(n)}(\xi_2)\,\)</span> with <span class="math notranslate nohighlight">\(\,C_1,C_2&gt;0\,\)</span> then
+<span class="math notranslate nohighlight">\(\,C_n^{(p)}h^ny^{(n)}(\xi_1)\,\)</span> and the corrector formula has a truncation error of the form <span class="math notranslate nohighlight">\(\,C_n^{(c)}h^ny^{(n)}(\xi_2)\,\)</span>, then
 an estimate of the error arising from the truncation is given by,</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch03-3-7">
 <span class="eqno">(4.11)<a class="headerlink" href="#equation-eq-ch03-3-7" title="Permalink to this equation">#</a></span>\[
-\begin{aligned}
-    Y_{j+1}-y_{j+1}~\simeq~-\frac{C_2}{C_1+C_2} \left(
-        y_{j+1}-y_{j+1}^{(p)}
-    \right)
-\end{aligned}
+ \epsilon
+= \frac{C_n^{(c)}}{C_n^{(p)}-C_n^{(c)}} \left( y_{j+1}^{(c)} - y_{j+1}^{(p)} \right) 
 \]</div>
 <div class="proof example admonition" id="example-0">
 <p class="admonition-title"><span class="caption-number">Example 4.5 </span></p>
@@ -543,7 +564,8 @@ solution <span class="math notranslate nohighlight">\((y = e^{-x} + x)\)</span>.
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-        Y_{j+1} - y_{j+1} ~&amp;=~ -\frac{19}{270} \left(y^{(c)} - y^{(p)}\right)\\[4pt]
+        \epsilon ~&amp;=~ \frac{C_5^{(c)}}{C_5^{(p)}-C_5^{(c)}} \left(y^{(c)} - y^{(p)}\right)\\[4pt]
+        &amp;=~ \frac{-\frac{19}{720}}{\frac{251}{720}-\left(-\frac{19}{720}\right)} \left(1.3678784 - 1.3678801\right)\\[4pt]        
         &amp;=~ -\frac{19}{270}(-1.7 \!\times\! 10^{-6})\\[4pt]
         &amp;=~ 1.2 \!\times\! 10^{-7}.    
 \end{aligned}

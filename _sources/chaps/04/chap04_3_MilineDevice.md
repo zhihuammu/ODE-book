@@ -54,8 +54,7 @@ $$
 \end{aligned}
 $$(eq:ch03:3.5)
 
- and from equations {eq}`eq:ch03:3.2`and {eq}`eq:ch03:3.4` and using the mean value theorem
-
+and from equations {eq}`eq:ch03:3.2`and {eq}`eq:ch03:3.4` we get
 
 $$
 
@@ -64,21 +63,47 @@ $$
     \left(F_{j+1} - f_{j+1}^{(p)}\right) +C^{(c)}_5 h^5y^{(5)}(\xi_2)\\[4pt]    
     &=~ \frac{9h}{24}
     \left(f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(p)})\right) +C^{(c)}_5 h^5y^{(5)}(\xi_2)\\[4pt]
-    &=~ \frac{3h}{8}(Y_{j+1} - y_{j+1}^{(c)})f_y(x_{j+1},\eta_{j+1}){+C^{(c)}_5 h^5y^{(5)}(\xi_2)}
+    &=~ \frac{3h}{8}(Y_{j+1} - y_{j+1}^{(c)})f_y(x_{j+1},\eta){+C^{(c)}_5 h^5y^{(5)}(\xi_2)}
 \end{aligned}
 
 $$
 
- assuming that $\displaystyle \,f_y = \frac{\partial f}{\partial y} =
+:::{note} 
+:class: dropdown
+Using the Mean Value Theorem, we can get
+
+$$
+\begin{aligned}
+f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(p)}) 
+& = f_y (x_{j+1},\xi) \left( Y_{j+1} - y_{j+1}^{(p)} \right) \\
+& = f_y (x_{j+1},\xi) \left( Y_{j+1} - y_{j+1}^{(c)} \right)  \left[1+ \frac{y_{j+1}^{(c)}-y_{j+1}^{(p)}}{Y_{j+1}-y_{j+1}^{(c)}}   \right] \\
+& = \left( Y_{j+1} - y_{j+1}^{(c)} \right)  f_y (x_{j+1},\eta)   \\
+\end{aligned}
+$$
+
+where $Y_{j+1}\leq \xi \leq y_{j+1}^{(p)}$, $Y_{j+1}\leq \eta \leq y_{j+1}^{(c)}$ and we assume
+
+$$
+f_y (x_{j+1},\eta) = f_y (x_{j+1},\xi) \left[1+ \frac{y_{j+1}^{(c)}-y_{j+1}^{(p)}}{Y_{j+1}-y_{j+1}^{(c)}}   \right]
+$$
+
+:::
+
+
+<!-- and using the mean value theorem
+
+ assuming that $\displaystyle \,f_y(x_{j+1},\eta) = \frac{\partial f}{\partial y} =
 \frac{f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(p)})}{(Y_{j+1} - y_{j+1}^{(c)})}\,$
-and $\,Y_{j+1} \leq \eta_{j+1} \leq y_{j+1}\,$. Thus 
+and $\,Y_{j+1} \leq \eta \leq y_{j+1}\,$.  -->
+
+Thus 
 
 $$
 
 \begin{aligned}
-    \left(Y_{j+1} - y_{j+1}\right) \left\{
-        1 - \frac{3h}{8}f_y(x_{j+1},\eta_{j+1})
-    \right\} ~=~ -\frac{19}{720}h^5y^{(5)}(\xi_2)
+    \left(Y_{j+1} - y_{j+1}^{(c)}\right) \left\{
+        1 - \frac{3h}{8}f_y(x_{j+1},\eta)
+    \right\} ~=~ C_5^{(c)} h^5 y^{(5)}(\xi_2)
 \end{aligned}
 
 $$
@@ -89,7 +114,7 @@ to ensure that
 $$
 
 \begin{aligned}
-    \frac{3h}{8}\left|f_y(x_{j+1},\eta_{j+1})\right| \ll 1
+    \frac{3h}{8}\left|f_y(x_{j+1},\eta)\right| \ll 1
 \end{aligned}
 
 $$
@@ -98,7 +123,7 @@ $$
 
 $$
 \begin{aligned}
-    Y_{j+1} - y_{j+1} ~\simeq~ -\frac{19}{720}h^5y^{(5)}(\xi_2)  
+    Y_{j+1} - y_{j+1}^{(c)} ~\simeq~ C_5^{(c)} h^5y^{(5)}(\xi_2)  
 \end{aligned}
 $$(eq:ch03:3.6)
 
@@ -109,44 +134,46 @@ derivatives between {eq}`eq:ch03:3.5` and {eq}`eq:ch03:3.6`
 gives 
 
 $$
-\begin{aligned}
-    Y_{j+1} - y_{j+1} ~\simeq~
-    -\frac{19}{720}\frac{720}{251}(Y_{j+1} - y^{(p)}_{j+1})
-\end{aligned}
+\frac{Y_{j+1}-y_{j+1}^{(p)}}{C_5^{(p)}}=\frac{Y_{j+1}-y_{j+1}^{(c)}}{C_5^{(c)}}
 $$
 
- or 
-
+:::{note}
+:class: dropdown
 $$
-\begin{aligned}
-    Y_{j+1} - y_{j+1} ~\simeq~ -\frac{19}{251}(Y_{j+1} - y^{(p)}_{j+1})
-\end{aligned}
-$$
-
- taking $-\dfrac{19}{251}\,Y_{j+1}$ to the LHS, and adding
-$-\dfrac{19}{251}y_{j+1}$ to both sides of the equation gives:
-
-
-$$
-\begin{aligned}
-    Y_{j+1} - y_{j+1} + \frac{19}{251}Y_{j+1} - \frac{19}{251}y_{j+1}
-    ~&\simeq~ - \frac{19}{251}y_{j+1} + \frac{19}{251}y_{j+1}^{(p)}
-    \\
-    (Y_{j+1} - y_{j+1}) \left(1+\frac{19}{251}\right)
-    ~&\simeq~ -\frac{19}{251} \left(y_{j+1} - y_{j+1}^{(p)}\right)
-    \\
-    \therefore~ \left(Y_{j+1}-y_{j+1}\right)
-    ~&\simeq~ -\frac{19}{270} \left(y_{j+1} - y_{j+1}^{(p)}\right)
-\end{aligned}
+C_5^{(c)}Y_{j+1}-C_5^{(c)}y_{j+1}^{(p)}
+=C_5^{(p)} Y_{j+1}-C_5^{(p)}y_{j+1}^{(c)}
 $$
 
- Thus the error in the converged solution of the
+$$
+\left(C_5^{(c)}-C_5^{(p)}\right)Y_{j+1} + C_5^{(p)}y_{j+1}^{(c)}
+= C_5^{(c)}y_{j+1}^{(p)}
+$$
+
+$$
+\left(C_5^{(c)}-C_5^{(p)}\right)Y_{j+1} + C_5^{(p)}y_{j+1}^{(c)}
+- C_5^{(c)} y_{j+1}^{(c)}
+= C_5^{(c)} \left( y_{j+1}^{(p)} - y_{j+1}^{(c)}\right)
+$$
+
+$$
+\left(C_5^{(c)}-C_5^{(p)}\right) \left(Y_{j+1} - y_{j+1}^{(c)}\right) 
+= C_5^{(c)} \left( y_{j+1}^{(p)} - y_{j+1}^{(c)}\right)
+$$
+:::
+
+$$\therefore \quad
+ Y_{j+1} - y_{j+1}^{(c)}
+= \frac{C_5^{(c)}}{C_5^{(p)}-C_5^{(c)}} \left( y_{j+1}^{(c)} - y_{j+1}^{(p)} \right) 
+$$
+
+
+Thus the error in the converged solution of the
 corrector formula, due to truncation, can be estimated by calculating
 
 
 $$
 \begin{aligned}
-    -\frac{19}{270} \left(y_{j+1} - y_{j+1}^{(p)}\right)
+\epsilon = \frac{C_5^{(c)}}{C_5^{(p)}-C_5^{(c)}} \left( y_{j+1}^{(c)} - y_{j+1}^{(p)} \right)
 \end{aligned}
 $$
 
@@ -156,18 +183,13 @@ errors propagated from previous calculations are negligible.
 
 The above analysis easily generalizes to any predictor-corrector process
 in which the predictor formula has a truncation error of the form
-$\,C_1h^ny^{(n)}(\xi_1)\,$ and the corrector formula has a truncation
-error of the form $\,-C_2h^ny^{(n)}(\xi_2)\,$ with $\,C_1,C_2>0\,$ then
+$\,C_n^{(p)}h^ny^{(n)}(\xi_1)\,$ and the corrector formula has a truncation error of the form $\,C_n^{(c)}h^ny^{(n)}(\xi_2)\,$, then
 an estimate of the error arising from the truncation is given by,
 
-
 $$
-\begin{aligned}
-    Y_{j+1}-y_{j+1}~\simeq~-\frac{C_2}{C_1+C_2} \left(
-        y_{j+1}-y_{j+1}^{(p)}
-    \right)
-\end{aligned}
-$$ (eq:ch03:3.7)
+ \epsilon
+= \frac{C_n^{(c)}}{C_n^{(p)}-C_n^{(c)}} \left( y_{j+1}^{(c)} - y_{j+1}^{(p)} \right) 
+$$(eq:ch03:3.7)
 
 
 
@@ -194,7 +216,8 @@ $\,y^{(c)} \!=\! 1.3678784\,$. Using the error formula the error is
 
 $$
 \begin{aligned}
-        Y_{j+1} - y_{j+1} ~&=~ -\frac{19}{270} \left(y^{(c)} - y^{(p)}\right)\\[4pt]
+        \epsilon ~&=~ \frac{C_5^{(c)}}{C_5^{(p)}-C_5^{(c)}} \left(y^{(c)} - y^{(p)}\right)\\[4pt]
+        &=~ \frac{-\frac{19}{720}}{\frac{251}{720}-\left(-\frac{19}{720}\right)} \left(1.3678784 - 1.3678801\right)\\[4pt]        
         &=~ -\frac{19}{270}(-1.7 \!\times\! 10^{-6})\\[4pt]
         &=~ 1.2 \!\times\! 10^{-7}.    
 \end{aligned}

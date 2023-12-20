@@ -1,3 +1,4 @@
+(chap01:complexNumber:DE)=
 # Homogeneous Linear Difference Equations with Constant Coefficients
 
 Here we focus on homogeneous linear difference equations with constant coefficients,

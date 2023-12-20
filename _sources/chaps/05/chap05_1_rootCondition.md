@@ -19,8 +19,12 @@ $$
      y(x_0) \,=\,y_0
 $$(eq:ch04:1.2)
 
-where $\lambda$ is a constant. Note that the
-general solution is 
+where $\lambda$ is a constant.
+
+:::{note}
+:class: dropdown
+
+The general solution to the test problem {eq}`eq:ch04:1.2` is 
 
 $$
 \begin{aligned}
@@ -31,6 +35,55 @@ $$
 
  thus, the exact solution is:
 $\displaystyle{y_j ~=~ y_0\,e^{\lambda(x_j-x_0)}.}$
+:::
+
+According to the test problem {eq}`eq:ch04:1.2`, we can substitute
+$
+    f_j = \lambda y_j
+$
+into equation {eq}`eq:ch04:1.1` and get
+
+$$
+\sum_{i=0}^{k}\alpha_i y_{j+i}~=~ h\lambda\sum_{i=0}^{k}\beta_i y_{j+i}~, 
+$$(eq:ch04:1.3)
+
+which can be re-organised as
+
+$$
+\sum_{i=0}^{k}\gamma_i y_{j+i}=0~, ~\text{with}~ \gamma_i =\alpha_i - h\lambda \beta_i
+$$(eq:ch04:1.4)
+
+We can write equation {eq}`eq:ch04:1.4` in the operator form as
+
+$$
+\left(\gamma_0 E^0 + \gamma_1 E^1 + \gamma_2 E^2 + \cdots + \gamma_k E^k \right) y_j =0~\,
+$$
+
+and get its characteristic equation
+
+$$
+\gamma_0 + \gamma_1 \xi + \gamma_2 \xi^2 + \cdots + \gamma_k \xi^k = 0
+$$(eq:ch04:1.5)
+
+This is a polynomial equation of degree $k$ and has $k$
+roots, $\,\xi_1, \xi_2, \dots, \xi_k\,$, which may be real or imaginary.
+If these roots are distinct, the general solution of the difference
+equation {eq}`eq:ch04:1.4` is 
+
+$$
+\begin{aligned}
+y_j ~=~ A_1\, \xi_1^j + A_2\, \xi_2^j + \,\dots\, + A_k\,\xi_k^j
+\end{aligned}
+$$(eq:ch04:1.6)
+
+ where $A_1$, $A_2$, ..., $A_k$ are constant. See {numref}`chap01:complexNumber:DE` for more details on difference and characteristic equations.
+
+
+
+<!-- 
+$$
+\sum_{i=0}^{k}\alpha_i y_{j+i}~=~ h\lambda\sum_{i=0}^{k}\beta_i y_{j+i}
+$$
 
 Consider a $k$-step multistep formula of the form 
 
@@ -100,7 +153,7 @@ $$(eq:ch04:1.6)
 
  where $A_1$, $A_2$, ..., $A_k$ are constant. See [Chapter 1](chap01:complexNumber)
 for more details on difference and
-characteristic equations.
+characteristic equations. -->
 
 :::{prf:example}
 Consider a $k = 2$-step multistep formula of the form 
