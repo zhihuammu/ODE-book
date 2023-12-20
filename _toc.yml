@@ -4,11 +4,12 @@
 format: jb-book
 root: index
 parts:
-  - caption: Unit Guide
+  - caption: Overview
     numbered: false
     chapters:
-    - file: unitguide/schedule
-    - file: unitguide/readingList
+    - file: overview/motivation
+    - file: overview/schedule
+    - file: overview/readingList
     
   - caption: Lecture Notes and Tutorial Exericses
     maxdepth: 1

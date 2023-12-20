@@ -1,7 +1,9 @@
 (chap:sparseMatrix:exercise)=
 # Chapter 8 Exercises
 
+You should try the following exercise questions first, then check with the answers. 
 
+For detailed solutions, please find them in the Moodle area for this Unit.
 
 1.  1. Write a Matlab mfile that produces the adjacency graph for the symmetric matrix A given in {prf:ref}`ch08-example-comparison`. 
     

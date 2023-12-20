@@ -1,6 +1,10 @@
 (chap01:exercises)=
 # Chapter 1 Exercises
 
+You should try the following exercise questions first, then check with the answers. 
+
+For detailed solutions, please find them in the Moodle area for this Unit.
+
 :::{exercise}
 :label: ch1-ex-q1
 
@@ -26,6 +30,45 @@ Simplify the following expressions used to calculate $z$, and find the real and 
 
 :::
 
+:::{exercise} 
+:label: ch1-ex-q5
+
+For the following second-order homogeneous linear difference equation
+
+$$y_{n+2} - 2 a y_{n+1}+ a^2 y_n =0, \quad a\in R, a\ne0,$$
+
+prove that 
+
+$$y_n = c_1 a^n + c_2 n a^n$$
+
+is the solution to the equation.
+
+:::
+
+:::{solution} ch1-ex-q5
+:class: dropdown
+
+According to the question, the members of the sequence at $n$, $n+1$ and $n+2$ are:
+
+- $y_n = c_1 a^n + c_2 n a^n$
+
+- $y_{n+1} = c_1 a^{n+1} + c_2 (n+1) a^{n+1}$
+
+- $y_{n+2} = c_1 a^{n+2} + c_2 (n+2) a^{n+2}$
+
+Substitute the above three members into the left hand side (LHS) of the equation, so
+
+$$\displaystyle
+\begin{aligned}
+\text{LHS} & =  y_{n+2} - 2 a y_{n+1}+ a^2 y_n \\
+           & =   \left(c_1 a^{n+2} + c_2 (n+2) a^{n+2} \right) -2a \left(c_1 a^{n+1} + c_2 (n+1) a^{n+1} \right) + a^2 \left(c_1 a^n + c_2 n a^n \right)  \\
+           & =   c_1 a^{n+2} + c_2 (n+2) a^{n+2}  -2 c_1 a^{n+2} -2 c_2 (n+1) a^{n+2}  + c_1 a^{n+2} + c_2 n a^{n+2} \\       
+           & =  a^{n+2} \left[c_1+c_2 (n+2) - 2 c_1 - 2 c_2 (n+1) + c_1 + c_2 n\right]    \\
+           & =  a^{n+2} \left\{ c_1 (1-2+1) + c_2 \left[(n+2)-2(n+1)+n\right]\right\} \\
+           & =  0
+\end{aligned} $$
+**Q.E.D.**
+:::
 
 :::{exercise}
 :label: ch1-ex-q2
@@ -104,24 +147,3 @@ $\displaystyle y_n=\frac{1}{\sqrt{5}}\left[ \left(\frac{1+\sqrt{5}}{2}\right)^n 
 
 :::
 
-:::{exercise} 
-:label: ch1-ex-q5
-
-For the following second-order homogeneous linear difference equation
-
-$$y_{n+2} - 2 a y_{n+1}+ a^2 y_n =0, \quad a\in R, a\ne0,$$
-
-prove that 
-
-$$y_n = c_1 a^n + c_2 n a^n$$
-
-is the solution to the equation.
-
-:::
-
-:::{solution} ch1-ex-q5
-:class: dropdown
-
-Substitute the general solution into the equation to prove that the equation can be satisfied.
-
-:::

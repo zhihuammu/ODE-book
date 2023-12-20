@@ -18,8 +18,8 @@ $$(eq:ch03:3.1)
 
 $$
 \begin{aligned}
-    y_{j+1} ~=~ y_j + \frac{h}{24} \left(
-        9f_{j+1} + 19f_{j} - 5f_{j-1} + f_{j-2}
+    y_{j+1}^{(c)} ~=~ y_j + \frac{h}{24} \left(
+        9f_{j+1}^{(p)} + 19f_{j} - 5f_{j-1} + f_{j-2}
     \right)    
 \end{aligned}
 $$(eq:ch03:3.2)
@@ -30,9 +30,9 @@ $x = x_{j+1},\, (Y_{j+1}),\,$ satisfies the two similar equations:
 
 $$
 \begin{aligned}
-    Y^{(p)}_{j+1} &= y_j
+    Y^{}_{j+1} &= y_j
     + \frac{h}{24}(55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3})
-    + \frac{251}{720}h^5y^v(\xi_1), & x_{{j-3}} &\leq \xi_1 \leq x_{{j+1}}
+    + C^{(p)}_5 h^5y^{(5)}(\xi_1), & x_{{j-3}} &\leq \xi_1 \leq x_{{j+1}}
 \end{aligned}
 $$(eq:ch03:3.3)
 
@@ -40,15 +40,17 @@ $$
 \begin{aligned}
     Y_{j+1} &= y_j
     + \frac{h}{24}(9F_{j+1} + 19f_j - 5f_{j-1} + f_{j-2})
-    - \frac{19}{720}h^5y^v(\xi_2), & x_{{j-2}} &\leq \xi_2 \leq x_{{j+1}}    
+    +C^{(c)}_5 h^5y^{(5)}(\xi_2), & x_{{j-2}} &\leq \xi_2 \leq x_{{j+1}}    
 \end{aligned}
 $$(eq:ch03:3.4)
+
+where $\displaystyle C^{(p)}_5=\frac{251}{720}$ and $\displaystyle  C^{(c)}_5=- \frac{19}{720}$ are the error constants for the predictor and corrector, respectively; and $F_{j+1} = f(x_{j+1}, Y_{j+1})$ is the exact value of function $f$ at $(x_{j+1}, Y_{j+1})$.
 
 From equations {eq}`eq:ch03:3.1` and {eq}`eq:ch03:3.3` 
 
 $$
 \begin{aligned}
-    Y_{j+1} - y^{(p)}_{j+1} ~=~ \frac{251}{720}h^5y^v(\xi_1)
+    Y_{j+1} - y^{(p)}_{j+1} ~=~ C^{(p)}_5 h^5y^{(5)}(\xi_1)
 \end{aligned}
 $$(eq:ch03:3.5)
 
@@ -58,15 +60,17 @@ $$(eq:ch03:3.5)
 $$
 
 \begin{aligned}
-    Y_{j+1} - y_{j+1} ~&=~ \frac{9h}{24}
-    (f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1})) - \frac{19}{720}h^5y^v(\xi_2)\\[4pt]
-    &=~ \frac{3h}{8}(Y_{j+1} - y_{j+1})f_y(x_{j+1},\eta_{j+1}){-\frac{19}{720}h^5y^v(\xi_2)}
+    Y_{j+1} - y_{j+1}^{(c)} ~&=~  \frac{9h}{24}
+    \left(F_{j+1} - f_{j+1}^{(p)}\right) +C^{(c)}_5 h^5y^{(5)}(\xi_2)\\[4pt]    
+    &=~ \frac{9h}{24}
+    \left(f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(p)})\right) +C^{(c)}_5 h^5y^{(5)}(\xi_2)\\[4pt]
+    &=~ \frac{3h}{8}(Y_{j+1} - y_{j+1}^{(c)})f_y(x_{j+1},\eta_{j+1}){+C^{(c)}_5 h^5y^{(5)}(\xi_2)}
 \end{aligned}
 
 $$
 
  assuming that $\displaystyle \,f_y = \frac{\partial f}{\partial y} =
-\frac{f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1})}{(Y_{j+1} - y_{j+1})}\,$
+\frac{f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(p)})}{(Y_{j+1} - y_{j+1}^{(c)})}\,$
 and $\,Y_{j+1} \leq \eta_{j+1} \leq y_{j+1}\,$. Thus 
 
 $$
@@ -74,7 +78,7 @@ $$
 \begin{aligned}
     \left(Y_{j+1} - y_{j+1}\right) \left\{
         1 - \frac{3h}{8}f_y(x_{j+1},\eta_{j+1})
-    \right\} ~=~ -\frac{19}{720}h^5h^v(\xi_2)
+    \right\} ~=~ -\frac{19}{720}h^5y^{(5)}(\xi_2)
 \end{aligned}
 
 $$
@@ -94,13 +98,13 @@ $$
 
 $$
 \begin{aligned}
-    Y_{j+1} - y_{j+1} ~\simeq~ -\frac{19}{720}h^5y^v(\xi_2)  
+    Y_{j+1} - y_{j+1} ~\simeq~ -\frac{19}{720}h^5y^{(5)}(\xi_2)  
 \end{aligned}
 $$(eq:ch03:3.6)
 
- We also assume that $\,y^v(x)\,$ does not vary strongly
-over the interval $\,(x_{j-3},x_{j+1})\,$ so that $y^v(\xi_1)\,$ and
-$\,y^v(\xi_2)\,$ are approximately equal. Eliminating these fifth
+ We also assume that $\,y^{(5)}(x)\,$ does not vary strongly
+over the interval $\,(x_{j-3},x_{j+1})\,$ so that $y^{(5)}(\xi_1)\,$ and
+$\,y^{(5)}(\xi_2)\,$ are approximately equal. Eliminating these fifth
 derivatives between {eq}`eq:ch03:3.5` and {eq}`eq:ch03:3.6`
 gives 
 

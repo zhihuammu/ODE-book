@@ -159,10 +159,11 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../unitguide/schedule.html">Teaching Schedule</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../unitguide/readingList.html">Further Reading List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/motivation.html">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/schedule.html">Teaching Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/readingList.html">Further Reading List</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Tutorial Exericses</span></p>
 <ul class="current nav bd-sidenav">
@@ -188,16 +189,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_3_explicit.html">3.3. Explicit or Open Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_4_implicit.html">3.4. Implicit or Closed Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_5_predictorCorrector.html">3.5. Predictor-Corrector Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03/chap03_6_matlab.html">3.6. Example MATLAB Programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03/chap03_7_python.html">3.7. Example Python Codes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03/chap03_8_exercise.html">3.8. Chapter 3 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_6_codes.html">3.6. Example Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_7_exercise.html">3.7. Chapter 3 Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chap04_0.html">4. Multistep Methods: Order and Error Constants</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chap04_1_errorIntegration.html">4.1. Derivation of Local Error Terms for Integration Formulae</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. Order and Error Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap04_3_MilineDevice.html">4.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap04_4_exercise.html">4.4. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap04_4_exercise.html">4.4. Chapter 4 Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../05/chap05_0.html">5. Multistep Methods: Stability I</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -236,8 +236,6 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">ODE Solvers in Matlab and SciPy</a></li>
-
-
 </ul>
 
     </div>
@@ -495,53 +493,68 @@ principal or leading local truncation error and <span class="math notranslate no
 <em>error constant</em>. For a polynomial of degree <span class="math notranslate nohighlight">\(\,p\,\)</span> we have
 <span class="math notranslate nohighlight">\(~y^{(p+1)}(x) = 0~\)</span> and hence the method is of order <span class="math notranslate nohighlight">\(\,p\,\)</span> if,
 <span class="math notranslate nohighlight">\(~C_0 = C_1 = C_2 = \dots = C_p=0,~\)</span> and <span class="math notranslate nohighlight">\(~C_{p+1}\neq 0\)</span>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The formulae for <span class="math notranslate nohighlight">\(\,C_0\)</span>, <span class="math notranslate nohighlight">\(C_1\)</span>, …, <span class="math notranslate nohighlight">\(C_p\,\)</span> can be used to
-derive a linear multistep method of given structure and maximal order
-(see <a class="reference internal" href="#ch04-example-4">Example 4.4</a>, below).</p>
+<div class="important admonition">
+<p class="admonition-title">Summary</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(C_0 = \alpha_0 + \alpha_1 + \alpha_2 + \cdots + \alpha_k\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_1 = (\alpha_1 + 2\alpha_2 + 3\alpha_3 + \dots + k\alpha_k) 
+      - (\beta_0 + \beta_1 + \beta_2 + \dots + \beta_k)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_2 = \frac{1}{2!}(\alpha_1 + 2{^2}\alpha_2 + 3{^2}\alpha_3 + \dots + k{^2}\alpha_k)
+      -
+      \frac{1}{1!}({\beta_1} + {2}\beta_2 + \dots + {k}\beta_k)\)</span></p></li>
+<li><p>For <span class="math notranslate nohighlight">\(p=2, 3, \ldots\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[ C_p =
+        \frac{1}{p!}(\alpha_1 + 2^p\alpha_2 + 3^p\alpha_3 + \dots + k^p\alpha_k)
+        - \frac{1}{(p-1)!}(\beta_1 + 2^{p-1}\beta_2 + 3^{p-1}\beta_3
+                           + \dots + k^{p-1}\beta_k)
+    \]</div>
+</li>
+</ul>
 </div>
 <div class="proof example admonition" id="example-0">
 <p class="admonition-title"><span class="caption-number">Example 4.3 </span></p>
 <section class="example-content" id="proof-content">
 <p>Find the order and the error constants of the following formulae,</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\displaystyle y_{j+4} ~=~ y_j + \frac{h}{3}(8f_{j+3} - 4f_{j+2} + 8f_{j+1}{)}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\displaystyle y_{j+3} ~=~ y_{j+2} + \frac{h}{12}(23f_{j+2} - 16f_{j+1} + 5f_j)\)</span></p></li>
-</ol>
-<div class="tip admonition">
-<p class="admonition-title">Solution</p>
 <ol class="arabic">
 <li><p><span class="math notranslate nohighlight">\(\displaystyle y_{j+4} ~=~ y_j + \frac{h}{3}(8f_{j+3} - 4f_{j+2} + 8f_{j+1}{)}\)</span></p>
-<p>A comparison with</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solution (click to show)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<!-- $\displaystyle y_{j+4} ~=~ y_j + \frac{h}{3}(8f_{j+3} - 4f_{j+2} + 8f_{j+1}{)}$ -->
+<p class="sd-card-text">A comparison with</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-                \sum_{i=0}^{4} \alpha_i y_{j+i} ~=~ h \sum_{i=0}^{4} \beta_i f_{j+i},            
-    \end{aligned}\]</div>
-<p>gives,</p>
+            \sum_{i=0}^{4} \alpha_i y_{j+i} ~=~ h \sum_{i=0}^{4} \beta_i f_{j+i},            
+\end{aligned}\]</div>
+<p class="sd-card-text">gives,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-                &amp;&amp; \alpha_0 &amp;= -1, &amp; \alpha_1 &amp;= 0, &amp; \alpha_2 &amp;= 0,
-                 &amp; \alpha_3 &amp;=  0, &amp; \alpha_4 &amp;= 1 &amp;&amp;
-                \\
-                &amp;&amp; \beta_0 &amp;= 0, &amp; \beta_1 &amp;= \frac{8}{3}, &amp; \beta_2 &amp;= -\frac{4}{3},
-                 &amp; \beta_3 &amp;= \frac{8}{3}, &amp; \beta_4 &amp;= 0 &amp;&amp;
-            
-    \end{aligned}\end{split}\]</div>
-<p>Thus</p>
+            &amp;&amp; \alpha_0 &amp;= -1, &amp; \alpha_1 &amp;= 0, &amp; \alpha_2 &amp;= 0,
+             &amp; \alpha_3 &amp;=  0, &amp; \alpha_4 &amp;= 1 &amp;&amp;
+            \\
+            &amp;&amp; \beta_0 &amp;= 0, &amp; \beta_1 &amp;= \frac{8}{3}, &amp; \beta_2 &amp;= -\frac{4}{3},
+             &amp; \beta_3 &amp;= \frac{8}{3}, &amp; \beta_4 &amp;= 0 &amp;&amp;
+        
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Thus</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-                C_0 ~&amp;=~ \alpha_0 + \alpha_1 + \alpha_2 + \alpha_3 + \alpha_4 ~=~ 0 \phantom{\frac{}{0}}\\
-                C_1 ~&amp;=~ (\alpha_1 + 2\alpha_2 + 3\alpha_3 + 4\alpha_4) - (\beta_0 + \beta_1 + \beta_2 + \beta_3 + \beta_4) ~=~ 0 \phantom{\frac{0}{0}}\\
-                C_2 ~&amp;=~ \frac{1}{2!}(\alpha_1 + 2^2\alpha_2 + 3^2\alpha_3 + 4^2\alpha_4) - \frac{1}{1!}(\beta_1 + 2\beta_2 + 3\beta_3 + 4\beta_4) ~=~ 0\\
-                C_3 ~&amp;=~ \frac{1}{3!}(\alpha_1 + 2^3\alpha_2 + 3^3\alpha_3 + 4^3\alpha_4) - \frac{1}{2!}(\beta_1 + 2^2\beta_2 + 3^2\beta_3 + 4^2\beta_4) ~=~ 0\\
-                C_4 ~&amp;=~ \frac{1}{4!}(\alpha_1 + 2^4\alpha_2 + 3^4\alpha_3 + 4^4\alpha_4) - \frac{1}{3!}(\beta_1 + 2^3\beta_2 + 3^3\beta_3 + 4^3\beta_4) ~=~ 0\\
-                C_5 ~&amp;=~ \frac{1}{5!}(\alpha_1 + 2^5\alpha_2 + 3^5\alpha_3 + 4^5\alpha_4) - \frac{1}{4!}(\beta_1 + 2^4\beta_2 + 3^4\beta_3 + 4^4\beta_4) ~=~ \frac{28}{90}=\frac{14}{45}\\
-            
-    \end{aligned}\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(\therefore\)</span>The method is of order <span class="math notranslate nohighlight">\(4\)</span> and the error constant in
+            C_0 ~&amp;=~ \alpha_0 + \alpha_1 + \alpha_2 + \alpha_3 + \alpha_4 ~=~ 0 \phantom{\frac{}{0}}\\
+            C_1 ~&amp;=~ (\alpha_1 + 2\alpha_2 + 3\alpha_3 + 4\alpha_4) - (\beta_0 + \beta_1 + \beta_2 + \beta_3 + \beta_4) ~=~ 0 \phantom{\frac{0}{0}}\\
+            C_2 ~&amp;=~ \frac{1}{2!}(\alpha_1 + 2^2\alpha_2 + 3^2\alpha_3 + 4^2\alpha_4) - \frac{1}{1!}(\beta_1 + 2\beta_2 + 3\beta_3 + 4\beta_4) ~=~ 0\\
+            C_3 ~&amp;=~ \frac{1}{3!}(\alpha_1 + 2^3\alpha_2 + 3^3\alpha_3 + 4^3\alpha_4) - \frac{1}{2!}(\beta_1 + 2^2\beta_2 + 3^2\beta_3 + 4^2\beta_4) ~=~ 0\\
+            C_4 ~&amp;=~ \frac{1}{4!}(\alpha_1 + 2^4\alpha_2 + 3^4\alpha_3 + 4^4\alpha_4) - \frac{1}{3!}(\beta_1 + 2^3\beta_2 + 3^3\beta_3 + 4^3\beta_4) ~=~ 0\\
+            C_5 ~&amp;=~ \frac{1}{5!}(\alpha_1 + 2^5\alpha_2 + 3^5\alpha_3 + 4^5\alpha_4) - \frac{1}{4!}(\beta_1 + 2^4\beta_2 + 3^4\beta_3 + 4^4\beta_4) ~=~ \frac{28}{90}=\frac{14}{45}\\
+        
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(\therefore\)</span> The method is of order <span class="math notranslate nohighlight">\(4\)</span> and the error constant is
 <span class="math notranslate nohighlight">\(\dfrac{14}{45}\)</span>.</p>
-<p>Matlab code for error constant calculation:</p>
+<p class="sd-card-text">Matlab code for error constant calculation:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%matlab code: calculating the error constant for chapter 3 example 3(i)</span><span class="w"></span>
 <span class="c">%show results in fractions</span><span class="w"></span>
 <span class="nb">format</span><span class="w"> </span><span class="n">rational</span><span class="w"></span>
@@ -559,36 +572,44 @@ derive a linear multistep method of given structure and maximal order
 <span class="nb">disp</span><span class="p">([</span><span class="n">c0</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="n">c3</span><span class="w"> </span><span class="n">c4</span><span class="w"> </span><span class="n">c5</span><span class="p">])</span><span class="w"></span>
 </pre></div>
 </div>
-</li>
+</div>
+</details></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle y_{j+3} ~=~ y_{j+2} + \frac{h}{12}(23f_{j+2} - 16f_{j+1} + 5f_j)\)</span></p>
-<p>A comparison with</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solution (click to show)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">A comparison with</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-                \sum_{i=0}^{3} \alpha_i y_{j+i} ~=~ h \sum_{i=0}^{3} \beta_i f_{j+i}
-            
-    \end{aligned}\]</div>
-<p>gives,</p>
+            \sum_{i=0}^{3} \alpha_i y_{j+i} ~=~ h \sum_{i=0}^{3} \beta_i f_{j+i}
+        
+\end{aligned}\]</div>
+<p class="sd-card-text">gives,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-                &amp;&amp; \alpha_0 &amp;=  0, &amp; \alpha_1 &amp;=  0,
-                 &amp; \alpha_2 &amp;= -1, &amp; \alpha_3 &amp;=  1 &amp;&amp;
-                \\
-                &amp;&amp; \beta_0 &amp;= \frac{5}{12}, &amp; \beta_1 &amp;= -\frac{16}{12},
-                 &amp; \beta_2 &amp;= \frac{23}{12}, &amp; \beta_3 &amp;= 0 &amp;&amp;
-            
-    \end{aligned}\end{split}\]</div>
-<p>Thus</p>
+            &amp;&amp; \alpha_0 &amp;=  0, &amp; \alpha_1 &amp;=  0,
+             &amp; \alpha_2 &amp;= -1, &amp; \alpha_3 &amp;=  1 &amp;&amp;
+            \\
+            &amp;&amp; \beta_0 &amp;= \frac{5}{12}, &amp; \beta_1 &amp;= -\frac{16}{12},
+             &amp; \beta_2 &amp;= \frac{23}{12}, &amp; \beta_3 &amp;= 0 &amp;&amp;
+        
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Thus</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-                C_0 ~&amp;=~ \alpha_0 + \alpha_1 + \alpha_2 + \alpha_3 ~=~ 0 \phantom{\frac{}{0}}\\
-                C_1 ~&amp;=~ (\alpha_1 + 2\alpha_2 + 3\alpha_3) - (\beta_0 + \beta_1 + \beta_2 + \beta_3) ~=~ 0 \phantom{\frac{0}{0}}\\
-                C_2 ~&amp;=~ \frac{1}{2!}(\alpha_1 + 2^2\alpha_2 + 3^2\alpha_3) - \frac{1}{1!}(\beta_1 + 2\beta_2 + 3\beta_3) ~=~ 0\\
-                C_3 ~&amp;=~ \frac{1}{3!}(\alpha_1 + 2^3\alpha_2 + 3^3\alpha_3) - \frac{1}{2!}(\beta_1 + 2^2\beta_2 + 3^2\beta_3) ~=~ 0\\
-                C_4 ~&amp;=~ \frac{1}{4!}(\alpha_1 + 2^4\alpha_2 + 3^4\alpha_3) - \frac{1}{3!}(\beta_1 + 2^3\beta_2 + 3^3\beta_3) ~=~ \frac{9}{24}\\            
-    \end{aligned}\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(\therefore\)</span> The method is of order <span class="math notranslate nohighlight">\(3\)</span> and the error constant in
+            C_0 ~&amp;=~ \alpha_0 + \alpha_1 + \alpha_2 + \alpha_3 ~=~ 0 \phantom{\frac{}{0}}\\
+            C_1 ~&amp;=~ (\alpha_1 + 2\alpha_2 + 3\alpha_3) - (\beta_0 + \beta_1 + \beta_2 + \beta_3) ~=~ 0 \phantom{\frac{0}{0}}\\
+            C_2 ~&amp;=~ \frac{1}{2!}(\alpha_1 + 2^2\alpha_2 + 3^2\alpha_3) - \frac{1}{1!}(\beta_1 + 2\beta_2 + 3\beta_3) ~=~ 0\\
+            C_3 ~&amp;=~ \frac{1}{3!}(\alpha_1 + 2^3\alpha_2 + 3^3\alpha_3) - \frac{1}{2!}(\beta_1 + 2^2\beta_2 + 3^2\beta_3) ~=~ 0\\
+            C_4 ~&amp;=~ \frac{1}{4!}(\alpha_1 + 2^4\alpha_2 + 3^4\alpha_3) - \frac{1}{3!}(\beta_1 + 2^3\beta_2 + 3^3\beta_3) ~=~ \frac{9}{24}\\            
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(\therefore\)</span> The method is of order <span class="math notranslate nohighlight">\(3\)</span> and the error constant in
 <span class="math notranslate nohighlight">\(\dfrac{3}{8}\)</span>.</p>
-<p>Matlab code for error constant calculation:</p>
+<p class="sd-card-text">Matlab code for error constant calculation:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%matlab code: calculating the error constant for chapter 3 example 3(ii)</span><span class="w"></span>
 <span class="c">%show results in fractions</span><span class="w"></span>
 <span class="nb">format</span><span class="w"> </span><span class="n">rational</span><span class="w"></span>
@@ -606,11 +627,17 @@ derive a linear multistep method of given structure and maximal order
 <span class="nb">disp</span><span class="p">([</span><span class="n">c0</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="n">c3</span><span class="w"> </span><span class="n">c4</span><span class="w"> </span><span class="n">c5</span><span class="p">])</span><span class="w"></span>
 </pre></div>
 </div>
-</li>
-</ol>
 </div>
+</details></li>
+</ol>
 </section>
-</div><div class="proof example admonition" id="ch04-example-4">
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The formulae for <span class="math notranslate nohighlight">\(\,C_0\)</span>, <span class="math notranslate nohighlight">\(C_1\)</span>, …, <span class="math notranslate nohighlight">\(C_p\,\)</span> can be used to
+derive a linear multistep method of given structure and maximal order
+(see <a class="reference internal" href="#ch04-example-4">Example 4.4</a>, below).</p>
+</div>
+<div class="proof example admonition" id="ch04-example-4">
 <p class="admonition-title"><span class="caption-number">Example 4.4 </span></p>
 <section class="example-content" id="proof-content">
 <p>Construct an implicit linear two-step method of maximal order,

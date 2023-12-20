@@ -1,6 +1,10 @@
 (chap:stability2:exercise)=
 # Chapter 6 Exercises
 
+You should try the following exercise questions first, then check with the answers. 
+
+For detailed solutions, please find them in the Moodle area for this Unit.
+
 :::{exercise}
 Show that the method 
 
