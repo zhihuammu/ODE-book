@@ -57,17 +57,32 @@ When the right hand side of Eq. {eq}`eq:DE:linear` vanishes i.e. $R(n)=0$, we ge
 a_0(n) y_n + a_1(n) y_{n+1} + a_2(n) y_{n+2} + \ldots + a_k(n) y_{n+k} = 0,
 \end{equation} 
 ````
-which is called a homogeneous (linear) difference equation.
+which is called a homogeneous linear difference equation.
 ::::
 
 
 ::::{prf:example}
-We indicate for each of the following difference equations its order, it is linear or nonlinear, and whether it is homogeneous or inhomogeneous.
+Identify the order, linearity and homogeneity of the following difference equations:
+
+- $y_{n+1} - 2 y_n = 0$
+
+- $y_{n+1} - 3 y_n + y_{n-1} = e^{-n}$
+
+- $y_{n+3} - y_n^2 = n 2^n$
+
+<!-- We indicate for each of the following difference equations its order, it is linear or nonlinear, and whether it is homogeneous or inhomogeneous.
 \begin{align*}
 &y_{n+1} - 2 y_n = 0   & \text{(first order, linear, homogeneous)} \\
 &y_{n+1} - 3 y_n + y_{n-1} = e^{-n}   & \text{(second order, linear, inhomogeneous)} \\
 &y_{n+3} - y_n^2 = n 2^n &  \text{(third order, nonlinear, inhomogeneous)}
-\end{align*}    
+\end{align*}     -->
+
+:::{dropdown} Solution (click to show)
+\begin{align*}
+&y_{n+1} - 2 y_n = 0   & \text{(first order, linear, homogeneous)} \\
+&y_{n+1} - 3 y_n + y_{n-1} = e^{-n}   & \text{(second order, linear, inhomogeneous)} \\
+&y_{n+3} - y_n^2 = n 2^n &  \text{(third order, nonlinear, inhomogeneous)}
+\end{align*}  
 ::::
 
 ::::{prf:definition} Shift Operator
@@ -92,13 +107,27 @@ E^k y_n = y_{n+k}.
 ::::
 
 ::::{prf:example}
-We can apply multiple shifting operations on a member in a sequence
+
+- Use the definition of the shift Operator $E$ to expand the following expression \
+    $\left(E^4 - E^2 +1 \right) y_n $
+
+- Write the following expression into a shift operator $E$ form \
+    $ y_{n+2} - 2y_{n+1} + y_n  $
+
+<!-- We can apply multiple shifting operations on a member in a sequence
 
 $$\left(E^4 - E^2 +1 \right) y_n = y_{n+4} - y_{n+2} + y_n.$$
 
 We can also express algebraic operations on several members in a sequence as shifting operations on a single member, e.g.
 
-$$ y_{n+2} - 2y_{n+1} + y_n = \left( E^2 - 2E + 1\right) y_n.  $$
+$$ y_{n+2} - 2y_{n+1} + y_n = \left( E^2 - 2E + 1\right) y_n.  $$ -->
+
+:::{dropdown} Solution (click to show)
+
+- $\left(E^4 - E^2 +1 \right) y_n = y_{n+4} - y_{n+2} + y_n$
+
+- $ y_{n+2} - 2y_{n+1} + y_n = \left( E^2 - 2E + 1\right) y_n  $
+
 ::::
 
 

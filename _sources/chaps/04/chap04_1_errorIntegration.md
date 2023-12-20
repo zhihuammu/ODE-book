@@ -22,8 +22,8 @@ $$\begin{aligned}
     
 \end{aligned}$$
 
-:::{admonition} Solution
-:class: tip
+:::{dropdown} Solution (click to show)
+<!-- :class: tip -->
 
 $$\begin{aligned}
         &Using      & s ~&=~ \frac{x - x_0}{h}, & dx ~&=~ h\,ds\\
@@ -139,8 +139,8 @@ $$\begin{aligned}
 can be obtained by integrating the terms involving third
 and fourth differences.
 
-:::{admonition} Solution
-:class: tip
+:::{dropdown} Solution (click to show)
+<!-- :class: tip -->
 
 $$\begin{aligned}
         &Using      & x ~&=~ x_0 + sh & dx ~&=~ h\,ds\\

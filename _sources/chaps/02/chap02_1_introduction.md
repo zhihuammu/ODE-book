@@ -29,3 +29,11 @@ The interpolating polynomials are used in many areas of numerical analysis.
 In this chapter, we shall review some properties of the interpolating
 polynomials and develop means for working with functions that are stored in
 tabular form.
+
+:::{note} 
+
+- One-step Methods:  $(y_j) \Longrightarrow y_{j+1}$
+
+- Multi-step Methods:  $(y_{j-k}, y_{j-k+1}, \ldots, y_j) \Longrightarrow y_{j+1}$
+
+:::

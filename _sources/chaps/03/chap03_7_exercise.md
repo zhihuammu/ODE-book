@@ -111,16 +111,16 @@ $$\begin{aligned}
     values. Work to 7 decimal places. Note: you can use an Excel
     spreadsheet to carry out your calculations.
 
-2.  Modify Matlab program 1 to find approximate solutions in the
+2.  Modify **[](ch03:program1)** to find approximate solutions in the
     range $x = 0$ to $x=0.5$, with $\,h = 0.1\,$. Use the exact
     solution, $y_{ex} = 2 - 2x + x^2 - e^{-x}$, to calculate the
     starting values.
 
-3.  Modify the Matlab program 2 to check your results at $x = 0.4$
+3.  Modify **[](ch03:program2)** to check your results at $x = 0.4$
     and $x = 0.5$. Run your program for smaller and larger step size
     values and comment on your results.
 
-4.  Modify Matlab program 3 - with the `ode113` solver - to find
+4.  Modify **[](ch03:program3)** - with the `ode113` solver - to find
     solution and comment on your results. Try different tolerance
     values for *AbsTol* and *RelTol* and comment on your findings.
 ::::

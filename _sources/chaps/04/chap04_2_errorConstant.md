@@ -120,22 +120,34 @@ principal or leading local truncation error and $C_{p+1}\,$ is the
 $~y^{(p+1)}(x) = 0~$ and hence the method is of order $\,p\,$ if,
 $~C_0 = C_1 = C_2 = \dots = C_p=0,~$ and $~C_{p+1}\neq 0$.
 
-:::{note}
-The formulae for $\,C_0$, $C_1$, ..., $C_p\,$ can be used to
-derive a linear multistep method of given structure and maximal order
-(see {prf:ref}`ch04-example-4`, below).
+:::{admonition} Summary
+:class: important
+
+- $C_0 = \alpha_0 + \alpha_1 + \alpha_2 + \cdots + \alpha_k$
+
+- $C_1 = (\alpha_1 + 2\alpha_2 + 3\alpha_3 + \dots + k\alpha_k) 
+        - (\beta_0 + \beta_1 + \beta_2 + \dots + \beta_k)$
+
+- $C_2 = \frac{1}{2!}(\alpha_1 + 2{^2}\alpha_2 + 3{^2}\alpha_3 + \dots + k{^2}\alpha_k)
+        -
+        \frac{1}{1!}({\beta_1} + {2}\beta_2 + \dots + {k}\beta_k)$
+
+- For $p=2, 3, \ldots$ :
+
+    $$ C_p =
+        \frac{1}{p!}(\alpha_1 + 2^p\alpha_2 + 3^p\alpha_3 + \dots + k^p\alpha_k)
+        - \frac{1}{(p-1)!}(\beta_1 + 2^{p-1}\beta_2 + 3^{p-1}\beta_3
+                           + \dots + k^{p-1}\beta_k)
+    $$
 :::
 
-:::{prf:example}
+:::::{prf:example}
 Find the order and the error constants of the following formulae,
 
 1.  $\displaystyle y_{j+4} ~=~ y_j + \frac{h}{3}(8f_{j+3} - 4f_{j+2} + 8f_{j+1}{)}$
 
-2.  $\displaystyle y_{j+3} ~=~ y_{j+2} + \frac{h}{12}(23f_{j+2} - 16f_{j+1} + 5f_j)$
-
-:::{admonition} Solution
-:class: tip
-1.  $\displaystyle y_{j+4} ~=~ y_j + \frac{h}{3}(8f_{j+3} - 4f_{j+2} + 8f_{j+1}{)}$
+    ::::{dropdown} Solution (click to show)
+    <!-- $\displaystyle y_{j+4} ~=~ y_j + \frac{h}{3}(8f_{j+3} - 4f_{j+2} + 8f_{j+1}{)}$ -->
 
     A comparison with 
 
@@ -166,7 +178,7 @@ Find the order and the error constants of the following formulae,
             
     \end{aligned}$$
 
-    $\therefore$The method is of order $4$ and the error constant in
+    $\therefore$ The method is of order $4$ and the error constant is
     $\dfrac{14}{45}$.
 
     Matlab code for error constant calculation:
@@ -175,8 +187,12 @@ Find the order and the error constants of the following formulae,
     :language: matlab
     :::
 
+    ::::
+
+
 2.  $\displaystyle y_{j+3} ~=~ y_{j+2} + \frac{h}{12}(23f_{j+2} - 16f_{j+1} + 5f_j)$
 
+    ::::{dropdown} Solution (click to show)
     A comparison with
     
      $$\begin{aligned}
@@ -213,6 +229,15 @@ Find the order and the error constants of the following formulae,
     :::{literalinclude} /codes/example3b.m
     :language: matlab
     :::
+
+    ::::
+
+:::::
+
+:::{note}
+The formulae for $\,C_0$, $C_1$, ..., $C_p\,$ can be used to
+derive a linear multistep method of given structure and maximal order
+(see {prf:ref}`ch04-example-4`, below).
 :::
 
 :::{prf:example}

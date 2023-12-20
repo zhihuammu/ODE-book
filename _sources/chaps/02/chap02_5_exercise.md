@@ -1,6 +1,10 @@
 (chap02:exercises)=
 # Chapter 2 Exercises
 
+You should try the following exercise questions first, then check with the answers. 
+
+For detailed solutions, please find them in the Moodle area for this Unit.
+
 ::::{exercise}
 :label: ch2-ex-q1
 Complete a difference table for the following data:
@@ -111,6 +115,10 @@ whether the accuracy of your solution is within the expected range.
 :::{dropdown} Click to show
 $f(1.72) = 0.38641856$, MATLAB answer is
     $besselj(0,1.72) = 0.38641848$.
+
+<!-- [*Video explanation of this question*](https://mmutube.mmu.ac.uk/edit/1_le2vogg7) -->
+
+<a href="https://mmutube.mmu.ac.uk/media/odeEx1Q5/1_le2vogg7" target="_blank">An old video explaning this question</a>
 ::::
 
 

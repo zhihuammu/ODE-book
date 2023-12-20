@@ -32,7 +32,7 @@ procedure (i.e. two fixed point iteration per step). Alternatively,
 corrector iterations can be carried out until the difference between two
 successive iterations is less than a pre-specified tolerance.
 
-:::{prf:example}
+:::::{prf:example}
 :label: example-3.2
 Consider the initial--value problem 
 
@@ -44,10 +44,9 @@ Find approximate solutions using the
 Adams--Bashforth--Moulton fourth--order predictor-corrector method, with
 $\,h=0.1\,$. Find solution in the interval $[0~~1]$ and apply only one
 corrector iteration for each step.
-:::
-
 
 :::{tip}
+:class: dropdown
 - Step 1 - find the starting values
 
     First, we calculate the starting values from the exact solution
@@ -78,7 +77,9 @@ corrector iteration for each step.
     corrector evaluation only.
 :::
 
-**Solution**
+:::{dropdown} Solution (click to show)
+
+<!-- **Solution** -->
 
 - Step 1 - using the exact solution, $\,y(x) = e^{-x} + x\,$, the
     calculated starting values $y_0$, $y_1$, $y_2$ and $y_3$, and the
@@ -170,20 +171,5 @@ to $10^{-6}$, which is expected for a $4^\text{th}$order ABM method,
 using $h = 0.1$ -- remember, the error should be of the $O(h^5)$ from
 the truncation error terms listed for each ABM formulae above.
 
-
-In order to illustrate the predictor-corrector methods computationally,
-three Matlab programs with the corresponding function definitions and
-the solution tables are appended below:
-
-**Program 1** - solves the problem using the exact solution to find the
-starting values, followed by the $4^\text{th}$order ABM method for the
-remaining integration points.
-
-**Program 2** - implements the classic $4^{th}$--order Runge--Kutta
-method for computing the starting values, followed by the $4^{th}$order
-ABM method for the remaining integration points.
-
-**Program 3** - uses the ODE solver ode113 (based on non-stiff ABM
-methods) from the ODE solver routines built-in Matlab. This will be
-discussed in detail using Matlab documentation attached. Run these
-programs to check your results for *Example 2*.
+:::
+:::::

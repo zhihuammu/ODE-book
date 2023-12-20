@@ -1,6 +1,10 @@
 (chap:stability1:exercise)=
 # Chapter 5 Exercise
 
+You should try the following exercise questions first, then check with the answers. 
+
+For detailed solutions, please find them in the Moodle area for this Unit.
+
 :::{exercise}
 :label: ch5-ex-q1
 

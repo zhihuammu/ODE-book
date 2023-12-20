@@ -141,7 +141,7 @@ $$\nabla f(x) = f(x)-f(x-h)$$
   $$
   \nabla^n f_j = f_j - nf_{j-1}
                       + \frac{n(n-1)}{2!}f_{j-2}
-                      + \frac{n(n-1)(n-2)}{3!}f_{j-3} + \dots
+                      - \frac{n(n-1)(n-2)}{3!}f_{j-3} + \dots
   $$  
 
 

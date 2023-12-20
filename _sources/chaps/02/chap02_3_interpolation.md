@@ -34,7 +34,9 @@ For the first option, we may ask "Is this accurate?" For the second option, we m
 ## Gregory-Newton Forward Interpolation
 
 Let $f_j$ denote $f(x_j)$. We wish to obtain an approximate value for
-$f_{j+s}$, where: $s \>=\> \dfrac{x - x_j}{h}$
+$f_{j+s}$, where: 
+
+$$s \>=\> \dfrac{x - x_j}{h}$$
 
 Note that we have $\,f_{j+s}=f(x_j\!+\!sh)=E^sf(x_j)=E^sf_j\,$.
 
