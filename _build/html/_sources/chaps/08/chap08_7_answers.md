@@ -2,7 +2,8 @@
 
 
 1.  1.  
-
+    ::::{grid}
+    :::{grid-item}
     $$\begin{aligned}
         A = \begin{pmatrix}
             1 & 1 & 0 & 0 & 1 & 0\\
@@ -13,29 +14,9 @@
             0 & 1 & 0 & 0 & 1 & 1\\
         \end{pmatrix}
     \end{aligned}$$
+    :::
 
-    ```matlab
-    % Exercise 7-qn1(a)
-    A=[
-        1 1 0 0 1 0
-        1 1 1 0 0 1
-        0 1 1 0 0 0
-        0 0 0 1 1 0
-        1 0 0 1 1 1
-        0 1 0 0 1 1];
-    xy=[1 1;3 1;4 1;
-        1 2;2 2;4 2];
-    gplot(A,xy,'k-*');
-    axis([0 5 0 3]);
-    text(1,0.9,'1');
-    text(3,0.9,'2');
-    text(4,0.9,'3');
-    text(1,2.1,'4');
-    text(2,2.1,'5');
-    text(4,2.1,'6');
-    %End
-    ```
-
+    :::{grid-item}
     ```{tikz}
 
     \begin{axis}
@@ -59,10 +40,40 @@
         \node[anchor = south] at (axis cs:4,2) {6};
     \end{axis}   
     ```
+    :::
+
+    ::::
+
+
+    ```matlab
+    % Exercise 8-qn1(a)
+    A=[
+        1 1 0 0 1 0
+        1 1 1 0 0 1
+        0 1 1 0 0 0
+        0 0 0 1 1 0
+        1 0 0 1 1 1
+        0 1 0 0 1 1];
+    xy=[1 1;3 1;4 1;
+        1 2;2 2;4 2];
+    gplot(A,xy,'k-*');
+    axis([0 5 0 3]);
+    text(1,0.9,'1');
+    text(3,0.9,'2');
+    text(4,0.9,'3');
+    text(1,2.1,'4');
+    text(2,2.1,'5');
+    text(4,2.1,'6');
+    %End
+    ```
+
+
  
 
     2.  
     
+    ::::{grid}
+    :::{grid-item}
     $$\begin{aligned}
         A = \begin{pmatrix}
             1 & 1 & 0 & 0 & 0 & 1\\
@@ -73,9 +84,33 @@
             1 & 0 & 0 & 1 & 0 & 1\\
         \end{pmatrix}                    
     \end{aligned}$$
+    :::
+
+    :::{grid-item}
+    ```{tikz}
+    \begin{axis}
+    [   xmin = 0
+    ,   xmax = 5
+    ,   xtick = {0,1,2,3,4,5}
+    ,   ymin = 0
+    ,   ymax = 3
+    ,   ytick = {0,1,2,3}
+    ]
+    \plot [black, mark = *, mark options = {solid}]
+    coordinates {(1,1)(2,2)(2,1)(3,1)(3,2)(4,1)};
+    \node[anchor = north] at (axis cs:1,1) {4};
+    \node[anchor = north] at (axis cs:2,1) {1};
+    \node[anchor = north] at (axis cs:3,1) {2};
+    \node[anchor = north] at (axis cs:4,1) {3};
+    \node[anchor = south] at (axis cs:2,2) {6};
+    \node[anchor = south] at (axis cs:3,2) {5};
+    \end{axis}        
+    ```
+    :::
+    ::::
 
     ```matlab
-    % Exercise 7-qn1(b)
+    % Exercise 8-qn1(b)
     A=[
         1 1 0 0 0 1
         1 1 0 0 1 0
@@ -96,25 +131,6 @@
     %End
     ```
 
-    ```{tikz}
-    \begin{axis}
-    [   xmin = 0
-    ,   xmax = 5
-    ,   xtick = {0,1,2,3,4,5}
-    ,   ymin = 0
-    ,   ymax = 3
-    ,   ytick = {0,1,2,3}
-    ]
-    \plot [black, mark = *, mark options = {solid}]
-    coordinates {(1,1)(2,2)(2,1)(3,1)(3,2)(4,1)};
-    \node[anchor = north] at (axis cs:1,1) {4};
-    \node[anchor = north] at (axis cs:2,1) {1};
-    \node[anchor = north] at (axis cs:3,1) {2};
-    \node[anchor = north] at (axis cs:4,1) {3};
-    \node[anchor = south] at (axis cs:2,2) {6};
-    \node[anchor = south] at (axis cs:3,2) {5};
-    \end{axis}        
-    ```
 
 2.  Consider the following adjacency graph:
 
@@ -122,6 +138,8 @@
     :include: /images/08/ch7ex3.tikz
     ```
 
+    ::::{grid}
+    :::{grid-item}
     First we write down the associated adjacency matrix - it is most
     efficient to create a script file in MATLAB and type all of your
     matrices within this file for multiple use.
@@ -138,6 +156,13 @@
             0 0 0 0 1 0 0 1 1 1
             1 0 0 0 1 0 0 1 1 1]
 
+    In MATLAB use the command *spy(A)* to find the pattern and the
+    number of nonzero elements: i.e.\
+    `>> spy(A)`
+
+    :::
+
+    :::{grid-item}
     ```{tikz}
      \begin{axis}
         [   unit vector ratio* = 1 1 1
@@ -165,12 +190,10 @@
         };
     \end{axis}   
     ```
-    
-    In MATLAB use the command *spy(A)* to find the pattern and the
-    number of nonzero elements: i.e.\
-    `>> spy(A)`
+    :::
+    ::::
 
-    You can find the hald bandwitch of $A$ using the following commands:
+    You can find the half bandwitch of $A$ using the following commands:
 
         >> [i,j]=find(A);
         >> bw=max(i-j)
@@ -257,17 +280,25 @@
     :include: /images/08/ch7ex3orig.tikz
     ```
 
+    ::::{grid}
+    :::{grid-item}
     ```{tikz}
     :include: /images/08/ch7ex3cm.tikz
     ```
+    :::
 
+    :::{grid-item}
     ```{tikz}
     :include: /images/08/ch7ex3rcm.tikz
-    ```
+    ``` 
+    :::
+    ::::
 
     Now use MATLAB to construct the adjacency matrix B and C associated
     with the reordered RCM adjacency plot:
 
+    ::::{grid}
+    :::{grid-item}
         B=[
             1 1 0 0 0 0 0 0 0 0
             1 1 1 1 1 1 0 0 0 0
@@ -279,7 +310,9 @@
             0 0 0 1 1 1 1 1 0 0
             0 0 0 0 0 1 0 0 1 1
             0 0 0 0 0 1 0 0 1 1];
+    :::
 
+    :::{grid-item}
     ```{tikz}
     \begin{axis}
         [   unit vector ratio* = 1 1 1
@@ -308,6 +341,12 @@
     \end{axis}
     ```
 
+    :::
+    ::::
+
+
+
+
     We can now find the bandwidth for the reordered matrix:
 
         >> [i,j]=find(B);
@@ -318,6 +357,8 @@
     Hence, the full bandwidth for the reordered matrix by CM method is
     $= 4 + 4 + 1 = 9$.
 
+    ::::{grid}
+    :::{grid-item}
         C=[
             1 1 0 0 1 0 0 0 0 0
             1 1 0 0 1 0 0 0 0 0
@@ -334,7 +375,8 @@
         >> bw=max(i-j)
 
         bw = 4
-
+    :::
+    :::{grid-item}
     ```{tikz}
     \begin{axis}
         [   unit vector ratio* = 1 1 1
@@ -358,10 +400,15 @@
                       (3,7)(4,7)     (6,7)(7,7)     (9,7)
                                 (5,8)(6,8)     (8,8)(9,8)
                                 (5,9)(6,9)(7,9)(8,9)(9,9)(10,9)
-                                                   (10,9)(10,10)
+                                                   (9,10)(10,10)
         };
     \end{axis}   
     ```
+    :::    
+    ::::
+
+
+
     Hence, the full bandwidth for the reordered matrix by CM method is
     $= 4 + 4 + 1 = 9$.
 
@@ -370,7 +417,8 @@
 
     Next we use the MATLAB command `symrcm(A)` to test our RCM
     reordering result.
-
+    ::::{grid}
+    :::{grid-item}
         >> p=symrcm(A);
         >> spy(A(p,p))
 
@@ -383,10 +431,45 @@
 
     Hence, the `symrcm` command also results in a full bandwidth of
     $= 4 + 4 + 1 = 9$.
+    :::
+
+    :::{grid-item}
+    ```{tikz}
+    \begin{axis}
+        [   unit vector ratio* = 1 1 1
+        ,   y dir = reverse
+        ,   xmin = 0
+        ,   ymin = 0
+        ,   xmax = 11
+        ,   ymax = 11
+        ,   title = {Matrix $C$, `symrcm'}
+        ,   xlabel = {nnz=46}
+        ,   xtick = {1,2,3,4,5,6,7,8,9,10}
+        ,   ytick = {1,2,3,4,5,6,7,8,9,10}
+        ]
+        \addplot[only marks] coordinates
+        {   (1,1)               (5,1)
+                 (2,2)(3,2)(4,2)(5,2)(6,2)
+                 (2,3)(3,3)(4,3)     (6,3)
+                 (2,4)(3,4)(4,4)(5,4)(6,4)(7,4)(8,4)
+            (1,5)(2,5)     (4,5)(5,5)     (7,5)(8,5)
+                 (2,6)(3,6)(4,6)     (6,6)     (8,6)
+                           (4,7)(5,7)     (7,7)(8,7)
+                           (4,8)(5,8)(6,8)(7,8)(8,8)(9,8)(10,8)
+                                               (8,9)(9,9)(10,9)
+                                              (8,10)(9,10)(10,10)
+        };
+    \end{axis}    
+    ```
+    :::
+    ::::
 
     Reading form the plot of `symrcm` adjacency matrix, we can also
     write down the associated adjacency matrix and plot:
 
+    ::::{grid}
+    :::{grid-item}
+    :columns: 4
         A(p,p)=[
             1 0 0 0 1 0 0 0 0 0
             0 1 1 1 1 1 0 0 0 0
@@ -397,69 +480,136 @@
             0 0 0 1 1 1 1 1 1 1
             0 0 0 0 0 0 0 1 1 1
             0 0 0 0 0 0 0 1 1 1]
+    :::
 
+    :::{grid-item}
+    :columns: 8
     ```{tikz}
     :include: /images/08/ch7ex3sym.tikz
     ```
-    
+    :::
+    ::::
 
     **Column Count reordering:**
 
-    ::: center
-    ::: tabular
-    r\|\>CCCCCCCCCC vertex & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\
-    degree & 6 & 2 & 2 & 3 & 4 & 5 & 1 & 6 & 3 & 4\
+ 
+    |vertex | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10|
+    |-------|---|---|---|---|---|---|---|---|---|---|
+    |degree | 6 | 2 | 2 | 3 | 4 | 5 | 1 | 6 | 3 | 4 |
+
+
+  
+    |  vertex | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10|
+    |---------|---|---|---|---|---|---|---|---|---|---|
+    |original | 7 | 2 | 3 | 4 | 9 | 5 |10 | 6 | 1 | 8 |
+  
+
+    ::::{grid}
+
+    :::{grid-item}
+    :columns: 6    
+    ```{tikz}
+    :include: /images/08/ch7ex3orig.tikz
+    ```
     :::
 
-    ::: tabular
-    r\|\>CCCCCCCCCC vertex & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\
-    original & 7& 2& 3& 4& 9& 5&10& 6& 1& 8\
-    :::
+    :::{grid-item}
+    :columns: 6    
+    ```{tikz}
+    :include: /images/08/ch7ex3cc.tikz
+    ```
     :::
 
-    ::: center
-    +:------------------------------+:------------------------------+
-    | ![image](main/07/ch7ex3orig.  | ![image](main/07/ch7ex3cc.    |
-    | tikz){width="0.9\\linewidth"} | tikz){width="0.9\\linewidth"} |
-    +-------------------------------+-------------------------------+
-    |                               |                               |
-    |                               |                               |
-    | $\s                           |                               |
-    | criptsize D = \begin{pmatrix} |                               |
-    |                 1 & 0 & 0     |                               |
-    | & 0 & 0 & 0 & 0 & 1 & 0 & 0\\ |                               |
-    |                 0 & 1 & 1     |                               |
-    | & 0 & 0 & 0 & 0 & 0 & 1 & 0\\ |                               |
-    |                 0 & 1 & 1     |                               |
-    | & 0 & 0 & 0 & 0 & 0 & 1 & 0\\ |                               |
-    |                 0 & 0 & 0     |                               |
-    | & 1 & 0 & 0 & 0 & 1 & 1 & 1\\ |                               |
-    |                 0 & 0 & 0     |                               |
-    | & 0 & 1 & 1 & 1 & 0 & 0 & 1\\ |                               |
-    |                 0 & 0 & 0     |                               |
-    | & 0 & 1 & 1 & 1 & 1 & 0 & 1\\ |                               |
-    |                 0 & 0 & 0     |                               |
-    | & 0 & 1 & 1 & 1 & 0 & 1 & 1\\ |                               |
-    |                 1 & 0 & 0     |                               |
-    | & 1 & 0 & 1 & 0 & 1 & 1 & 1\\ |                               |
-    |                 0 & 1 & 1     |                               |
-    | & 1 & 0 & 0 & 1 & 1 & 1 & 1\\ |                               |
-    |                 0 & 0 &       |                               |
-    | 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 |                               |
-    |             \end{pmatrix}$    |                               |
-    +-------------------------------+-------------------------------+
-    |                               |                               |
-    |                               |                               |
-    | Note that D (ordered Matrix   |                               |
-    | $A$ by Column Count           |                               |
-    | algorithm) is identical to    |                               |
-    | Matrix A ordered by using the |                               |
-    | MATLAB command `colperm` i.e. |                               |
-    |                               |                               |
-    |     >> q=colperm(A);          |                               |
-    |     >> spy(A(q,q))            |                               |
-    +-------------------------------+-------------------------------+
+    :::{grid-item}
+    :columns: 6
+    $
+    \mathbf{D} = \begin{pmatrix}
+                1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0\\
+                0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0\\
+                0 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0\\
+                0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 1\\
+                0 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 1\\
+                0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 1\\
+                0 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 1 & 1\\
+                1 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 1\\
+                0 & 1 & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 1\\
+                0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1
+            \end{pmatrix}$
     :::
+
+    :::{grid-item}
+    :columns: 6    
+    ```{tikz}
+    \begin{axis}
+        [   unit vector ratio* = 1 1 1
+        ,   y dir = reverse
+        ,   xmin = 0
+        ,   ymin = 0
+        ,   xmax = 11
+        ,   ymax = 11
+        ,   title = {Matrix $A$ by Column Count}
+        ,   xlabel = {nnz=46}
+        ,   xtick = {1,2,3,4,5,6,7,8,9,10}
+        ,   ytick = {1,2,3,4,5,6,7,8,9,10}
+        ]
+        \addplot[only marks] coordinates
+        {   (1,1)                              (8,1)
+                 (2,2)(3,2)                         (9,2)
+                 (2,3)(3,3)                         (9,3)
+                           (4,4)               (8,4)(9,4)(10,4)
+                                (5,5)(6,5)(7,5)          (10,5)
+                                (5,6)(6,6)(7,6)(8,6)     (10,6)
+                                (5,7)(6,7)(7,7)     (9,7)(10,7)
+            (1,8)          (4,8)     (6,8)     (8,8)(9,8)(10,8)
+                 (2,9)(3,9)(4,9)          (7,9)(8,9)(9,9)(10,9)
+                    (4,10)(5,10)(6,10)(7,10)(8,10)(9,10)(10,10)
+        };
+    \end{axis}
+    ```
+    :::
+
+    :::{grid-item}
+    :columns: 6
+
+    Note that D (ordered Matrix $A$ by Column Count algorithm) is identical to Matrix A ordered by using the MATLAB command `colperm` i.e.    
+
+         >> q=colperm(A);
+         >> spy(A(q,q))
+    :::
+
+    :::{grid-item}
+    :columns: 6
+    ```{tikz}
+    \begin{axis}
+        [   unit vector ratio* = 1 1 1
+        ,   y dir = reverse
+        ,   xmin = 0
+        ,   ymin = 0
+        ,   xmax = 11
+        ,   ymax = 11
+        ,   title = {Matrix $A$ by \texttt{colperm}}
+        ,   xlabel = {nnz=46}
+        ,   xtick = {1,2,3,4,5,6,7,8,9,10}
+        ,   ytick = {1,2,3,4,5,6,7,8,9,10}
+        ]
+        \addplot[only marks] coordinates
+        {   (1,1)                              (8,1)
+                 (2,2)(3,2)                         (9,2)
+                 (2,3)(3,3)                         (9,3)
+                           (4,4)               (8,4)(9,4)(10,4)
+                                (5,5)(6,5)(7,5)          (10,5)
+                                (5,6)(6,6)(7,6)(8,6)     (10,6)
+                                (5,7)(6,7)(7,7)     (9,7)(10,7)
+            (1,8)          (4,8)     (6,8)     (8,8)(9,8)(10,8)
+                 (2,9)(3,9)(4,9)          (7,9)(8,9)(9,9)(10,9)
+                    (4,10)(5,10)(6,10)(7,10)(8,10)(9,10)(10,10)
+        };
+    \end{axis}    
+    ```
+    :::
+    ::::
+
+
 
     **Minimum Degree reordering**
 

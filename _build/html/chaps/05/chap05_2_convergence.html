@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_3_explicit.html">3.3. Explicit or Open Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_4_implicit.html">3.4. Implicit or Closed Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_5_predictorCorrector.html">3.5. Predictor-Corrector Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03/chap03_7_codes.html">3.6. Example Programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03/chap03_8_exercise.html">3.7. Chapter 3 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_6_codes.html">3.6. Example Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_7_exercise.html">3.7. Chapter 3 Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../04/chap04_0.html">4. Multistep Methods: Order and Error Constants</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -386,16 +386,24 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="zero-stability-consistency-and-convergence-theorem">
 <h1><span class="section-number">5.2. </span>Zero-Stability, Consistency and Convergence Theorem<a class="headerlink" href="#zero-stability-consistency-and-convergence-theorem" title="Permalink to this headline">#</a></h1>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 5.6 </span> (Zero-Stability)</p>
+<section class="definition-content" id="proof-content">
 <p>A method is said to be zero-stable if it satisfies the root condition,
 i.e. the linear multistep method <a class="reference internal" href="chap05_1_rootCondition.html#equation-eq-ch04-1-1">(5.1)</a>
-is said to be <em>zero-stable</em> if no root of the
+is said to be <strong>zero-stable</strong> if no root of the
 first characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(\xi)\,\)</span> has modulus greater that
 one, and every root of modulus one is simple.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 5.7 </span> (Consistency)</p>
+<section class="definition-content" id="proof-content">
 <p>The linear multistep method <a class="reference internal" href="chap05_1_rootCondition.html#equation-eq-ch04-1-1">(5.1)</a>
 is said to be <em>consistent</em> if it has order
 <span class="math notranslate nohighlight">\(\geq 1\)</span>. The condition that the order <span class="math notranslate nohighlight">\(p \geq 1\)</span> is called the
 condition of <em>consistency</em>.</p>
-<p>In terms of constants <span class="math notranslate nohighlight">\(C_p\)</span>, introduced in Chapter (3), the condition is
+</section>
+</div><p>In terms of constants <span class="math notranslate nohighlight">\(C_p\)</span>, introduced in Chapter (3), the condition is
 equivalent to <span class="math notranslate nohighlight">\(C_0 = 0\)</span>, <span class="math notranslate nohighlight">\(C_1 = 0\)</span>. The condition of consistency can be
 expressed by the relations</p>
 <div class="math notranslate nohighlight">
@@ -418,18 +426,32 @@ relations - i.e. the linear multistep method <a class="reference internal" href=
 always has a root at <span class="math notranslate nohighlight">\(+1\)</span>, i.e. the <em>principal root</em> <span class="math notranslate nohighlight">\(\xi_1\)</span>. The
 remaining roots <span class="math notranslate nohighlight">\(\,\xi_i\,, ~i=2,3,\dots,k\,\)</span>, are the <em>parasitic
 roots</em>.</p>
-<p>A linear multistep method which is zero-stable is frequently called
+<div class="proof remark admonition" id="remark-2">
+<p class="admonition-title"><span class="caption-number">Remark 5.1 </span> (Three ways to assess consistency)</p>
+<section class="remark-content" id="proof-content">
+<!-- :class: dropdown -->
+<ul class="simple">
+<li><p>The method’s order of accuray <span class="math notranslate nohighlight">\(\geq 1\)</span>.</p></li>
+<li><p>The constants satisfy <span class="math notranslate nohighlight">\(C_0=0\)</span> and <span class="math notranslate nohighlight">\(C_1=0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho(1)=0\)</span> and <span class="math notranslate nohighlight">\(\rho'(1)=\sigma(1)\)</span>.</p></li>
+</ul>
+</section>
+</div><p>A linear multistep method which is zero-stable is frequently called
 ‘stable’. Essentially a method is stable if errors introduced at one
 step are not propagated at subsequent steps. Zero-stability ensures that
 the parasitic solutions of the general solution to a difference equation
 are damped out in the limit as <span class="math notranslate nohighlight">\(\,h \to 0\,\)</span> – this effect is related
 to the fundamental theorem on linear multistep methods by ‘Dahlquist’:</p>
+<div class="proof theorem admonition" id="theorem-3">
+<p class="admonition-title"><span class="caption-number">Theorem 5.1 </span> (Convergence)</p>
+<section class="theorem-content" id="proof-content">
 <p>The necessary and sufficient conditions for a linear multistep method to
 be convergent are that it is consistent and zero-stable.</p>
-<div class="proof example admonition" id="example-0">
+</section>
+</div><div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 5.3 </span></p>
 <section class="example-content" id="proof-content">
-<p>Investigate the stability of the third order Adams-Bashforth formula:</p>
+<p>Investigate the convergence of the third order Adams-Bashforth formula:</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
@@ -438,47 +460,65 @@ be convergent are that it is consistent and zero-stable.</p>
         \bigr]    
 \end{aligned}
 \]</div>
-<p>Rearranging the formula to obtain</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solution (click to show)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Rearranging the formula to obtain</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
-        y_{{j+1}} - y_{{j}} ~=~ \frac{h}{12} \bigl[
-            23f_j - 16f_{j-1} + 5f_{j-2}
-        \bigr]    
+        y_{j+1} - y_{j} + 0 y_{j-1} + 0y_{j-2} ~=~ h \left(
+            0f_{j+1}+ \frac{23}{12}f_j - \frac{16}{12}f_{j-1} + \frac{5}{12}f_{j-2}
+        \right)
 \end{aligned}
 \]</div>
-<p>we have the following coefficents</p>
+<p class="sd-card-text">we have the following coefficents</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-        &amp;&amp; \alpha_0 &amp;= 0\,,  &amp; \alpha_1 &amp;= 0\,,
-         &amp; \alpha_2 &amp;= {-1}\,, &amp; \alpha_3 &amp;= 1 &amp;&amp;
+        &amp;&amp; \alpha_3 &amp;= 1\,,  &amp; \alpha_2 &amp;= {-1}\,,
+         &amp; \alpha_1 &amp;= 0\,, &amp; \alpha_0 &amp;= 0 &amp;&amp;
         \\[1em]
-        &amp;&amp; \beta_0 &amp;= \frac{5}{12}\,,  &amp; \beta_1 &amp;= -\frac{16}{12}\,,
-         &amp; \beta_2 &amp;= \frac{23}{12}\,, &amp; \beta_3 &amp;= 0 &amp;&amp;    
+        &amp;&amp; \beta_3 &amp;= 0\,,  &amp; \beta_2 &amp;= \frac{23}{12}\,,
+         &amp; \beta_1 &amp;= -\frac{16}{12}\,, &amp; \beta_0 &amp;= \frac{5}{12} &amp;&amp;    
 \end{aligned}
 \end{split}\]</div>
-<p>and</p>
+<p class="sd-card-text">and the first and second characteristic polynomials</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-        &amp;\rho (\xi) = \alpha_3\xi^3 + \alpha_2\xi^2 + \alpha_1\xi + \alpha_0 = 0
+        &amp;\rho (\xi) = \alpha_3\xi^3 + \alpha_2\xi^2 + \alpha_1\xi + \alpha_0 = \xi^3 - \xi^2
         \\
-        &amp;\sigma(\xi) = \beta_3\xi^3 + \beta_2\xi^2 + \beta_1\xi + \beta_0 = \frac{1}{12}(23\xi^2 - 16\xi + 5) %~=~ 0
-        \\
-        \therefore\qquad
-        &amp;\rho (\xi) = \xi^3 - \xi^2 = \xi^2(\xi - 1) = 0
-        \\
-        \therefore\qquad &amp;\xi_1 = 0\,, \qquad \xi_2 = 0\,, \qquad \xi_3 = 1    
+        &amp;\sigma(\xi) = \beta_3\xi^3 + \beta_2\xi^2 + \beta_1\xi + \beta_0 = \frac{1}{12}(23\xi^2 - 16\xi + 5)    
 \end{aligned}
 \end{split}\]</div>
-<p>Since <span class="math notranslate nohighlight">\(\,\xi_1,\,\xi_2\,\)</span> are less than <span class="math notranslate nohighlight">\(1\)</span>, and
+<p class="sd-card-text">Let</p>
+<div class="math notranslate nohighlight">
+\[
+\rho (\xi) = \xi^3 - \xi^2 = \xi^2(\xi - 1) = 0
+\]</div>
+<p class="sd-card-text">so we get the roots <span class="math notranslate nohighlight">\(\xi_1 = 0\,, \qquad \xi_2 = 0\,, \qquad \xi_3 = 1\)</span>.</p>
+<p class="sd-card-text">Since <span class="math notranslate nohighlight">\(\,\xi_1,\,\xi_2\,\)</span> are less than <span class="math notranslate nohighlight">\(1\)</span>, and
 <span class="math notranslate nohighlight">\(\,\xi_3\!=\!1\)</span> is simple, the corresponding characteristic polynomial
-satisfies the root condition and is zero-stable. The method is also
-consistent <span class="math notranslate nohighlight">\((\text{i.e.}\,\rho(1) = 0,~ \rho'(1) = \sigma(1) = 1)\)</span>,
-hence the method is convergent.</p>
-</section>
-</div><div class="proof example admonition" id="example-1">
+satisfies the root condition and is zero-stable.</p>
+<p class="sd-card-text">Checking the consistency, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+    \rho(1)=&amp;1^3 - 1^2 =0 \\
+    \rho'(1)= &amp; \left.(3\xi^2-2\xi)\right\vert_{\xi=1} = 3(1)-2(1) = 1 \\
+    \sigma(1)= &amp; \frac{1}{12}\left(23(1)^2-16(1)+5\right) = 1
+\end{aligned}
+\end{split}\]</div>
+<p class="sd-card-text">so the method is also consistent <span class="math notranslate nohighlight">\((\text{i.e.}\,\rho(1) = 0,~ \rho'(1) = \sigma(1) )\)</span>.</p>
+<p class="sd-card-text">Therefore the method is convergent.</p>
+</div>
+</details></section>
+</div><div class="proof example admonition" id="example-5">
 <p class="admonition-title"><span class="caption-number">Example 5.4 </span></p>
 <section class="example-content" id="proof-content">
 <p>Investigate the stability of the Milne’s predictor method:</p>
@@ -490,7 +530,14 @@ hence the method is convergent.</p>
         \bigr]   
 \end{aligned}
 \]</div>
-<p>We find the following coefficients:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solution (click to show)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">We find the following coefficients:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -507,7 +554,7 @@ hence the method is convergent.</p>
          &amp; \beta_4 &amp;= 0 &amp;&amp;    
 \end{aligned}
 \end{split}\]</div>
-<p>and</p>
+<p class="sd-card-text">and</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -518,7 +565,7 @@ hence the method is convergent.</p>
         \bigr]    
 \end{aligned}
 \end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(\therefore\qquad \xi^4 - 1 = 0\,,\)</span><br />
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(\therefore\qquad \xi^4 - 1 = 0\,,\)</span><br />
 <span class="math notranslate nohighlight">\(\therefore\qquad \xi^2 = \pm 1\,,\qquad \xi_1 = 1\,,\quad \xi_2 = -1\,,\quad \xi_3 = -i\,,\quad \xi_4 = +i\)</span><br />
 There are no repeated roots, and modulus of all roots are <span class="math notranslate nohighlight">\(\,\leq 1\,\)</span>,
 therefore the method satisfies the root condition, but since there are
@@ -526,8 +573,12 @@ more than one root with modulus one the method is weakly stable. The
 method is consistent
 <span class="math notranslate nohighlight">\((\text{i.e.}\ \,\rho(1) = 0,~ \rho'(1) = \sigma(1) = 4)\)</span>, and since
 zero stable, the method is also convergent.</p>
-</section>
-</div><p><em>Remark</em> - The characteristic polynomial <span class="math notranslate nohighlight">\(\rho\)</span> for all Adams methods
+</div>
+</details></section>
+</div><div class="proof remark admonition" id="remark-6">
+<p class="admonition-title"><span class="caption-number">Remark 5.2 </span> (Adamas methods)</p>
+<section class="remark-content" id="proof-content">
+<p>The characteristic polynomial <span class="math notranslate nohighlight">\(\rho\)</span> for all Adams methods
 (AB and AM) are of the form:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -541,6 +592,7 @@ zero stable, the method is also convergent.</p>
 are zero stable. It can be shown that they are consistent and therefore,
 all Adams methods are convergent.</p>
 </section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {
