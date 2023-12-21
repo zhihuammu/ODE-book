@@ -21,7 +21,7 @@ The characteristic equation is
 
 $$
 \begin{aligned}
-        \xi^2 - (1 + \frac{3}{2}\bar{h})\xi + \frac{1}{2}\bar{h} ~=~ 0    
+        \xi^2 - (1 + \frac{3}{2}h\lambda)\xi + \frac{1}{2}h\lambda ~=~ 0    
 \end{aligned}
 $$
 
@@ -38,7 +38,7 @@ $$
  Since
 $\qquad \pi ~=~ \rho(\xi) - h\lambda\sigma(\xi) ~=~ 0
     \qquad\Rightarrow\qquad
-    h\lambda ~=~\frac{\rho(\xi)}{\sigma(\xi)}$
+    h\lambda ~=~\dfrac{\rho(\xi)}{\sigma(\xi)}$
 
 and we get
 $\displaystyle\qquad h\lambda ~=~ \frac{\xi^2 - \xi}{\frac{1}{2}(3\xi - 1)} ~=~ \frac{2(\xi^2 - \xi)}{3\xi - 1}\,$.

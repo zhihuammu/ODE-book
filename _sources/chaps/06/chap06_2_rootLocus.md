@@ -1,7 +1,7 @@
 # The Root Locus Method for Finding the Interval of Absolute Stability
 
 This method consists of repeatedly solving the characteristic polynomial
-for various values of $\bar{h}$ in the neighbourhood of the origin. Note
+for various values of $h\lambda$ in the neighbourhood of the origin. Note
 that for simple linear and quadratic cases the resulting characteristic
 polynomial can be solved and a table or plots of values of
 $\,h\lambda\,$ against roots $|\xi_1|$ and $|\xi_2|$ allows us to
@@ -30,21 +30,21 @@ The characteristic equation is
 
 $$
 \begin{aligned}
-        \pi(\xi,h\lambda) ~=~ \xi^2 - (1 + \frac{3}{2}\bar{h})\xi + \frac{1}{2}\bar{h} ~=~ 0    
+        L(\xi,h\lambda) ~=~ \xi^2 - \left(1 + \frac{3}{2}h\lambda\right)\xi + \frac{1}{2}h\lambda ~=~ 0    
 \end{aligned}
 $$
 
- where $\bar{h} = h\lambda$, and its roots are
+and its roots are
 
 
 $$
 \begin{aligned}
         \xi_1 ~&=~ \frac{1}{2} \left(
-            1 + \frac{3}{2}\bar{h} + \sqrt{1 + \bar{h} + \frac{9}{4}\bar{h^2}}
+            1 + \frac{3}{2}h\lambda + \sqrt{1 + h\lambda + \frac{9}{4}\left(h\lambda\right)^2}
         \right)
         \\[1ex]
         \xi_2 ~&=~ \frac{1}{2} \left(
-            1 + \frac{3}{2}\bar{h} - \sqrt{1 + \bar{h} + \frac{9}{4}\bar{h^2}}
+            1 + \frac{3}{2}h\lambda - \sqrt{1 + h\lambda + \frac{9}{4}\left(h\lambda\right)^2}
         \right)    
 \end{aligned}
 $$
@@ -59,18 +59,18 @@ $|\xi_1|$ and $|\xi_2|$ for various $h\lambda$.
 |\|$\xi_2$\|  | 1.13  | 1.00  | 0.58  | 0.64  | 0.00  | 1.59  | 2.28 |
 
 
-By definition the interval of absolute stability is the set of $\bar{h}$
+By definition the interval of absolute stability is the set of $h\lambda$
 for which 
 
 $$
 \begin{aligned}
-        \left| \xi_1(\bar{h}) \right| < 1,
-        \qquad \left| \xi_2(\bar{h}) \right| < 1\,.    
+        \left| \xi_1(h\lambda) \right| < 1,
+        \qquad \left| \xi_2(h\lambda) \right| < 1\,.    
 \end{aligned}
 $$
 
  For $\lambda$ real, the acceptable values of
-$\,\bar{h}\,$ are $-1 \leq \bar{h} \leq 0\,$; i.e. the method is stable
+$\,h\lambda\,$ are $-1 \leq h\lambda \leq 0\,$; i.e. the method is stable
 inside the interval $\,[-1,0]\,$.
 
 This result implies that if the 2-step *AB* method is used to solve the
@@ -97,12 +97,12 @@ The characteristic equation is
 
 $$
 \begin{aligned}
-        \pi(\xi,h\lambda) ~=~ (1 - \frac{5}{12}h\lambda)\xi^2
-        - (1 + \frac{8}{12}h\lambda)\xi + \frac{1}{12}h\lambda ~=~ 0    
+        L(\xi,h\lambda) ~=~ \left(1 - \frac{5}{12}h\lambda\right)\xi^2
+        - \left(1 + \frac{8}{12}h\lambda\right)\xi + \frac{1}{12}h\lambda ~=~ 0    
 \end{aligned}
 $$
 
- Let $\frac{h\lambda}{12} = a$ and its roots are
+ Let $a=\dfrac{h\lambda}{12} $ and its roots are
 
 
 $$
@@ -115,7 +115,7 @@ $$
  The following table gives the calculated values of
 $|\xi_1|$ and $|\xi_2|$ for various $h\lambda$. Note that the interval
 $-6 \leq h\lambda \leq 0$ is an interval of absolute stability for the
-method which becomes partially unstable when $h > \frac{6}{|\lambda|}$.
+method which becomes partially unstable when $h > \dfrac{6}{|\lambda|}$.
 
 
 | $h\lambda$ | -7.0  | -6.0  | -5.0  | -4.0  | -3.0  | -2.0  | -1.5  | -1.0  | -0.5  | 0.0  | 0.5  | 1.0 |
@@ -125,12 +125,14 @@ method which becomes partially unstable when $h > \frac{6}{|\lambda|}$.
 
 :::
 
+:::{note}
 Note that the characteristic polynomials (particularly those with higher
 degree) have very often complex roots and therefore it is appropriate to
 use a mathematics package (e.g. Matlab) for the computation of the
 roots. To illustrate this, a Matlab program is attached that shows a
 simple way of finding the interval of absolute stability using a
 software package.
+:::
 
 The interval of absolute stability for various order Adams methods is
 shown in the following Table.

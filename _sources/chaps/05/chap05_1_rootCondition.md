@@ -47,7 +47,7 @@ $$
 \sum_{i=0}^{k}\alpha_i y_{j+i}~=~ h\lambda\sum_{i=0}^{k}\beta_i y_{j+i}~, 
 $$(eq:ch04:1.3)
 
-which can be re-organised as
+which can be re-arranged as
 
 $$
 \sum_{i=0}^{k}\gamma_i y_{j+i}=0~, ~\text{with}~ \gamma_i =\alpha_i - h\lambda \beta_i
@@ -56,17 +56,19 @@ $$(eq:ch04:1.4)
 We can write equation {eq}`eq:ch04:1.4` in the operator form as
 
 $$
+L(E) y_j = 
 \left(\gamma_0 E^0 + \gamma_1 E^1 + \gamma_2 E^2 + \cdots + \gamma_k E^k \right) y_j =0~\,
 $$
 
 and get its characteristic equation
 
 $$
+L(\xi, h\lambda)=
 \gamma_0 + \gamma_1 \xi + \gamma_2 \xi^2 + \cdots + \gamma_k \xi^k = 0
 $$(eq:ch04:1.5)
 
 This is a polynomial equation of degree $k$ and has $k$
-roots, $\,\xi_1, \xi_2, \dots, \xi_k\,$, which may be real or imaginary.
+roots, $\,\xi_1, \xi_2, \dots, \xi_k\,$, which may be real or complex.
 If these roots are distinct, the general solution of the difference
 equation {eq}`eq:ch04:1.4` is 
 
@@ -78,197 +80,130 @@ $$(eq:ch04:1.6)
 
  where $A_1$, $A_2$, ..., $A_k$ are constant. See {numref}`chap01:complexNumber:DE` for more details on difference and characteristic equations.
 
+:::{admonition} Question
+:class: warning
 
+What kind of conditions shall we impose to keep the general solution {eq}`eq:ch04:1.6` bounded?
 
-<!-- 
-$$
-\sum_{i=0}^{k}\alpha_i y_{j+i}~=~ h\lambda\sum_{i=0}^{k}\beta_i y_{j+i}
-$$
-
-Consider a $k$-step multistep formula of the form 
-
-$$
-\begin{aligned}
-    y_{j+1} ~=~ y_{j-k+1} \,+\, h \left(
-        \beta_0f_{j+1} + \beta_1f_j + \dots + \beta_kf_{j-k+1}
-    \right)~.
-\end{aligned}
-$$(eq:ch04:1.3)
-
-Substituting $\,f=\lambda\,y\,$, we have
-
-
-$$
-\begin{aligned}
-    y_{j+1} ~=~ y_{j-k+1} \,+\, h \left(
-        \beta_0\lambda\,y_{j+1} + \beta_1\lambda\,y_j
-        + \dots + \beta_k\lambda\,y_{j-k+1}
-    \right)
-\end{aligned}
-$$
-
-or 
-
-$$
-\begin{aligned}
-    (1-\beta_0 h\lambda)\,y_{j+1} ~=~ y_{j-k+1} \,+\, h\lambda \left(
-        \beta_1y_{j}+\beta_2y_{j-1}+\,.\,.\,.\,+\beta_ky_{j-k+1}
-    \right).
-\end{aligned}
-$$(eq:ch04:1.4)
-
-This is a linear difference equation, in order to find
-its solution, we need to use its characteristic equation given by
-
-
-$$
-\begin{aligned}
-    (1-\beta_0 h\lambda)\,\xi^{j+1} - h \lambda \left(
-\beta_1\xi^{j} + \beta_2\xi^{j-1} + \dots + \beta_k\xi^{j-k+1}  
-\right) - \xi^{j-k+1} = 0 \,
-%\label{eq:ch04:1.5}
-\end{aligned}
-$$
-
- dividing by $\,\xi^{j-k+1}\,$ gives: 
-
-$$
-\begin{aligned}
-(1-\beta_0 h\lambda)\,\xi^{k}\,-\,h \lambda \left(
-\beta_1\xi^{k-1} + \beta_2\xi^{k-2} + \dots + \beta_k
-\right) \,-\, 1 ~=~ 0~.
-\end{aligned}
-$$(eq:ch04:1.5)
-
-This is a polynomial equation of degree $k$ and has $k$
-roots, $\,\xi_1, \xi_2, \dots, \xi_k\,$, which may be real or imaginary.
-If these roots are distinct, the general solution of the difference
-equation {eq}`eq:ch04:1.4` is 
-
-$$
-\begin{aligned}
-y_j ~=~ A_1\, \xi_1^j + A_2\, \xi_2^j + \,\dots\, + A_k\,\xi_k^j
-\end{aligned}
-$$(eq:ch04:1.6)
-
- where $A_1$, $A_2$, ..., $A_k$ are constant. See [Chapter 1](chap01:complexNumber)
-for more details on difference and
-characteristic equations. -->
-
-:::{prf:example}
-Consider a $k = 2$-step multistep formula of the form 
-
-$$
-\begin{aligned}
-        y_{j+1} ~=~ y_{j-1} + h(\beta_0f_{j+1} + \beta_1f_j + \beta_2f_{j-1})    
-\end{aligned}
-$$
-
- Substituting $\,f = \lambda\,y\,$, we have
-
-
-$$
-\begin{aligned}
-        y_{j+1} ~=~ y_{j-1} + h(\beta_0\lambda\,y_{j+1}
-        + \beta_1\lambda\,y_j + \beta_2\lambda\,y_{j-1})    
-\end{aligned}
-$$
-
- or 
-
-$$
-\begin{aligned}
-        (1 - \beta_0h\lambda)y_{j+1} ~=~ y_{j-1} + h\lambda(\beta_1y_j + \beta_2y_{j-1})    
-\end{aligned}
-$$
-
-The characteristic equation is given by:
-
-$$
-\begin{aligned}
-        (1 - \beta_0h\lambda)\xi^{j+1} ~=~ \xi^{j-1} + h\lambda \left(
-            \beta_1\xi^j + \beta_2\xi^{j-1}
-        \right)    
-\end{aligned}
-$$
-
- dividing by $\,\xi^{j-1}$ gives: 
-
-$$
-\begin{aligned}
-        (1 - \beta_0h\lambda)\xi^2 - h\lambda \left(
-            \beta_1\xi^1 + \beta_2\xi^0
-        \right) - 1 ~=~ 0    
-\end{aligned}
-$$
-
- This quadratic polynomial can be written as:
-
-$$
-\begin{aligned}
-        (1 - \beta_0h\lambda)\xi^2 - h\lambda\beta_1\xi - (1 + \beta_2h\lambda)
-        ~=~ 0    
-\end{aligned}
-$$
-
- or 
-
-$$
-\begin{aligned}
-        \pi(\xi,h\lambda) ~=~ (1 - h\lambda\beta_0)\,\xi^2
-        - h\lambda\beta_1\,\xi - (1 + h\lambda\beta_2) ~=~ 0    
-\end{aligned}
-$$
-
- where coefficients $\,(1 - h\lambda\beta_0)\,$,
-$\,-h\lambda\beta_1\,$, and $\,-(1 + h\lambda\beta_2)\,$ are all
-constants.
 :::
 
-In general we may say that associated with any difference equation of
-the form {eq}`eq:ch04:1.1` is a polynomial $\,\pi(\xi,h\lambda)\,$ of the
-form {eq}`eq:ch04:1.5`, called the *characteristic polynomial* of the
-difference method.
+::::{prf:definition} Characteristic Polynomials
+:label: def:char-poly
 
-The characteristic polynomial, $\,\pi(\xi,h\lambda)\,$, associated with
-any linear multistep method {eq}`eq:ch04:1.1` can be expressed in terms of two polynomials
-defined as the first and second characteristic polynomials, $\rho(\xi)$,
-and $\sigma(\xi)$ respectively, thus 
+For a general linear multistep method 
 
 $$
-\begin{aligned}
-    \pi(\xi,h\lambda) ~=~ \rho(\xi) - h\lambda\,\sigma(\xi)
-    \label{eq:ch04:1.7}
-\end{aligned}
+\sum_{i=0}^k \alpha_i y_{j+i} = h \sum_{i=0}^k f_{j+i},
 $$
 
- where 
+the expression in the form
 
 $$
-\begin{aligned}
-    &&  \rho(\xi) ~&=~ \sum_{i=0}^k\, \alpha_i\,\xi^i~,
-    & \sigma(\xi) ~&=~ \sum_{i=0}^k\, \beta_i\,\xi^i~.&&
-\end{aligned}
-$$(eq:ch04:1.8)
+L(\xi, h\lambda) = \sum_{i=0}^k \left(\alpha_i - h\lambda \beta_i\right) \xi^i
+$$(eq:chap04:charpoly)
 
+is called its **Characteristic Polynomial**.
+
+:::{note}
+:class: dropdown
+In some books, $\pi(\xi, h\lambda)$ is used to represent the characteristic polynomial.
+:::
+
+We call
+
+$$
+\rho(\xi) = \sum_{i=0}^{k} \alpha_i \xi^i
+$$(eq:chap04:charpoly:first)
+
+the **first characteristic polynomial**, and
+
+$$
+\sigma(\xi) = \sum_{i=0}^{k} \beta_i \xi^i
+$$(eq:chap04:charpoly:second)
+
+the **second characteristic polynomial** of the multistep method.
+
+These polynomails given in equations {eq}`eq:chap04:charpoly`, {eq}`eq:chap04:charpoly:first` and {eq}`eq:chap04:charpoly:second` have the following relation
+
+$$
+L(\xi, h\lambda) = \rho(\xi) - h\lambda \sigma(\xi)
+$$(eq:chap04:chapoly:relation)
+::::
+
+:::{prf:example}
+Find the characteristic polynomial $L(\xi, h\lambda)$ for a 2-step method 
+
+$$
+\alpha_0 y_{j-2} + \alpha_1 y_{j-1} + \alpha_2 y_{j}
+= h(\beta_0f_{j-2 } + \beta_1 f_{j-1} + \beta_2 f_{j})    
+$$
+
+:::{dropdown} Solution (click to show)
+
+- Method 1:
+
+    Substituting $\,f = \lambda\,y\,$ into the 2-step method formula, we have
+
+    $$
+    \alpha_0 y_{j-2} + \alpha_1 y_{j-1} + \alpha_2 y_{j}
+    = h\lambda(\beta_0 y_{j-2} + \beta_1 y_{j-1} + \beta_2 y_{j})    
+    $$
+
+    and re-arrange it as
+
+    $$
+    (\alpha_0-h\lambda \beta_0) y_{j-2}
+    + (\alpha_1-h\lambda \beta_1) y_{j-1}
+    + (\alpha_2-h\lambda \beta_2) y_{j} = 0
+    $$
+
+    Writing the equation in shift operator form 
+
+    $$
+    \left[
+    (\alpha_0-h\lambda \beta_0) E^0
+    + (\alpha_1-h\lambda \beta_1) E^1
+    + (\alpha_2-h\lambda \beta_2) E^2
+    \right] y_{j-2} =0 
+    $$
+
+    so the characteristic polynomial is
+
+    $$
+    \begin{aligned}
+    L(\xi, h\lambda) 
+    &=\sum_{i=0}^{2} (\alpha_i - h\lambda \beta_i) \xi^i\\
+    & = (\alpha_0-h\lambda \beta_0) \xi^0
+    + (\alpha_1-h\lambda \beta_1) \xi^1
+    + (\alpha_2-h\lambda \beta_2) \xi^2
+    \end{aligned}
+    $$
+
+- Method 2:
+    
+    Using {eq}`eq:chap04:charpoly` given in {prf:ref}`def:char-poly`, we can quickly work out the characteristic polynomial for this 2-step method
+
+    $$
+    \begin{aligned}
+    L(\xi, h\lambda) 
+    &=\sum_{i=0}^{2} (\alpha_i - h\lambda \beta_i) \xi^i\\
+    & = (\alpha_0-h\lambda \beta_0) \xi^0
+    + (\alpha_1-h\lambda \beta_1) \xi^1
+    + (\alpha_2-h\lambda \beta_2) \xi^2
+    \end{aligned}
+    $$
+
+:::
 
 
 :::{prf:definition} Root Condition
 Let $\,\xi_1,\xi_2,\dots,\xi_k\,$ denote the roots of the first
-characteristic polynomial equation $\,\rho(\xi)\,$ associated with a
+characteristic polynomial $\,\rho(\xi)\,$ associated with a
 linear multistep method. If $\,|\xi_i|\leq1\,$, for each
 $\,i=1,2,...,k\,$, and all roots with absolute value $1$ are simple
 roots (i.e. not repeated), then the difference method is said to satisfy
-the *root condition*.
+the **root condition**.
 :::
-
-<!-- ```{figure} /images/fig-chap05-C4M39F1.svg
----
-width: 400px
-name: figure-chap05-rootCondition
----
-Unit cicle in the complex plane $\mathbb{C}$.
-``` -->
 
 ```{tikz}
 :xscale: 48
@@ -318,27 +253,42 @@ A method is *weakly stable* if it is stable (i.e. satisfies the root
 condition) but has more than one root on the unit circle.
 :::
 
-:::{prf:example}
+::::{prf:example}
 Find the roots associated with the following characteristic polynomials:
 
-1.  $\xi^3 + \xi ~=~ 0$\
+1.  $\rho(\xi)= \xi^3 + \xi $
+
+    :::{dropdown} Solution (click to show)
+    Let $\xi^3 + \xi ~=~ 0$\
     $\therefore\quad \xi(\xi^2 + 1) ~=~ 0$\
-    $\therefore\quad \xi_1 ~=~ 0,\, |\xi_2| ~=~ |\xi_3| ~=~ 1$\
-    (using $\,z = a + ib\,$ with $\,a = 0\,$, $\,b = -1\,$ and
-    $\,|z| = \sqrt{a^2 + b^2}\,$).
+    $\therefore\quad \xi_1 ~=~ 0, ~~ \xi_2 ~=~ i, ~~\xi_3 ~= -i$
+
+    We can also use Matlab to find the roots of the polynomial
+
+    ```matlab
+    p=[1 0 1 0];     %vector defining the coefficients of the polynomial
+    roots(p)         %solve the polynomial equation
+    ```
+
+    Output
+
+    ```matlab
+    ans =
+
+        0.0000 + 0.0000i
+        0.0000 + 1.0000i
+        0.0000 - 1.0000i
+    ```
+
+    
 
     $\xi_1$, $\xi_2$, and $\xi_3$ are shown on the unit circle. Because
     there are more than one root on the unit circle, the method is
     weakly stable.
 
-    <!-- ```{image}  /images/fig-chap05-C4M39F2.svg    
-    :width: 300px
-    :align: center
-    ``` -->
-
     ```{tikz}
     :libs: arrows.meta
-    :xscale: 60
+    :xscale: 40
 
     \draw[-Stealth] (-25mm,0mm) -- (25mm,0mm);
     \draw[-Stealth] (0mm,-25mm) -- (0mm,25mm);
@@ -357,26 +307,50 @@ Find the roots associated with the following characteristic polynomials:
 
     \coordinate (xi3) at (270:20mm);
     \fill (xi3) circle (1mm);
-    \node[anchor = north west] at (xi3) {$\xi_3 = -i$};
-    ```    
+    \node[anchor = north west] at (xi3) {$\xi_3 = -i$};     
+    ```
+    :::      
 
-2.  $\xi^4 + \xi ~=~ 0$\
-    $\therefore\quad \xi(\xi^3 + 1) ~=~ 0$\
-    $\therefore\quad \xi_1 ~=~ 0,\ \xi{^3} + 1 ~=~ 0 \quad \Rightarrow$\
-    $\xi_2 = -1$,  $\xi_3 = \dfrac{1}{2} + i\dfrac{\sqrt{3}}{2}$, 
-    $\xi_4 = \dfrac{1}{2} - i\dfrac{\sqrt{3}}{2}$,
+2.  $\rho(\xi)=\xi^4 + \xi$
+
+    :::{dropdown} Solution (click to show)
+
+    Let $\xi^4 + \xi ~=~ 0$
+
+    $$
+    \begin{aligned}
+    \xi^4 + \xi  & = \xi(\xi^3 + 1) \\
+                 & = \xi (\xi+1) (\xi^2-\xi+1) \\
+    \end{aligned}
+    $$
+
+    $\therefore\quad \xi_1 ~=~ 0$, $\xi_2 = -1$,  $\xi_3 = \dfrac{1}{2} + i\dfrac{\sqrt{3}}{2}$, 
+    $\xi_4 = \dfrac{1}{2} - i\dfrac{\sqrt{3}}{2}$.
+
+    We can also use Matlab to find the roots of the polynomial
+
+    ```matlab
+    p=[1 0 0 1 0];     %vector defining the coefficients of the polynomial
+    roots(p)         %solve the polynomial equation
+    ```
+
+    Output
+
+    ```matlab
+    ans =
+
+        0.0000 + 0.0000i
+       -1.0000 + 0.0000i
+        0.5000 + 0.8660i
+        0.5000 - 0.8660i
+    ```    
 
     Because there are more than one root on the unit circle, the method
     is weakly stable.
 
-    <!-- ```{image}  /images/fig-chap05-C4M39F3.svg    
-    :width: 300px
-    :align: center
-    ``` -->
-
     ```{tikz}
     :libs: arrows.meta
-    :xscale: 60
+    :xscale: 40
 
     \draw[-Stealth] (-25mm,0mm) -- (25mm,0mm);
     \draw[-Stealth] (0mm,-25mm) -- (0mm,25mm);
@@ -393,5 +367,6 @@ Find the roots associated with the following characteristic polynomials:
         \fill (\a:20mm) circle (1mm);
         \node[anchor = \d, inner sep = 1mm] at (\a:23mm) {$\xi_\x$};
     }
-    ```   
-:::
+    ```  
+    ::: 
+::::

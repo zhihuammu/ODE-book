@@ -30,9 +30,9 @@ the stability of the following multistep methods.
 
 :::{exercise}
 :label: ch5-ex-q2
-Consider the multistep methods in question (1) parts (a) to (d),
-determine their order and error constants using the techniques
-covered in Chapter 4.
+Consider the multistep methods in {numref}`ch5-ex-q1`,
+determine their order of accuracy and error constants using the techniques
+covered in {ref}`chap:errorConstant:constants`.
 :::
 
 :::{solution} ch5-ex-q2
@@ -76,19 +76,40 @@ problem with the same parameters using the two-step AB method. By
 considering the stability of the methods and the errors in the
 calculations, compare the two solution methods and comment on your
 results. 
-```{note}
-You could simply use an Excel sheet to both find
+
+Note: You could simply use an Excel sheet to both find
 the approximate solution and plot the results.
-```
+
 :::
 
-:::{solution} ch5-ex-q3
+:::::{solution} ch5-ex-q3
 :class: dropdown
-```{image}  /images/fig-chap05-c4ans3.svg    
+
+::::{grid}
+
+:::{grid-item} 
+:columns: 12
+```{image}  /images/05/fig-chap05-c4ans3-h005.svg    
 :width: 600px
 :align: center
 ```
 :::
+
+:::{grid-item} 
+:columns: 12
+```{image}  /images/05/fig-chap05-c4ans3-h002.svg    
+:width: 600px
+:align: center
+```
+:::
+
+::::
+
+<!-- ```{image}  /images/fig-chap05-c4ans3.svg    
+:width: 600px
+:align: center
+``` -->
+:::::
 
 <!-- 
 **Answers to Tutorial Exercises - Chapter** 

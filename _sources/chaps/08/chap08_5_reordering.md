@@ -60,18 +60,18 @@ given in the following table, using the conventional numbering used in
 MATLAB.
 
 
-|   $i$  | $j$ |  $[i,j]$|
+|   $i$  | $j$ |  $[i, j]$|
 |  ----- |-----| ---------|
-|    1   |  1  |  \[1,1\] |
-|    2   |  1  |  \[2,1\] |
-|    1   |  2  |  \[1,2\] |
-|    2   |  2  |  \[2,2\] |
-|    3   |  2  |  \[3,2\] |
-|    2   |  3  |  \[2,3\] |
-|    3   |  3  |  \[3,3\] |
-|    4   |  3  |  \[4,3\] |
-|    3   |  4  |  \[3,4\] |
-|    4   |  4  |  \[4,4\] |
+|    1   |  1  |  [1, 1] |
+|    2   |  1  |  [2, 1] |
+|    1   |  2  |  [1, 2] |
+|    2   |  2  |  [2, 2] |
+|    3   |  2  |  [3, 2] |
+|    2   |  3  |  [2, 3] |
+|    3   |  3  |  [3, 3] |
+|    4   |  3  |  [4, 3] |
+|    3   |  4  |  [3, 4] |
+|    4   |  4  |  [4, 4] |
 
 
 Therefore, the difference between i and j for each nonzero entry is
@@ -170,7 +170,7 @@ Consider the following sparse matrix and
 its corresponding adjacency plot:
 
 ::::{grid}
-:::{grid-item-card} Matrix
+:::{grid-item} Matrix
 $$
 A=
       \begin{bmatrix}
@@ -185,7 +185,7 @@ A=
       \end{bmatrix}
 $$
 :::
-:::{grid-item-card} Graph
+:::{grid-item} Graph
 ```{tikz}
     \foreach\n/\a in {1/7,2/5,3/3,4/1,5/15,6/13,7/9,8/11}
     {   \node[draw,circle] (N\n) at (22.5*\a:2.5) {\n};
@@ -214,7 +214,7 @@ array Results. See below the re-ordered matrix and the adjacency graph
 (note the diagram remains unchanged, but nodes are now relabelled).
 
 ::::{grid}
-:::{grid-item-card}
+:::{grid-item}
 $$
 B=
         \begin{bmatrix}
@@ -229,7 +229,7 @@ B=
         \end{bmatrix}
 $$
 :::
-:::{grid-item-card}
+:::{grid-item}
 ```{tikz}
 
   \foreach\n/\a in {1/9,2/1,3/11,4/13,5/5,6/3,7/15,8/7}
@@ -323,28 +323,28 @@ ordered matrix B, matrix C, ordered by the CM method, and matrix D is
 found by using the MATLAB function `symrcm`
 
 ::::{grid}
-:::{grid-item-card}
+:::{grid-item}
 :columns: 6
 ```{tikz}
 :include: /images/08/example7_1sub1.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 6
 ```{tikz}
 :include: /images/08/example7_1sub2.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 6
 ```{tikz}
 :include: /images/08/example7_1sub3.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 6
 ```{tikz}
 :include: /images/08/example7_1sub4.tikz
@@ -352,29 +352,6 @@ found by using the MATLAB function `symrcm`
 :::
 ::::
 
-
-<!-- <figure>
-<div class="center">
-<table>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img src="/images/08/example7_1sub1.svg"
-style="width:6cm" alt="image" /></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><img src="/images/08/example7_1sub2.svg"
-style="width:6cm" alt="image" /></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><img src="/images/08/example7_1sub3.svg"
-style="width:6cm" alt="image" /></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><img src="/images/08/example7_1sub4.svg"
-style="width:6cm" alt="image" /></td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure> -->
 
 Note that the half bandwidth of the reordered matrix $C$, using the
 original Cuthill-Mckee method is $bw =5$, and the half bandwidth of the
@@ -402,7 +379,7 @@ corresponding adjacency graph from
 
 
 ::::{grid}
-:::{grid-item-card}
+:::{grid-item}
 $$A=
         \begin{bmatrix}
           1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
@@ -417,7 +394,7 @@ $$A=
 $$
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 ```{tikz}
 :include: /images/08/Fig7a.tikz
 ```
@@ -452,7 +429,7 @@ The resulting adjacency matrix and graph are shown below:
 
 
 ::::{grid}
-:::{grid-item-card}
+:::{grid-item}
 $$CC=
         \begin{bmatrix}
           1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
@@ -466,7 +443,7 @@ $$CC=
         \end{bmatrix}$$
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 ```{tikz}
 :include: /images/08/F7CCalog.tikz
 ```
@@ -494,13 +471,13 @@ xlabel(sprintf('nonzeros=%d (%.1f%%)',nz,nz*pct));
 ```
 
 ::::{grid}
-:::{grid-item-card}
+:::{grid-item}
 ```{tikz}
 :include: /images/08/cc_comb_1.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 ```{tikz}
 :include: /images/08/cc_comb_2.tikz
 ```
@@ -549,7 +526,7 @@ Consider the sparse matrix and its
 corresponding adjacency graph from {prf:ref}`ch08-example-rcm`:
 
 ::::{grid}
-:::{grid-item-card}
+:::{grid-item}
 $$A=
         \begin{bmatrix}
           1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
@@ -563,17 +540,12 @@ $$A=
        \end{bmatrix}$$
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 ```{tikz}
 :include:  /images/08/Fig7a.tikz
 ```
 :::
 ::::
-
-
-
-
-
 
 The minimum degree algorithm is re-labelling of the vertices in
 ascending degree order. Nodes with lower degrees are labelled early to
@@ -598,10 +570,13 @@ case, and proceed to elimination. The completed ordering using the
 Minimum Degree algorithm is shown in the following table, together with
 the resulting adjacency matrix and graph:
 
+                   
+```{image} /images/08/minDegree.svg
+:width: 500px
+:align: center
+```
 
-
-::: center
-  
+<!-- ::: center  
                     |    vertex and no. of degree                     
                     |  1   2   3   4   5   6   7   8
        New ordering |  1   3   2   1   2   2   1   2
@@ -614,11 +589,10 @@ the resulting adjacency matrix and graph:
    6      (6)       |  X   1   X   X   X   X   X   1
    7      (8)       |  X   1   X   X   X   X   X   X
    8      (2)       |  X   X   X   X   X   X   X   X
-
-:::
+::: -->
 
 ::::{grid}
-:::{grid-item-card}
+:::{grid-item}
 $$MD=
         \begin{bmatrix}
           1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
@@ -632,7 +606,7 @@ $$MD=
         \end{bmatrix}$$
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 ```{tikz}
 :include:  /images/08/F7MDalgo.tikz
 ```
@@ -661,13 +635,13 @@ xlabel(sprintf('nonzeros=%d (%.1f%%)',nz,nz*pct));
 ```
 
 ::::{grid}
-:::{grid-item-card}
+:::{grid-item}
 ```{tikz}
 :include:  /images/08/MD_comb_1.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 ```{tikz}
 :include:  /images/08/MD_comb_2.tikz
 ```
@@ -676,6 +650,7 @@ xlabel(sprintf('nonzeros=%d (%.1f%%)',nz,nz*pct));
 
 :::::
 
+(chap08:reorder:comparsion)=
 ## Comparison between various ordering schemes and fill-in effect
 
 For a more effective comparison we consider a symmetric $20 \times 20$
@@ -696,61 +671,63 @@ for the original matrix $bw =18$ and for the RCM reordered matrix
 $bw =7$ were found using MATLAB\]
 
 ::::{grid}
-:::{grid-item-card}
+:::{grid-item}
 :columns: 6
 ```{tikz}
 :include: /images/08/fig6a1.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 6
 ```{tikz}
 :include: /images/08/fig6a2.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 6
 ```{tikz}
 :include: /images/08/fig6a3.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 6
 ```{tikz}
 :include: /images/08/fig6a4.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 6
 ```{tikz}
 :include: /images/08/fig6a5.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 6
 ```{tikz}
 :include: /images/08/fig6a6.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 6
 ```{tikz}
 :include: /images/08/fig6a7.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 6
 ```{tikz}
 :include: /images/08/fig6a8.tikz
 ```
 :::
+
+Figure 6. Comparison between reordering schemes for a $20 \times 20$ symmetric matrix
 ::::
 
 In summary, the re-ordering or permutation of matrices provides a
@@ -767,7 +744,7 @@ in the following table:
 
 | $20 \times 20$ |  Original Matrix |  Reverse CM |  Column Count |  Min Degree|
 |:--------------:|:----------------:|:-----------:|:-------------:|:----------:|
-| No. of nz in U |       $66$       |     $54$    |      $53$     |     $58$|
+| No. of nnz in $\mathbf{U}$|       $66$       |     $54$    |      $53$     |     $58$|
 
 
 For large matrices with a high percentage of zero elements, reordering
@@ -779,7 +756,7 @@ For a $3000\times 3000$ matrix as an example the effect of reordering on the
 LU factors are presented in the following table:
 
 
-|   $3000 \times 3000$ |  nnz (percentage)              | CPU$(sec)$ |
+|   $3000 \times 3000$ |  nnz (percentage)              | CPU (sec) |
 |  --------------------| ------------------------------ |------------|
 |    Original Matrix   |     $1783708$        $(100)\%$ |  $5.500$ |
 |       Reverse CM     |      $862448$         $(48)\%$ |  $1.438$ |
@@ -794,7 +771,7 @@ Consider the following sparse matrix and
 its corresponding adjacency graph.
 
 ::::{grid}
-:::{grid-item-card}
+:::{grid-item}
 :columns: 6
 $$A=
           \begin{bmatrix}
@@ -809,7 +786,7 @@ $$A=
       \end{bmatrix}$$
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 6
 ```{tikz}
 :include: /images/08/ex74_2.tikz
@@ -837,63 +814,63 @@ ordered matrices. The three stages of the required solution together
 with the MATLAB commands are summerised in Figure 7.
 
 ::::{grid}
-:::{grid-item-card}
+:::{grid-item}
 :columns: 4
 ```{tikz}
 :include: /images/08/image_orig1.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 4
 ```{tikz}
 :include: /images/08/image_rcm1.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 4
 ```{tikz}
 :include: /images/08/image_col1.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 4
 ```{tikz}
 :include: /images/08/image_orig2.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 4
 ```{tikz}
 :include: /images/08/image_rcm2.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 4
 ```{tikz}
 :include: /images/08/image_col2.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 4
 ```{tikz}
 :include: /images/08/image_orig3.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 4
 ```{tikz}
 :include: /images/08/image_rcm3.tikz
 ```
 :::
 
-:::{grid-item-card}
+:::{grid-item}
 :columns: 4
 ```{tikz}
 :include: /images/08/image_col3.tikz
@@ -912,7 +889,7 @@ various reordering methods in $U$ as:
 
 |  $8 \times 8$  |  Original Matrix |  Reverse CM |  Column Count|
 |----------------| -----------------| ------------| --------------|
-| No. of nz in U |       $24$       |     $17$    |      $18$|
+| No. of nnz in $\mathbf{U}$ |       $24$       |     $17$    |      $18$|
 
 
 Hence, using the re-ordering methods, both RCM and Column Count,

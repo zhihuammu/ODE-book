@@ -94,3 +94,15 @@ orthogonal vectors and matrix-vector multiplications, have been widely
 used in practical applications such as computational fluid dynamics. The
 ODE solvers, LSODPK and VODEPK implement preconditioned Krylov iterative
 techniques for the solution of the resulting linear system.
+
+:::{prf:remark}
+The introduction here is a bit wordy. You just need grasp the idea that
+
+- Solving stiff problems efficiently request the use of fully implict methods;
+
+- Using implicit methods will usually involve sparse matrices;
+
+- Sparse matrices should be handled appropriately in particular for large scale problems.
+
+
+:::
