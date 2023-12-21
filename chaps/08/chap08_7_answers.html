@@ -359,7 +359,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -375,6 +377,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-to-ex-ch08-q1">8.7.1. Answer to <code class="xref std std-numref docutils literal notranslate"><span class="pre">ex-ch08-q1</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-to-ex-ch08-q2">8.7.2. Answer to <code class="xref std std-numref docutils literal notranslate"><span class="pre">ex-ch08-q2</span></code></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -386,11 +397,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="answers-to-tutorial-exercises-chapter-8">
 <h1><span class="section-number">8.7. </span>Answers to Tutorial Exercises Chapter 8<a class="headerlink" href="#answers-to-tutorial-exercises-chapter-8" title="Permalink to this headline">#</a></h1>
+<section id="answer-to-ex-ch08-q1">
+<h2><span class="section-number">8.7.1. </span>Answer to <a class="reference internal" href="chap08_6_exercise.html#ex-ch08-q1"><span class="std std-numref">Exercise 8.1</span></a><a class="headerlink" href="#answer-to-ex-ch08-q1" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
-<li><ol class="arabic simple">
-<li></li>
-</ol>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<li><div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
 <div class="sd-col sd-d-flex-column docutils">
 <div class="math notranslate nohighlight">
@@ -431,10 +441,8 @@ document.write(`
 <span class="c">%End</span><span class="w"></span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li></li>
-</ol>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+</li>
+<li><div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
 <div class="sd-col sd-d-flex-column docutils">
 <div class="math notranslate nohighlight">
@@ -476,7 +484,11 @@ document.write(`
 </pre></div>
 </div>
 </li>
-<li><p>Consider the following adjacency graph:</p>
+</ol>
+</section>
+<section id="answer-to-ex-ch08-q2">
+<h2><span class="section-number">8.7.2. </span>Answer to <a class="reference internal" href="chap08_6_exercise.html#ex-ch08-q2"><span class="std std-numref">Exercise 8.2</span></a><a class="headerlink" href="#answer-to-ex-ch08-q2" title="Permalink to this headline">#</a></h2>
+<p>Consider the following adjacency graph:</p>
 <div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-ea1c5d3019c7476778c146c283b46223bbb3b3dd.svg" alt="Figure made with TikZ" /></p>
 </div><div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -502,7 +514,7 @@ number of nonzero elements: i.e.<br />
 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span> <span class="pre">spy(A)</span></code></p>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-1a47a6fc95af0f2b5350e860b655edcccf957c3b.svg" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-072de8dde5f703bcf4d4ecfa68b8b1e07e4942c1.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -518,53 +530,55 @@ bw =
 <p>Next we apply the Cuthill-McKee (CM) and reverse Cuthill-McKee (RCM)
 ordering algorithms to reduce the bandwidth.</p>
 <p>we need to construct the following table</p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>  Original nodes   No. of connections   Results / Heads   Queue        Result by CM   Result by RCM   New nodes
-  ---------------- -------------------- ----------------- ------------ -------------- --------------- -----------
-  1                6                    7                 6                                           
-  2                2                    6                 4, 5, 8, 1                                  
-  3                2                    4                 --                                          
-  4                3                    5                 9, 10                                       
-  5                4                    8                 --                                          
-  6                5                    1                 2, 3                                        
-  7                1                    9                 --                                          
-  8                6                    10                --                                          
-  9                3                    2                 --                                          
-  10               4                    3                 --                                          
+<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>    Original nodes   No. of connections   Results / Heads   Queue        Result by CM   Result by RCM   New nodes
+    ---------------- -------------------- ----------------- ------------ -------------- --------------- -----------
+    1                6                    7                 6                                           
+    2                2                    6                 4, 5, 8, 1                                  
+    3                2                    4                 --                                          
+    4                3                    5                 9, 10                                       
+    5                4                    8                 --                                          
+    6                5                    1                 2, 3                                        
+    7                1                    9                 --                                          
+    8                6                    10                --                                          
+    9                3                    2                 --                                          
+    10               4                    3                 --                                          
 </pre></div>
 </div>
-<p>Step 1 - list all the nodes and the number of their connections (or
-degree) – check this with the adjacency matrix as well.</p>
-<p>Step 2 - choose the node with smallest number of connections – here
+<ul class="simple">
+<li><p>Step 1 - list all the nodes and the number of their connections (or
+degree) – check this with the adjacency matrix as well.</p></li>
+<li><p>Step 2 - choose the node with smallest number of connections – here
 is node 7 – write it down under the Results/Heads column. Since
 node 7 is only connected to node 6 we write down 6 Queue column.
-Bring down 6 to the results column,</p>
-<p>Step 3 - next, in the Queue column write down the list of nodes
+Bring down 6 to the results column,</p></li>
+<li><p>Step 3 - next, in the Queue column write down the list of nodes
 which are connected to 6 (in the ascending order of their degree or
 number of connections). Bring 4 down and repeat Stage 3. Avoid
 writing the numbers which are already listed in the Queue column and
 the starting node 7 – since 6, 1, and 8 are already in the Queue we
-put a – for node 4 in the Queue column.</p>
-<p>Step 4 - we bring the next number down in the queue – that is 5,
+put a – for node 4 in the Queue column.</p></li>
+<li><p>Step 4 - we bring the next number down in the queue – that is 5,
 and repeat stage 3. We only list 9 and 10, since 6 and 8 are already
-listed in the queue.</p>
-<p>Repeat Step 4 – all the connections to node 8 already in the list,
-so we put a – for node 8 in the Queue column.</p>
-<p>We bring 1 down which is connected to two new nodes 2 and 3, we
-write down 2, 3 in the Queue column.</p>
-<p>Next, we bring 9 and follow the above procedure until all 10 nodes
-are listed in the results/Head column.</p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>  Original nodes   No. of connections   Results / Heads   Queue        Result by CM   Result by RCM   New nodes
-  ---------------- -------------------- ----------------- ------------ -------------- --------------- -----------
-  1                6                    7                 6            7              3               1
-  2                2                    6                 4, 5, 8, 1   6              2               2
-  3                2                    4                 --           4              10              3
-  4                3                    5                 9, 10        5              9               4
-  5                4                    8                 --           8              1               5
-  6                5                    1                 2, 3         1              8               6
-  7                1                    9                 --           9              5               7
-  8                6                    10                --           10             4               8
-  9                3                    2                 --           2              6               9
-  10               4                    3                 --           3              7               10
+listed in the queue.</p></li>
+<li><p>Repeat Step 4 – all the connections to node 8 already in the list,
+so we put a – for node 8 in the Queue column.</p></li>
+<li><p>We bring 1 down which is connected to two new nodes 2 and 3, we
+write down 2, 3 in the Queue column.</p></li>
+<li><p>Next, we bring 9 and follow the above procedure until all 10 nodes
+are listed in the results/Head column.</p></li>
+</ul>
+<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>    Original nodes   No. of connections   Results / Heads   Queue        Result by CM   Result by RCM   New nodes
+    ---------------- -------------------- ----------------- ------------ -------------- --------------- -----------
+    1                6                    7                 6            7              3               1
+    2                2                    6                 4, 5, 8, 1   6              2               2
+    3                2                    4                 --           4              10              3
+    4                3                    5                 9, 10        5              9               4
+    5                4                    8                 --           8              1               5
+    6                5                    1                 2, 3         1              8               6
+    7                1                    9                 --           9              5               7
+    8                6                    10                --           10             4               8
+    9                3                    2                 --           2              6               9
+    10               4                    3                 --           3              7               10
 </pre></div>
 </div>
 <p>Complete results column for CM (the same as the column Results /
@@ -605,7 +619,7 @@ with the reordered RCM adjacency plot:</p>
 </div>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-522eaed18cd2d5dd4b6505f18eb84328eb12fb2a.svg" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-7343537fad67bd65cda08b9cfc9a90b93d0dd6a5.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -641,7 +655,7 @@ bw = 4
 </div>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-d5e0cfe44b9e2f749ba00bc71c568bb4055df5c2.svg" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-41e44f73bdbcb9583dbddc8d4e20d410967510f1.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -669,7 +683,7 @@ bw = 4
 <span class="math notranslate nohighlight">\(= 4 + 4 + 1 = 9\)</span>.</p>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-e791131b9c834722d9d07e8eee7f7702b6d2c7ac.svg" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-d17c93004bcb21f27b49b5226ed0f92aaf68851f.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -781,66 +795,58 @@ write down the associated adjacency matrix and plot:</p>
         \end{pmatrix}\)</span></p>
 </div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-aa76505f62c3b828214d174351efcde660b5407d.svg" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-3dea16fe597aea698864673163ba52095a4c7af7.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <p>Note that D (ordered Matrix <span class="math notranslate nohighlight">\(A\)</span> by Column Count algorithm) is identical to Matrix A ordered by using the MATLAB command <code class="docutils literal notranslate"><span class="pre">colperm</span></code> i.e.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> &gt;&gt; q=colperm(A);
- &gt;&gt; spy(A(q,q))
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    &gt;&gt; q=colperm(A);
+    &gt;&gt; spy(A(q,q))
 </pre></div>
 </div>
 </div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-e504fa455eed36d4fab5fea296348daac88e002e.svg" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-8a2ba0433aa68a4d2099cbfefd44abbb2172a5b7.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
 <p><strong>Minimum Degree reordering</strong></p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>  ---------- ---- ----------------------------- --- --- --- --- --- --- --- --- ----
-         New       vertex and number of degree                                  
-    ordering                    1                2   3   4   5   6   7   8   9   10
-                                6                2   2   3   4   5   1   6   3   4
-           1    7               6                2   2   3   4   4   X   6   3   4
-           2    2               5                X   1   3   4   4   X   6   3   4
-           3    3               4                X   X   3   4   4   X   5   3   4
-           4    4               3                X   X   X   4   3   X   5   3   4
-           5    1               X                X   X   X   4   2   X   4   3   3
-           6    6               X                X   X   X   3   X   X   3   3   3
-           7    8               X                X   X   X   2   X   X   X   2   2
-           8    5               X                X   X   X   X   X   X   X   1   1
-           9    9               X                X   X   X   X   X   X   X   X   1
-          10   10               X                X   X   X   X   X   X   X   X   X
-  ---------- ---- ----------------------------- --- --- --- --- --- --- --- --- ----
-</pre></div>
+<a class="reference internal image-reference" href="../../_images/q3minDegree.svg"><img alt="../../_images/q3minDegree.svg" class="align-center" src="../../_images/q3minDegree.svg" width="500px" /></a>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{M} = \begin{pmatrix}
+            1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+            0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+            0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+            0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+            0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1\\
+            1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0\\
+            0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1\\
+            0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1\\
+            0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1
+        \end{pmatrix}
+\end{split}\]</div>
 </div>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>+:------------------------------+:------------------------------+
-|                               |                               |
-|                               |                               |
-| $\s                           | ![image](main/07/ch7ex3md.    |
-| criptsize M = \begin{pmatrix} | tikz){width=&quot;0.9\\linewidth&quot;} |
-|                 1 &amp; 0 &amp; 0     |                               |
-| &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\ |                               |
-|                 0 &amp; 1 &amp; 1     |                               |
-| &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\ |                               |
-|                 0 &amp; 1 &amp; 1     |                               |
-| &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\ |                               |
-|                 0 &amp; 0 &amp; 0     |                               |
-| &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\ |                               |
-|                 0 &amp; 1 &amp; 1     |                               |
-| &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1\\ |                               |
-|                 1 &amp; 0 &amp; 0     |                               |
-| &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0\\ |                               |
-|                 0 &amp; 0 &amp; 0     |                               |
-| &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1\\ |                               |
-|                 0 &amp; 0 &amp; 0     |                               |
-| &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1\\ |                               |
-|                 0 &amp; 0 &amp;       |                               |
-| 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 |                               |
-|             \end{pmatrix}$    |                               |
-+-------------------------------+-------------------------------+
-|                               |                               |
-+-------------------------------+-------------------------------+
-</pre></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-ed80327951234b18e932bc13f71fd12dfe919793.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-28ec85692418280346a71d9dfcca391c35562c56.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-18803a72618cb5c5637b6875e31639bdae1817e5.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</div>
 </div>
 <p><strong>Comment</strong> – for this matrix, the MD algorithm seems to produce a
 reordered matrix very similar to the <code class="docutils literal notranslate"><span class="pre">sysamd</span></code> function within
@@ -852,221 +858,275 @@ each case with the corresponding full matrices, i.e. original matrix
 <span class="math notranslate nohighlight">\(A\)</span>, RCM (<span class="math notranslate nohighlight">\(C\)</span>), Column Count (<span class="math notranslate nohighlight">\(D\)</span>) and Minimum Degree (<span class="math notranslate nohighlight">\(M\)</span>), and
 write down the number of nonzeros generated for each case. The
 answer will be checked in the tutorial session.</p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>  ------------------------------- -------------------------------
-                                  
-
-                                  
-
-                                  
-
-                                  
-  ------------------------------- -------------------------------
-</pre></div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-a938bf0036b884d88d10d25f8a8072d0397ccdd4.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-2a7526b2d93233adc3ca6f677a98b46ef2ede45d.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-ed4ce054e16cd6673b35db479f5499ee0f31ca62.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-d017ea577258f9d3df39a3afb59b11e939fcefce.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-97458318151aed659381fd4437dbc53deb25a8a3.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-e0e506d536b457638e5d56175b30337eecd2a803.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-8fc731bb95c3b1a252c6ae2dc1805025b07cdf10.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-ee9d35b72fc2deab492b54d7a5333df19c383d29.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</div>
 </div>
 <p>Figure 7.Q2 Comparison of ordering schemes (using the algorithms
 shown in Chapter 7), and their <span class="math notranslate nohighlight">\(LU\)</span> factorisation showing fill-ins
 reduction.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-                \scriptsize
-                A = \begin{pmatrix}
-                    1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1\\
-                    0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0\\
-                    1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
-                    0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1\\
-                    0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0\\
-                    0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0\\
-                    0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0\\
-                    1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\
-                    1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1
-                \end{pmatrix}
-            
-    \end{aligned}\end{split}\]</div>
-<p><strong>CM and RCM reordering:</strong></p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>  ---------- -------- ----------- ------- -------- ----------------- -------
-  Original   No. of   Results /   Queue   Result   Result            New
-  nodes      conn     Heads               by CM    by RCM            nodes
-  1          3        6           7       6        9 $\rightarrow$   1
-  2          3        7           5,2     7        1 $\rightarrow$   2
-  3          2        5           8       5        4 $\rightarrow$   3
-  4          2        2           3       2        3 $\rightarrow$   4
-  5          2        8           4,1     8        8 $\rightarrow$   5
-  6          1        3           --      3        2 $\rightarrow$   6
-  7          3        4           9       4        5 $\rightarrow$   7
-  8          4        1           --      1        7 $\rightarrow$   8
-  9          2        9           --      9        6 $\rightarrow$   9
-  ---------- -------- ----------- ------- -------- ----------------- -------
-</pre></div>
-</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
+<!-- ::::{grid}
+:::{grid-item}
+$$
+A = \begin{pmatrix}
+        1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1\\
+        0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 0\\
+        1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0\\
+        0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 1\\
+        0 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 0\\
+        0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0\\
+        0 & 1 & 0 & 0 & 1 & 1 & 1 & 0 & 0\\
+        1 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 0\\
+        1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1
+\end{pmatrix}
+$$
+:::
+
+:::{grid-item}
+```{tikz}
+\begin{axis}
+    [   xmin = 0.5
+    ,   xmax = 4.5
+    ,   xtick = \empty
+    ,   ymin = 0.5
+    ,   ymax = 3.5
+    ,   ytick = \empty
+    ,   hide axis
+    ]
+    \plot [black, mark = *, mark options = {solid}]
+    coordinates {(2,1)(2,2)(2,3)(4,3)};
+    \plot [black, mark = *, mark options = {solid}]
+    coordinates {(3,3)(3,1)(1,1)(1,2)(3,2)};
+    \node[anchor = north east] at (axis cs:1,1) {9};
+    \node[anchor = north east] at (axis cs:2,1) {1};
+    \node[anchor = north west] at (axis cs:3,1) {3};
+    \node[anchor = south east] at (axis cs:1,2) {4};
+    \node[anchor = south east] at (axis cs:2,2) {8};
+    \node[anchor = south west] at (axis cs:3,2) {2};
+    \node[anchor = south east] at (axis cs:2,3) {5};
+    \node[anchor = south west] at (axis cs:3,3) {7};
+    \node[anchor = south west] at (axis cs:4,3) {6};
+\end{axis}    
+```    
+:::
+::::
+
+    **CM and RCM reordering:**
+
+    ::: center
+      ---------- -------- ----------- ------- -------- ----------------- -------
+      Original   No. of   Results /   Queue   Result   Result            New
+      nodes      conn     Heads               by CM    by RCM            nodes
+      1          3        6           7       6        9 $\rightarrow$   1
+      2          3        7           5,2     7        1 $\rightarrow$   2
+      3          2        5           8       5        4 $\rightarrow$   3
+      4          2        2           3       2        3 $\rightarrow$   4
+      5          2        8           4,1     8        8 $\rightarrow$   5
+      6          1        3           --      3        2 $\rightarrow$   6
+      7          3        4           9       4        5 $\rightarrow$   7
+      8          4        1           --      1        7 $\rightarrow$   8
+      9          2        9           --      9        6 $\rightarrow$   9
+      ---------- -------- ----------- ------- -------- ----------------- -------
+    :::
+
+    $$\begin{aligned}
                 \scriptsize
                 B = \begin{pmatrix}
-                    1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
-                    1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
-                    0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
-                    0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
-                    0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0\\
-                    0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0\\
-                    0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1\\
-                    0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1\\
-                    0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1
+                    1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+                    1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0\\
+                    0 & 1 & 1 & 0 & 1 & 0 & 0 & 0 & 0\\
+                    0 & 1 & 0 & 1 & 1 & 1 & 0 & 0 & 0\\
+                    0 & 0 & 1 & 1 & 1 & 0 & 1 & 1 & 0\\
+                    0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0\\
+                    0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1\\
+                    0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1\\
+                    0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1
                 \end{pmatrix}
             
-    \end{aligned}\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
+    \end{aligned}$$
+
+    $$\begin{aligned}
                 \scriptsize
                 C = \begin{pmatrix}
-                    1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
-                    1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
-                    1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
-                    0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
-                    0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0\\
-                    0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0\\
-                    0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0\\
-                    0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1\\
-                    0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1
+                    1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0\\
+                    1 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 0\\
+                    1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0\\
+                    0 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 0\\
+                    0 & 1 & 1 & 0 & 1 & 1 & 1 & 0 & 0\\
+                    0 & 0 & 0 & 1 & 1 & 1 & 0 & 1 & 0\\
+                    0 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 0\\
+                    0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1\\
+                    0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1
                 \end{pmatrix}
             
-    \end{aligned}\end{split}\]</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt; [i,j]=find(A);
-&gt;&gt; bw=max(i-j), bw=8,
-</pre></div>
-</div>
-<p>full bandwidth<span class="math notranslate nohighlight">\(= 8 \times 2 + 1 = 17\)</span></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt; [i,j]=find(C);
-&gt;&gt; bw=max(i-j), bw=3,
-</pre></div>
-</div>
-<p>full bandwidth<span class="math notranslate nohighlight">\(= 3 \times 2 + 1 = 7\)</span></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt; [i,j]=find(B);
-&gt;&gt; bw=max(i-j), bw=3,
-</pre></div>
-</div>
-<p>full bandwidth<span class="math notranslate nohighlight">\(= 3 \times 2 + 1 = 7\)</span></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt; p=symrcm(A);
-&gt;&gt; spy(A(p,p))
-&gt;&gt; [i,j]=find(A(p,p));
-&gt;&gt; bw=max(i-j), bw=3,
-</pre></div>
-</div>
-<p>full bandwidth<span class="math notranslate nohighlight">\(= 3 \times 2 + 1 = 7\)</span></p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>  ------------------------------- -------------------------------
-                                  
+    \end{aligned}$$
 
-                                  
-  ------------------------------- -------------------------------
-</pre></div>
-</div>
-<p><strong>Column Count reordering:</strong></p>
-<div class="highlight-center notranslate"><div class="highlight"><pre><span></span>
-::: tabular
-r\|\&gt;CCCCCCCCC vertex &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9\
-degree &amp; 3 &amp; 3 &amp; 2 &amp; 2 &amp; 2 &amp; 1 &amp; 3 &amp; 4 &amp; 2\
-</pre></div>
-</div>
-<div class="highlight-tabular notranslate"><div class="highlight"><pre><span></span>r\|\&gt;CCCCCCCCC vertex &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9\
-Original &amp; 6&amp; 3&amp; 4&amp; 5&amp; 9&amp; 1&amp; 2&amp; 7&amp; 8\
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-$$\begin{aligned}
-            D = \begin{pmatrix}
-                1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\
-                0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0\\
-                0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1\\
-                0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1\\
-                0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
-                0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1\\
-                0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1\\
-                1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0\\
-                0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1
-            \end{pmatrix}
-        
-\end{aligned}$$
+        >> [i,j]=find(A);
+        >> bw=max(i-j), bw=8,
 
-    &gt;&gt; spy(D),title(&#39;Matrix D CC&#39;)
+    full bandwidth$= 8 \times 2 + 1 = 17$
 
-    &gt;&gt; q=colperm(A);
-    &gt;&gt; spy(A(q,q)),title(&#39;Matrix A(q,q) colperm&#39;)
+        >> [i,j]=find(C);
+        >> bw=max(i-j), bw=3,
 
-**Comment** -- For this matrix, the MD algorithm works well and
-produces a reordered matrix exactly the same as the `colperm`
-function in MATLAB.
+    full bandwidth$= 3 \times 2 + 1 = 7$
 
-**Minimum Degree reordering**
+        >> [i,j]=find(B);
+        >> bw=max(i-j), bw=3,
 
-::: center
-  ---------- --- ----------------------------- --- --- --- --- --- --- --- ---
-         New      vertex and number of degree                              
-    ordering                   1                2   3   4   5   6   7   8   9
-                               3                3   2   2   2   1   3   4   2
-           1   6               3                3   2   2   2   X   2   4   2
-           2   3               2                2   X   2   2   X   2   4   2
-           3   1               X                2   X   2   2   X   2   3   1
-           4   9               X                2   X   1   2   X   2   3   X
-           5   4               X                2   X   X   2   X   2   2   X
-           6   7               X                2   X   X   2   X   X   2   X
-           7   2               X                X   X   X   1   X   X   1   X
-           8   5               X                X   X   X   X   X   X   1   X
-           9   8               X                X   X   X   X   X   X   X   X
-  ---------- --- ----------------------------- --- --- --- --- --- --- --- ---
-</pre></div>
-</div>
-<p><strong>Comment</strong> – the MD algorithm does not seem to work as well as the
-<code class="docutils literal notranslate"><span class="pre">sysamd</span></code> function MATLAB.</p>
-<p><strong>Storage consideration</strong></p>
-<p>The following MATLAB commands provide information on sparse and full
-matrices storage organisation.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt; S=sparse(+(rand(1000,1000) &lt; 2/3));
-%i.e. a sparse matrix with a density of about two-thirds
-&gt;&gt; F=full(S);
-&gt;&gt; whos
+    full bandwidth$= 3 \times 2 + 1 = 7$
 
-F   1000x1000       8000000 double
-S   1000x1000       7997528 double  sparse
+        >> p=symrcm(A);
+        >> spy(A(p,p))
+        >> [i,j]=find(A(p,p));
+        >> bw=max(i-j), bw=3,
 
-&gt;&gt; S=sparse(+(rand(1000,1000) &lt; 1/3));
-%i.e. a sparse matrix with a density of about one-thirds
-&gt;&gt; F=full(S);
-&gt;&gt; whos
+    full bandwidth$= 3 \times 2 + 1 = 7$
 
-F   1000x1000       8000000 double
-S   1000x1000       3994592 double  sparse
-</pre></div>
-</div>
-<p>Note that the saving in storage in inversely proportional to the
-sparsity ratio or percentage (i.e. percentage of nonzero entries of
-a matrix), i.e. the higher the sparsity percentage, the higher the
-sparsity percentage, the higher the saving in storage will be.</p>
-</li>
-<li><p>A=[
-1 0 1 0 0 0 0 1 1
-0 1 1 0 0 0 1 1 0
-1 1 1 0 0 0 0 0 0
-0 0 0 1 0 0 0 1 1
-0 0 0 0 1 0 1 1 0
-0 0 0 0 0 1 1 0 0
-0 1 0 0 1 1 1 0 0
-1 1 0 1 1 0 0 1 0
-1 0 0 1 0 0 0 0 1];</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt; S=sparse(A);
-&gt;&gt; F=full(A);
-&gt;&gt; whos
+    ::: center
+      ------------------------------- -------------------------------
+                                      
 
-    Name    Size    Bytes Class     Attributes
-    A       9x9       648 double
-    S       9x9       576 double    sparse
-    F       9x9       648 double
-</pre></div>
-</div>
-<p>Therefore, even with a 9<span class="math notranslate nohighlight">\(\times\)</span><code class="docutils literal notranslate"><span class="pre">&lt;!--</span> <span class="pre">--&gt;</span></code>{=html}9 matrix there is a
-reduction in storage when using sparse matrices storage.</p>
-<p>Repeat for matrices <span class="math notranslate nohighlight">\(D\)</span> (column count) and <span class="math notranslate nohighlight">\(M\)</span> (minimum degree) and
-comment.</p>
-</li>
-</ol>
+                                      
+      ------------------------------- -------------------------------
+    :::
+
+    **Column Count reordering:**
+
+    ::: center
+    ::: tabular
+    r\|\>CCCCCCCCC vertex & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\
+    degree & 3 & 3 & 2 & 2 & 2 & 1 & 3 & 4 & 2\
+    :::
+
+    ::: tabular
+    r\|\>CCCCCCCCC vertex & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\
+    Original & 6& 3& 4& 5& 9& 1& 2& 7& 8\
+    :::
+    :::
+
+    $$\begin{aligned}
+                D = \begin{pmatrix}
+                    1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0\\
+                    0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0\\
+                    0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 1\\
+                    0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 1\\
+                    0 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 0\\
+                    0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 1\\
+                    0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1\\
+                    1 & 0 & 0 & 1 & 0 & 0 & 1 & 1 & 0\\
+                    0 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 1
+                \end{pmatrix}
+            
+    \end{aligned}$$
+
+        >> spy(D),title('Matrix D CC')
+
+        >> q=colperm(A);
+        >> spy(A(q,q)),title('Matrix A(q,q) colperm')
+
+    **Comment** -- For this matrix, the MD algorithm works well and
+    produces a reordered matrix exactly the same as the `colperm`
+    function in MATLAB.
+
+    **Minimum Degree reordering**
+
+    ::: center
+      ---------- --- ----------------------------- --- --- --- --- --- --- --- ---
+             New      vertex and number of degree                              
+        ordering                   1                2   3   4   5   6   7   8   9
+                                   3                3   2   2   2   1   3   4   2
+               1   6               3                3   2   2   2   X   2   4   2
+               2   3               2                2   X   2   2   X   2   4   2
+               3   1               X                2   X   2   2   X   2   3   1
+               4   9               X                2   X   1   2   X   2   3   X
+               5   4               X                2   X   X   2   X   2   2   X
+               6   7               X                2   X   X   2   X   X   2   X
+               7   2               X                X   X   X   1   X   X   1   X
+               8   5               X                X   X   X   X   X   X   1   X
+               9   8               X                X   X   X   X   X   X   X   X
+      ---------- --- ----------------------------- --- --- --- --- --- --- --- ---
+    :::
+
+    **Comment** -- the MD algorithm does not seem to work as well as the
+    `sysamd` function MATLAB.
+
+    **Storage consideration**
+
+    The following MATLAB commands provide information on sparse and full
+    matrices storage organisation.
+
+        >> S=sparse(+(rand(1000,1000) < 2/3));
+        %i.e. a sparse matrix with a density of about two-thirds
+        >> F=full(S);
+        >> whos
+
+        F   1000x1000       8000000 double
+        S   1000x1000       7997528 double  sparse
+
+        >> S=sparse(+(rand(1000,1000) < 1/3));
+        %i.e. a sparse matrix with a density of about one-thirds
+        >> F=full(S);
+        >> whos
+
+        F   1000x1000       8000000 double
+        S   1000x1000       3994592 double  sparse
+
+    Note that the saving in storage in inversely proportional to the
+    sparsity ratio or percentage (i.e. percentage of nonzero entries of
+    a matrix), i.e. the higher the sparsity percentage, the higher the
+    sparsity percentage, the higher the saving in storage will be.
+
+3.  A=[
+            1 0 1 0 0 0 0 1 1
+            0 1 1 0 0 0 1 1 0
+            1 1 1 0 0 0 0 0 0
+            0 0 0 1 0 0 0 1 1
+            0 0 0 0 1 0 1 1 0
+            0 0 0 0 0 1 1 0 0
+            0 1 0 0 1 1 1 0 0
+            1 1 0 1 1 0 0 1 0
+            1 0 0 1 0 0 0 0 1];
+
+        >> S=sparse(A);
+        >> F=full(A);
+        >> whos
+
+            Name    Size    Bytes Class     Attributes
+            A       9x9       648 double
+            S       9x9       576 double    sparse
+            F       9x9       648 double
+
+    Therefore, even with a 9$\times$9 matrix there is a
+    reduction in storage when using sparse matrices storage.
+
+    Repeat for matrices $D$ (column count) and $M$ (minimum degree) and
+    comment. -->
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1127,6 +1187,21 @@ comment.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-to-ex-ch08-q1">8.7.1. Answer to <code class="xref std std-numref docutils literal notranslate"><span class="pre">ex-ch08-q1</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-to-ex-ch08-q2">8.7.2. Answer to <code class="xref std std-numref docutils literal notranslate"><span class="pre">ex-ch08-q2</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

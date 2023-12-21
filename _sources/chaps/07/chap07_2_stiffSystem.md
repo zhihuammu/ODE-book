@@ -106,7 +106,6 @@ integration proceeds.
 
 :::{prf:example}
 
-
 Consider the non-linear system 
 
 $$
@@ -167,8 +166,8 @@ be used for calculating the corresponding values of $\lambda_1$,
 $\lambda_2$, and $\lambda_3$.
 :::
 
-:::{prf:example}
-
+::::{prf:example}
+:label: example:chap06:4
 
 Consider the differential equation system 
 
@@ -196,6 +195,134 @@ $$
 $$
 
  where $t$ is the independent variable.
+
+:::{admonition} Analytical Solution to Linear differential equation system 
+:class: dropdown
+
+For a homogeneous (linear) system of differential equations, we can use
+the eigenvalues and eigenvectors of the system to obtains its analytical
+solution.
+
+Supposing we have a linear system of differential equations given by
+
+$$
+\mathbf{U}'=\mathbf{A}\mathbf{U},
+$$(eq:diff:system:eq)
+
+ and assuming its solution can be
+expressed as 
+
+$$
+\mathbf{U}=\mathbf{v}e^{\lambda t},
+$$(eq:diff:system:sol)
+
+ where $\mathbf{A}$ is the matrix
+of the linear system, and $\mathbf{v}$ is a vector. Differentiating Eq.
+{eq}`eq:diff:system:sol`, we can obtain
+
+
+$$
+\mathbf{U}'=\lambda\mathbf{v}e^{\lambda t}.
+$$(eq:diff:system:derivative)
+
+ Substituting Eqs. {eq}`eq:diff:system:sol`
+and {eq}`eq:diff:system:derivative`
+into Eq. {eq}`eq:diff:system:eq`, we can obtain
+
+$$
+\mathbf{A}\mathbf{v}e^{\lambda t} = \lambda \mathbf{v}e^{\lambda t},
+$$(eq:diff:system:vector)
+
+dividing $e^{\lambda t}$ gives:
+
+$$
+\mathbf{A}\mathbf{v} = \lambda \mathbf{v}.
+$$
+
+ This means $\lambda$ and
+$\mathbf{v}$ are the eigenvalue and eigenvector of the system,
+respectively. Once we obtain the $\lambda$ and $\mathbf{v}$, we can
+obtain the analytical solution to the system {eq}`eq:diff:system:eq`
+given by
+
+$$
+\mathbf{U}=\sum_{i=1}^n \alpha_i \mathbf{v}_i e^{\lambda_i t},
+$$
+
+where $n$ is the size of the system, $\alpha_i (i=1,2,\ldots,n)$ are
+coefficients need to be determined by using the initial condition.
+
+Regarding {prf:ref}`example:chap06:4`, we have 
+
+$$
+\mathbf{A}=\mathbf{J}=
+\begin{bmatrix}
+998 & 1998 \\
+-999 & -1999
+\end{bmatrix},
+$$
+
+its eigenvalues are
+
+
+$$
+\lambda_1=-1, \quad \lambda_2=-1000,
+$$
+
+its eigenvectors are given by
+
+$$
+\mathbf{v}_1=\begin{bmatrix}
+2 \\
+-1
+\end{bmatrix},
+\quad
+\mathbf{v}_2=\begin{bmatrix}
+1 \\
+-1
+\end{bmatrix}.
+$$
+
+Now the solution to the system can be expressed as
+
+$$
+\begin{aligned}
+\mathbf{U} & = \alpha_1 \mathbf{v}_1 e^{\lambda_1 t} + \alpha_2 \mathbf{v}_2 e^{\lambda_2 t} \\
+& = \alpha_1 \begin{bmatrix}
+2 \\
+-1
+\end{bmatrix} e^{-t}+
+\alpha_2 \begin{bmatrix}
+1 \\
+-1
+\end{bmatrix} e^{-1000t}.
+\end{aligned}
+$$
+
+At $t=0$, $\mathbf{U}(0)=[1, 0]^{\mathrm{T}}$, so we obtain 
+
+$$
+\alpha_1 = 1, \quad \alpha_2=-1.
+$$
+
+Therefore the analytical solution is given by 
+
+$$
+\mathbf{U} 
+= \begin{bmatrix}
+2 \\
+-1
+\end{bmatrix} e^{-t}
+- \begin{bmatrix}
+1 \\
+-1
+\end{bmatrix} e^{-1000t}=
+\begin{bmatrix}
+2e^{-t}- e^{-1000t} \\
+-e^{-t}+  e^{-1000t}
+\end{bmatrix}.
+$$
+:::
  
   <!-- See Appendix
 [\[app:linear:diff:system\]](#app:linear:diff:system){reference-type="ref"
@@ -229,4 +356,6 @@ insignificant.
 Note that the above problem is a linear system and the terms of the
 Jacobian, $\,\dfrac{\partial \mathbf{f}}{\partial \mathbf{y}}\,$, and thus the
 corresponding eigenvalues are constant throughout the integration!
-:::
+::::
+
+
