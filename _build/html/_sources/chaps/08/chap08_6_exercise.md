@@ -6,6 +6,7 @@ You should try the following exercise questions first, then check with the answe
 For detailed solutions, please find them in the Moodle area for this Unit.
 
 ::::{exercise}
+:label: ex-ch08-q1
 
 1. Write a Matlab mfile that produces the adjacency graph for the symmetric matrix A given in {prf:ref}`ch08-example-comparison`. 
     
@@ -22,6 +23,8 @@ A= [1 1 0 0 0 1,
 ::::
 
 ::::{exercise}
+:label: ex-ch08-q2
+
 Consider the following adjacency graph with 10 nodes:
 
 ```{tikz}
@@ -43,7 +46,7 @@ Consider the following adjacency graph with 10 nodes:
 7.  For the three schemes RCM, CC and MD (i.e. matrices $C$, $D$ and $M$), perform LU factorisation and record the number of fill-in elements in a table, prepare a summary result table (similar to Figure 6 shown in {numref}`chap08:reorder:comparsion`) and comment.
 ::::
 
-::::{exercise}
+<!-- ::::{exercise}
 Repeat question 2 with the following adjacency graph with 9 nodes.
 
 ```{tikz}
@@ -53,4 +56,4 @@ Repeat question 2 with the following adjacency graph with 9 nodes.
 Calculate the storage in units of bytes for the full and sparse
 matrix $A$ and the reordered Matrices $D$ (Column Count) and $M$
 (Minimum Degree), and comment.
-::::
+:::: -->

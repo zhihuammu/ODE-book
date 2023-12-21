@@ -500,7 +500,7 @@ any time step <span class="math notranslate nohighlight">\(j\)</span>, the calcu
 be used for calculating the corresponding values of <span class="math notranslate nohighlight">\(\lambda_1\)</span>,
 <span class="math notranslate nohighlight">\(\lambda_2\)</span>, and <span class="math notranslate nohighlight">\(\lambda_3\)</span>.</p>
 </section>
-</div><div class="proof example admonition" id="example-1">
+</div><div class="proof example admonition" id="example:chap06:4">
 <p class="admonition-title"><span class="caption-number">Example 7.4 </span></p>
 <section class="example-content" id="proof-content">
 <p>Consider the differential equation system</p>
@@ -519,6 +519,117 @@ be used for calculating the corresponding values of <span class="math notranslat
     
 \end{aligned}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(t\)</span> is the independent variable.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Analytical Solution to Linear differential equation system </p>
+<p>For a homogeneous (linear) system of differential equations, we can use
+the eigenvalues and eigenvectors of the system to obtains its analytical
+solution.</p>
+<p>Supposing we have a linear system of differential equations given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-diff-system-eq">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-eq-diff-system-eq" title="Permalink to this equation">#</a></span>\[
+\mathbf{U}'=\mathbf{A}\mathbf{U},
+\]</div>
+<p>and assuming its solution can be
+expressed as</p>
+<div class="math notranslate nohighlight" id="equation-eq-diff-system-sol">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-eq-diff-system-sol" title="Permalink to this equation">#</a></span>\[
+\mathbf{U}=\mathbf{v}e^{\lambda t},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is the matrix
+of the linear system, and <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> is a vector. Differentiating Eq.
+<a class="reference internal" href="#equation-eq-diff-system-sol">(7.2)</a>, we can obtain</p>
+<div class="math notranslate nohighlight" id="equation-eq-diff-system-derivative">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-eq-diff-system-derivative" title="Permalink to this equation">#</a></span>\[
+\mathbf{U}'=\lambda\mathbf{v}e^{\lambda t}.
+\]</div>
+<p>Substituting Eqs. <a class="reference internal" href="#equation-eq-diff-system-sol">(7.2)</a>
+and <a class="reference internal" href="#equation-eq-diff-system-derivative">(7.3)</a>
+into Eq. <a class="reference internal" href="#equation-eq-diff-system-eq">(7.1)</a>, we can obtain</p>
+<div class="math notranslate nohighlight" id="equation-eq-diff-system-vector">
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-eq-diff-system-vector" title="Permalink to this equation">#</a></span>\[
+\mathbf{A}\mathbf{v}e^{\lambda t} = \lambda \mathbf{v}e^{\lambda t},
+\]</div>
+<p>dividing <span class="math notranslate nohighlight">\(e^{\lambda t}\)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{A}\mathbf{v} = \lambda \mathbf{v}.
+\]</div>
+<p>This means <span class="math notranslate nohighlight">\(\lambda\)</span> and
+<span class="math notranslate nohighlight">\(\mathbf{v}\)</span> are the eigenvalue and eigenvector of the system,
+respectively. Once we obtain the <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>, we can
+obtain the analytical solution to the system <a class="reference internal" href="#equation-eq-diff-system-eq">(7.1)</a>
+given by</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{U}=\sum_{i=1}^n \alpha_i \mathbf{v}_i e^{\lambda_i t},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is the size of the system, <span class="math notranslate nohighlight">\(\alpha_i (i=1,2,\ldots,n)\)</span> are
+coefficients need to be determined by using the initial condition.</p>
+<p>Regarding <a class="reference internal" href="#example:chap06:4">Example 7.4</a>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{A}=\mathbf{J}=
+\begin{bmatrix}
+998 &amp; 1998 \\
+-999 &amp; -1999
+\end{bmatrix},
+\end{split}\]</div>
+<p>its eigenvalues are</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_1=-1, \quad \lambda_2=-1000,
+\]</div>
+<p>its eigenvectors are given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{v}_1=\begin{bmatrix}
+2 \\
+-1
+\end{bmatrix},
+\quad
+\mathbf{v}_2=\begin{bmatrix}
+1 \\
+-1
+\end{bmatrix}.
+\end{split}\]</div>
+<p>Now the solution to the system can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\mathbf{U} &amp; = \alpha_1 \mathbf{v}_1 e^{\lambda_1 t} + \alpha_2 \mathbf{v}_2 e^{\lambda_2 t} \\
+&amp; = \alpha_1 \begin{bmatrix}
+2 \\
+-1
+\end{bmatrix} e^{-t}+
+\alpha_2 \begin{bmatrix}
+1 \\
+-1
+\end{bmatrix} e^{-1000t}.
+\end{aligned}
+\end{split}\]</div>
+<p>At <span class="math notranslate nohighlight">\(t=0\)</span>, <span class="math notranslate nohighlight">\(\mathbf{U}(0)=[1, 0]^{\mathrm{T}}\)</span>, so we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+\alpha_1 = 1, \quad \alpha_2=-1.
+\]</div>
+<p>Therefore the analytical solution is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{U} 
+= \begin{bmatrix}
+2 \\
+-1
+\end{bmatrix} e^{-t}
+- \begin{bmatrix}
+1 \\
+-1
+\end{bmatrix} e^{-1000t}=
+\begin{bmatrix}
+2e^{-t}- e^{-1000t} \\
+-e^{-t}+  e^{-1000t}
+\end{bmatrix}.
+\end{split}\]</div>
+</div>
   <!-- See Appendix
 [\[app:linear:diff:system\]](#app:linear:diff:system){reference-type="ref"
 reference="app:linear:diff:system"} (page ) for more details on the
