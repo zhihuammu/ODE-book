@@ -16,7 +16,7 @@ for the following integration formulae:
 :::
 
 :::{exercise}
-Use the method described in the text (see Example 3) to find the
+Use the method described in the text (see {prf:ref}`chap04-example-3`) to find the
 order and the error constants of the following formulae:
 
 1.  $\displaystyle y_{j+1} ~=~ y_j
@@ -60,7 +60,7 @@ with $h \!=\! 0.1$. Use the Milne's Device error
 formula, derived in question 3 above to find an error estimate at
 $\,x \!=\! 1.0\,$. Compare the error with the actual error and that
 of the Adams--Bashforth--Moulton method calculated in the lecture
-notes, Example 5, and comment.
+notes, {prf:ref}`chap04-example-5`, and comment.
 :::    
 
 ## Answers to Tutorial Exercises
