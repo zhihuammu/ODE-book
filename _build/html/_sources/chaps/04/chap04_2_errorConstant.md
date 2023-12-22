@@ -143,6 +143,7 @@ $~C_0 = C_1 = C_2 = \dots = C_p=0,~$ and $~C_{p+1}\neq 0$.
 :::
 
 :::::{prf:example}
+:label: chap04-example-3
 Find the order and the error constants of the following formulae,
 
 1.  $\displaystyle y_{j+4} ~=~ y_j + \frac{h}{3}(8f_{j+3} - 4f_{j+2} + 8f_{j+1}{)}$

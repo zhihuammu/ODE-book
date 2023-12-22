@@ -194,6 +194,8 @@ $$(eq:ch03:3.7)
 
 
 :::{prf:example}
+:label: chap04-example-5
+
 For the differential equation 
 
 $$

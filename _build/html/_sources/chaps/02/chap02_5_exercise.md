@@ -3,7 +3,7 @@
 
 You should try the following exercise questions first, then check with the answers. 
 
-For detailed solutions, please find them in the Moodle area for this Unit.
+For detailed solutions, please find them in the Moodle area.
 
 ::::{exercise}
 :label: ch2-ex-q1
@@ -19,7 +19,8 @@ Justify your answer.
 ::::
 
 ::::{solution} ch2-ex-q1
-:::{dropdown} Click to show
+:class: dropdown
+<!-- :class: dropdown -->
 A sixth-degree polynomial is required to fit exactly all the 7 data
     points; however, since the third order differences are small and
     nearly constant, a third degree polynomial will almost fit all seven
@@ -42,9 +43,11 @@ improved.
 ::::
 
 ::::{solution} ch2-ex-q2
-:::{dropdown} Click to show
+:class: dropdown
 $P_1(4.12) = 17.92$, $P_2 = 17.4976$, $P_3 = 17.41875$,
     $P_4 = 17.39785$, $P_5 = 17.39135$.
+
+Find the full solution in Moodle.
 ::::
 
 
@@ -72,9 +75,11 @@ results.
 ::::
 
 ::::{solution} ch2-ex-q3
-:::{dropdown} Click to show
+:class: dropdown
 $P_3(0.158) = 0.78801$ for degree 3, and $P_4(0.158) = 0.78800$ for
     degree 4.
+
+Find the full solution in Moodle.
 ::::
 
 
@@ -85,8 +90,8 @@ Following the method used to derive the Gregory-Newton forward interpolation for
 ::::
 
 ::::{solution} ch2-ex-q4
-:::{dropdown} Click to show
-Use Binomial Expansion to expand $(1-\nabla)^{-s}$ .
+:class: dropdown
+Use Binomial Expansion to expand $(1-\nabla)^{-s}$. Find the full solution in Moodle.
 ::::
 
 
@@ -112,13 +117,19 @@ whether the accuracy of your solution is within the expected range.
 ::::
 
 ::::{solution} ch2-ex-q5
-:::{dropdown} Click to show
-$f(1.72) = 0.38641856$, MATLAB answer is
+:class: dropdown
+$f(1.72) = P_4(1.72) = 0.38641856$, MATLAB answer is
     $besselj(0,1.72) = 0.38641848$.
 
-<!-- [*Video explanation of this question*](https://mmutube.mmu.ac.uk/edit/1_le2vogg7) -->
 
-<a href="https://mmutube.mmu.ac.uk/media/odeEx1Q5/1_le2vogg7" target="_blank">An old video explaning this question</a>
+- Find the full solution in Moodle.
+
+- An video explaning this question (In the video I said "Exercise 1, Question 5", but actually the video is for this question.)
+  
+  <div align="center">
+    <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1128062/sp/112806200/embedIframeJs/uiconf_id/27474902/partner_id/1128062?iframeembed=true&playerId=kaltura_player&entry_id=1_le2vogg7&flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[streamerType]=hdnetwork&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_id4qtmag" width="575" height="360" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="odeEx1Q5">
+    </iframe>
+  </div>
 ::::
 
 
@@ -152,9 +163,11 @@ improving the approximated solution.
 ::::
 
 ::::{solution} ch2-ex-q6
-:::{dropdown} Click to show
+:class: dropdown
 -  Forward $f(2.25) = 7.386171$
 -  Backward $f(2.25) = 7.386171$.
+
+Find the full solution in Moodle.
 ::::
 
 
@@ -187,35 +200,10 @@ accuracy of the estimated solutions.
 ::::
 
 ::::{solution} ch2-ex-q7
-:::{dropdown} Click to show
--  Forward $f(0.75) = 1.437778$
--  Backward $f(0.75) = 1.437778$.
+:class: dropdown
+-  Forward $f(0.75) = P_4 (0.75) = 1.437778$
+-  Backward $f(0.75) = P_4 (0.75) = 1.437778$.
+
+Find the full solution in Moodle.
 ::::
 
-
-<!-- # Answers to Tutorial Exercises
-
-:::{dropdown} Click to show
-
-1.  A sixth-degree polynomial is required to fit exactly all the 7 data
-    points; however, since the third order differences are small and
-    nearly constant, a third degree polynomial will almost fit all seven
-    points.
-
-1.  $P_1(4.12) = 17.92$, $P_2 = 17.4976$, $P_3 = 17.41875$,
-    $P_4 = 17.39785$, $P_5 = 17.39135$.
-
-1.  $P_3(0.158) = 0.78801$ for degree 3, and $P_4(0.158) = 0.78800$ for
-    degree 4.
-
-1.  Use Binomial Expansion to expand $(1-\nabla)^{-s}$ .
-
-1.  $f(1.72) = 0.38641856$, MATLAB answer is
-    $besselj(0,1.72) = 0.38641848$.
-
-1.  -  Forward $f(2.25) = 7.386171$
-    -  Backward $f(2.25) = 7.386171$.
-
-1.  -  Forward $f(0.75) = 1.437778$
-    -  Backward $f(0.75) = 1.437778$.
-::: -->
