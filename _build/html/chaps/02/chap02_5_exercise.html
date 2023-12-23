@@ -36,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -172,9 +173,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../overview/motivation.html">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/motivation.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../overview/schedule.html">Teaching Schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../overview/readingList.html">Further Reading List</a></li>
 </ul>
@@ -437,17 +438,6 @@ pairs? What lesser-degree polynomial will nearly fit the data?
 Justify your answer.</p>
 </div>
 </div>
-<div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-1">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q1"> Exercise 2.1</a></p>
-<div class="section" id="solution-content">
-<!-- :class: dropdown -->
-<p>A sixth-degree polynomial is required to fit exactly all the 7 data
-points; however, since the third order differences are small and
-nearly constant, a third degree polynomial will almost fit all seven
-points.</p>
-</div>
-</div>
 <div class="exercise admonition" id="ch2-ex-q2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
@@ -479,15 +469,6 @@ improved.</p>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-3">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q2"> Exercise 2.2</a></p>
-<div class="section" id="solution-content">
-<p><span class="math notranslate nohighlight">\(P_1(4.12) = 17.92\)</span>, <span class="math notranslate nohighlight">\(P_2 = 17.4976\)</span>, <span class="math notranslate nohighlight">\(P_3 = 17.41875\)</span>,
-<span class="math notranslate nohighlight">\(P_4 = 17.39785\)</span>, <span class="math notranslate nohighlight">\(P_5 = 17.39135\)</span>.</p>
-<p>Find the full solution in Moodle.</p>
 </div>
 </div>
 <div class="exercise admonition" id="ch2-ex-q3">
@@ -590,27 +571,11 @@ results.</p>
 </table>
 </div>
 </div>
-<div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-5">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q3"> Exercise 2.3</a></p>
-<div class="section" id="solution-content">
-<p><span class="math notranslate nohighlight">\(P_3(0.158) = 0.78801\)</span> for degree 3, and <span class="math notranslate nohighlight">\(P_4(0.158) = 0.78800\)</span> for
-degree 4.</p>
-<p>Find the full solution in Moodle.</p>
-</div>
-</div>
 <div class="exercise admonition" id="ch2-ex-q4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.4 </span></p>
 <div class="section" id="exercise-content">
 <p>Following the method used to derive the Gregory-Newton forward interpolation formula, derive the  Gregory-Newton backward difference interpolation formula.</p>
-</div>
-</div>
-<div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-7">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q4"> Exercise 2.4</a></p>
-<div class="section" id="solution-content">
-<p>Use Binomial Expansion to expand <span class="math notranslate nohighlight">\((1-\nabla)^{-s}\)</span>. Find the full solution in Moodle.</p>
 </div>
 </div>
 <div class="exercise admonition" id="ch2-ex-q5">
@@ -649,23 +614,6 @@ which evaluates the function <em>besselj</em> of order 0 at a given <span class=
 value. Compare your result with the MATLAB answer, and comment
 whether the accuracy of your solution is within the expected range.</p>
 </div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-9">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q5"> Exercise 2.5</a></p>
-<div class="section" id="solution-content">
-<p><span class="math notranslate nohighlight">\(f(1.72) = P_4(1.72) = 0.38641856\)</span>, MATLAB answer is
-<span class="math notranslate nohighlight">\(besselj(0,1.72) = 0.38641848\)</span>.</p>
-<ul>
-<li><p>Find the full solution in Moodle.</p></li>
-<li><p>An video explaning this question (In the video I said “Exercise 1, Question 5”, but actually the video is for this question.)</p>
-<div align="center">
-  <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1128062/sp/112806200/embedIframeJs/uiconf_id/27474902/partner_id/1128062?iframeembed=true&playerId=kaltura_player&entry_id=1_le2vogg7&flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[streamerType]=hdnetwork&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_id4qtmag" width="575" height="360" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="odeEx1Q5">
-  </iframe>
-</div>
-</li>
-</ul>
 </div>
 </div>
 <div class="exercise admonition" id="ch2-ex-q6">
@@ -762,17 +710,6 @@ corresponding polynomial function. Can you suggest a way of
 improving the approximated solution.</p>
 </div>
 </div>
-<div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-11">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q6"> Exercise 2.6</a></p>
-<div class="section" id="solution-content">
-<ul class="simple">
-<li><p>Forward <span class="math notranslate nohighlight">\(f(2.25) = 7.386171\)</span></p></li>
-<li><p>Backward <span class="math notranslate nohighlight">\(f(2.25) = 7.386171\)</span>.</p></li>
-</ul>
-<p>Find the full solution in Moodle.</p>
-</div>
-</div>
 <div class="exercise admonition" id="ch2-ex-q7">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.7 </span></p>
@@ -862,17 +799,6 @@ decimal places. However, from Exercise 6, the estimated solution for
 <span class="math notranslate nohighlight">\(\,f(2.25)\,\)</span> is only correct to 2 decimal places. By giving at
 least one reason, explain why there is such a difference in the
 accuracy of the estimated solutions.</p>
-</div>
-</div>
-<div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-13">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q7"> Exercise 2.7</a></p>
-<div class="section" id="solution-content">
-<ul class="simple">
-<li><p>Forward <span class="math notranslate nohighlight">\(f(0.75) = P_4 (0.75) = 1.437778\)</span></p></li>
-<li><p>Backward <span class="math notranslate nohighlight">\(f(0.75) = P_4 (0.75) = 1.437778\)</span>.</p></li>
-</ul>
-<p>Find the full solution in Moodle.</p>
 </div>
 </div>
 </div>

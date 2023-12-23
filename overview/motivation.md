@@ -1,17 +1,63 @@
-# Motivation
+# Overview
+
+:Unit Title: Computational Methods in Ordinary Differential Equations
+:Unit Code : 6G6Z3017
 
 ## What we will learn?
 
-Our main focus is to learn and apply numerical methods to solve  a single or a system of **First-Order** Ordinary Differential Equation(s)
+Our main focus is to learn and apply a range of numerical methods to solve a single or a system of **First-Order** Ordinary Differential Equation(s)
 
 - A single equation: $\displaystyle \frac{dy}{dt}=f(t, y)$
 
 - A system of equations: $\displaystyle \frac{d\mathbf{Y}}{dt}=\mathbf{F}(t, \mathbf{Y})$
 
-### Why we learn about Ordinary Differential Equations?
+## Why we learn about Ordinary Differential Equations?
+
+Ordinary differential equations have wide applications in science and engineering:
+
+- Physics
+    - Fluid Dynamics
+
+    ```{image} /images/dam3d_0006b.png
+    :width: 500px
+    :align: center
+    ```
+
+    - Electrical Engineering
+
+- Biology
+    ```{image} /images/virus.png
+    :width: 500 px
+    :align: center
+    ```
+
+- Chemical Kinetics
+
+    $$
+    \begin{aligned}
+        \frac{\partial A}{\partial t}&=-k_1 A \\
+        \frac{\partial B}{\partial t}&=k_1 A - k_2 B \\
+        \frac{\partial C}{\partial t}&=k_2 B
+    \end{aligned}
+    $$
+
+- Economics
+
+- Finance
+
+- Life Insurance
 
 
-### Why we learn Numerical Methods?
+## Why we learn Computational Methods?
+
+In general there are two ways to solve ordinary differential equations:
+
+- analytical methods
+
+- computational methods
+
+Analytical methods only work for a very limited number of simple cases, for most of the realistic complex problems we need to solve them numerically.
+
 
 
 ## Learning Objectives

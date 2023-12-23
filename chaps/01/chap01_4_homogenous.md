@@ -55,8 +55,8 @@ y_n = \xi_p^n
 is a solution to the homogeneous equation {eq}`eq:DE:linear:homogeneous:constant`.
 
 :::{dropdown} Proof (click to show)
+:::{prf:proof}
 
-::::{prf:proof}
 Substituting $y_n=\xi_p^n$ into Eq. {eq}`eq:DE:linear:homogeneous:constant:aux`, we get
 \begin{align*}     
 L(E) \xi_p^n = ~ & \left(a_0 + a_1 E + a_2 E^2 + \ldots + a_{k-1}E^{k-1}+a_kE^k\right) \xi_p^n \\
@@ -66,7 +66,10 @@ L(E) \xi_p^n = ~ & \left(a_0 + a_1 E + a_2 E^2 + \ldots + a_{k-1}E^{k-1}+a_kE^k\
 ~ = ~ & 0
 \end{align*}
 Note: Eq. {eq}`eq:DE:linear:homogeneous:constant:aux` is equivalent to Eq. {eq}`eq:DE:linear:homogeneous:constant`.
+:::
+
 ::::
+
 
 
 ::::{prf:theorem}

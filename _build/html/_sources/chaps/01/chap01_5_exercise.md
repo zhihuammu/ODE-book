@@ -33,6 +33,7 @@ Simplify the following expressions used to calculate $z$, and find the real and 
 :::{exercise} 
 :label: ch1-ex-q5
 
+
 For the following second-order homogeneous linear difference equation
 
 $$y_{n+2} - 2 a y_{n+1}+ a^2 y_n =0, \quad a\in R, a\ne0,$$

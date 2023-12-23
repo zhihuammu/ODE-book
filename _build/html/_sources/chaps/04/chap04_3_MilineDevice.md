@@ -204,17 +204,19 @@ $$
 \end{aligned}
 $$
 
- calculate the error at $\,x \!=\! 1.0$, using
-$\,h \!=\! 0.1$, using the error formula {eq}`eq:ch03:3.7` above.
-Compare this with the actual error calculated using the analytic
+The predicted and corrected solutions produced by the fourth-order Adams-Bashforth-Moulton method {eq}`eq:ch03:3.1` and {eq}`eq:ch03:3.2` at $\,x \!=\! 1.0$, using
+$\,h \!=\! 0.1$, are $\,y^{(p)} \!=\! 1.3678801$,
+$\,y^{(c)} \!=\! 1.3678784\,$. 
+
+- Apply the formula {eq}`eq:ch03:3.7` to estimate the error between the corrected solution and the exact solution. 
+
+- Compare this with the actual error calculated using the analytic
 solution $(y = e^{-x} + x)$.
 
 
-:::{admonition} Solution
-:class: tip
+:::{dropdown} Solution (click to show)
 
-At $\,x \!=\! 1.0$, using ABM method $\,y^{(p)} \!=\! 1.3678801$,
-$\,y^{(c)} \!=\! 1.3678784\,$. Using the error formula the error is
+
 
 $$
 \begin{aligned}

@@ -36,8 +36,9 @@ html:
   
 sphinx:
   config:
-    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    bibtex_reference_style: author_year
+#    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+#    bibtex_reference_style: author_year
+    hide_solutions: True
   extra_extensions:
     - sphinx_proof
     - sphinx_exercise    
@@ -52,6 +53,7 @@ parse:
     - linkify
     - substitution
     - colon_fence
-    - html_admonition    
+    - html_admonition
+    - fieldlist   
     
 only_build_toc_files: true    
