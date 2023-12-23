@@ -45,7 +45,7 @@ Adams--Bashforth--Moulton fourth--order predictor-corrector method, with
 $\,h=0.1\,$. Find solution in the interval $[0~~1]$ and apply only one
 corrector iteration for each step.
 
-:::{tip}
+:::{hint}
 :class: dropdown
 - Step 1 - find the starting values
 

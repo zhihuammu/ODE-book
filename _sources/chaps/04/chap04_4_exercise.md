@@ -33,6 +33,7 @@ order and the error constants of the following formulae:
 :::
 
 :::{exercise}
+:label: ch04-ex4-4
 Derive a Milne's Device local error estimate for the Milne-Simpson
 Predictor-Corrector method: 
 
@@ -46,8 +47,8 @@ $$\begin{aligned}
 :::
 
 :::{exercise}
-Modify your Matlab program 2 for Adams--Bashforth method (Chapter 2)
-to implement Milne-Simpson Predictor-Corrector method. Use your
+Modify [](ch03:program2) for Adams--Bashforth method (Chapter 2)
+to implement Milne-Simpson Predictor-Corrector method given in {ref}`ch04-ex4-4`. Use your
 program to find solution for the initial--value--problem
 
 $$\begin{aligned}

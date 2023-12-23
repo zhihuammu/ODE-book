@@ -4,7 +4,7 @@
 A sparse matrix is a matrix with a large number of zero
 elements, compared to the total number of elements. Alternatively, we
 say a matrix can be considered as sparse if the number of nonzero
-elements $nnz \ll (N^{2} + N)/2$.
+elements $nnz \ll (N^{2} + N)/2$
 :::
 
 The Newton iteration solution technique introduces a large amount of

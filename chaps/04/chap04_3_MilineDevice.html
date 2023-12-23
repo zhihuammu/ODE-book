@@ -36,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -172,9 +173,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../overview/motivation.html">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/motivation.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../overview/schedule.html">Teaching Schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../overview/readingList.html">Further Reading List</a></li>
 </ul>
@@ -568,14 +569,21 @@ an estimate of the error arising from the truncation is given by,</p>
         &amp;&amp; y' ~&amp;=~ -y + x + 1; &amp; y(0) ~&amp;=~ 1; &amp; &amp;0 \leq x \leq 1, &amp;&amp;   
 \end{aligned}
 \]</div>
-<p>calculate the error at <span class="math notranslate nohighlight">\(\,x \!=\! 1.0\)</span>, using
-<span class="math notranslate nohighlight">\(\,h \!=\! 0.1\)</span>, using the error formula <a class="reference internal" href="#equation-eq-ch03-3-7">(4.11)</a> above.
-Compare this with the actual error calculated using the analytic
-solution <span class="math notranslate nohighlight">\((y = e^{-x} + x)\)</span>.</p>
-<div class="tip admonition">
-<p class="admonition-title">Solution</p>
-<p>At <span class="math notranslate nohighlight">\(\,x \!=\! 1.0\)</span>, using ABM method <span class="math notranslate nohighlight">\(\,y^{(p)} \!=\! 1.3678801\)</span>,
-<span class="math notranslate nohighlight">\(\,y^{(c)} \!=\! 1.3678784\,\)</span>. Using the error formula the error is</p>
+<p>The predicted and corrected solutions produced by the fourth-order Adams-Bashforth-Moulton method <a class="reference internal" href="#equation-eq-ch03-3-1">(4.5)</a> and <a class="reference internal" href="#equation-eq-ch03-3-2">(4.6)</a> at <span class="math notranslate nohighlight">\(\,x \!=\! 1.0\)</span>, using
+<span class="math notranslate nohighlight">\(\,h \!=\! 0.1\)</span>, are <span class="math notranslate nohighlight">\(\,y^{(p)} \!=\! 1.3678801\)</span>,
+<span class="math notranslate nohighlight">\(\,y^{(c)} \!=\! 1.3678784\,\)</span>.</p>
+<ul class="simple">
+<li><p>Apply the formula <a class="reference internal" href="#equation-eq-ch03-3-7">(4.11)</a> to estimate the error between the corrected solution and the exact solution.</p></li>
+<li><p>Compare this with the actual error calculated using the analytic
+solution <span class="math notranslate nohighlight">\((y = e^{-x} + x)\)</span>.</p></li>
+</ul>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solution (click to show)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -585,12 +593,12 @@ solution <span class="math notranslate nohighlight">\((y = e^{-x} + x)\)</span>.
         &amp;=~ 1.2 \!\times\! 10^{-7}.    
 \end{aligned}
 \end{split}\]</div>
-<p>At <span class="math notranslate nohighlight">\(\,x \!=\! 1.0\)</span>, the actual error is
+<p class="sd-card-text">At <span class="math notranslate nohighlight">\(\,x \!=\! 1.0\)</span>, the actual error is
 <span class="math notranslate nohighlight">\(\,1.0 \!\times\! 10^{-6}\)</span>. Hence, the error formula underestimate the
 error by approximating one order of magnitude, which is perfectly
 acceptable for this problem.</p>
 </div>
-</div>
+</details></div>
 </div></div>
 
     <script type="text/x-thebe-config">
