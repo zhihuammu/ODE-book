@@ -4,7 +4,7 @@
 title: Computational Methods in Ordinary Differential Equations
 author: Zhihua Ma
 copyright: "2023"  # Copyright year to be placed in the footer
-logo: images/logo4.png
+logo: images/logo.svg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
