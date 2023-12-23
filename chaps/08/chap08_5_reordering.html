@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>8.5. Reordering and Matrix Bandwidth &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,13 +39,16 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -70,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="8.6. Chapter 8 Exercises" href="chap08_6_exercise.html" />
     <link rel="prev" title="8.4. Sparse Matrices Storage and Reordering" href="chap08_4_storage.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -79,6 +81,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -132,9 +143,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -144,8 +157,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo4.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo4.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="Computational Methods in Ordinary Differential Equations - Home"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="Computational Methods in Ordinary Differential Equations - Home"/>`);</script>
   
   
 </a></div>
@@ -342,20 +355,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -397,8 +412,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="reordering-and-matrix-bandwidth">
-<h1><span class="section-number">8.5. </span>Reordering and Matrix Bandwidth<a class="headerlink" href="#reordering-and-matrix-bandwidth" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="reordering-and-matrix-bandwidth">
+<h1><span class="section-number">8.5. </span>Reordering and Matrix Bandwidth<a class="headerlink" href="#reordering-and-matrix-bandwidth" title="Permalink to this heading">#</a></h1>
 <p>During the process of matrix factorization into a product by methods
 such as Gaussian elimination and Cholesky factorization, there will
 always be a problem with fill-in that is generating additional nonzero
@@ -535,8 +550,8 @@ and so on. Also, an upper triangular matrix is obtained when <span class="math n
 <span class="math notranslate nohighlight">\(q=n-1\)</span>, and similarly, with <span class="math notranslate nohighlight">\(p=n-1\)</span>, <span class="math notranslate nohighlight">\(q=0\)</span>, a lower triangular matrix
 is obtained.</p>
 </div>
-<section id="cuthill-and-mckee-reordering">
-<h2><span class="section-number">8.5.1. </span>Cuthill and McKee Reordering<a class="headerlink" href="#cuthill-and-mckee-reordering" title="Permalink to this headline">#</a></h2>
+<div class="section" id="cuthill-and-mckee-reordering">
+<h2><span class="section-number">8.5.1. </span>Cuthill and McKee Reordering<a class="headerlink" href="#cuthill-and-mckee-reordering" title="Permalink to this heading">#</a></h2>
 <p>The most simple and popular method of minimizing the bandwidth was
 developed by Cuthill and McKee (1969). Later the method was improved by
 Alan George who developed the Reverse Cuthill and McKee (RCM) method
@@ -576,12 +591,12 @@ node numbers.</p></li>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Note:- If the selected node in column Results is not connected to any
-other node, then we put a ‘-’ in the corresponding position in the queue
+other node, then we put a ‘-‘ in the corresponding position in the queue
 column.</p>
 </div>
 <div class="proof example admonition" id="ch08-example-rcm">
 <p class="admonition-title"><span class="caption-number">Example 8.7 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Consider the following sparse matrix and
 its corresponding adjacency plot:</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
@@ -709,14 +724,14 @@ below and above the main diagonal and nonzero elements are close to the
 main diagonal and the re-ordered matrix exhibits a banded structure.</p>
 <p>Using MATLAB the bandwidths of the original matrix A and the reordered
 matrix B can be found as:-</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">[</span><span class="nb">i</span><span class="p">,</span><span class="nb">j</span><span class="p">]=</span><span class="nb">find</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"> </span><span class="c">%returns the row and col indices</span><span class="w"></span>
-<span class="w">                  </span><span class="c">%of the nonzero entries</span><span class="w"></span>
-<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">bw</span><span class="p">=</span><span class="nb">max</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="nb">j</span><span class="p">)</span><span class="w"></span>
-<span class="n">bw</span><span class="w"> </span><span class="p">=</span><span class="mi">6</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">[</span><span class="nb">i</span><span class="p">,</span><span class="nb">j</span><span class="p">]=</span><span class="nb">find</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"> </span><span class="c">%returns the row and col indices</span>
+<span class="w">                  </span><span class="c">%of the nonzero entries</span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">bw</span><span class="p">=</span><span class="nb">max</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="nb">j</span><span class="p">)</span>
+<span class="n">bw</span><span class="w"> </span><span class="p">=</span><span class="mi">6</span>
 
-<span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">[</span><span class="nb">i</span><span class="p">,</span><span class="nb">j</span><span class="p">]=</span><span class="nb">find</span><span class="p">(</span><span class="n">B</span><span class="p">);</span><span class="w"></span>
-<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">bw</span><span class="p">=</span><span class="nb">max</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="nb">j</span><span class="p">)</span><span class="w"></span>
-<span class="n">bw</span><span class="w"> </span><span class="p">=</span><span class="mi">2</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">[</span><span class="nb">i</span><span class="p">,</span><span class="nb">j</span><span class="p">]=</span><span class="nb">find</span><span class="p">(</span><span class="n">B</span><span class="p">);</span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">bw</span><span class="p">=</span><span class="nb">max</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="nb">j</span><span class="p">)</span>
+<span class="n">bw</span><span class="w"> </span><span class="p">=</span><span class="mi">2</span>
 </pre></div>
 </div>
 <p>i.e. The (half) bandwidth of the matrix has been reduced to 2 instead of
@@ -767,11 +782,11 @@ reversing the elements. i.e.</p>
 Cuthill-McKee ordering of A. This is a permutation matrix p such that
 <span class="math notranslate nohighlight">\(A(p,p)\)</span> tends to have its nonzero elements closer to the main diagonal.
 Example MATLAB code:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">symrcm</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
-<span class="nb">spy</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">p</span><span class="p">)),</span><span class="w"> </span><span class="nb">title</span><span class="p">(</span><span class="s">&#39;A(p,p) after Cuthill-McKee ordering&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="n">nz</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">nnz</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
-<span class="n">pct</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="o">/</span><span class="nb">numel</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;nonzeros=%d (%.1f%%)&#39;</span><span class="p">,</span><span class="n">nz</span><span class="p">,</span><span class="n">nz</span><span class="o">*</span><span class="n">pct</span><span class="p">));</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">symrcm</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+<span class="nb">spy</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">p</span><span class="p">)),</span><span class="w"> </span><span class="nb">title</span><span class="p">(</span><span class="s">&#39;A(p,p) after Cuthill-McKee ordering&#39;</span><span class="p">)</span>
+<span class="n">nz</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">nnz</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+<span class="n">pct</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="o">/</span><span class="nb">numel</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;nonzeros=%d (%.1f%%)&#39;</span><span class="p">,</span><span class="n">nz</span><span class="p">,</span><span class="n">nz</span><span class="o">*</span><span class="n">pct</span><span class="p">));</span>
 </pre></div>
 </div>
 <div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-6111af12eefea9175535e9984c46518b60cb7cb4.svg" alt="Figure made with TikZ" /></p>
@@ -800,10 +815,10 @@ reordered matrix <span class="math notranslate nohighlight">\(D\)</span> is <spa
 the reverse Cuthill-Mckee is <span class="math notranslate nohighlight">\(bw =2\)</span>, i.e. the same as that for matrix
 <span class="math notranslate nohighlight">\(B\)</span>. Hence, the Reverse Cuthill-Mckee algorithm for bandwidth reduction
 of sparse matrices seems to be the most effective reordering method.</p>
-</section>
-</div></section>
-<section id="column-count-reordering">
-<h2><span class="section-number">8.5.2. </span>Column Count Reordering<a class="headerlink" href="#column-count-reordering" title="Permalink to this headline">#</a></h2>
+</div>
+</div></div>
+<div class="section" id="column-count-reordering">
+<h2><span class="section-number">8.5.2. </span>Column Count Reordering<a class="headerlink" href="#column-count-reordering" title="Permalink to this heading">#</a></h2>
 <p>The idea of the column count reordering algorithm is to move rows and
 columns with higher nonzero count towards the end of the matrix. This
 algorithm reduces the time and storage for computing matrix operations
@@ -812,7 +827,7 @@ performance is not consistent overall and depends on the original
 matrix.</p>
 <div class="proof example admonition" id="ch08-example-columncount">
 <p class="admonition-title"><span class="caption-number">Example 8.8 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Consider the sparse matrix and its
 corresponding adjacency graph from
 <a class="reference internal" href="#ch08-example-rcm">Example 8.7</a> :</p>
@@ -926,11 +941,11 @@ is a permutation matrix q such that <span class="math notranslate nohighlight">\
 columns with higher nonzero count towards the end of the matrix (a
 down-arrow effect).</p>
 <p>Example MATLAB code:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">q</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">colperm</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
-<span class="nb">spy</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">)),</span><span class="nb">title</span><span class="p">(</span><span class="s">&#39;A(q,q)-Column Count ordering by colperm&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="n">nz</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">nnz</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
-<span class="n">pct</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">numel</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;nonzeros=%d (%.1f%%)&#39;</span><span class="p">,</span><span class="n">nz</span><span class="p">,</span><span class="n">nz</span><span class="o">*</span><span class="n">pct</span><span class="p">));</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">q</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">colperm</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+<span class="nb">spy</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="p">)),</span><span class="nb">title</span><span class="p">(</span><span class="s">&#39;A(q,q)-Column Count ordering by colperm&#39;</span><span class="p">)</span>
+<span class="n">nz</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">nnz</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+<span class="n">pct</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">numel</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;nonzeros=%d (%.1f%%)&#39;</span><span class="p">,</span><span class="n">nz</span><span class="p">,</span><span class="n">nz</span><span class="o">*</span><span class="n">pct</span><span class="p">));</span>
 </pre></div>
 </div>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
@@ -958,10 +973,10 @@ style="width:40.0%" alt="image" /></td>
 </table>
 </div>
 </figure> -->
-</section>
-</div></section>
-<section id="minimum-degree-reordering">
-<h2><span class="section-number">8.5.3. </span>Minimum Degree Reordering<a class="headerlink" href="#minimum-degree-reordering" title="Permalink to this headline">#</a></h2>
+</div>
+</div></div>
+<div class="section" id="minimum-degree-reordering">
+<h2><span class="section-number">8.5.3. </span>Minimum Degree Reordering<a class="headerlink" href="#minimum-degree-reordering" title="Permalink to this heading">#</a></h2>
 <p>The minimum degree algorithm attempts to reduce the fill-in caused by
 elimination such as Gaussian elimination, LU decomposition or the
 Cholesky decomposition. The computational costs of this algorithm is
@@ -974,7 +989,7 @@ Nodes with lower degrees are labelled early to reduce adding many
 fill-ins.</p>
 <div class="proof example admonition" id="ch08-example-mindegree">
 <p class="admonition-title"><span class="caption-number">Example 8.9 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Consider the sparse matrix and its
 corresponding adjacency graph from <a class="reference internal" href="#ch08-example-rcm">Example 8.7</a>:</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
@@ -1081,11 +1096,11 @@ permutation matrix r is calculated such that <span class="math notranslate nohig
 and columns with higher nonzero elements towards the end of the matrix -
 similar to the Column Count algorithm.</p>
 <p>Example MATLAB code:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">symamd</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
-<span class="nb">spy</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="p">)),</span><span class="nb">title</span><span class="p">(</span><span class="s">&#39;A(r,r)-Minimum Degree ordering by symamd&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="n">nz</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">nnz</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
-<span class="n">pct</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">numel</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;nonzeros=%d (%.1f%%)&#39;</span><span class="p">,</span><span class="n">nz</span><span class="p">,</span><span class="n">nz</span><span class="o">*</span><span class="n">pct</span><span class="p">));</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">symamd</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+<span class="nb">spy</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="p">)),</span><span class="nb">title</span><span class="p">(</span><span class="s">&#39;A(r,r)-Minimum Degree ordering by symamd&#39;</span><span class="p">)</span>
+<span class="n">nz</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">nnz</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+<span class="n">pct</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">numel</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;nonzeros=%d (%.1f%%)&#39;</span><span class="p">,</span><span class="n">nz</span><span class="p">,</span><span class="n">nz</span><span class="o">*</span><span class="n">pct</span><span class="p">));</span>
 </pre></div>
 </div>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
@@ -1098,15 +1113,15 @@ similar to the Column Count algorithm.</p>
 </div></div>
 </div>
 </div>
-</section>
-</div></section>
-<section id="comparison-between-various-ordering-schemes-and-fill-in-effect">
-<span id="chap08-reorder-comparsion"></span><h2><span class="section-number">8.5.4. </span>Comparison between various ordering schemes and fill-in effect<a class="headerlink" href="#comparison-between-various-ordering-schemes-and-fill-in-effect" title="Permalink to this headline">#</a></h2>
+</div>
+</div></div>
+<div class="section" id="comparison-between-various-ordering-schemes-and-fill-in-effect">
+<span id="chap08-reorder-comparsion"></span><h2><span class="section-number">8.5.4. </span>Comparison between various ordering schemes and fill-in effect<a class="headerlink" href="#comparison-between-various-ordering-schemes-and-fill-in-effect" title="Permalink to this heading">#</a></h2>
 <p>For a more effective comparison we consider a symmetric <span class="math notranslate nohighlight">\(20 \times 20\)</span>
 sparse matrix A, which was generated by using MATLAB’s <strong>rand</strong> command:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sparse</span><span class="p">(</span><span class="o">+</span><span class="p">(</span><span class="nb">rand</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">));</span><span class="w"> </span><span class="c">% should allow &lt;10% nonzeros</span><span class="w"></span>
-<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">B</span><span class="p">=</span><span class="nb">full</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"></span>
-<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">A</span><span class="p">=</span><span class="n">B</span><span class="o">&#39;*</span><span class="n">B</span><span class="w">  </span><span class="c">% makes A a symmetric matrix</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sparse</span><span class="p">(</span><span class="o">+</span><span class="p">(</span><span class="nb">rand</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">));</span><span class="w"> </span><span class="c">% should allow &lt;10% nonzeros</span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">B</span><span class="p">=</span><span class="nb">full</span><span class="p">(</span><span class="n">S</span><span class="p">);</span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">A</span><span class="p">=</span><span class="n">B</span><span class="o">&#39;*</span><span class="n">B</span><span class="w">  </span><span class="c">% makes A a symmetric matrix</span>
 </pre></div>
 </div>
 <p>Using the MATLAB *<em>spy</em> command the corresponding sparsity
@@ -1206,7 +1221,7 @@ LU factors are presented in the following table:</p>
 </table>
 <div class="proof example admonition" id="ch08-example-comparison">
 <p class="admonition-title"><span class="caption-number">Example 8.10 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Consider the following sparse matrix and
 its corresponding adjacency graph.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
@@ -1311,7 +1326,7 @@ equations resulting from the Newton iteration will lead to the solution
 of a banded matrix instead of a full matrix treatment, and hence
 resulting in fewer fill-ins, more accurate solutions and shorter
 computing time.</p>
-</section>
+</div>
 </div><p><strong>References</strong></p>
 <p>MATLAB Help/documentation on Sparse Matrices, e.g.:</p>
 <ul class="simple">
@@ -1320,8 +1335,8 @@ computing time.</p>
 <li><p>Saad, Y., 2003. Iterative Methods for Sparse Linear System 2nd ed. Philadelphia:    SIAM- Society for Industrial and Applied Mathematics</p></li>
 <li><p>Golub, G. and Van Loan, C., 1996g. Matrix Computations 3rd edition. London: The Johns Hopkins University Press</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1336,7 +1351,7 @@ computing time.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\08"
+            path: "./chaps/08"
         },
         predefinedOutput: true
     }
@@ -1348,11 +1363,10 @@ computing time.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap08_4_storage.html"
@@ -1372,10 +1386,7 @@ computing time.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1415,6 +1426,7 @@ By Zhihua Ma
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023.
@@ -1441,8 +1453,8 @@ By Zhihua Ma
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

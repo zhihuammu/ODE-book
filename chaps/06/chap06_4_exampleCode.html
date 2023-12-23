@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>6.4. Example MATLAB Programs &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,13 +39,16 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="6.5. Chapter 6 Exercises" href="chap06_5_exercise.html" />
     <link rel="prev" title="6.3. The Boundary Root Locus Method for Finding Regions of Absolute Stability" href="chap06_3_boundaryRootLocus.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -77,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -130,9 +141,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -142,8 +155,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo4.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo4.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="Computational Methods in Ordinary Differential Equations - Home"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="Computational Methods in Ordinary Differential Equations - Home"/>`);</script>
   
   
 </a></div>
@@ -340,20 +353,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -396,23 +411,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="example-matlab-programs">
-<h1><span class="section-number">6.4. </span>Example MATLAB Programs<a class="headerlink" href="#example-matlab-programs" title="Permalink to this headline">#</a></h1>
-<section id="script-1">
-<h2><span class="section-number">6.4.1. </span>Script 1<a class="headerlink" href="#script-1" title="Permalink to this headline">#</a></h2>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%6G6Z3002 - Computational methods in ODEs </span><span class="w"></span>
-<span class="c">%Interval of Absolute Stability (script 1)</span><span class="w"></span>
-<span class="c">%Matlab script for producing a table for interval of absolute stability</span><span class="w"></span>
-<span class="c">%using Root Locus Method of a given LMS method- here AM2-step</span><span class="w"></span>
-<span class="c">%Note: the result is printed in columns, and not in rows as given in the</span><span class="w"></span>
-<span class="c">%lecture notes</span><span class="w"></span>
-<span class="n">out</span><span class="p">=[];</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="n">h</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">7</span><span class="w"></span>
-<span class="w">	</span><span class="n">p</span><span class="p">=[(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">8</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">12</span><span class="p">)];</span><span class="w"></span>
-<span class="w">	</span><span class="n">r</span><span class="p">=</span><span class="nb">abs</span><span class="p">(</span><span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">));</span><span class="w"></span>
-<span class="w">	</span><span class="n">out</span><span class="p">=[</span><span class="n">h</span><span class="p">;</span><span class="n">r</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="n">r</span><span class="p">(</span><span class="mi">2</span><span class="p">)];</span><span class="w"></span>
+  <div class="tex2jax_ignore mathjax_ignore section" id="example-matlab-programs">
+<h1><span class="section-number">6.4. </span>Example MATLAB Programs<a class="headerlink" href="#example-matlab-programs" title="Permalink to this heading">#</a></h1>
+<div class="section" id="script-1">
+<h2><span class="section-number">6.4.1. </span>Script 1<a class="headerlink" href="#script-1" title="Permalink to this heading">#</a></h2>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%6G6Z3002 - Computational methods in ODEs </span>
+<span class="c">%Interval of Absolute Stability (script 1)</span>
+<span class="c">%Matlab script for producing a table for interval of absolute stability</span>
+<span class="c">%using Root Locus Method of a given LMS method- here AM2-step</span>
+<span class="c">%Note: the result is printed in columns, and not in rows as given in the</span>
+<span class="c">%lecture notes</span>
+<span class="n">out</span><span class="p">=[];</span>
+<span class="k">for</span><span class="w"> </span><span class="n">h</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">7</span>
+<span class="w">	</span><span class="n">p</span><span class="p">=[(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">8</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">12</span><span class="p">)];</span>
+<span class="w">	</span><span class="n">r</span><span class="p">=</span><span class="nb">abs</span><span class="p">(</span><span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">));</span>
+<span class="w">	</span><span class="n">out</span><span class="p">=[</span><span class="n">h</span><span class="p">;</span><span class="n">r</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="n">r</span><span class="p">(</span><span class="mi">2</span><span class="p">)];</span>
 <span class="w">	</span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%6.1f %6.2f %6.2f\n&#39;</span><span class="p">,</span><span class="n">out</span><span class="p">)</span><span class="w"> </span>
-<span class="k">end</span><span class="w"></span>
+<span class="k">end</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -427,49 +442,49 @@ document.write(`
 -7.0   1.07   0.14
 </pre></div>
 </div>
-</section>
-<section id="script-2">
-<h2><span class="section-number">6.4.2. </span>Script 2<a class="headerlink" href="#script-2" title="Permalink to this headline">#</a></h2>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%6G6Z3002 - Computational methods in ODEs</span><span class="w"></span>
-<span class="c">%Interval of Absolute Stability (script 2)</span><span class="w"></span>
-<span class="c">%Matlab script for producing a table for interval of absolute stability</span><span class="w"></span>
-<span class="c">%using Root Locus Method of a given LMS method- here AM2-step</span><span class="w"></span>
-<span class="c">%Note: the result is printed in rows as given in the lecture notes</span><span class="w"></span>
-<span class="c">%</span><span class="w"></span>
-<span class="n">out</span><span class="p">=[];</span><span class="w"></span>
-<span class="n">Hlam</span><span class="p">=[];</span><span class="w"></span>
-<span class="n">r1</span><span class="p">=[];</span><span class="w"></span>
-<span class="n">r2</span><span class="p">=[];</span><span class="w"></span>
-<span class="nb">count</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="n">h</span><span class="p">=</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
-<span class="k">while</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="o">-</span><span class="mi">7</span><span class="w"></span>
-<span class="w">	</span><span class="nb">count</span><span class="p">=</span><span class="nb">count</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+</div>
+<div class="section" id="script-2">
+<h2><span class="section-number">6.4.2. </span>Script 2<a class="headerlink" href="#script-2" title="Permalink to this heading">#</a></h2>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%6G6Z3002 - Computational methods in ODEs</span>
+<span class="c">%Interval of Absolute Stability (script 2)</span>
+<span class="c">%Matlab script for producing a table for interval of absolute stability</span>
+<span class="c">%using Root Locus Method of a given LMS method- here AM2-step</span>
+<span class="c">%Note: the result is printed in rows as given in the lecture notes</span>
+<span class="c">%</span>
+<span class="n">out</span><span class="p">=[];</span>
+<span class="n">Hlam</span><span class="p">=[];</span>
+<span class="n">r1</span><span class="p">=[];</span>
+<span class="n">r2</span><span class="p">=[];</span>
+<span class="nb">count</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">h</span><span class="p">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="o">-</span><span class="mi">7</span>
+<span class="w">	</span><span class="nb">count</span><span class="p">=</span><span class="nb">count</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
 <span class="w">	</span><span class="n">h</span><span class="p">=</span><span class="n">h</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w">   </span>
-<span class="w">	</span><span class="n">p</span><span class="p">=[(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">8</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">12</span><span class="p">)];</span><span class="w"></span>
-<span class="w">	</span><span class="n">r</span><span class="p">=</span><span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
-<span class="w">	</span><span class="n">Hlam</span><span class="p">(</span><span class="nb">count</span><span class="p">)=</span><span class="n">h</span><span class="p">;</span><span class="w"></span>
-<span class="w">	</span><span class="n">r1</span><span class="p">(</span><span class="nb">count</span><span class="p">)=</span><span class="n">r</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">	</span><span class="n">p</span><span class="p">=[(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">8</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">12</span><span class="p">)];</span>
+<span class="w">	</span><span class="n">r</span><span class="p">=</span><span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<span class="w">	</span><span class="n">Hlam</span><span class="p">(</span><span class="nb">count</span><span class="p">)=</span><span class="n">h</span><span class="p">;</span>
+<span class="w">	</span><span class="n">r1</span><span class="p">(</span><span class="nb">count</span><span class="p">)=</span><span class="n">r</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="w">	</span><span class="n">r2</span><span class="p">(</span><span class="nb">count</span><span class="p">)=</span><span class="n">r</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">   </span>
-<span class="k">end</span><span class="w"></span>
+<span class="k">end</span>
 
-<span class="nb">disp</span><span class="p">(</span><span class="nb">count</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="nb">count</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
 
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="nb">count</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="w"></span>
-<span class="w">	</span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%5.2f\t&#39;</span><span class="p">,</span><span class="n">Hlam</span><span class="p">(</span><span class="nb">i</span><span class="p">))</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="nb">count</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span>
+<span class="w">	</span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%5.2f\t&#39;</span><span class="p">,</span><span class="n">Hlam</span><span class="p">(</span><span class="nb">i</span><span class="p">))</span>
+<span class="k">end</span>
 
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;\n&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;----------------------------------------------------------\n&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;\n&#39;</span><span class="p">)</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;----------------------------------------------------------\n&#39;</span><span class="p">);</span>
 
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="nb">count</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="w"></span>
-<span class="w">	</span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%5.2f\t&#39;</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">r1</span><span class="p">(</span><span class="nb">i</span><span class="p">)))</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;\n&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="nb">count</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span>
+<span class="w">	</span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%5.2f\t&#39;</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">r1</span><span class="p">(</span><span class="nb">i</span><span class="p">)))</span>
+<span class="k">end</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;\n&#39;</span><span class="p">)</span>
 
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="nb">count</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="w"></span>
-<span class="w">	</span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%5.2f\t&#39;</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">r2</span><span class="p">(</span><span class="nb">i</span><span class="p">)))</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;\n&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="nb">count</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span>
+<span class="w">	</span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%5.2f\t&#39;</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">r2</span><span class="p">(</span><span class="nb">i</span><span class="p">)))</span>
+<span class="k">end</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;\n&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output</p>
@@ -479,87 +494,85 @@ document.write(`
 0.14	 0.14	 0.15	 0.16	 0.18	 0.22	 0.15	 1.00	 0.05	
 </pre></div>
 </div>
-</section>
-<section id="script-3">
-<h2><span class="section-number">6.4.3. </span>Script 3<a class="headerlink" href="#script-3" title="Permalink to this headline">#</a></h2>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%6G6Z3002 - Computational methods in ODEs </span><span class="w"></span>
-<span class="c">%Plot of Region of Absolute Stability (script 1) AB 2step</span><span class="w"></span>
-<span class="nb">clc</span><span class="w"></span>
-<span class="nb">clear</span><span class="w"></span>
+</div>
+<div class="section" id="script-3">
+<h2><span class="section-number">6.4.3. </span>Script 3<a class="headerlink" href="#script-3" title="Permalink to this heading">#</a></h2>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%6G6Z3002 - Computational methods in ODEs </span>
+<span class="c">%Plot of Region of Absolute Stability (script 1) AB 2step</span>
+<span class="nb">clc</span>
+<span class="nb">clear</span>
 <span class="n">syms</span><span class="w"> </span><span class="s">theta</span><span class="w"> </span>
-<span class="n">hlamda</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="nb">exp</span><span class="p">(</span>2<span class="nb">i</span><span class="o">*</span><span class="n">theta</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">theta</span><span class="p">)))</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">theta</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="n">H</span><span class="p">=[];</span><span class="w"></span>
-<span class="n">THETA</span><span class="p">=[];</span><span class="w"></span>
+<span class="n">hlamda</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="nb">exp</span><span class="p">(</span>2<span class="nb">i</span><span class="o">*</span><span class="n">theta</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">theta</span><span class="p">)))</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">theta</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">H</span><span class="p">=[];</span>
+<span class="n">THETA</span><span class="p">=[];</span>
 
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">30</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="w"></span>
-<span class="w">	</span><span class="n">THETA</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">THETA</span><span class="w"> </span><span class="nb">i</span><span class="p">];</span><span class="w"></span>
-<span class="w">	</span><span class="n">H</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">H</span><span class="w"> </span><span class="n">subs</span><span class="p">(</span><span class="n">hlamda</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="nb">i</span><span class="p">)];</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">30</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span>
+<span class="w">	</span><span class="n">THETA</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">THETA</span><span class="w"> </span><span class="nb">i</span><span class="p">];</span>
+<span class="w">	</span><span class="n">H</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">H</span><span class="w"> </span><span class="n">subs</span><span class="p">(</span><span class="n">hlamda</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="nb">i</span><span class="p">)];</span>
+<span class="k">end</span>
 
-<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">THETA</span><span class="p">));</span><span class="w"></span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;  theta      real(hlamda)     imag(hlamda)\n&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;-----------------------------------------------\n&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">THETA</span><span class="p">));</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;  theta      real(hlamda)     imag(hlamda)\n&#39;</span><span class="p">)</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;-----------------------------------------------\n&#39;</span><span class="p">)</span>
 
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">a</span><span class="w"></span>
-<span class="w">   </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%6i %8.2f %12.2f\n&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">((</span><span class="n">THETA</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">/</span><span class="nb">pi</span><span class="p">)</span><span class="o">*</span><span class="mi">180</span><span class="p">),</span><span class="nb">double</span><span class="p">(</span><span class="nb">real</span><span class="p">(</span><span class="n">H</span><span class="p">(</span><span class="nb">i</span><span class="p">))),</span><span class="nb">double</span><span class="p">(</span><span class="nb">imag</span><span class="p">(</span><span class="n">H</span><span class="p">(</span><span class="nb">i</span><span class="p">))))</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">a</span>
+<span class="w">   </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%6i %8.2f %12.2f\n&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">((</span><span class="n">THETA</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">/</span><span class="nb">pi</span><span class="p">)</span><span class="o">*</span><span class="mi">180</span><span class="p">),</span><span class="nb">double</span><span class="p">(</span><span class="nb">real</span><span class="p">(</span><span class="n">H</span><span class="p">(</span><span class="nb">i</span><span class="p">))),</span><span class="nb">double</span><span class="p">(</span><span class="nb">imag</span><span class="p">(</span><span class="n">H</span><span class="p">(</span><span class="nb">i</span><span class="p">))))</span>
+<span class="k">end</span>
 
-<span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
-<span class="nb">plot</span><span class="p">(</span><span class="nb">real</span><span class="p">(</span><span class="n">H</span><span class="p">),</span><span class="nb">imag</span><span class="p">(</span><span class="n">H</span><span class="p">),</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
-<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">);</span><span class="w"></span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Re (h\lambda)&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Im (h\lambda)&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Region of Absolute Stability for 2-step AB method&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mf">0.4</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
-<span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"></span>
+<span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="nb">real</span><span class="p">(</span><span class="n">H</span><span class="p">),</span><span class="nb">imag</span><span class="p">(</span><span class="n">H</span><span class="p">),</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Re (h\lambda)&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Im (h\lambda)&#39;</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Region of Absolute Stability for 2-step AB method&#39;</span><span class="p">);</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mf">0.4</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Output</p>
-<figure class="align-default" id="figure-ab2">
+<div class="figure align-default" id="figure-ab2">
 <a class="reference internal image-reference" href="../../_images/AB2_lines_result.svg"><img alt="../../_images/AB2_lines_result.svg" src="../../_images/AB2_lines_result.svg" width="500px" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 6.4 </span><span class="caption-text">Stability region of AB 2-step method.</span><a class="headerlink" href="#figure-ab2" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="script-4">
-<h2><span class="section-number">6.4.4. </span>Script 4<a class="headerlink" href="#script-4" title="Permalink to this headline">#</a></h2>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%A very simple version</span><span class="w"></span>
-<span class="c">%Region of absolute stability for the 2-step AB method</span><span class="w"></span>
-<span class="n">w</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">));</span><span class="w"></span>
-<span class="n">z</span><span class="p">=</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">w</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="n">w</span><span class="p">)</span><span class="o">./</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">w</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="nb">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="w"></span>
+<p class="caption"><span class="caption-number">Fig. 6.4 </span><span class="caption-text">Stability region of AB 2-step method.</span><a class="headerlink" href="#figure-ab2" title="Permalink to this image">#</a></p>
+</div>
+</div>
+<div class="section" id="script-4">
+<h2><span class="section-number">6.4.4. </span>Script 4<a class="headerlink" href="#script-4" title="Permalink to this heading">#</a></h2>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%A very simple version</span>
+<span class="c">%Region of absolute stability for the 2-step AB method</span>
+<span class="n">w</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">));</span>
+<span class="n">z</span><span class="p">=</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">w</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="n">w</span><span class="p">)</span><span class="o">./</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">w</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="script-5">
-<h2><span class="section-number">6.4.5. </span>Script 5<a class="headerlink" href="#script-5" title="Permalink to this headline">#</a></h2>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Plot of Region of Absolute Stability (script 2)-AB_2step</span><span class="w"></span>
-<span class="nb">clc</span><span class="w"></span>
-<span class="nb">clear</span><span class="w"></span>
+</div>
+<div class="section" id="script-5">
+<h2><span class="section-number">6.4.5. </span>Script 5<a class="headerlink" href="#script-5" title="Permalink to this heading">#</a></h2>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Plot of Region of Absolute Stability (script 2)-AB_2step</span>
+<span class="nb">clc</span>
+<span class="nb">clear</span>
 <span class="n">syms</span><span class="w"> </span><span class="s">theta</span><span class="w"> </span>
-<span class="n">z</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">theta</span><span class="p">);</span><span class="w"></span>
+<span class="n">z</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">theta</span><span class="p">);</span>
 <span class="n">hlamda</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">z</span>^<span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">z</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">z</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span>
-<span class="n">H</span><span class="p">=[];</span><span class="w"></span>
-<span class="n">THETA</span><span class="p">=[];</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">30</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="w"></span>
-<span class="n">THETA</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">THETA</span><span class="w"> </span><span class="nb">i</span><span class="p">];</span><span class="w"></span>
-<span class="n">H</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">H</span><span class="w"> </span><span class="n">subs</span><span class="p">(</span><span class="n">hlamda</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="nb">i</span><span class="p">)];</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">THETA</span><span class="p">));</span><span class="w"></span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;   \x03B8     Re(h\x03bb)     Im(h\x03bb)\n&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;------------------------------\n&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">a</span><span class="w"></span>
-<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%4i  %8.2f %10.2f\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
-<span class="w">        </span><span class="nb">round</span><span class="p">((</span><span class="n">THETA</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">/</span><span class="nb">pi</span><span class="p">)</span><span class="o">*</span><span class="mi">180</span><span class="p">),</span><span class="nb">double</span><span class="p">(</span><span class="nb">real</span><span class="p">(</span><span class="n">H</span><span class="p">(</span><span class="nb">i</span><span class="p">))),</span><span class="nb">double</span><span class="p">(</span><span class="nb">imag</span><span class="p">(</span><span class="n">H</span><span class="p">(</span><span class="nb">i</span><span class="p">))))</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-<span class="nb">fill</span><span class="p">(</span><span class="nb">real</span><span class="p">(</span><span class="n">H</span><span class="p">),</span><span class="nb">imag</span><span class="p">(</span><span class="n">H</span><span class="p">),</span><span class="s">&#39;c&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">);</span><span class="w"></span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Re (h\lambda)&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Im (h\lambda)&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Region of Absolute Stability for 2-step AB method&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mf">0.4</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
-<span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"></span>
+<span class="n">H</span><span class="p">=[];</span>
+<span class="n">THETA</span><span class="p">=[];</span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="nb">pi</span><span class="o">/</span><span class="mi">30</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span>
+<span class="n">THETA</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">THETA</span><span class="w"> </span><span class="nb">i</span><span class="p">];</span>
+<span class="n">H</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">H</span><span class="w"> </span><span class="n">subs</span><span class="p">(</span><span class="n">hlamda</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="nb">i</span><span class="p">)];</span>
+<span class="k">end</span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">THETA</span><span class="p">));</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;   \x03B8     Re(h\x03bb)     Im(h\x03bb)\n&#39;</span><span class="p">)</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;------------------------------\n&#39;</span><span class="p">)</span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">a</span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%4i  %8.2f %10.2f\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="w">        </span><span class="nb">round</span><span class="p">((</span><span class="n">THETA</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">/</span><span class="nb">pi</span><span class="p">)</span><span class="o">*</span><span class="mi">180</span><span class="p">),</span><span class="nb">double</span><span class="p">(</span><span class="nb">real</span><span class="p">(</span><span class="n">H</span><span class="p">(</span><span class="nb">i</span><span class="p">))),</span><span class="nb">double</span><span class="p">(</span><span class="nb">imag</span><span class="p">(</span><span class="n">H</span><span class="p">(</span><span class="nb">i</span><span class="p">))))</span>
+<span class="k">end</span>
+<span class="nb">fill</span><span class="p">(</span><span class="nb">real</span><span class="p">(</span><span class="n">H</span><span class="p">),</span><span class="nb">imag</span><span class="p">(</span><span class="n">H</span><span class="p">),</span><span class="s">&#39;c&#39;</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Re (h\lambda)&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Im (h\lambda)&#39;</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Region of Absolute Stability for 2-step AB method&#39;</span><span class="p">);</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mf">0.4</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Output</p>
@@ -599,14 +612,12 @@ document.write(`
 <span class="mi">360</span>      <span class="mf">0.00</span>       <span class="mf">0.00</span>
 </pre></div>
 </div>
-<figure class="align-default" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../../_images/AB2shaded_result.svg"><img alt="../../_images/AB2shaded_result.svg" src="../../_images/AB2shaded_result.svg" width="500px" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 6.5 </span><span class="caption-text">Stability region of AB 2-step method.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-</section>
+<p class="caption"><span class="caption-number">Fig. 6.5 </span><span class="caption-text">Stability region of AB 2-step method.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -621,7 +632,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\06"
+            path: "./chaps/06"
         },
         predefinedOutput: true
     }
@@ -633,11 +644,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap06_3_boundaryRootLocus.html"
@@ -657,10 +667,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -701,6 +708,7 @@ By Zhihua Ma
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023.
@@ -727,8 +735,8 @@ By Zhihua Ma
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
