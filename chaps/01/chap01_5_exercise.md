@@ -3,7 +3,7 @@
 
 You should try the following exercise questions first, then check with the answers. 
 
-For detailed solutions, you can {download}`Download the full solutions for Chapter 1 Exercises </exSol/Ex1/Ex1_Solution_annotated.pdf>`.
+For detailed solutions, you can download {download}`the full solutions for Chapter 1 Exercises </exSol/Ex1/Ex1_Solution_annotated.pdf>`.
 
 :::{exercise}
 :label: ch1-ex-q1
