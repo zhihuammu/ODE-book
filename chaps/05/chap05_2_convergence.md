@@ -188,7 +188,7 @@ $(\text{i.e.}\ \,\rho(1) = 0,~ \rho'(1) = \sigma(1) = 4)$, and since
 zero stable, the method is also convergent.
 :::
 
-:::{prf:remark} Adamas methods
+:::{prf:remark} Adams methods
 The characteristic polynomial $\rho$ for all Adams methods
 (AB and AM) are of the form: 
 
