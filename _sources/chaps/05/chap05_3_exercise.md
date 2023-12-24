@@ -3,7 +3,7 @@
 
 You should try the following exercise questions first, then check with the answers. 
 
-For detailed solutions, please find them in the Moodle area for this Unit.
+- {download}`Handwritten solution for Exercises 5.1 and 5.2</exSol/Ex5/Ex5_1-2_sol.pdf>`
 
 :::{exercise}
 :label: ch5-ex-q1
@@ -77,18 +77,20 @@ considering the stability of the methods and the errors in the
 calculations, compare the two solution methods and comment on your
 results. 
 
-Note: You could simply use an Excel sheet to both find
-the approximate solution and plot the results.
+<!-- Note: You could simply use an Excel sheet to both find
+the approximate solution and plot the results. -->
 
 :::
 
 :::::{solution} ch5-ex-q3
 :class: dropdown
 
+- {download}`Matlab solution for Exercise 5.3</exSol/Ex5/Ex5_3_Solution.mlx>`
+
 ::::{grid}
 
 :::{grid-item} 
-:columns: 12
+:columns: 6
 ```{image}  /images/05/fig-chap05-c4ans3-h005.svg    
 :width: 600px
 :align: center
@@ -96,7 +98,7 @@ the approximate solution and plot the results.
 :::
 
 :::{grid-item} 
-:columns: 12
+:columns: 6
 ```{image}  /images/05/fig-chap05-c4ans3-h002.svg    
 :width: 600px
 :align: center
@@ -105,31 +107,4 @@ the approximate solution and plot the results.
 
 ::::
 
-<!-- ```{image}  /images/fig-chap05-c4ans3.svg    
-:width: 600px
-:align: center
-``` -->
-:::::
-
-<!-- 
-**Answers to Tutorial Exercises - Chapter** 
-
-1.  
-    - Roots are 0 and 1
-    - Roots are 1, -0.1, -9.9
-    - Roots are 1 and 3
-    - Roots are 1 and -2
-
-2.  
-    - $2^\text{nd}$ order, $\frac{5}{12}$, 
-    - $4^\text{th}$ order, $\frac{1}{10}$
-    - $2^\text{nd}$ order, $\frac{2}{3}$, 
-    - $2^\text{nd}$ order, $\frac{1}{4}$
-
-3.  
-    -
-    ```{image}  /images/fig-chap05-c4ans3.svg    
-    :width: 600px
-    :align: center
-    ``` -->
 

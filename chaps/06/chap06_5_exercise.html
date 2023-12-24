@@ -389,7 +389,7 @@ document.write(`
 <span id="chap-stability2-exercise"></span><h1><span class="section-number">6.5. </span>Chapter 6 Exercises<a class="headerlink" href="#chapter-6-exercises" title="Permalink to this headline">#</a></h1>
 <p>You should try the following exercise questions first, then check with the answers.</p>
 <p>For detailed solutions, please find them in the Moodle area for this Unit.</p>
-<div class="exercise admonition" id="chaps/06/chap06_5_exercise-exercise-0">
+<div class="exercise admonition" id="chap06-ex6-1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.1 </span></p>
 <section id="exercise-content">
@@ -400,11 +400,66 @@ document.write(`
             y_{j+1} ~=~ y_j + hf_{j+1}        
     \end{aligned}
 \]</div>
-<p>is absolutely stable for all
-<span class="math notranslate nohighlight">\(h\lambda \not\in (0,2)\)</span>.</p>
+<p>is absolutely stable for all <span class="math notranslate nohighlight">\(h\lambda \not\in (0,2)\)</span>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>To show that the method is absolutely stable for all <span class="math notranslate nohighlight">\(h\lambda \not\in (0,2)\)</span>, we just need show that the stability interval is <span class="math notranslate nohighlight">\(h\lambda \in (-\infty, 0] \cup [2, \infty )\)</span>.</p>
+</div>
 </section>
 </div>
-<div class="exercise admonition" id="chaps/06/chap06_5_exercise-exercise-1">
+<div class="solution dropdown admonition" id="chaps/06/chap06_5_exercise-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#chap06-ex6-1"> Exercise 6.1</a></p>
+<section id="solution-content">
+<p>Re-arrange the equation as</p>
+<div class="math notranslate nohighlight">
+\[
+y_{j+1} - y_j = h ( f_{j+1} + 0 f_j )
+\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[
+\alpha_1 = 1, ~ \alpha_0 =-1, ~ \beta_1 = 1, ~ \beta_0=0
+\]</div>
+<p>Thus the characteristic equation is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+L(\xi, h\lambda) &amp; = \sum_{i=0}^{k} \left(\alpha_i - h\lambda \beta_i \right) \xi^i \\
+&amp; = (\alpha_1 - h\lambda \beta_1) \xi +  (\alpha_0 - h\lambda \beta_0) \\
+&amp; = (1-h\lambda) \xi - 1 \\
+&amp; = 0
+\end{aligned}
+\end{split}\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[
+\xi = \frac{1}{1-h\lambda}
+\]</div>
+<p>In the stability interval, it is requested that <span class="math notranslate nohighlight">\(|\xi(h\lambda)|\leq 1\)</span>, so</p>
+<div class="math notranslate nohighlight">
+\[
+\left\vert \frac{1}{1-h\lambda} \right\vert \leq 1
+\]</div>
+<p>Thus we have</p>
+<div class="math notranslate nohighlight">
+\[
+    \left\vert {1-h\lambda} \right\vert \geq 1,
+\]</div>
+<p>which gives</p>
+<div class="math notranslate nohighlight">
+\[
+    {1-h\lambda} \geq 1  \quad \text{or} \quad  {1-h\lambda} \leq -1
+\]</div>
+<p>therefore</p>
+<div class="math notranslate nohighlight">
+\[
+    h\lambda \leq 0 \quad \text{or} \quad h\lambda \geq 2
+\]</div>
+<p>the stability interval is <span class="math notranslate nohighlight">\(h\lambda \in (-\infty, 0] \cup [2, \infty )\)</span>.</p>
+</section>
+</div>
+<div class="exercise admonition" id="chaps/06/chap06_5_exercise-exercise-2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.2 </span></p>
 <section id="exercise-content">
@@ -420,7 +475,7 @@ document.write(`
 the circle on this interval as diameter.</p>
 </section>
 </div>
-<div class="exercise admonition" id="chaps/06/chap06_5_exercise-exercise-2">
+<div class="exercise admonition" id="chaps/06/chap06_5_exercise-exercise-3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.3 </span></p>
 <section id="exercise-content">
@@ -429,7 +484,7 @@ the circle on this interval as diameter.</p>
 method.</p>
 </section>
 </div>
-<div class="exercise admonition" id="chaps/06/chap06_5_exercise-exercise-3">
+<div class="exercise admonition" id="chaps/06/chap06_5_exercise-exercise-4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.4 </span></p>
 <section id="exercise-content">
@@ -444,7 +499,7 @@ method.</p>
 <span class="math notranslate nohighlight">\((-\infty,0)\)</span>. Explain how you can verify your results.</p>
 </section>
 </div>
-<div class="exercise admonition" id="chaps/06/chap06_5_exercise-exercise-4">
+<div class="exercise admonition" id="chaps/06/chap06_5_exercise-exercise-5">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.5 </span></p>
 <section id="exercise-content">
@@ -545,7 +600,7 @@ By Zhihua Ma
     
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2023--2025.
       <br/>
     
   </p>
