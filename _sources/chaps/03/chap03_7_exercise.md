@@ -18,6 +18,7 @@ formulae:
 ::::
 
 ::::{solution} ex3-q1
+:class: dropdown
 
 {download}`handwritten full solution for Exercise 3.1 </exSol/Ex3/Ex3_1_annotated.pdf>`
 
