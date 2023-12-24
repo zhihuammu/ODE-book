@@ -133,7 +133,9 @@ $x = 0.2$, $y^p = -0.8577$, $y^c = -0.8566$, $y_{ex} = -0.8562$\
 $x = 0.3$, $y^p = -0.8227$, $y^c = -0.8228$, $y_{ex} = -0.8225$\
 $x = 0.4$, $y^p = -0.8112$, $y^c = -0.8113$, $y_{ex} = -0.8110$
 
-A video explanation
+- {download}`excel solution </exSol/Ex3/Ex3_3.xlsx>`
+
+- A video explanation
 
 <div align="center">
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1128062/sp/112806200/embedIframeJs/uiconf_id/27474902/partner_id/1128062?iframeembed=true&playerId=kaltura_player&entry_id=1_t6hm00wx&flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[streamerType]=hdnetwork&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_klbv8o8b" width="575" height="360" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="odeEx2Q3">
@@ -181,7 +183,7 @@ $$\begin{aligned}
     $x = 0.5$, $y^p = 0.6434670$, $y^c = 0.6434699$, $y_{ex} = 0.6434693$
     $y_{ex} = 0.6434693$
 
-    Find the excel spreadsheet for this question in Moodle.
+    {download}`excel solution </exSol/Ex3/Ex3_4_1.xlsx>`
     ::::
 
 2.  ::::{dropdown} Answer
