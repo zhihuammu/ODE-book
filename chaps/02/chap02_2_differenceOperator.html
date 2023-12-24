@@ -383,7 +383,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-data-points">2.2.1. Discrete Data Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-data-points-and-general-sequences">2.2.1. Discrete Data Points and General Sequences</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-difference-operator-delta">2.2.2. Forward Difference Operator <span class="math notranslate nohighlight">\(\Delta\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-difference-operator-nabla">2.2.3. Backward difference operator <span class="math notranslate nohighlight">\(\nabla\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shift-operators-e-and-e-1">2.2.4. Shift operators <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(E^{-1}\)</span></a></li>
@@ -400,8 +400,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="finite-difference-operators">
 <h1><span class="section-number">2.2. </span>Finite Difference Operators<a class="headerlink" href="#finite-difference-operators" title="Permalink to this headline">#</a></h1>
-<section id="discrete-data-points">
-<h2><span class="section-number">2.2.1. </span>Discrete Data Points<a class="headerlink" href="#discrete-data-points" title="Permalink to this headline">#</a></h2>
+<section id="discrete-data-points-and-general-sequences">
+<h2><span class="section-number">2.2.1. </span>Discrete Data Points and General Sequences<a class="headerlink" href="#discrete-data-points-and-general-sequences" title="Permalink to this headline">#</a></h2>
 <p>For a function defined on a continuous domain</p>
 <div class="math notranslate nohighlight">
 \[f=f(x), ~~ x\in \mathbb{R},\]</div>
@@ -413,38 +413,37 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[x_j= jh\]</div>
 <p>where <span class="math notranslate nohighlight">\(h=x_{j+1}-x_j\)</span> is called the step size (or step length), <span class="math notranslate nohighlight">\(h\in(0,+\infty)\)</span>.</p>
-<!-- ```{figure} /images/fig-discrete.svg
----
-width: 600px
-name: figure-discretepoints
----
-Discrete data points and sequence.
-``` -->
 <div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-7ad8c7ffa41c0f8b8ac6c96358e5b878e7136a8f.svg" alt="Figure made with TikZ" /></p>
-</div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In <span class="xref myst">Chapter 1</span>, a <span class="xref myst">sequence</span> is defined as a function of integers.
-Here we generalise this concept to use a sequence to represent the function at discrete points, whose
+</div><div class="proof remark admonition" id="remark-0">
+<p class="admonition-title"><span class="caption-number">Remark 2.1 </span></p>
+<section class="remark-content" id="proof-content">
+<p>In <a class="reference internal" href="../01/chap01_2_sequence.html#chap01-sequence"><span class="std std-numref">Section 1.2</span></a>, a sequence is defined as a function of integers i.e.</p>
+<div class="math notranslate nohighlight">
+\[y_j=y(j), \quad j \in \mathbb{Z}.\]</div>
+<p>Here we generalise this concept to use a sequence to represent the function at discrete points,</p>
+<div class="math notranslate nohighlight">
+\[y_j = y(x_j), \quad x_j = jh,~ j\in \mathbb{Z}\]</div>
+<p>where
 <span class="math notranslate nohighlight">\(x\)</span> coordinates are not necessarily intergers.</p>
-</div>
 </section>
+</div></section>
 <section id="forward-difference-operator-delta">
 <h2><span class="section-number">2.2.2. </span>Forward Difference Operator <span class="math notranslate nohighlight">\(\Delta\)</span><a class="headerlink" href="#forward-difference-operator-delta" title="Permalink to this headline">#</a></h2>
-<div class="proof definition admonition" id="definition-0">
+<div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (Forward Difference)</p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order forward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between the next member and itself:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ba2ca453-9ad5-4926-837e-0f4e564d2539">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-ba2ca453-9ad5-4926-837e-0f4e564d2539" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0331dc76-6a74-4592-914a-74205b0c2597">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-0331dc76-6a74-4592-914a-74205b0c2597" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta f_j = f_{j+1} - f_j,
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k-\)</span>th order forward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0c2f5017-3dc9-4f73-8078-01362807bbeb">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-0c2f5017-3dc9-4f73-8078-01362807bbeb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2bd9a84b-1b7e-4df0-975b-f3aa625f0ae0">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-2bd9a84b-1b7e-4df0-975b-f3aa625f0ae0" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta^k f_j= \Delta\left(\Delta^{k-1} f_j \right).
 \end{equation}\]</div>
 </section>
-</div><div class="proof example admonition" id="example-1">
+</div><div class="proof example admonition" id="example-2">
 <p class="admonition-title"><span class="caption-number">Example 2.1 </span></p>
 <section class="example-content" id="proof-content">
 <ul class="simple">
@@ -488,21 +487,21 @@ Here we generalise this concept to use a sequence to represent the function at d
 </section>
 <section id="backward-difference-operator-nabla">
 <h2><span class="section-number">2.2.3. </span>Backward difference operator <span class="math notranslate nohighlight">\(\nabla\)</span><a class="headerlink" href="#backward-difference-operator-nabla" title="Permalink to this headline">#</a></h2>
-<div class="proof definition admonition" id="definition-2">
+<div class="proof definition admonition" id="definition-3">
 <p class="admonition-title"><span class="caption-number">Definition 2.2 </span> (Backward Difference)</p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order backward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between itself and the previous member:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-638ac195-3429-413a-bfed-f312f401f80f">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-638ac195-3429-413a-bfed-f312f401f80f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-238ede02-4a65-4915-85cb-e0a21066307c">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-238ede02-4a65-4915-85cb-e0a21066307c" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla f_j = f_{j} - f_{j-1},
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k-\)</span>th order backward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-79cbd70e-ff72-4fca-bf3b-b9a4c66fc2e4">
-<span class="eqno">(2.4)<a class="headerlink" href="#equation-79cbd70e-ff72-4fca-bf3b-b9a4c66fc2e4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-11448aa0-fa4a-4493-bba8-3fb2d3476332">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-11448aa0-fa4a-4493-bba8-3fb2d3476332" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla^k f_j= \nabla\left(\nabla^{k-1} f_j \right).
 \end{equation}\]</div>
 </section>
-</div><div class="proof example admonition" id="example-3">
+</div><div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 2.2 </span></p>
 <section class="example-content" id="proof-content">
 <ul class="simple">
@@ -548,13 +547,13 @@ Here we generalise this concept to use a sequence to represent the function at d
 </section>
 <section id="shift-operators-e-and-e-1">
 <h2><span class="section-number">2.2.4. </span>Shift operators <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(E^{-1}\)</span><a class="headerlink" href="#shift-operators-e-and-e-1" title="Permalink to this headline">#</a></h2>
-<div class="proof definition admonition" id="definition-4">
+<div class="proof definition admonition" id="definition-5">
 <p class="admonition-title"><span class="caption-number">Definition 2.3 </span></p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>,
 we define <span class="math notranslate nohighlight">\(E\)</span> as an operator shifting a member in a sequence to the next member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e4e23758-abe2-4407-8f31-0861f74ce007">
-<span class="eqno">(2.5)<a class="headerlink" href="#equation-e4e23758-abe2-4407-8f31-0861f74ce007" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a741d6cc-eca6-49ca-9395-ad899996bc3a">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-a741d6cc-eca6-49ca-9395-ad899996bc3a" title="Permalink to this equation">#</a></span>\[\begin{equation}
   E f_j = f_{j+1},
 \end{equation}\]</div>
 <p>and shifting a member forward <span class="math notranslate nohighlight">\(k\)</span> times gives</p>
@@ -562,8 +561,8 @@ we define <span class="math notranslate nohighlight">\(E\)</span> as an operator
 \[E^k f_j= E(E^{k-1}f_j)= f_{j+k}.\]</div>
 <p>Similarly, we define <span class="math notranslate nohighlight">\(E^{-1}\)</span> as an operator shifting a member in a
 sequence to the previous member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-21a8096e-c8cb-453e-a350-6796500e9c31">
-<span class="eqno">(2.6)<a class="headerlink" href="#equation-21a8096e-c8cb-453e-a350-6796500e9c31" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9320ee0d-016b-4a96-9447-8cc13780dbc1">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-9320ee0d-016b-4a96-9447-8cc13780dbc1" title="Permalink to this equation">#</a></span>\[\begin{equation}
   E^{-1} f_j = f_{j-1}
 \end{equation}\]</div>
 <p>and shifting a member backward <span class="math notranslate nohighlight">\(k\)</span> (<span class="math notranslate nohighlight">\(k&gt;0\)</span>) times gives</p>
@@ -597,7 +596,7 @@ functions defined on continuous domains</p>
 <div class="math notranslate nohighlight">
 \[E^{-0.9} f_j= E^{-0.9} f(x_j)= f(x_j-0.9h)=?\]</div>
 </div>
-<div class="proof theorem admonition" id="theorem-5">
+<div class="proof theorem admonition" id="theorem-6">
 <p class="admonition-title"><span class="caption-number">Theorem 2.1 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>The difference operators and shift operators have the following
@@ -607,10 +606,17 @@ relations:</p>
 <li><p><span class="math notranslate nohighlight">\(E^{-1}=1-\nabla\)</span></p></li>
 </ul>
 </section>
-</div><div class="proof admonition" id="proof">
-<p>Proof. Apply the operators on <span class="math notranslate nohighlight">\(f(x)\)</span></p>
+</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Proof (click to show)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<!-- :::{prf:proof} -->
+<p class="sd-card-text">Applying the operators on <span class="math notranslate nohighlight">\(f(x)\)</span></p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(E=1+\Delta\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(E=1+\Delta\)</span></p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -622,7 +628,7 @@ relations:</p>
 \end{aligned}
 \end{split}\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(E^{-1}=1-\nabla\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(E^{-1}=1-\nabla\)</span></p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -634,7 +640,7 @@ relations:</p>
 \end{aligned}
 \end{split}\]</div>
 </div>
-</section>
+</details></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -704,7 +710,7 @@ relations:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-data-points">2.2.1. Discrete Data Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-data-points-and-general-sequences">2.2.1. Discrete Data Points and General Sequences</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-difference-operator-delta">2.2.2. Forward Difference Operator <span class="math notranslate nohighlight">\(\Delta\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-difference-operator-nabla">2.2.3. Backward difference operator <span class="math notranslate nohighlight">\(\nabla\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shift-operators-e-and-e-1">2.2.4. Shift operators <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(E^{-1}\)</span></a></li>

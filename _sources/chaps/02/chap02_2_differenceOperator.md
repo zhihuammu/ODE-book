@@ -1,6 +1,6 @@
 # Finite Difference Operators
 
-## Discrete Data Points
+## Discrete Data Points and General Sequences
 
 For a function defined on a continuous domain
 
@@ -18,21 +18,21 @@ $$x_j= jh$$
 
 where $h=x_{j+1}-x_j$ is called the step size (or step length), $h\in(0,+\infty)$.
 
-<!-- ```{figure} /images/fig-discrete.svg
----
-width: 600px
-name: figure-discretepoints
----
-Discrete data points and sequence.
-``` -->
 
 ```{tikz}
 :include: /images/02/discrete.tikz
 ```
 
-::::{note}
-In [Chapter 1](chap00:complexNumber), a [sequence](def-seq) is defined as a function of integers.
-Here we generalise this concept to use a sequence to represent the function at discrete points, whose 
+::::{prf:remark}
+In {numref}`chap01:sequence`, a sequence is defined as a function of integers i.e. 
+
+$$y_j=y(j), \quad j \in \mathbb{Z}.$$
+
+Here we generalise this concept to use a sequence to represent the function at discrete points, 
+
+$$y_j = y(x_j), \quad x_j = jh,~ j\in \mathbb{Z}$$
+
+where
 $x$ coordinates are not necessarily intergers.
 
 ::::
@@ -196,15 +196,19 @@ If we do shifting for $k$ times , then
 :::
 
 ::::{prf:theorem} 
+
 The difference operators and shift operators have the following
 relations:
 
 -   $E=1+\Delta$
 
 -   $E^{-1}=1-\nabla$
+
 ::::
 
-::::{prf:proof} Apply the operators on $f(x)$
+:::{dropdown} Proof (click to show)
+<!-- :::{prf:proof} -->
+Applying the operators on $f(x)$
 
 -   $E=1+\Delta$
 
@@ -227,4 +231,5 @@ $$
                 & = E^{-1} f(x)
 \end{aligned}
 $$
-::::
+:::
+

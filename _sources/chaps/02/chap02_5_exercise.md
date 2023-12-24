@@ -3,7 +3,11 @@
 
 You should try the following exercise questions first, then check with the answers. 
 
-For detailed solutions, please find them in the Moodle area.
+For detailed solutions, you can download
+
+- {download}`excel solutions for Exercises 2.1 -- 2.6 </exSol/Ex2/Ex2_Q1-Q6.xlsx>`
+
+- {download}`handwritten full solution for Exercise 2.7 </exSol/Ex2/Ex2_Q7_solution_annotated.pdf>`
 
 ::::{exercise}
 :label: ch2-ex-q1
@@ -80,18 +84,6 @@ $P_3(0.158) = 0.78801$ for degree 3, and $P_4(0.158) = 0.78800$ for
     degree 4.
 
 Find the full solution in Moodle.
-::::
-
-
-::::{exercise}
-:label: ch2-ex-q4
-
-Following the method used to derive the Gregory-Newton forward interpolation formula, derive the  Gregory-Newton backward difference interpolation formula.
-::::
-
-::::{solution} ch2-ex-q4
-:class: dropdown
-Use Binomial Expansion to expand $(1-\nabla)^{-s}$. Find the full solution in Moodle.
 ::::
 
 
@@ -207,3 +199,13 @@ accuracy of the estimated solutions.
 Find the full solution in Moodle.
 ::::
 
+::::{exercise}
+:label: ch2-ex-q4
+
+Following the method used to derive the Gregory-Newton forward interpolation formula, derive the  Gregory-Newton backward difference interpolation formula.
+::::
+
+::::{solution} ch2-ex-q4
+:class: dropdown
+Use Binomial Expansion to expand $(1-\nabla)^{-s}$. Find the full solution in Moodle.
+::::

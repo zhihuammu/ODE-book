@@ -3,8 +3,6 @@
 
 You should try the following exercise questions first, then check with the answers. 
 
-For detailed solutions, please find them in the Moodle area for this Unit.
-
 ::::{exercise}
 :label: ex3-q1
 
@@ -16,7 +14,13 @@ formulae:
 -   $ y_{j+3} = y_{j-1} + (8f_{j+2} - 4f_{j+1} + 8f_j) $    [ G-N forward -1 to 3 ]
 -   $ y_j     = y_{j-1} + (5f_j + 8f_{j-1} - f_{j-2}) $     [ G-N backward 0 to -1 ]
 
-Find the detailed solutions in Moodle.
+<!-- Find the detailed solutions in Moodle. -->
+::::
+
+::::{solution} ex3-q1
+
+{download}`handwritten full solution for Exercise 3.1 </exSol/Ex3/Ex3_1_annotated.pdf>`
+
 ::::
 
 ::::{exercise}
@@ -58,9 +62,11 @@ Comment on the accuracy of your results.
 
 $y_1 = -0.9000$, $y_2 = -0.8450$, $y_3 = -0.8114$, $y_4 = -0.8019$,  $y_5 = -0.8102$.
 
-Find the full solution in Moodle.
+- {download}`excel solution for Exercise 3.2 </exSol/Ex3/Ex3_2.xlsx>`
 
-A video explanation
+- {download}`handwritten solution for Exercise 3.2 </exSol/Ex3/Ex3_2_handSol.pdf>`
+
+- A video explanation
 
 <div align="center">
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1128062/sp/112806200/embedIframeJs/uiconf_id/27474902/partner_id/1128062?iframeembed=true&playerId=kaltura_player&entry_id=1_0l6yp5n6&flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[streamerType]=hdnetwork&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_k4lu5co3" width="575" height="360" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="ch2_q2_v3"></iframe>

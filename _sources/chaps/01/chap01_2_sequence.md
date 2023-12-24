@@ -1,3 +1,4 @@
+(chap01:sequence)=
 # Sequences
 
 In analysis, we often deal with functions defined on continuous domains. For example, a cubic function defined on the real number set $\mathbb{R}$ as 
@@ -32,6 +33,7 @@ where $\mathbb{N}_0=\{0,1,2,\ldots\}$, and so the output of this function will b
 Functions given in {eq}`eq:sequence:example:1` and {eq}`eq:sequence:example:2` are called sequences.
 
 ::::{prf:definition} Sequence
+:label: def-sequence
 In mathematics, a sequence is a function whose domain is a set of integers. An output of a sequence is called a member or term of it. 
 Specifically, we will regard the expression $\{y_n\}_{n=0}^{+\infty}$ to be an alternative notation for the function $y_n=y(n), n=0,1,2,\ldots$
 ::::

@@ -388,7 +388,11 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-2-exercises">
 <span id="chap02-exercises"></span><h1><span class="section-number">2.5. </span>Chapter 2 Exercises<a class="headerlink" href="#chapter-2-exercises" title="Permalink to this headline">#</a></h1>
 <p>You should try the following exercise questions first, then check with the answers.</p>
-<p>For detailed solutions, please find them in the Moodle area.</p>
+<p>For detailed solutions, you can download</p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../../_downloads/4a661cc26a7d67670dd1cee620978933/Ex2_Q1-Q6.xlsx"><code class="xref download docutils literal notranslate"><span class="pre">excel</span> <span class="pre">solutions</span> <span class="pre">for</span> <span class="pre">Exercises</span> <span class="pre">2.1</span> <span class="pre">--</span> <span class="pre">2.6</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/26bec5762f970f61b4e5a153133632e2/Ex2_Q7_solution_annotated.pdf"><code class="xref download docutils literal notranslate"><span class="pre">handwritten</span> <span class="pre">full</span> <span class="pre">solution</span> <span class="pre">for</span> <span class="pre">Exercise</span> <span class="pre">2.7</span></code></a></p></li>
+</ul>
 <div class="exercise admonition" id="ch2-ex-q1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
@@ -585,23 +589,9 @@ degree 4.</p>
 <p>Find the full solution in Moodle.</p>
 </section>
 </div>
-<div class="exercise admonition" id="ch2-ex-q4">
-
-<p class="admonition-title"><span class="caption-number">Exercise 2.4 </span></p>
-<section id="exercise-content">
-<p>Following the method used to derive the Gregory-Newton forward interpolation formula, derive the  Gregory-Newton backward difference interpolation formula.</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-7">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q4"> Exercise 2.4</a></p>
-<section id="solution-content">
-<p>Use Binomial Expansion to expand <span class="math notranslate nohighlight">\((1-\nabla)^{-s}\)</span>. Find the full solution in Moodle.</p>
-</section>
-</div>
 <div class="exercise admonition" id="ch2-ex-q5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.5 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.4 </span></p>
 <section id="exercise-content">
 <p>Complete the difference table for the following data and by using
 the Gregory-Newton forward interpolating polynomial find
@@ -637,9 +627,9 @@ whether the accuracy of your solution is within the expected range.</p>
 </div>
 </section>
 </div>
-<div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-9">
+<div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-7">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q5"> Exercise 2.5</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q5"> Exercise 2.4</a></p>
 <section id="solution-content">
 <p><span class="math notranslate nohighlight">\(f(1.72) = P_4(1.72) = 0.38641856\)</span>, MATLAB answer is
 <span class="math notranslate nohighlight">\(besselj(0,1.72) = 0.38641848\)</span>.</p>
@@ -656,7 +646,7 @@ whether the accuracy of your solution is within the expected range.</p>
 </div>
 <div class="exercise admonition" id="ch2-ex-q6">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.6 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.5 </span></p>
 <section id="exercise-content">
 <p>Given the finite difference table below, find <span class="math notranslate nohighlight">\(\,f(2.25)\,\)</span> using the Gregory-Newton</p>
 <ul class="simple">
@@ -748,9 +738,9 @@ corresponding polynomial function. Can you suggest a way of
 improving the approximated solution.</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-11">
+<div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-9">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q6"> Exercise 2.6</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q6"> Exercise 2.5</a></p>
 <section id="solution-content">
 <ul class="simple">
 <li><p>Forward <span class="math notranslate nohighlight">\(f(2.25) = 7.386171\)</span></p></li>
@@ -761,7 +751,7 @@ improving the approximated solution.</p>
 </div>
 <div class="exercise admonition" id="ch2-ex-q7">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.7 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.6 </span></p>
 <section id="exercise-content">
 <p>Repeat Exercise 6, using the finite difference table below which is
 drawn from the same function, but in the interval <span class="math notranslate nohighlight">\([0,\,2.0]\)</span>, to
@@ -850,15 +840,29 @@ least one reason, explain why there is such a difference in the
 accuracy of the estimated solutions.</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-13">
+<div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-11">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q7"> Exercise 2.7</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q7"> Exercise 2.6</a></p>
 <section id="solution-content">
 <ul class="simple">
 <li><p>Forward <span class="math notranslate nohighlight">\(f(0.75) = P_4 (0.75) = 1.437778\)</span></p></li>
 <li><p>Backward <span class="math notranslate nohighlight">\(f(0.75) = P_4 (0.75) = 1.437778\)</span>.</p></li>
 </ul>
 <p>Find the full solution in Moodle.</p>
+</section>
+</div>
+<div class="exercise admonition" id="ch2-ex-q4">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.7 </span></p>
+<section id="exercise-content">
+<p>Following the method used to derive the Gregory-Newton forward interpolation formula, derive the  Gregory-Newton backward difference interpolation formula.</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-13">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q4"> Exercise 2.7</a></p>
+<section id="solution-content">
+<p>Use Binomial Expansion to expand <span class="math notranslate nohighlight">\((1-\nabla)^{-s}\)</span>. Find the full solution in Moodle.</p>
 </section>
 </div>
 </section>
