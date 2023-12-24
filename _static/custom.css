@@ -2,7 +2,7 @@
 * Variables *
 *********************************************/
 :root {
-  --orange-title-color: rgba(253, 126, 20, .3);
+  --orange-title-color: rgba(253, 126, 20, 0.5);
   --orange-border-color: #fd7e14;
 }
 

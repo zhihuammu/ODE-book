@@ -479,7 +479,7 @@ E^{s} &amp; =  (1+\Delta)^s  \\
 </div>
 <p>Therefore, the forward Gregory-Newton Interpolation formulae is</p>
 <div class="math notranslate nohighlight" id="equation-eq-gn-forward">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-eq-gn-forward" title="Permalink to this equation">#</a></span>\[f_{j+s} =  f_j + s\Delta f_j
+<span class="eqno">(2.7)<a class="headerlink" href="#equation-eq-gn-forward" title="Permalink to this equation">#</a></span>\[f_{j+s} =  f_j + s\Delta f_j
         + \frac{s(s-1)}{2!}\Delta^2 f_j + \cdots 
         + \frac{s(s-1)(s-2)\cdots(s-k+1)}{k!}\Delta^k f_j + \cdots    \]</div>
 <p>This is an infinite series in <span class="math notranslate nohighlight">\(s\)</span> and in practice we terminate it after
@@ -510,7 +510,7 @@ shifting to derive the interpolation formula:</p>
 s=\frac{x-x_j}{h}&lt;0
 \]</div>
 <div class="math notranslate nohighlight" id="equation-eq-gn-backward">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-eq-gn-backward" title="Permalink to this equation">#</a></span>\[f_{j+s}= f_j + s\nabla f_j
+<span class="eqno">(2.8)<a class="headerlink" href="#equation-eq-gn-backward" title="Permalink to this equation">#</a></span>\[f_{j+s}= f_j + s\nabla f_j
             + \frac{s(s+1)}{2!}\nabla^2 f_j
             + \cdots
             + \frac{s(s+1)\cdots(s+k-1)}{k!}\nabla^k f_j + \cdots\]</div>

@@ -384,6 +384,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-data-points">2.2.1. Discrete Data Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-difference-operator-delta">2.2.2. Forward Difference Operator <span class="math notranslate nohighlight">\(\Delta\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-difference-operator-nabla">2.2.3. Backward difference operator <span class="math notranslate nohighlight">\(\nabla\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shift-operators-e-and-e-1">2.2.4. Shift operators <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(E^{-1}\)</span></a></li>
 </ul>
             </nav>
         </div>
@@ -410,6 +413,227 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[x_j= jh\]</div>
 <p>where <span class="math notranslate nohighlight">\(h=x_{j+1}-x_j\)</span> is called the step size (or step length), <span class="math notranslate nohighlight">\(h\in(0,+\infty)\)</span>.</p>
+<!-- ```{figure} /images/fig-discrete.svg
+---
+width: 600px
+name: figure-discretepoints
+---
+Discrete data points and sequence.
+``` -->
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-7ad8c7ffa41c0f8b8ac6c96358e5b878e7136a8f.svg" alt="Figure made with TikZ" /></p>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In <span class="xref myst">Chapter 1</span>, a <span class="xref myst">sequence</span> is defined as a function of integers.
+Here we generalise this concept to use a sequence to represent the function at discrete points, whose
+<span class="math notranslate nohighlight">\(x\)</span> coordinates are not necessarily intergers.</p>
+</div>
+</section>
+<section id="forward-difference-operator-delta">
+<h2><span class="section-number">2.2.2. </span>Forward Difference Operator <span class="math notranslate nohighlight">\(\Delta\)</span><a class="headerlink" href="#forward-difference-operator-delta" title="Permalink to this headline">#</a></h2>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (Forward Difference)</p>
+<section class="definition-content" id="proof-content">
+<p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order forward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between the next member and itself:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ba2ca453-9ad5-4926-837e-0f4e564d2539">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-ba2ca453-9ad5-4926-837e-0f4e564d2539" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \Delta f_j = f_{j+1} - f_j,
+\end{equation}\]</div>
+<p>and the <span class="math notranslate nohighlight">\(k-\)</span>th order forward difference is defined as:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0c2f5017-3dc9-4f73-8078-01362807bbeb">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-0c2f5017-3dc9-4f73-8078-01362807bbeb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \Delta^k f_j= \Delta\left(\Delta^{k-1} f_j \right).
+\end{equation}\]</div>
+</section>
+</div><div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 2.1 </span></p>
+<section class="example-content" id="proof-content">
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Delta f_0 = f_1 - f_0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta f_{10}= f_{11} - f_{10}\)</span></p></li>
+</ul>
+</section>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For function <span class="math notranslate nohighlight">\(f(x)\)</span>, <span class="math notranslate nohighlight">\(x\in\mathbb{R}\)</span> with a step size <span class="math notranslate nohighlight">\(h\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\Delta f(x) = f(x+h)-f(x)\]</div>
+</div>
+<ul>
+<li><p><strong>Second-order Forward Difference</strong>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \Delta^2 f_j &amp; = \Delta(\Delta f_j) \\
+                &amp; = \Delta(f_{j+1} - f_j) \\
+                &amp; = \Delta(f_{j+1}) - \Delta(f_j) \\
+                &amp; = (f_{j+2} - f_{j+1}) - (f_{j+1} - f_j) \\
+                &amp; = f_{j+2} - 2f_{j+1} + f_j
+  \end{align*}\]</div>
+</li>
+<li><p><strong>Third-order Forward Difference</strong>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \Delta^3 f_j &amp; = \Delta(\Delta^2 f_j)\\
+                &amp; =\Delta(f_{j+2} - 2f_{j+1} + f_j)  \\
+                &amp; = (f_{j+3}-f_{j+2}) - 2(f_{j+2}-f_{j+1}) + (f_{j+1} - f_{j}) \\
+                &amp; = f_{j+3} - 3f_{j+2} + 3f_{j+1} - f_j
+  \end{align*}\]</div>
+</li>
+<li><p><strong>Higher-order Forward Difference</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+  \Delta^n f_j = f_{j+n} - nf_{j+n-1} + \frac{n(n-1)}{2!}f_{j+n-2} - \frac{n(n-1)(n-2)}{3!}f_{j+n-3} + \dots
+  \]</div>
+</li>
+</ul>
+</section>
+<section id="backward-difference-operator-nabla">
+<h2><span class="section-number">2.2.3. </span>Backward difference operator <span class="math notranslate nohighlight">\(\nabla\)</span><a class="headerlink" href="#backward-difference-operator-nabla" title="Permalink to this headline">#</a></h2>
+<div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 2.2 </span> (Backward Difference)</p>
+<section class="definition-content" id="proof-content">
+<p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order backward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between itself and the previous member:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-638ac195-3429-413a-bfed-f312f401f80f">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-638ac195-3429-413a-bfed-f312f401f80f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \nabla f_j = f_{j} - f_{j-1},
+\end{equation}\]</div>
+<p>and the <span class="math notranslate nohighlight">\(k-\)</span>th order backward difference is defined as:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-79cbd70e-ff72-4fca-bf3b-b9a4c66fc2e4">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-79cbd70e-ff72-4fca-bf3b-b9a4c66fc2e4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \nabla^k f_j= \nabla\left(\nabla^{k-1} f_j \right).
+\end{equation}\]</div>
+</section>
+</div><div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 2.2 </span></p>
+<section class="example-content" id="proof-content">
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\nabla f_1 = f_1 - f_0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nabla f_0 = f_0 - f_{-1}\)</span></p></li>
+</ul>
+</section>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For function <span class="math notranslate nohighlight">\(f(x)\)</span>, <span class="math notranslate nohighlight">\(x\in\mathbb{R}\)</span> with a step size <span class="math notranslate nohighlight">\(h\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\nabla f(x) = f(x)-f(x-h)\]</div>
+</div>
+<ul>
+<li><p><strong>Second-order Backward Difference</strong>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+  \nabla^2 f_j &amp; = \nabla(\nabla(f_j)) \\
+              &amp; = \nabla(f_j - f_{j-1}) \\
+              &amp; = \nabla(f_j) - \nabla(f_{j-1}) \\
+              &amp; = (f_j - f_{j-1}) - (f_{j-1} - f_{j-2}) \\
+              &amp; = f_j - 2f_{j-1} + f_{j-2} 
+  \end{align*}\]</div>
+</li>
+<li><p><strong>Third-order Backward Difference</strong>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \nabla^3 f_j &amp; = \nabla(\nabla^2 f_j)\\
+                &amp; =\nabla(f_{j} - 2f_{j-1} + f_{j-2})  \\
+                &amp; = (f_{j}-f_{j-1}) - 2(f_{j-1}-f_{j-2}) + (f_{j-2} - f_{j-3}) \\
+                &amp; = f_j - 3f_{j-1} + 3f_{j-2} - f_{j-3}
+  \end{align*}\]</div>
+</li>
+<li><p><strong>Higher-order Forward Difference</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+  \nabla^n f_j = f_j - nf_{j-1}
+                      + \frac{n(n-1)}{2!}f_{j-2}
+                      - \frac{n(n-1)(n-2)}{3!}f_{j-3} + \dots
+  \]</div>
+</li>
+</ul>
+</section>
+<section id="shift-operators-e-and-e-1">
+<h2><span class="section-number">2.2.4. </span>Shift operators <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(E^{-1}\)</span><a class="headerlink" href="#shift-operators-e-and-e-1" title="Permalink to this headline">#</a></h2>
+<div class="proof definition admonition" id="definition-4">
+<p class="admonition-title"><span class="caption-number">Definition 2.3 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>,
+we define <span class="math notranslate nohighlight">\(E\)</span> as an operator shifting a member in a sequence to the next member</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e4e23758-abe2-4407-8f31-0861f74ce007">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-e4e23758-abe2-4407-8f31-0861f74ce007" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  E f_j = f_{j+1},
+\end{equation}\]</div>
+<p>and shifting a member forward <span class="math notranslate nohighlight">\(k\)</span> times gives</p>
+<div class="math notranslate nohighlight">
+\[E^k f_j= E(E^{k-1}f_j)= f_{j+k}.\]</div>
+<p>Similarly, we define <span class="math notranslate nohighlight">\(E^{-1}\)</span> as an operator shifting a member in a
+sequence to the previous member</p>
+<div class="amsmath math notranslate nohighlight" id="equation-21a8096e-c8cb-453e-a350-6796500e9c31">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-21a8096e-c8cb-453e-a350-6796500e9c31" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  E^{-1} f_j = f_{j-1}
+\end{equation}\]</div>
+<p>and shifting a member backward <span class="math notranslate nohighlight">\(k\)</span> (<span class="math notranslate nohighlight">\(k&gt;0\)</span>) times gives</p>
+<div class="math notranslate nohighlight">
+\[E^{-k} f_j= E^{-1}(E^{-(k-1)}f_j)= f_{j-k}.\]</div>
+</section>
+</div><div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<p>The forward and backward shifting operations can also be applied to
+functions defined on continuous domains</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E f(x)= f(x+h)\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(E^{-1} f(x) = f(x-h)\)</span>.</p></li>
+</ul>
+<p>If we do shifting for <span class="math notranslate nohighlight">\(k\)</span> times , then</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E^k f(x)= f(x+kh)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E^{-k} f(x) = f(x-kh)\)</span></p></li>
+</ul>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Questions</p>
+<ul class="simple">
+<li><p>If we shift forward for <span class="math notranslate nohighlight">\(k=0.9\)</span> steps, what we will get?</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[E^{0.9} f_j= E^{0.9} f(x_j)= f(x_j+0.9h)=?\]</div>
+<ul class="simple">
+<li><p>If we shift backward for <span class="math notranslate nohighlight">\(k=0.9\)</span> steps, what we will get?</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[E^{-0.9} f_j= E^{-0.9} f(x_j)= f(x_j-0.9h)=?\]</div>
+</div>
+<div class="proof theorem admonition" id="theorem-5">
+<p class="admonition-title"><span class="caption-number">Theorem 2.1 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>The difference operators and shift operators have the following
+relations:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E=1+\Delta\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E^{-1}=1-\nabla\)</span></p></li>
+</ul>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Apply the operators on <span class="math notranslate nohighlight">\(f(x)\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E=1+\Delta\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+(1+\Delta) f(x) &amp; = f(x) + \Delta f(x) \\
+                &amp; = f(x) + f(x+h)-f(x) \\
+                &amp; = f(x+h) \\
+                &amp; = E f(x)
+\end{aligned}
+\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E^{-1}=1-\nabla\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+(1-\nabla) f(x) &amp; = f(x) - \nabla f(x) \\
+                &amp; = f(x) - \left[f(x)-f(x-h)\right]\\
+                &amp; = f(x-h) \\
+                &amp; = E^{-1} f(x)
+\end{aligned}
+\end{split}\]</div>
+</div>
 </section>
 </section>
 
@@ -481,6 +705,9 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-data-points">2.2.1. Discrete Data Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-difference-operator-delta">2.2.2. Forward Difference Operator <span class="math notranslate nohighlight">\(\Delta\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-difference-operator-nabla">2.2.3. Backward difference operator <span class="math notranslate nohighlight">\(\nabla\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shift-operators-e-and-e-1">2.2.4. Shift operators <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(E^{-1}\)</span></a></li>
 </ul>
   </nav></div>
 
