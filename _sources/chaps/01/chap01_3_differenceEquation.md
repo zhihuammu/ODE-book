@@ -70,14 +70,8 @@ Identify the order, linearity and homogeneity of the following difference equati
 
 - $y_{n+3} - y_n^2 = n 2^n$
 
-<!-- We indicate for each of the following difference equations its order, it is linear or nonlinear, and whether it is homogeneous or inhomogeneous.
-\begin{align*}
-&y_{n+1} - 2 y_n = 0   & \text{(first order, linear, homogeneous)} \\
-&y_{n+1} - 3 y_n + y_{n-1} = e^{-n}   & \text{(second order, linear, inhomogeneous)} \\
-&y_{n+3} - y_n^2 = n 2^n &  \text{(third order, nonlinear, inhomogeneous)}
-\end{align*}     -->
-
-:::{dropdown} Solution (click to show)
+```{admonition} Solution (click to show)
+:class: hint, dropdown
 \begin{align*}
 &y_{n+1} - 2 y_n = 0   & \text{(first order, linear, homogeneous)} \\
 &y_{n+1} - 3 y_n + y_{n-1} = e^{-n}   & \text{(second order, linear, inhomogeneous)} \\
@@ -122,7 +116,8 @@ We can also express algebraic operations on several members in a sequence as shi
 
 $$ y_{n+2} - 2y_{n+1} + y_n = \left( E^2 - 2E + 1\right) y_n.  $$ -->
 
-:::{dropdown} Solution (click to show)
+```{admonition} Solution (click to show)
+:class: hint, dropdown
 
 - $\left(E^4 - E^2 +1 \right) y_n = y_{n+4} - y_{n+2} + y_n$
 

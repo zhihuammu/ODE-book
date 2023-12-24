@@ -49,7 +49,8 @@ Applying four arithmetic operations on $1+2i$ and $2-5i$, calculate
 - $(1+2i) \times (2-5i)$
 - $\dfrac{1+2i}{2-5i}$
 
-:::{dropdown} Solution (click to show)
+```{admonition} Solution (click to show)
+:class: hint, dropdown
 \begin{align*}
 & (1+2i) + (2-5i)= 3-3i \\
 & (1+2i) - (2-5i)= -1+7i \\
