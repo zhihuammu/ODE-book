@@ -148,3 +148,6 @@ $\displaystyle y_n=\frac{1}{\sqrt{5}}\left[ \left(\frac{1+\sqrt{5}}{2}\right)^n 
 
 :::
 
+[Question 1 Solution](https://zhihuammu.github.io/ODE-book/Ex1/Ex0_Solution_annotated.pdf)
+
+[Question 1 Solution](url/Ex1/Ex0_Solution_annotated.pdf)
