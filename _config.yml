@@ -38,7 +38,8 @@ sphinx:
   config:
 #    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 #    bibtex_reference_style: author_year
-    hide_solutions: True
+    hide_solutions: false
+#    html_extra_path: exSol
   extra_extensions:
     - sphinx_proof
     - sphinx_exercise    
