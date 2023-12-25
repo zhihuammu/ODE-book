@@ -20,6 +20,7 @@ where $h=x_{j+1}-x_j$ is called the step size (or step length), $h\in(0,+\infty)
 
 
 ```{tikz}
+:xscale: 60
 :include: /images/02/discrete.tikz
 ```
 
