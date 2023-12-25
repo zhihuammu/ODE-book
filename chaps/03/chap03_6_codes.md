@@ -30,6 +30,7 @@ The following code has been tested under **Matlab 2022**
 ```{literalinclude} /codes/ch2_prog1.m
 :linenos: True
 :language: matlab
+:emphasize-lines: 22,26
 ```
 
 The output of this code is:
@@ -55,6 +56,7 @@ x        yp         y          F         y_ex      AbsError
 ```{literalinclude} /codes/ch2_prog1.py
 :linenos: True
 :language: python
+:emphasize-lines: 34,37
 ```
 
 The output of this code is:
@@ -87,6 +89,7 @@ The following code has been tested under **Matlab 2022**
 ```{literalinclude} /codes/ch2_prog2.m
 :linenos: True
 :language: matlab
+:emphasize-lines: 25,28
 ```
 
 Output:
@@ -110,6 +113,7 @@ x        yp         y          F         y_ex      AbsError
 ```{literalinclude} /codes/ch2_prog2.py
 :linenos: True
 :language: python
+:emphasize-lines: 38,41
 ```
 
 Output:
