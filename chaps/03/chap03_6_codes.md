@@ -35,7 +35,7 @@ The following code has been tested under **Matlab 2022**
 
 The output of this code is:
 
-```
+```none
 x        yp         y          F         y_ex      AbsError
 0.00  0.0000000  1.0000000  0.0000000  1.0000000  0.00000000
 0.10  0.0000000  1.0048374  0.0951626  1.0048374  0.00000000
@@ -61,7 +61,7 @@ x        yp         y          F         y_ex      AbsError
 
 The output of this code is:
 
-```
+```none
  t       yp         y          F         y_ex      AbsError
 0.00  0.0000000  1.0000000  0.0000000  1.0000000  0.00000000
 0.10  0.0000000  1.0048374  0.0951626  1.0048374  0.00000000
@@ -93,7 +93,7 @@ The following code has been tested under **Matlab 2022**
 ```
 
 Output:
-```
+```none
 x        yp         y          F         y_ex      AbsError
 0.00  0.0000000  1.0000000  0.0000000  1.0000000  0.00000000
 0.10  0.0000000  1.0048375  0.0951625  1.0048374  0.00000008
@@ -117,7 +117,7 @@ x        yp         y          F         y_ex      AbsError
 ```
 
 Output:
-```
+```none
  t       yp         y          F         y_ex      AbsError
 0.00  0.0000000  1.0000000  0.0000000  1.0000000  0.00000000
 0.10  0.0000000  1.0048375  0.0951625  1.0048374  0.00000008
@@ -146,7 +146,7 @@ The following code has been tested under **Matlab 2022**
 :::
 
 Output:
-```
+```none
 t        y          f(t)      y_ex     Abs_error 
 0.00  1.0000000  0.0000000  1.0000000  0.00000000
 0.10  1.0048374  0.0951626  1.0048374  0.00000001
@@ -159,9 +159,6 @@ t        y          f(t)      y_ex     Abs_error
 0.80  1.2493289  0.5506711  1.2493290  0.00000011
 0.90  1.3065696  0.5934304  1.3065697  0.00000009
 1.00  1.3678794  0.6321206  1.3678794  0.00000008
-```
-
-```{figure}
 ```
 
 ```{figure} /images/fig-ch3program3_result.svg

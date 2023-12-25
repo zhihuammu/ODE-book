@@ -57,3 +57,25 @@ div.exercise {
 div.exercise p.admonition-title {
     background-color: var(--exercise-title-color);
 }
+
+/*********************************************
+* hyperlink *
+*********************************************/
+a:link, a:link * {
+  text-decoration: none !important;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}

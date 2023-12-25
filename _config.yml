@@ -4,7 +4,7 @@
 title: Computational Methods in Ordinary Differential Equations
 author: Zhihua Ma
 copyright: "2023--2025"  # Copyright year to be placed in the footer
-logo: images/logo.svg
+logo: images/logo3.svg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -17,8 +17,8 @@ latex:
     targetname: book.tex
 
 # Add a bibtex file so that we can create citations
-bibtex_bibfiles:
-  - references.bib
+#bibtex_bibfiles:
+#  - references.bib
 
 # Information about where the book exists on the web
 repository:

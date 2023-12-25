@@ -96,7 +96,7 @@ $$
 :label: chap04-ex-4.4
 
 Modify [](ch03:program2) for Adams--Bashforth method (Chapter 2)
-to implement Milne-Simpson Predictor-Corrector method given in {ref}`ch04-ex4-4`. Use your
+to implement Milne-Simpson Predictor-Corrector method given in {ref}`chap04-ex-4.3`. Use your
 program to find solution for the initial--value--problem
 
 $$\begin{aligned}
