@@ -20,6 +20,7 @@ name: figure-discretepoints
 ::: -->
 
 ```{tikz}
+:xscale: 60
 :include: /images/02/interpolation.tikz
 ```
 

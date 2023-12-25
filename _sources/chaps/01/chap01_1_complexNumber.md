@@ -49,8 +49,8 @@ Applying four arithmetic operations on $1+2i$ and $2-5i$, calculate
 - $(1+2i) \times (2-5i)$
 - $\dfrac{1+2i}{2-5i}$
 
-```{admonition} Solution (click to show)
-:class: hint, dropdown
+```{dropdown} Solution (click to show)
+<!-- :class: dropdown -->
 \begin{align*}
 & (1+2i) + (2-5i)= 3-3i \\
 & (1+2i) - (2-5i)= -1+7i \\
@@ -91,15 +91,15 @@ z  = r e^{i\theta},
 \end{equation}
 where $r=|z|$, and $\theta$ is the angle defined by the real axis and the straight line connecting the origin and $z$ in the complex plane.
 
-```{note} Three forms of complex number
+:::{prf:remark} Three forms of a complex number
 
-- Standard form: $z=x+iy$
-- Polar form: $z=r(\cos\theta+i\sin\theta)$
-- Exponential form: $z=r e^{i\theta}$
+:Standard form: $z=x+iy$
+:Polar form: $z=r(\cos\theta+i\sin\theta)$
+:Exponential form: $z=r e^{i\theta}$
 
 where $r=|z|=\sqrt{x^2+y^2}$, $\tan \theta = \dfrac{y}{x}$.
 
-```
+:::
 
 If we use the exponential form to represent complex numbers, then the multiplication and division of two complex numbers can be expressed in simpler ways. Let $z_1= r_1 e^{i\theta_1}$ and $z_2 = r_2 e^{i\theta_2}$, then
 \begin{align}

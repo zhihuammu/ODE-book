@@ -432,8 +432,8 @@ L(\xi)= a_0 + a_1 \xi + a_2 \xi^2 + \ldots + a_{k-1} \xi^{k-1} + a_k \xi^{k}=0.
 <p class="admonition-title"><span class="caption-number">Theorem 1.2 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\xi_p~(p=1,2,3,\ldots,k)\)</span> be any solution to the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(1.19)</a>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b8f5780e-1794-4a54-b036-0e85aaf7ebb9">
-<span class="eqno">(1.20)<a class="headerlink" href="#equation-b8f5780e-1794-4a54-b036-0e85aaf7ebb9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9b7f22c5-c44f-44a1-ad3f-4db29ab928cc">
+<span class="eqno">(1.20)<a class="headerlink" href="#equation-9b7f22c5-c44f-44a1-ad3f-4db29ab928cc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_n = \xi_p^n
 \end{equation}\]</div>
 <p>is a solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a>.</p>
@@ -462,8 +462,8 @@ L(E) \xi_p^n = ~ &amp; \left(a_0 + a_1 E + a_2 E^2 + \ldots + a_{k-1}E^{k-1}+a_k
 <p class="admonition-title"><span class="caption-number">Theorem 1.3 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Assume the <span class="math notranslate nohighlight">\(k\)</span> roots of  the characteristic equation are distinct, then a fundamental set of solutions is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9d778be6-5684-46b4-b331-8510b1c6dbce">
-<span class="eqno">(1.21)<a class="headerlink" href="#equation-9d778be6-5684-46b4-b331-8510b1c6dbce" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bec3700b-06dc-4648-b899-dbc103b27305">
+<span class="eqno">(1.21)<a class="headerlink" href="#equation-bec3700b-06dc-4648-b899-dbc103b27305" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \xi_p^n \quad (p=1,2,\ldots,k).
 \end{equation}\]</div>
 <p>An immediate consequence of this theorem, for this particular case, is that the general solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a> is</p>
@@ -497,7 +497,7 @@ L(E) y_n  = ~ &amp; L(E) \left(c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n\
 <div class="math notranslate nohighlight">
 \[ y_{n+1}-ay_n =0, ~ y_0 = Q.\]</div>
 <div class="tip admonition">
-<p class="admonition-title"><strong>Solution Method 1</strong>:</p>
+<p class="admonition-title"><strong>Method 1</strong>:</p>
 <p>From the equation, we get</p>
 <div class="math notranslate nohighlight">
 \[y_{n+1} = a y_n\]</div>
@@ -506,7 +506,7 @@ L(E) y_n  = ~ &amp; L(E) \left(c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n\
 \[y_n = a y_{n-1} = a ( a y_{n-2}) = a(a(ay_{n-3}))=\ldots=a^n y_0 = Q a^n.\]</div>
 </div>
 <div class="tip admonition">
-<p class="admonition-title"><strong>Solution Method 2</strong>:</p>
+<p class="admonition-title"><strong>Method 2</strong>:</p>
 <p>Using the shift operator <span class="math notranslate nohighlight">\(E\)</span>, write the equation into</p>
 <div class="math notranslate nohighlight">
 \[(E-a) y_n = 0,\]</div>
@@ -557,22 +557,28 @@ L(E) y_n  = ~ &amp; L(E) \left(c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n\
 <p>Find the general solution to</p>
 <div class="math notranslate nohighlight">
 \[y_{n+2} + \frac{5}{6} y_{n+1} + \frac{1}{6} y_n = 0.\]</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution (click to show)</p>
-<p>The characteristic equation is</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solution (click to show)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<!-- :class: dropdown -->
+<p class="sd-card-text">The characteristic equation is</p>
 <div class="math notranslate nohighlight">
 \[\xi^2 + \frac{5}{6} \xi + \frac{1}{6}=0,\]</div>
-<p>using factorisation, we get</p>
+<p class="sd-card-text">using factorisation, we get</p>
 <div class="math notranslate nohighlight">
 \[\left(\xi+\frac{1}{2}\right)\left(\xi+\frac{1}{3}\right)=0,\]</div>
-<p>and we get two different real solutions</p>
+<p class="sd-card-text">and we get two different real solutions</p>
 <div class="math notranslate nohighlight">
 \[\xi_1 = -\frac{1}{2}, ~ \xi_2 = -\frac{1}{3}.\]</div>
-<p>So the general solution is</p>
+<p class="sd-card-text">So the general solution is</p>
 <div class="math notranslate nohighlight">
 \[y_n = c_1 \left(-\frac{1}{2}\right)^n+c_2\left(-\frac{1}{3}\right)^n\]</div>
 </div>
-</section>
+</details></section>
 </div></div>
 <div class="tip admonition">
 <p class="admonition-title"><strong>Case (2) Two repeated real solutions: <span class="math notranslate nohighlight">\(\xi_1 = \xi_2 = \xi \in \mathbb{R}\)</span></strong>:</p>
@@ -585,19 +591,25 @@ L(E) y_n  = ~ &amp; L(E) \left(c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n\
 <p>Find the general solution to</p>
 <div class="math notranslate nohighlight">
 \[y_{n+2}+y_{n+1}+\frac{1}{4} y_n = 0\]</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution (click to show)</p>
-<p>The characteristic equation is</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solution (click to show)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<!-- :class: dropdown -->
+<p class="sd-card-text">The characteristic equation is</p>
 <div class="math notranslate nohighlight">
 \[\xi^2+\xi+\frac{1}{4}=0,\]</div>
-<p>so</p>
+<p class="sd-card-text">so</p>
 <div class="math notranslate nohighlight">
 \[\xi_1=\xi_2=-\frac{1}{2},\]</div>
-<p>and the general solution is</p>
+<p class="sd-card-text">and the general solution is</p>
 <div class="math notranslate nohighlight">
 \[y_n = c_1 \left(-\frac{1}{2}\right)^n + c_2 n \left(-\frac{1}{2}\right)^n =\left( c_1  + c_2 n \right) \left(-\frac{1}{2}\right)^n. \]</div>
 </div>
-</section>
+</details></section>
 </div></div>
 <div class="tip admonition">
 <p class="admonition-title"><strong>Case (3) Two conjugate complex solutions: <span class="math notranslate nohighlight">\(\xi_{1,2}=\alpha\pm  \beta i \in \mathbb{C}\)</span>, <span class="math notranslate nohighlight">\(i=\sqrt{-1}\)</span></strong>:</p>
@@ -610,22 +622,28 @@ L(E) y_n  = ~ &amp; L(E) \left(c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n\
 <section class="example-content" id="proof-content">
 <div class="math notranslate nohighlight">
 \[ y_{n+2} + \frac{1}{4} y_n = 0 \]</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution (click to show)</p>
-<p>The characteristic equation is</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solution (click to show)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<!-- :class: dropdown -->
+<p class="sd-card-text">The characteristic equation is</p>
 <div class="math notranslate nohighlight">
 \[ \xi^2 + \frac{1}{4}=0, \]</div>
-<p>so</p>
+<p class="sd-card-text">so</p>
 <div class="math notranslate nohighlight">
 \[ \xi_{1,2}= \pm  \frac{1}{2} i , \]</div>
-<p>and</p>
+<p class="sd-card-text">and</p>
 <div class="math notranslate nohighlight">
 \[ r=\frac{1}{2},~\theta=\frac{\pi}{2},\]</div>
-<p>therefore the general solution is</p>
+<p class="sd-card-text">therefore the general solution is</p>
 <div class="math notranslate nohighlight">
 \[ y_n = \left(\frac{1}{2}\right)^n \left(c_1 \cos \left(\frac{n \pi}{2}\right) + c_2 \sin \left(\frac{n \pi}{2}\right)\right). \]</div>
 </div>
-</section>
+</details></section>
 </div></div>
 </section>
 <section id="higher-order-difference-equations">
@@ -678,11 +696,17 @@ L(E) y_n  = ~ &amp; L(E) \left(c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n\
 <div class="math notranslate nohighlight">
 \[\xi_1 \sim \xi_{13} = -\frac{1}{2}, \frac{1}{3}, \frac{3}{4}, \frac{3}{4}, \frac{3}{4}, 1\pm\sqrt{3}i, 1\pm i, 1\pm i, 1\pm i, \]</div>
 <p>find the general solution to the corresponding difference equation.</p>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution (click to show)</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solution (click to show)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<!-- :class: dropdown -->
 <div class="math notranslate nohighlight">
 \[1+\sqrt{3}=2 e^{i \frac{\pi}{3}},~ 1+i = \sqrt{2} e^{i\frac{\pi}{4}},\]</div>
-<p>so the general solution is</p>
+<p class="sd-card-text">so the general solution is</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 	y_n = &amp;~ c_1 \left(-\frac{1}{2}\right)^n + c_2 \left(\frac{1}{3}\right)^n \\
@@ -693,7 +717,7 @@ L(E) y_n  = ~ &amp; L(E) \left(c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n\
 	~ &amp; ~ + (\sqrt{2})^n n^2 \left[c_{12} \cos \left(\frac{n\pi}{4}\right) + c_{13} \sin \left(\frac{n\pi}{4}\right)\right]\\        
 \end{align*}\]</div>
 </div>
-</section>
+</details></section>
 </div></section>
 </section>
 

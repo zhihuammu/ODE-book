@@ -371,7 +371,7 @@ Find the stability interval and region for the following methods:
 
         Output
         ```
-        -10.0000    1.2281    0.1313
+           -10.0000    1.2281    0.1313
             -9.5000    1.2078    0.1322
             -9.0000    1.1858    0.1332
             -8.5000    1.1618    0.1342
