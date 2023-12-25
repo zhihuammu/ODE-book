@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>6.5. Chapter 6 Exercises &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -41,13 +40,16 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -71,7 +73,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="7. Stiff Differential Equations" href="../07/chap07_0.html" />
     <link rel="prev" title="6.4. Example MATLAB Programs" href="chap06_4_exampleCode.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -80,6 +82,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -133,9 +144,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -145,8 +158,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo3.svg" class="logo__image only-light" alt="Computational Methods in Ordinary Differential Equations - Home"/>
+    <script>document.write(`<img src="../../_static/logo3.svg" class="logo__image only-dark" alt="Computational Methods in Ordinary Differential Equations - Home"/>`);</script>
   
   
 </a></div>
@@ -343,20 +356,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -385,14 +400,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="chapter-6-exercises">
-<span id="chap-stability2-exercise"></span><h1><span class="section-number">6.5. </span>Chapter 6 Exercises<a class="headerlink" href="#chapter-6-exercises" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-6-exercises">
+<span id="chap-stability2-exercise"></span><h1><span class="section-number">6.5. </span>Chapter 6 Exercises<a class="headerlink" href="#chapter-6-exercises" title="Permalink to this heading">#</a></h1>
 <p>You should try the following exercise questions first, then check with the answers.</p>
 <p>For detailed solutions, please find them in the Moodle area for this Unit.</p>
 <div class="exercise admonition" id="chap06-ex6-1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.1 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Show that the method</p>
 <div class="math notranslate nohighlight">
 \[
@@ -405,12 +420,12 @@ document.write(`
 <p class="admonition-title">Hint</p>
 <p>To show that the method is absolutely stable for all <span class="math notranslate nohighlight">\(h\lambda \not\in (0,2)\)</span>, we just need to show that the stability interval is <span class="math notranslate nohighlight">\(h\lambda \in (-\infty, 0] \cup [2, \infty )\)</span>.</p>
 </div>
-</section>
+</div>
 </div>
 <div class="solution dropdown admonition" id="chaps/06/chap06_5_exercise-solution-1">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#chap06-ex6-1"> Exercise 6.1</a></p>
-<section id="solution-content">
+<div class="section" id="solution-content">
 <p>Re-arrange the equation as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -457,12 +472,12 @@ L(\xi, h\lambda) &amp; = \sum_{i=0}^{k} \left(\alpha_i - h\lambda \beta_i \right
     h\lambda \leq 0 \quad \text{or} \quad h\lambda \geq 2
 \]</div>
 <p>the stability interval is <span class="math notranslate nohighlight">\((-\infty, 0] \cup [2, \infty )\)</span>.</p>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="chap06-ex6-2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.2 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>For the method</p>
 <div class="math notranslate nohighlight">
 \[
@@ -475,12 +490,12 @@ L(\xi, h\lambda) &amp; = \sum_{i=0}^{k} \left(\alpha_i - h\lambda \beta_i \right
 <li><p>it has a stability interval of  of <span class="math notranslate nohighlight">\(\left(-\frac{4}{3},0\right)\)</span>, and</p></li>
 <li><p>its region of stability is the circle on this interval as diameter.</p></li>
 </ul>
-</section>
+</div>
 </div>
 <div class="solution dropdown admonition" id="chaps/06/chap06_5_exercise-solution-3">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#chap06-ex6-2"> Exercise 6.2</a></p>
-<section id="solution-content">
+<div class="section" id="solution-content">
 <ul>
 <li><p>Stability interval
 Re-arranging the equation as</p>
@@ -495,20 +510,20 @@ Re-arranging the equation as</p>
     =0
     \]</div>
 <p>Use Matlab to determine the stability interval (let <span class="math notranslate nohighlight">\(H=h\lambda\)</span> in the code)</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">format</span><span class="w"> </span><span class="nb">rat</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">format</span><span class="w"> </span><span class="nb">rat</span>
 
-<span class="nb">disp</span><span class="p">([</span><span class="s">&#39;       H           |\xi_1|         |\xi_2|&#39;</span><span class="p">]);</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">([</span><span class="s">&#39;------------------------------------------&#39;</span><span class="p">]);</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="n">H</span><span class="p">=</span><span class="o">-</span><span class="mi">12</span><span class="o">/</span><span class="mi">6</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="o">/</span><span class="mi">6</span><span class="w"></span>
-<span class="w">    </span><span class="n">p</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">H</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">1.5</span><span class="o">*</span><span class="n">H</span><span class="p">)];</span><span class="w"></span>
-<span class="w">    </span><span class="n">r</span><span class="p">=</span><span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">([</span><span class="n">H</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">r</span><span class="o">&#39;</span><span class="p">)])</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">([</span><span class="s">&#39;       H           |\xi_1|         |\xi_2|&#39;</span><span class="p">]);</span>
+<span class="nb">disp</span><span class="p">([</span><span class="s">&#39;------------------------------------------&#39;</span><span class="p">]);</span>
+<span class="k">for</span><span class="w"> </span><span class="n">H</span><span class="p">=</span><span class="o">-</span><span class="mi">12</span><span class="o">/</span><span class="mi">6</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="o">/</span><span class="mi">6</span>
+<span class="w">    </span><span class="n">p</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">H</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">1.5</span><span class="o">*</span><span class="n">H</span><span class="p">)];</span>
+<span class="w">    </span><span class="n">r</span><span class="p">=</span><span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">([</span><span class="n">H</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">r</span><span class="o">&#39;</span><span class="p">)])</span>
+<span class="k">end</span>
 </pre></div>
 </div>
 <p>Output</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">H</span><span class="w">           </span><span class="o">|\</span><span class="n">xi_1</span><span class="o">|</span><span class="w">         </span><span class="o">|\</span><span class="n">xi_2</span><span class="o">|</span><span class="w"></span>
-<span class="o">------------------------------------------</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">H</span><span class="w">           </span><span class="o">|\</span><span class="n">xi_1</span><span class="o">|</span><span class="w">         </span><span class="o">|\</span><span class="n">xi_2</span><span class="o">|</span>
+<span class="o">------------------------------------------</span>
 <span class="w">    </span><span class="o">-</span><span class="mi">2</span><span class="w">           </span><span class="mi">1393</span><span class="o">/</span><span class="mi">985</span><span class="w">       </span><span class="mi">1393</span><span class="o">/</span><span class="mi">985</span><span class="w">   </span>
 <span class="w">    </span><span class="o">-</span><span class="mi">11</span><span class="o">/</span><span class="mi">6</span><span class="w">         </span><span class="mi">1012</span><span class="o">/</span><span class="mi">765</span><span class="w">       </span><span class="mi">1012</span><span class="o">/</span><span class="mi">765</span><span class="w">   </span>
 <span class="w">    </span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="w">         </span><span class="mi">1079</span><span class="o">/</span><span class="mi">881</span><span class="w">       </span><span class="mi">1079</span><span class="o">/</span><span class="mi">881</span><span class="w">   </span>
@@ -575,30 +590,30 @@ Re-arranging the equation as</p>
 <div class="math notranslate nohighlight">
 \[ \left( x - \left(-\frac{2}{3}\right) \right)^2 + y^2 = \left(\frac{2}{3}\right)^2\]</div>
 <p>Let <span class="math notranslate nohighlight">\(X=x - \left(-\frac{2}{3}\right)\)</span> and <span class="math notranslate nohighlight">\(Y=y\)</span>, we can use symbolic calculation in Matlab</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">syms</span><span class="w"> </span><span class="s">theta</span><span class="w"></span>
-<span class="n">X</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="o">*</span><span class="p">(</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>^<span class="mi">2</span><span class="w"> </span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="w"> </span><span class="mi">5</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="n">Y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">5</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">));</span><span class="w"></span>
-<span class="nb">simplify</span><span class="p">((</span><span class="n">X</span><span class="o">+</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">Y</span>^<span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">syms</span><span class="w"> </span><span class="s">theta</span>
+<span class="n">X</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="o">*</span><span class="p">(</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>^<span class="mi">2</span><span class="w"> </span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="w"> </span><span class="mi">5</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="w"> </span><span class="p">);</span>
+<span class="n">Y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">5</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">));</span>
+<span class="nb">simplify</span><span class="p">((</span><span class="n">X</span><span class="o">+</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">Y</span>^<span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">9</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">9</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Use Matlab to plot the stability region</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span><span class="p">=</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span><span class="w"></span>
-<span class="n">xi</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">theta</span><span class="p">);</span><span class="w"></span>
-<span class="n">rho</span><span class="p">=</span><span class="n">xi</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="n">sig</span><span class="p">=</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">xi</span><span class="o">+</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
-<span class="n">z</span><span class="p">=</span><span class="n">rho</span><span class="o">./</span><span class="n">sig</span><span class="p">;</span><span class="w"></span>
-<span class="nb">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Re&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Im&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Stability Region&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">1.4</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span><span class="o">-</span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.8</span><span class="p">])</span><span class="w"></span>
-<span class="nb">axis</span><span class="p">(</span><span class="s">&#39;square&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">xticks</span><span class="p">(</span><span class="o">-</span><span class="mf">1.4</span><span class="p">:</span><span class="mf">0.2</span><span class="p">:</span><span class="mf">0.2</span><span class="p">)</span><span class="w"></span>
-<span class="nb">grid</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span><span class="p">=</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">xi</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">theta</span><span class="p">);</span>
+<span class="n">rho</span><span class="p">=</span><span class="n">xi</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">sig</span><span class="p">=</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">xi</span><span class="o">+</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">z</span><span class="p">=</span><span class="n">rho</span><span class="o">./</span><span class="n">sig</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Re&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Im&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Stability Region&#39;</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">1.4</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span><span class="o">-</span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.8</span><span class="p">])</span>
+<span class="nb">axis</span><span class="p">(</span><span class="s">&#39;square&#39;</span><span class="p">)</span>
+<span class="nb">xticks</span><span class="p">(</span><span class="o">-</span><span class="mf">1.4</span><span class="p">:</span><span class="mf">0.2</span><span class="p">:</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">grid</span>
 </pre></div>
 </div>
 <p>Output</p>
@@ -606,12 +621,12 @@ Re-arranging the equation as</p>
 <p>The circle crosses the real axis at <span class="math notranslate nohighlight">\((-\frac{4}{3}, 0)\)</span> and <span class="math notranslate nohighlight">\((0, 0)\)</span>.</p>
 </li>
 </ul>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="chap06-ex6-3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.3 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Find the stability interval and region for the following methods:</p>
 <ol class="arabic simple">
 <li><p>Third-order Adams–Bashforth method
@@ -619,12 +634,12 @@ Re-arranging the equation as</p>
 <li><p>Third-order Adams–Moulton method
 <span class="math notranslate nohighlight">\(\displaystyle y_{j+1} = y_j + \frac{h}{12}\bigl[\,5f_{j+1} + 8f_j - f_{j-1}\,\bigr]\)</span></p></li>
 </ol>
-</section>
+</div>
 </div>
 <div class="solution admonition" id="chaps/06/chap06_5_exercise-solution-5">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#chap06-ex6-3"> Exercise 6.3</a></p>
-<section id="solution-content">
+<div class="section" id="solution-content">
 <ol class="arabic">
 <li><div class="dropdown admonition">
 <p class="admonition-title">Solution (click to show)</p>
@@ -636,36 +651,36 @@ The characteristic equation is</p>
     L(\xi, h\lambda) = \xi^3 - (1+\frac{23}{12}h\lambda) \xi^2 + \frac{16}{12}h\lambda\xi - \frac{5}{12} h \lambda=0
     \]</div>
 <p>Use Matlab</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">H</span><span class="p">=</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">1</span><span class="w"></span>
-<span class="w">    </span><span class="n">p</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">23</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="mi">16</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="n">H</span><span class="w"> </span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="n">H</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="n">r</span><span class="p">=</span><span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">([</span><span class="n">H</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">r</span><span class="p">)])</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">H</span><span class="p">=</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mf">0.05</span><span class="p">:</span><span class="mi">1</span>
+<span class="w">    </span><span class="n">p</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">23</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="mi">16</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="n">H</span><span class="w"> </span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="n">H</span><span class="p">];</span>
+<span class="w">    </span><span class="n">r</span><span class="p">=</span><span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">([</span><span class="n">H</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">r</span><span class="p">)])</span>
+<span class="k">end</span>
 </pre></div>
 </div>
 <p>Output</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="o">-</span><span class="mf">1.0000</span><span class="w">    </span><span class="mf">1.7910</span><span class="w">    </span><span class="mf">0.4823</span><span class="w">    </span><span class="mf">0.4823</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.9500</span><span class="w">    </span><span class="mf">1.7018</span><span class="w">    </span><span class="mf">0.4823</span><span class="w">    </span><span class="mf">0.4823</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.9000</span><span class="w">    </span><span class="mf">1.6131</span><span class="w">    </span><span class="mf">0.4822</span><span class="w">    </span><span class="mf">0.4822</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.8500</span><span class="w">    </span><span class="mf">1.5248</span><span class="w">    </span><span class="mf">0.4819</span><span class="w">    </span><span class="mf">0.4819</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.8000</span><span class="w">    </span><span class="mf">1.4370</span><span class="w">    </span><span class="mf">0.4816</span><span class="w">    </span><span class="mf">0.4816</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.7500</span><span class="w">    </span><span class="mf">1.3498</span><span class="w">    </span><span class="mf">0.4812</span><span class="w">    </span><span class="mf">0.4812</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.7000</span><span class="w">    </span><span class="mf">1.2633</span><span class="w">    </span><span class="mf">0.4805</span><span class="w">    </span><span class="mf">0.4805</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.6500</span><span class="w">    </span><span class="mf">1.1773</span><span class="w">    </span><span class="mf">0.4796</span><span class="w">    </span><span class="mf">0.4796</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.6000</span><span class="w">    </span><span class="mf">1.0921</span><span class="w">    </span><span class="mf">0.4784</span><span class="w">    </span><span class="mf">0.4784</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.5500</span><span class="w">    </span><span class="mf">1.0076</span><span class="w">    </span><span class="mf">0.4769</span><span class="w">    </span><span class="mf">0.4769</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.5000</span><span class="w">    </span><span class="mf">0.9239</span><span class="w">    </span><span class="mf">0.5700</span><span class="w">    </span><span class="mf">0.3956</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.4500</span><span class="w">    </span><span class="mf">0.8410</span><span class="w">    </span><span class="mf">0.6174</span><span class="w">    </span><span class="mf">0.3611</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.4000</span><span class="w">    </span><span class="mf">0.7589</span><span class="w">    </span><span class="mf">0.6589</span><span class="w">    </span><span class="mf">0.3333</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.3500</span><span class="w">    </span><span class="mf">0.6775</span><span class="w">    </span><span class="mf">0.6984</span><span class="w">    </span><span class="mf">0.3082</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.3000</span><span class="w">    </span><span class="mf">0.5966</span><span class="w">    </span><span class="mf">0.7375</span><span class="w">    </span><span class="mf">0.2841</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.2500</span><span class="w">    </span><span class="mf">0.5161</span><span class="w">    </span><span class="mf">0.7773</span><span class="w">    </span><span class="mf">0.2597</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.2000</span><span class="w">    </span><span class="mf">0.8181</span><span class="w">    </span><span class="mf">0.4354</span><span class="w">    </span><span class="mf">0.2339</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.1500</span><span class="w">    </span><span class="mf">0.8605</span><span class="w">    </span><span class="mf">0.3535</span><span class="w">    </span><span class="mf">0.2055</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.1000</span><span class="w">    </span><span class="mf">0.9048</span><span class="w">    </span><span class="mf">0.2682</span><span class="w">    </span><span class="mf">0.1717</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mf">0.0500</span><span class="w">    </span><span class="mf">0.9512</span><span class="w">    </span><span class="mf">0.1734</span><span class="w">    </span><span class="mf">0.1263</span><span class="w"></span>
-<span class="w">    </span><span class="mi">0</span><span class="w">     </span><span class="mi">0</span><span class="w">     </span><span class="mi">0</span><span class="w">     </span><span class="mi">1</span><span class="w"></span>
-<span class="w">    </span><span class="mf">0.0500</span><span class="w">    </span><span class="mf">1.0513</span><span class="w">    </span><span class="mf">0.1408</span><span class="w">    </span><span class="mf">0.1408</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="o">-</span><span class="mf">1.0000</span><span class="w">    </span><span class="mf">1.7910</span><span class="w">    </span><span class="mf">0.4823</span><span class="w">    </span><span class="mf">0.4823</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.9500</span><span class="w">    </span><span class="mf">1.7018</span><span class="w">    </span><span class="mf">0.4823</span><span class="w">    </span><span class="mf">0.4823</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.9000</span><span class="w">    </span><span class="mf">1.6131</span><span class="w">    </span><span class="mf">0.4822</span><span class="w">    </span><span class="mf">0.4822</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.8500</span><span class="w">    </span><span class="mf">1.5248</span><span class="w">    </span><span class="mf">0.4819</span><span class="w">    </span><span class="mf">0.4819</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.8000</span><span class="w">    </span><span class="mf">1.4370</span><span class="w">    </span><span class="mf">0.4816</span><span class="w">    </span><span class="mf">0.4816</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.7500</span><span class="w">    </span><span class="mf">1.3498</span><span class="w">    </span><span class="mf">0.4812</span><span class="w">    </span><span class="mf">0.4812</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.7000</span><span class="w">    </span><span class="mf">1.2633</span><span class="w">    </span><span class="mf">0.4805</span><span class="w">    </span><span class="mf">0.4805</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.6500</span><span class="w">    </span><span class="mf">1.1773</span><span class="w">    </span><span class="mf">0.4796</span><span class="w">    </span><span class="mf">0.4796</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.6000</span><span class="w">    </span><span class="mf">1.0921</span><span class="w">    </span><span class="mf">0.4784</span><span class="w">    </span><span class="mf">0.4784</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.5500</span><span class="w">    </span><span class="mf">1.0076</span><span class="w">    </span><span class="mf">0.4769</span><span class="w">    </span><span class="mf">0.4769</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.5000</span><span class="w">    </span><span class="mf">0.9239</span><span class="w">    </span><span class="mf">0.5700</span><span class="w">    </span><span class="mf">0.3956</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.4500</span><span class="w">    </span><span class="mf">0.8410</span><span class="w">    </span><span class="mf">0.6174</span><span class="w">    </span><span class="mf">0.3611</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.4000</span><span class="w">    </span><span class="mf">0.7589</span><span class="w">    </span><span class="mf">0.6589</span><span class="w">    </span><span class="mf">0.3333</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.3500</span><span class="w">    </span><span class="mf">0.6775</span><span class="w">    </span><span class="mf">0.6984</span><span class="w">    </span><span class="mf">0.3082</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.3000</span><span class="w">    </span><span class="mf">0.5966</span><span class="w">    </span><span class="mf">0.7375</span><span class="w">    </span><span class="mf">0.2841</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.2500</span><span class="w">    </span><span class="mf">0.5161</span><span class="w">    </span><span class="mf">0.7773</span><span class="w">    </span><span class="mf">0.2597</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.2000</span><span class="w">    </span><span class="mf">0.8181</span><span class="w">    </span><span class="mf">0.4354</span><span class="w">    </span><span class="mf">0.2339</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.1500</span><span class="w">    </span><span class="mf">0.8605</span><span class="w">    </span><span class="mf">0.3535</span><span class="w">    </span><span class="mf">0.2055</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.1000</span><span class="w">    </span><span class="mf">0.9048</span><span class="w">    </span><span class="mf">0.2682</span><span class="w">    </span><span class="mf">0.1717</span>
+<span class="w">    </span><span class="o">-</span><span class="mf">0.0500</span><span class="w">    </span><span class="mf">0.9512</span><span class="w">    </span><span class="mf">0.1734</span><span class="w">    </span><span class="mf">0.1263</span>
+<span class="w">    </span><span class="mi">0</span><span class="w">     </span><span class="mi">0</span><span class="w">     </span><span class="mi">0</span><span class="w">     </span><span class="mi">1</span>
+<span class="w">    </span><span class="mf">0.0500</span><span class="w">    </span><span class="mf">1.0513</span><span class="w">    </span><span class="mf">0.1408</span><span class="w">    </span><span class="mf">0.1408</span>
 <span class="w">    </span><span class="mf">0.1000</span><span class="w">    </span><span class="mf">1.1051</span><span class="w">    </span><span class="mf">0.1942</span><span class="w">    </span><span class="mf">0.1942</span><span class="w">  </span>
 </pre></div>
 </div>
@@ -685,18 +700,18 @@ The first and second characteristic polynomials are</p>
             =\frac{\xi^3-\xi^2}{\frac{23}{12}\xi^2 - \frac{16}{12}\xi + \frac{5}{12}}
     \]</div>
 <p>Use Matlab</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span><span class="p">=</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">);</span><span class="w"></span>
-<span class="n">xi</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">theta</span><span class="p">);</span><span class="w"></span>
-<span class="n">rho</span><span class="p">=</span><span class="n">xi</span><span class="o">.^</span><span class="mi">3</span><span class="o">-</span><span class="n">xi</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
-<span class="n">sig</span><span class="p">=(</span><span class="mi">23</span><span class="o">*</span><span class="n">xi</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="mi">16</span><span class="o">*</span><span class="n">xi</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mi">12</span><span class="p">;</span><span class="w"></span>
-<span class="n">z</span><span class="p">=</span><span class="n">rho</span><span class="o">./</span><span class="n">sig</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span><span class="p">=</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">);</span>
+<span class="n">xi</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">theta</span><span class="p">);</span>
+<span class="n">rho</span><span class="p">=</span><span class="n">xi</span><span class="o">.^</span><span class="mi">3</span><span class="o">-</span><span class="n">xi</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">sig</span><span class="p">=(</span><span class="mi">23</span><span class="o">*</span><span class="n">xi</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="mi">16</span><span class="o">*</span><span class="n">xi</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mi">12</span><span class="p">;</span>
+<span class="n">z</span><span class="p">=</span><span class="n">rho</span><span class="o">./</span><span class="n">sig</span><span class="p">;</span>
 
-<span class="nb">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
-<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">1.4</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span><span class="o">-</span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.8</span><span class="p">])</span><span class="w"></span>
-<span class="nb">axis</span><span class="p">(</span><span class="s">&#39;square&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">grid</span><span class="w"> </span><span class="n">on</span><span class="w"></span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Re&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Im&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">1.4</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span><span class="o">-</span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.8</span><span class="p">])</span>
+<span class="nb">axis</span><span class="p">(</span><span class="s">&#39;square&#39;</span><span class="p">)</span>
+<span class="nb">grid</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Re&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Im&#39;</span><span class="p">)</span>
 <span class="nb">title</span><span class="p">(</span><span class="s">&#39;Stability Region&#39;</span><span class="p">)</span><span class="w">        </span>
 </pre></div>
 </div>
@@ -718,10 +733,10 @@ The first and second characteristic polynomials are</p>
     =0
     \]</div>
 <p>Use Matlab</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">H</span><span class="p">=</span><span class="o">-</span><span class="mi">10</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mi">1</span><span class="w"></span>
-<span class="w">    </span><span class="n">p</span><span class="p">=[(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">8</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="n">H</span><span class="o">/</span><span class="mi">12</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="n">r</span><span class="p">=</span><span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">([</span><span class="n">H</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">r</span><span class="p">)])</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">H</span><span class="p">=</span><span class="o">-</span><span class="mi">10</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mi">1</span>
+<span class="w">    </span><span class="n">p</span><span class="p">=[(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">8</span><span class="o">/</span><span class="mi">12</span><span class="o">*</span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="n">H</span><span class="o">/</span><span class="mi">12</span><span class="p">];</span>
+<span class="w">    </span><span class="n">r</span><span class="p">=</span><span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">([</span><span class="n">H</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">r</span><span class="p">)])</span>
 <span class="k">end</span><span class="w">    </span>
 </pre></div>
 </div>
@@ -762,19 +777,19 @@ The first and second characteristic polynomials are</p>
     \sigma(\xi) = \frac{5\xi^2 + 8 \xi - 1}{12}
     \]</div>
 <p>Use Matlab</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span><span class="p">=</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
-<span class="n">xi</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">theta</span><span class="p">);</span><span class="w"></span>
-<span class="n">rho</span><span class="p">=</span><span class="n">xi</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="n">xi</span><span class="p">;</span><span class="w"></span>
-<span class="n">sig</span><span class="p">=(</span><span class="mi">5</span><span class="o">*</span><span class="n">xi</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="mi">8</span><span class="o">*</span><span class="n">xi</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">12</span><span class="p">;</span><span class="w"></span>
-<span class="n">z</span><span class="p">=</span><span class="n">rho</span><span class="o">./</span><span class="n">sig</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span><span class="p">=</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span>
+<span class="n">xi</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">theta</span><span class="p">);</span>
+<span class="n">rho</span><span class="p">=</span><span class="n">xi</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="n">xi</span><span class="p">;</span>
+<span class="n">sig</span><span class="p">=(</span><span class="mi">5</span><span class="o">*</span><span class="n">xi</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="mi">8</span><span class="o">*</span><span class="n">xi</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">12</span><span class="p">;</span>
+<span class="n">z</span><span class="p">=</span><span class="n">rho</span><span class="o">./</span><span class="n">sig</span><span class="p">;</span>
 
-<span class="nb">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
-<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">7</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="mi">4</span><span class="w"> </span><span class="mi">4</span><span class="p">])</span><span class="w"></span>
-<span class="nb">axis</span><span class="p">(</span><span class="s">&#39;square&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">grid</span><span class="w"> </span><span class="n">on</span><span class="w"></span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Re&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Im&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Stability Region&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">7</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="mi">4</span><span class="w"> </span><span class="mi">4</span><span class="p">])</span>
+<span class="nb">axis</span><span class="p">(</span><span class="s">&#39;square&#39;</span><span class="p">)</span>
+<span class="nb">grid</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Re&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Im&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Stability Region&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output</p>
@@ -784,12 +799,12 @@ The first and second characteristic polynomials are</p>
 </div>
 </li>
 </ol>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="chap06-ex6-4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.4 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Show that the method</p>
 <div class="math notranslate nohighlight">
 \[
@@ -799,12 +814,12 @@ The first and second characteristic polynomials are</p>
 \]</div>
 <p>has an interval of absolute stability of
 <span class="math notranslate nohighlight">\((-\infty,0]\)</span>. Explain how you can verify your results.</p>
-</section>
+</div>
 </div>
 <div class="solution dropdown admonition" id="chaps/06/chap06_5_exercise-solution-7">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#chap06-ex6-4"> Exercise 6.4</a></p>
-<section id="solution-content">
+<div class="section" id="solution-content">
 <p>The characteristic polynomial is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -827,12 +842,12 @@ L(\xi, h\lambda) = (1-\frac{1}{2}h\lambda)\xi - (1+\frac{1}{2}h\lambda)
 h\lambda \leq 0
 \]</div>
 <p>therefore, the stability interval is <span class="math notranslate nohighlight">\((-\infty, 0]\)</span>.</p>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="chap06-ex6-5">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.5 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Show that the Simpson’s rule:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -842,12 +857,12 @@ h\lambda \leq 0
 \]</div>
 <p>has no interval of absolute stability. Try to verify
 your results by plotting the region of absolute stability.</p>
-</section>
+</div>
 </div>
 <div class="solution dropdown admonition" id="chaps/06/chap06_5_exercise-solution-9">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#chap06-ex6-5"> Exercise 6.5</a></p>
-<section id="solution-content">
+<div class="section" id="solution-content">
 <p>Re-arrange the equation</p>
 <div class="math notranslate nohighlight">
 \[
@@ -860,51 +875,51 @@ y_{j+2} + 0y_{j+1} - y_j = h \left(\frac{1}{3} f_{j+2} + \frac{4}{3} f_{j+1} + \
 \]</div>
 <p>Let <span class="math notranslate nohighlight">\(H=h\lambda\)</span></p>
 <p>Matlab code</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">format</span><span class="w"> </span><span class="n">short</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="n">H</span><span class="p">=</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mi">1</span><span class="w"></span>
-<span class="w">    </span><span class="n">p</span><span class="p">=[(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">H</span><span class="o">/</span><span class="mi">3</span><span class="p">)];</span><span class="w"></span>
-<span class="w">    </span><span class="n">r</span><span class="p">=</span><span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">([</span><span class="n">H</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">r</span><span class="p">)]);</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">format</span><span class="w"> </span><span class="n">short</span>
+<span class="k">for</span><span class="w"> </span><span class="n">H</span><span class="p">=</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mi">1</span>
+<span class="w">    </span><span class="n">p</span><span class="p">=[(</span><span class="mi">1</span><span class="o">-</span><span class="n">H</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">H</span><span class="o">/</span><span class="mi">3</span><span class="p">)];</span>
+<span class="w">    </span><span class="n">r</span><span class="p">=</span><span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">([</span><span class="n">H</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">r</span><span class="p">)]);</span>
+<span class="k">end</span>
 </pre></div>
 </div>
 <p>Output</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">   </span><span class="o">-</span><span class="mf">5.0000</span><span class="w">    </span><span class="mf">2.3956</span><span class="w">    </span><span class="mf">0.1044</span><span class="w"></span>
-<span class="w">   </span><span class="o">-</span><span class="mf">4.5000</span><span class="w">    </span><span class="mf">2.3136</span><span class="w">    </span><span class="mf">0.0864</span><span class="w"></span>
-<span class="w">   </span><span class="o">-</span><span class="mf">4.0000</span><span class="w">    </span><span class="mf">2.2214</span><span class="w">    </span><span class="mf">0.0643</span><span class="w"></span>
-<span class="w">   </span><span class="o">-</span><span class="mf">3.5000</span><span class="w">    </span><span class="mf">2.1175</span><span class="w">    </span><span class="mf">0.0363</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="mi">3</span><span class="w">     </span><span class="mi">0</span><span class="w">     </span><span class="mi">2</span><span class="w"></span>
-<span class="w">   </span><span class="o">-</span><span class="mf">2.5000</span><span class="w">    </span><span class="mf">1.8669</span><span class="w">    </span><span class="mf">0.0487</span><span class="w"></span>
-<span class="w">   </span><span class="o">-</span><span class="mf">2.0000</span><span class="w">    </span><span class="mf">1.7165</span><span class="w">    </span><span class="mf">0.1165</span><span class="w"></span>
-<span class="w">   </span><span class="o">-</span><span class="mf">1.5000</span><span class="w">    </span><span class="mf">1.5486</span><span class="w">    </span><span class="mf">0.2153</span><span class="w"></span>
-<span class="w">   </span><span class="o">-</span><span class="mf">1.0000</span><span class="w">    </span><span class="mf">1.3660</span><span class="w">    </span><span class="mf">0.3660</span><span class="w"></span>
-<span class="w">   </span><span class="o">-</span><span class="mf">0.5000</span><span class="w">    </span><span class="mf">1.1779</span><span class="w">    </span><span class="mf">0.6064</span><span class="w"></span>
-<span class="w">     </span><span class="mi">0</span><span class="w">     </span><span class="mi">1</span><span class="w">     </span><span class="mi">1</span><span class="w"></span>
-<span class="w">    </span><span class="mf">0.5000</span><span class="w">    </span><span class="mf">1.6490</span><span class="w">    </span><span class="mf">0.8490</span><span class="w"></span>
-<span class="w">    </span><span class="mf">1.0000</span><span class="w">    </span><span class="mf">2.7321</span><span class="w">    </span><span class="mf">0.7321</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">   </span><span class="o">-</span><span class="mf">5.0000</span><span class="w">    </span><span class="mf">2.3956</span><span class="w">    </span><span class="mf">0.1044</span>
+<span class="w">   </span><span class="o">-</span><span class="mf">4.5000</span><span class="w">    </span><span class="mf">2.3136</span><span class="w">    </span><span class="mf">0.0864</span>
+<span class="w">   </span><span class="o">-</span><span class="mf">4.0000</span><span class="w">    </span><span class="mf">2.2214</span><span class="w">    </span><span class="mf">0.0643</span>
+<span class="w">   </span><span class="o">-</span><span class="mf">3.5000</span><span class="w">    </span><span class="mf">2.1175</span><span class="w">    </span><span class="mf">0.0363</span>
+<span class="w">    </span><span class="o">-</span><span class="mi">3</span><span class="w">     </span><span class="mi">0</span><span class="w">     </span><span class="mi">2</span>
+<span class="w">   </span><span class="o">-</span><span class="mf">2.5000</span><span class="w">    </span><span class="mf">1.8669</span><span class="w">    </span><span class="mf">0.0487</span>
+<span class="w">   </span><span class="o">-</span><span class="mf">2.0000</span><span class="w">    </span><span class="mf">1.7165</span><span class="w">    </span><span class="mf">0.1165</span>
+<span class="w">   </span><span class="o">-</span><span class="mf">1.5000</span><span class="w">    </span><span class="mf">1.5486</span><span class="w">    </span><span class="mf">0.2153</span>
+<span class="w">   </span><span class="o">-</span><span class="mf">1.0000</span><span class="w">    </span><span class="mf">1.3660</span><span class="w">    </span><span class="mf">0.3660</span>
+<span class="w">   </span><span class="o">-</span><span class="mf">0.5000</span><span class="w">    </span><span class="mf">1.1779</span><span class="w">    </span><span class="mf">0.6064</span>
+<span class="w">     </span><span class="mi">0</span><span class="w">     </span><span class="mi">1</span><span class="w">     </span><span class="mi">1</span>
+<span class="w">    </span><span class="mf">0.5000</span><span class="w">    </span><span class="mf">1.6490</span><span class="w">    </span><span class="mf">0.8490</span>
+<span class="w">    </span><span class="mf">1.0000</span><span class="w">    </span><span class="mf">2.7321</span><span class="w">    </span><span class="mf">0.7321</span>
 </pre></div>
 </div>
 <p>From the output we can see that the modulus of one root is alway larger than <span class="math notranslate nohighlight">\(1\)</span>, so the method has no stability region.</p>
 <p>Now let’s have a look at the stability region</p>
 <p>Matlab code</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span><span class="p">=</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">);</span><span class="w"></span>
-<span class="n">xi</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">theta</span><span class="p">);</span><span class="w"></span>
-<span class="n">rho</span><span class="p">=</span><span class="n">xi</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="n">sig</span><span class="p">=(</span><span class="n">xi</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">xi</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
-<span class="n">z</span><span class="p">=</span><span class="n">rho</span><span class="o">./</span><span class="n">sig</span><span class="p">;</span><span class="w"></span>
-<span class="nb">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="w"></span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Re&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Im&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Stability Region&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="nb">grid</span><span class="w"> </span><span class="n">on</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span><span class="p">=</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">);</span>
+<span class="n">xi</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span>1<span class="nb">i</span><span class="o">*</span><span class="n">theta</span><span class="p">);</span>
+<span class="n">rho</span><span class="p">=</span><span class="n">xi</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">sig</span><span class="p">=(</span><span class="n">xi</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">xi</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
+<span class="n">z</span><span class="p">=</span><span class="n">rho</span><span class="o">./</span><span class="n">sig</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Re&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Im&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Stability Region&#39;</span><span class="p">)</span>
+<span class="nb">grid</span><span class="w"> </span><span class="n">on</span>
 </pre></div>
 </div>
 <p>Output</p>
 <a class="reference internal image-reference" href="../../_images/Ex6_5_sol.svg"><img alt="../../_images/Ex6_5_sol.svg" class="align-center" src="../../_images/Ex6_5_sol.svg" width="500px" /></a>
 <!-- The stability region is just a straight line on the imaginary axis. -->
-</section>
 </div>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -919,7 +934,7 @@ y_{j+2} + 0y_{j+1} - y_j = h \left(\frac{1}{3} f_{j+2} + \frac{4}{3} f_{j+1} + \
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\06"
+            path: "./chaps/06"
         },
         predefinedOutput: true
     }
@@ -931,11 +946,10 @@ y_{j+2} + 0y_{j+1} - y_j = h \left(\frac{1}{3} f_{j+2} + \frac{4}{3} f_{j+1} + \
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap06_4_exampleCode.html"
@@ -955,10 +969,7 @@ y_{j+2} + 0y_{j+1} - y_j = h \left(\frac{1}{3} f_{j+2} + \frac{4}{3} f_{j+1} + \
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -981,6 +992,7 @@ By Zhihua Ma
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023--2025.
@@ -1007,8 +1019,8 @@ By Zhihua Ma
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

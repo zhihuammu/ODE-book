@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2.3. Gregory-Newton Interpolation Formulae &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -41,13 +40,16 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -71,7 +73,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="2.4. Finite Difference Tables" href="chap02_4_differenceTable.html" />
     <link rel="prev" title="2.2. Finite Difference Operators" href="chap02_2_differenceOperator.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -80,6 +82,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -133,9 +144,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -145,8 +158,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo3.svg" class="logo__image only-light" alt="Computational Methods in Ordinary Differential Equations - Home"/>
+    <script>document.write(`<img src="../../_static/logo3.svg" class="logo__image only-dark" alt="Computational Methods in Ordinary Differential Equations - Home"/>`);</script>
   
   
 </a></div>
@@ -343,20 +356,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -397,10 +412,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="gregory-newton-interpolation-formulae">
-<h1><span class="section-number">2.3. </span>Gregory-Newton Interpolation Formulae<a class="headerlink" href="#gregory-newton-interpolation-formulae" title="Permalink to this headline">#</a></h1>
-<section id="the-need-for-interpolation">
-<h2><span class="section-number">2.3.1. </span>The need for interpolation<a class="headerlink" href="#the-need-for-interpolation" title="Permalink to this headline">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="gregory-newton-interpolation-formulae">
+<h1><span class="section-number">2.3. </span>Gregory-Newton Interpolation Formulae<a class="headerlink" href="#gregory-newton-interpolation-formulae" title="Permalink to this heading">#</a></h1>
+<div class="section" id="the-need-for-interpolation">
+<h2><span class="section-number">2.3.1. </span>The need for interpolation<a class="headerlink" href="#the-need-for-interpolation" title="Permalink to this heading">#</a></h2>
 <div class="important admonition">
 <p class="admonition-title">Question</p>
 <p>Given a general sequence
@@ -422,9 +437,9 @@ name: figure-discretepoints
 <span class="math notranslate nohighlight">\(0&lt;s=\dfrac{x-x_j}{x_{j+1}-x_j}&lt;1\)</span></p></li>
 </ul>
 <p>For the first option, we may ask “Is this accurate?” For the second option, we may ask “How to SHIFT?”</p>
-</section>
-<section id="gregory-newton-forward-interpolation">
-<h2><span class="section-number">2.3.2. </span>Gregory-Newton Forward Interpolation<a class="headerlink" href="#gregory-newton-forward-interpolation" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="gregory-newton-forward-interpolation">
+<h2><span class="section-number">2.3.2. </span>Gregory-Newton Forward Interpolation<a class="headerlink" href="#gregory-newton-forward-interpolation" title="Permalink to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(f_j\)</span> denote <span class="math notranslate nohighlight">\(f(x_j)\)</span>. We wish to obtain an approximate value for
 <span class="math notranslate nohighlight">\(f_{j+s}\)</span>, where:</p>
 <div class="math notranslate nohighlight">
@@ -500,9 +515,9 @@ P_k(x_s)\&gt;=\&gt; f_j
 <p>The G-N forward interpolation formula (polynomial) is useful for
 interpolating near the <em>beginning</em> of a sequence.</p>
 </div>
-</section>
-<section id="gregory-newton-backward-interpolation">
-<h2><span class="section-number">2.3.3. </span>Gregory-Newton Backward Interpolation<a class="headerlink" href="#gregory-newton-backward-interpolation" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="gregory-newton-backward-interpolation">
+<h2><span class="section-number">2.3.3. </span>Gregory-Newton Backward Interpolation<a class="headerlink" href="#gregory-newton-backward-interpolation" title="Permalink to this heading">#</a></h2>
 <p>To find <span class="math notranslate nohighlight">\(f(x)=f(x_j+sh)\)</span> for <span class="math notranslate nohighlight">\(x_{j-1}&lt;x&lt;x_j\)</span>, we can use backward
 shifting to derive the interpolation formula:</p>
 <div class="math notranslate nohighlight">
@@ -534,8 +549,8 @@ $$  -->
 <p>The G-N backward interpolation formula (polynomial) is useful for
 interpolating near the <em>end</em> of a sequence.</p>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -550,7 +565,7 @@ interpolating near the <em>end</em> of a sequence.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\02"
+            path: "./chaps/02"
         },
         predefinedOutput: true
     }
@@ -562,11 +577,10 @@ interpolating near the <em>end</em> of a sequence.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap02_2_differenceOperator.html"
@@ -586,10 +600,7 @@ interpolating near the <em>end</em> of a sequence.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -628,6 +639,7 @@ By Zhihua Ma
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023--2025.
@@ -654,8 +666,8 @@ By Zhihua Ma
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

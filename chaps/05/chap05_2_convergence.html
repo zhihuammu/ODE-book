@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5.2. Zero-Stability, Consistency and Convergence Theorem &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -41,13 +40,16 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -71,7 +73,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="5.3. Chapter 5 Exercise" href="chap05_3_exercise.html" />
     <link rel="prev" title="5.1. Characteristic Polynomials and Root Condition" href="chap05_1_rootCondition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -80,6 +82,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -133,9 +144,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -145,8 +158,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo3.svg" class="logo__image only-light" alt="Computational Methods in Ordinary Differential Equations - Home"/>
+    <script>document.write(`<img src="../../_static/logo3.svg" class="logo__image only-dark" alt="Computational Methods in Ordinary Differential Equations - Home"/>`);</script>
   
   
 </a></div>
@@ -343,20 +356,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -385,25 +400,25 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="zero-stability-consistency-and-convergence-theorem">
-<h1><span class="section-number">5.2. </span>Zero-Stability, Consistency and Convergence Theorem<a class="headerlink" href="#zero-stability-consistency-and-convergence-theorem" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="zero-stability-consistency-and-convergence-theorem">
+<h1><span class="section-number">5.2. </span>Zero-Stability, Consistency and Convergence Theorem<a class="headerlink" href="#zero-stability-consistency-and-convergence-theorem" title="Permalink to this heading">#</a></h1>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 5.6 </span> (Zero-Stability)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>A method is said to be zero-stable if it satisfies the root condition,
 i.e. the linear multistep method <a class="reference internal" href="chap05_1_rootCondition.html#equation-eq-ch04-1-1">(5.1)</a>
 is said to be <strong>zero-stable</strong> if no root of the
 first characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(\xi)\,\)</span> has modulus greater that
 one, and every root of modulus one is simple.</p>
-</section>
+</div>
 </div><div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 5.7 </span> (Consistency)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>The linear multistep method <a class="reference internal" href="chap05_1_rootCondition.html#equation-eq-ch04-1-1">(5.1)</a>
 is said to be <em>consistent</em> if it has order
 <span class="math notranslate nohighlight">\(\geq 1\)</span>. The condition that the order <span class="math notranslate nohighlight">\(p \geq 1\)</span> is called the
 condition of <em>consistency</em>.</p>
-</section>
+</div>
 </div><p>In terms of constants <span class="math notranslate nohighlight">\(C_p\)</span>, introduced in Chapter (3), the condition is
 equivalent to <span class="math notranslate nohighlight">\(C_0 = 0\)</span>, <span class="math notranslate nohighlight">\(C_1 = 0\)</span>. The condition of consistency can be
 expressed by the relations</p>
@@ -429,14 +444,14 @@ remaining roots <span class="math notranslate nohighlight">\(\,\xi_i\,, ~i=2,3,\
 roots</em>.</p>
 <div class="proof remark admonition" id="remark-2">
 <p class="admonition-title"><span class="caption-number">Remark 5.1 </span> (Three ways to assess consistency)</p>
-<section class="remark-content" id="proof-content">
+<div class="remark-content section" id="proof-content">
 <!-- :class: dropdown -->
 <ul class="simple">
 <li><p>The method’s order of accuray <span class="math notranslate nohighlight">\(\geq 1\)</span>.</p></li>
 <li><p>The constants satisfy <span class="math notranslate nohighlight">\(C_0=0\)</span> and <span class="math notranslate nohighlight">\(C_1=0\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\rho(1)=0\)</span> and <span class="math notranslate nohighlight">\(\rho'(1)=\sigma(1)\)</span>.</p></li>
 </ul>
-</section>
+</div>
 </div><p>A linear multistep method which is zero-stable is frequently called
 ‘stable’. Essentially a method is stable if errors introduced at one
 step are not propagated at subsequent steps. Zero-stability ensures that
@@ -445,13 +460,13 @@ are damped out in the limit as <span class="math notranslate nohighlight">\(\,h 
 to the fundamental theorem on linear multistep methods by ‘Dahlquist’:</p>
 <div class="proof theorem admonition" id="theorem-3">
 <p class="admonition-title"><span class="caption-number">Theorem 5.1 </span> (Convergence)</p>
-<section class="theorem-content" id="proof-content">
+<div class="theorem-content section" id="proof-content">
 <p>The necessary and sufficient conditions for a linear multistep method to
 be convergent are that it is consistent and zero-stable.</p>
-</section>
+</div>
 </div><div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 5.3 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Investigate the convergence of the third order Adams-Bashforth formula:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -518,10 +533,10 @@ satisfies the root condition and is zero-stable.</p>
 <p class="sd-card-text">so the method is also consistent <span class="math notranslate nohighlight">\((\text{i.e.}\,\rho(1) = 0,~ \rho'(1) = \sigma(1) )\)</span>.</p>
 <p class="sd-card-text">Therefore the method is convergent.</p>
 </div>
-</details></section>
+</details></div>
 </div><div class="proof example admonition" id="example-5">
 <p class="admonition-title"><span class="caption-number">Example 5.4 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Investigate the stability of the Milne’s predictor method:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -575,10 +590,10 @@ method is consistent
 <span class="math notranslate nohighlight">\((\text{i.e.}\ \,\rho(1) = 0,~ \rho'(1) = \sigma(1) = 4)\)</span>, and since
 zero stable, the method is also convergent.</p>
 </div>
-</details></section>
+</details></div>
 </div><div class="proof remark admonition" id="remark-6">
 <p class="admonition-title"><span class="caption-number">Remark 5.2 </span> (Adams methods)</p>
-<section class="remark-content" id="proof-content">
+<div class="remark-content section" id="proof-content">
 <p>The characteristic polynomial <span class="math notranslate nohighlight">\(\rho\)</span> for all Adams methods
 (AB and AM) are of the form:</p>
 <div class="math notranslate nohighlight">
@@ -592,8 +607,8 @@ zero stable, the method is also convergent.</p>
 <span class="math notranslate nohighlight">\(\xi_2,\xi_3,\dots,\xi_k = 0\)</span>, they all satisfy the root conditions and
 are zero stable. It can be shown that they are consistent and therefore,
 all Adams methods are convergent.</p>
-</section>
-</div></section>
+</div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {
@@ -608,7 +623,7 @@ all Adams methods are convergent.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\05"
+            path: "./chaps/05"
         },
         predefinedOutput: true
     }
@@ -620,11 +635,10 @@ all Adams methods are convergent.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap05_1_rootCondition.html"
@@ -644,10 +658,7 @@ all Adams methods are convergent.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -670,6 +681,7 @@ By Zhihua Ma
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023--2025.
@@ -696,8 +708,8 @@ By Zhihua Ma
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
