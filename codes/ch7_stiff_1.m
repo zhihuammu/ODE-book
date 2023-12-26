@@ -1,4 +1,4 @@
-%6G6Z3002 Computational Methods in ODEs - Chapter 6 (Matlab program 4)
+%6G6Z3002 Computational Methods in ODEs - Chapter 7 (Matlab program 4)
 %Scriptfile to solve a system of three 1st order ODEs, using a stiff
 %solver, ode15s, from the MATLAB ODE solver routines.
 

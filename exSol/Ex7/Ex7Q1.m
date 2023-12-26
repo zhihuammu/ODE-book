@@ -1,4 +1,4 @@
-%Ex6 Q1
+%Ex7.1
 clc
 clear
 

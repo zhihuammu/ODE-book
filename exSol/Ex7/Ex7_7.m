@@ -18,7 +18,7 @@ plot(t,y(:,1),t,y(:,2))
 legend('y1','y2')
 xlabel('t')
 ylabel('y_1, y_2')
-title('Chapter 6 Example 4')
+title('Exercise 7.7')
 
 function dydt =odefcn(t,y)
     dydt=zeros(2,1);

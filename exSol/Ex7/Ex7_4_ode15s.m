@@ -4,8 +4,9 @@ y0 = [1 1 0];
 
 tspan=[0 60]; 
 
+options=odeset('RelTol',1e-4,'AbsTol',1e-4);
 
-[t,y] = ode15s(@odefcn, tspan, y0);
+[t,y] = ode15s(@odefcn, tspan, y0, options);
 for i=1:length(t)
    fprintf('%5i %10.2e %10.2e %10.2e\n',i,t(i),y(i,1),y(i,2)) 
 end

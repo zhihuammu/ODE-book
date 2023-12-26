@@ -49,21 +49,22 @@ p6=[1 -360/147 450/147 -400/147 225/147 -72/147 10/147];
 r6=roots(p6)
 abs(r6)
 
-clf
 figure(1)
-plot(z1,'DisplayName','k=1','LineWidth',2)
+clf
+plot(z1,'DisplayName','$k=1$','LineWidth',2)
 hold on
-plot(z2,'DisplayName','k=2','LineWidth',2)
-plot(z3,'DisplayName','k=3','LineWidth',2)
-plot(z4,'DisplayName','k=4','LineWidth',2)
-plot(z5,'DisplayName','k=5','LineWidth',2)
-plot(z6,'DisplayName','k=6','LineWidth',2)
-legend
+plot(z2,'DisplayName','$k=2$','LineWidth',2)
+plot(z3,'DisplayName','$k=3$','LineWidth',2)
+plot(z4,'DisplayName','$k=4$','LineWidth',2)
+plot(z5,'DisplayName','$k=5$','LineWidth',2)
+plot(z6,'DisplayName','$k=6$','LineWidth',2)
+legend('Interpreter','latex',FontSize=12)
 hold off
 axis([-11 31 -21 21])
+
 %axis([-10 10 -10 10])
 axis square
-%xlabel('Re(h\lambda)')
-ylabel('Im(h\lambda)')
+xlabel('Re$(h\lambda)$','FontSize',16,'Interpreter','latex')
+ylabel('Im$(h\lambda)$','FontSize',16,'Interpreter','latex')
 grid on
-title('Region of absolute stability, BDF')
+title('BDF Stability Region','FontSize',16)

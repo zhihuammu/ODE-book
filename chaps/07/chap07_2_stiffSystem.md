@@ -105,6 +105,7 @@ integration proceeds.
 :::
 
 :::{prf:example}
+:label: chap07-example-3
 
 Consider the non-linear system 
 

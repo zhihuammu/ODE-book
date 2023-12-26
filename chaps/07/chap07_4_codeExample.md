@@ -1,6 +1,7 @@
-# Example MATLAB Program
+(chap:stiff:code)=
+# MATLAB Program 4
 
-```{literalinclude} /codes/ch6_stiff_1.m
+```{literalinclude} /codes/ch7_stiff_1.m
 :language: matlab
 ```
 

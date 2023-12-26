@@ -128,7 +128,7 @@ show that
     ```
 
     Output
-    ```matlab
+    ```none
         H           |\xi_1|         |\xi_2|
     ------------------------------------------
         -2           1393/985       1393/985   
@@ -209,7 +209,7 @@ show that
     ```
 
     Output
-    ```matlab
+    ```none
     sym(4/9)
     ```
 
@@ -278,7 +278,7 @@ Find the stability interval and region for the following methods:
 
         Output
 
-        ```matlab
+        ```none
             -1.0000    1.7910    0.4823    0.4823
             -0.9500    1.7018    0.4823    0.4823
             -0.9000    1.6131    0.4822    0.4822
@@ -299,9 +299,9 @@ Find the stability interval and region for the following methods:
             -0.1500    0.8605    0.3535    0.2055
             -0.1000    0.9048    0.2682    0.1717
             -0.0500    0.9512    0.1734    0.1263
-            0     0     0     1
-            0.0500    1.0513    0.1408    0.1408
-            0.1000    1.1051    0.1942    0.1942  
+             0     0     0     1
+             0.0500    1.0513    0.1408    0.1408
+             0.1000    1.1051    0.1942    0.1942  
         ```
 
         so the stability interval is $(-0.55, 0]$.
@@ -370,7 +370,7 @@ Find the stability interval and region for the following methods:
         ```
 
         Output
-        ```
+        ```none
            -10.0000    1.2281    0.1313
             -9.5000    1.2078    0.1322
             -9.0000    1.1858    0.1332
@@ -391,9 +391,9 @@ Find the stability interval and region for the following methods:
             -1.5000    0.2774    0.2774
             -1.0000    0.3872    0.1519
             -0.5000    0.6084    0.0567
-            0     0     1
-            0.5000    1.6524    0.0319
-            1.0000    2.8062    0.0509    
+             0     0     1
+             0.5000    1.6524    0.0319
+             1.0000    2.8062    0.0509    
         ```
 
         so the staiblity interval is $[-6, 0]$.
@@ -526,7 +526,7 @@ end
 ```
 
 Output
-```matlab
+```none
    -5.0000    2.3956    0.1044
    -4.5000    2.3136    0.0864
    -4.0000    2.2214    0.0643
