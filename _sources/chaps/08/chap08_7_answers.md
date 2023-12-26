@@ -209,7 +209,7 @@ ordering algorithms to reduce the bandwidth.
 
 we need to construct the following table
 
-::: center
+::: none
     Original nodes   No. of connections   Results / Heads   Queue        Result by CM   Result by RCM   New nodes
     ---------------- -------------------- ----------------- ------------ -------------- --------------- -----------
     1                6                    7                 6                                           
@@ -252,7 +252,7 @@ we need to construct the following table
 -    Next, we bring 9 and follow the above procedure until all 10 nodes
     are listed in the results/Head column.
 
-::: center
+::: none
     Original nodes   No. of connections   Results / Heads   Queue        Result by CM   Result by RCM   New nodes
     ---------------- -------------------- ----------------- ------------ -------------- --------------- -----------
     1                6                    7                 6            7              3               1

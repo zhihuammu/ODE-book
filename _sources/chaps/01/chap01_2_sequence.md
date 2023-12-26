@@ -15,20 +15,20 @@ f(n)=3^n, \qquad n \in \mathbb{Z},
 ```
 where $\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}$. 
 
-We can also define an exponential function, with base $2$, on the whole number set $\mathbb{N}_0$ as
+We can also define a quadratic function on the whole number set $\mathbb{N}_0$ as
 
 ```{math}
 :label: eq:sequence:example:2
 \begin{equation}
-f(n)=2^n, \qquad n \in \mathbb{N}_0,
+f(n)=n^2, \qquad n \in \mathbb{N}_0,
 \end{equation}
 ```
 
-where $\mathbb{N}_0=\{0,1,2,\ldots\}$, and so the output of this function will be 
+where $\mathbb{N}_0=\{0, 1, 2, 3,\ldots\}$, and so the output of this function will be 
 
-\begin{equation*}
-1, 2, 4, 8, 16, \ldots
-\end{equation*}
+$$
+0, 1, 4, 9, 16, \ldots
+$$
 
 Functions given in {eq}`eq:sequence:example:1` and {eq}`eq:sequence:example:2` are called sequences.
 

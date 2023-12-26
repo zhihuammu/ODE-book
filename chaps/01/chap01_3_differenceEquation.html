@@ -165,14 +165,6 @@ const thebe_selector_output = ".output, .cell_output"
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../index.html">
-                    Linear Multi-step Methods
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../overview/motivation.html">Overview</a></li>
@@ -249,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">ODE Solvers in Matlab and SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">ODE Solvers in Matlab and Python</a></li>
 </ul>
 
     </div>
@@ -403,14 +395,14 @@ document.write(`
   <div class="tex2jax_ignore mathjax_ignore section" id="difference-equations">
 <h1><span class="section-number">1.3. </span>Difference Equations<a class="headerlink" href="#difference-equations" title="Permalink to this heading">#</a></h1>
 <p>For some sequences, their algebraic expressions are directly given, such as the sequences we defined in <a class="reference internal" href="chap01_2_sequence.html#equation-eq-sequence-example-1">(1.10)</a> and <a class="reference internal" href="chap01_2_sequence.html#equation-eq-sequence-example-2">(1.11)</a>. While for some other sequences, a member of a sequence <span class="math notranslate nohighlight">\(y_n\)</span> is determined by one or several previous members of the sequence, e.g.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-49fa2dae-3101-496d-9444-4cb58f421e0f">
-<span class="eqno">(1.12)<a class="headerlink" href="#equation-49fa2dae-3101-496d-9444-4cb58f421e0f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-74f3e841-04da-47b2-982c-ac761565201d">
+<span class="eqno">(1.12)<a class="headerlink" href="#equation-74f3e841-04da-47b2-982c-ac761565201d" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp; y_n = y_{n-1}, \\
 &amp; y_n = y_{n-1}+3, \\
 &amp; y_n = 2y_{n-1}, \\
 &amp; y_n = y_{n-1} + y_{n-2}.
 \end{align}\]</div>
-<p>We can call these algebraic expressions Difference Equations.</p>
+<p>We can call these algebraic expressions <em>Difference Equations</em>.</p>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 1.6 </span> (Difference Equation)</p>
 <div class="definition-content section" id="proof-content">
@@ -421,8 +413,9 @@ y_{n+k} = F(n, y_{n}, y_{n+1}, y_{n+2} ..., y_{n+k-2}, y_{n+k-1}), \quad n \in \
 \end{equation} \]</div>
 <p>where <span class="math notranslate nohighlight">\(y_{n+k}\)</span> is the current value in the sequence, <span class="math notranslate nohighlight">\(F\)</span> is a function, and <span class="math notranslate nohighlight">\(k\)</span> is the order of the equation (the difference between the highest and lowest indices that appear in the equation). The subscript <span class="math notranslate nohighlight">\(n+k\)</span> is an index representing the current time step, and the variables <span class="math notranslate nohighlight">\(y_{n}\)</span>, <span class="math notranslate nohighlight">\(y_{n+1}\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(y_{n+k-1}\)</span> represent previous members in the sequence.</p>
 </div>
-</div><div class="admonition note">
-<p class="admonition-title">Note</p>
+</div><div class="proof remark admonition" id="remark-1">
+<p class="admonition-title"><span class="caption-number">Remark 1.2 </span></p>
+<div class="remark-content section" id="proof-content">
 <p>For a given difference equation, if we increase or decrease the subscript of each term by the same amount, the new equation actually represent the same sequence as the old equation does. Also, the properties of the new equation remain the same as the old one. So the new difference equation is equivalent to the old one (the roots of the two equations are the same). For example, we can increase the subscripts in the equation</p>
 <div class="math notranslate nohighlight">
 \[y_n = y_{n-1} + y_{n-2}\]</div>
@@ -430,12 +423,12 @@ y_{n+k} = F(n, y_{n}, y_{n+1}, y_{n+2} ..., y_{n+k-2}, y_{n+k-1}), \quad n \in \
 <div class="math notranslate nohighlight">
 \[y_{n+2} = y_{n+1} + y_{n}\]</div>
 </div>
-<div class="proof theorem admonition" id="theorem-1">
+</div><div class="proof theorem admonition" id="theorem-2">
 <p class="admonition-title"><span class="caption-number">Theorem 1.1 </span> (Existence and Uniqueness)</p>
 <div class="theorem-content section" id="proof-content">
 <p>Equation <a class="reference internal" href="#equation-eq-de-definition">(1.13)</a> has one and only one solution corresponding to each arbitrary selection of the <span class="math notranslate nohighlight">\(k\)</span> initial values <span class="math notranslate nohighlight">\(y_0, y_1, y_2, \ldots, y_{k-1}\)</span>.</p>
 </div>
-</div><div class="proof definition admonition" id="definition-2">
+</div><div class="proof definition admonition" id="definition-3">
 <p class="admonition-title"><span class="caption-number">Definition 1.7 </span> (Linear Difference Equation)</p>
 <div class="definition-content section" id="proof-content">
 <p>A difference equation is linear if it can be expressed in the form</p>
@@ -445,7 +438,7 @@ a_0(n) y_n + a_1(n) y_{n+1} + a_2(n) y_{n+2} + \ldots + a_k(n) y_{n+k} = R(n),
 \end{equation} \]</div>
 <p>where <span class="math notranslate nohighlight">\(a_p(n), p=1,2,\ldots, n\)</span> and <span class="math notranslate nohighlight">\(R(n)\)</span> are given functions of <span class="math notranslate nohighlight">\(n\)</span>.</p>
 </div>
-</div><div class="proof definition admonition" id="definition-3">
+</div><div class="proof definition admonition" id="definition-4">
 <p class="admonition-title"><span class="caption-number">Definition 1.8 </span> (Homogeneous Linear Difference Equation)</p>
 <div class="definition-content section" id="proof-content">
 <p>When the right hand side of Eq. <a class="reference internal" href="#equation-eq-de-linear">(1.14)</a> vanishes i.e. <span class="math notranslate nohighlight">\(R(n)=0\)</span>, we get</p>
@@ -455,7 +448,7 @@ a_0(n) y_n + a_1(n) y_{n+1} + a_2(n) y_{n+2} + \ldots + a_k(n) y_{n+k} = 0,
 \end{equation} \]</div>
 <p>which is called a homogeneous linear difference equation.</p>
 </div>
-</div><div class="proof example admonition" id="example-4">
+</div><div class="proof example admonition" id="example-5">
 <p class="admonition-title"><span class="caption-number">Example 1.2 </span></p>
 <div class="example-content section" id="proof-content">
 <p>Identify the order, linearity and homogeneity of the following difference equations:</p>
@@ -480,7 +473,7 @@ Solution (click to show)<div class="sd-summary-down docutils">
 \end{align*}\]</div>
 </div>
 </details></div>
-</div><div class="proof definition admonition" id="definition-5">
+</div><div class="proof definition admonition" id="definition-6">
 <p class="admonition-title"><span class="caption-number">Definition 1.9 </span> (Shift Operator)</p>
 <div class="definition-content section" id="proof-content">
 <p>We define <span class="math notranslate nohighlight">\(E\)</span> as an operator shifting a member in a sequence to the next member</p>
@@ -499,7 +492,7 @@ E^2 y_n = E(E y_n) = E y_{n+1} = y_{n+2}.
 E^k y_n = y_{n+k}.
 \end{equation} \]</div>
 </div>
-</div><div class="proof example admonition" id="example-6">
+</div><div class="proof example admonition" id="example-7">
 <p class="admonition-title"><span class="caption-number">Example 1.3 </span></p>
 <div class="example-content section" id="proof-content">
 <ul class="simple">

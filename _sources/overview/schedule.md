@@ -18,8 +18,8 @@
 
 1. Coursework (1CWK40)
 
-:Release :   Week 4
-:Deadline:  Week 12
+    -  **Release:**   TBD
+    -  **Deadline:**  TBD
 
 2. Examination (2EXAM60)
-    :Date:  Jan 2025
+    -  **Date:**  TBD

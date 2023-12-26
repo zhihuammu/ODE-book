@@ -163,14 +163,6 @@ const thebe_selector_output = ".output, .cell_output"
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../index.html">
-                    Linear Multi-step Methods
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../overview/motivation.html">Overview</a></li>
@@ -247,7 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">ODE Solvers in Matlab and SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">ODE Solvers in Matlab and Python</a></li>
 </ul>
 
     </div>
@@ -401,18 +393,12 @@ document.write(`
   <div class="tex2jax_ignore mathjax_ignore section" id="multistep-methods-derivation-by-finite-difference-formulae">
 <span id="chap-derivation"></span><h1><span class="section-number">3. </span>Multistep Methods: Derivation by Finite Difference formulae<a class="headerlink" href="#multistep-methods-derivation-by-finite-difference-formulae" title="Permalink to this heading">#</a></h1>
 <p><strong>Learning Objectives</strong>:</p>
-<p>This chapter lays the basics for learning multi-step methods for solving ordinary differential equations. After completing this chapter you should be able to:</p>
+<p>After completing this chapter you should be able to:</p>
 <ul class="simple">
-<li><p>Simplify algebraic expressions for complex variables and find the corresponding real and imaginary components;</p></li>
-<li><p>Understand the definition of difference equation;</p></li>
-<li><p>Distinguish different types of difference equations, telling their</p>
-<ul>
-<li><p>Order,</p></li>
-<li><p>Linearity (linear or nonlinear),</p></li>
-<li><p>Homogeneity (homogeneous or non-homogeneous);</p></li>
-</ul>
-</li>
-<li><p>Find the general solution to a homogeneous linear difference equation.</p></li>
+<li><p>Derive a linear multistep method by integration;</p></li>
+<li><p>Identify the order of accuracy of a linear multistep method;</p></li>
+<li><p>Differentiate between explicit and implicit methods;</p></li>
+<li><p>Apply Predictor-Corrector methods to solve initial value problems.</p></li>
 </ul>
 <div class="toctree-wrapper compound">
 <ul>

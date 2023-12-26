@@ -58,6 +58,13 @@ div.exercise p.admonition-title {
     background-color: var(--exercise-title-color);
 }
 
+/* Remove content box */
+div.exercise p.admonition-title::before {
+	/* content: "🖋 "; */
+  content: none;
+}
+
+
 /*********************************************
 * hyperlink *
 *********************************************/
@@ -67,15 +74,17 @@ a:link, a:link * {
 
 /* visited link */
 a:visited {
-  color: green;
+  color: purple;
 }
 
 /* mouse over link */
 a:hover {
   color: hotpink;
+  text-decoration: underline;
 }
 
 /* selected link */
 a:active {
   color: blue;
 }
+

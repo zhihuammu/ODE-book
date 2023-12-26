@@ -9,7 +9,7 @@ For some sequences, their algebraic expressions are directly given, such as the 
 & y_n = y_{n-1} + y_{n-2}.
 \end{align}
 
-We can call these algebraic expressions Difference Equations.
+We can call these algebraic expressions *Difference Equations*.
 
 ::::{prf:definition} Difference Equation
 A difference equation is an equation that defines a sequence recursively: each member of the sequence is defined as a function of previous terms of the sequence
@@ -24,7 +24,7 @@ y_{n+k} = F(n, y_{n}, y_{n+1}, y_{n+2} ..., y_{n+k-2}, y_{n+k-1}), \quad n \in \
 where $y_{n+k}$ is the current value in the sequence, $F$ is a function, and $k$ is the order of the equation (the difference between the highest and lowest indices that appear in the equation). The subscript $n+k$ is an index representing the current time step, and the variables $y_{n}$, $y_{n+1}$, $\ldots$, $y_{n+k-1}$ represent previous members in the sequence. 
 ::::
 
-```{note}
+```{prf:remark}
 For a given difference equation, if we increase or decrease the subscript of each term by the same amount, the new equation actually represent the same sequence as the old equation does. Also, the properties of the new equation remain the same as the old one. So the new difference equation is equivalent to the old one (the roots of the two equations are the same). For example, we can increase the subscripts in the equation 
 
 $$y_n = y_{n-1} + y_{n-2}$$
