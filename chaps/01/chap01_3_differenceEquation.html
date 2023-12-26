@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>1.3. Difference Equations &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,16 +41,13 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -73,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="1.4. Homogeneous Linear Difference Equations with Constant Coefficients" href="chap01_4_homogenous.html" />
     <link rel="prev" title="1.2. Sequences" href="chap01_2_sequence.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -82,15 +80,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -144,11 +133,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="../../index.html">
-  
   
   
   
@@ -158,8 +145,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo3.svg" class="logo__image only-light" alt="Computational Methods in Ordinary Differential Equations - Home"/>
-    <script>document.write(`<img src="../../_static/logo3.svg" class="logo__image only-dark" alt="Computational Methods in Ordinary Differential Equations - Home"/>`);</script>
+    <img src="../../_static/logo3.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo3.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -224,7 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_1_introduction.html">7.1. Introduction and background</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_2_stiffSystem.html">7.2. Stiff Systems of Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_3_method.html">7.3. Methods for Stiff Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../07/chap07_4_codeExample.html">7.4. Example MATLAB Program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_4_codeExample.html">7.4. MATLAB Program 4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_5_exercise.html">7.5. Chapter 7 Exercise</a></li>
 </ul>
 </li>
@@ -348,22 +335,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -392,11 +377,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="difference-equations">
-<h1><span class="section-number">1.3. </span>Difference Equations<a class="headerlink" href="#difference-equations" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="difference-equations">
+<h1><span class="section-number">1.3. </span>Difference Equations<a class="headerlink" href="#difference-equations" title="Permalink to this headline">#</a></h1>
 <p>For some sequences, their algebraic expressions are directly given, such as the sequences we defined in <a class="reference internal" href="chap01_2_sequence.html#equation-eq-sequence-example-1">(1.10)</a> and <a class="reference internal" href="chap01_2_sequence.html#equation-eq-sequence-example-2">(1.11)</a>. While for some other sequences, a member of a sequence <span class="math notranslate nohighlight">\(y_n\)</span> is determined by one or several previous members of the sequence, e.g.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-74f3e841-04da-47b2-982c-ac761565201d">
-<span class="eqno">(1.12)<a class="headerlink" href="#equation-74f3e841-04da-47b2-982c-ac761565201d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dfb3ea3a-2ef2-4ffa-a882-eb773eeea444">
+<span class="eqno">(1.12)<a class="headerlink" href="#equation-dfb3ea3a-2ef2-4ffa-a882-eb773eeea444" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp; y_n = y_{n-1}, \\
 &amp; y_n = y_{n-1}+3, \\
 &amp; y_n = 2y_{n-1}, \\
@@ -405,52 +390,52 @@ document.write(`
 <p>We can call these algebraic expressions <em>Difference Equations</em>.</p>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 1.6 </span> (Difference Equation)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>A difference equation is an equation that defines a sequence recursively: each member of the sequence is defined as a function of previous terms of the sequence</p>
 <div class="math notranslate nohighlight" id="equation-eq-de-definition">
 <span class="eqno">(1.13)<a class="headerlink" href="#equation-eq-de-definition" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_{n+k} = F(n, y_{n}, y_{n+1}, y_{n+2} ..., y_{n+k-2}, y_{n+k-1}), \quad n \in \mathbb{N}_0
 \end{equation} \]</div>
 <p>where <span class="math notranslate nohighlight">\(y_{n+k}\)</span> is the current value in the sequence, <span class="math notranslate nohighlight">\(F\)</span> is a function, and <span class="math notranslate nohighlight">\(k\)</span> is the order of the equation (the difference between the highest and lowest indices that appear in the equation). The subscript <span class="math notranslate nohighlight">\(n+k\)</span> is an index representing the current time step, and the variables <span class="math notranslate nohighlight">\(y_{n}\)</span>, <span class="math notranslate nohighlight">\(y_{n+1}\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(y_{n+k-1}\)</span> represent previous members in the sequence.</p>
-</div>
+</section>
 </div><div class="proof remark admonition" id="remark-1">
 <p class="admonition-title"><span class="caption-number">Remark 1.2 </span></p>
-<div class="remark-content section" id="proof-content">
+<section class="remark-content" id="proof-content">
 <p>For a given difference equation, if we increase or decrease the subscript of each term by the same amount, the new equation actually represent the same sequence as the old equation does. Also, the properties of the new equation remain the same as the old one. So the new difference equation is equivalent to the old one (the roots of the two equations are the same). For example, we can increase the subscripts in the equation</p>
 <div class="math notranslate nohighlight">
 \[y_n = y_{n-1} + y_{n-2}\]</div>
 <p>by <span class="math notranslate nohighlight">\(2\)</span> to get an equivalent equation</p>
 <div class="math notranslate nohighlight">
 \[y_{n+2} = y_{n+1} + y_{n}\]</div>
-</div>
+</section>
 </div><div class="proof theorem admonition" id="theorem-2">
 <p class="admonition-title"><span class="caption-number">Theorem 1.1 </span> (Existence and Uniqueness)</p>
-<div class="theorem-content section" id="proof-content">
+<section class="theorem-content" id="proof-content">
 <p>Equation <a class="reference internal" href="#equation-eq-de-definition">(1.13)</a> has one and only one solution corresponding to each arbitrary selection of the <span class="math notranslate nohighlight">\(k\)</span> initial values <span class="math notranslate nohighlight">\(y_0, y_1, y_2, \ldots, y_{k-1}\)</span>.</p>
-</div>
+</section>
 </div><div class="proof definition admonition" id="definition-3">
 <p class="admonition-title"><span class="caption-number">Definition 1.7 </span> (Linear Difference Equation)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>A difference equation is linear if it can be expressed in the form</p>
 <div class="math notranslate nohighlight" id="equation-eq-de-linear">
 <span class="eqno">(1.14)<a class="headerlink" href="#equation-eq-de-linear" title="Permalink to this equation">#</a></span>\[\begin{equation}
 a_0(n) y_n + a_1(n) y_{n+1} + a_2(n) y_{n+2} + \ldots + a_k(n) y_{n+k} = R(n),
 \end{equation} \]</div>
 <p>where <span class="math notranslate nohighlight">\(a_p(n), p=1,2,\ldots, n\)</span> and <span class="math notranslate nohighlight">\(R(n)\)</span> are given functions of <span class="math notranslate nohighlight">\(n\)</span>.</p>
-</div>
+</section>
 </div><div class="proof definition admonition" id="definition-4">
 <p class="admonition-title"><span class="caption-number">Definition 1.8 </span> (Homogeneous Linear Difference Equation)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>When the right hand side of Eq. <a class="reference internal" href="#equation-eq-de-linear">(1.14)</a> vanishes i.e. <span class="math notranslate nohighlight">\(R(n)=0\)</span>, we get</p>
 <div class="math notranslate nohighlight" id="equation-eq-de-linear-homogeneous">
 <span class="eqno">(1.15)<a class="headerlink" href="#equation-eq-de-linear-homogeneous" title="Permalink to this equation">#</a></span>\[\begin{equation}
 a_0(n) y_n + a_1(n) y_{n+1} + a_2(n) y_{n+2} + \ldots + a_k(n) y_{n+k} = 0,
 \end{equation} \]</div>
 <p>which is called a homogeneous linear difference equation.</p>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-5">
 <p class="admonition-title"><span class="caption-number">Example 1.2 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Identify the order, linearity and homogeneity of the following difference equations:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(y_{n+1} - 2 y_n = 0\)</span></p></li>
@@ -472,10 +457,10 @@ Solution (click to show)<div class="sd-summary-down docutils">
 &amp;y_{n+3} - y_n^2 = n 2^n &amp;  \text{(third order, nonlinear, inhomogeneous)}
 \end{align*}\]</div>
 </div>
-</details></div>
+</details></section>
 </div><div class="proof definition admonition" id="definition-6">
 <p class="admonition-title"><span class="caption-number">Definition 1.9 </span> (Shift Operator)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>We define <span class="math notranslate nohighlight">\(E\)</span> as an operator shifting a member in a sequence to the next member</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
@@ -491,10 +476,10 @@ E^2 y_n = E(E y_n) = E y_{n+1} = y_{n+2}.
 \[\begin{equation}
 E^k y_n = y_{n+k}.
 \end{equation} \]</div>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-7">
 <p class="admonition-title"><span class="caption-number">Example 1.3 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <ul class="simple">
 <li><p>Use the definition of the shift Operator <span class="math notranslate nohighlight">\(E\)</span> to expand the following expression <br />
 <span class="math notranslate nohighlight">\(\left(E^4 - E^2 +1 \right) y_n \)</span></p></li>
@@ -521,8 +506,8 @@ Solution (click to show)<div class="sd-summary-down docutils">
 <li><p class="sd-card-text"><span class="math notranslate nohighlight">\( y_{n+2} - 2y_{n+1} + y_n = \left( E^2 - 2E + 1\right) y_n  \)</span></p></li>
 </ul>
 </div>
-</details></div>
-</div></div>
+</details></section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -537,7 +522,7 @@ Solution (click to show)<div class="sd-summary-down docutils">
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/01"
+            path: "./chaps\01"
         },
         predefinedOutput: true
     }
@@ -549,10 +534,11 @@ Solution (click to show)<div class="sd-summary-down docutils">
 
               
               
-              
-              
-                <footer class="prev-next-footer">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap01_2_sequence.html"
@@ -572,7 +558,10 @@ Solution (click to show)<div class="sd-summary-down docutils">
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -595,7 +584,6 @@ By Zhihua Ma
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2023--2025.
@@ -622,8 +610,8 @@ By Zhihua Ma
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
