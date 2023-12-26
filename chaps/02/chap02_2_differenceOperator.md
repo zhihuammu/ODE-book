@@ -208,7 +208,7 @@ relations:
 ::::
 
 :::{dropdown} Proof (click to show)
-<!-- :::{prf:proof} -->
+:::{prf:proof}
 Applying the operators on $f(x)$
 
 -   $E=1+\Delta$

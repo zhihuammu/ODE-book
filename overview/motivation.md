@@ -11,6 +11,12 @@ Our main focus is to learn and apply a range of numerical methods to solve a sin
 
 - A system of equations: $\displaystyle \frac{d\mathbf{Y}}{dt}=\mathbf{F}(t, \mathbf{Y})$
 
+We will also touch on graph theory and sparse matrix computation
+
+- Form adjacency matrix for a graph,
+
+- Reorder a graph to reduce the bandwidth and fill-ins of its adjacency matrix.
+
 ## Why we learn about Ordinary Differential Equations?
 
 Ordinary differential equations have wide applications in science and engineering:

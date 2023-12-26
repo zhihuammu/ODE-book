@@ -1,4 +1,4 @@
-## Example MATLAB Program
+# Example MATLAB Program
 
 ```{literalinclude} /codes/ch6_stiff_1.m
 :language: matlab
@@ -8,7 +8,7 @@
 Computed result using Matlab stiff ODE solver -- ode15s, for t=0:60,
 RelTol=1.e-6, AbsTol=1.e-6
 
-::: verbbox
+::: none
  i      t         y1         y2         y3 
 ------------------------------------------------
  1   0.00e+00   1.00e+00   0.00e+00   0.00e+00
