@@ -1,51 +1,51 @@
 # Overview
 
-:Unit Title: Computational Methods in Ordinary Differential Equations
-:Unit Code : 6G6Z3017
+<!-- :Unit Title: Computational Methods in Ordinary Differential Equations -->
+<!-- :Unit Code : 6G6Z3017 -->
 
-## What we will learn?
+## What will we learn?
 
-Our main focus is to learn and apply a range of numerical methods to solve a single or a system of **First-Order** Ordinary Differential Equation(s)
+Our main focus is to learn and apply a range of numerical methods to solve a single or a system of **First-Order** Ordinary Differential Equation(s) given as
 
 - A single equation: $\displaystyle \frac{dy}{dt}=f(t, y)$
 
 - A system of equations: $\displaystyle \frac{d\mathbf{Y}}{dt}=\mathbf{F}(t, \mathbf{Y})$
 
-We will also touch on graph theory and sparse matrix computation
+We will also touch on graph theory and sparse matrix computation to:
 
 - Form adjacency matrix for a graph,
 
 - Reorder a graph to reduce the bandwidth and fill-ins of its adjacency matrix.
 
-## Why we learn about Ordinary Differential Equations?
+## Why are we learning about Ordinary Differential Equations?
 
 Ordinary differential equations have wide applications in science and engineering:
 
 - Physics
     - Fluid Dynamics
 
-    ```{image} /images/dam3d_0006b.png
+    <!-- ```{image} /images/dam3d_0006b.png
     :width: 500px
     :align: center
-    ```
+    ``` -->
 
     - Electrical Engineering
 
 - Biology
-    ```{image} /images/virus.png
+    <!-- ```{image} /images/virus.png
     :width: 500 px
     :align: center
-    ```
+    ``` -->
 
 - Chemical Kinetics
 
-    $$
+    <!-- $$
     \begin{aligned}
         \frac{\partial A}{\partial t}&=-k_1 A \\
         \frac{\partial B}{\partial t}&=k_1 A - k_2 B \\
         \frac{\partial C}{\partial t}&=k_2 B
     \end{aligned}
-    $$
+    $$ -->
 
 - Economics
 
@@ -54,7 +54,7 @@ Ordinary differential equations have wide applications in science and engineerin
 - Life Insurance
 
 
-## Why we learn Computational Methods?
+## Why are we learning Computational Methods?
 
 In general there are two ways to solve ordinary differential equations:
 

@@ -63,7 +63,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/01/chap01_1_complexNumber';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -160,11 +160,16 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chapX_odeBasics.html">Basics of Differential Equations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../pre/chapX_0.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pre/chapX_1_definition.html">Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pre/chapX_2_ode.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pre/chapX_3_odeAnalyticalSolution.html">Analytical Methods for ODEs</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear Multistep Methods and Sparse Matrices</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap01_0.html">1. Complex Numbers and Difference Equations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap01_0.html">1. Complex Numbers and Difference Equations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1. Complex Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap01_2_sequence.html">1.2. Sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap01_3_differenceEquation.html">1.3. Difference Equations</a></li>
@@ -172,7 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chap01_5_exercise.html">1.5. Chapter 1 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02/chap02_0.html">2. Interpolating Polynomial</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02/chap02_0.html">2. Interpolating Polynomial</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../02/chap02_1_introduction.html">2.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02/chap02_2_differenceOperator.html">2.2. Finite Difference Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02/chap02_3_interpolation.html">2.3. Gregory-Newton Interpolation Formulae</a></li>
@@ -180,7 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../02/chap02_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03/chap03_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03/chap03_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_1_multistepMethod.html">3.1. Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_2_derivation.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_3_explicit.html">3.3. Explicit or Open Multistep Methods</a></li>
@@ -190,20 +195,20 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_7_exercise.html">3.7. Chapter 3 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04/chap04_0.html">4. Multistep Methods: Order and Error Constants</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04/chap04_0.html">4. Multistep Methods: Order and Error Constants</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../04/chap04_1_errorIntegration.html">4.1. Derivation of Local Error Terms for Integration Formulae</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04/chap04_2_errorConstant.html">4.2. Order and Error Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04/chap04_3_MilineDevice.html">4.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04/chap04_4_exercise.html">4.4. Chapter 4 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../05/chap05_0.html">5. Multistep Methods: Stability I</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05/chap05_0.html">5. Multistep Methods: Stability I</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../05/chap05_1_rootCondition.html">5.1. Characteristic Polynomials and Root Condition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../05/chap05_2_convergence.html">5.2. Zero-Stability, Consistency and Convergence Theorem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../05/chap05_3_exercise.html">5.3. Chapter 5 Exercise</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">6. Multistep Methods: Stability II</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">6. Multistep Methods: Stability II</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_stabilityInterval.html">6.1. Interval and Region of Absolute Stability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_rootLocus.html">6.2. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_boundaryRootLocus.html">6.3. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
@@ -211,7 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exercise.html">6.5. Chapter 6 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_1_introduction.html">7.1. Introduction and background</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_2_stiffSystem.html">7.2. Stiff Systems of Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_3_method.html">7.3. Methods for Stiff Equations</a></li>
@@ -219,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_5_exercise.html">7.5. Chapter 7 Exercise</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../08/chap08_0.html">8. Computational Methods with Sparse Matrices</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08/chap08_0.html">8. Computational Methods with Sparse Matrices</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../08/chap08_1_introduction.html">8.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../08/chap08_2_sparseMatrix.html">8.2. Sparse Matrices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../08/chap08_3_graphTheory.html">8.3. Matrix Sparsity and Graph Theory</a></li>
@@ -230,9 +235,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chapY_odeSolvers.html">ODE Solvers in Matlab and Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../append/chapY_odeSolvers.html">ODE Solvers in Matlab and Python</a></li>
 </ul>
 
     </div>
@@ -398,18 +403,18 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Definition 1.2 </span> (Complex number and Complex conjugate)</p>
 <section class="definition-content" id="proof-content">
 <p>A complex number is a number in the form of</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e84f0d9a-56e1-4bf5-a9f3-3722402f3a1d">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-e84f0d9a-56e1-4bf5-a9f3-3722402f3a1d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b972dce1-04f9-4785-af78-de495b91012f">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-b972dce1-04f9-4785-af78-de495b91012f" title="Permalink to this equation">#</a></span>\[\begin{equation}
     z=x+iy,\qquad x, y\in \mathbb{R},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x\)</span> is the real component of the complex number and <span class="math notranslate nohighlight">\(iy\)</span> is its imaginary component. We often call <span class="math notranslate nohighlight">\(y\)</span> the imaginary component for simplicity. The modulus of the complex number is calculated as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-27c20cf8-ab23-47f5-8578-9e2f7c56c029">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-27c20cf8-ab23-47f5-8578-9e2f7c56c029" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c15d3416-6f4c-415e-ad5c-093ffa33fa00">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-c15d3416-6f4c-415e-ad5c-093ffa33fa00" title="Permalink to this equation">#</a></span>\[\begin{equation}
     |z|=\sqrt{x^2+y^2}.
 \end{equation}\]</div>
 <p>Its complex conjugate is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1b2fa511-0dcd-48dc-bf26-2ab11fd83752">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-1b2fa511-0dcd-48dc-bf26-2ab11fd83752" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0981dc58-7f32-4f33-923c-04baa9ed2e99">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-0981dc58-7f32-4f33-923c-04baa9ed2e99" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \bar{z}=x-iy.
 \end{equation}\]</div>
 </section>
@@ -418,8 +423,8 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Definition 1.3 </span> (Complex Arithmetic)</p>
 <section class="definition-content" id="proof-content">
 <p>The arithmetic operations on two complex numbers given as <span class="math notranslate nohighlight">\(z_1=x_1+iy_1\)</span> and <span class="math notranslate nohighlight">\(z_2=x_2+iy_2\)</span> are defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8be1db97-0514-4c15-960a-32c908d78e6a">
-<span class="eqno">(1.4)<a class="headerlink" href="#equation-8be1db97-0514-4c15-960a-32c908d78e6a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-96faa1a7-33e1-4dd1-8c89-c11cc15a695f">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-96faa1a7-33e1-4dd1-8c89-c11cc15a695f" title="Permalink to this equation">#</a></span>\[\begin{align}
 \text{``$+$''}:\quad ~ &amp; ~ z_1+z_2=(x_1+iy_1)+(x_2+iy_2)=(x_1+x_2)+i(y_1+y_2), \\
 \text{``$-$''}:\quad ~ &amp; ~ z_1-z_2=(x_1+iy_1)-(x_2+iy_2)=(x_1-x_2)+i(y_1-y_2), \\
 \text{``$\times$''}:\quad ~ &amp; ~ z_1\cdot z_2=(x_1+iy_1)\cdot(x_2+iy_2)=(x_1+x_2)+i(y_1+y_2), \\
@@ -457,8 +462,8 @@ Solution (click to show)<div class="sd-summary-down docutils">
 <p class="admonition-title"><span class="caption-number">Definition 1.4 </span> (Complex number set)</p>
 <section class="definition-content" id="proof-content">
 <p>We denote the set of all the complex numbers as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-70ef9d7e-e476-4bb9-97a0-104fa11d3513">
-<span class="eqno">(1.5)<a class="headerlink" href="#equation-70ef9d7e-e476-4bb9-97a0-104fa11d3513" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bc7fd6d4-18c5-427a-a680-9b9a652c8f25">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-bc7fd6d4-18c5-427a-a680-9b9a652c8f25" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \mathbb{C}=\{z|z=x+iy, ~x, y\in \mathbb{R}\}.
 \end{equation}\]</div>
 </section>
@@ -472,13 +477,13 @@ The complex plane $\mathbb{C}$.
 ``` -->
 <div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-6d3a57b01a2333f76586579eeb9037a9159e2f50.svg" alt="Figure made with TikZ" /></p>
 </div><p>For <span class="math notranslate nohighlight">\(z=x+iy\)</span>, we can also write it in the second form (polar form) as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bd2dadf4-cf7f-4fe9-860e-62651f98190b">
-<span class="eqno">(1.6)<a class="headerlink" href="#equation-bd2dadf4-cf7f-4fe9-860e-62651f98190b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bae6f68e-2405-40ad-b681-3712bf74f6c7">
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-bae6f68e-2405-40ad-b681-3712bf74f6c7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z  =  r\left(\cos \theta + i \sin \theta\right)
 \end{equation}\]</div>
 <p>or the third form (exponential form)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2e052964-a681-43c8-97bc-c615df303441">
-<span class="eqno">(1.7)<a class="headerlink" href="#equation-2e052964-a681-43c8-97bc-c615df303441" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-81c6bf39-f1ec-42ce-af5c-8f9e39c70019">
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-81c6bf39-f1ec-42ce-af5c-8f9e39c70019" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z  = r e^{i\theta},    
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(r=|z|\)</span>, and <span class="math notranslate nohighlight">\(\theta\)</span> is the angle defined by the real axis and the straight line connecting the origin and <span class="math notranslate nohighlight">\(z\)</span> in the complex plane.</p>
@@ -499,8 +504,8 @@ z  = r e^{i\theta},
 <p>where <span class="math notranslate nohighlight">\(r=|z|=\sqrt{x^2+y^2}\)</span>, <span class="math notranslate nohighlight">\(\tan \theta = \dfrac{y}{x}\)</span>.</p>
 </section>
 </div><p>If we use the exponential form to represent complex numbers, then the multiplication and division of two complex numbers can be expressed in simpler ways. Let <span class="math notranslate nohighlight">\(z_1= r_1 e^{i\theta_1}\)</span> and <span class="math notranslate nohighlight">\(z_2 = r_2 e^{i\theta_2}\)</span>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c2a69258-1cb5-469b-857a-b0066f0ab020">
-<span class="eqno">(1.8)<a class="headerlink" href="#equation-c2a69258-1cb5-469b-857a-b0066f0ab020" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-21ce2860-0a43-4f5a-907c-75db8d766843">
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-21ce2860-0a43-4f5a-907c-75db8d766843" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp; z_1 \cdot z_2  = r_1 e^{i\theta_1} \cdot r_2 e^{i\theta_2}=r_1 r_2 e^{i(\theta_1+\theta_2)}\\
 &amp; \frac{z_1}{z_2}  = \frac{r_1 e^{i\theta_1}}{r_2 e^{i\theta_2}}=\frac{r_1}{r_2}e^{i(\theta_1-\theta_2)}
 \end{align}\]</div>

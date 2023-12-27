@@ -162,11 +162,16 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="chaps/chapX_odeBasics.html">Basics of Differential Equations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/pre/chapX_0.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chaps/pre/chapX_1_definition.html">Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/pre/chapX_2_ode.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chaps/pre/chapX_3_odeAnalyticalSolution.html">Analytical Methods for ODEs</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear Multistep Methods and Sparse Matrices</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/01/chap01_0.html">1. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/01/chap01_0.html">1. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chaps/01/chap01_1_complexNumber.html">1.1. Complex Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/01/chap01_2_sequence.html">1.2. Sequences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/01/chap01_3_differenceEquation.html">1.3. Difference Equations</a></li>
@@ -174,7 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chaps/01/chap01_5_exercise.html">1.5. Chapter 1 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/02/chap02_0.html">2. Interpolating Polynomial</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/02/chap02_0.html">2. Interpolating Polynomial</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chaps/02/chap02_1_introduction.html">2.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/02/chap02_2_differenceOperator.html">2.2. Finite Difference Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/02/chap02_3_interpolation.html">2.3. Gregory-Newton Interpolation Formulae</a></li>
@@ -182,7 +187,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chaps/02/chap02_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/03/chap03_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/03/chap03_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chaps/03/chap03_1_multistepMethod.html">3.1. Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/03/chap03_2_derivation.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/03/chap03_3_explicit.html">3.3. Explicit or Open Multistep Methods</a></li>
@@ -192,20 +197,20 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chaps/03/chap03_7_exercise.html">3.7. Chapter 3 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/04/chap04_0.html">4. Multistep Methods: Order and Error Constants</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/04/chap04_0.html">4. Multistep Methods: Order and Error Constants</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chaps/04/chap04_1_errorIntegration.html">4.1. Derivation of Local Error Terms for Integration Formulae</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/04/chap04_2_errorConstant.html">4.2. Order and Error Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/04/chap04_3_MilineDevice.html">4.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/04/chap04_4_exercise.html">4.4. Chapter 4 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/05/chap05_0.html">5. Multistep Methods: Stability I</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/05/chap05_0.html">5. Multistep Methods: Stability I</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chaps/05/chap05_1_rootCondition.html">5.1. Characteristic Polynomials and Root Condition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/05/chap05_2_convergence.html">5.2. Zero-Stability, Consistency and Convergence Theorem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/05/chap05_3_exercise.html">5.3. Chapter 5 Exercise</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/06/chap06_0.html">6. Multistep Methods: Stability II</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/06/chap06_0.html">6. Multistep Methods: Stability II</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chaps/06/chap06_1_stabilityInterval.html">6.1. Interval and Region of Absolute Stability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/06/chap06_2_rootLocus.html">6.2. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/06/chap06_3_boundaryRootLocus.html">6.3. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
@@ -213,7 +218,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chaps/06/chap06_5_exercise.html">6.5. Chapter 6 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chaps/07/chap07_1_introduction.html">7.1. Introduction and background</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/07/chap07_2_stiffSystem.html">7.2. Stiff Systems of Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/07/chap07_3_method.html">7.3. Methods for Stiff Equations</a></li>
@@ -221,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chaps/07/chap07_5_exercise.html">7.5. Chapter 7 Exercise</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/08/chap08_0.html">8. Computational Methods with Sparse Matrices</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chaps/08/chap08_0.html">8. Computational Methods with Sparse Matrices</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chaps/08/chap08_1_introduction.html">8.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/08/chap08_2_sparseMatrix.html">8.2. Sparse Matrices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chaps/08/chap08_3_graphTheory.html">8.3. Matrix Sparsity and Graph Theory</a></li>
@@ -232,9 +237,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="chaps/chapY_odeSolvers.html">ODE Solvers in Matlab and Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chaps/append/chapY_odeSolvers.html">ODE Solvers in Matlab and Python</a></li>
 </ul>
 
     </div>
@@ -351,7 +356,6 @@ document.write(`
    <a href="#cap-def:char-poly"><strong>def:char-poly</strong></a> | 
    <a href="#cap-definition-0"><strong>definition-0</strong></a> | 
    <a href="#cap-definition-1"><strong>definition-1</strong></a> | 
-   <a href="#cap-definition-2"><strong>definition-2</strong></a> | 
    <a href="#cap-definition-3"><strong>definition-3</strong></a> | 
    <a href="#cap-definition-4"><strong>definition-4</strong></a> | 
    <a href="#cap-definition-5"><strong>definition-5</strong></a> | 
@@ -370,11 +374,13 @@ document.write(`
    <a href="#cap-remark-0"><strong>remark-0</strong></a> | 
    <a href="#cap-remark-1"><strong>remark-1</strong></a> | 
    <a href="#cap-remark-2"><strong>remark-2</strong></a> | 
+   <a href="#cap-remark-3"><strong>remark-3</strong></a> | 
    <a href="#cap-remark-5"><strong>remark-5</strong></a> | 
    <a href="#cap-remark-6"><strong>remark-6</strong></a> | 
    <a href="#cap-theorem-1"><strong>theorem-1</strong></a> | 
    <a href="#cap-theorem-2"><strong>theorem-2</strong></a> | 
    <a href="#cap-theorem-3"><strong>theorem-3</strong></a> | 
+   <a href="#cap-theorem-5"><strong>theorem-5</strong></a> | 
    <a href="#cap-theorem-6"><strong>theorem-6</strong></a>
    </div>
 
@@ -465,7 +471,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="chaps/chapX_odeBasics.html#definition-0"><code class="xref">definition-0</code></a> <em>(chaps/chapX_odeBasics)</em></td><td>
+       <a href="chaps/pre/chapX_3_odeAnalyticalSolution.html#definition-0"><code class="xref">definition-0</code></a> <em>(chaps/pre/chapX_3_odeAnalyticalSolution)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-1"><td></td><td>
@@ -473,15 +479,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="chaps/06/chap06_3_boundaryRootLocus.html#definition-1"><code class="xref">definition-1</code></a> <em>(chaps/06/chap06_3_boundaryRootLocus)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-2"><td></td><td>
-       <strong>definition-2</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/06/chap06_1_stabilityInterval.html#definition-2"><code class="xref">definition-2</code></a> <em>(chaps/06/chap06_1_stabilityInterval)</em></td><td>
+       <a href="chaps/pre/chapX_2_ode.html#definition-1"><code class="xref">definition-1</code></a> <em>(chaps/pre/chapX_2_ode)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-3"><td></td><td>
@@ -489,7 +487,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="chaps/05/chap05_1_rootCondition.html#definition-3"><code class="xref">definition-3</code></a> <em>(chaps/05/chap05_1_rootCondition)</em></td><td>
+       <a href="chaps/pre/chapX_3_odeAnalyticalSolution.html#definition-3"><code class="xref">definition-3</code></a> <em>(chaps/pre/chapX_3_odeAnalyticalSolution)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-4"><td></td><td>
@@ -497,7 +495,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="chaps/05/chap05_1_rootCondition.html#definition-4"><code class="xref">definition-4</code></a> <em>(chaps/05/chap05_1_rootCondition)</em></td><td>
+       <a href="chaps/pre/chapX_3_odeAnalyticalSolution.html#definition-4"><code class="xref">definition-4</code></a> <em>(chaps/pre/chapX_3_odeAnalyticalSolution)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-5"><td></td><td>
@@ -505,7 +503,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="chaps/05/chap05_1_rootCondition.html#definition-5"><code class="xref">definition-5</code></a> <em>(chaps/05/chap05_1_rootCondition)</em></td><td>
+       <a href="chaps/pre/chapX_2_ode.html#definition-5"><code class="xref">definition-5</code></a> <em>(chaps/pre/chapX_2_ode)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-6"><td></td><td>
@@ -529,7 +527,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="chaps/08/chap08_4_storage.html#example-1"><code class="xref">example-1</code></a> <em>(chaps/08/chap08_4_storage)</em></td><td>
+       <a href="chaps/pre/chapX_3_odeAnalyticalSolution.html#example-1"><code class="xref">example-1</code></a> <em>(chaps/pre/chapX_3_odeAnalyticalSolution)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-2"><td></td><td>
@@ -537,7 +535,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="chaps/08/chap08_3_graphTheory.html#example-2"><code class="xref">example-2</code></a> <em>(chaps/08/chap08_3_graphTheory)</em></td><td>
+       <a href="chaps/pre/chapX_3_odeAnalyticalSolution.html#example-2"><code class="xref">example-2</code></a> <em>(chaps/pre/chapX_3_odeAnalyticalSolution)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-3"><td></td><td>
@@ -561,7 +559,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="chaps/05/chap05_2_convergence.html#example-4"><code class="xref">example-4</code></a> <em>(chaps/05/chap05_2_convergence)</em></td><td>
+       <a href="chaps/pre/chapX_2_ode.html#example-4"><code class="xref">example-4</code></a> <em>(chaps/pre/chapX_2_ode)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-5"><td></td><td>
@@ -577,7 +575,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="chaps/05/chap05_1_rootCondition.html#example-6"><code class="xref">example-6</code></a> <em>(chaps/05/chap05_1_rootCondition)</em></td><td>
+       <a href="chaps/pre/chapX_3_odeAnalyticalSolution.html#example-6"><code class="xref">example-6</code></a> <em>(chaps/pre/chapX_3_odeAnalyticalSolution)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-7"><td></td><td>
@@ -609,7 +607,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="chaps/08/chap08_1_introduction.html#remark-0"><code class="xref">remark-0</code></a> <em>(chaps/08/chap08_1_introduction)</em></td><td>
+       <a href="chaps/pre/chapX_2_ode.html#remark-0"><code class="xref">remark-0</code></a> <em>(chaps/pre/chapX_2_ode)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-1"><td></td><td>
@@ -628,12 +626,20 @@ document.write(`
        <a href="chaps/05/chap05_2_convergence.html#remark-2"><code class="xref">remark-2</code></a> <em>(chaps/05/chap05_2_convergence)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-3"><td></td><td>
+       <strong>remark-3</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="chaps/pre/chapX_1_definition.html#remark-3"><code class="xref">remark-3</code></a> <em>(chaps/pre/chapX_1_definition)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-5"><td></td><td>
        <strong>remark-5</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="chaps/01/chap01_1_complexNumber.html#remark-5"><code class="xref">remark-5</code></a> <em>(chaps/01/chap01_1_complexNumber)</em></td><td>
+       <a href="chaps/pre/chapX_1_definition.html#remark-5"><code class="xref">remark-5</code></a> <em>(chaps/pre/chapX_1_definition)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-6"><td></td><td>
@@ -641,7 +647,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="chaps/05/chap05_2_convergence.html#remark-6"><code class="xref">remark-6</code></a> <em>(chaps/05/chap05_2_convergence)</em></td><td>
+       <a href="chaps/pre/chapX_1_definition.html#remark-6"><code class="xref">remark-6</code></a> <em>(chaps/pre/chapX_1_definition)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-1"><td></td><td>
@@ -668,12 +674,20 @@ document.write(`
        <a href="chaps/05/chap05_2_convergence.html#theorem-3"><code class="xref">theorem-3</code></a> <em>(chaps/05/chap05_2_convergence)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-theorem-5"><td></td><td>
+       <strong>theorem-5</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="chaps/pre/chapX_3_odeAnalyticalSolution.html#theorem-5"><code class="xref">theorem-5</code></a> <em>(chaps/pre/chapX_3_odeAnalyticalSolution)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-6"><td></td><td>
        <strong>theorem-6</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="chaps/02/chap02_2_differenceOperator.html#theorem-6"><code class="xref">theorem-6</code></a> <em>(chaps/02/chap02_2_differenceOperator)</em></td><td>
+       <a href="chaps/pre/chapX_2_ode.html#theorem-6"><code class="xref">theorem-6</code></a> <em>(chaps/pre/chapX_2_ode)</em></td><td>
        <em>theorem</em></td></tr>
    </table>
 

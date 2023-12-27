@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>5.2. Zero-Stability, Consistency and Convergence Theorem &#8212; Computational Methods in Ordinary Differential Equations</title>
+    <title>Analytical Methods for ODEs &#8212; Computational Methods in Ordinary Differential Equations</title>
   
   
   
@@ -65,11 +65,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/05/chap05_2_convergence';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/pre/chapX_3_odeAnalyticalSolution';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.3. Chapter 5 Exercise" href="chap05_3_exercise.html" />
-    <link rel="prev" title="5.1. Characteristic Polynomials and Root Condition" href="chap05_1_rootCondition.html" />
+    <link rel="next" title="1. Complex Numbers and Difference Equations" href="../01/chap01_0.html" />
+    <link rel="prev" title="Ordinary Differential Equations" href="chapX_2_ode.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -159,16 +159,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../overview/readingList.html">Further Reading List</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../pre/chapX_0.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../pre/chapX_1_definition.html">Definitions, Classification and Terminology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pre/chapX_2_ode.html">Ordinary Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pre/chapX_3_odeAnalyticalSolution.html">Analytical Methods for ODEs</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapX_0.html">Basics of Differential Equations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chapX_1_definition.html">Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapX_2_ode.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Analytical Methods for ODEs</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear Multistep Methods and Sparse Matrices</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">1. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../01/chap01_1_complexNumber.html">1.1. Complex Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01/chap01_2_sequence.html">1.2. Sequences</a></li>
@@ -202,10 +202,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../04/chap04_4_exercise.html">4.4. Chapter 4 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap05_0.html">5. Multistep Methods: Stability I</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chap05_1_rootCondition.html">5.1. Characteristic Polynomials and Root Condition</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.2. Zero-Stability, Consistency and Convergence Theorem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap05_3_exercise.html">5.3. Chapter 5 Exercise</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05/chap05_0.html">5. Multistep Methods: Stability I</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_1_rootCondition.html">5.1. Characteristic Polynomials and Root Condition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_2_convergence.html">5.2. Zero-Stability, Consistency and Convergence Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_3_exercise.html">5.3. Chapter 5 Exercise</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">6. Multistep Methods: Stability II</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -292,7 +292,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/chaps/05/chap05_2_convergence.md" target="_blank"
+      <li><a href="../../_sources/chaps/pre/chapX_3_odeAnalyticalSolution.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +361,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -372,11 +374,29 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Zero-Stability, Consistency and Convergence Theorem</h1>
+    <h1>Analytical Methods for ODEs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-equations">Separable Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-equations-with-constant-coefficients">Linear Equations with Constant Coefficients</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneous-odes">Homogeneous ODEs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-odes">First-order ODEs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-odes">Second-order ODEs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#higher-order-odes">Higher-order ODEs</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inhomogeneous-odes">Inhomogeneous ODEs</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -386,215 +406,325 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="zero-stability-consistency-and-convergence-theorem">
-<h1><span class="section-number">5.2. </span>Zero-Stability, Consistency and Convergence Theorem<a class="headerlink" href="#zero-stability-consistency-and-convergence-theorem" title="Permalink to this headline">#</a></h1>
+  <div class="math notranslate nohighlight">
+\[\newcommand{\diff}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}
+\newcommand{\pdiff}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="analytical-methods-for-odes">
+<span id="chap-pre-3"></span><h1>Analytical Methods for ODEs<a class="headerlink" href="#analytical-methods-for-odes" title="Permalink to this headline">#</a></h1>
+<section id="separable-equations">
+<h2>Separable Equations<a class="headerlink" href="#separable-equations" title="Permalink to this headline">#</a></h2>
 <div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 5.6 </span> (Zero-Stability)</p>
+<p class="admonition-title"><span class="caption-number">Definition 5 </span> (Separable Equation)</p>
 <section class="definition-content" id="proof-content">
-<p>A method is said to be zero-stable if it satisfies the root condition,
-i.e. the linear multistep method <a class="reference internal" href="chap05_1_rootCondition.html#equation-eq-ch04-1-1">(5.1)</a>
-is said to be <strong>zero-stable</strong> if no root of the
-first characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(\xi)\,\)</span> has modulus greater that
-one, and every root of modulus one is simple.</p>
+<p>A first-order differential equation of the form</p>
+<div class="math notranslate nohighlight" id="equation-eq-ode-separable">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-ode-separable" title="Permalink to this equation">#</a></span>\[
+\diff{f}{x} = g(x) h(y)
+\]</div>
+<p>is said to be separable or to have separable variables.</p>
 </section>
-</div><div class="proof definition admonition" id="definition-1">
-<p class="admonition-title"><span class="caption-number">Definition 5.7 </span> (Consistency)</p>
-<section class="definition-content" id="proof-content">
-<p>The linear multistep method <a class="reference internal" href="chap05_1_rootCondition.html#equation-eq-ch04-1-1">(5.1)</a>
-is said to be <em>consistent</em> if it has order
-<span class="math notranslate nohighlight">\(\geq 1\)</span>. The condition that the order <span class="math notranslate nohighlight">\(p \geq 1\)</span> is called the
-condition of <em>consistency</em>.</p>
-</section>
-</div><p>In terms of constants <span class="math notranslate nohighlight">\(C_p\)</span>, introduced in Chapter (3), the condition is
-equivalent to <span class="math notranslate nohighlight">\(C_0 = 0\)</span>, <span class="math notranslate nohighlight">\(C_1 = 0\)</span>. The condition of consistency can be
-expressed by the relations</p>
+</div><p>To solve the separable ODE <a class="reference internal" href="#equation-eq-ode-separable">(4)</a>, we re-arrange it as</p>
 <div class="math notranslate nohighlight">
 \[
-\begin{aligned}
-    &amp;&amp; \sum_{i=0}^{k}  \alpha_i ~&amp;=~ 0\,;
-     &amp; \sum_{i=0}^{k} i\alpha_i ~&amp;=~ \sum_{i=0}^{k} \beta_i\,. &amp;&amp;
-\end{aligned}
+\frac{1}{h(y)} \dy= g(x) \dx, 
 \]</div>
-<p>and in terms of the polynomials <span class="math notranslate nohighlight">\(\rho(\xi)\)</span> and
-<span class="math notranslate nohighlight">\(\sigma(\xi)\)</span> the condition of consistency can be expressed by the
-relations - i.e. the linear multistep method <a class="reference internal" href="chap05_1_rootCondition.html#equation-eq-ch04-1-1">(5.1)</a> is consistent <em>iff</em>:</p>
+<p>then integrate both sides</p>
 <div class="math notranslate nohighlight">
 \[
-\begin{aligned}
-    \rho(1) ~&amp;=~ 0\,, \qquad\text{and}\qquad \rho'(1) = \sigma(1)\,.
-\end{aligned}
+\int \frac{1}{h(y)} \dy= \int g(x) \dx, 
 \]</div>
-<p>Thus, for a consistent method, the first characteristic polynomial
-always has a root at <span class="math notranslate nohighlight">\(+1\)</span>, i.e. the <em>principal root</em> <span class="math notranslate nohighlight">\(\xi_1\)</span>. The
-remaining roots <span class="math notranslate nohighlight">\(\,\xi_i\,, ~i=2,3,\dots,k\,\)</span>, are the <em>parasitic
-roots</em>.</p>
-<div class="proof remark admonition" id="remark-2">
-<p class="admonition-title"><span class="caption-number">Remark 5.1 </span> (Three ways to assess consistency)</p>
-<section class="remark-content" id="proof-content">
-<!-- :class: dropdown -->
-<ul class="simple">
-<li><p>The method’s order of accuray <span class="math notranslate nohighlight">\(\geq 1\)</span>.</p></li>
-<li><p>The constants satisfy <span class="math notranslate nohighlight">\(C_0=0\)</span> and <span class="math notranslate nohighlight">\(C_1=0\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\rho(1)=0\)</span> and <span class="math notranslate nohighlight">\(\rho'(1)=\sigma(1)\)</span>.</p></li>
-</ul>
-</section>
-</div><p>A linear multistep method which is zero-stable is frequently called
-‘stable’. Essentially a method is stable if errors introduced at one
-step are not propagated at subsequent steps. Zero-stability ensures that
-the parasitic solutions of the general solution to a difference equation
-are damped out in the limit as <span class="math notranslate nohighlight">\(\,h \to 0\,\)</span> – this effect is related
-to the fundamental theorem on linear multistep methods by ‘Dahlquist’:</p>
-<div class="proof theorem admonition" id="theorem-3">
-<p class="admonition-title"><span class="caption-number">Theorem 5.1 </span> (Convergence)</p>
-<section class="theorem-content" id="proof-content">
-<p>The necessary and sufficient conditions for a linear multistep method to
-be convergent are that it is consistent and zero-stable.</p>
-</section>
-</div><div class="proof example admonition" id="example-4">
-<p class="admonition-title"><span class="caption-number">Example 5.3 </span></p>
+<p>so we can get the implicit solution</p>
+<div class="math notranslate nohighlight">
+\[
+H(y) = G(x) + C.
+\]</div>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 6 </span></p>
 <section class="example-content" id="proof-content">
-<p>Investigate the convergence of the third order Adams-Bashforth formula:</p>
+<p>Solve <span class="math notranslate nohighlight">\((1+x)\dy - y \dx=0\)</span></p>
+<p><strong>Solution:</strong>
+Re-arranging the equation as</p>
 <div class="math notranslate nohighlight">
 \[
-\begin{aligned}
-        y_{j+1} ~=~ y_j + \frac{h}{12} \bigl[
-            23f_j - 16f_{j-1} + 5f_{j-2}
-        \bigr]    
-\end{aligned}
+    \frac{1}{y} \dy  = \frac{1}{1+x} \dx
 \]</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Solution (click to show)<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Rearranging the formula to obtain</p>
+<p>and integrating both sides</p>
 <div class="math notranslate nohighlight">
 \[
-\begin{aligned}
-        y_{j+1} - y_{j} + 0 y_{j-1} + 0y_{j-2} ~=~ h \left(
-            0f_{j+1}+ \frac{23}{12}f_j - \frac{16}{12}f_{j-1} + \frac{5}{12}f_{j-2}
-        \right)
-\end{aligned}
+  \int \frac{1}{y} \dy  = \int \frac{1}{1+x} \dx
 \]</div>
-<p class="sd-card-text">we have the following coefficents</p>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[
+\ln |y| = \ln |1+x| + c_1
+\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-        &amp;&amp; \alpha_3 &amp;= 1\,,  &amp; \alpha_2 &amp;= {-1}\,,
-         &amp; \alpha_1 &amp;= 0\,, &amp; \alpha_0 &amp;= 0 &amp;&amp;
-        \\[1em]
-        &amp;&amp; \beta_3 &amp;= 0\,,  &amp; \beta_2 &amp;= \frac{23}{12}\,,
-         &amp; \beta_1 &amp;= -\frac{16}{12}\,, &amp; \beta_0 &amp;= \frac{5}{12} &amp;&amp;    
+y &amp; = e^{\ln |1+x| + c_1} \\
+  &amp; = e^{c_1} |1+x| \\
+  &amp; = C |1+x|
 \end{aligned}
 \end{split}\]</div>
-<p class="sd-card-text">and the first and second characteristic polynomials</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-        &amp;\rho (\xi) = \alpha_3\xi^3 + \alpha_2\xi^2 + \alpha_1\xi + \alpha_0 = \xi^3 - \xi^2
-        \\
-        &amp;\sigma(\xi) = \beta_3\xi^3 + \beta_2\xi^2 + \beta_1\xi + \beta_0 = \frac{1}{12}(23\xi^2 - 16\xi + 5)    
-\end{aligned}
-\end{split}\]</div>
-<p class="sd-card-text">Let</p>
-<div class="math notranslate nohighlight">
-\[
-\rho (\xi) = \xi^3 - \xi^2 = \xi^2(\xi - 1) = 0
-\]</div>
-<p class="sd-card-text">so we get the roots <span class="math notranslate nohighlight">\(\xi_1 = 0\,, \qquad \xi_2 = 0\,, \qquad \xi_3 = 1\)</span>.</p>
-<p class="sd-card-text">Since <span class="math notranslate nohighlight">\(\,\xi_1,\,\xi_2\,\)</span> are less than <span class="math notranslate nohighlight">\(1\)</span>, and
-<span class="math notranslate nohighlight">\(\,\xi_3\!=\!1\)</span> is simple, the corresponding characteristic polynomial
-satisfies the root condition and is zero-stable.</p>
-<p class="sd-card-text">Checking the consistency, we have</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-    \rho(1)=&amp;1^3 - 1^2 =0 \\
-    \rho'(1)= &amp; \left.(3\xi^2-2\xi)\right\vert_{\xi=1} = 3(1)-2(1) = 1 \\
-    \sigma(1)= &amp; \frac{1}{12}\left(23(1)^2-16(1)+5\right) = 1
-\end{aligned}
-\end{split}\]</div>
-<p class="sd-card-text">so the method is also consistent <span class="math notranslate nohighlight">\((\text{i.e.}\,\rho(1) = 0,~ \rho'(1) = \sigma(1) )\)</span>.</p>
-<p class="sd-card-text">Therefore the method is convergent.</p>
-</div>
-</details></section>
-</div><div class="proof example admonition" id="example-5">
-<p class="admonition-title"><span class="caption-number">Example 5.4 </span></p>
+</section>
+</div><div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 7 </span></p>
 <section class="example-content" id="proof-content">
-<p>Investigate the stability of the Milne’s predictor method:</p>
+<p>Solve <span class="math notranslate nohighlight">\(\displaystyle \diff{y}{x} = \frac{x-5}{y^2}\)</span>.</p>
+<p><strong>Solution:</strong>
+Rearranging the equation as</p>
 <div class="math notranslate nohighlight">
 \[
-\begin{aligned}
-        y_{j+4} - y_j ~=~ \frac{4h}{3} \bigl[
-            2f_{j+3} - f_{j+2} + 2f_{j+1}
-        \bigr]   
-\end{aligned}
+y^2 \dy = (x-5) \dx
 \]</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Solution (click to show)<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">We find the following coefficients:</p>
+<p>Integrating both sides</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-        &amp;&amp; \alpha_0 &amp;= -1\,,
-         &amp; \alpha_1 &amp;= 0\,,
-         &amp; \alpha_2 &amp;= 0\,,
-         &amp; \alpha_3 &amp;= 0\,,
-         &amp; \alpha_4 &amp;= 1 &amp;&amp;
-        \\[1ex]
-        &amp;&amp; \beta_0 &amp;= 0\,,
-         &amp; \beta_1 &amp;= \frac{8}{3}\,,
-         &amp; \beta_2 &amp;= - \frac{4}{3}\,,
-         &amp; \beta_3 &amp;= \frac{8}{3}\,,
-         &amp; \beta_4 &amp;= 0 &amp;&amp;    
-\end{aligned}
-\end{split}\]</div>
-<p class="sd-card-text">and</p>
+\[
+\int y^2 \dy = \int (x-5) \dx 
+\]</div>
+<p>So the implicit solution is</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-        \rho(\xi) ~&amp;=~ \alpha_4\xi^4 + \alpha_3\xi^3 + \alpha_2\xi^2 + \alpha_1\xi + \alpha_0 ~=~ \xi^4 - 1
-        \\
-        \sigma(\xi) ~&amp;=~ \frac{4}{3} \bigl[
-            2\xi^3 - \xi^2 + 2\xi
-        \bigr]    
-\end{aligned}
-\end{split}\]</div>
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(\therefore\qquad \xi^4 - 1 = 0\,,\)</span><br />
-<span class="math notranslate nohighlight">\(\therefore\qquad \xi^2 = \pm 1\,,\qquad \xi_1 = 1\,,\quad \xi_2 = -1\,,\quad \xi_3 = -i\,,\quad \xi_4 = +i\)</span><br />
-There are no repeated roots, and modulus of all roots are <span class="math notranslate nohighlight">\(\,\leq 1\,\)</span>,
-therefore the method satisfies the root condition, but since there are
-more than one root with modulus one the method is weakly stable. The
-method is consistent
-<span class="math notranslate nohighlight">\((\text{i.e.}\ \,\rho(1) = 0,~ \rho'(1) = \sigma(1) = 4)\)</span>, and since
-zero stable, the method is also convergent.</p>
-</div>
-</details></section>
-</div><div class="proof remark admonition" id="remark-6">
-<p class="admonition-title"><span class="caption-number">Remark 5.2 </span> (Adams methods)</p>
-<section class="remark-content" id="proof-content">
-<p>The characteristic polynomial <span class="math notranslate nohighlight">\(\rho\)</span> for all Adams methods
-(AB and AM) are of the form:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-    \rho(\xi) ~&amp;=~ \xi^k - \xi^{k-1}\\
-                &amp;=~ \xi^{k-1}(\xi - 1)
-\end{aligned}
-\end{split}\]</div>
-<p>Hence, <span class="math notranslate nohighlight">\(\xi_1 = 1\)</span>, and the reminding roots
-<span class="math notranslate nohighlight">\(\xi_2,\xi_3,\dots,\xi_k = 0\)</span>, they all satisfy the root conditions and
-are zero stable. It can be shown that they are consistent and therefore,
-all Adams methods are convergent.</p>
+\[
+    \frac{1}{3} y^3 = \frac{1}{2}x^2 - 5x + C
+\]</div>
 </section>
 </div></section>
+<section id="linear-equations-with-constant-coefficients">
+<h2>Linear Equations with Constant Coefficients<a class="headerlink" href="#linear-equations-with-constant-coefficients" title="Permalink to this headline">#</a></h2>
+<p>Here we focus on a particular type of <span class="math notranslate nohighlight">\(n\)</span>-th order ODE given as</p>
+<div class="math notranslate nohighlight" id="equation-eq-ode-linear-constant">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-ode-linear-constant" title="Permalink to this equation">#</a></span>\[
+a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(x),
+\quad a_n \neq 0
+\]</div>
+<p>where the coefficients <span class="math notranslate nohighlight">\(a_p~(p=0, 1, \ldots, n)\)</span> are constants.</p>
+<div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 6 </span> (Differential Operator <span class="math notranslate nohighlight">\(D\)</span>)</p>
+<section class="definition-content" id="proof-content">
+<p>We define <span class="math notranslate nohighlight">\(D\)</span> as the differential operator, which can be applied on a function <span class="math notranslate nohighlight">\(y=y(x)\)</span> to obtain its derivative</p>
+<div class="math notranslate nohighlight">
+\[
+    D y = \diff{y}{x},
+\]</div>
+<p>then the <span class="math notranslate nohighlight">\(n\)</span>-th derivative is</p>
+<div class="math notranslate nohighlight">
+\[
+    D^n y = \diff[n]{y}{x}.
+\]</div>
+<p>Thus we can write the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(5)</a> in an <strong>operator form</strong> as</p>
+<div class="math notranslate nohighlight" id="equation-eq-ode-operator-form">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq-ode-operator-form" title="Permalink to this equation">#</a></span>\[
+\left( a_n D^n + a_{n-1} D^{n-1} + \cdots + a_1 D + a_0 \right) y = g(x).
+\]</div>
+<p>We define the overall operation on <span class="math notranslate nohighlight">\(y\)</span> as</p>
+<div class="math notranslate nohighlight" id="equation-eq-ode-operator-ld">
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq-ode-operator-ld" title="Permalink to this equation">#</a></span>\[
+L(D)= a_n D^n + a_{n-1} D^{n-1} + \cdots + a_1 D + a_0,
+\]</div>
+<p>then the equation can also be written as</p>
+<div class="math notranslate nohighlight">
+\[
+L(D) y = g(x).
+\]</div>
+</section>
+</div><div class="proof definition admonition" id="definition-4">
+<p class="admonition-title"><span class="caption-number">Definition 7 </span> (Characteristic Polynomial and Characteristic Equation)</p>
+<section class="definition-content" id="proof-content">
+<p>For equation <a class="reference internal" href="#equation-eq-ode-linear-constant">(5)</a>, we define its <strong>characteristic polynomial</strong> as</p>
+<div class="math notranslate nohighlight" id="equation-eq-ode-linear-constant-char-polynomial">
+<span class="eqno">(8)<a class="headerlink" href="#equation-eq-ode-linear-constant-char-polynomial" title="Permalink to this equation">#</a></span>\[
+L(\xi) = a_n \xi^n + a_{n-1} \xi^{n-1} + \cdots + a_1 \xi + a_0.
+\]</div>
+<p>Note: We can simply replace the operator <span class="math notranslate nohighlight">\(D\)</span> in formula <a class="reference internal" href="#equation-eq-ode-operator-ld">(7)</a> to <span class="math notranslate nohighlight">\(\xi\)</span> to obtain the characteristic polynomial.</p>
+<p>The equation</p>
+<div class="math notranslate nohighlight" id="equation-eq-ode-linear-constant-char-equation">
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq-ode-linear-constant-char-equation" title="Permalink to this equation">#</a></span>\[
+L(\xi) = a_n \xi^n + a_{n-1} \xi^{n-1} + \cdots + a_1 \xi + a_0 = 0
+\]</div>
+<p>is called the <strong>characteristic equation</strong> of the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(5)</a>.</p>
+<p>Note: In some books, the characteristic equation is also called <em>auxiliary equation</em>.</p>
+</section>
+</div><section id="homogeneous-odes">
+<h3>Homogeneous ODEs<a class="headerlink" href="#homogeneous-odes" title="Permalink to this headline">#</a></h3>
+<p>When the right hand side of equation <a class="reference internal" href="#equation-eq-ode-linear-constant">(5)</a> vanishes, i.e. <span class="math notranslate nohighlight">\(g(x)\)</span>, we obtain a linear homogeneous ordinary differential equation with constant coefficients</p>
+<div class="math notranslate nohighlight" id="equation-eq-ode-linear-homogeneous-constant">
+<span class="eqno">(10)<a class="headerlink" href="#equation-eq-ode-linear-homogeneous-constant" title="Permalink to this equation">#</a></span>\[
+L(D) y = \left( a_n D^n + a_{n-1} D^{n-1} + \cdots + a_1 D + a_0 \right) y = 0
+\]</div>
+<div class="proof theorem admonition" id="theorem-5">
+<p class="admonition-title"><span class="caption-number">Theorem 2 </span> (Superposition Principle — Homogeneous Equations)</p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(y_1(x)\)</span>, <span class="math notranslate nohighlight">\(y_2(x)\)</span>, … , <span class="math notranslate nohighlight">\(y_n(x)\)</span> be solutions to the homogeneous <span class="math notranslate nohighlight">\(n\)</span>-th order differential equation <a class="reference internal" href="#equation-eq-ode-linear-homogeneous-constant">(10)</a> on an interval <span class="math notranslate nohighlight">\(I\)</span>, then the linear combination</p>
+<div class="math notranslate nohighlight">
+\[
+    y=c_1 y_1(x) + c_2 y_2(x) + \cdots + c_n y_n(x)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(c_p ~ (p=1, 2, \ldots, n)\)</span> are arbitrary constants, is also a solution on the interval.</p>
+</section>
+</div><p>We will work step by step to look at the solutions of:</p>
+<ul class="simple">
+<li><p>First-order ODEs</p></li>
+<li><p>Second-order ODEs</p></li>
+<li><p>Higher-order ODEs</p></li>
+</ul>
+<section id="first-order-odes">
+<h4>First-order ODEs<a class="headerlink" href="#first-order-odes" title="Permalink to this headline">#</a></h4>
+<p>Solve <span class="math notranslate nohighlight">\(a_1 y' + a_0 y =0\)</span></p>
+<div class="hint admonition">
+<p class="admonition-title">Solution</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Method 1</label><div class="sd-tab-content docutils">
+<p>Writing the equation as</p>
+<div class="math notranslate nohighlight">
+\[
+a_1 \diff{y}{x} = - a_0 y,
+\]</div>
+<p>separating the variables</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{y}\dy  = -\frac{a_0}{a_1} \dx,
+\]</div>
+<p>integrating both sides</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{1}{y}\dy  = \int -\frac{a_0}{a_1} \dx,
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\ln |y| = -\frac{a_0}{a_1} x + c_1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y = e^{-\frac{a_0}{a_1} x + c_1} = C e^{-\frac{a_0}{a_1} x }
+\]</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Method 2</label><div class="sd-tab-content docutils">
+<p>The characteristic equation is</p>
+<div class="math notranslate nohighlight">
+\[
+a_1 \xi + a_0 = 0,
+\]</div>
+<p>and its root is <span class="math notranslate nohighlight">\(\xi = -\dfrac{a_0}{a_1}\)</span>. Therefore the general solution to the first-order ODE is</p>
+<div class="math notranslate nohighlight">
+\[
+y = C e^{\xi x} = C e^{-\frac{a_0}{a_1} x}
+\]</div>
+</div>
+</div>
+</div>
+</section>
+<section id="second-order-odes">
+<h4>Second-order ODEs<a class="headerlink" href="#second-order-odes" title="Permalink to this headline">#</a></h4>
+<p>Solve <span class="math notranslate nohighlight">\(a y'' + b y'+ c y=0\)</span></p>
+<div class="hint admonition">
+<p class="admonition-title">Solution</p>
+<p>The characteristic equation is</p>
+<div class="math notranslate nohighlight">
+\[
+    a \xi^2 + b \xi + c=0,
+\]</div>
+<p>and its roots</p>
+<div class="math notranslate nohighlight">
+\[
+\xi_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\]</div>
+<p>can be:</p>
+<ul>
+<li><p>Case 1: two distinct real solutions (<span class="math notranslate nohighlight">\(\xi_1\neq\xi_2 \in \R\)</span>);</p>
+<p>The general solution of the second-order ODE is</p>
+<div class="math notranslate nohighlight">
+\[
+    y=c_1 e^{\xi_1 x} + c_2 e^{\xi_2 x}
+    \]</div>
+</li>
+<li><p>Case 2: two identical real solutions (<span class="math notranslate nohighlight">\(\xi_1 = \xi_2 =\xi \in \R\)</span>);</p>
+<p>The general solution of the second-order ODE is</p>
+<div class="math notranslate nohighlight">
+\[
+    y=c_1 e^{\xi x} + c_2 x e^{\xi x}
+    \]</div>
+</li>
+<li><p>Case 3: two complex conjugate solution (<span class="math notranslate nohighlight">\(\xi_{1,2} = \alpha \pm i \beta \in \C\)</span>);.</p>
+<p>The general solution of the second-order ODE is</p>
+<div class="math notranslate nohighlight">
+\[
+    y=C_1 e^{(\alpha + i \beta) x} + C_2 e^{(\alpha - i \beta) x}
+    \]</div>
+<p>or we can write it as</p>
+<div class="math notranslate nohighlight">
+\[
+    y=c_1 e^{\alpha x} \cos \beta x + c_2 e^{\alpha x} \sin \beta x
+    \]</div>
+</li>
+</ul>
+</div>
+<div class="proof example admonition" id="example-6">
+<p class="admonition-title"><span class="caption-number">Example 8 </span></p>
+<section class="example-content" id="proof-content">
+<p>Solving the following ODEs:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(2y''-5y'-3y=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y''-10y'+25y=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y''+4y'+7y=0\)</span></p></li>
+</ol>
+<div class="admonition-solution admonition">
+<p class="admonition-title">Solution</p>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(2\xi^2-5\xi-3=(2\xi+1)(\xi-3)=0\)</span>,  <span class="math notranslate nohighlight">\(\quad\xi_1=-\frac{1}{2}\)</span> and <span class="math notranslate nohighlight">\(\xi_2=3\)</span></p>
+<p><span class="math notranslate nohighlight">\(y=c_1 e^{-\frac{x}{2}}+c_2 e^{3x}\)</span></p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\xi^2-10\xi+25=(\xi-5)^2=0\)</span>,  <span class="math notranslate nohighlight">\(\quad\xi_1=\xi_2=5\)</span></p>
+<p><span class="math notranslate nohighlight">\(y=c_1 e^{5x} + c_2 x e^{5x}\)</span></p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\xi^2+4\xi+7=0\)</span>,  <span class="math notranslate nohighlight">\(\quad\xi_1=-2+\sqrt{3}i\)</span> and <span class="math notranslate nohighlight">\(\xi_2=-2-\sqrt{3}i\)</span></p>
+<p><span class="math notranslate nohighlight">\(y=e^{-2x} \left( c_1 \cos \sqrt{3}x + c_2 \sin \sqrt{3}x \right)\)</span></p>
+</li>
+</ol>
+</div>
+</section>
+</div></section>
+<section id="higher-order-odes">
+<h4>Higher-order ODEs<a class="headerlink" href="#higher-order-odes" title="Permalink to this headline">#</a></h4>
+<p>Solve an <span class="math notranslate nohighlight">\(n\)</span>-th order ODE
+<span class="math notranslate nohighlight">\(
+\left( a_n D^n + a_{n-1} D^{n-1} + \cdots + a_1 D + a_0 \right) y = 0
+\)</span></p>
+<div class="hint admonition">
+<p class="admonition-title">Solution</p>
+<p>The characteristic equation is</p>
+<div class="math notranslate nohighlight">
+\[
+a_n \xi^n + a_{n-1} \xi^{n-1} + \cdots + a_1 \xi + a_0 = 0
+\]</div>
+<ul>
+<li><p>Case 1: <span class="math notranslate nohighlight">\(n\)</span> distinct real solutions (<span class="math notranslate nohighlight">\(\xi_1 \neq \xi_2 \neq \cdots \neq \xi_n \in \R\)</span>)</p>
+<p>The general solution is</p>
+<div class="math notranslate nohighlight">
+\[
+    y=c_1 e^{\xi_1 x} + c_2 e^{\xi_2 x} + \cdots + c_n e^{\xi_n x}
+    \]</div>
+</li>
+<li><p>Case 1: <span class="math notranslate nohighlight">\(n\)</span> repeated real solutions (<span class="math notranslate nohighlight">\(\xi_1=\xi_2= \cdots =\xi_n=\xi \in \R\)</span>)</p>
+<p>The general solution is</p>
+<div class="math notranslate nohighlight">
+\[
+    y=c_1 e^{\xi x} + c_2 x e^{\xi x} + \cdots + c_n x^{n-1} e^{\xi x}
+    \]</div>
+</li>
+<li><p>Case 3: <span class="math notranslate nohighlight">\(m\)</span>-pair (<span class="math notranslate nohighlight">\(n=2m\)</span>) conjugate complex solutions</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="inhomogeneous-odes">
+<h3>Inhomogeneous ODEs<a class="headerlink" href="#inhomogeneous-odes" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -609,7 +739,7 @@ all Adams methods are convergent.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\05"
+            path: "./chaps\pre"
         },
         predefinedOutput: true
     }
@@ -628,20 +758,20 @@ all Adams methods are convergent.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="chap05_1_rootCondition.html"
+       href="chapX_2_ode.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5.1. </span>Characteristic Polynomials and Root Condition</p>
+        <p class="prev-next-title">Ordinary Differential Equations</p>
       </div>
     </a>
     <a class="right-next"
-       href="chap05_3_exercise.html"
+       href="../01/chap01_0.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.3. </span>Chapter 5 Exercise</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Complex Numbers and Difference Equations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -654,6 +784,30 @@ all Adams methods are convergent.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-equations">Separable Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-equations-with-constant-coefficients">Linear Equations with Constant Coefficients</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneous-odes">Homogeneous ODEs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-odes">First-order ODEs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-odes">Second-order ODEs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#higher-order-odes">Higher-order ODEs</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inhomogeneous-odes">Inhomogeneous ODEs</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
