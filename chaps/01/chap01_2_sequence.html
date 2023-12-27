@@ -158,7 +158,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../overview/schedule.html">Teaching Schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../overview/readingList.html">Further Reading List</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Tutorial Exericses</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapX_odeBasics.html">Basics of Differential Equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear Multistep Methods and Sparse Matrices</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chap01_0.html">1. Complex Numbers and Difference Equations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chap01_1_complexNumber.html">1.1. Complex Numbers</a></li>
@@ -228,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Documentation of Ordinary Differential Equation Solvers</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../chapX_odeSolvers.html">ODE Solvers in Matlab and Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapY_odeSolvers.html">ODE Solvers in Matlab and Python</a></li>
 </ul>
 
     </div>
@@ -380,8 +384,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="sequences">
 <span id="chap01-sequence"></span><h1><span class="section-number">1.2. </span>Sequences<a class="headerlink" href="#sequences" title="Permalink to this headline">#</a></h1>
 <p>In analysis, we often deal with functions defined on continuous domains. For example, a cubic function defined on the real number set <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0e250802-2131-4d6a-b790-142e61c06b15">
-<span class="eqno">(1.9)<a class="headerlink" href="#equation-0e250802-2131-4d6a-b790-142e61c06b15" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4bacb324-d0a7-4e2e-b943-a8b470e03c00">
+<span class="eqno">(1.9)<a class="headerlink" href="#equation-4bacb324-d0a7-4e2e-b943-a8b470e03c00" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x)=x^3, \qquad x \in \mathbb{R}.
 \end{equation}\]</div>
 <p>Sometimes the domain might not be continuous but discrete. For example, we can define an exponential  function, with base <span class="math notranslate nohighlight">\(3\)</span>, on the integer number set <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> as</p>
