@@ -21,7 +21,7 @@ For an $n$-th order ordinary differential equation, we can write it in
     $$(eq:ode:form:normal)
 
 ```{prf:remark} Interval of definition $I$
-For a problem governed/represented by an ODE, we need to give the actual ODE in form {eq}`eq:ode:form:general` or {eq}`eq:ode:form:normal`, beside we also need to give the interval $I$ that defines the problem. We call this interval $I$:
+For a problem governed/represented by an ODE, we need to give the actual ODE in form {eq}`eq:ode:form:general` or {eq}`eq:ode:form:normal`, besides we also need to give the interval $I$ that defines the problem. We call this interval $I$:
 
 - the **interval of definition**, 
 - the **interval of existence**, 
