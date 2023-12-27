@@ -715,13 +715,49 @@ a_n \xi^n + a_{n-1} \xi^{n-1} + \cdots + a_1 \xi + a_0 = 0
     y=c_1 e^{\xi x} + c_2 x e^{\xi x} + \cdots + c_n x^{n-1} e^{\xi x}
     \]</div>
 </li>
-<li><p>Case 3: <span class="math notranslate nohighlight">\(m\)</span>-pair (<span class="math notranslate nohighlight">\(n=2m\)</span>) conjugate complex solutions</p></li>
+<li><p>Case 3: <span class="math notranslate nohighlight">\(m\)</span>-pair (<span class="math notranslate nohighlight">\(n=2m\)</span>) conjugate complex solutions</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{aligned}
+    \xi_{1,2} &amp; = \alpha_1 \pm i \beta_1 \\
+    \xi_{3,4} &amp; = \alpha_2 \pm i \beta_2 \\
+              &amp; \vdots ~ \\
+    \xi_{2m-1, 2m} &amp; = \alpha_m \pm i \beta_m 
+    \end{aligned}
+    \end{split}\]</div>
+<p>The general solution is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{aligned}
+    y ~ = ~ &amp; ~ e^{\alpha_1 x} (c_1 \cos \beta_1 x + c_2 \sin \beta_1x) \\
+        + &amp; ~ e^{\alpha_2 x} (c_3 \cos \beta_2 x + c_4 \sin \beta_2x) \\
+        &amp; \vdots \\
+        + &amp; ~ e^{\alpha_m x} (c_{2m-1} \cos \beta_m x + c_{2m} \sin \beta_m x) 
+    \end{aligned}
+    \end{split}\]</div>
+</li>
 </ul>
 </div>
 </section>
 </section>
 <section id="inhomogeneous-odes">
 <h3>Inhomogeneous ODEs<a class="headerlink" href="#inhomogeneous-odes" title="Permalink to this headline">#</a></h3>
+<p>Here we consider a linear inhomogeneous ODE with constant coefficients given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-ode-linear-inhomogeneous-constant">
+<span class="eqno">(11)<a class="headerlink" href="#equation-eq-ode-linear-inhomogeneous-constant" title="Permalink to this equation">#</a></span>\[
+L(D) y = \left( a_n D^n + a_{n-1} D^{n-1} + \cdots + a_1 D + a_0 \right) y = g(x), \quad g(x)\neq 0
+\]</div>
+<p>The solution <span class="math notranslate nohighlight">\(y(x)\)</span> to equation <a class="reference internal" href="#equation-eq-ode-linear-inhomogeneous-constant">(11)</a> includes two parts:</p>
+<ul class="simple">
+<li><p>A homogeneous component <span class="math notranslate nohighlight">\(y_h(x)\)</span>, which is the general solution to the homogeneous equation <span class="math notranslate nohighlight">\(L(D) y_h = 0\)</span>;</p></li>
+<li><p>A particular component <span class="math notranslate nohighlight">\(y_p(x)\)</span>, which is a particular solution to the inhomogeneous equation <span class="math notranslate nohighlight">\(L(D) y_p = g(x)\)</span>.</p></li>
+</ul>
+<p>In conclusion, the solution to equation <a class="reference internal" href="#equation-eq-ode-linear-inhomogeneous-constant">(11)</a> is</p>
+<div class="math notranslate nohighlight">
+\[
+y(x) = y_h (x) + y_p(x)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(L(D) y_h = 0\)</span> and  <span class="math notranslate nohighlight">\(L(D) y_p = g(x)\)</span>.</p>
 </section>
 </section>
 </section>
