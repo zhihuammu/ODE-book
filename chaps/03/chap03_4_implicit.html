@@ -63,7 +63,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/03/chap03_4_implicit';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -388,9 +388,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="implicit-or-closed-multistep-methods">
 <h1><span class="section-number">3.4. </span>Implicit or Closed Multistep Methods<a class="headerlink" href="#implicit-or-closed-multistep-methods" title="Permalink to this headline">#</a></h1>
-<p>Implict (closed) methods are derived by using the additional point
+<p>Implicit (closed) methods are derived by using the additional point
 <span class="math notranslate nohighlight">\(\,(x_{j+1},y_{j+1})\,\)</span> as an interpolation node in the approximation of
-the integral <span class="math notranslate nohighlight">\(\displaystyle \int_{x_j}^{x_{j+1}} f(x,y) dx\)</span>. The simplest of the
+the integral <span class="math notranslate nohighlight">\(\displaystyle \int_{x_j}^{x_{j+1}} f(x,y) \dx\)</span>. The simplest of the
 implicit methods is the <em>Backward Euler</em> method:</p>
 <div class="math notranslate nohighlight">
 \[

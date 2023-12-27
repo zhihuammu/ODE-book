@@ -13,7 +13,7 @@ $$(eq:ch05:1.1)
 
 $$
 \begin{aligned}
-    && \frac{dy}{dx} ~&=~ f(x,y) ~=~ \lambda\,y\,,
+    && \frac{\dy}{\dx} ~&=~ f(x,y) ~=~ \lambda\,y\,,
     & y(x_0) = y_0 &&
 \end{aligned}
 $$(eq:ch05:1.2)

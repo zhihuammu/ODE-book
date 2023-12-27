@@ -63,7 +63,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/03/chap03_2_derivation';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -393,13 +393,13 @@ aim to determine <span class="math notranslate nohighlight">\(\,y_{j+3}\,\)</spa
 over the interval <span class="math notranslate nohighlight">\(\,[x_{j+2},x_{j+3}]\,\)</span>;</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch02-2-1">
 <span class="eqno">(3.4)<a class="headerlink" href="#equation-eq-ch02-2-1" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{aligned}
-    dy ~&amp;=~ f(x,y) dx\\
-    \int_{x_{j+2}}^{x_{j+3}} dy ~&amp;=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) dx\\
-    \therefore\quad y_{j+3} - y_{j+2} ~&amp;=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) dx\\
-    \text{or}\quad y_{j+3} ~&amp;=~ y_{j+2} + \int_{x_{j+2}}^{x_{j+3}} f(x,y) dx     
+    \dy ~&amp;=~ f(x,y) \dx\\
+    \int_{x_{j+2}}^{x_{j+3}} \dy ~&amp;=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx\\
+    \therefore\quad y_{j+3} - y_{j+2} ~&amp;=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx\\
+    \text{or}\quad y_{j+3} ~&amp;=~ y_{j+2} + \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx     
 \end{aligned}\end{split}\]</div>
 <p>To find the terms on the right hand side, we need to
-integrate <span class="math notranslate nohighlight">\(\displaystyle \int_{x_{j+2}}^{x_{j+3}} f(x,y)\,dx\)</span>. The straight
+integrate <span class="math notranslate nohighlight">\(\displaystyle \int_{x_{j+2}}^{x_{j+3}} f(x,y)\,\dx\)</span>. The straight
 integration cannot be done since the value of <span class="math notranslate nohighlight">\(y\)</span> is not known. Instead,
 we integrate by approximating the function <span class="math notranslate nohighlight">\(\,f(x,y)\,\)</span> as an
 interpolating polynomial that is determined by using the previously

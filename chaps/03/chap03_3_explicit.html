@@ -63,7 +63,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/03/chap03_3_explicit';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -396,7 +396,7 @@ interpolation formula as the integrand in equation <a class="reference internal"
 and using the relation</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-    x = x_j + sh, \quad \frac{dx}{ds} = h, \quad \text{and when}\quad
+    x = x_j + sh, \quad \frac{\dx}{\ds} = h, \quad \text{and when}\quad
     &amp; x = x_{j+3},\quad s = 3\\
     &amp; x = x_{j+2},\quad s = 2    
 \end{aligned}\end{split}\]</div>
@@ -406,11 +406,11 @@ and using the relation</p>
 \[\begin{split}\begin{aligned}
     \therefore\quad y_{j+3} ~=~ y_{j+2} &amp;+ \int_{x_{j+2}}^{x_{j+3}} \left(
     f_j + s\Delta f_j + \frac{s(s-1)}{2!}\Delta^2 f_j + \dots
-    \right) dx\\
+    \right) \dx\\
     ~=~ y_{j+2} &amp;+ h\int_{2}^{3} \left(
     f_j + s\Delta f_j + \frac{s(s-1)}{2!}\Delta^2 f_j
-    \right) ds\\
-    &amp;+ h\int_{2}^{3} \frac{s(s-1)(s-2)}{3!}f'''(\xi) ds
+    \right) \ds\\
+    &amp;+ h\int_{2}^{3} \frac{s(s-1)(s-2)}{3!}f'''(\xi) \ds
     
 \end{aligned}\end{split}\]</div>
 <p>The last term on the right hand side is the error due to
@@ -439,7 +439,7 @@ suffices to take the terms in the G-N interpolation formula up to
 <div class="proof example admonition" id="example-0">
 <p class="admonition-title"><span class="caption-number">Example 3.1 </span></p>
 <section class="example-content" id="proof-content">
-<p>Consider the following table for <span class="math notranslate nohighlight">\(\,\dfrac{dy}{dx} = x + y\,\)</span>,
+<p>Consider the following table for <span class="math notranslate nohighlight">\(\,\dfrac{\dy}{\dx} = x + y\,\)</span>,
 <span class="math notranslate nohighlight">\(\,y(0) = 1\,\)</span>. The values of <span class="math notranslate nohighlight">\(y(0.2)\)</span> and <span class="math notranslate nohighlight">\(y(0.4)\)</span> are calculated using
 a single–step method.</p>
 <table class="colwidths-auto table">

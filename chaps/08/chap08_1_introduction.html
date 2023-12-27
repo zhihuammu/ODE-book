@@ -63,7 +63,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/08/chap08_1_introduction';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -396,7 +396,7 @@ methods are used for the solution of a system of ODEs of size
 <span class="math notranslate nohighlight">\(N \times N\)</span> of the form:</p>
 <div class="math notranslate nohighlight" id="equation-e-linde-1">
 <span class="eqno">(8.1)<a class="headerlink" href="#equation-e-linde-1" title="Permalink to this equation">#</a></span>\[
-    {y'}= \frac{d{y}}{dt} = { {f}}(t,{y}), \quad {y}(t_0)= { {a}}
+    y'= \frac{\dy}{\dt} = f(t,y), \quad {y}(t_0)= { {a}}
 \]</div>
 <p>To advance the solution at time <span class="math notranslate nohighlight">\(t\)</span> from one mesh point to the next,
 considering a discrete time mesh <span class="math notranslate nohighlight">\(\{t_0,t_1,t_2, ...,t_n\}\)</span>, multistep

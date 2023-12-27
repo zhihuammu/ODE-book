@@ -1,3 +1,4 @@
+
 ```{math}
 \newcommand{\diff}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}
 \newcommand{\pdiff}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
@@ -5,6 +6,10 @@
 
 (chap:pre:3)=
 # Analytical Methods for ODEs
+
+```{contents}
+:local:
+```
 
 ## Separable Equations
 
@@ -385,4 +390,4 @@ $$
 y(x) = y_h (x) + y_p(x)
 $$
 
-where $L(D) y_h = 0$ and  $L(D) y_p = g(x)$.
+where $L(D) y_h(x) = 0$ and  $L(D) y_p(x) = g(x)$.
