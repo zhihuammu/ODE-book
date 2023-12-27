@@ -1,4 +1,4 @@
-# Linear Multi-step Methods
+# Computational Methods in Ordinary Differential Equations
 
 
 ```{tableofcontents}

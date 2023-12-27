@@ -10,8 +10,13 @@ parts:
     - file: overview/motivation
     - file: overview/schedule
     - file: overview/readingList
+  
+  - caption: Prerequisite
+    numbered: false
+    chapters: 
+    - file: chaps/chapX_odeBasics
     
-  - caption: Lecture Notes and Tutorial Exericses
+  - caption: Linear Multistep Methods and Sparse Matrices
     maxdepth: 1
     numbered: true      
     chapters:
@@ -50,4 +55,4 @@ parts:
   - caption: Documentation of Ordinary Differential Equation Solvers
     numbered: false
     chapters:  
-    - file: chaps/chapX_odeSolvers
+    - file: chaps/chapY_odeSolvers

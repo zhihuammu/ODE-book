@@ -204,7 +204,7 @@ and we get
 $$\xi_{1,2}=\frac{-a\pm \sqrt{a^2-4b}}{2}.$$
 
 - Case 1: Two distinct real solutions;
-- Case 2: Two idential real solutions;
+- Case 2: Two identical real solutions;
 - Case 3: Two complex conjugate solutions.
 
 ````{admonition} **Case (1) Two different real solutions: $\xi_1 \neq \xi_2$ and $\xi_{1,2}\in \mathbb{R}$**:
