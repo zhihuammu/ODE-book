@@ -12,9 +12,12 @@ parts:
     - file: overview/readingList
   
   - caption: Prerequisite
+    maxdepth: 1
     numbered: false
     chapters: 
-    - file: chaps/chapX_odeBasics
+    - file: chaps/pre/chapX_0
+      sections: 
+      - glob: chaps/pre/chapX_*
     
   - caption: Linear Multistep Methods and Sparse Matrices
     maxdepth: 1
@@ -52,7 +55,13 @@ parts:
       sections:
       - glob: chaps/08/chap08_*         
 
-  - caption: Documentation of Ordinary Differential Equation Solvers
+  - caption: Appendix
     numbered: false
     chapters:  
-    - file: chaps/chapY_odeSolvers
+    - file: chaps/append/chapY_odeSolvers
+
+    # - url: https://uk.mathworks.com/help/matlab/ordinary-differential-equations.html
+    #   title: ODE solvers in Matlab 
+
+    # - url: https://docs.scipy.org/doc/scipy/reference/integrate.html#solving-initial-value-problems-for-ode-systems
+    #   title: ODE solvers Python 

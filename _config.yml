@@ -32,15 +32,26 @@ html:
   home_page_in_navbar   : false
   use_issues_button: false
   use_repository_button: false
-  use_multitoc_numbering: true    
+  use_multitoc_numbering: false    
   use_edit_page_button: false
 #  announcement: "My announcement!"
 
-
+#\newcommand{\diff}[3][]{\frac{d^{#1} #2}{d #3^{#1}}}
   
 sphinx:
   config:
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    mathjax_config:
+      tex:
+        macros:
+          "N": "\\mathbb{N}"
+          "Z": "\\mathbb{Z}"
+          "R": "\\mathbb{R}"                    
+          "C": "\\mathbb{C}"
+          "dy": "\\mathrm{d}y"          
+          "dx": "\\mathrm{d}x"
+      
+
 #    bibtex_reference_style: author_year
     hide_solutions: false
 #    html_extra_path: exSol
