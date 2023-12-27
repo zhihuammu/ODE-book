@@ -18,7 +18,7 @@ Use the Gregory-Newton forward-interpolation formula:
 to derive the Simpson rule with error term $\epsilon$:
 
 $$\begin{aligned}
-        \int_{x_0}^{x_2} f(x)\,dx ~=~ \frac{h}{3}(f_2 + 4f_1 + f_0) + \epsilon
+        \int_{x_0}^{x_2} f(x)\,\dx ~=~ \frac{h}{3}(f_2 + 4f_1 + f_0) + \epsilon
     
 \end{aligned}$$
 
@@ -26,22 +26,22 @@ $$\begin{aligned}
 <!-- :class: tip -->
 
 $$\begin{aligned}
-        &Using      & s ~&=~ \frac{x - x_0}{h}, & dx ~&=~ h\,ds\\
+        &Using      & s ~&=~ \frac{x - x_0}{h}, & \dx ~&=~ h\,\ds\\
         &\therefore & x ~&=~ x_0,               &  s ~&=~ 0\\
         &           & x ~&=~ x_2,               &  s ~&=~ 2\\
     
 \end{aligned}$$
 
 $$\begin{aligned}
-        \therefore \quad \int_{x_0}^{x_2} f(x)\,dx ~&=~ h \int_{0}^{2} \left(
+        \therefore \quad \int_{x_0}^{x_2} f(x)\,\dx ~&=~ h \int_{0}^{2} \left(
             f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0
-        \right)\,ds + \epsilon
+        \right)\,\ds + \epsilon
         \\[1em]
         \text{Substituting} \quad \Delta f_0 ~&=~ f_1 - f_0,
         \quad \text{and} \quad \Delta^2 f_0 ~=~ f_2 - 2f_1 + f_0
         \quad \text{gives}
         \\[1em]
-        \int_{x_0}^{x_2} f(x)\,dx ~&=~ h \left[
+        \int_{x_0}^{x_2} f(x)\,\dx ~&=~ h \left[
             sf_0 + \frac{s^2}{2}(f_1 - f_0) + \frac{1}{2}\left(
                 \frac{s^3}{3} - \frac{s^2}{2}
             \right)(f_2 - 2f_1 + f_0)
@@ -63,12 +63,12 @@ $$\begin{aligned}
         \epsilon ~&=~ h \int_{0}^{2} \left\{
             \frac{s(s-1)(s-2)}{3!}\Delta^3 f_0
             + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_0
-        \right\}ds
+        \right\}\ds
         \\
         &=~ h \int_{0}^{2} \left\{
             \frac{s^3 - 3s^2 + 2s}{3!}\Delta^3 f_0
             + \frac{s^4 - 6s^3 + 11s^2 - 6s}{4!}\Delta^4 f_0
-        \right\}ds
+        \right\}\ds
         \\
         &=~ h \left\{
             \frac{1}{6} \left[
@@ -124,7 +124,7 @@ $$f_s = f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0
 to show that for Milne's formula: 
 
 $$\begin{aligned}
-        \int_{x_{-1}}^{x_3} f(x)\,dx ~=~ \frac{4h}{3} (2f_0 - f_1 + 2f_2) + \epsilon
+        \int_{x_{-1}}^{x_3} f(x)\,\dx ~=~ \frac{4h}{3} (2f_0 - f_1 + 2f_2) + \epsilon
     
 \end{aligned}$$ 
 
@@ -143,7 +143,7 @@ and fourth differences.
 <!-- :class: tip -->
 
 $$\begin{aligned}
-        &Using      & x ~&=~ x_0 + sh & dx ~&=~ h\,ds\\
+        &Using      & x ~&=~ x_0 + sh & \dx ~&=~ h\,\ds\\
         &\therefore & x ~&=~ x_{-1},  &  s ~&=~ -1\\
         &           & x ~&=~ x_3,     &  s ~&=~  3
     
@@ -157,12 +157,12 @@ $$\begin{aligned}
         \epsilon ~&=~ h \int_{-1}^{3} \left\{
             \frac{s(s-1)(s-2)}{3!}\Delta^3 f_0
             + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_0
-        \right\}ds
+        \right\}\ds
         \\
         &=~ h \int_{-1}^{3} \left\{
             \frac{s^3 - 3s^3 + 2s}{3!}\Delta^3 f_0
             + \frac{s^4 - 6s^3 + 11s^2 - 6s}{4!}\Delta^4 f_0
-        \right\}ds
+        \right\}\ds
         \\
         &=~ h \left\{
             \frac{1}{6} \left[

@@ -1,4 +1,4 @@
-# Computational Methods in Ordinary Differential Equations
+# Computational Methods in ODEs
 
 
 ```{tableofcontents}

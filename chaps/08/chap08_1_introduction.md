@@ -8,7 +8,7 @@ methods are used for the solution of a system of ODEs of size
 $N \times N$ of the form: 
 
 $$
-    {y'}= \frac{d{y}}{dt} = { {f}}(t,{y}), \quad {y}(t_0)= { {a}}
+    y'= \frac{\dy}{\dt} = f(t,y), \quad {y}(t_0)= { {a}}
 $$(E:linde:1)
 
 

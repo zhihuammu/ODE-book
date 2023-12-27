@@ -50,6 +50,8 @@ sphinx:
           "C": "\\mathbb{C}"
           "dy": "\\mathrm{d}y"          
           "dx": "\\mathrm{d}x"
+          "ds": "\\mathrm{d}s"          
+          "dt": "\\mathrm{d}t"                    
       
 
 #    bibtex_reference_style: author_year

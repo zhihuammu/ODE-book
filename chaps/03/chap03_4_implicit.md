@@ -1,8 +1,8 @@
 # Implicit or Closed Multistep Methods
 
-Implict (closed) methods are derived by using the additional point
+Implicit (closed) methods are derived by using the additional point
 $\,(x_{j+1},y_{j+1})\,$ as an interpolation node in the approximation of
-the integral $\displaystyle \int_{x_j}^{x_{j+1}} f(x,y) dx$. The simplest of the
+the integral $\displaystyle \int_{x_j}^{x_{j+1}} f(x,y) \dx$. The simplest of the
 implicit methods is the *Backward Euler* method: 
 
 $$

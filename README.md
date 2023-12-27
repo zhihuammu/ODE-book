@@ -1,2 +1,2 @@
 # ODE-book
-Linear Multi-step Method for Oridinary Differential Equations
+Linear Multi-step Method for Ordinary Differential Equations
