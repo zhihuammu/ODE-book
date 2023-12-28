@@ -19,7 +19,7 @@ name: figure-discretepoints
 ---
 ::: -->
 
-```{tikz}
+```{tikz} Sequence and interpolation.
 :xscale: 60
 :include: /images/02/interpolation.tikz
 ```

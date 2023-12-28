@@ -19,7 +19,7 @@ $$x_j= jh$$
 where $h=x_{j+1}-x_j$ is called the step size (or step length), $h\in(0,+\infty)$.
 
 
-```{tikz}
+```{tikz} A general sequence $\{f_j\}_{j=0}^{6}$.
 :xscale: 60
 :include: /images/02/discrete.tikz
 ```

@@ -128,7 +128,6 @@ name: figure-AB2
 Stability region of AM $k$-step method.
 ```
 
-
 We learn from these diagrams that the region of
 absolute stability becomes smaller as the order of the method increases;
 for the formula of the same order the Adams-Moulton formula has a
