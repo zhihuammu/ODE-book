@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>2.5. Chapter 2 Exercises &#8212; Computational Methods in Ordinary Differential Equations</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -41,13 +41,16 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -63,7 +66,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/02/chap02_5_exercise';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -71,7 +74,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="3. Multistep Methods: Derivation by Finite Difference formulae" href="../03/chap03_0.html" />
     <link rel="prev" title="2.4. Finite Difference Tables" href="chap02_4_differenceTable.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -80,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -133,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -145,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo3.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo3.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo3.svg" class="logo__image only-light" alt="Computational Methods in Ordinary Differential Equations - Home"/>
+    <script>document.write(`<img src="../../_static/logo3.svg" class="logo__image only-dark" alt="Computational Methods in Ordinary Differential Equations - Home"/>`);</script>
   
   
 </a></div>
@@ -344,20 +358,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -387,7 +403,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-2-exercises">
-<span id="chap02-exercises"></span><h1><span class="section-number">2.5. </span>Chapter 2 Exercises<a class="headerlink" href="#chapter-2-exercises" title="Permalink to this headline">#</a></h1>
+<span id="chap02-exercises"></span><h1><span class="section-number">2.5. </span>Chapter 2 Exercises<a class="headerlink" href="#chapter-2-exercises" title="Permalink to this heading">#</a></h1>
 <p>You should try the following exercise questions first, then check with the answers.</p>
 <p>For detailed solutions, you can download</p>
 <ul class="simple">
@@ -399,16 +415,16 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
 <section id="exercise-content">
 <p>Complete a difference table for the following data:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="text-center head"><p>1.20</p></th>
-<th class="text-center head"><p>1.25</p></th>
-<th class="text-center head"><p>1.30</p></th>
-<th class="text-center head"><p>1.35</p></th>
-<th class="text-center head"><p>1.40</p></th>
-<th class="text-center head"><p>1.45</p></th>
-<th class="text-center head"><p>1.50</p></th>
+<tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-center"><p>1.20</p></th>
+<th class="head text-center"><p>1.25</p></th>
+<th class="head text-center"><p>1.30</p></th>
+<th class="head text-center"><p>1.35</p></th>
+<th class="head text-center"><p>1.40</p></th>
+<th class="head text-center"><p>1.45</p></th>
+<th class="head text-center"><p>1.50</p></th>
 </tr>
 </thead>
 <tbody>
@@ -448,15 +464,15 @@ the Gregory-Newton backward interpolating polynomial of degree 1, 2,
 3, 4 and 5 estimate <span class="math notranslate nohighlight">\(\,f(4.12)\)</span>, using <span class="math notranslate nohighlight">\(\,x_j=5\,\)</span>. By comparing the
 results, explain briefly how the computed results can be checked and
 improved.</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="text-center head"><p>0</p></th>
-<th class="text-center head"><p>1</p></th>
-<th class="text-center head"><p>2</p></th>
-<th class="text-center head"><p>3</p></th>
-<th class="text-center head"><p>4</p></th>
-<th class="text-center head"><p>5</p></th>
+<tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-center"><p>0</p></th>
+<th class="head text-center"><p>1</p></th>
+<th class="head text-center"><p>2</p></th>
+<th class="head text-center"><p>3</p></th>
+<th class="head text-center"><p>4</p></th>
+<th class="head text-center"><p>5</p></th>
 </tr>
 </thead>
 <tbody>
@@ -489,14 +505,14 @@ improved.</p>
 polynomials of degree 3 and 4 to estimate <span class="math notranslate nohighlight">\(\,f(0.158)\,\)</span>. Choose
 <span class="math notranslate nohighlight">\(\,x_0=0.125\,\)</span>. Compare the two estimates and comment on the
 results.</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(\Delta f\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(\Delta^2 f\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(\Delta^3 f\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(\Delta^4 f\)</span></p></th>
+<tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(\Delta f\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(\Delta^2 f\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(\Delta^3 f\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(\Delta^4 f\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -597,14 +613,14 @@ degree 4.</p>
 <p>Complete the difference table for the following data and by using
 the Gregory-Newton forward interpolating polynomial find
 <span class="math notranslate nohighlight">\(f(1.72)\)</span>.</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="text-center head"><p>1.7</p></th>
-<th class="text-center head"><p>1.8</p></th>
-<th class="text-center head"><p>1.9</p></th>
-<th class="text-center head"><p>2.0</p></th>
-<th class="text-center head"><p>2.1</p></th>
+<tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-center"><p>1.7</p></th>
+<th class="head text-center"><p>1.8</p></th>
+<th class="head text-center"><p>1.9</p></th>
+<th class="head text-center"><p>2.0</p></th>
+<th class="head text-center"><p>2.1</p></th>
 </tr>
 </thead>
 <tbody>
@@ -654,14 +670,14 @@ whether the accuracy of your solution is within the expected range.</p>
 <li><p>forward difference interpolation formula</p></li>
 <li><p>backward difference interpolation formula</p></li>
 </ul>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(1^\text{st}\)</span> diff</p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> diff</p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(3^\text{rd}\)</span> diff</p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(4^\text{th}\)</span> diff</p></th>
+<tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(1^\text{st}\)</span> diff</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> diff</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(3^\text{rd}\)</span> diff</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(4^\text{th}\)</span> diff</p></th>
 </tr>
 </thead>
 <tbody>
@@ -758,14 +774,14 @@ improving the approximated solution.</p>
 drawn from the same function, but in the interval <span class="math notranslate nohighlight">\([0,\,2.0]\)</span>, to
 find <span class="math notranslate nohighlight">\(\,f(0.75)\,\)</span>, including comments on the results and analysis.
 The exact value of <span class="math notranslate nohighlight">\(\,f(0.75) = 1.437778\)</span>.</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(1^\text{st}\)</span> diff</p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> diff</p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(3^\text{rd}\)</span> diff</p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(4^\text{th}\)</span> diff</p></th>
+<tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(1^\text{st}\)</span> diff</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> diff</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(3^\text{rd}\)</span> diff</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(4^\text{th}\)</span> diff</p></th>
 </tr>
 </thead>
 <tbody>
@@ -881,7 +897,7 @@ accuracy of the estimated solutions.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\02"
+            path: "./chaps/02"
         },
         predefinedOutput: true
     }
@@ -893,11 +909,10 @@ accuracy of the estimated solutions.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap02_4_differenceTable.html"
@@ -917,10 +932,7 @@ accuracy of the estimated solutions.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -943,6 +955,7 @@ By Zhihua Ma
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023--2025.
@@ -969,8 +982,8 @@ By Zhihua Ma
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

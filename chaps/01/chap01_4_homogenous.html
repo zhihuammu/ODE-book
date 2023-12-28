@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>1.4. Homogeneous Linear Difference Equations with Constant Coefficients &#8212; Computational Methods in Ordinary Differential Equations</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -41,13 +41,16 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -63,7 +66,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/01/chap01_4_homogenous';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -71,7 +74,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="1.5. Chapter 1 Exercises" href="chap01_5_exercise.html" />
     <link rel="prev" title="1.3. Difference Equations" href="chap01_3_differenceEquation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -80,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -133,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -145,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo3.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo3.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo3.svg" class="logo__image only-light" alt="Computational Methods in Ordinary Differential Equations - Home"/>
+    <script>document.write(`<img src="../../_static/logo3.svg" class="logo__image only-dark" alt="Computational Methods in Ordinary Differential Equations - Home"/>`);</script>
   
   
 </a></div>
@@ -344,20 +358,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -399,7 +415,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="homogeneous-linear-difference-equations-with-constant-coefficients">
-<span id="chap01-complexnumber-de"></span><h1><span class="section-number">1.4. </span>Homogeneous Linear Difference Equations with Constant Coefficients<a class="headerlink" href="#homogeneous-linear-difference-equations-with-constant-coefficients" title="Permalink to this headline">#</a></h1>
+<span id="chap01-complexnumber-de"></span><h1><span class="section-number">1.4. </span>Homogeneous Linear Difference Equations with Constant Coefficients<a class="headerlink" href="#homogeneous-linear-difference-equations-with-constant-coefficients" title="Permalink to this heading">#</a></h1>
 <p>Here we focus on homogeneous linear difference equations with constant coefficients,</p>
 <div class="math notranslate nohighlight" id="equation-eq-de-linear-homogeneous-constant">
 <span class="eqno">(1.16)<a class="headerlink" href="#equation-eq-de-linear-homogeneous-constant" title="Permalink to this equation">#</a></span>\[\begin{equation}
@@ -433,8 +449,8 @@ L(\xi)= a_0 + a_1 \xi + a_2 \xi^2 + \ldots + a_{k-1} \xi^{k-1} + a_k \xi^{k}=0.
 <p class="admonition-title"><span class="caption-number">Theorem 1.2 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\xi_p~(p=1,2,3,\ldots,k)\)</span> be any solution to the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(1.19)</a>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8fa9a0f0-11d6-4c9f-9e7c-a0e40cd42c33">
-<span class="eqno">(1.20)<a class="headerlink" href="#equation-8fa9a0f0-11d6-4c9f-9e7c-a0e40cd42c33" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-28474243-5d47-4182-8c8b-a11c1c017926">
+<span class="eqno">(1.20)<a class="headerlink" href="#equation-28474243-5d47-4182-8c8b-a11c1c017926" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_n = \xi_p^n
 \end{equation}\]</div>
 <p>is a solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a>.</p>
@@ -463,8 +479,8 @@ L(E) \xi_p^n = ~ &amp; \left(a_0 + a_1 E + a_2 E^2 + \ldots + a_{k-1}E^{k-1}+a_k
 <p class="admonition-title"><span class="caption-number">Theorem 1.3 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Assume the <span class="math notranslate nohighlight">\(k\)</span> roots of  the characteristic equation are distinct, then a fundamental set of solutions is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c6d2c93c-c49a-40f9-b6a4-9e6a539dfa54">
-<span class="eqno">(1.21)<a class="headerlink" href="#equation-c6d2c93c-c49a-40f9-b6a4-9e6a539dfa54" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6348ddca-c0af-42eb-81fe-b480d00a5e52">
+<span class="eqno">(1.21)<a class="headerlink" href="#equation-6348ddca-c0af-42eb-81fe-b480d00a5e52" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \xi_p^n \quad (p=1,2,\ldots,k).
 \end{equation}\]</div>
 <p>An immediate consequence of this theorem, for this particular case, is that the general solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a> is</p>
@@ -493,7 +509,7 @@ L(E) y_n  = ~ &amp; L(E) \left(c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n\
 </div>
 </details></section>
 </div><section id="first-order-difference-equations">
-<h2><span class="section-number">1.4.1. </span>First-order Difference Equations<a class="headerlink" href="#first-order-difference-equations" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.4.1. </span>First-order Difference Equations<a class="headerlink" href="#first-order-difference-equations" title="Permalink to this heading">#</a></h2>
 <p>Find the solution to</p>
 <div class="math notranslate nohighlight">
 \[ y_{n+1}-ay_n =0, ~ y_0 = Q.\]</div>
@@ -564,7 +580,7 @@ $$y_n = Q a^n.$$
 ```` -->
 </section>
 <section id="second-order-difference-equations">
-<h2><span class="section-number">1.4.2. </span>Second-order Difference Equations<a class="headerlink" href="#second-order-difference-equations" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.4.2. </span>Second-order Difference Equations<a class="headerlink" href="#second-order-difference-equations" title="Permalink to this heading">#</a></h2>
 <p>Find the solution to</p>
 <div class="math notranslate nohighlight">
 \[y_{n+2} + a y_{n+1} + b y_n = 0.\]</div>
@@ -687,7 +703,7 @@ Solution (click to show)<div class="sd-summary-down docutils">
 </div></div>
 </section>
 <section id="higher-order-difference-equations">
-<h2><span class="section-number">1.4.3. </span>Higher-order Difference Equations<a class="headerlink" href="#higher-order-difference-equations" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.4.3. </span>Higher-order Difference Equations<a class="headerlink" href="#higher-order-difference-equations" title="Permalink to this heading">#</a></h2>
 <p>For a <span class="math notranslate nohighlight">\(k\)</span>-th order difference equation</p>
 <div class="math notranslate nohighlight">
 \[ 	a_0 y_n + a_1 y_{n+1} + a_2 y_{n+2} + \ldots + a_{k-1} y_{n+k-1} + a_k y_{n+k} = 0, \]</div>
@@ -774,7 +790,7 @@ Solution (click to show)<div class="sd-summary-down docutils">
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\01"
+            path: "./chaps/01"
         },
         predefinedOutput: true
     }
@@ -786,11 +802,10 @@ Solution (click to show)<div class="sd-summary-down docutils">
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap01_3_differenceEquation.html"
@@ -810,10 +825,7 @@ Solution (click to show)<div class="sd-summary-down docutils">
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -852,6 +864,7 @@ By Zhihua Ma
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023--2025.
@@ -878,8 +891,8 @@ By Zhihua Ma
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
