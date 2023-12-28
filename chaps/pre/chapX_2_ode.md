@@ -119,7 +119,7 @@ that contains the point $(x_0, y_0)$, then the initial value problem has a uniqu
 
 A system of ordinary differential equations is two or more
 equations involving the derivatives of two or more unknown functions of a single
-independent variable. For example, if x and y denote dependent variables and t
+independent variable. For example, if $x$ and $y$ denote dependent variables and $t$
 denotes the independent variable, then a system of two first-order differential
 equations is given by
 
