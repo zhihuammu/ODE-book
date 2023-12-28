@@ -16,7 +16,7 @@
   --grey-border-color: #ccc;
   --example-title-color: rgba(235, 247, 236, 1);
   --example-border-color: #29A745;
-  --exercise-title-color: rgba(253, 126, 20, 0.3);
+  --exercise-title-color: rgba(253, 126, 20, 0.2);
   --exercise-border-color: #fd7e14;   
 }
 
@@ -63,6 +63,7 @@ div.exercise p.admonition-title::before {
 	/* content: "🖋 "; */
   content: none;
 }
+
 
 
 /*********************************************
