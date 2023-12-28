@@ -74,8 +74,8 @@ Identify the order, linearity and homogeneity of the following difference equati
 <!-- :class: hint, dropdown -->
 \begin{align*}
 &y_{n+1} - 2 y_n = 0   & \text{(first order, linear, homogeneous)} \\
-&y_{n+1} - 3 y_n + y_{n-1} = e^{-n}   & \text{(second order, linear, inhomogeneous)} \\
-&y_{n+3} - y_n^2 = n 2^n &  \text{(third order, nonlinear, inhomogeneous)}
+&y_{n+1} - 3 y_n + y_{n-1} = e^{-n}   & \text{(second order, linear, nonhomogeneous)} \\
+&y_{n+3} - y_n^2 = n 2^n &  \text{(third order, nonlinear, nonhomogeneous)}
 \end{align*}  
 ::::
 
