@@ -17,7 +17,7 @@
 A first-order differential equation of the form
 
 $$
-\diff{f}{x} = g(x) h(y)
+\diff{y}{x} = g(x) h(y)
 $$(eq:ode:separable)
 
 is said to be separable or to have separable variables.
@@ -145,7 +145,7 @@ $$
 L(\xi) = a_n \xi^n + a_{n-1} \xi^{n-1} + \cdots + a_1 \xi + a_0.
 $$(eq:ode:linear:constant:char:polynomial)
 
-Note: We can simply replace the operator $D$ in formula {eq}`eq:ode:operator:LD` to $\xi$ to obtain the characteristic polynomial.
+Note: We can simply replace the operator $D$ in formula {eq}`eq:ode:operator:LD` with $\xi$ to obtain the characteristic polynomial.
 
 The equation
 
