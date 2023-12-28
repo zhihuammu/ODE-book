@@ -68,9 +68,9 @@ div.exercise p.admonition-title::before {
 /*********************************************
 * hyperlink *
 *********************************************/
-/* a:link, a:link * {
+a:link, a:link * {
   text-decoration: none !important;
-} */
+}
 
 /* visited link */
 /* a:visited {
