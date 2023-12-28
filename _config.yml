@@ -41,19 +41,18 @@ html:
 sphinx:
   config:
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    mathjax_config:
+    mathjax3_config:
       tex:
         macros:
           "N": "\\mathbb{N}"
           "Z": "\\mathbb{Z}"
-          "R": "\\mathbb{R}"                    
+          "R": "\\mathbb{R}"
           "C": "\\mathbb{C}"
-          "dy": "\\mathrm{d}y"          
+          "D": "\\mathrm{D}"
+          "dy": "\\mathrm{d}y"
           "dx": "\\mathrm{d}x"
-          "ds": "\\mathrm{d}s"          
-          "dt": "\\mathrm{d}t"                    
-      
-
+          "ds": "\\mathrm{d}s"
+          "dt": "\\mathrm{d}t"
 #    bibtex_reference_style: author_year
     hide_solutions: false
 #    html_extra_path: exSol

@@ -158,6 +158,7 @@ is called the **characteristic equation** of the ODE {eq}`eq:ode:linear:constant
 Note: In some books, the characteristic equation is also called *auxiliary equation*.
 ```
 
+(chapX-homo-ode-sol)=
 ### Homogeneous ODEs
 
 When the right hand side of equation {eq}`eq:ode:linear:constant` vanishes, i.e. $g(x)$, we obtain a linear homogeneous ordinary differential equation with constant coefficients
@@ -387,7 +388,122 @@ The solution $y(x)$ to equation {eq}`eq:ode:linear:inhomogeneous:constant` inclu
 In conclusion, the solution to equation {eq}`eq:ode:linear:inhomogeneous:constant` is 
 
 $$
-y(x) = y_h (x) + y_p(x)
+\left\{
+\begin{aligned}
+ L(D) y_h(x) & = 0 \\
+ L(D) y_p(x) & = g(x) \\
+ y(x) & = y_h (x) + y_p(x) \\
+\end{aligned}
+\right.
+$$(eq:inhomo:ode:sol)
+
+The way to find $y_h(x)$ is the same as described in [](chapX-homo-ode-sol). Here we will introduce the **Undetermined Coefficients Method** to find the particular solution $y_p(x)$
+
+```{prf:example}
+Find the solution to 
+
+$$
+y''+3y'+2y=3t
 $$
 
-where $L(D) y_h(x) = 0$ and  $L(D) y_p(x) = g(x)$.
+:::{admonition} Solution
+:class: hint
+
+- Step 1: find a particular solution to the equation
+
+    We need to find a function $y(t)$ to satisfy 
+
+    $$
+    (\D^2+3\D+2) y(t) = 3t,
+    $$
+
+    where $\D$ is the differential operator.
+
+    It seems $y(t)$ should be a polynomial function, and we can try a linear function
+
+    $$
+    y(t)=At+B
+    $$
+
+    to see whether it could fit
+
+    $$
+    \begin{aligned}
+    (\D^2+3\D+2) (At+B) & =  \D^2 (At+B) + 3\D (At+B) + 2(At+B) \\
+                    & =  (0) + (3A) + (2At+2B) \\
+                    & = 3t
+    \end{aligned}
+    $$
+
+    so we get a pair of simultaneous equations for $A$ and $B$
+
+    $$
+    \left\{
+    \begin{aligned}
+    & 2At=3t \\
+    & 3A+2B=0 
+    \end{aligned}
+    \right.
+    $$
+
+    we can get
+
+    $$
+    A=\frac{3}{2}, \quad B=-\frac{9}{4}
+    $$
+
+    therefore the particular solution is
+
+    $$
+    y_p (t) = \frac{3}{2} t - \frac{9}{4}
+    $$
+
+- Step 2: find the homogeneous solution to the equation
+
+    The characteristic equation is
+
+    $$
+    \xi^2 + 3\xi + 2 =0,
+    $$
+
+    so $\xi_1 = -1$ and $\xi_2 = -2$. Therefore the homogeneous solution is 
+
+    $$
+    y_h(t) = c_1 e^{-t} + c_2 e^{-2t}
+    $$
+
+- Step 3: the overall solution
+
+    $$
+    y(t) = y_h(t) + y_p(t) = c_1 e^{-t} + c_2 e^{-2t} + \frac{3}{2} t - \frac{9}{4}
+    $$
+
+:::
+```
+
+```{prf:example}
+Find a particular solution to
+
+$$
+y''+3y'+2y=10e^{3t}
+$$
+
+:::{admonition} Solution
+The right hand side is $10e^{3t}$, so we guess $y_p(t)=Ae^{3t}$. Substituting our guess into the differential equation, we can get
+
+$$
+\begin{aligned}
+(\D^2+3\D+2) Ae^{3t} & = 9Ae^{3t}+9Ae^{3t}+2Ae^{3t} \\
+                     & = 20Ae^{3t} \\
+                     & = 10e^{3t}
+\end{aligned}
+$$
+
+so $A=\dfrac{1}{2}$, and therefore 
+
+$$
+y_p(t)=\frac{1}{2}e^{3t}
+$$
+:::
+
+```

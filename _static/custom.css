@@ -60,17 +60,17 @@ div.exercise p.admonition-title {
 
 /* Remove content box */
 div.exercise p.admonition-title::before {
-	content: "🖋 ";
-  /* content: none; */
+	/* content: "🖋 "; */
+  content: none;
 }
 
 
 /*********************************************
 * hyperlink *
 *********************************************/
-a:link, a:link * {
+/* a:link, a:link * {
   text-decoration: none !important;
-}
+} */
 
 /* visited link */
 /* a:visited {
@@ -78,12 +78,12 @@ a:link, a:link * {
 } */
 
 /* mouse over link */
-a:hover {
+/* a:hover {
   color: hotpink;
-}
+} */
 
 /* selected link */
-a:active {
+/* a:active {
   color: blue;
-}
+} */
 
