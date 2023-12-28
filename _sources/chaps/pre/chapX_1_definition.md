@@ -143,6 +143,6 @@ For an $n$-th order ordinary differential equation, we can express it in
 
         Equation {eq}`eq:ode:linear` is *homogeneous* if $g(x) = 0$.
 
-    - **Inhomogeneous**
+    - **Nonhomogeneous**
 
-        Equation {eq}`eq:ode:linear` is *inhomogeneous* if $g(x)\neq 0$.
+        Equation {eq}`eq:ode:linear` is *nonhomogeneous* if $g(x)\neq 0$.
