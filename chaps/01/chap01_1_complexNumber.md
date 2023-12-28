@@ -76,7 +76,7 @@ name: figure-complexPlane
 The complex plane $\mathbb{C}$.
 ``` -->
 
-```{tikz}
+```{tikz} The complex plane $\mathbb{C}$.
 :libs: angles,quotes
 :include: /images/01/complexPlane.tikz
 ```

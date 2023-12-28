@@ -1,4 +1,4 @@
-# Answers to Tutorial Exercises Chapter 8
+# Answers to Chapter 8 Exercises 
 
 
 ## Answer to {numref}`ex-ch08-q1`

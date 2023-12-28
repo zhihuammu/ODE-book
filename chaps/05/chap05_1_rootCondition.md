@@ -205,7 +205,7 @@ roots (i.e. not repeated), then the difference method is said to satisfy
 the **root condition**.
 :::
 
-```{tikz}
+```{tikz} Unit circle in the complex plane $\C$.
 :xscale: 48
 :libs: arrows.meta
 

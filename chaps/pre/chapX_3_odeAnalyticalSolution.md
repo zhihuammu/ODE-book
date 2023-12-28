@@ -435,12 +435,12 @@ $$
     \end{aligned}
     $$
 
-    so we get a pair of simultaneous equations for $A$ and $B$
+    so we get simultaneous equations for $A$ and $B$
 
     $$
     \left\{
     \begin{aligned}
-    & 2At=3t \\
+    & 2A=3 \\
     & 3A+2B=0 
     \end{aligned}
     \right.
