@@ -245,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../08/chap08_4_storage.html">8.4. Sparse Matrices Storage and Reordering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../08/chap08_5_reordering.html">8.5. Reordering and Matrix Bandwidth</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../08/chap08_6_exercise.html">8.6. Chapter 8 Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_7_answers.html">8.7. Answers to Tutorial Exercises Chapter 8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_7_answers.html">8.7. Answers to Chapter 8 Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -433,6 +433,7 @@ discussed in detail using Matlab documentation attached.</p></li>
 <p>Run these programs to check your results for <a class="reference internal" href="chap03_5_predictorCorrector.html#example-3.2">Example 3.2</a>.</p>
 <section id="program-1-matlab-and-python">
 <span id="ch03-program1"></span><h2><span class="section-number">3.6.1. </span>Program 1 (Matlab and Python)<a class="headerlink" href="#program-1-matlab-and-python" title="Permalink to this heading">#</a></h2>
+<p>Using the <strong>analytical solution</strong> to produce starting values.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
@@ -563,13 +564,64 @@ Python</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+(Run the Python code)</label><div class="sd-tab-content docutils">
+<div class="thebe highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#6G6Z3017 Computational Methods in ODEs - Chapter 3, Example 2(Python Program 1)</span>
+<span class="c1">#Scriptfile to solve a single 1st order Ordinary Differential Equation,</span>
+<span class="c1">#using the exact solution to calculate the starting values and </span>
+<span class="c1"># the 4th order Adams-Bashforth-Moulton method </span>
+<span class="c1"># for the remaining integration time span.</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">y</span><span class="o">+</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+
+<span class="n">h</span><span class="o">=</span><span class="mf">0.1</span><span class="p">;</span>
+<span class="n">nsteps</span><span class="o">=</span><span class="mi">11</span><span class="p">;</span>
+<span class="c1">#declare arrays</span>
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">yp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">F</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">yex</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">abserror</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="c1">#initial values</span>
+<span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">0.0</span><span class="p">;</span>
+<span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">1.0</span><span class="p">;</span>
+<span class="n">yp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">0.0</span><span class="p">;</span>
+<span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="c1">#calculate the first 3 starting values using the exact solution</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="p">;</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="n">yp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>    
+<span class="c1">#use multiple-step method to calculate y</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">nsteps</span><span class="p">):</span>
+    <span class="n">yp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">55</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">59</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="mi">37</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="mi">9</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">4</span><span class="p">]);</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="p">;</span>
+    <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">yp</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">9</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">19</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">3</span><span class="p">]);</span>        
+    <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="c1">#screen output</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; t       yp         y          F         y_ex      AbsError&quot;</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nsteps</span><span class="p">):</span>
+    <span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="n">abserror</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%4.2f</span><span class="s2"> </span><span class="si">%10.7f</span><span class="s2"> </span><span class="si">%10.7f</span><span class="s2"> </span><span class="si">%10.7f</span><span class="s2"> </span><span class="si">%10.7f</span><span class="s2"> </span><span class="si">%11.8f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">yp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">abserror</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</pre></div>
+</div>
+<button title="Run code" class="thebelab-button thebe-launch-button" onclick="initThebe()">Run code</button></div>
 </div>
 </section>
 <section id="program-2-matlab-and-python">
 <span id="ch03-program2"></span><h2><span class="section-number">3.6.2. </span>Program 2 (Matlab and Python)<a class="headerlink" href="#program-2-matlab-and-python" title="Permalink to this heading">#</a></h2>
+<p>Using the <strong>RK4</strong> method to produce starting values.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-2">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 MATLAB</label><div class="sd-tab-content docutils">
 <p>The following code has been tested under <strong>Matlab 2022</strong></p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">%6G6Z3017 Computational Methods in ODEs - Chapter 3, Example 2 (Matlab Program 2)</span>
@@ -635,8 +687,8 @@ MATLAB</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-3">
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 Python</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">#6G6Z3017 Computational Methods in ODEs - Chapter 3, Example 2 (Python Program 2)</span>
 <span class="linenos"> 2</span><span class="c1">#Scriptfile to solve a single 1st order Ordinary Differential Equation,</span>
@@ -704,6 +756,60 @@ Python</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+(Run the Python code)</label><div class="sd-tab-content docutils">
+<div class="thebe highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#6G6Z3017 Computational Methods in ODEs - Chapter 3, Example 2 (Python Program 2)</span>
+<span class="c1">#Scriptfile to solve a single 1st order Ordinary Differential Equation,</span>
+<span class="c1">#using the standard 4th order RK method to calculate the starting values and</span>
+<span class="c1">#4th order ABM method for the solution of the remaining integration time span.</span>
+<span class="c1">#The result is written to a file called &#39;c2ex2p2.res&#39;.</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">y</span><span class="o">+</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+
+<span class="n">h</span><span class="o">=</span><span class="mf">0.1</span><span class="p">;</span>
+<span class="n">nsteps</span><span class="o">=</span><span class="mi">11</span><span class="p">;</span>
+<span class="c1">#declare arrays</span>
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">yp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">F</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">yex</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">abserror</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="c1">#initial values</span>
+<span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">0.0</span><span class="p">;</span>
+<span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">1.0</span><span class="p">;</span>
+<span class="n">yp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">0.0</span><span class="p">;</span>
+<span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="c1">#calculate the next 3 starting values using RK 4th order method</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">k1</span><span class="o">=</span><span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="n">k2</span><span class="o">=</span><span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">k1</span><span class="o">*</span><span class="mf">0.5</span><span class="p">);</span>
+    <span class="n">k3</span><span class="o">=</span><span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">k2</span><span class="o">*</span><span class="mf">0.5</span><span class="p">);</span>
+    <span class="n">k4</span><span class="o">=</span><span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">k3</span><span class="p">);</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mf">1.0</span><span class="o">/</span><span class="mf">6.0</span><span class="o">*</span><span class="p">(</span><span class="n">k1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">k2</span><span class="o">+</span><span class="n">k3</span><span class="p">)</span><span class="o">+</span><span class="n">k4</span><span class="p">);</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="p">;</span>
+    <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="n">yp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>    
+<span class="c1">#use multiple-step method to calculate y</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">nsteps</span><span class="p">):</span>
+    <span class="n">yp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">55</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">59</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="mi">37</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="mi">9</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">4</span><span class="p">]);</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="p">;</span>
+    <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">yp</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">9</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">19</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">3</span><span class="p">]);</span>        
+    <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="c1">#screen output</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; t       yp         y          F         y_ex      AbsError&quot;</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nsteps</span><span class="p">):</span>
+    <span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="n">abserror</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%4.2f</span><span class="s2"> </span><span class="si">%10.7f</span><span class="s2"> </span><span class="si">%10.7f</span><span class="s2"> </span><span class="si">%10.7f</span><span class="s2"> </span><span class="si">%10.7f</span><span class="s2"> </span><span class="si">%11.8f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">yp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">abserror</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</pre></div>
+</div>
+<button title="Run code" class="thebelab-button thebe-launch-button" onclick="initThebe()">Run code</button></div>
 </div>
 </section>
 <section id="program-3-matlab-only">
