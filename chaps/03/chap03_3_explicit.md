@@ -120,7 +120,7 @@ points for fitting the polynomial.
 Some of the more common open methods together with their local
 truncation errors are listed below:
 
-- Adams--Bashforth One--Step Method, $k=1$
+- {index}`Adams--Bashforth` One--Step Method, $k=1$
 
     $\displaystyle y_{j+1} = y_j + hf_j \phantom{\frac00}$ (this is the *Euler* method)\
     with the local truncation error: 

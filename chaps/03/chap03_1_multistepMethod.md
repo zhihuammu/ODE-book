@@ -7,7 +7,7 @@ variable to determine the approximation at the next mesh points are
 called *multistep methods*.
 
 ::::{prf:definition} Linear Multistep Method
-The most general *linear multistep method* for solving the initial value problem 
+The most general *{index}`linear multistep method`* for solving the initial value problem 
 
 :::{math}
 :label: eq:ch02:1.1

@@ -19,7 +19,7 @@ parts:
       sections: 
       - glob: chaps/pre/chapX_*
     
-  - caption: Linear Multistep Methods and Sparse Matrices
+  - caption: Lecture Notes
     maxdepth: 1
     numbered: true      
     chapters:
@@ -59,7 +59,8 @@ parts:
     numbered: false
     chapters:  
     - file: chaps/append/chapY_odeSolvers
-
+#    - file: chaps/append/chapZ_test
+    
     # - url: https://uk.mathworks.com/help/matlab/ordinary-differential-equations.html
     #   title: ODE solvers in Matlab 
 

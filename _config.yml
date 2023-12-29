@@ -1,10 +1,11 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Computational Methods in Ordinary Differential Equations
-author: Zhihua Ma
-copyright: "2023--2025"  # Copyright year to be placed in the footer
-logo: images/logo3.svg
+title     : Linear Multistep Methods
+author    : Zhihua Ma
+copyright : "2023--2025"  # Copyright year to be placed in the footer
+logo      : images/logo2c.svg
+only_build_toc_files: true  
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -14,7 +15,7 @@ execute:
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
-    targetname: book.tex
+    targetname: odebook.tex
 
 # Add a bibtex file so that we can create citations
 #bibtex_bibfiles:
@@ -23,23 +24,27 @@ latex:
 # Information about where the book exists on the web
 repository:
   url: https://github.com/zhihuammu/ODE-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
+#  path_to_book: docs # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
+  favicon               : "images/favicon.svg"  # A path to a favicon image
   home_page_in_navbar   : false
-  use_issues_button: false
-  use_repository_button: false
-  use_multitoc_numbering: false    
-  use_edit_page_button: false
+  use_multitoc_numbering: false      
+  use_repository_button : false
+  use_edit_page_button  : false
+  use_issues_button     : false
+  use_download_button   : true
+  use_source_button     : false
+  comments:
+    hypothesis          : false
 #  announcement: "My announcement!"
-
-#\newcommand{\diff}[3][]{\frac{d^{#1} #2}{d #3^{#1}}}
   
 sphinx:
   config:
+#    bibtex_reference_style: author_year  
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     mathjax3_config:
       tex:
@@ -53,14 +58,22 @@ sphinx:
           "dx": "\\mathrm{d}x"
           "ds": "\\mathrm{d}s"
           "dt": "\\mathrm{d}t"
-#    bibtex_reference_style: author_year
+
+    language: en          
     hide_solutions: false
 #    html_extra_path: exSol
+#    html_theme: sphinx_material
+    html_theme: sphinx_book_theme
+    html_theme_options:  
+      primary_sidebar_end   : 
+        - indices.html
   extra_extensions:
     - sphinx_proof
     - sphinx_exercise    
     - sphinxcontrib.tikz
-    - sphinx_togglebutton    
+    - sphinx_togglebutton      
+    - sphinx_inline_tabs    
+
 
 parse:
   myst_enable_extensions:
@@ -73,5 +86,7 @@ parse:
     - colon_fence
     - html_admonition
     - fieldlist   
-    
-only_build_toc_files: true    
+    - deflist
+  myst_url_schemes: [mailto, http, https] # URI schemes that will be recognised as external URLs in Markdown links
+  myst_dmath_double_inline: true  # Allow display math ($$) within an inline context    
+  

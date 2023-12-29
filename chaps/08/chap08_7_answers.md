@@ -157,9 +157,8 @@ matrices within this file for multiple use.
         0 0 0 0 1 0 0 1 1 1
         1 0 0 0 1 0 0 1 1 1]
 
-In MATLAB use the command *spy(A)* to find the pattern and the
-number of nonzero elements: i.e.\
-`>> spy(A)`
+In MATLAB use the command `spy(A)` to find the pattern and the
+number of nonzero elements.
 
 :::
 
@@ -209,20 +208,20 @@ ordering algorithms to reduce the bandwidth.
 
 we need to construct the following table
 
-::: none
-    Original nodes   No. of connections   Results / Heads   Queue        Result by CM   Result by RCM   New nodes
-    ---------------- -------------------- ----------------- ------------ -------------- --------------- -----------
-    1                6                    7                 6                                           
-    2                2                    6                 4, 5, 8, 1                                  
-    3                2                    4                 --                                          
-    4                3                    5                 9, 10                                       
-    5                4                    8                 --                                          
-    6                5                    1                 2, 3                                        
-    7                1                    9                 --                                          
-    8                6                    10                --                                          
-    9                3                    2                 --                                          
-    10               4                    3                 --                                          
-:::
+
+|    Original nodes  | No. of connections  | Results / Heads  | Queue       | Result by CM  | Result by RCM  | New nodes|
+|    ----------------| --------------------| -----------------| ------------| --------------| ---------------| -----------|
+|    1               | 6                   | 7                | 6           |                                
+|    2               | 2                   | 6                | 4, 5, 8, 1  |                                
+|    3               | 2                   | 4                | --          |                                
+|    4               | 3                   | 5                | 9, 10       |                                
+|    5               | 4                   | 8                | --          |                                
+|    6               | 5                   | 1                | 2, 3        |                                
+|    7               | 1                   | 9                | --          |                                
+|    8               | 6                   | 10               | --          |                                
+|    9               | 3                   | 2                | --          |                                
+|    10              | 4                   | 3                | --          |                                
+
 
 -    Step 1 - list all the nodes and the number of their connections (or
     degree) -- check this with the adjacency matrix as well.
@@ -252,20 +251,20 @@ we need to construct the following table
 -    Next, we bring 9 and follow the above procedure until all 10 nodes
     are listed in the results/Head column.
 
-::: none
-    Original nodes   No. of connections   Results / Heads   Queue        Result by CM   Result by RCM   New nodes
-    ---------------- -------------------- ----------------- ------------ -------------- --------------- -----------
-    1                6                    7                 6            7              3               1
-    2                2                    6                 4, 5, 8, 1   6              2               2
-    3                2                    4                 --           4              10              3
-    4                3                    5                 9, 10        5              9               4
-    5                4                    8                 --           8              1               5
-    6                5                    1                 2, 3         1              8               6
-    7                1                    9                 --           9              5               7
-    8                6                    10                --           10             4               8
-    9                3                    2                 --           2              6               9
-    10               4                    3                 --           3              7               10
-:::
+
+|    Original nodes  | No. of connections  | Results / Heads  | Queue       | Result by CM  | Result by RCM  | New nodes   |
+|    ----------------| --------------------| -----------------| ------------| --------------| ---------------| -----------|
+|    1               | 6                   | 7                | 6           | 7             | 3              | 1|
+|    2               | 2                   | 6                | 4, 5, 8, 1  | 6             | 2              | 2|
+|    3               | 2                   | 4                | --          | 4             | 10             | 3|
+|    4               | 3                   | 5                | 9, 10       | 5             | 9              | 4|
+|    5               | 4                   | 8                | --          | 8             | 1              | 5|
+|    6               | 5                   | 1                | 2, 3        | 1             | 8              | 6|
+|    7               | 1                   | 9                | --          | 9             | 5              | 7|
+|    8               | 6                   | 10               | --          | 10            | 4              | 8|
+|    9               | 3                   | 2                | --          | 2             | 6              | 9|
+|    10              | 4                   | 3                | --          | 3             | 7              | 10|
+
 
 Complete results column for CM (the same as the column Results /
 Heads) and then reverse the CM column for RCM method, and enter the

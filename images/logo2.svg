@@ -2,16 +2,18 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="185.92769mm"
-   height="47.949554mm"
-   viewBox="0 0 185.92769 47.949554"
+   width="187.43469mm"
+   height="55.261257mm"
+   viewBox="0 0 187.4347 55.261257"
    version="1.1"
    id="svg1"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
@@ -43,8 +45,8 @@
      inkscape:document-units="mm"
      inkscape:clip-to-page="false"
      inkscape:zoom="0.80087682"
-     inkscape:cx="289.76009"
-     inkscape:cy="-278.9188"
+     inkscape:cx="111.2365"
+     inkscape:cy="-259.98989"
      inkscape:window-width="1920"
      inkscape:window-height="1129"
      inkscape:window-x="0"
@@ -57,32 +59,83 @@
      fit-margin-right="0"
      fit-margin-bottom="0" />
   <defs
-     id="defs1" />
+     id="defs1">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient6048"
+       osb:paint="gradient">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop6044" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop6046" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient6040"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#f37726;stop-opacity:1;"
+         offset="0"
+         id="stop6038" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6040"
+       id="linearGradient6042"
+       x1="-83.893677"
+       y1="-164.58186"
+       x2="103.54102"
+       y2="-164.58186"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6048"
+       id="linearGradient6054"
+       x1="-84.026176"
+       y1="-164.58186"
+       x2="103.67352"
+       y2="-164.58186"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(85.188027,199.42552)">
+     transform="translate(76.110864,201.2334)">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:1.25;font-family:MathJax_Fraktur;-inkscape-font-specification:'MathJax_Fraktur, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458299"
-       x="7.5923686"
-       y="-189.73119"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:1.25;font-family:MathJax_Fraktur;-inkscape-font-specification:'MathJax_Fraktur, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#f37726;fill-opacity:1;stroke:none;stroke-width:0.26499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       x="17.699606"
+       y="-207.19345"
        id="text3715"><tspan
          sodipodi:role="line"
-         id="tspan3713"
-         x="7.5923672"
-         y="-189.73119"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:MathJax_Fraktur;-inkscape-font-specification:'MathJax_Fraktur, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458299">Computational Methods in</tspan><tspan
+         x="17.699606"
+         y="-192.06467"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;font-family:MathJax_Fraktur;-inkscape-font-specification:'MathJax_Fraktur, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#f37726;fill-opacity:1;stroke:none;stroke-width:0.26499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         id="tspan51" /><tspan
          sodipodi:role="line"
-         x="9.3562403"
-         y="-172.0923"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:MathJax_Fraktur;-inkscape-font-specification:'MathJax_Fraktur, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458299"
-         id="tspan3717">Ordinary Differential </tspan><tspan
+         x="17.699606"
+         y="-170.89801"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;font-family:MathJax_Fraktur;-inkscape-font-specification:'MathJax_Fraktur, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#f37726;fill-opacity:1;stroke:none;stroke-width:0.26499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         id="tspan3717">Ordinary</tspan><tspan
          sodipodi:role="line"
-         x="7.5923705"
-         y="-154.45341"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:MathJax_Fraktur;-inkscape-font-specification:'MathJax_Fraktur, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458299"
-         id="tspan3719">Equations</tspan></text>
+         x="17.699606"
+         y="-149.73134"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;font-family:MathJax_Fraktur;-inkscape-font-specification:'MathJax_Fraktur, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#f37726;fill-opacity:1;stroke:none;stroke-width:0.26499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         id="tspan3719">Differential Equations</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.69999981px;line-height:1.25;font-family:MathJax_Fraktur;-inkscape-font-specification:'MathJax_Fraktur, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-66.97538"
+       y="-191.53906"
+       id="text833"><tspan
+         sodipodi:role="line"
+         x="-66.97538"
+         y="-191.53906"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.69999981px;font-family:MathJax_Fraktur;-inkscape-font-specification:'MathJax_Fraktur, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke-width:0.26458332"
+         id="tspan4538">Computational Methods in</tspan></text>
   </g>
 </svg>

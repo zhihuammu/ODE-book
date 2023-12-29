@@ -11,7 +11,7 @@ For some sequences, their algebraic expressions are directly given, such as the 
 
 We can call these algebraic expressions *Difference Equations*.
 
-::::{prf:definition} Difference Equation
+::::{prf:definition} {index}`Difference Equation`
 A difference equation is an equation that defines a sequence recursively: each member of the sequence is defined as a function of previous terms of the sequence
 
 ```{math}
@@ -38,7 +38,7 @@ $$y_{n+2} = y_{n+1} + y_{n}$$
 Equation {eq}`eq:DE:definition` has one and only one solution corresponding to each arbitrary selection of the $k$ initial values $y_0, y_1, y_2, \ldots, y_{k-1}$.
 ::::
 
-::::{prf:definition} Linear Difference Equation
+::::{prf:definition} {index}`Linear Difference Equation`
 A difference equation is linear if it can be expressed in the form
 ````{math}  
 :label: eq:DE:linear
@@ -57,7 +57,7 @@ When the right hand side of Eq. {eq}`eq:DE:linear` vanishes i.e. $R(n)=0$, we ge
 a_0(n) y_n + a_1(n) y_{n+1} + a_2(n) y_{n+2} + \ldots + a_k(n) y_{n+k} = 0,
 \end{equation} 
 ````
-which is called a homogeneous linear difference equation.
+which is called a {index}`homogeneous linear difference equation`.
 ::::
 
 
@@ -79,7 +79,7 @@ Identify the order, linearity and homogeneity of the following difference equati
 \end{align*}  
 ::::
 
-::::{prf:definition} Shift Operator
+::::{prf:definition} {index}`Shift Operator`
 We define $E$ as an operator shifting a member in a sequence to the next member
 ````{math}  
 \begin{equation}

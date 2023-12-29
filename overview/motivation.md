@@ -1,7 +1,9 @@
 # Overview
 
-<!-- :Unit Title: Computational Methods in Ordinary Differential Equations -->
-<!-- :Unit Code : 6G6Z3017 -->
+:Unit Title: Computational Methods in Ordinary Differential Equations
+
+- [Runge-Kutta Methods and Linear Algebra](https://jonshiach.github.io/ODEs-book/intro.html) -- Jon Shiach
+- Linear Multistep Methods and Sparse Matrices -- Zhihua Ma
 
 ## What will we learn?
 

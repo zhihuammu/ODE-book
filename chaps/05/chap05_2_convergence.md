@@ -1,7 +1,7 @@
 # Zero-Stability, Consistency and Convergence Theorem
 
 :::{prf:definition} Zero-Stability
-A method is said to be zero-stable if it satisfies the root condition,
+A method is said to be {index}`zero-stable` if it satisfies the root condition,
 i.e. the linear multistep method {eq}`eq:ch04:1.1`
  is said to be **zero-stable** if no root of the
 first characteristic polynomial $\,\rho(\xi)\,$ has modulus greater that
@@ -12,7 +12,7 @@ one, and every root of modulus one is simple.
 The linear multistep method {eq}`eq:ch04:1.1`
  is said to be *consistent* if it has order
 $\geq 1$. The condition that the order $p \geq 1$ is called the
-condition of *consistency*.
+condition of *{index}`consistency`*.
 :::
 
 In terms of constants $C_p$, introduced in Chapter (3), the condition is
@@ -61,7 +61,7 @@ to the fundamental theorem on linear multistep methods by 'Dahlquist':
 
 :::{prf:theorem} Convergence
 The necessary and sufficient conditions for a linear multistep method to
-be convergent are that it is consistent and zero-stable.
+be {index}`convergent` are that it is consistent and zero-stable.
 :::
 
 :::{prf:example}

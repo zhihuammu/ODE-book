@@ -96,7 +96,7 @@ ODE solvers, LSODPK and VODEPK implement preconditioned Krylov iterative
 techniques for the solution of the resulting linear system.
 
 :::{prf:remark}
-The introduction here is a bit wordy. You just need grasp the idea that
+The introduction here is a bit wordy. You just need to grasp the idea that
 
 - Solving stiff problems efficiently request the use of fully implict methods;
 

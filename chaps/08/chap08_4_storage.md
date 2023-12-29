@@ -34,7 +34,7 @@ scheme representation of matrix $A$ is shown in the following table:
 From the table, the second column $i = 4$, $j= 1$. This means the matrix
 element is 1 in this example. For sparse matrices, MATLAB uses the same
 approach to store the nonzero elements and their indices. The
-**sparse** function generates matrices in the MATLAB sparse storage
+`sparse` function generates matrices in the MATLAB sparse storage
 organisation. It converts a full matrix to sparse form by only
 considering the nonzero elements.
 :::
@@ -42,7 +42,7 @@ considering the nonzero elements.
 :::{prf:example}
 Consider matrix $A$ in {prf:ref}`example-8.5`, with 10
 nonzero elements. To convert matrix $A$ to sparse form in MATLAB use
-**sparse**function:
+`sparse` function:
 
     >> A=[
     1 0 2 3 0

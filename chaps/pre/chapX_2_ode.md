@@ -23,7 +23,7 @@ For an $n$-th order ordinary differential equation, we can write it in
 ```{prf:remark} Interval of definition $I$
 For a problem governed/represented by an ODE, we need to give the actual ODE in form {eq}`eq:ode:form:general` or {eq}`eq:ode:form:normal`, besides we also need to give the interval $I$ that defines the problem. We call this interval $I$:
 
-- the **interval of definition**, 
+- the **{index}`interval of definition`**, 
 - the **interval of existence**, 
 - the **interval of validity**,
 - or the **domain of the solution**.
@@ -40,7 +40,7 @@ and so on.
 
 ```{prf:definition} Explicit Solution of an ODE
 A function $\phi(x)$ that when substituted for $y$ in equation {eq}`eq:ode:form:general` or {eq}`eq:ode:form:normal`
-satisfies the equation for all $x$ in the interval $I$ is called an **explicit solution** to the equation on $I$.
+satisfies the equation for all $x$ in the interval $I$ is called an **{index}`explicit solution`** to the equation on $I$.
 ```
 
 ```{prf:example}
@@ -59,7 +59,7 @@ satisfies the equation for all $x$ in the interval $I$ is called an **explicit s
 
 
 ```{prf:definition} Implicit Solution of an ODE
-A relation $G(x, y) = 0$ is said to be an **implicit solution** of an ordinary differential equation {eq}`eq:ode:form:general` on an interval $I$, provided that there exists at least one function $\phi$ that satisfies the relation as well as the differential equation on $I$.
+A relation $G(x, y) = 0$ is said to be an **{index}`implicit solution`** of an ordinary differential equation {eq}`eq:ode:form:general` on an interval $I$, provided that there exists at least one function $\phi$ that satisfies the relation as well as the differential equation on $I$.
 ```
 
 ```{prf:example}
@@ -81,7 +81,7 @@ A relation $G(x, y) = 0$ is said to be an **implicit solution** of an ordinary d
 <!-- ## Initial value problem -->
 
 ```{prf:definition} Initial Value Problem
-By an **initial value problem** for an $n$-th order differential equation 
+By an **{index}`initial value problem`** for an $n$-th order differential equation 
 
 $$
 F(x, y, y', y'', \ldots, y^{(n)}) = 0,

@@ -13,7 +13,7 @@ the roots will be
 $$z=\pm\sqrt{-4}=\pm\sqrt{4i^2}=\pm 2 i.$$
 
 ::::{prf:definition} Complex number and Complex conjugate
-A complex number is a number in the form of
+A {index}`complex number` is a number in the form of
 \begin{equation}
     z=x+iy,\qquad x, y\in \mathbb{R},
 \end{equation}
@@ -21,7 +21,7 @@ where $x$ is the real component of the complex number and $iy$ is its imaginary 
 \begin{equation}
     |z|=\sqrt{x^2+y^2}.
 \end{equation}
-Its complex conjugate is defined as
+Its {index}`complex conjugate` is defined as
 \begin{equation}
     \bar{z}=x-iy.
 \end{equation}
@@ -59,7 +59,7 @@ Applying four arithmetic operations on $1+2i$ and $2-5i$, calculate
 \end{align*}
 ::::
 
-::::{prf:definition} Complex number set
+::::{prf:definition} {index}`Complex number set`
 We denote the set of all the complex numbers as
 \begin{equation}
 \mathbb{C}=\{z|z=x+iy, ~x, y\in \mathbb{R}\}.
@@ -91,7 +91,7 @@ z  = r e^{i\theta},
 \end{equation}
 where $r=|z|$, and $\theta$ is the angle defined by the real axis and the straight line connecting the origin and $z$ in the complex plane.
 
-:::{prf:remark} Three forms of a complex number
+:::{prf:remark} {index}`Three forms of a complex number`
 
 :Standard form: $z=x+iy$
 :Polar form: $z=r(\cos\theta+i\sin\theta)$

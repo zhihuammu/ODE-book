@@ -12,7 +12,7 @@ them there is no restriction on $h$ in order to have stability of the
 type we have been considering.
 
 The most widely used class of linear multistep methods for stiff
-problems are called *backward differentiation formulae* (BDF). These
+problems are called *{index}`backward differentiation formulae`* (BDF). These
 methods are shown to be stiffly stable. The *k*-step backward difference
 formulae have the general form 
 

@@ -28,7 +28,7 @@ $$
 $$
 
  where $\,\bf y\,$ and $\,\bf g\,$ are vectors with
-$\,n\,$ components and $\,\bf \Lambda\,$ is the Jacobian matrix, **J**,
+$\,n\,$ components and $\,\bf \Lambda\,$ is the {index}`Jacobian matrix`, **J**,
 of $\,\bf f\,$ (i.e. $\,{\bf f}_y(x_j,y_j)\,$ at some local point, or at
 some step, $\,j\,$). For example, for a system of three equations:
 
@@ -79,7 +79,7 @@ $$
 *In a system of equations the larger the magnitude difference between
 the eigenvalues of the corresponding Jacobian matrix, the higher is the
 degree of stiffness*. The degree of stiffness can then be measured by
-calculating the *stiffness ratio*, $\,S(x)\,$, given by
+calculating the *{index}`stiffness ratio`*, $\,S(x)\,$, given by
 
 
 $$

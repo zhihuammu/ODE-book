@@ -31,7 +31,7 @@ L(E)= a_0 + a_1 E + a_2 E^2 + \ldots + a_{k-1} E^{k-1} + a_k E^{k}.
 ````
 
 ::::{prf:definition} Characteristic Equation
-The characteristic equation associated with Eq. {eq}`eq:DE:linear:homogeneous:constant` or {eq}`eq:DE:linear:homogeneous:constant:aux` is
+The {index}`characteristic equation` associated with Eq. {eq}`eq:DE:linear:homogeneous:constant` or {eq}`eq:DE:linear:homogeneous:constant:aux` is
 
 ````{math}
 :label: eq:DE:linear:char
@@ -112,7 +112,7 @@ $$ y_{n+1}-ay_n =0, ~ y_0 = Q.$$
 :::::{admonition} **Solution:**
 :class: tip
 ````{tab-set}
-```{tab-item} Method 1
+```{tab-item} Method 1 (iterative method)
 From the equation, we get
 
 $$y_{n+1} = a y_n$$
@@ -122,7 +122,7 @@ so
 $$y_n = a y_{n-1} = a ( a y_{n-2}) = a(a(ay_{n-3}))=\ldots=a^n y_0 = Q a^n.$$
 ```
 
-```{tab-item} Method 2
+```{tab-item} Method 2 (characteristics method)
 Using the shift operator $E$, write the equation into
 
 $$(E-a) y_n = 0,$$
