@@ -60,7 +60,7 @@ L(E) y_j =
 \left(\gamma_0 E^0 + \gamma_1 E^1 + \gamma_2 E^2 + \cdots + \gamma_k E^k \right) y_j =0~\,
 $$
 
-and get its characteristic equation
+and get its {index}`characteristic equation`
 
 $$
 L(\xi, h\lambda)=
@@ -102,7 +102,7 @@ $$
 L(\xi, h\lambda) = \sum_{i=0}^k \left(\alpha_i - h\lambda \beta_i\right) \xi^i
 $$(eq:chap04:charpoly)
 
-is called its **Characteristic Polynomial**.
+is called its **{index}`characteristic polynomial`**.
 
 :::{note}
 :class: dropdown
@@ -115,13 +115,13 @@ $$
 \rho(\xi) = \sum_{i=0}^{k} \alpha_i \xi^i
 $$(eq:chap04:charpoly:first)
 
-the **first characteristic polynomial**, and
+the **{index}`first characteristic polynomial`**, and
 
 $$
 \sigma(\xi) = \sum_{i=0}^{k} \beta_i \xi^i
 $$(eq:chap04:charpoly:second)
 
-the **second characteristic polynomial** of the multistep method.
+the **{index}`second characteristic polynomial`** of the multistep method.
 
 These polynomails given in equations {eq}`eq:chap04:charpoly`, {eq}`eq:chap04:charpoly:first` and {eq}`eq:chap04:charpoly:second` have the following relation
 
@@ -202,7 +202,7 @@ characteristic polynomial $\,\rho(\xi)\,$ associated with a
 linear multistep method. If $\,|\xi_i|\leq1\,$, for each
 $\,i=1,2,...,k\,$, and all roots with absolute value $1$ are simple
 roots (i.e. not repeated), then the difference method is said to satisfy
-the **root condition**.
+the **{index}`root condition`**.
 :::
 
 ```{tikz} Unit circle in the complex plane $\C$.
@@ -235,7 +235,7 @@ the **root condition**.
 ```
 
 :::{prf:definition} Stability
-A linear multistep method of order $\,\geq1\,$ is called *stable* if the
+A linear multistep method of order $\,\geq1\,$ is called *{index}`stable`* if the
 roots of its first characteristic polynomial $\,\rho(\xi)\,$ satisfies
 the root condition, i.e. the roots of $\,\rho(\xi)\,$ lie inside or on
 the unit circle, and the roots on the unit circle are distinct (or
@@ -243,13 +243,13 @@ simple) - this is called the root condition.
 :::
 
 :::{prf:definition} Strong Stability
-A method is *strongly stable* if the roots of $\rho(\xi) = 0$ are inside
+A method is *{index}`strongly stable`* if the roots of $\rho(\xi) = 0$ are inside
 the unit circle except for only one root, call *principal root*, with
 the magnitude of one(i.e. $|\xi| = 1$).
 :::
 
 :::{prf:definition} Weak Stability
-A method is *weakly stable* if it is stable (i.e. satisfies the root
+A method is *{index}`weakly stable`* if it is stable (i.e. satisfies the root
 condition) but has more than one root on the unit circle.
 :::
 

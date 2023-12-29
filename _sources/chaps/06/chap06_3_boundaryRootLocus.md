@@ -152,7 +152,7 @@ type we have been considering.
 :::{prf:definition} $A$-stability
 The property that $\displaystyle\,\lim_{j \to \infty} y_j = 0\;$
 ($y_j\,$ approximated solution) for all $\,h>0\,$ and all complex
-$\lambda$ with $\,Real(\lambda)<0\,$ is called *A-stability*.
+$\lambda$ with $\,Real(\lambda)<0\,$ is called *{index}`A-stability`*.
 :::
 
 For certain applications, stiff differential equations, the A-stability

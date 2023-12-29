@@ -1,7 +1,7 @@
 # Sparse Matrices
 
 :::{prf:definition} Sparse Matrix
-A sparse matrix is a matrix with a large number of zero
+A {index}`sparse matrix` is a matrix with a large number of zero
 elements, compared to the total number of elements. Alternatively, we
 say a matrix can be considered as sparse if the number of nonzero
 elements $nnz \ll (N^{2} + N)/2$

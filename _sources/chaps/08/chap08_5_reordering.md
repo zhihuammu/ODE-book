@@ -115,7 +115,7 @@ is obtained.
 
 The most simple and popular method of minimizing the bandwidth was
 developed by Cuthill and McKee (1969). Later the method was improved by
-Alan George who developed the Reverse Cuthill and McKee (RCM) method
+Alan George who developed the {index}`Reverse Cuthill and McKee` (RCM) method
 which is much more effective than the original CM algorithm. There are
 several other efficient bandwidth reduction methods used in re-ordering
 of sparse matrices, namely Minimum Degree Reordering method. The Cuthill
@@ -171,6 +171,7 @@ its corresponding adjacency plot:
 
 ::::{grid}
 :::{grid-item} Matrix
+
 $$
 A=
       \begin{bmatrix}
@@ -184,6 +185,7 @@ A=
         0 & 1 & 0 & 0 & 0 & 1 & 0 & 1
       \end{bmatrix}
 $$
+
 :::
 :::{grid-item} Graph
 ```{tikz}
@@ -278,7 +280,7 @@ reversing the elements. i.e.
 |        Reverse CM| 7  | 4  | 8  | 6  | 2  | 3  | 5  | 1  |    
 
 
-In MATLAB, the command $symrcm(A)$ returns the symmetric reverse
+In MATLAB, the command `symrcm(A)` returns the symmetric reverse
 Cuthill-McKee ordering of A. This is a permutation matrix p such that
 $A(p,p)$ tends to have its nonzero elements closer to the main diagonal.
 Example MATLAB code:
@@ -355,7 +357,7 @@ found by using the MATLAB function `symrcm`
 
 Note that the half bandwidth of the reordered matrix $C$, using the
 original Cuthill-Mckee method is $bw =5$, and the half bandwidth of the
-reordered matrix $D$ is $bw =2$, using the MATLAB function $sysmrcm$ for
+reordered matrix $D$ is $bw =2$, using the MATLAB function `sysmrcm` for
 the reverse Cuthill-Mckee is $bw =2$, i.e. the same as that for matrix
 $B$. Hence, the Reverse Cuthill-Mckee algorithm for bandwidth reduction
 of sparse matrices seems to be the most effective reordering method.
@@ -363,7 +365,7 @@ of sparse matrices seems to be the most effective reordering method.
 
 ## Column Count Reordering
 
-The idea of the column count reordering algorithm is to move rows and
+The idea of the {index}`column count` reordering algorithm is to move rows and
 columns with higher nonzero count towards the end of the matrix. This
 algorithm reduces the time and storage for computing matrix operations
 such as the LU factorization and the Cholesky factorization, but its
@@ -454,9 +456,9 @@ $$CC=
 
 
 
-Similar to the command **symrcm** for RCM reordering, in MATLAB the
-command **colperm** returns the column count reordering of A. This
-is a permutation matrix q such that $A(q,q)$ tends to move rows and
+Similar to the command `symrcm` for RCM reordering, in MATLAB the
+command `colperm` returns the column count reordering of $A$. This
+is a permutation matrix $q$ such that $A(q,q)$ tends to move rows and
 columns with higher nonzero count towards the end of the matrix (a
 down-arrow effect).
 
@@ -508,7 +510,7 @@ style="width:40.0%" alt="image" /></td>
 
 ## Minimum Degree Reordering
 
-The minimum degree algorithm attempts to reduce the fill-in caused by
+The {index}`minimum degree` algorithm attempts to reduce the fill-in caused by
 elimination such as Gaussian elimination, LU decomposition or the
 Cholesky decomposition. The computational costs of this algorithm is
 inexpensive, and it is easy to apply and effective for most problems
@@ -618,10 +620,10 @@ $$MD=
 
 
 
-Similar to the commands **symrcm** and **colperm**, in MATLAB
-the command **symamd** returns the approximate Minimum Degree
-reordering of A to produce large blocks of zeros in the matrix. The
-permutation matrix r is calculated such that $A(r,r)$ tends to move rows
+Similar to the commands `symrcm` and `colperm`, in MATLAB
+the command `symamd` returns the approximate Minimum Degree
+reordering of $A$ to produce large blocks of zeros in the matrix. The
+permutation matrix $r$ is calculated such that $A(r,r)$ tends to move rows
 and columns with higher nonzero elements towards the end of the matrix -
 similar to the Column Count algorithm.
 
@@ -800,11 +802,11 @@ $$A=
 
 
 For the RCM and Column Count reordering methods, use the MATLAB commands
-$symrcm(A)$ and $colperm(A)$ to find the corresponding reordered
+`symrcm(A)` and `colperm(A)` to find the corresponding reordered
 matrices $C$ and $D$. Plot the pattern of matrices $A$, $C$ and $D$.
-Apply the MATLAB command $[L,U]=lu(A)$ for finding the LU factorisation
+Apply the MATLAB command `[L,U]=lu(A)` for finding the LU factorisation
 of matrices $A$, and similarly $C$ and $D$. Plot the pattern of the
-resulting matrices using $spy(lu(A))$, $spy(lu(C))$ and $spy(lu(D))$.
+resulting matrices using `spy(lu(A))`, `spy(lu(C))` and `spy(lu(D))`.
 Comment on the number of non-zero elements following LU factorisation.
 Plot the upper triangular matrix U for each of the factorised matrices
 and record the number of non-zero (nz) elements in U for each of the

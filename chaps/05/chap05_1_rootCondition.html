@@ -466,7 +466,7 @@ into equation <a class="reference internal" href="#equation-eq-ch04-1-1">(5.1)</
 L(E) y_j = 
 \left(\gamma_0 E^0 + \gamma_1 E^1 + \gamma_2 E^2 + \cdots + \gamma_k E^k \right) y_j =0~\,
 \]</div>
-<p>and get its characteristic equation</p>
+<p>and get its <span class="target" id="index-0"></span>characteristic equation</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch04-1-5">
 <span class="eqno">(5.5)<a class="headerlink" href="#equation-eq-ch04-1-5" title="Permalink to this equation">#</a></span>\[
 L(\xi, h\lambda)=
@@ -500,7 +500,7 @@ y_j ~=~ A_1\, \xi_1^j + A_2\, \xi_2^j + \,\dots\, + A_k\,\xi_k^j
 <span class="eqno">(5.7)<a class="headerlink" href="#equation-eq-chap04-charpoly" title="Permalink to this equation">#</a></span>\[
 L(\xi, h\lambda) = \sum_{i=0}^k \left(\alpha_i - h\lambda \beta_i\right) \xi^i
 \]</div>
-<p>is called its <strong>Characteristic Polynomial</strong>.</p>
+<p>is called its <strong><span class="target" id="index-1"></span>characteristic polynomial</strong>.</p>
 <div class="dropdown admonition note">
 <p class="admonition-title">Note</p>
 <p>In some books, <span class="math notranslate nohighlight">\(\pi(\xi, h\lambda)\)</span> is used to represent the characteristic polynomial.</p>
@@ -510,12 +510,12 @@ L(\xi, h\lambda) = \sum_{i=0}^k \left(\alpha_i - h\lambda \beta_i\right) \xi^i
 <span class="eqno">(5.8)<a class="headerlink" href="#equation-eq-chap04-charpoly-first" title="Permalink to this equation">#</a></span>\[
 \rho(\xi) = \sum_{i=0}^{k} \alpha_i \xi^i
 \]</div>
-<p>the <strong>first characteristic polynomial</strong>, and</p>
+<p>the <strong><span class="target" id="index-2"></span>first characteristic polynomial</strong>, and</p>
 <div class="math notranslate nohighlight" id="equation-eq-chap04-charpoly-second">
 <span class="eqno">(5.9)<a class="headerlink" href="#equation-eq-chap04-charpoly-second" title="Permalink to this equation">#</a></span>\[
 \sigma(\xi) = \sum_{i=0}^{k} \beta_i \xi^i
 \]</div>
-<p>the <strong>second characteristic polynomial</strong> of the multistep method.</p>
+<p>the <strong><span class="target" id="index-3"></span>second characteristic polynomial</strong> of the multistep method.</p>
 <p>These polynomails given in equations <a class="reference internal" href="#equation-eq-chap04-charpoly">(5.7)</a>, <a class="reference internal" href="#equation-eq-chap04-charpoly-first">(5.8)</a> and <a class="reference internal" href="#equation-eq-chap04-charpoly-second">(5.9)</a> have the following relation</p>
 <div class="math notranslate nohighlight" id="equation-eq-chap04-chapoly-relation">
 <span class="eqno">(5.10)<a class="headerlink" href="#equation-eq-chap04-chapoly-relation" title="Permalink to this equation">#</a></span>\[
@@ -598,14 +598,14 @@ characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(\x
 linear multistep method. If <span class="math notranslate nohighlight">\(\,|\xi_i|\leq1\,\)</span>, for each
 <span class="math notranslate nohighlight">\(\,i=1,2,...,k\,\)</span>, and all roots with absolute value <span class="math notranslate nohighlight">\(1\)</span> are simple
 roots (i.e. not repeated), then the difference method is said to satisfy
-the <strong>root condition</strong>.</p>
+the <strong><span class="target" id="index-4"></span>root condition</strong>.</p>
 </div>
 </div><div class="figure" id="id1" style="text-align: center"><p><img width="48%" src="../../_images/tikz-8862abc5ed811de2ee79a90e762944da982410a6.svg" alt="Figure made with TikZ" /></p>
 <p class="caption"><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Unit circle in the complex plane <span class="math notranslate nohighlight">\(\C\)</span>.</span></p>
 </div><div class="proof definition admonition" id="definition-3">
 <p class="admonition-title"><span class="caption-number">Definition 5.3 </span> (Stability)</p>
 <div class="definition-content section" id="proof-content">
-<p>A linear multistep method of order <span class="math notranslate nohighlight">\(\,\geq1\,\)</span> is called <em>stable</em> if the
+<p>A linear multistep method of order <span class="math notranslate nohighlight">\(\,\geq1\,\)</span> is called <em><span class="target" id="index-5"></span>stable</em> if the
 roots of its first characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(\xi)\,\)</span> satisfies
 the root condition, i.e. the roots of <span class="math notranslate nohighlight">\(\,\rho(\xi)\,\)</span> lie inside or on
 the unit circle, and the roots on the unit circle are distinct (or
@@ -614,14 +614,14 @@ simple) - this is called the root condition.</p>
 </div><div class="proof definition admonition" id="definition-4">
 <p class="admonition-title"><span class="caption-number">Definition 5.4 </span> (Strong Stability)</p>
 <div class="definition-content section" id="proof-content">
-<p>A method is <em>strongly stable</em> if the roots of <span class="math notranslate nohighlight">\(\rho(\xi) = 0\)</span> are inside
+<p>A method is <em><span class="target" id="index-6"></span>strongly stable</em> if the roots of <span class="math notranslate nohighlight">\(\rho(\xi) = 0\)</span> are inside
 the unit circle except for only one root, call <em>principal root</em>, with
 the magnitude of one(i.e. <span class="math notranslate nohighlight">\(|\xi| = 1\)</span>).</p>
 </div>
 </div><div class="proof definition admonition" id="definition-5">
 <p class="admonition-title"><span class="caption-number">Definition 5.5 </span> (Weak Stability)</p>
 <div class="definition-content section" id="proof-content">
-<p>A method is <em>weakly stable</em> if it is stable (i.e. satisfies the root
+<p>A method is <em><span class="target" id="index-7"></span>weakly stable</em> if it is stable (i.e. satisfies the root
 condition) but has more than one root on the unit circle.</p>
 </div>
 </div><div class="proof example admonition" id="example-6">

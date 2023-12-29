@@ -1,7 +1,7 @@
 # Estimate of truncation error at each step for Predictor-Corrector methods -- Milne's Device
 
 For Predictor-Corrector methods an estimate of error at each step can be
-found using the following procedure known as Milne's device. We
+found using the following procedure known as {index}`Milne's device`. We
 illustrate the technique by finding the error of the
 Adam-Bashforth-Moulton method. The Predictor formula is
 

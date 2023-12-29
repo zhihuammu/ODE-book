@@ -397,7 +397,7 @@ $$
 \right.
 $$(eq:inhomo:ode:sol)
 
-The way to find $y_h(x)$ is the same as described in [](chapX-homo-ode-sol). Here we will introduce the **Undetermined Coefficients Method** to find the particular solution $y_p(x)$
+The way to find $y_h(x)$ is the same as described in [](chapX-homo-ode-sol). Here we will introduce the **{index}`Undetermined Coefficients Method`** to find the particular solution $y_p(x)$
 
 ```{prf:example}
 Find the solution to 

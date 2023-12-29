@@ -30,8 +30,8 @@ L(E)= a_0 + a_1 E + a_2 E^2 + \ldots + a_{k-1} E^{k-1} + a_k E^{k}.
 \end{equation}
 ````
 
-::::{prf:definition} {index}`Characteristic Equation`
-The characteristic equation associated with Eq. {eq}`eq:DE:linear:homogeneous:constant` or {eq}`eq:DE:linear:homogeneous:constant:aux` is
+::::{prf:definition} Characteristic Equation
+The {index}`characteristic equation` associated with Eq. {eq}`eq:DE:linear:homogeneous:constant` or {eq}`eq:DE:linear:homogeneous:constant:aux` is
 
 ````{math}
 :label: eq:DE:linear:char

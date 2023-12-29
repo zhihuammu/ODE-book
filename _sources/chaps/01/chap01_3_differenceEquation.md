@@ -57,7 +57,7 @@ When the right hand side of Eq. {eq}`eq:DE:linear` vanishes i.e. $R(n)=0$, we ge
 a_0(n) y_n + a_1(n) y_{n+1} + a_2(n) y_{n+2} + \ldots + a_k(n) y_{n+k} = 0,
 \end{equation} 
 ````
-which is called a homogeneous linear difference equation.
+which is called a {index}`homogeneous linear difference equation`.
 ::::
 
 

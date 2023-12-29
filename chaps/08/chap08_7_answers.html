@@ -540,9 +540,8 @@ matrices within this file for multiple use.</p>
     1 0 0 0 1 0 0 1 1 1]
 </pre></div>
 </div>
-<p>In MATLAB use the command <em>spy(A)</em> to find the pattern and the
-number of nonzero elements: i.e.<br />
-<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span> <span class="pre">spy(A)</span></code></p>
+<p>In MATLAB use the command <code class="docutils literal notranslate"><span class="pre">spy(A)</span></code> to find the pattern and the
+number of nonzero elements.</p>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
 <div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-072de8dde5f703bcf4d4ecfa68b8b1e07e4942c1.svg" alt="Figure made with TikZ" /></p>
@@ -561,20 +560,100 @@ bw =
 <p>Next we apply the Cuthill-McKee (CM) and reverse Cuthill-McKee (RCM)
 ordering algorithms to reduce the bandwidth.</p>
 <p>we need to construct the following table</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Original nodes   No. of connections   Results / Heads   Queue        Result by CM   Result by RCM   New nodes
-    ---------------- -------------------- ----------------- ------------ -------------- --------------- -----------
-    1                6                    7                 6                                           
-    2                2                    6                 4, 5, 8, 1                                  
-    3                2                    4                 --                                          
-    4                3                    5                 9, 10                                       
-    5                4                    8                 --                                          
-    6                5                    1                 2, 3                                        
-    7                1                    9                 --                                          
-    8                6                    10                --                                          
-    9                3                    2                 --                                          
-    10               4                    3                 --                                          
-</pre></div>
-</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Original nodes</p></th>
+<th class="head"><p>No. of connections</p></th>
+<th class="head"><p>Results / Heads</p></th>
+<th class="head"><p>Queue</p></th>
+<th class="head"><p>Result by CM</p></th>
+<th class="head"><p>Result by RCM</p></th>
+<th class="head"><p>New nodes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>6</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>6</p></td>
+<td><p>4, 5, 8, 1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>–</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>5</p></td>
+<td><p>9, 10</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>4</p></td>
+<td><p>8</p></td>
+<td><p>–</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>5</p></td>
+<td><p>1</p></td>
+<td><p>2, 3</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>1</p></td>
+<td><p>9</p></td>
+<td><p>–</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>6</p></td>
+<td><p>10</p></td>
+<td><p>–</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>–</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>–</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
 <ul class="simple">
 <li><p>Step 1 - list all the nodes and the number of their connections (or
 degree) – check this with the adjacency matrix as well.</p></li>
@@ -598,20 +677,100 @@ write down 2, 3 in the Queue column.</p></li>
 <li><p>Next, we bring 9 and follow the above procedure until all 10 nodes
 are listed in the results/Head column.</p></li>
 </ul>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Original nodes   No. of connections   Results / Heads   Queue        Result by CM   Result by RCM   New nodes
-    ---------------- -------------------- ----------------- ------------ -------------- --------------- -----------
-    1                6                    7                 6            7              3               1
-    2                2                    6                 4, 5, 8, 1   6              2               2
-    3                2                    4                 --           4              10              3
-    4                3                    5                 9, 10        5              9               4
-    5                4                    8                 --           8              1               5
-    6                5                    1                 2, 3         1              8               6
-    7                1                    9                 --           9              5               7
-    8                6                    10                --           10             4               8
-    9                3                    2                 --           2              6               9
-    10               4                    3                 --           3              7               10
-</pre></div>
-</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Original nodes</p></th>
+<th class="head"><p>No. of connections</p></th>
+<th class="head"><p>Results / Heads</p></th>
+<th class="head"><p>Queue</p></th>
+<th class="head"><p>Result by CM</p></th>
+<th class="head"><p>Result by RCM</p></th>
+<th class="head"><p>New nodes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>6</p></td>
+<td><p>4, 5, 8, 1</p></td>
+<td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>–</p></td>
+<td><p>4</p></td>
+<td><p>10</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>5</p></td>
+<td><p>9, 10</p></td>
+<td><p>5</p></td>
+<td><p>9</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>4</p></td>
+<td><p>8</p></td>
+<td><p>–</p></td>
+<td><p>8</p></td>
+<td><p>1</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>5</p></td>
+<td><p>1</p></td>
+<td><p>2, 3</p></td>
+<td><p>1</p></td>
+<td><p>8</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>1</p></td>
+<td><p>9</p></td>
+<td><p>–</p></td>
+<td><p>9</p></td>
+<td><p>5</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>6</p></td>
+<td><p>10</p></td>
+<td><p>–</p></td>
+<td><p>10</p></td>
+<td><p>4</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>–</p></td>
+<td><p>2</p></td>
+<td><p>6</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>–</p></td>
+<td><p>3</p></td>
+<td><p>7</p></td>
+<td><p>10</p></td>
+</tr>
+</tbody>
+</table>
 <p>Complete results column for CM (the same as the column Results /
 Heads) and then reverse the CM column for RCM method, and enter the
 column header ‘New nodes’.</p>

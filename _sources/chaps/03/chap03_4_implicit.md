@@ -17,7 +17,7 @@ $\displaystyle \tau_{j+1} = -\frac{1}{2}y^{(2)}(\xi_j)h^2,
 
 Some of the more common implicit methods are listed below:
 
-- Adams--Moulton One--Step Method, $k=1$
+- {index}`Adams--Moulton` One--Step Method, $k=1$
 
     $\displaystyle y_{j+1} = y_j + \frac{h}{2}\bigl[\,f_{j+1} + f_j\,\bigr]$
     (this is the *Trapezoidal* method)\

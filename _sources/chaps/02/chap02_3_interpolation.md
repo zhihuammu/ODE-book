@@ -93,7 +93,7 @@ $\begin{pmatrix} s \\ k \end{pmatrix} = \dfrac{s!}{k!(s-k)!} =\dfrac{s(s-1)(s-2)
 $\begin{pmatrix} s \\ 0 \end{pmatrix} = \dfrac{s!}{0!(s-0)!}=1$.
 :::
 
-Therefore, the forward Gregory-Newton Interpolation formulae is
+Therefore, the {index}`forward Gregory-Newton Interpolation`` formulae is
 
 :::{math}
 :label: eq:GN:forward
@@ -162,7 +162,7 @@ $$f(x_j + sh) = P_k(x_s) + e_k(x_s) \simeq P_k(x_s)$$
 
 
 :::{note}
-The G-N backward interpolation formula (polynomial) is useful for
+The G-N {index}`backward interpolation` formula (polynomial) is useful for
 interpolating near the *end* of a sequence.
 :::
 

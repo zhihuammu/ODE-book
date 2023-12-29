@@ -570,7 +570,7 @@ is obtained.</p>
 <h2><span class="section-number">8.5.1. </span>Cuthill and McKee Reordering<a class="headerlink" href="#cuthill-and-mckee-reordering" title="Permalink to this heading">#</a></h2>
 <p>The most simple and popular method of minimizing the bandwidth was
 developed by Cuthill and McKee (1969). Later the method was improved by
-Alan George who developed the Reverse Cuthill and McKee (RCM) method
+Alan George who developed the <span class="target" id="index-0"></span>Reverse Cuthill and McKee (RCM) method
 which is much more effective than the original CM algorithm. There are
 several other efficient bandwidth reduction methods used in re-ordering
 of sparse matrices, namely Minimum Degree Reordering method. The Cuthill
@@ -618,8 +618,9 @@ its corresponding adjacency plot:</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
 <div class="sd-col sd-d-flex-column docutils">
-<p>Matrix
-$<span class="math notranslate nohighlight">\(
+<p>Matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 A=
       \begin{bmatrix}
         1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
@@ -631,7 +632,7 @@ A=
         0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
         0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1
       \end{bmatrix}
-\)</span>$</p>
+\end{split}\]</div>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
 <p>Graph</p>
@@ -794,7 +795,7 @@ reversing the elements. i.e.</p>
 </tr>
 </tbody>
 </table>
-<p>In MATLAB, the command <span class="math notranslate nohighlight">\(symrcm(A)\)</span> returns the symmetric reverse
+<p>In MATLAB, the command <code class="docutils literal notranslate"><span class="pre">symrcm(A)</span></code> returns the symmetric reverse
 Cuthill-McKee ordering of A. This is a permutation matrix p such that
 <span class="math notranslate nohighlight">\(A(p,p)\)</span> tends to have its nonzero elements closer to the main diagonal.
 Example MATLAB code:</p>
@@ -827,7 +828,7 @@ found by using the MATLAB function <code class="docutils literal notranslate"><s
 </div>
 <p>Note that the half bandwidth of the reordered matrix <span class="math notranslate nohighlight">\(C\)</span>, using the
 original Cuthill-Mckee method is <span class="math notranslate nohighlight">\(bw =5\)</span>, and the half bandwidth of the
-reordered matrix <span class="math notranslate nohighlight">\(D\)</span> is <span class="math notranslate nohighlight">\(bw =2\)</span>, using the MATLAB function <span class="math notranslate nohighlight">\(sysmrcm\)</span> for
+reordered matrix <span class="math notranslate nohighlight">\(D\)</span> is <span class="math notranslate nohighlight">\(bw =2\)</span>, using the MATLAB function <code class="docutils literal notranslate"><span class="pre">sysmrcm</span></code> for
 the reverse Cuthill-Mckee is <span class="math notranslate nohighlight">\(bw =2\)</span>, i.e. the same as that for matrix
 <span class="math notranslate nohighlight">\(B\)</span>. Hence, the Reverse Cuthill-Mckee algorithm for bandwidth reduction
 of sparse matrices seems to be the most effective reordering method.</p>
@@ -835,7 +836,7 @@ of sparse matrices seems to be the most effective reordering method.</p>
 </div></div>
 <div class="section" id="column-count-reordering">
 <h2><span class="section-number">8.5.2. </span>Column Count Reordering<a class="headerlink" href="#column-count-reordering" title="Permalink to this heading">#</a></h2>
-<p>The idea of the column count reordering algorithm is to move rows and
+<p>The idea of the <span class="target" id="index-1"></span>column count reordering algorithm is to move rows and
 columns with higher nonzero count towards the end of the matrix. This
 algorithm reduces the time and storage for computing matrix operations
 such as the LU factorization and the Cholesky factorization, but its
@@ -951,9 +952,9 @@ until complete labelling is obtained as shown:</p>
 </div></div>
 </div>
 </div>
-<p>Similar to the command <strong>symrcm</strong> for RCM reordering, in MATLAB the
-command <strong>colperm</strong> returns the column count reordering of A. This
-is a permutation matrix q such that <span class="math notranslate nohighlight">\(A(q,q)\)</span> tends to move rows and
+<p>Similar to the command <code class="docutils literal notranslate"><span class="pre">symrcm</span></code> for RCM reordering, in MATLAB the
+command <code class="docutils literal notranslate"><span class="pre">colperm</span></code> returns the column count reordering of <span class="math notranslate nohighlight">\(A\)</span>. This
+is a permutation matrix <span class="math notranslate nohighlight">\(q\)</span> such that <span class="math notranslate nohighlight">\(A(q,q)\)</span> tends to move rows and
 columns with higher nonzero count towards the end of the matrix (a
 down-arrow effect).</p>
 <p>Example MATLAB code:</p>
@@ -993,7 +994,7 @@ style="width:40.0%" alt="image" /></td>
 </div></div>
 <div class="section" id="minimum-degree-reordering">
 <h2><span class="section-number">8.5.3. </span>Minimum Degree Reordering<a class="headerlink" href="#minimum-degree-reordering" title="Permalink to this heading">#</a></h2>
-<p>The minimum degree algorithm attempts to reduce the fill-in caused by
+<p>The <span class="target" id="index-2"></span>minimum degree algorithm attempts to reduce the fill-in caused by
 elimination such as Gaussian elimination, LU decomposition or the
 Cholesky decomposition. The computational costs of this algorithm is
 inexpensive, and it is easy to apply and effective for most problems
@@ -1105,10 +1106,10 @@ the resulting adjacency matrix and graph:</p>
 </div></div>
 </div>
 </div>
-<p>Similar to the commands <strong>symrcm</strong> and <strong>colperm</strong>, in MATLAB
-the command <strong>symamd</strong> returns the approximate Minimum Degree
-reordering of A to produce large blocks of zeros in the matrix. The
-permutation matrix r is calculated such that <span class="math notranslate nohighlight">\(A(r,r)\)</span> tends to move rows
+<p>Similar to the commands <code class="docutils literal notranslate"><span class="pre">symrcm</span></code> and <code class="docutils literal notranslate"><span class="pre">colperm</span></code>, in MATLAB
+the command <code class="docutils literal notranslate"><span class="pre">symamd</span></code> returns the approximate Minimum Degree
+reordering of <span class="math notranslate nohighlight">\(A\)</span> to produce large blocks of zeros in the matrix. The
+permutation matrix <span class="math notranslate nohighlight">\(r\)</span> is calculated such that <span class="math notranslate nohighlight">\(A(r,r)\)</span> tends to move rows
 and columns with higher nonzero elements towards the end of the matrix -
 similar to the Column Count algorithm.</p>
 <p>Example MATLAB code:</p>
@@ -1262,11 +1263,11 @@ its corresponding adjacency graph.</p>
 </div>
 </div>
 <p>For the RCM and Column Count reordering methods, use the MATLAB commands
-<span class="math notranslate nohighlight">\(symrcm(A)\)</span> and <span class="math notranslate nohighlight">\(colperm(A)\)</span> to find the corresponding reordered
+<code class="docutils literal notranslate"><span class="pre">symrcm(A)</span></code> and <code class="docutils literal notranslate"><span class="pre">colperm(A)</span></code> to find the corresponding reordered
 matrices <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(D\)</span>. Plot the pattern of matrices <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(D\)</span>.
-Apply the MATLAB command <span class="math notranslate nohighlight">\([L,U]=lu(A)\)</span> for finding the LU factorisation
+Apply the MATLAB command <code class="docutils literal notranslate"><span class="pre">[L,U]=lu(A)</span></code> for finding the LU factorisation
 of matrices <span class="math notranslate nohighlight">\(A\)</span>, and similarly <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(D\)</span>. Plot the pattern of the
-resulting matrices using <span class="math notranslate nohighlight">\(spy(lu(A))\)</span>, <span class="math notranslate nohighlight">\(spy(lu(C))\)</span> and <span class="math notranslate nohighlight">\(spy(lu(D))\)</span>.
+resulting matrices using <code class="docutils literal notranslate"><span class="pre">spy(lu(A))</span></code>, <code class="docutils literal notranslate"><span class="pre">spy(lu(C))</span></code> and <code class="docutils literal notranslate"><span class="pre">spy(lu(D))</span></code>.
 Comment on the number of non-zero elements following LU factorisation.
 Plot the upper triangular matrix U for each of the factorised matrices
 and record the number of non-zero (nz) elements in U for each of the

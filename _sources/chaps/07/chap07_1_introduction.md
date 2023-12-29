@@ -124,7 +124,7 @@ real solution.
 :::
 
 Generally, stiff differential equations arise in physical conditions due
-to the existence of greatly varying *time constants*. Time constant is
+to the existence of greatly varying *{index}`time constants`*. Time constant is
 the term used to refer to the rate of decay. To find the time constant
 for a problem consider for example the equation $\,y' = \lambda y\,$
 which has the solution $\,Ae^{\lambda x}\,$. Interpreting the

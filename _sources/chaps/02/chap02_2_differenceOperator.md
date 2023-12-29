@@ -16,7 +16,7 @@ Usually, though not necessarily, we let $\left\{x_j\right\}_{j=-\infty}^{+\infty
 
 $$x_j= jh$$
 
-where $h=x_{j+1}-x_j$ is called the step size (or step length), $h\in(0,+\infty)$.
+where $h=x_{j+1}-x_j$ is called the {index}`step size` (or step length), $h\in(0,+\infty)$.
 
 
 ```{tikz} A general sequence $\{f_j\}_{j=0}^{6}$.
@@ -43,7 +43,7 @@ $x$ coordinates are not necessarily intergers.
 ## Forward Difference Operator $\Delta$
 
 ::::{prf:definition} Forward Difference
-Given a sequence $\left\{f_j\right\}_{j=-\infty}^{+\infty}$, the first-order forward difference for an member $f_j$ is the difference between the next member and itself: 
+Given a sequence $\left\{f_j\right\}_{j=-\infty}^{+\infty}$, the first-order {index}`forward difference` for an member $f_j$ is the difference between the next member and itself: 
 
 \begin{equation}
   \Delta f_j = f_{j+1} - f_j,
@@ -94,13 +94,13 @@ $$\Delta f(x) = f(x+h)-f(x)$$
 ## Backward difference operator $\nabla$
 
 ::::{prf:definition} Backward Difference
-Given a sequence $\left\{f_j\right\}_{j=-\infty}^{+\infty}$, the first-order backward difference for an member $f_j$ is the difference between itself and the previous member: 
+Given a sequence $\left\{f_j\right\}_{j=-\infty}^{+\infty}$, the first-order {index}`backward difference` for an member $f_j$ is the difference between itself and the previous member: 
 
 \begin{equation}
   \nabla f_j = f_{j} - f_{j-1},
 \end{equation}
 
-and the $k-$th order backward difference is defined as: 
+and the $k$-th order backward difference is defined as: 
 
 \begin{equation}
   \nabla^k f_j= \nabla\left(\nabla^{k-1} f_j \right).
@@ -151,7 +151,7 @@ $$\nabla f(x) = f(x)-f(x-h)$$
 ::::{prf:definition}
     
 Given a sequence $\left\{f_j\right\}_{j=-\infty}^{+\infty}$,
-we define $E$ as an operator shifting a member in a sequence to the next member
+we define $E$ as an operator {index}`shifting` a member in a sequence to the next member
 \begin{equation}
   E f_j = f_{j+1},
 \end{equation}
@@ -198,7 +198,7 @@ If we do shifting for $k$ times , then
 
 ::::{prf:theorem} 
 
-The difference operators and shift operators have the following
+The {index}`difference operators` and {index}`shift operators` have the following
 relations:
 
 -   $E=1+\Delta$

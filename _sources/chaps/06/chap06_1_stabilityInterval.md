@@ -21,7 +21,7 @@ $$(eq:ch05:1.2)
  where $\lambda$ is a (real or complex) constant.
 
 :::{prf:definition} Abosolute Stability
-A linear multistep method is said to be *absolutely stable* in a region
+A linear multistep method is said to be *{index}`absolutely stable`* in a region
 $\,\Re\,$ of the complex plane if for all $\,h\lambda\,$ all roots of
 the stability polynomial $\,L(\xi,h\lambda)$ associated with the
 method satisfy 
@@ -35,7 +35,7 @@ $$(eq:ch05:1.3)
 :::
 
 :::{prf:definition} Relative Stability
-A linear multistep method is said to be *relatively stable* in a region
+A linear multistep method is said to be *{index}`relatively stable`* in a region
 $\,\Re\,$ of the complex plane if, for all $\,h\lambda\,$ all roots of
 the stability polynomial $\,L(\xi,h\lambda)$ associated with the
 method satisfy 
@@ -52,8 +52,8 @@ parasitic roots are less in magnitude than the principal root).
 :::
 
 :::{prf:definition} Stability Interval
-An interval $(a,b)$ of the real axis is said to be an *interval of
-absolute/relative stability* if the method is absolutely/relatively
+An interval $(a,b)$ of the real axis is said to be an *{index}`interval of
+absolute/relative stability`* if the method is absolutely/relatively
 stable for all $\,h\lambda \in (a,b)\,$. If the method is absolutely
 unstable for all $\,h\lambda \in (a,b)\,$, it is said to have no
 interval of absolute stability.

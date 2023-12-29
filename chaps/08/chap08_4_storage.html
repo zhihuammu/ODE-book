@@ -506,7 +506,7 @@ scheme representation of matrix <span class="math notranslate nohighlight">\(A\)
 <p>From the table, the second column <span class="math notranslate nohighlight">\(i = 4\)</span>, <span class="math notranslate nohighlight">\(j= 1\)</span>. This means the matrix
 element is 1 in this example. For sparse matrices, MATLAB uses the same
 approach to store the nonzero elements and their indices. The
-<strong>sparse</strong> function generates matrices in the MATLAB sparse storage
+<code class="docutils literal notranslate"><span class="pre">sparse</span></code> function generates matrices in the MATLAB sparse storage
 organisation. It converts a full matrix to sparse form by only
 considering the nonzero elements.</p>
 </div>
@@ -515,7 +515,7 @@ considering the nonzero elements.</p>
 <div class="example-content section" id="proof-content">
 <p>Consider matrix <span class="math notranslate nohighlight">\(A\)</span> in <a class="reference internal" href="#example-8.5">Example 8.5</a>, with 10
 nonzero elements. To convert matrix <span class="math notranslate nohighlight">\(A\)</span> to sparse form in MATLAB use
-<strong>sparse</strong>function:</p>
+<code class="docutils literal notranslate"><span class="pre">sparse</span></code> function:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt; A=[
 1 0 2 3 0
 0 0 0 5 0

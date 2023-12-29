@@ -7,7 +7,7 @@ matrix can be represented by a graph $G$ where there is an edge from
 vertex $i\text{(row)}$ to vertex $j\text{(column)}$ and a letter
 or symbol represents the nonzero entry, e.g. $a_{ij}$:
 
-Associated with each graph is an adjacency matrix $A = (a_{ij})$:
+Associated with each graph is an {index}`adjacency matrix` $A = (a_{ij})$:
 
 $$(a_{ij})=\begin{cases}
         1, & \text{if an edge exists},\\

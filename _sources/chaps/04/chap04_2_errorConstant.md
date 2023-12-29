@@ -1,8 +1,8 @@
 (chap:errorConstant:constants)=
 # Order and Error Constants
 
-If the local error associated to a multistep formula is $\,O(h)^{p+1}$
-then, the global error is expected to be $\,O(h)^p$, and we can say that
+If the {index}`local error` associated to a multistep formula is $\,O(h)^{p+1}$
+then, the {index}`global error` is expected to be $\,O(h)^p$, and we can say that
 the method is of order $p$. To determine the order of a multistep method
 we can use the following approach.
 
@@ -116,8 +116,8 @@ $$\begin{aligned}
 \end{aligned}$$ 
 
 The term $C_{p+1}\,h^{p+1}\,y^{(p+1)}(x)~$ is called the
-principal or leading local truncation error and $C_{p+1}\,$ is the
-*error constant*. For a polynomial of degree $\,p\,$ we have
+principal or leading {index}`local truncation error` and $C_{p+1}\,$ is the
+*{index}`error constant`*. For a polynomial of degree $\,p\,$ we have
 $~y^{(p+1)}(x) = 0~$ and hence the method is of order $\,p\,$ if,
 $~C_0 = C_1 = C_2 = \dots = C_p=0,~$ and $~C_{p+1}\neq 0$.
 
