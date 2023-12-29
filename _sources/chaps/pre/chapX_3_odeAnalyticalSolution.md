@@ -20,7 +20,7 @@ $$
 \diff{y}{x} = g(x) h(y)
 $$(eq:ode:separable)
 
-is said to be separable or to have separable variables.
+is said to be separable or to have {index}`separable variables`.
 ```
 
 To solve the separable ODE {eq}`eq:ode:separable`, we re-arrange it as
@@ -107,7 +107,7 @@ $$(eq:ode:linear:constant)
 where the coefficients $a_p~(p=0, 1, \ldots, n)$ are constants.
 
 ```{prf:definition} Differential Operator $D$
-We define $D$ as the differential operator, which can be applied on a function $y=y(x)$ to obtain its derivative
+We define $D$ as the {index}`differential operator`, which can be applied on a function $y=y(x)$ to obtain its derivative
 
 $$
     D y = \diff{y}{x},
@@ -119,7 +119,7 @@ $$
     D^n y = \diff[n]{y}{x}.
 $$
 
-Thus we can write the ODE {eq}`eq:ode:linear:constant` in an **operator form** as
+Thus we can write the ODE {eq}`eq:ode:linear:constant` in an **{index}`operator form`** as
 
 $$
 \left( a_n D^n + a_{n-1} D^{n-1} + \cdots + a_1 D + a_0 \right) y = g(x).
@@ -139,7 +139,7 @@ $$
 ```
 
 ```{prf:definition} Characteristic Polynomial and Characteristic Equation
-For equation {eq}`eq:ode:linear:constant`, we define its **characteristic polynomial** as
+For equation {eq}`eq:ode:linear:constant`, we define its **{index}`characteristic polynomial`** as
 
 $$
 L(\xi) = a_n \xi^n + a_{n-1} \xi^{n-1} + \cdots + a_1 \xi + a_0.
@@ -153,7 +153,7 @@ $$
 L(\xi) = a_n \xi^n + a_{n-1} \xi^{n-1} + \cdots + a_1 \xi + a_0 = 0
 $$(eq:ode:linear:constant:char:equation)
 
-is called the **characteristic equation** of the ODE {eq}`eq:ode:linear:constant`.
+is called the **{index}`characteristic equation`** of the ODE {eq}`eq:ode:linear:constant`.
 
 Note: In some books, the characteristic equation is also called *auxiliary equation*.
 ```

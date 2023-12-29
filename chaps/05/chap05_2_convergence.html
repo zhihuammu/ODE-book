@@ -7,9 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
-    <title>5.2. Zero-Stability, Consistency and Convergence Theorem &#8212; Computational Methods in Ordinary Differential Equations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.2. Zero-Stability, Consistency and Convergence Theorem &#8212; Linear Multistep Methods</title>
   
   
   
@@ -37,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
@@ -54,6 +54,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -69,6 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/05/chap05_2_convergence';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="5.3. Chapter 5 Exercise" href="chap05_3_exercise.html" />
@@ -116,8 +118,8 @@ const thebe_selector_output = ".output, .cell_output"
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -159,8 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo3.svg" class="logo__image only-light" alt="Computational Methods in Ordinary Differential Equations - Home"/>
-    <script>document.write(`<img src="../../_static/logo3.svg" class="logo__image only-dark" alt="Computational Methods in Ordinary Differential Equations - Home"/>`);</script>
+    <img src="../../_static/logo2c.svg" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
+    <script>document.write(`<img src="../../_static/logo2c.svg" class="logo__image only-dark" alt="Linear Multistep Methods - Home"/>`);</script>
   
   
 </a></div>
@@ -181,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear Multistep Methods and Sparse Matrices</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">1. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../01/chap01_1_complexNumber.html">1.1. Complex Numbers</a></li>
@@ -260,6 +262,17 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<nav class="sidebar-indices-items">
+  <p class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
   </div>
   
   <div id="rtd-footer-container"></div>
@@ -402,25 +415,25 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="zero-stability-consistency-and-convergence-theorem">
+  <div class="tex2jax_ignore mathjax_ignore section" id="zero-stability-consistency-and-convergence-theorem">
 <h1><span class="section-number">5.2. </span>Zero-Stability, Consistency and Convergence Theorem<a class="headerlink" href="#zero-stability-consistency-and-convergence-theorem" title="Permalink to this heading">#</a></h1>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 5.6 </span> (Zero-Stability)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>A method is said to be zero-stable if it satisfies the root condition,
 i.e. the linear multistep method <a class="reference internal" href="chap05_1_rootCondition.html#equation-eq-ch04-1-1">(5.1)</a>
 is said to be <strong>zero-stable</strong> if no root of the
 first characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(\xi)\,\)</span> has modulus greater that
 one, and every root of modulus one is simple.</p>
-</section>
+</div>
 </div><div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 5.7 </span> (Consistency)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>The linear multistep method <a class="reference internal" href="chap05_1_rootCondition.html#equation-eq-ch04-1-1">(5.1)</a>
 is said to be <em>consistent</em> if it has order
 <span class="math notranslate nohighlight">\(\geq 1\)</span>. The condition that the order <span class="math notranslate nohighlight">\(p \geq 1\)</span> is called the
 condition of <em>consistency</em>.</p>
-</section>
+</div>
 </div><p>In terms of constants <span class="math notranslate nohighlight">\(C_p\)</span>, introduced in Chapter (3), the condition is
 equivalent to <span class="math notranslate nohighlight">\(C_0 = 0\)</span>, <span class="math notranslate nohighlight">\(C_1 = 0\)</span>. The condition of consistency can be
 expressed by the relations</p>
@@ -446,14 +459,14 @@ remaining roots <span class="math notranslate nohighlight">\(\,\xi_i\,, ~i=2,3,\
 roots</em>.</p>
 <div class="proof remark admonition" id="remark-2">
 <p class="admonition-title"><span class="caption-number">Remark 5.1 </span> (Three ways to assess consistency)</p>
-<section class="remark-content" id="proof-content">
+<div class="remark-content section" id="proof-content">
 <!-- :class: dropdown -->
 <ul class="simple">
 <li><p>The method’s order of accuray <span class="math notranslate nohighlight">\(\geq 1\)</span>.</p></li>
 <li><p>The constants satisfy <span class="math notranslate nohighlight">\(C_0=0\)</span> and <span class="math notranslate nohighlight">\(C_1=0\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\rho(1)=0\)</span> and <span class="math notranslate nohighlight">\(\rho'(1)=\sigma(1)\)</span>.</p></li>
 </ul>
-</section>
+</div>
 </div><p>A linear multistep method which is zero-stable is frequently called
 ‘stable’. Essentially a method is stable if errors introduced at one
 step are not propagated at subsequent steps. Zero-stability ensures that
@@ -462,13 +475,13 @@ are damped out in the limit as <span class="math notranslate nohighlight">\(\,h 
 to the fundamental theorem on linear multistep methods by ‘Dahlquist’:</p>
 <div class="proof theorem admonition" id="theorem-3">
 <p class="admonition-title"><span class="caption-number">Theorem 5.1 </span> (Convergence)</p>
-<section class="theorem-content" id="proof-content">
+<div class="theorem-content section" id="proof-content">
 <p>The necessary and sufficient conditions for a linear multistep method to
 be convergent are that it is consistent and zero-stable.</p>
-</section>
+</div>
 </div><div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 5.3 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Investigate the convergence of the third order Adams-Bashforth formula:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -535,10 +548,10 @@ satisfies the root condition and is zero-stable.</p>
 <p class="sd-card-text">so the method is also consistent <span class="math notranslate nohighlight">\((\text{i.e.}\,\rho(1) = 0,~ \rho'(1) = \sigma(1) )\)</span>.</p>
 <p class="sd-card-text">Therefore the method is convergent.</p>
 </div>
-</details></section>
+</details></div>
 </div><div class="proof example admonition" id="example-5">
 <p class="admonition-title"><span class="caption-number">Example 5.4 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Investigate the stability of the Milne’s predictor method:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -592,10 +605,10 @@ method is consistent
 <span class="math notranslate nohighlight">\((\text{i.e.}\ \,\rho(1) = 0,~ \rho'(1) = \sigma(1) = 4)\)</span>, and since
 zero stable, the method is also convergent.</p>
 </div>
-</details></section>
+</details></div>
 </div><div class="proof remark admonition" id="remark-6">
 <p class="admonition-title"><span class="caption-number">Remark 5.2 </span> (Adams methods)</p>
-<section class="remark-content" id="proof-content">
+<div class="remark-content section" id="proof-content">
 <p>The characteristic polynomial <span class="math notranslate nohighlight">\(\rho\)</span> for all Adams methods
 (AB and AM) are of the form:</p>
 <div class="math notranslate nohighlight">
@@ -609,8 +622,8 @@ zero stable, the method is also convergent.</p>
 <span class="math notranslate nohighlight">\(\xi_2,\xi_3,\dots,\xi_k = 0\)</span>, they all satisfy the root conditions and
 are zero stable. It can be shown that they are consistent and therefore,
 all Adams methods are convergent.</p>
-</section>
-</div></section>
+</div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {

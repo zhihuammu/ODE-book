@@ -32,7 +32,7 @@ $$
 
 Functions given in {eq}`eq:sequence:example:1` and {eq}`eq:sequence:example:2` are called sequences.
 
-::::{prf:definition} Sequence
+::::{prf:definition} {index}`Sequence`
 :label: def-sequence
 In mathematics, a sequence is a function whose domain is a set of integers. An output of a sequence is called a member or term of it. 
 Specifically, we will regard the expression $\{y_n\}_{n=0}^{+\infty}$ to be an alternative notation for the function $y_n=y(n), n=0,1,2,\ldots$

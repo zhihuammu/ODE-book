@@ -7,9 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
-    <title>Ordinary Differential Equations &#8212; Computational Methods in Ordinary Differential Equations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ordinary Differential Equations &#8212; Linear Multistep Methods</title>
   
   
   
@@ -37,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
@@ -54,6 +54,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -69,6 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/pre/chapX_2_ode';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Analytical Methods for ODEs" href="chapX_3_odeAnalyticalSolution.html" />
@@ -116,8 +118,8 @@ const thebe_selector_output = ".output, .cell_output"
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -159,8 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo3.svg" class="logo__image only-light" alt="Computational Methods in Ordinary Differential Equations - Home"/>
-    <script>document.write(`<img src="../../_static/logo3.svg" class="logo__image only-dark" alt="Computational Methods in Ordinary Differential Equations - Home"/>`);</script>
+    <img src="../../_static/logo2c.svg" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
+    <script>document.write(`<img src="../../_static/logo2c.svg" class="logo__image only-dark" alt="Linear Multistep Methods - Home"/>`);</script>
   
   
 </a></div>
@@ -181,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear Multistep Methods and Sparse Matrices</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">1. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../01/chap01_1_complexNumber.html">1.1. Complex Numbers</a></li>
@@ -260,6 +262,17 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<nav class="sidebar-indices-items">
+  <p class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
   </div>
   
   <div id="rtd-footer-container"></div>
@@ -415,7 +428,7 @@ document.write(`
   <div class="math notranslate nohighlight">
 \[\newcommand{\diff}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}
 \newcommand{\pdiff}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}\]</div>
-<section class="tex2jax_ignore mathjax_ignore" id="ordinary-differential-equations">
+<div class="tex2jax_ignore mathjax_ignore section" id="ordinary-differential-equations">
 <span id="chap-pre-2"></span><h1>Ordinary Differential Equations<a class="headerlink" href="#ordinary-differential-equations" title="Permalink to this heading">#</a></h1>
 <p>For an <span class="math notranslate nohighlight">\(n\)</span>-th order ordinary differential equation, we can write it in</p>
 <ul>
@@ -434,10 +447,10 @@ document.write(`
 </ul>
 <div class="proof remark admonition" id="remark-0">
 <p class="admonition-title"><span class="caption-number">Remark 4 </span> (Interval of definition <span class="math notranslate nohighlight">\(I\)</span>)</p>
-<section class="remark-content" id="proof-content">
+<div class="remark-content section" id="proof-content">
 <p>For a problem governed/represented by an ODE, we need to give the actual ODE in form <a class="reference internal" href="#equation-eq-ode-form-general">(2)</a> or <a class="reference internal" href="#equation-eq-ode-form-normal">(3)</a>, besides we also need to give the interval <span class="math notranslate nohighlight">\(I\)</span> that defines the problem. We call this interval <span class="math notranslate nohighlight">\(I\)</span>:</p>
 <ul class="simple">
-<li><p>the <strong>interval of definition</strong>,</p></li>
+<li><p>the <strong><span class="target" id="index-0"></span>interval of definition</strong>,</p></li>
 <li><p>the <strong>interval of existence</strong>,</p></li>
 <li><p>the <strong>interval of validity</strong>,</p></li>
 <li><p>or the <strong>domain of the solution</strong>.</p></li>
@@ -449,16 +462,16 @@ document.write(`
 <li><p>an infinite interval <span class="math notranslate nohighlight">\((a, \infty)\)</span>,</p></li>
 </ul>
 <p>and so on.</p>
-</section>
+</div>
 </div><div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 2 </span> (Explicit Solution of an ODE)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>A function <span class="math notranslate nohighlight">\(\phi(x)\)</span> that when substituted for <span class="math notranslate nohighlight">\(y\)</span> in equation <a class="reference internal" href="#equation-eq-ode-form-general">(2)</a> or <a class="reference internal" href="#equation-eq-ode-form-normal">(3)</a>
-satisfies the equation for all <span class="math notranslate nohighlight">\(x\)</span> in the interval <span class="math notranslate nohighlight">\(I\)</span> is called an <strong>explicit solution</strong> to the equation on <span class="math notranslate nohighlight">\(I\)</span>.</p>
-</section>
+satisfies the equation for all <span class="math notranslate nohighlight">\(x\)</span> in the interval <span class="math notranslate nohighlight">\(I\)</span> is called an <strong><span class="target" id="index-1"></span>explicit solution</strong> to the equation on <span class="math notranslate nohighlight">\(I\)</span>.</p>
+</div>
 </div><div class="proof example admonition" id="example-2">
 <p class="admonition-title"><span class="caption-number">Example 4 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <ol class="arabic">
 <li><p><span class="math notranslate nohighlight">\(\phi(x)=x^2 - x^{-1}\)</span> is an explicit solution to the equation</p>
 <div class="math notranslate nohighlight">
@@ -473,15 +486,15 @@ satisfies the equation for all <span class="math notranslate nohighlight">\(x\)<
     \]</div>
 </li>
 </ol>
-</section>
+</div>
 </div><div class="proof definition admonition" id="definition-3">
 <p class="admonition-title"><span class="caption-number">Definition 3 </span> (Implicit Solution of an ODE)</p>
-<section class="definition-content" id="proof-content">
-<p>A relation <span class="math notranslate nohighlight">\(G(x, y) = 0\)</span> is said to be an <strong>implicit solution</strong> of an ordinary differential equation <a class="reference internal" href="#equation-eq-ode-form-general">(2)</a> on an interval <span class="math notranslate nohighlight">\(I\)</span>, provided that there exists at least one function <span class="math notranslate nohighlight">\(\phi\)</span> that satisfies the relation as well as the differential equation on <span class="math notranslate nohighlight">\(I\)</span>.</p>
-</section>
+<div class="definition-content section" id="proof-content">
+<p>A relation <span class="math notranslate nohighlight">\(G(x, y) = 0\)</span> is said to be an <strong><span class="target" id="index-2"></span>implicit solution</strong> of an ordinary differential equation <a class="reference internal" href="#equation-eq-ode-form-general">(2)</a> on an interval <span class="math notranslate nohighlight">\(I\)</span>, provided that there exists at least one function <span class="math notranslate nohighlight">\(\phi\)</span> that satisfies the relation as well as the differential equation on <span class="math notranslate nohighlight">\(I\)</span>.</p>
+</div>
 </div><div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 5 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <ol class="arabic">
 <li><p>The relation <span class="math notranslate nohighlight">\(x^2+y^2=25\)</span> is an implicit solution to the equation</p>
 <div class="math notranslate nohighlight">
@@ -497,12 +510,12 @@ satisfies the equation for all <span class="math notranslate nohighlight">\(x\)<
     \]</div>
 </li>
 </ol>
-</section>
+</div>
 </div><!-- ## Initial value problem -->
 <div class="proof definition admonition" id="definition-5">
 <p class="admonition-title"><span class="caption-number">Definition 4 </span> (Initial Value Problem)</p>
-<section class="definition-content" id="proof-content">
-<p>By an <strong>initial value problem</strong> for an <span class="math notranslate nohighlight">\(n\)</span>-th order differential equation</p>
+<div class="definition-content section" id="proof-content">
+<p>By an <strong><span class="target" id="index-3"></span>initial value problem</strong> for an <span class="math notranslate nohighlight">\(n\)</span>-th order differential equation</p>
 <div class="math notranslate nohighlight">
 \[
 F(x, y, y', y'', \ldots, y^{(n)}) = 0,
@@ -516,10 +529,10 @@ y'(x_0) = &amp; ~y_1, \\
 y^{(n-1)}(x_0) = &amp; ~y_{n-1}
 \end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_0 \in I\)</span> and <span class="math notranslate nohighlight">\(y_0\)</span>, <span class="math notranslate nohighlight">\(y_1\)</span>, … , <span class="math notranslate nohighlight">\(y_{n-1}\)</span> are given constants.</p>
-</section>
+</div>
 </div><div class="proof theorem admonition" id="theorem-6">
 <p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Existence and Uniqueness of Solution)</p>
-<section class="theorem-content" id="proof-content">
+<div class="theorem-content section" id="proof-content">
 <p>Consider the initial value problem</p>
 <div class="math notranslate nohighlight">
 \[
@@ -531,8 +544,8 @@ y^{(n-1)}(x_0) = &amp; ~y_{n-1}
 R=\left\{ (x,y): a&lt;x&lt;b, ~ c&lt;y&lt;d \right\}
 \]</div>
 <p>that contains the point <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>, then the initial value problem has a unique solution <span class="math notranslate nohighlight">\(\phi(x)\)</span> in some interval <span class="math notranslate nohighlight">\(x_0 - \delta &lt; x &lt; x_0 + \delta\)</span>, where <span class="math notranslate nohighlight">\(\delta\)</span> is a positive number.</p>
-</section>
-</div><section id="systems-of-differential-equations">
+</div>
+</div><div class="section" id="systems-of-differential-equations">
 <h2>Systems of Differential Equations<a class="headerlink" href="#systems-of-differential-equations" title="Permalink to this heading">#</a></h2>
 <p>A system of ordinary differential equations is two or more
 equations involving the derivatives of two or more unknown functions of a single
@@ -554,8 +567,8 @@ on this interval.</p>
 $\N$, $\N_0$
 $\Z$
 $\R$
-$\C$ --></section>
-</section>
+$\C$ --></div>
+</div>
 
     <script type="text/x-thebe-config">
     {

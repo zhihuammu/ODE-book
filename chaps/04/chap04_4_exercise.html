@@ -7,9 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
-    <title>4.4. Chapter 4 Exercises &#8212; Computational Methods in Ordinary Differential Equations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.4. Chapter 4 Exercises &#8212; Linear Multistep Methods</title>
   
   
   
@@ -37,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
@@ -54,6 +54,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -69,6 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/04/chap04_4_exercise';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="5. Multistep Methods: Stability I" href="../05/chap05_0.html" />
@@ -116,8 +118,8 @@ const thebe_selector_output = ".output, .cell_output"
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -159,8 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo3.svg" class="logo__image only-light" alt="Computational Methods in Ordinary Differential Equations - Home"/>
-    <script>document.write(`<img src="../../_static/logo3.svg" class="logo__image only-dark" alt="Computational Methods in Ordinary Differential Equations - Home"/>`);</script>
+    <img src="../../_static/logo2c.svg" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
+    <script>document.write(`<img src="../../_static/logo2c.svg" class="logo__image only-dark" alt="Linear Multistep Methods - Home"/>`);</script>
   
   
 </a></div>
@@ -181,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear Multistep Methods and Sparse Matrices</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">1. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../01/chap01_1_complexNumber.html">1.1. Complex Numbers</a></li>
@@ -260,6 +262,17 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<nav class="sidebar-indices-items">
+  <p class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
   </div>
   
   <div id="rtd-footer-container"></div>
@@ -402,13 +415,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="chapter-4-exercises">
+  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-4-exercises">
 <span id="chap-errorconstant-exercise"></span><h1><span class="section-number">4.4. </span>Chapter 4 Exercises<a class="headerlink" href="#chapter-4-exercises" title="Permalink to this heading">#</a></h1>
 <p>You should try the following exercise questions first, then check with the answers.</p>
 <div class="exercise admonition" id="chap04-ex-4.1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 4.1 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Use a Gregory-Newton interpolation formula to derive the error term
 for the following integration formulae:</p>
 <ol class="arabic simple">
@@ -416,12 +429,12 @@ for the following integration formulae:</p>
 Hint: G-N backward <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(-1\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle y_{j+1} ~=~ y_j + \tfrac{h}{2}(f_{j+1} + f_j)\)</span></p></li>
 </ol>
-</section>
+</div>
 </div>
 <div class="solution dropdown admonition" id="chaps/04/chap04_4_exercise-solution-1">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#chap04-ex-4.1"> Exercise 4.1</a></p>
-<section id="solution-content">
+<div class="section" id="solution-content">
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(\frac{-1}{24}h^4f'''(\xi)\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\frac{-1}{12}h^3f''(\xi)\)</span></p></li>
@@ -439,12 +452,12 @@ Hint: G-N backward <span class="math notranslate nohighlight">\(0\)</span> to <s
  </div>
 </li>
 </ul>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="chap04-ex-4.2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 4.2 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Use the method described in the text (see <a class="reference internal" href="chap04_2_errorConstant.html#chap04-example-3">Example 4.3</a>) to find the
 order and the error constants of the following formulae:</p>
 <ol class="arabic simple">
@@ -457,12 +470,12 @@ order and the error constants of the following formulae:</p>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle y_{j+1} ~=~ y_j + \tfrac{h}{720}(1901f_j - 2774f_{j-1}
         + 2616f_{j-2} - 1274f_{j-3} + 251f_{j-4})\)</span></p></li>
 </ol>
-</section>
+</div>
 </div>
 <div class="solution dropdown admonition" id="chaps/04/chap04_4_exercise-solution-3">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#chap04-ex-4.2"> Exercise 4.2</a></p>
-<section id="solution-content">
+<div class="section" id="solution-content">
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(\frac{-1}{24}h^4f'''(\xi)\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\frac{-1}{90}h^5f^{iv}(\xi)\)</span>，</p></li>
@@ -473,12 +486,12 @@ order and the error constants of the following formulae:</p>
 <div align="center">
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1128062/sp/112806200/embedIframeJs/uiconf_id/27474902/partner_id/1128062?iframeembed=true&playerId=kaltura_player&entry_id=1_mrrhokm2&flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[streamerType]=hdnetwork&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_sy5vqlkn" width="575" height="360" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="odeEx2Q2_a_b"></iframe>
 </div>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="chap04-ex-4.3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 4.3 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Derive a Milne’s Device local error estimate for the Milne-Simpson
 Predictor-Corrector method:</p>
 <div class="math notranslate nohighlight">
@@ -489,12 +502,12 @@ Predictor-Corrector method:</p>
         y^{(c)}_{j+1} ~&amp;=~ y_{j-1} + \tfrac{h}{3}(f_{j+1} + 4f_j + f_{j-1})
         - \tfrac{1}{90}h^5y^v(\xi_2)   
 \end{aligned}\end{split}\]</div>
-</section>
+</div>
 </div>
 <div class="solution dropdown admonition" id="chaps/04/chap04_4_exercise-solution-5">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#chap04-ex-4.3"> Exercise 4.3</a></p>
-<section id="solution-content">
+<div class="section" id="solution-content">
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -504,12 +517,12 @@ Predictor-Corrector method:</p>
 &amp; = \frac{-1}{29} \left( y_{j+1}^{(c)} - y_{j+1}^{(p)} \right)
 \end{aligned}
 \end{split}\]</div>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="chap04-ex-4.4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 4.4 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Modify <a class="reference internal" href="../03/chap03_6_codes.html#ch03-program2"><span class="std std-ref">Program 2 (Matlab and Python)</span></a> for Adams–Bashforth method (Chapter 2)
 to implement Milne-Simpson Predictor-Corrector method given in <a class="reference internal" href="#chap04-ex-4.3"><span class="std std-numref">Exercise 4.3</span></a>. Use your
 program to find solution for the initial–value–problem</p>
@@ -524,12 +537,12 @@ formula, derived in question 3 above to find an error estimate at
 <span class="math notranslate nohighlight">\(\,x \!=\! 1.0\,\)</span>. Compare the error with the actual error and that
 of the Adams–Bashforth–Moulton method calculated in the lecture
 notes, <a class="reference internal" href="chap04_3_MilineDevice.html#chap04-example-5">Example 4.5</a>, and comment.</p>
-</section>
+</div>
 </div>
 <div class="solution dropdown admonition" id="chaps/04/chap04_4_exercise-solution-7">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#chap04-ex-4.4"> Exercise 4.4</a></p>
-<section id="solution-content">
+<div class="section" id="solution-content">
 <p>At <span class="math notranslate nohighlight">\(x = 1.0\)</span>:</p>
 <p>The error in ABM method using Milne’s Device error formula is
 <span class="math notranslate nohighlight">\(\approx 1.2\times10^{-7}\)</span>, the actual error is
@@ -541,9 +554,9 @@ notes, <a class="reference internal" href="chap04_3_MilineDevice.html#chap04-exa
 <div>
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1128062/sp/112806200/embedIframeJs/uiconf_id/27474902/partner_id/1128062?iframeembed=true&playerId=kaltura_player&entry_id=1_xjg10vmf&flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[streamerType]=hdnetwork&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_u6yq2gnk" width="575" height="360" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="odeEx2Q4"></iframe>
 </div>
-</section>
 </div>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

@@ -7,9 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
-    <title>Definitions, Classification and Terminology &#8212; Computational Methods in Ordinary Differential Equations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Definitions, Classification and Terminology &#8212; Linear Multistep Methods</title>
   
   
   
@@ -37,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
@@ -54,6 +54,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -69,6 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/pre/chapX_1_definition';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Ordinary Differential Equations" href="chapX_2_ode.html" />
@@ -116,8 +118,8 @@ const thebe_selector_output = ".output, .cell_output"
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -159,8 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo3.svg" class="logo__image only-light" alt="Computational Methods in Ordinary Differential Equations - Home"/>
-    <script>document.write(`<img src="../../_static/logo3.svg" class="logo__image only-dark" alt="Computational Methods in Ordinary Differential Equations - Home"/>`);</script>
+    <img src="../../_static/logo2c.svg" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
+    <script>document.write(`<img src="../../_static/logo2c.svg" class="logo__image only-dark" alt="Linear Multistep Methods - Home"/>`);</script>
   
   
 </a></div>
@@ -181,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear Multistep Methods and Sparse Matrices</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">1. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../01/chap01_1_complexNumber.html">1.1. Complex Numbers</a></li>
@@ -260,6 +262,17 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<nav class="sidebar-indices-items">
+  <p class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
   </div>
   
   <div id="rtd-footer-container"></div>
@@ -405,23 +418,23 @@ document.write(`
   <div class="math notranslate nohighlight">
 \[\newcommand{\diff}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}
 \newcommand{\pdiff}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}\]</div>
-<section class="tex2jax_ignore mathjax_ignore" id="definitions-classification-and-terminology">
+<div class="tex2jax_ignore mathjax_ignore section" id="definitions-classification-and-terminology">
 <span id="chap-pre-1"></span><h1>Definitions, Classification and Terminology<a class="headerlink" href="#definitions-classification-and-terminology" title="Permalink to this heading">#</a></h1>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 1 </span> (Differential Equations)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>An equation containing the derivatives of one or more unknown functions (or
-dependent variables), with respect to one or more independent variables, is said to be a <strong>differential equation</strong> (DE).</p>
-</section>
+dependent variables), with respect to one or more independent variables, is said to be a <strong><span class="target" id="index-0"></span>differential equation</strong> (DE).</p>
+</div>
 </div><p>We can classify differential equations by <strong>type</strong>, <strong>order</strong>, <strong>linearity</strong> and <strong>homogeneity</strong>.</p>
 <ol class="arabic">
 <li><p>Classification by Type</p>
 <ul>
 <li><p><strong>Ordinary Differential Equation (ODE)</strong></p>
-<p>If a differential equation contains only ordinary derivatives of one or more unknown functions with respect to a single independent variable, it is said to be an ordinary differential equation (ODE).</p>
+<p>If a differential equation contains only ordinary derivatives of one or more unknown functions with respect to a single independent variable, it is said to be an <span class="target" id="index-1"></span>ordinary differential equation` (ODE).</p>
 <div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 1 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>The following equations are ordinary differential equations:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -434,13 +447,13 @@ dependent variables), with respect to one or more independent variables, is said
 <li><p>In the third equation, <span class="math notranslate nohighlight">\(x=x(t)\)</span> and <span class="math notranslate nohighlight">\(y=y(t)\)</span>.</p></li>
 </ul>
 <p>The functions here are functions of a single variable.</p>
-</section>
+</div>
 </div></li>
 <li><p><strong>Partial Differential Equation (PDE)</strong></p>
-<p>An equation involving partial derivatives of one or more unknown functions of two or more independent variables is called a partial differential equation (PDE).</p>
+<p>An equation involving partial derivatives of one or more unknown functions of two or more independent variables is called a <span class="target" id="index-2"></span>partial differential equation (PDE).</p>
 <div class="proof example admonition" id="example-2">
 <p class="admonition-title"><span class="caption-number">Example 2 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>The following equations are partial differential equations:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -454,14 +467,14 @@ dependent variables), with respect to one or more independent variables, is said
 <li><p>In the second equation, <span class="math notranslate nohighlight">\(u=u(y,\ldots)\)</span>, <span class="math notranslate nohighlight">\(v=v(x,\ldots)\)</span></p></li>
 </ul>
 <p>The functions here are multi-variable functions.</p>
-</section>
+</div>
 </div></li>
 </ul>
 </li>
 </ol>
 <div class="proof remark admonition" id="remark-3">
 <p class="admonition-title"><span class="caption-number">Remark 1 </span> (Notations of derivatives)</p>
-<section class="remark-content" id="proof-content">
+<div class="remark-content section" id="proof-content">
 <p>Ordinary derivatives can be written by using</p>
 <ul>
 <li><p>Leibniz notation</p>
@@ -480,23 +493,23 @@ dependent variables), with respect to one or more independent variables, is said
 </ul>
 </li>
 </ul>
-</section>
+</div>
 </div><ol class="arabic" start="2">
 <li><p>Classification by Order</p>
 <p>The order of a differential equation is the order of the highest derivative in the equation.</p>
 <div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 3 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>The following equation</p>
 <div class="math notranslate nohighlight">
 \[
 \diff[2]{y}{x} + 5 \left(\diff{y}{x}\right)^3 - 4y = e^x
 \]</div>
 <p>is a second-order ordinary differential equation.</p>
-</section>
+</div>
 </div><div class="proof remark admonition" id="remark-5">
 <p class="admonition-title"><span class="caption-number">Remark 2 </span> (Order and Degree of differential equations)</p>
-<section class="remark-content" id="proof-content">
+<div class="remark-content section" id="proof-content">
 <ul class="simple">
 <li><p><strong>Order</strong>: The order of a differential equation is defined to be that of the highest order derivative it contains.</p></li>
 <li><p><strong>Degree</strong>: The degree of a differential equation is defined as the power to which the highest order derivative is raised.</p></li>
@@ -507,12 +520,12 @@ dependent variables), with respect to one or more independent variables, is said
     \left(y'''\right)^2 + \left(y''\right)^4+ y =x
 \]</div>
 <p>is a second-degree, third-order differential equation.</p>
-</section>
+</div>
 </div></li>
 </ol>
 <div class="proof remark admonition" id="remark-6">
 <p class="admonition-title"><span class="caption-number">Remark 3 </span> (Forms of Differential Equations)</p>
-<section class="remark-content" id="proof-content">
+<div class="remark-content section" id="proof-content">
 <p>For an <span class="math notranslate nohighlight">\(n\)</span>-th order ordinary differential equation, we can express it in</p>
 <ul>
 <li><p><strong>General Form</strong></p>
@@ -533,7 +546,7 @@ dependent variables), with respect to one or more independent variables, is said
 </ul>
 </li>
 </ul>
-</section>
+</div>
 </div><ol class="arabic" start="3">
 <li><p>Classification by Linearity</p>
 <ul>
@@ -572,7 +585,7 @@ dependent variables), with respect to one or more independent variables, is said
 </ul>
 </li>
 </ol>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
