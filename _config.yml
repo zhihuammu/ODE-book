@@ -5,7 +5,9 @@ title     : Linear Multistep Methods
 author    : Zhihua Ma
 copyright : "2023--2025"  # Copyright year to be placed in the footer
 logo      : images/logo2c.svg
+last-updated: "2023"
 only_build_toc_files: true  
+
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -30,7 +32,7 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  favicon               : "images/favicon.svg"  # A path to a favicon image
+  favicon               : images/favicon.svg  # A path to a favicon image
   home_page_in_navbar   : false
   use_multitoc_numbering: false      
   use_repository_button : false
@@ -38,13 +40,33 @@ html:
   use_issues_button     : false
   use_download_button   : true
   use_source_button     : false
-  comments:
-    hypothesis          : false
+  extra_footer : |
+      <div>
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+          All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+      </div>
+  # comments:
+    # hypothesis          : false
 #  announcement: "My announcement!"
   
 sphinx:
   config:
-#    bibtex_reference_style: author_year  
+# bibtex_reference_style: author_year    
+    html_show_copyright: true
+    language: en          
+    latex_elements:
+        preamble: |
+          \newcommand{\N}{\mathbb{N}}
+          \newcommand{\Z}{\mathbb{Z}}
+          \newcommand{\R}{\mathbb{R}}
+          \newcommand{\C}{\mathbb{C}}
+          \newcommand{\D}{\mathrm{D}}
+          \newcommand{\E}{\mathrm{E}}
+          \newcommand{\S}{\mathrm{S}}          
+          \newcommand{\dy}{\mathrm{d}y}
+          \newcommand{\dx}{\mathrm{d}x}
+          \newcommand{\ds}{\mathrm{d}s}
+          \newcommand{\dt}{\mathrm{d}t}                                        
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     mathjax3_config:
       tex:
@@ -55,26 +77,29 @@ sphinx:
           "C": "\\mathbb{C}"
           "D": "\\mathrm{D}"
           "E": "\\mathrm{E}"
+          "S": "\\mathrm{S}"          
           "dy": "\\mathrm{d}y"
           "dx": "\\mathrm{d}x"
           "ds": "\\mathrm{d}s"
           "dt": "\\mathrm{d}t"
-
-    language: en          
     hide_solutions: false
 #    html_extra_path: exSol
-#    html_theme: sphinx_material
+    # html_theme: sphinx_material
     html_theme: sphinx_book_theme
-    html_theme_options:  
+  #  html_theme: pydata_sphinx_theme
+    html_theme_options:    
+      # footer_start  : copyright
+      # footer_center : 
+      # footer_end    : theme-version    
       primary_sidebar_end   : 
-        - indices.html
+        - indices
+        - sphinx-version        
   extra_extensions:
     - sphinx_proof
     - sphinx_exercise    
     - sphinxcontrib.tikz
-    - sphinx_togglebutton      
+    # - sphinx_togglebutton      
     - sphinx_inline_tabs    
-
 
 parse:
   myst_enable_extensions:

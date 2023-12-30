@@ -22,12 +22,12 @@ value of $f^{(p)}_{j+1}$ is used in the Adams--Moulton formula to
 correct the approximation given by the Adams--Bashforth formula, and to
 evaluate an improved value of $f_{j+1}$. This is the most common
 procedure for applying predictor-corrector method used and is denoted by
-*PECE*; $P$ for computing the Predictor value of $y_{j+1}$, $E$ for
-Evaluating the function $f^{(p)}_{j+1}$, $C$ for applying the Corrector
-formula and $E$ for a new evaluation of the function.
+**PECE**; **P** for computing the Predictor value of $y_{j+1}$, **E** for
+Evaluating the function $f^{(p)}_{j+1}$, **C** for applying the Corrector
+formula and **E** for a new evaluation of the function.
 
 It is common to take additional corrector steps in order to improve the
-solution. For example, one possibility is *PECECE* (or PE(CE)$^2$)
+solution. For example, one possibility is **PECECE** (or PE(CE)$^2$)
 procedure (i.e. two fixed point iteration per step). Alternatively,
 corrector iterations can be carried out until the difference between two
 successive iterations is less than a pre-specified tolerance.

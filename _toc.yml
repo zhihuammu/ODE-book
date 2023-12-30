@@ -59,10 +59,3 @@ parts:
     numbered: false
     chapters:  
     - file: chaps/append/chapY_odeSolvers
-#    - file: chaps/append/chapZ_test
-    
-    # - url: https://uk.mathworks.com/help/matlab/ordinary-differential-equations.html
-    #   title: ODE solvers in Matlab 
-
-    # - url: https://docs.scipy.org/doc/scipy/reference/integrate.html#solving-initial-value-problems-for-ode-systems
-    #   title: ODE solvers Python 
