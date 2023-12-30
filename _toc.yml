@@ -15,9 +15,9 @@ parts:
     maxdepth: 1
     numbered: false
     chapters: 
-    - file: chaps/pre/chapX_0
+    - file: chaps/00/chap00_0
       sections: 
-      - glob: chaps/pre/chapX_*
+      - glob: chaps/00/chap00_*
     
   - caption: Lecture Notes
     maxdepth: 1

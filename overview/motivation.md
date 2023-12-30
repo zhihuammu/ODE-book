@@ -2,7 +2,7 @@
 
 :Unit Title: Computational Methods in Ordinary Differential Equations
 
-- [Runge-Kutta Methods and Linear Algebra](https://jonshiach.github.io/ODEs-book/intro.html) -- Jon Shiach
+- Runge-Kutta Methods and Linear Algebra -- Jon Shiach
 - Linear Multistep Methods and Sparse Matrices -- Zhihua Ma
 
 ## What will we learn?

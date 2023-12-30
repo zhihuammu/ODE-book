@@ -106,35 +106,35 @@ $$(eq:ode:linear:constant)
 
 where the coefficients $a_p~(p=0, 1, \ldots, n)$ are constants.
 
-```{prf:definition} Differential Operator $D$
-We define $D$ as the {index}`differential operator`, which can be applied on a function $y=y(x)$ to obtain its derivative
+```{prf:definition} Differential Operator $\D$
+We define $\D$ as the {index}`differential operator`, which can be applied on a function $y=y(x)$ to obtain its derivative
 
 $$
-    D y = \diff{y}{x},
+    \D y = \diff{y}{x},
 $$
 
 then the $n$-th derivative is 
 
 $$
-    D^n y = \diff[n]{y}{x}.
+    \D^n y = \diff[n]{y}{x}.
 $$
 
 Thus we can write the ODE {eq}`eq:ode:linear:constant` in an **{index}`operator form`** as
 
 $$
-\left( a_n D^n + a_{n-1} D^{n-1} + \cdots + a_1 D + a_0 \right) y = g(x).
+\left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = g(x).
 $$(eq:ode:operator:form)
 
 We define the overall operation on $y$ as
 
 $$
-L(D)= a_n D^n + a_{n-1} D^{n-1} + \cdots + a_1 D + a_0,
+L(\D)= a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0,
 $$(eq:ode:operator:LD)
 
 then the equation can also be written as
 
 $$
-L(D) y = g(x).
+L(\D) y = g(x).
 $$
 ```
 
@@ -145,7 +145,7 @@ $$
 L(\xi) = a_n \xi^n + a_{n-1} \xi^{n-1} + \cdots + a_1 \xi + a_0.
 $$(eq:ode:linear:constant:char:polynomial)
 
-Note: We can simply replace the operator $D$ in formula {eq}`eq:ode:operator:LD` with $\xi$ to obtain the characteristic polynomial.
+Note: We can simply replace the operator $\D$ in formula {eq}`eq:ode:operator:LD` with $\xi$ to obtain the characteristic polynomial.
 
 The equation
 
@@ -164,7 +164,7 @@ Note: In some books, the characteristic equation is also called *auxiliary equat
 When the right hand side of equation {eq}`eq:ode:linear:constant` vanishes, i.e. $g(x)$, we obtain a linear homogeneous ordinary differential equation with constant coefficients
 
 $$
-L(D) y = \left( a_n D^n + a_{n-1} D^{n-1} + \cdots + a_1 D + a_0 \right) y = 0
+L(\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = 0
 $$(eq:ode:linear:homogeneous:constant)
 
 
@@ -191,7 +191,7 @@ Solve $a_1 y' + a_0 y =0$
 :class: hint
 
 ::::{tab-set}
-```{tab-item} Method 1
+```{tab-item} Method 1 (integration)
 Writing the equation as
 
 $$
@@ -219,8 +219,14 @@ y = e^{-\frac{a_0}{a_1} x + c_1} = C e^{-\frac{a_0}{a_1} x }
 $$
 ```
 
-```{tab-item} Method 2
-The characteristic equation is 
+```{tab-item} Method 2 (characteristic equation)
+Using the differential operator $\D$ to rewrite the equation as
+
+$$
+(a_1\D + a_0) y=0,
+$$
+
+and we get the characteristic equation
 
 $$
 a_1 \xi + a_0 = 0,
@@ -317,7 +323,7 @@ Solving the following ODEs:
 #### Higher-order ODEs
 Solve an $n$-th order ODE 
 $
-\left( a_n D^n + a_{n-1} D^{n-1} + \cdots + a_1 D + a_0 \right) y = 0
+\left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = 0
 $
 
 ```{admonition} Solution
@@ -376,22 +382,22 @@ $$
 Here we consider a linear nonhomogeneous ODE with constant coefficients given by
 
 $$
-L(D) y = \left( a_n D^n + a_{n-1} D^{n-1} + \cdots + a_1 D + a_0 \right) y = g(x), \quad g(x)\neq 0
+L(\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = g(x), \quad g(x)\neq 0
 $$(eq:ode:linear:nonhomogeneous:constant)
 
 The solution $y(x)$ to equation {eq}`eq:ode:linear:nonhomogeneous:constant` includes two parts:
 
-- A homogeneous component $y_h(x)$, which is the general solution to the homogeneous equation $L(D) y_h = 0$;
+- A homogeneous component $y_h(x)$, which is the general solution to the homogeneous equation $L(\D) y_h = 0$;
 
-- A particular component $y_p(x)$, which is a particular solution to the nonhomogeneous equation $L(D) y_p = g(x)$.
+- A particular component $y_p(x)$, which is a particular solution to the nonhomogeneous equation $L(\D) y_p = g(x)$.
 
 In conclusion, the solution to equation {eq}`eq:ode:linear:nonhomogeneous:constant` is 
 
 $$
 \left\{
 \begin{aligned}
- L(D) y_h(x) & = 0 \\
- L(D) y_p(x) & = g(x) \\
+ L(\D) y_h(x) & = 0 \\
+ L(\D) y_p(x) & = g(x) \\
  y(x) & = y_h (x) + y_p(x) \\
 \end{aligned}
 \right.

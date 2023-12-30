@@ -15,7 +15,7 @@ We can classify differential equations by **type**, **order**, **linearity** and
 1. Classification by Type
     - **Ordinary Differential Equation (ODE)**
 
-        If a differential equation contains only ordinary derivatives of one or more unknown functions with respect to a single independent variable, it is said to be an {index}`ordinary differential equation`` (ODE).
+        If a differential equation contains only ordinary derivatives of one or more unknown functions with respect to a single independent variable, it is said to be an {index}`ordinary differential equation` (ODE).
 
         ```{prf:example}    
         The following equations are ordinary differential equations:
