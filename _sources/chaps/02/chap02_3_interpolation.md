@@ -5,7 +5,7 @@
 
 
 :::{admonition} Question
-:class: important
+:class: question
 Given a general sequence
 $\left\{f_j\right\}_{j=-\infty}^{+\infty}$, if we know the value of each
 member $f_j$, how can we find the value of $f(x)$ for
