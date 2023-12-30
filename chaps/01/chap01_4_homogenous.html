@@ -67,7 +67,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/01/chap01_4_homogenous';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
@@ -176,10 +176,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../pre/chapX_0.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../pre/chapX_1_definition.html">Definitions, Classification and Terminology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pre/chapX_2_ode.html">Ordinary Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pre/chapX_3_odeAnalyticalSolution.html">Analytical Methods for ODEs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_0.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_1_definition.html">Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_2_ode.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_3_analytical.html">Analytical Methods for ODEs</a></li>
 </ul>
 </li>
 </ul>
@@ -462,8 +462,8 @@ L(\xi)= a_0 + a_1 \xi + a_2 \xi^2 + \ldots + a_{k-1} \xi^{k-1} + a_k \xi^{k}=0.
 <p class="admonition-title"><span class="caption-number">Theorem 1.2 </span></p>
 <div class="theorem-content section" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\xi_p~(p=1,2,3,\ldots,k)\)</span> be any solution to the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(1.19)</a>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-399f15b2-1f12-44e9-9820-b9560f84830d">
-<span class="eqno">(1.20)<a class="headerlink" href="#equation-399f15b2-1f12-44e9-9820-b9560f84830d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5fb56e4a-07d7-43f6-a615-7b565582ae02">
+<span class="eqno">(1.20)<a class="headerlink" href="#equation-5fb56e4a-07d7-43f6-a615-7b565582ae02" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_n = \xi_p^n
 \end{equation}\]</div>
 <p>is a solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a>.</p>
@@ -492,8 +492,8 @@ L(E) \xi_p^n = ~ &amp; \left(a_0 + a_1 E + a_2 E^2 + \ldots + a_{k-1}E^{k-1}+a_k
 <p class="admonition-title"><span class="caption-number">Theorem 1.3 </span></p>
 <div class="theorem-content section" id="proof-content">
 <p>Assume the <span class="math notranslate nohighlight">\(k\)</span> roots of  the characteristic equation are distinct, then a fundamental set of solutions is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-65eb8d6c-51fd-47d7-bc73-94d71edef4a6">
-<span class="eqno">(1.21)<a class="headerlink" href="#equation-65eb8d6c-51fd-47d7-bc73-94d71edef4a6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-489d19b5-7818-4196-8147-3a68df4250ce">
+<span class="eqno">(1.21)<a class="headerlink" href="#equation-489d19b5-7818-4196-8147-3a68df4250ce" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \xi_p^n \quad (p=1,2,\ldots,k).
 \end{equation}\]</div>
 <p>An immediate consequence of this theorem, for this particular case, is that the general solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a> is</p>

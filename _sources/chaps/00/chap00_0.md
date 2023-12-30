@@ -1,6 +1,6 @@
 # Basics of Differential Equations
 
-This part gives an introduction to differential equations (DE), touching on the following topics:
+This part gives an introduction to differential equations (DE), touching on:
 
 - **[Basic concepts in differential equations](chap:pre:1)**
 - **[Basic concepts in ordinary differential equations](chap:pre:2)**

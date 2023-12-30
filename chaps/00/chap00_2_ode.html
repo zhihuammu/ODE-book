@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Definitions, Classification and Terminology &#8212; Linear Multistep Methods</title>
+    <title>Ordinary Differential Equations &#8212; Linear Multistep Methods</title>
   
   
   
@@ -67,14 +67,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/pre/chapX_1_definition';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/00/chap00_2_ode';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Ordinary Differential Equations" href="chapX_2_ode.html" />
-    <link rel="prev" title="Basics of Differential Equations" href="chapX_0.html" />
+    <link rel="next" title="Analytical Methods for ODEs" href="chap00_3_analytical.html" />
+    <link rel="prev" title="Definitions, Classification and Terminology" href="chap00_1_definition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,10 +176,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapX_0.html">Basics of Differential Equations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Definitions, Classification and Terminology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapX_2_ode.html">Ordinary Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapX_3_odeAnalyticalSolution.html">Analytical Methods for ODEs</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap00_0.html">Basics of Differential Equations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chap00_1_definition.html">Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap00_3_analytical.html">Analytical Methods for ODEs</a></li>
 </ul>
 </li>
 </ul>
@@ -319,7 +319,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/chaps/pre/chapX_1_definition.md" target="_blank"
+      <li><a href="../../_sources/chaps/00/chap00_2_ode.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,7 +390,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -401,11 +403,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Definitions, Classification and Terminology</h1>
+    <h1>Ordinary Differential Equations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systems-of-differential-equations">Systems of Differential Equations</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -418,173 +428,146 @@ document.write(`
   <div class="math notranslate nohighlight">
 \[\newcommand{\diff}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}
 \newcommand{\pdiff}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}\]</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="definitions-classification-and-terminology">
-<span id="chap-pre-1"></span><h1>Definitions, Classification and Terminology<a class="headerlink" href="#definitions-classification-and-terminology" title="Permalink to this heading">#</a></h1>
-<div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 1 </span> (Differential Equations)</p>
-<div class="definition-content section" id="proof-content">
-<p>An equation containing the derivatives of one or more unknown functions (or
-dependent variables), with respect to one or more independent variables, is said to be a <strong><span class="target" id="index-0"></span>differential equation</strong> (DE).</p>
-</div>
-</div><p>We can classify differential equations by <strong>type</strong>, <strong>order</strong>, <strong>linearity</strong> and <strong>homogeneity</strong>.</p>
-<ol class="arabic">
-<li><p>Classification by Type</p>
-<ul>
-<li><p><strong>Ordinary Differential Equation (ODE)</strong></p>
-<p>If a differential equation contains only ordinary derivatives of one or more unknown functions with respect to a single independent variable, it is said to be an <span class="target" id="index-1"></span>ordinary differential equation` (ODE).</p>
-<div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 1 </span></p>
-<div class="example-content section" id="proof-content">
-<p>The following equations are ordinary differential equations:</p>
-<div class="math notranslate nohighlight">
-\[
-\diff{y}{x} + 5y = e^x,  \quad
-\diff[2]{y}{x} - \diff{y}{x} + 6y = 0,  \quad 
-\diff{x}{t} + \diff{y}{t} = 2x + y
-\]</div>
-<ul class="simple">
-<li><p>In the first two equations, <span class="math notranslate nohighlight">\(y=y(x)\)</span>.</p></li>
-<li><p>In the third equation, <span class="math notranslate nohighlight">\(x=x(t)\)</span> and <span class="math notranslate nohighlight">\(y=y(t)\)</span>.</p></li>
-</ul>
-<p>The functions here are functions of a single variable.</p>
-</div>
-</div></li>
-<li><p><strong>Partial Differential Equation (PDE)</strong></p>
-<p>An equation involving partial derivatives of one or more unknown functions of two or more independent variables is called a <span class="target" id="index-2"></span>partial differential equation (PDE).</p>
-<div class="proof example admonition" id="example-2">
-<p class="admonition-title"><span class="caption-number">Example 2 </span></p>
-<div class="example-content section" id="proof-content">
-<p>The following equations are partial differential equations:</p>
-<div class="math notranslate nohighlight">
-\[
-\pdiff[2]{u}{x} + \pdiff[2]{u}{y} = 0, \quad
-\pdiff[2]{u}{x} = \pdiff[2]{u}{t} - 2\pdiff{u}{t}, \quad
-\pdiff{u}{y}=-\pdiff{v}{x}
-\]</div>
-<ul class="simple">
-<li><p>In the first equation, <span class="math notranslate nohighlight">\(u=u(x, y)\)</span>.</p></li>
-<li><p>In the second equation, <span class="math notranslate nohighlight">\(u=u(x, t)\)</span>.</p></li>
-<li><p>In the second equation, <span class="math notranslate nohighlight">\(u=u(y,\ldots)\)</span>, <span class="math notranslate nohighlight">\(v=v(x,\ldots)\)</span></p></li>
-</ul>
-<p>The functions here are multi-variable functions.</p>
-</div>
-</div></li>
-</ul>
-</li>
-</ol>
-<div class="proof remark admonition" id="remark-3">
-<p class="admonition-title"><span class="caption-number">Remark 1 </span> (Notations of derivatives)</p>
-<div class="remark-content section" id="proof-content">
-<p>Ordinary derivatives can be written by using</p>
-<ul>
-<li><p>Leibniz notation</p>
-<p><span class="math notranslate nohighlight">\(\displaystyle \diff{y}{x}\)</span>, <span class="math notranslate nohighlight">\(\displaystyle \diff[2]{y}{x}\)</span>, <span class="math notranslate nohighlight">\(\displaystyle \diff[3]{y}{x}\)</span>, …</p>
-</li>
-<li><p>Prime notation</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(y'\)</span>, <span class="math notranslate nohighlight">\(y''\)</span>, <span class="math notranslate nohighlight">\(y'''\)</span></p></li>
-<li><p>The fourth derivative <span class="math notranslate nohighlight">\(y^{(4)}\)</span></p></li>
-<li><p>The <span class="math notranslate nohighlight">\(k\)</span>-th derivative <span class="math notranslate nohighlight">\(y^{(k)}\)</span></p></li>
-</ul>
-</li>
-<li><p>Newton’s dot notation</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\dot y\)</span>, <span class="math notranslate nohighlight">\(\ddot y\)</span></p></li>
-</ul>
-</li>
-</ul>
-</div>
-</div><ol class="arabic" start="2">
-<li><p>Classification by Order</p>
-<p>The order of a differential equation is the order of the highest derivative in the equation.</p>
-<div class="proof example admonition" id="example-4">
-<p class="admonition-title"><span class="caption-number">Example 3 </span></p>
-<div class="example-content section" id="proof-content">
-<p>The following equation</p>
-<div class="math notranslate nohighlight">
-\[
-\diff[2]{y}{x} + 5 \left(\diff{y}{x}\right)^3 - 4y = e^x
-\]</div>
-<p>is a second-order ordinary differential equation.</p>
-</div>
-</div><div class="proof remark admonition" id="remark-5">
-<p class="admonition-title"><span class="caption-number">Remark 2 </span> (Order and Degree of differential equations)</p>
-<div class="remark-content section" id="proof-content">
-<ul class="simple">
-<li><p><strong>Order</strong>: The order of a differential equation is defined to be that of the highest order derivative it contains.</p></li>
-<li><p><strong>Degree</strong>: The degree of a differential equation is defined as the power to which the highest order derivative is raised.</p></li>
-</ul>
-<p>The equation</p>
-<div class="math notranslate nohighlight">
-\[
-    \left(y'''\right)^2 + \left(y''\right)^4+ y =x
-\]</div>
-<p>is a second-degree, third-order differential equation.</p>
-</div>
-</div></li>
-</ol>
-<div class="proof remark admonition" id="remark-6">
-<p class="admonition-title"><span class="caption-number">Remark 3 </span> (Forms of Differential Equations)</p>
-<div class="remark-content section" id="proof-content">
-<p>For an <span class="math notranslate nohighlight">\(n\)</span>-th order ordinary differential equation, we can express it in</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="ordinary-differential-equations">
+<span id="chap-pre-2"></span><h1>Ordinary Differential Equations<a class="headerlink" href="#ordinary-differential-equations" title="Permalink to this heading">#</a></h1>
+<p>For an <span class="math notranslate nohighlight">\(n\)</span>-th order ordinary differential equation, we can write it in</p>
 <ul>
 <li><p><strong>General Form</strong></p>
-<div class="math notranslate nohighlight">
-\[
+<div class="math notranslate nohighlight" id="equation-eq-ode-form-general">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-ode-form-general" title="Permalink to this equation">#</a></span>\[
     F(x, y, y', y'', \ldots, y^{(n)}) = 0
     \]</div>
 </li>
 <li><p><strong>Normal form</strong></p>
-<div class="math notranslate nohighlight">
-\[
+<div class="math notranslate nohighlight" id="equation-eq-ode-form-normal">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-ode-form-normal" title="Permalink to this equation">#</a></span>\[
     \diff[n]{y}{x} = f(x, y', y'', \ldots, y^{(n-1)})
     \]</div>
-<p>For example:</p>
-<ul class="simple">
-<li><p>A <em>first-order</em> ordinary differential equation: <span class="math notranslate nohighlight">\(\displaystyle \diff{y}{x}= f(x, y)\)</span></p></li>
-<li><p>A <em>second-order</em> ordinary differential equation: <span class="math notranslate nohighlight">\(\displaystyle \diff[2]{y}{x}= f(x, y, y')\)</span></p></li>
-</ul>
 </li>
 </ul>
+<div class="proof remark admonition" id="remark-0">
+<p class="admonition-title"><span class="caption-number">Remark 4 </span> (Interval of definition <span class="math notranslate nohighlight">\(I\)</span>)</p>
+<div class="remark-content section" id="proof-content">
+<p>For a problem governed/represented by an ODE, we need to give the actual ODE in form <a class="reference internal" href="#equation-eq-ode-form-general">(2)</a> or <a class="reference internal" href="#equation-eq-ode-form-normal">(3)</a>, besides we also need to give the interval <span class="math notranslate nohighlight">\(I\)</span> that defines the problem. We call this interval <span class="math notranslate nohighlight">\(I\)</span>:</p>
+<ul class="simple">
+<li><p>the <strong><span class="target" id="index-0"></span>interval of definition</strong>,</p></li>
+<li><p>the <strong>interval of existence</strong>,</p></li>
+<li><p>the <strong>interval of validity</strong>,</p></li>
+<li><p>or the <strong>domain of the solution</strong>.</p></li>
+</ul>
+<p>The interval <span class="math notranslate nohighlight">\(I\)</span> can be</p>
+<ul class="simple">
+<li><p>an open interval <span class="math notranslate nohighlight">\((a, b)\)</span>,</p></li>
+<li><p>a closed interval <span class="math notranslate nohighlight">\([a, b]\)</span>,</p></li>
+<li><p>an infinite interval <span class="math notranslate nohighlight">\((a, \infty)\)</span>,</p></li>
+</ul>
+<p>and so on.</p>
 </div>
-</div><ol class="arabic" start="3">
-<li><p>Classification by Linearity</p>
-<ul>
-<li><p><strong>Linear</strong></p>
-<p>An <span class="math notranslate nohighlight">\(n\)</span>-th order ordinary equation is linear if it can be expressed as</p>
-<div class="math notranslate nohighlight" id="equation-eq-ode-linear">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eq-ode-linear" title="Permalink to this equation">#</a></span>\[
-        a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \cdots + a_1(x) y' + a_0(x) y = g(x),
-        \quad a_n(x)\neq 0
-        \]</div>
-<p>with two properties</p>
-<ul class="simple">
-<li><p>The dependant variable <span class="math notranslate nohighlight">\(y\)</span> and all its derivatives <span class="math notranslate nohighlight">\(y'\)</span>, <span class="math notranslate nohighlight">\(y''\)</span>, … <span class="math notranslate nohighlight">\(y^{(n)}\)</span> are of the first degree.</p></li>
-<li><p>The coefficients <span class="math notranslate nohighlight">\(a_0(x) \)</span>, <span class="math notranslate nohighlight">\(a_1(x) \)</span>, …, <span class="math notranslate nohighlight">\(a_n(x) \)</span> depend at most on the independent variable <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
-</ul>
+</div><div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 2 </span> (Explicit Solution of an ODE)</p>
+<div class="definition-content section" id="proof-content">
+<p>A function <span class="math notranslate nohighlight">\(\phi(x)\)</span> that when substituted for <span class="math notranslate nohighlight">\(y\)</span> in equation <a class="reference internal" href="#equation-eq-ode-form-general">(2)</a> or <a class="reference internal" href="#equation-eq-ode-form-normal">(3)</a>
+satisfies the equation for all <span class="math notranslate nohighlight">\(x\)</span> in the interval <span class="math notranslate nohighlight">\(I\)</span> is called an <strong><span class="target" id="index-1"></span>explicit solution</strong> to the equation on <span class="math notranslate nohighlight">\(I\)</span>.</p>
+</div>
+</div><div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 4 </span></p>
+<div class="example-content section" id="proof-content">
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(\phi(x)=x^2 - x^{-1}\)</span> is an explicit solution to the equation</p>
+<div class="math notranslate nohighlight">
+\[
+    \diff[2]{y}{x} - \frac{2y}{x^2}=0
+    \]</div>
 </li>
-<li><p><strong>Nonlinear</strong></p>
-<p>A non-linear ordinary differential equation is one that is not linear. If an ordinary differential equation involves any of the followings</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(y^2\)</span>, <span class="math notranslate nohighlight">\((y')^2\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\sin y\)</span>, <span class="math notranslate nohighlight">\(\sin y'\)</span>, <span class="math notranslate nohighlight">\(\cos y\)</span>, <span class="math notranslate nohighlight">\(\cos y'\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(e^y\)</span>, <span class="math notranslate nohighlight">\(e^{y'}\)</span></p></li>
-</ul>
-<p>it is then non-linear.</p>
-</li>
-</ul>
-</li>
-<li><p>Classification by Homogeneity</p>
-<ul>
-<li><p><strong>Homogeneous</strong></p>
-<p>Equation <a class="reference internal" href="#equation-eq-ode-linear">(1)</a> is <em>homogeneous</em> if <span class="math notranslate nohighlight">\(g(x) = 0\)</span>.</p>
-</li>
-<li><p><strong>Nonhomogeneous</strong></p>
-<p>Equation <a class="reference internal" href="#equation-eq-ode-linear">(1)</a> is <em>nonhomogeneous</em> if <span class="math notranslate nohighlight">\(g(x)\neq 0\)</span>.</p>
-</li>
-</ul>
+<li><p><span class="math notranslate nohighlight">\(\phi(x)=c_1 e^{-x} + c_2 e^{2x}\)</span> is an explicit solution to the equation</p>
+<div class="math notranslate nohighlight">
+\[
+    y'' - y' - 2y=0
+    \]</div>
 </li>
 </ol>
+</div>
+</div><div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 3 </span> (Implicit Solution of an ODE)</p>
+<div class="definition-content section" id="proof-content">
+<p>A relation <span class="math notranslate nohighlight">\(G(x, y) = 0\)</span> is said to be an <strong><span class="target" id="index-2"></span>implicit solution</strong> of an ordinary differential equation <a class="reference internal" href="#equation-eq-ode-form-general">(2)</a> on an interval <span class="math notranslate nohighlight">\(I\)</span>, provided that there exists at least one function <span class="math notranslate nohighlight">\(\phi\)</span> that satisfies the relation as well as the differential equation on <span class="math notranslate nohighlight">\(I\)</span>.</p>
+</div>
+</div><div class="proof example admonition" id="example-4">
+<p class="admonition-title"><span class="caption-number">Example 5 </span></p>
+<div class="example-content section" id="proof-content">
+<ol class="arabic">
+<li><p>The relation <span class="math notranslate nohighlight">\(x^2+y^2=25\)</span> is an implicit solution to the equation</p>
+<div class="math notranslate nohighlight">
+\[
+        \diff{y}{x} = -\frac{x}{y}
+    \]</div>
+<p>on the open interval <span class="math notranslate nohighlight">\((-5, 5)\)</span>.</p>
+</li>
+<li><p>The relation <span class="math notranslate nohighlight">\(y^2 - x^3 + 8=0\)</span> implicitly defines a solution to the nonlinear equation</p>
+<div class="math notranslate nohighlight">
+\[
+    \diff{y}{x}=\frac{3x^2}{2y}
+    \]</div>
+</li>
+</ol>
+</div>
+</div><!-- ## Initial value problem -->
+<div class="proof definition admonition" id="definition-5">
+<p class="admonition-title"><span class="caption-number">Definition 4 </span> (Initial Value Problem)</p>
+<div class="definition-content section" id="proof-content">
+<p>By an <strong><span class="target" id="index-3"></span>initial value problem</strong> for an <span class="math notranslate nohighlight">\(n\)</span>-th order differential equation</p>
+<div class="math notranslate nohighlight">
+\[
+F(x, y, y', y'', \ldots, y^{(n)}) = 0,
+\]</div>
+<p>we mean: Find a solution to the ODE on an interval <span class="math notranslate nohighlight">\(I\)</span> that satisfies at <span class="math notranslate nohighlight">\(x_0\)</span> the <span class="math notranslate nohighlight">\(n\)</span> <strong>initial conditions</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+y(x_0) = &amp; ~y_0, \\
+y'(x_0) = &amp; ~y_1, \\
+  \vdots ~ &amp; ~ \\
+y^{(n-1)}(x_0) = &amp; ~y_{n-1}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_0 \in I\)</span> and <span class="math notranslate nohighlight">\(y_0\)</span>, <span class="math notranslate nohighlight">\(y_1\)</span>, … , <span class="math notranslate nohighlight">\(y_{n-1}\)</span> are given constants.</p>
+</div>
+</div><div class="proof theorem admonition" id="theorem-6">
+<p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Existence and Uniqueness of Solution)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Consider the initial value problem</p>
+<div class="math notranslate nohighlight">
+\[
+\diff{y}{x} = f(x,y), \quad y(x_0) = y_0.
+\]</div>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(\pdiff{f}{y}\)</span> are continuous functions in some rectangle</p>
+<div class="math notranslate nohighlight">
+\[
+R=\left\{ (x,y): a&lt;x&lt;b, ~ c&lt;y&lt;d \right\}
+\]</div>
+<p>that contains the point <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>, then the initial value problem has a unique solution <span class="math notranslate nohighlight">\(\phi(x)\)</span> in some interval <span class="math notranslate nohighlight">\(x_0 - \delta &lt; x &lt; x_0 + \delta\)</span>, where <span class="math notranslate nohighlight">\(\delta\)</span> is a positive number.</p>
+</div>
+</div><div class="section" id="systems-of-differential-equations">
+<h2>Systems of Differential Equations<a class="headerlink" href="#systems-of-differential-equations" title="Permalink to this heading">#</a></h2>
+<p>A system of ordinary differential equations is two or more
+equations involving the derivatives of two or more unknown functions of a single
+independent variable. For example, if <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> denote dependent variables and <span class="math notranslate nohighlight">\(t\)</span>
+denotes the independent variable, then a system of two first-order differential
+equations is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\diff{x}{t} = &amp; f(t, x, y) \\
+\diff{y}{y} = &amp; g(t, x, y)
+\end{aligned}
+\end{split}\]</div>
+<p>A solution of a system such as (9) is a pair of differentiable functions <span class="math notranslate nohighlight">\(x=\phi_1(t)\)</span>, <span class="math notranslate nohighlight">\(y=\phi_2(t)\)</span>, defined on a common interval <span class="math notranslate nohighlight">\(I\)</span>, that satisfy each equation of the system
+on this interval.</p>
+<!-- ## Analytical Solution Methods
+
+
+$\N$, $\N_0$
+$\Z$
+$\R$
+$\C$ --></div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -600,7 +583,7 @@ dependent variables), with respect to one or more independent variables, is said
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/pre"
+            path: "./chaps/00"
         },
         predefinedOutput: true
     }
@@ -618,20 +601,20 @@ dependent variables), with respect to one or more independent variables, is said
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="chapX_0.html"
+       href="chap00_1_definition.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Basics of Differential Equations</p>
+        <p class="prev-next-title">Definitions, Classification and Terminology</p>
       </div>
     </a>
     <a class="right-next"
-       href="chapX_2_ode.html"
+       href="chap00_3_analytical.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Ordinary Differential Equations</p>
+        <p class="prev-next-title">Analytical Methods for ODEs</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -641,6 +624,20 @@ dependent variables), with respect to one or more independent variables, is said
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systems-of-differential-equations">Systems of Differential Equations</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

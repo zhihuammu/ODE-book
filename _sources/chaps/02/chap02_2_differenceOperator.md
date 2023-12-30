@@ -147,41 +147,41 @@ $$\nabla f(x) = f(x)-f(x-h)$$
 
 
 
-## Shift operators $E$ and $E^{-1}$
+## Shift operators $\E$ and $\E^{-1}$
 ::::{prf:definition}
     
 Given a sequence $\left\{f_j\right\}_{j=-\infty}^{+\infty}$,
-we define $E$ as an operator {index}`shifting` a member in a sequence to the next member
+we define $\E$ as an operator {index}`shifting` a member in a sequence to the next member
 \begin{equation}
-  E f_j = f_{j+1},
+  \E f_j = f_{j+1},
 \end{equation}
 and shifting a member forward $k$ times gives
 
-$$E^k f_j= E(E^{k-1}f_j)= f_{j+k}.$$
+$$\E^k f_j= \E(\E^{k-1}f_j)= f_{j+k}.$$
 
-Similarly, we define $E^{-1}$ as an operator shifting a member in a
+Similarly, we define $\E^{-1}$ as an operator shifting a member in a
 sequence to the previous member
 \begin{equation}
-  E^{-1} f_j = f_{j-1}
+  \E^{-1} f_j = f_{j-1}
 \end{equation}
 and shifting a member backward $k$ ($k>0$) times gives
 
-$$E^{-k} f_j= E^{-1}(E^{-(k-1)}f_j)= f_{j-k}.$$    
+$$\E^{-k} f_j= \E^{-1}(\E^{-(k-1)}f_j)= f_{j-k}.$$    
 ::::
 
 :::{admonition} Note 
 The forward and backward shifting operations can also be applied to
 functions defined on continuous domains
 
--   $E f(x)= f(x+h)$,
+-   $\E f(x)= f(x+h)$,
 
--   $E^{-1} f(x) = f(x-h)$.
+-   $\E^{-1} f(x) = f(x-h)$.
 
 If we do shifting for $k$ times , then
 
--   $E^k f(x)= f(x+kh)$
+-   $\E^k f(x)= f(x+kh)$
 
--   $E^{-k} f(x) = f(x-kh)$
+-   $\E^{-k} f(x) = f(x-kh)$
 :::
 
 :::{admonition} Questions
@@ -189,11 +189,11 @@ If we do shifting for $k$ times , then
 
 -   If we shift forward for $k=0.9$ steps, what we will get?
 
-  $$E^{0.9} f_j= E^{0.9} f(x_j)= f(x_j+0.9h)=?$$
+  $$\E^{0.9} f_j= \E^{0.9} f(x_j)= f(x_j+0.9h)=?$$
 
 -   If we shift backward for $k=0.9$ steps, what we will get?
 
-  $$E^{-0.9} f_j= E^{-0.9} f(x_j)= f(x_j-0.9h)=?$$
+  $$\E^{-0.9} f_j= \E^{-0.9} f(x_j)= f(x_j-0.9h)=?$$
 :::
 
 ::::{prf:theorem} 
@@ -201,9 +201,9 @@ If we do shifting for $k$ times , then
 The {index}`difference operators` and {index}`shift operators` have the following
 relations:
 
--   $E=1+\Delta$
+-   $\E=1+\Delta$
 
--   $E^{-1}=1-\nabla$
+-   $\E^{-1}=1-\nabla$
 
 ::::
 
@@ -211,25 +211,25 @@ relations:
 :::{prf:proof}
 Applying the operators on $f(x)$
 
--   $E=1+\Delta$
+-   $\E=1+\Delta$
 
 $$
 \begin{aligned}
 (1+\Delta) f(x) & = f(x) + \Delta f(x) \\
                 & = f(x) + f(x+h)-f(x) \\
                 & = f(x+h) \\
-                & = E f(x)
+                & = \E f(x)
 \end{aligned}
 $$
 
--   $E^{-1}=1-\nabla$
+-   $\E^{-1}=1-\nabla$
 
 $$
 \begin{aligned}
 (1-\nabla) f(x) & = f(x) - \nabla f(x) \\
                 & = f(x) - \left[f(x)-f(x-h)\right]\\
                 & = f(x-h) \\
-                & = E^{-1} f(x)
+                & = \E^{-1} f(x)
 \end{aligned}
 $$
 :::

@@ -67,7 +67,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/02/chap02_3_interpolation';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
@@ -176,10 +176,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../pre/chapX_0.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../pre/chapX_1_definition.html">Definitions, Classification and Terminology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pre/chapX_2_ode.html">Ordinary Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pre/chapX_3_odeAnalyticalSolution.html">Analytical Methods for ODEs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_0.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_1_definition.html">Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_2_ode.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_3_analytical.html">Analytical Methods for ODEs</a></li>
 </ul>
 </li>
 </ul>
@@ -449,7 +449,7 @@ name: figure-discretepoints
 </div><p>Possiple options are:</p>
 <ul class="simple">
 <li><p>Take an average: <span class="math notranslate nohighlight">\(f(x)=\dfrac{f_j + f_{j+1}}{2}\)</span></p></li>
-<li><p>A precise forward-shift: <span class="math notranslate nohighlight">\(f(x)=E^{s} f_j\)</span>,
+<li><p>A precise forward-shift: <span class="math notranslate nohighlight">\(f(x)=\E^{s} f_j\)</span>,
 <span class="math notranslate nohighlight">\(0&lt;s=\dfrac{x-x_j}{x_{j+1}-x_j}&lt;1\)</span></p></li>
 </ul>
 <p>For the first option, we may ask “Is this accurate?” For the second option, we may ask “How to SHIFT?”</p>
@@ -460,12 +460,12 @@ name: figure-discretepoints
 <span class="math notranslate nohighlight">\(f_{j+s}\)</span>, where:</p>
 <div class="math notranslate nohighlight">
 \[s \&gt;=\&gt; \dfrac{x - x_j}{h}\]</div>
-<p>Note that we have <span class="math notranslate nohighlight">\(\,f_{j+s}=f(x_j\!+\!sh)=E^sf(x_j)=E^sf_j\,\)</span>.</p>
+<p>Note that we have <span class="math notranslate nohighlight">\(\,f_{j+s}=f(x_j\!+\!sh)=\E^sf(x_j)=\E^sf_j\,\)</span>.</p>
 <p>To obtain a formula involving forward differences we substitute
-<span class="math notranslate nohighlight">\(\,E=1+\Delta\,\)</span> therefore:</p>
+<span class="math notranslate nohighlight">\(\,\E=1+\Delta\,\)</span> therefore:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-        f_{j+s} &amp;= E^{s} f_j \\
+        f_{j+s} &amp;= \E^{s} f_j \\
                 &amp;= (1 + \Delta)^s f_j     
 \end{aligned}
 \end{split}\]</div>
@@ -492,7 +492,7 @@ name: figure-discretepoints
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
-E^{s} &amp; =  (1+\Delta)^s  \\
+\E^{s} &amp; =  (1+\Delta)^s  \\
       &amp; =  \sum_{n=0}^{\infty} \begin{pmatrix} s \\ n \end{pmatrix} 1^{s-n}\Delta^{n} \\
       &amp; = \begin{pmatrix} s \\ 0 \end{pmatrix} \Delta^{0} 
             + \begin{pmatrix} s \\ 1 \end{pmatrix} \Delta^{1}
