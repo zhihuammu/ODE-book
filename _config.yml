@@ -2,10 +2,12 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title     : Linear Multistep Methods
-author    : Zhihua Ma
+author    : Dr Zhihua Ma
 copyright : "2023--2025"  # Copyright year to be placed in the footer
+last_updated: "Dec 19, 2023"
 logo      : images/logo2c.svg
-last-updated: "2023"
+email     : "z.ma@mmu.ac.uk"
+
 only_build_toc_files: true  
 
 
@@ -26,7 +28,7 @@ latex:
 # Information about where the book exists on the web
 repository:
   url: https://github.com/zhihuammu/ODE-book  # Online location of your book
-#  path_to_book: docs # Optional path to your book, relative to the repository root
+  path_to_book: / # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
@@ -39,16 +41,12 @@ html:
   use_edit_page_button  : false
   use_issues_button     : false
   use_download_button   : true
-  use_source_button     : false
-  extra_footer : |
-      <div>
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
-          All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
-      </div>
-  # comments:
-    # hypothesis          : false
-#  announcement: "My announcement!"
-  
+  use_source_button     : false  
+  comments:
+    hypothesis          : false
+  announcement          : ""
+  # extra_navbar          : Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.  
+
 sphinx:
   config:
 # bibtex_reference_style: author_year    
@@ -86,19 +84,31 @@ sphinx:
 #    html_extra_path: exSol
     # html_theme: sphinx_material
     html_theme: sphinx_book_theme
-  #  html_theme: pydata_sphinx_theme
+    # html_theme: pydata_sphinx_theme
     html_theme_options:    
-      # footer_start  : copyright
-      # footer_center : 
+      show_toc_level  : 3
+      # footer_start  : author
+      # footer_center : sphinx-version
       # footer_end    : theme-version    
-      primary_sidebar_end   : 
+      # navbar_start: 
+      #   - author
+      #   - sphinx-version   
+      # primary_sidebar_end   : 
+      #   - indices
+        # - sphinx-version
+      extra_footer  : "<div>Email: <a href='mailto:z.ma@mmu.ac.uk'>z.ma@mmu.ac.uk</a></div>"
+    html_sidebars :
+      '**': 
+        - navbar-logo
+        - sbt-sidebar-nav
         - indices
-        - sphinx-version        
+        - sphinx-version
+    html_last_updated_fmt : ""
   extra_extensions:
     - sphinx_proof
     - sphinx_exercise    
     - sphinxcontrib.tikz
-    # - sphinx_togglebutton      
+    - sphinx_togglebutton      
     - sphinx_inline_tabs    
 
 parse:

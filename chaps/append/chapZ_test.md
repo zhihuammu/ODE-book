@@ -197,3 +197,9 @@ glue("ns_mean", ns.mean(), display=False)
 ```
 
 Here is an example of how to glue numbers: {glue:}`ss_mean` and {glue:}`ns_mean`.
+
+```{admonition} Check out my custom icon
+:class: admonition-icon
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+```

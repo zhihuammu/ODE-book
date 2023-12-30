@@ -185,7 +185,7 @@ If we do shifting for $k$ times , then
 :::
 
 :::{admonition} Questions
-:class: important
+:class: question
 
 -   If we shift forward for $k=0.9$ steps, what we will get?
 

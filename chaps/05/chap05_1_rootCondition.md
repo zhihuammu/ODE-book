@@ -81,7 +81,7 @@ $$(eq:ch04:1.6)
  where $A_1$, $A_2$, ..., $A_k$ are constant. See {numref}`chap01:complexNumber:DE` for more details on difference and characteristic equations.
 
 :::{admonition} Question
-:class: warning
+:class: question
 
 What kind of conditions shall we impose to keep the general solution {eq}`eq:ch04:1.6` bounded?
 
