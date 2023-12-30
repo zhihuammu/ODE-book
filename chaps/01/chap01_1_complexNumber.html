@@ -50,7 +50,6 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -67,7 +66,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/01/chap01_1_complexNumber';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
@@ -273,6 +272,13 @@ const thebe_selector_output = ".output, .cell_output"
         </li>
   </ul>
 </nav></div>
+      <div class="sidebar-primary-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    <br/>
+  </p>
+</div>
   </div>
   
   <div id="rtd-footer-container"></div>
@@ -432,18 +438,18 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Definition 1.2 </span> (Complex number and Complex conjugate)</p>
 <div class="definition-content section" id="proof-content">
 <p>A <span class="target" id="index-0"></span>complex number is a number in the form of</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7f135cfd-3b10-42a1-985f-8bdcf4632aa2">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-7f135cfd-3b10-42a1-985f-8bdcf4632aa2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5b698bc3-7932-42c1-8632-86449bc075ca">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-5b698bc3-7932-42c1-8632-86449bc075ca" title="Permalink to this equation">#</a></span>\[\begin{equation}
     z=x+iy,\qquad x, y\in \mathbb{R},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x\)</span> is the real component of the complex number and <span class="math notranslate nohighlight">\(iy\)</span> is its imaginary component. We often call <span class="math notranslate nohighlight">\(y\)</span> the imaginary component for simplicity. The modulus of the complex number is calculated as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d8e81504-e786-495a-8c74-1fc126b5a458">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-d8e81504-e786-495a-8c74-1fc126b5a458" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-01273ee0-bf04-41f5-bb41-cb923dd61995">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-01273ee0-bf04-41f5-bb41-cb923dd61995" title="Permalink to this equation">#</a></span>\[\begin{equation}
     |z|=\sqrt{x^2+y^2}.
 \end{equation}\]</div>
 <p>Its <span class="target" id="index-1"></span>complex conjugate is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-585ae1b8-b310-4427-a783-e53db847c13e">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-585ae1b8-b310-4427-a783-e53db847c13e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-276719a3-15d1-4a6e-9824-f7c8407dee3e">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-276719a3-15d1-4a6e-9824-f7c8407dee3e" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \bar{z}=x-iy.
 \end{equation}\]</div>
 </div>
@@ -452,8 +458,8 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Definition 1.3 </span> (Complex Arithmetic)</p>
 <div class="definition-content section" id="proof-content">
 <p>The arithmetic operations on two complex numbers given as <span class="math notranslate nohighlight">\(z_1=x_1+iy_1\)</span> and <span class="math notranslate nohighlight">\(z_2=x_2+iy_2\)</span> are defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9d415c39-9963-4fc9-b868-362fbb95883f">
-<span class="eqno">(1.4)<a class="headerlink" href="#equation-9d415c39-9963-4fc9-b868-362fbb95883f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6286d580-0350-4883-b2de-45d1d3870d14">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-6286d580-0350-4883-b2de-45d1d3870d14" title="Permalink to this equation">#</a></span>\[\begin{align}
 \text{``$+$''}:\quad ~ &amp; ~ z_1+z_2=(x_1+iy_1)+(x_2+iy_2)=(x_1+x_2)+i(y_1+y_2), \\
 \text{``$-$''}:\quad ~ &amp; ~ z_1-z_2=(x_1+iy_1)-(x_2+iy_2)=(x_1-x_2)+i(y_1-y_2), \\
 \text{``$\times$''}:\quad ~ &amp; ~ z_1\cdot z_2=(x_1+iy_1)\cdot(x_2+iy_2)=(x_1+x_2)+i(y_1+y_2), \\
@@ -491,8 +497,8 @@ Solution (click to show)<div class="sd-summary-down docutils">
 <p class="admonition-title"><span class="caption-number">Definition 1.4 </span> (<span class="target" id="index-2"></span>Complex number set)</p>
 <div class="definition-content section" id="proof-content">
 <p>We denote the set of all the complex numbers as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-67d47420-8522-4b84-b834-3f8c3e219d66">
-<span class="eqno">(1.5)<a class="headerlink" href="#equation-67d47420-8522-4b84-b834-3f8c3e219d66" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-06727536-b0a7-4f84-912f-a96775832f19">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-06727536-b0a7-4f84-912f-a96775832f19" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \mathbb{C}=\{z|z=x+iy, ~x, y\in \mathbb{R}\}.
 \end{equation}\]</div>
 </div>
@@ -507,13 +513,13 @@ The complex plane $\mathbb{C}$.
 <div class="figure" id="id1" style="text-align: center"><p><img  src="../../_images/tikz-6d3a57b01a2333f76586579eeb9037a9159e2f50.svg" alt="Figure made with TikZ" /></p>
 <p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text">The complex plane <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>.</span></p>
 </div><p>For <span class="math notranslate nohighlight">\(z=x+iy\)</span>, we can also write it in the second form (polar form) as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f57f8284-7cb1-4245-8df0-c2bb130d390b">
-<span class="eqno">(1.6)<a class="headerlink" href="#equation-f57f8284-7cb1-4245-8df0-c2bb130d390b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b91e2001-402f-40d4-8d9d-5691d0a2a3fb">
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-b91e2001-402f-40d4-8d9d-5691d0a2a3fb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z  =  r\left(\cos \theta + i \sin \theta\right)
 \end{equation}\]</div>
 <p>or the third form (exponential form)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d4d741f1-4a37-4f10-976f-acf31d30ec15">
-<span class="eqno">(1.7)<a class="headerlink" href="#equation-d4d741f1-4a37-4f10-976f-acf31d30ec15" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3d5cc21a-4740-441e-b29f-b42ab6b32969">
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-3d5cc21a-4740-441e-b29f-b42ab6b32969" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z  = r e^{i\theta},    
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(r=|z|\)</span>, and <span class="math notranslate nohighlight">\(\theta\)</span> is the angle defined by the real axis and the straight line connecting the origin and <span class="math notranslate nohighlight">\(z\)</span> in the complex plane.</p>
@@ -534,8 +540,8 @@ z  = r e^{i\theta},
 <p>where <span class="math notranslate nohighlight">\(r=|z|=\sqrt{x^2+y^2}\)</span>, <span class="math notranslate nohighlight">\(\tan \theta = \dfrac{y}{x}\)</span>.</p>
 </div>
 </div><p>If we use the exponential form to represent complex numbers, then the multiplication and division of two complex numbers can be expressed in simpler ways. Let <span class="math notranslate nohighlight">\(z_1= r_1 e^{i\theta_1}\)</span> and <span class="math notranslate nohighlight">\(z_2 = r_2 e^{i\theta_2}\)</span>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-96c24fff-7de0-4693-a503-04efe637f376">
-<span class="eqno">(1.8)<a class="headerlink" href="#equation-96c24fff-7de0-4693-a503-04efe637f376" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-79a5ab71-e450-4d7c-aade-1e8783a39431">
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-79a5ab71-e450-4d7c-aade-1e8783a39431" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp; z_1 \cdot z_2  = r_1 e^{i\theta_1} \cdot r_2 e^{i\theta_2}=r_1 r_2 e^{i(\theta_1+\theta_2)}\\
 &amp; \frac{z_1}{z_2}  = \frac{r_1 e^{i\theta_1}}{r_2 e^{i\theta_2}}=\frac{r_1}{r_2}e^{i(\theta_1-\theta_2)}
 \end{align}\]</div>

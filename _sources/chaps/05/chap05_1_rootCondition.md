@@ -56,8 +56,8 @@ $$(eq:ch04:1.4)
 We can write equation {eq}`eq:ch04:1.4` in the operator form as
 
 $$
-L(E) y_j = 
-\left(\gamma_0 E^0 + \gamma_1 E^1 + \gamma_2 E^2 + \cdots + \gamma_k E^k \right) y_j =0~\,
+L(\S) y_j = 
+\left(\gamma_0 \S^0 + \gamma_1 \S^1 + \gamma_2 \S^2 + \cdots + \gamma_k \S^k \right) y_j =0~\,
 $$
 
 and get its {index}`characteristic equation`
@@ -161,9 +161,9 @@ $$
 
     $$
     \left[
-    (\alpha_0-h\lambda \beta_0) E^0
-    + (\alpha_1-h\lambda \beta_1) E^1
-    + (\alpha_2-h\lambda \beta_2) E^2
+    (\alpha_0-h\lambda \beta_0) \S^0
+    + (\alpha_1-h\lambda \beta_1) \S^1
+    + (\alpha_2-h\lambda \beta_2) \S^2
     \right] y_{j-2} =0 
     $$
 

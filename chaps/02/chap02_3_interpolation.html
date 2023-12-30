@@ -50,7 +50,6 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -67,7 +66,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/02/chap02_3_interpolation';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
@@ -273,6 +272,13 @@ const thebe_selector_output = ".output, .cell_output"
         </li>
   </ul>
 </nav></div>
+      <div class="sidebar-primary-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    <br/>
+  </p>
+</div>
   </div>
   
   <div id="rtd-footer-container"></div>
@@ -449,7 +455,7 @@ name: figure-discretepoints
 </div><p>Possiple options are:</p>
 <ul class="simple">
 <li><p>Take an average: <span class="math notranslate nohighlight">\(f(x)=\dfrac{f_j + f_{j+1}}{2}\)</span></p></li>
-<li><p>A precise forward-shift: <span class="math notranslate nohighlight">\(f(x)=\E^{s} f_j\)</span>,
+<li><p>A precise forward-shift: <span class="math notranslate nohighlight">\(f(x)=\S ^{s} f_j\)</span>,
 <span class="math notranslate nohighlight">\(0&lt;s=\dfrac{x-x_j}{x_{j+1}-x_j}&lt;1\)</span></p></li>
 </ul>
 <p>For the first option, we may ask “Is this accurate?” For the second option, we may ask “How to SHIFT?”</p>
@@ -460,12 +466,12 @@ name: figure-discretepoints
 <span class="math notranslate nohighlight">\(f_{j+s}\)</span>, where:</p>
 <div class="math notranslate nohighlight">
 \[s \&gt;=\&gt; \dfrac{x - x_j}{h}\]</div>
-<p>Note that we have <span class="math notranslate nohighlight">\(\,f_{j+s}=f(x_j\!+\!sh)=\E^sf(x_j)=\E^sf_j\,\)</span>.</p>
+<p>Note that we have <span class="math notranslate nohighlight">\(\,f_{j+s}=f(x_j\!+\!sh)=\S ^sf(x_j)=\S ^sf_j\,\)</span>.</p>
 <p>To obtain a formula involving forward differences we substitute
-<span class="math notranslate nohighlight">\(\,\E=1+\Delta\,\)</span> therefore:</p>
+<span class="math notranslate nohighlight">\(\,\S =1+\Delta\,\)</span> therefore:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-        f_{j+s} &amp;= \E^{s} f_j \\
+        f_{j+s} &amp;= \S ^{s} f_j \\
                 &amp;= (1 + \Delta)^s f_j     
 \end{aligned}
 \end{split}\]</div>
@@ -492,7 +498,7 @@ name: figure-discretepoints
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
-\E^{s} &amp; =  (1+\Delta)^s  \\
+\S ^{s} &amp; =  (1+\Delta)^s  \\
       &amp; =  \sum_{n=0}^{\infty} \begin{pmatrix} s \\ n \end{pmatrix} 1^{s-n}\Delta^{n} \\
       &amp; = \begin{pmatrix} s \\ 0 \end{pmatrix} \Delta^{0} 
             + \begin{pmatrix} s \\ 1 \end{pmatrix} \Delta^{1}
@@ -546,7 +552,7 @@ s=\frac{x-x_j}{h}&lt;0
             + \cdots
             + \frac{s(s+1)\cdots(s+k-1)}{k!}\nabla^k f_j + \cdots\]</div>
 <!-- $$\begin{aligned}
-        f_{j+s} & = E^{s} f_j  \hspace{4cm}  \\
+        f_{j+s} & = \S^{s} f_j  \hspace{4cm}  \\
         \>&=\> (1 - \nabla)^{-s} f_j\\
         \>&=\> \left(1 + \frac{(-s)}{1!}(-\nabla)
         + \frac{(-s)(-s-1)}{2!}(-\nabla)^2

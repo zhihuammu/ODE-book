@@ -50,7 +50,6 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -67,7 +66,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/01/chap01_3_differenceEquation';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
@@ -273,6 +272,13 @@ const thebe_selector_output = ".output, .cell_output"
         </li>
   </ul>
 </nav></div>
+      <div class="sidebar-primary-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    <br/>
+  </p>
+</div>
   </div>
   
   <div id="rtd-footer-container"></div>
@@ -418,8 +424,8 @@ document.write(`
   <div class="tex2jax_ignore mathjax_ignore section" id="difference-equations">
 <h1><span class="section-number">1.3. </span>Difference Equations<a class="headerlink" href="#difference-equations" title="Permalink to this heading">#</a></h1>
 <p>For some sequences, their algebraic expressions are directly given, such as the sequences we defined in <a class="reference internal" href="chap01_2_sequence.html#equation-eq-sequence-example-1">(1.10)</a> and <a class="reference internal" href="chap01_2_sequence.html#equation-eq-sequence-example-2">(1.11)</a>. While for some other sequences, a member of a sequence <span class="math notranslate nohighlight">\(y_n\)</span> is determined by one or several previous members of the sequence, e.g.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-59acae5a-eb87-4d95-b958-223056e71aff">
-<span class="eqno">(1.12)<a class="headerlink" href="#equation-59acae5a-eb87-4d95-b958-223056e71aff" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b921ddb4-776c-4d81-83f2-d3f09d7a2479">
+<span class="eqno">(1.12)<a class="headerlink" href="#equation-b921ddb4-776c-4d81-83f2-d3f09d7a2479" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp; y_n = y_{n-1}, \\
 &amp; y_n = y_{n-1}+3, \\
 &amp; y_n = 2y_{n-1}, \\
@@ -499,38 +505,38 @@ Solution (click to show)<div class="sd-summary-down docutils">
 </div><div class="proof definition admonition" id="definition-6">
 <p class="admonition-title"><span class="caption-number">Definition 1.9 </span> (<span class="target" id="index-3"></span>Shift Operator)</p>
 <div class="definition-content section" id="proof-content">
-<p>We define <span class="math notranslate nohighlight">\(\E\)</span> as an operator shifting a member in a sequence to the next member</p>
+<p>We define <span class="math notranslate nohighlight">\(\S\)</span> as an operator shifting a member in a sequence to the next member</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
-\E y_n = y_{n+1}.
+\S y_n = y_{n+1}.
 \end{equation} \]</div>
 <p>If we apply the shift operator consecutively for <span class="math notranslate nohighlight">\(2\)</span> times, we write it as</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
-\E^2 y_n = \E(\E y_n) = \E y_{n+1} = y_{n+2}.
+\S ^2 y_n = \S  (\S  y_n) = \S  y_{n+1} = y_{n+2}.
 \end{equation} \]</div>
 <p>If we apply the shift operator consecutively for <span class="math notranslate nohighlight">\(k\)</span> times, we write it as</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
-\E^k y_n = y_{n+k}.
+\S ^k y_n = y_{n+k}.
 \end{equation} \]</div>
 </div>
 </div><div class="proof example admonition" id="example-7">
 <p class="admonition-title"><span class="caption-number">Example 1.3 </span></p>
 <div class="example-content section" id="proof-content">
 <ul class="simple">
-<li><p>Use the definition of the shift Operator <span class="math notranslate nohighlight">\(\E\)</span> to expand the following expression <br />
-<span class="math notranslate nohighlight">\(\left(\E^4 - \E^2 +1 \right) y_n \)</span></p></li>
-<li><p>Write the following expression into a shift operator <span class="math notranslate nohighlight">\(\E\)</span> form <br />
+<li><p>Use the definition of the shift Operator <span class="math notranslate nohighlight">\(\S\)</span> to expand the following expression <br />
+<span class="math notranslate nohighlight">\(\left(\S ^4 - \S ^2 +1 \right) y_n \)</span></p></li>
+<li><p>Write the following expression into a shift operator <span class="math notranslate nohighlight">\(\S\)</span> form <br />
 <span class="math notranslate nohighlight">\( y_{n+2} - 2y_{n+1} + y_n  \)</span></p></li>
 </ul>
 <!-- We can apply multiple shifting operations on a member in a sequence
 
-$$\left(\E^4 - \E^2 +1 \right) y_n = y_{n+4} - y_{n+2} + y_n.$$
+$$\left(\S ^4 - \S ^2 +1 \right) y_n = y_{n+4} - y_{n+2} + y_n.$$
 
 We can also express algebraic operations on several members in a sequence as shifting operations on a single member, e.g.
 
-$$ y_{n+2} - 2y_{n+1} + y_n = \left( \E^2 - 2E + 1\right) y_n.  $$ -->
+$$ y_{n+2} - 2y_{n+1} + y_n = \left( \S ^2 - 2E + 1\right) y_n.  $$ -->
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Solution (click to show)<div class="sd-summary-down docutils">
@@ -540,8 +546,8 @@ Solution (click to show)<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <!-- :class: hint, dropdown -->
 <ul class="simple">
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\left(\E^4 - \E^2 +1 \right) y_n = y_{n+4} - y_{n+2} + y_n\)</span></p></li>
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\( y_{n+2} - 2y_{n+1} + y_n = \left( \E^2 - 2E + 1\right) y_n  \)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\left(\S ^4 - \S ^2 +1 \right) y_n = y_{n+4} - y_{n+2} + y_n\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\( y_{n+2} - 2y_{n+1} + y_n = \left( \S ^2 - 2\S + 1\right) y_n  \)</span></p></li>
 </ul>
 </div>
 </details></div>

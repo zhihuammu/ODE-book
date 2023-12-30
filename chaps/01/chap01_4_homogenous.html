@@ -50,7 +50,6 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -67,7 +66,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/01/chap01_4_homogenous';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
@@ -273,6 +272,13 @@ const thebe_selector_output = ".output, .cell_output"
         </li>
   </ul>
 </nav></div>
+      <div class="sidebar-primary-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    <br/>
+  </p>
+</div>
   </div>
   
   <div id="rtd-footer-container"></div>
@@ -435,15 +441,15 @@ document.write(`
 a_0 y_n + a_1 y_{n+1} + a_2 y_{n+2} + \ldots + a_{k-1} y_{n+k-1} + a_k y_{n+k} = 0,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(a_p~(p=0,1,2,\ldots,k)\)</span> are a given set of <span class="math notranslate nohighlight">\(k+1\)</span> constants, with <span class="math notranslate nohighlight">\(a_0 \neq 0\)</span> and <span class="math notranslate nohighlight">\(a_k=1\)</span>.</p>
-<p>Using the shift operator <span class="math notranslate nohighlight">\(E\)</span>, Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a> can be written as</p>
+<p>Using the shift operator <span class="math notranslate nohighlight">\(\S\)</span>, Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a> can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq-de-linear-homogeneous-constant-aux">
 <span class="eqno">(1.17)<a class="headerlink" href="#equation-eq-de-linear-homogeneous-constant-aux" title="Permalink to this equation">#</a></span>\[\begin{equation}
-L(E) y_n =0,
+L(\S) y_n =0,
 \end{equation}\]</div>
-<p>where <span class="math notranslate nohighlight">\(L(E)\)</span> is the operator function</p>
+<p>where <span class="math notranslate nohighlight">\(L(\S)\)</span> is the operator function</p>
 <div class="math notranslate nohighlight" id="equation-eq-de-linear-constant-le">
 <span class="eqno">(1.18)<a class="headerlink" href="#equation-eq-de-linear-constant-le" title="Permalink to this equation">#</a></span>\[\begin{equation}
-L(E)= a_0 + a_1 E + a_2 E^2 + \ldots + a_{k-1} E^{k-1} + a_k E^{k}.
+L(\S)= a_0 + a_1 \S + a_2 \S^2 + \ldots + a_{k-1} \S^{k-1} + a_k \S^{k}.
 \end{equation}\]</div>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 1.10 </span> (Characteristic Equation)</p>
@@ -456,14 +462,14 @@ L(\xi)= a_0 + a_1 \xi + a_2 \xi^2 + \ldots + a_{k-1} \xi^{k-1} + a_k \xi^{k}=0.
 </div>
 </div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Note: We can replace the shift operator <span class="math notranslate nohighlight">\(E\)</span> with <span class="math notranslate nohighlight">\(\xi\)</span> in Eq. <a class="reference internal" href="#equation-eq-de-linear-constant-le">(1.18)</a> to obtain the characteristic equation. <span class="math notranslate nohighlight">\(L(\xi)\)</span> is a <span class="math notranslate nohighlight">\(k\)</span>th-order polynomial and thus has <span class="math notranslate nohighlight">\(k\)</span> roots <span class="math notranslate nohighlight">\(\{\xi_p\}~ (p=1,2,3,\ldots,k)\)</span>.</p>
+<p>Note: We can replace the shift operator <span class="math notranslate nohighlight">\(\S\)</span> with <span class="math notranslate nohighlight">\(\xi\)</span> in Eq. <a class="reference internal" href="#equation-eq-de-linear-constant-le">(1.18)</a> to obtain the characteristic equation. <span class="math notranslate nohighlight">\(L(\xi)\)</span> is a <span class="math notranslate nohighlight">\(k\)</span>th-order polynomial and thus has <span class="math notranslate nohighlight">\(k\)</span> roots <span class="math notranslate nohighlight">\(\{\xi_p\}~ (p=1,2,3,\ldots,k)\)</span>.</p>
 </div>
 <div class="proof theorem admonition" id="theorem-1">
 <p class="admonition-title"><span class="caption-number">Theorem 1.2 </span></p>
 <div class="theorem-content section" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\xi_p~(p=1,2,3,\ldots,k)\)</span> be any solution to the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(1.19)</a>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5fb56e4a-07d7-43f6-a615-7b565582ae02">
-<span class="eqno">(1.20)<a class="headerlink" href="#equation-5fb56e4a-07d7-43f6-a615-7b565582ae02" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d100b6b5-046e-411a-b22c-718b47dd54e7">
+<span class="eqno">(1.20)<a class="headerlink" href="#equation-d100b6b5-046e-411a-b22c-718b47dd54e7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_n = \xi_p^n
 \end{equation}\]</div>
 <p>is a solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a>.</p>
@@ -474,26 +480,26 @@ Proof (click to show)<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="proof admonition" id="proof">
-<p class="sd-card-text">Proof. Substituting <span class="math notranslate nohighlight">\(y_n=\xi_p^n\)</span> into Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant-aux">(1.17)</a>, we get</p>
+<!-- :::{prf:proof} -->
+<p class="sd-card-text">Substituting <span class="math notranslate nohighlight">\(y_n=\xi_p^n\)</span> into Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant-aux">(1.17)</a>, we get</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}     
-L(E) \xi_p^n = ~ &amp; \left(a_0 + a_1 E + a_2 E^2 + \ldots + a_{k-1}E^{k-1}+a_kE^k\right) \xi_p^n \\
+L(\S) \xi_p^n = ~ &amp; \left(a_0 + a_1 \S + a_2 \S^2 + \ldots + a_{k-1}\S^{k-1}+a_k \S^k\right) \xi_p^n \\
 ~ = ~ &amp;  a_0 \xi_p^n + a_1 \xi_p^{n+1} + a_2 \xi_p^{n+2} + \ldots + a_{k-1} \xi_p^{n+k-1} + a_{k} \xi_p^{n+k} \\
 ~ = ~ &amp;  \left( a_0  + a_1 \xi_p + a_2 \xi_p^{2} + \ldots + a_{k-1} \xi_p^{k-1} + a_{k} \xi_p^{k} \right) \xi_p^n \\
 ~ = ~ &amp; 0 \cdot \xi_p^n \\
 ~ = ~ &amp; 0
 \end{align*}\]</div>
 <p class="sd-card-text">Note: Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant-aux">(1.17)</a> is equivalent to Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a>.</p>
-</div>
+<!-- ::: -->
 </div>
 </details></div>
 </div><div class="proof theorem admonition" id="theorem-2">
 <p class="admonition-title"><span class="caption-number">Theorem 1.3 </span></p>
 <div class="theorem-content section" id="proof-content">
 <p>Assume the <span class="math notranslate nohighlight">\(k\)</span> roots of  the characteristic equation are distinct, then a fundamental set of solutions is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-489d19b5-7818-4196-8147-3a68df4250ce">
-<span class="eqno">(1.21)<a class="headerlink" href="#equation-489d19b5-7818-4196-8147-3a68df4250ce" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-acafd629-9930-42cc-90c8-267eb0009ca4">
+<span class="eqno">(1.21)<a class="headerlink" href="#equation-acafd629-9930-42cc-90c8-267eb0009ca4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \xi_p^n \quad (p=1,2,\ldots,k).
 \end{equation}\]</div>
 <p>An immediate consequence of this theorem, for this particular case, is that the general solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a> is</p>
@@ -513,8 +519,8 @@ Proof (click to show)<div class="sd-summary-down docutils">
 <p class="sd-card-text">Proof. Substituting Eq. <a class="reference internal" href="#equation-eq-de-linear-homo-sol">(1.22)</a> into Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant-aux">(1.17)</a>, we get</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-L(E) y_n  = ~ &amp; L(E) \left(c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n\right) \\
-~ = ~ &amp; c_1 L(E) \xi_1^n + c_2 L(E) \xi_2^n + \ldots + c_k L(E)\xi_k^n \\
+L(\S) y_n  = ~ &amp; L(\S) \left(c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n\right) \\
+~ = ~ &amp; c_1 L(\S) \xi_1^n + c_2 L(\S) \xi_2^n + \ldots + c_k L(\S)\xi_k^n \\
 ~ = ~ &amp; c_1 \cdot 0 + c_2 \cdot 0 + \ldots + c_k \cdot 0 \\
 ~ = ~ &amp; 0 
 \end{align*}\]</div>
@@ -541,10 +547,10 @@ Method 1 (iterative method)</label><div class="sd-tab-content docutils">
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
-Method 2 (characteristics method)</label><div class="sd-tab-content docutils">
-<p>Using the shift operator <span class="math notranslate nohighlight">\(E\)</span>, write the equation into</p>
+Method 2 (characteristic equation)</label><div class="sd-tab-content docutils">
+<p>Using the shift operator <span class="math notranslate nohighlight">\(\S\)</span>, write the equation into</p>
 <div class="math notranslate nohighlight">
-\[(E-a) y_n = 0,\]</div>
+\[(\S-a) y_n = 0,\]</div>
 <p>we get the characteristic equation</p>
 <div class="math notranslate nohighlight">
 \[\xi -a =0,\]</div>
@@ -559,38 +565,6 @@ Method 2 (characteristics method)</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<!-- ```{admonition} **Method 1**:
-:class: tip
-From the equation, we get
-
-$$y_{n+1} = a y_n$$
-
-so
-
-$$y_n = a y_{n-1} = a ( a y_{n-2}) = a(a(ay_{n-3}))=\ldots=a^n y_0 = Q a^n.$$
-```
-
-
-````{admonition} **Method 2**:
-:class: tip
-Using the shift operator $E$, write the equation into
-
-$$(E-a) y_n = 0,$$
-
-we get the characteristic equation
-
-$$\xi -a =0,$$
-
-and it has only one root $\xi=a$. So the general solution is
-
-$$y_n = c \xi^n, $$
-
-Using the initial condition, we get
-
-$$y_0 = Q = c \cdot a^0,$$
-
-$$y_n = Q a^n.$$
-```` -->
 </div>
 <div class="section" id="second-order-difference-equations">
 <h2><span class="section-number">1.4.2. </span>Second-order Difference Equations<a class="headerlink" href="#second-order-difference-equations" title="Permalink to this heading">#</a></h2>

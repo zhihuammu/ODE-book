@@ -50,7 +50,6 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -67,7 +66,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/02/chap02_2_differenceOperator';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
@@ -273,6 +272,13 @@ const thebe_selector_output = ".output, .cell_output"
         </li>
   </ul>
 </nav></div>
+      <div class="sidebar-primary-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    <br/>
+  </p>
+</div>
   </div>
   
   <div id="rtd-footer-container"></div>
@@ -416,7 +422,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-data-points-and-general-sequences">2.2.1. Discrete Data Points and General Sequences</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-difference-operator-delta">2.2.2. Forward Difference Operator <span class="math notranslate nohighlight">\(\Delta\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-difference-operator-nabla">2.2.3. Backward difference operator <span class="math notranslate nohighlight">\(\nabla\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shift-operators-e-and-e-1">2.2.4. Shift operators <span class="math notranslate nohighlight">\(\E\)</span> and <span class="math notranslate nohighlight">\(\E^{-1}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shift-operators-s-and-s-1">2.2.4. Shift operators <span class="math notranslate nohighlight">\(\S\)</span> and <span class="math notranslate nohighlight">\(\S ^{-1}\)</span></a></li>
 </ul>
             </nav>
         </div>
@@ -464,13 +470,13 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (Forward Difference)</p>
 <div class="definition-content section" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order <span class="target" id="index-1"></span>forward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between the next member and itself:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1def5058-1ebc-49e8-a443-9f0e140ad60a">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-1def5058-1ebc-49e8-a443-9f0e140ad60a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f4ccd041-9e5b-4199-9af3-030e8b56360e">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-f4ccd041-9e5b-4199-9af3-030e8b56360e" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta f_j = f_{j+1} - f_j,
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k-\)</span>th order forward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7227f7ac-0224-4cf8-aea8-29ed5885cf7d">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-7227f7ac-0224-4cf8-aea8-29ed5885cf7d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3d23d885-f8e5-485b-8f1c-f2a1519b92e8">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-3d23d885-f8e5-485b-8f1c-f2a1519b92e8" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta^k f_j= \Delta\left(\Delta^{k-1} f_j \right).
 \end{equation}\]</div>
 </div>
@@ -522,13 +528,13 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Definition 2.2 </span> (Backward Difference)</p>
 <div class="definition-content section" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order <span class="target" id="index-2"></span>backward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between itself and the previous member:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-639ed45c-5e39-4a77-bbf0-323d01afbd98">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-639ed45c-5e39-4a77-bbf0-323d01afbd98" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a0323947-4661-4c2b-b43a-fc1e87b4813c">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-a0323947-4661-4c2b-b43a-fc1e87b4813c" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla f_j = f_{j} - f_{j-1},
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k\)</span>-th order backward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f8e5bd3c-ad12-4010-9671-531dbeb610e7">
-<span class="eqno">(2.4)<a class="headerlink" href="#equation-f8e5bd3c-ad12-4010-9671-531dbeb610e7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bf244511-36b7-41c8-b00e-e96c1ceb48ef">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-bf244511-36b7-41c8-b00e-e96c1ceb48ef" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla^k f_j= \nabla\left(\nabla^{k-1} f_j \right).
 \end{equation}\]</div>
 </div>
@@ -576,42 +582,42 @@ document.write(`
 </li>
 </ul>
 </div>
-<div class="section" id="shift-operators-e-and-e-1">
-<h2><span class="section-number">2.2.4. </span>Shift operators <span class="math notranslate nohighlight">\(\E\)</span> and <span class="math notranslate nohighlight">\(\E^{-1}\)</span><a class="headerlink" href="#shift-operators-e-and-e-1" title="Permalink to this heading">#</a></h2>
+<div class="section" id="shift-operators-s-and-s-1">
+<h2><span class="section-number">2.2.4. </span>Shift operators <span class="math notranslate nohighlight">\(\S\)</span> and <span class="math notranslate nohighlight">\(\S ^{-1}\)</span><a class="headerlink" href="#shift-operators-s-and-s-1" title="Permalink to this heading">#</a></h2>
 <div class="proof definition admonition" id="definition-5">
 <p class="admonition-title"><span class="caption-number">Definition 2.3 </span></p>
 <div class="definition-content section" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>,
-we define <span class="math notranslate nohighlight">\(\E\)</span> as an operator <span class="target" id="index-3"></span>shifting a member in a sequence to the next member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-54bd4fb4-e217-42db-b42b-3bedaabfff4f">
-<span class="eqno">(2.5)<a class="headerlink" href="#equation-54bd4fb4-e217-42db-b42b-3bedaabfff4f" title="Permalink to this equation">#</a></span>\[\begin{equation}
-  \E f_j = f_{j+1},
+we define <span class="math notranslate nohighlight">\(\S\)</span> as an operator <span class="target" id="index-3"></span>shifting a member in a sequence to the next member</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1944b51b-e437-4b38-bb9d-27886abc1d86">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-1944b51b-e437-4b38-bb9d-27886abc1d86" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \S  f_j = f_{j+1},
 \end{equation}\]</div>
 <p>and shifting a member forward <span class="math notranslate nohighlight">\(k\)</span> times gives</p>
 <div class="math notranslate nohighlight">
-\[\E^k f_j= \E(\E^{k-1}f_j)= f_{j+k}.\]</div>
-<p>Similarly, we define <span class="math notranslate nohighlight">\(\E^{-1}\)</span> as an operator shifting a member in a
+\[\S ^k f_j= \S  \S ^{k-1}f_j)= f_{j+k}.\]</div>
+<p>Similarly, we define <span class="math notranslate nohighlight">\(\S ^{-1}\)</span> as an operator shifting a member in a
 sequence to the previous member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-52e73dba-fa47-4b48-aedf-d395faa084af">
-<span class="eqno">(2.6)<a class="headerlink" href="#equation-52e73dba-fa47-4b48-aedf-d395faa084af" title="Permalink to this equation">#</a></span>\[\begin{equation}
-  \E^{-1} f_j = f_{j-1}
+<div class="amsmath math notranslate nohighlight" id="equation-dec63586-2b5f-40be-9bc8-459be0c35f06">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-dec63586-2b5f-40be-9bc8-459be0c35f06" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \S ^{-1} f_j = f_{j-1}
 \end{equation}\]</div>
 <p>and shifting a member backward <span class="math notranslate nohighlight">\(k\)</span> (<span class="math notranslate nohighlight">\(k&gt;0\)</span>) times gives</p>
 <div class="math notranslate nohighlight">
-\[\E^{-k} f_j= \E^{-1}(\E^{-(k-1)}f_j)= f_{j-k}.\]</div>
+\[\S ^{-k} f_j= \S ^{-1}(\S ^{-(k-1)}f_j)= f_{j-k}.\]</div>
 </div>
 </div><div class="admonition-note admonition">
 <p class="admonition-title">Note</p>
 <p>The forward and backward shifting operations can also be applied to
 functions defined on continuous domains</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\E f(x)= f(x+h)\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\E^{-1} f(x) = f(x-h)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\S  f(x)= f(x+h)\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\S ^{-1} f(x) = f(x-h)\)</span>.</p></li>
 </ul>
 <p>If we do shifting for <span class="math notranslate nohighlight">\(k\)</span> times , then</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\E^k f(x)= f(x+kh)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\E^{-k} f(x) = f(x-kh)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\S ^k f(x)= f(x+kh)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\S ^{-k} f(x) = f(x-kh)\)</span></p></li>
 </ul>
 </div>
 <div class="important admonition">
@@ -620,12 +626,12 @@ functions defined on continuous domains</p>
 <li><p>If we shift forward for <span class="math notranslate nohighlight">\(k=0.9\)</span> steps, what we will get?</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\E^{0.9} f_j= \E^{0.9} f(x_j)= f(x_j+0.9h)=?\]</div>
+\[\S ^{0.9} f_j= \S ^{0.9} f(x_j)= f(x_j+0.9h)=?\]</div>
 <ul class="simple">
 <li><p>If we shift backward for <span class="math notranslate nohighlight">\(k=0.9\)</span> steps, what we will get?</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\E^{-0.9} f_j= \E^{-0.9} f(x_j)= f(x_j-0.9h)=?\]</div>
+\[\S ^{-0.9} f_j= \S ^{-0.9} f(x_j)= f(x_j-0.9h)=?\]</div>
 </div>
 <div class="proof theorem admonition" id="theorem-6">
 <p class="admonition-title"><span class="caption-number">Theorem 2.1 </span></p>
@@ -633,8 +639,8 @@ functions defined on continuous domains</p>
 <p>The <span class="target" id="index-4"></span>difference operators and <span class="target" id="index-5"></span>shift operators have the following
 relations:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\E=1+\Delta\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\E^{-1}=1-\nabla\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\S =1+\Delta\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\S ^{-1}=1-\nabla\)</span></p></li>
 </ul>
 </div>
 </div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -647,7 +653,7 @@ Proof (click to show)<div class="sd-summary-down docutils">
 <div class="proof admonition" id="proof">
 <p class="sd-card-text">Proof. Applying the operators on <span class="math notranslate nohighlight">\(f(x)\)</span></p>
 <ul class="simple">
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\E=1+\Delta\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\S =1+\Delta\)</span></p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -655,11 +661,11 @@ Proof (click to show)<div class="sd-summary-down docutils">
 (1+\Delta) f(x) &amp; = f(x) + \Delta f(x) \\
                 &amp; = f(x) + f(x+h)-f(x) \\
                 &amp; = f(x+h) \\
-                &amp; = \E f(x)
+                &amp; = \S  f(x)
 \end{aligned}
 \end{split}\]</div>
 <ul class="simple">
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\E^{-1}=1-\nabla\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\S ^{-1}=1-\nabla\)</span></p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -667,7 +673,7 @@ Proof (click to show)<div class="sd-summary-down docutils">
 (1-\nabla) f(x) &amp; = f(x) - \nabla f(x) \\
                 &amp; = f(x) - \left[f(x)-f(x-h)\right]\\
                 &amp; = f(x-h) \\
-                &amp; = \E^{-1} f(x)
+                &amp; = \S ^{-1} f(x)
 \end{aligned}
 \end{split}\]</div>
 </div>
@@ -741,7 +747,7 @@ Proof (click to show)<div class="sd-summary-down docutils">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-data-points-and-general-sequences">2.2.1. Discrete Data Points and General Sequences</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-difference-operator-delta">2.2.2. Forward Difference Operator <span class="math notranslate nohighlight">\(\Delta\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-difference-operator-nabla">2.2.3. Backward difference operator <span class="math notranslate nohighlight">\(\nabla\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shift-operators-e-and-e-1">2.2.4. Shift operators <span class="math notranslate nohighlight">\(\E\)</span> and <span class="math notranslate nohighlight">\(\E^{-1}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shift-operators-s-and-s-1">2.2.4. Shift operators <span class="math notranslate nohighlight">\(\S\)</span> and <span class="math notranslate nohighlight">\(\S ^{-1}\)</span></a></li>
 </ul>
   </nav></div>
 
