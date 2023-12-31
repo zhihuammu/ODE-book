@@ -7,8 +7,6 @@ For detailed solutions, you can download
 
 - {download}`excel solutions for Exercises 2.1 -- 2.6 </exSol/Ex2/Ex2_Q1-Q6.xlsx>`
 
-- {download}`handwritten full solution for Exercise 2.7 </exSol/Ex2/Ex2_Q7_solution_annotated.pdf>`
-
 ::::{exercise}
 :label: ch2-ex-q1
 Complete a difference table for the following data:
@@ -98,6 +96,7 @@ $f(1.72)$.
 | $x$  | 1.7 | 1.8 | 1.9 | 2.0 | 2.1|
 |:----:  |:----:| :----:|  :----:|  :----:| :----:| 
 | $f(x)$ | 0.39798486 | 0.33998641 | 0.28181856 | 0.22389078 | 0.16660698|
+::::
 
 :::{note}
 The function representing this set of data is derived from
@@ -106,7 +105,7 @@ find the solution in MATLAB, using the command *besselj*$(0,x)$,
 which evaluates the function *besselj* of order 0 at a given $x$
 value. Compare your result with the MATLAB answer, and comment
 whether the accuracy of your solution is within the expected range.
-::::
+:::
 
 ::::{solution} ch2-ex-q5
 :class: dropdown
@@ -207,5 +206,7 @@ Following the method used to derive the Gregory-Newton forward interpolation for
 
 ::::{solution} ch2-ex-q4
 :class: dropdown
-Use Binomial Expansion to expand $(1-\nabla)^{-s}$. Find the full solution in Moodle.
+Use Binomial Expansion to expand $(1-\nabla)^{-s}$. See
+
+- {download}`handwritten full solution for Exercise 2.7 </exSol/Ex2/Ex2_Q7_solution_annotated.pdf>`
 ::::

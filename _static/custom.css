@@ -72,6 +72,7 @@ div.exercise p.admonition-title::before {
 }
 
 div.exercise p.admonition-title:after {
+  color: black;
   content: "\f303"; /* the pencil icon */
 }
 

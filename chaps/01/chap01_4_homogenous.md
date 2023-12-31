@@ -89,7 +89,7 @@ y_n = c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n,
 where the constants $c_p~(p=1,2,\ldots,k)$ are arbitrary.
 
 :::{dropdown} Proof (click to show)
-::::{prf:proof}
+<!-- ::::{prf:proof} -->
 Substituting Eq. {eq}`eq:DE:linear:homo:sol` into Eq. {eq}`eq:DE:linear:homogeneous:constant:aux`, we get 
 \begin{align*}
 L(\S) y_n  = ~ & L(\S) \left(c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n\right) \\

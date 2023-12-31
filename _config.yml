@@ -4,7 +4,7 @@
 title     : Linear Multistep Methods
 author    : "<a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>"
 copyright : "2023--2025"  # Copyright year to be placed in the footer
-logo      : images/logo2c.svg
+logo      : images/logo2.png
 email     : "z.ma@mmu.ac.uk"
 
 only_build_toc_files: true  
@@ -33,7 +33,7 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  favicon               : images/favicon.png  # A path to a favicon image
+  favicon               : images/ode.png  # A path to a favicon image
   home_page_in_navbar   : false
   use_multitoc_numbering: false      
   use_repository_button : false
@@ -88,19 +88,13 @@ sphinx:
       # footer_start  : author
       # footer_center : sphinx-version
       # footer_end    : theme-version    
-      # navbar_start: 
-      #   - author
-      #   - sphinx-version   
-      # primary_sidebar_end   : 
-      #   - indices
-        # - sphinx-version
-      extra_footer  : "<div>Powered by <a href='https://jupyterbook.org'>Jupyter Book</a></div>"
+      extra_footer  : "<div>Created using <a href='https://jupyterbook.org'>Jupyter Book</a></div>"
     html_sidebars :
       '**': 
         - navbar-logo
         - sbt-sidebar-nav
         - indices
-        - sphinx-version
+        # - sphinx-version
     html_last_updated_fmt : "%d %B %Y"
   extra_extensions:
     - sphinx_proof
@@ -121,6 +115,7 @@ parse:
     - html_admonition
     - fieldlist   
     - deflist
-  myst_url_schemes: [mailto, http, https] # URI schemes that will be recognised as external URLs in Markdown links
-  myst_dmath_double_inline: true  # Allow display math ($$) within an inline context    
+    
+  # myst_url_schemes: [mailto, http, https] # URI schemes that will be recognised as external URLs in Markdown links
+  # myst_dmath_double_inline: true  # Allow display math ($$) within an inline context    
   

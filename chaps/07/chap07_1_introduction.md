@@ -39,8 +39,8 @@ the second. We generally can say, stiffness occurs when some components
 of the solution decay much faster than others.
 :::
 
-:::{prf:example}
-Consider the differential equation 
+::::{prf:example}
+Consider the initial value problem
 
 $$
 \begin{aligned}
@@ -48,7 +48,7 @@ $$
 \end{aligned}
 $$
 
-The solution of this linear differential equation is
+The solution of this initial value problem is
 
 $$
 \begin{aligned}
@@ -56,7 +56,66 @@ $$
 \end{aligned}
 $$
 
-the solution consists of two parts. A slowly varying
+:::{admonition} Analytical solution process
+:class: solution, dropdown
+Rewriting the equation as
+
+$$
+(\D+40)y=40x+1,
+$$
+
+so its auxiliary (characteristic) equation is
+
+$$
+\xi+40=0,
+$$
+
+and we get the root $\xi=-40$.
+
+Therefore the complementary (homogeneous) solution to the problem is
+
+$$
+y_h = c e^{-40x}.
+$$
+
+Now let's try to find a particular solution to the problem
+
+$$
+(\D+40) y_p = 40x+1. 
+$$
+
+Let  $y_p = Ax+B$, and we get
+
+$$
+\begin{aligned}
+(\D+40) y_p & = (\D+40) Ax+ (\D+40) B \\
+            & = A+40Ax + 40B \\
+            & = 40Ax+(A+40B) \\
+            & = 40x+1
+\end{aligned}
+$$
+
+so
+
+$$
+A=1, \quad B=0.
+$$
+
+Thus the solution to the IVP is
+
+$$
+y= y_h + y_p= c e^{-40x} + x 
+$$
+
+Substituting the initial condition $y(0)=4$, we can get $c=4$, therefore the overall solution to this IVP is
+
+$$
+y=4e^{-40x}+x
+$$
+
+:::
+
+The solution consists of two parts. A slowly varying
 function, $x$, and a rapidly decreasing exponential term, $4e^{-40x}$.
 The diagram shows the graph of the solution.
 
@@ -121,7 +180,7 @@ $h = 0.1$, then $y_0(1 - 40h)^j = y_0(-3)^j$ oscillates with growing
 magnitude as $j$ increases. However, only when $|1 - 40h| < 1$
 $(i.e.\ 0 < h < \frac{1}{20})$, the numerical solution resembles the
 real solution.
-:::
+::::
 
 Generally, stiff differential equations arise in physical conditions due
 to the existence of greatly varying *{index}`time constants`*. Time constant is

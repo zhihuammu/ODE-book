@@ -198,7 +198,7 @@ $$
  where $t$ is the independent variable.
 
 :::{admonition} Analytical Solution to Linear differential equation system 
-:class: dropdown
+:class: dropdown, solution
 
 For a homogeneous (linear) system of differential equations, we can use
 the eigenvalues and eigenvectors of the system to obtains its analytical

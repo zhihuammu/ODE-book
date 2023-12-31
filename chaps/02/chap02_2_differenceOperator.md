@@ -208,7 +208,6 @@ relations:
 ::::
 
 :::{dropdown} Proof (click to show)
-:::{prf:proof}
 Applying the operators on $f(x)$
 
 -   $\S =1+\Delta$
