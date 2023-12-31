@@ -85,14 +85,25 @@ div.question {
 }
 
 div.question p.admonition-title {
-  background-color: var(--caution-title-color);
+  background-color: rgb(250, 185, 124, 0.3);
 }
 
 div.question  p.admonition-title:after {
   color: rgb(248, 100, 74);
-  content: "\f059"; /* the fa-scale icon */  
+  content: "\f059"; /* the fa-question icon */  
 }
 
+/*********************************************
+* solution *
+*********************************************/
+div.solution {
+  background-color: transparent;
+}
+
+div.solution  p.admonition-title:after {
+  color: green;
+  content: "\f3e5"; /* the fa-reply icon */   
+}
 
 /*********************************************
 * Customise Icon *

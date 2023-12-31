@@ -2,9 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title     : Linear Multistep Methods
-author    : Dr Zhihua Ma
+author    : "<a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>"
 copyright : "2023--2025"  # Copyright year to be placed in the footer
-last_updated: "Dec 19, 2023"
 logo      : images/logo2c.svg
 email     : "z.ma@mmu.ac.uk"
 
@@ -22,8 +21,8 @@ latex:
     targetname: odebook.tex
 
 # Add a bibtex file so that we can create citations
-#bibtex_bibfiles:
-#  - references.bib
+bibtex_bibfiles:
+  - references.bib
 
 # Information about where the book exists on the web
 repository:
@@ -45,7 +44,6 @@ html:
   comments:
     hypothesis          : false
   announcement          : ""
-  # extra_navbar          : Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.  
 
 sphinx:
   config:
@@ -96,14 +94,14 @@ sphinx:
       # primary_sidebar_end   : 
       #   - indices
         # - sphinx-version
-      extra_footer  : "<div>Email: <a href='mailto:z.ma@mmu.ac.uk'>z.ma@mmu.ac.uk</a></div>"
+      extra_footer  : "<div>Powered by <a href='https://jupyterbook.org'>Jupyter Book</a></div>"
     html_sidebars :
       '**': 
         - navbar-logo
         - sbt-sidebar-nav
         - indices
         - sphinx-version
-    html_last_updated_fmt : ""
+    html_last_updated_fmt : "%d %B %Y"
   extra_extensions:
     - sphinx_proof
     - sphinx_exercise    

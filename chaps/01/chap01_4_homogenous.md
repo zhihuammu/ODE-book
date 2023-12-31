@@ -110,7 +110,7 @@ $$ y_{n+1}-ay_n =0, ~ y_0 = Q.$$
 
 
 :::::{admonition} **Solution:**
-:class: tip
+:class: solution
 ````{tab-set}
 ```{tab-item} Method 1 (iterative method)
 From the equation, we get
@@ -151,7 +151,8 @@ Find the solution to
 
 $$y_{n+2} + a y_{n+1} + b y_n = 0.$$
 
-**Solution**:
+:::{admonition} **Solution**
+:class: solution
 
 Substituting $y_n = \xi^n$ into the equation, we get
 
@@ -172,6 +173,7 @@ $$\xi_{1,2}=\frac{-a\pm \sqrt{a^2-4b}}{2}.$$
 - Case 1: Two distinct real solutions;
 - Case 2: Two identical real solutions;
 - Case 3: Two complex conjugate solutions.
+:::
 
 ````{admonition} **Case (1) Two different real solutions: $\xi_1 \neq \xi_2$ and $\xi_{1,2}\in \mathbb{R}$**:
 :class: hint

@@ -23,7 +23,7 @@ $$
  when applied to $y' = \lambda y$.
 
 :::{admonition} Solution
-:class: tip
+:class: solution
 
 
 The characteristic equation is 
@@ -92,7 +92,7 @@ $$
  when applied to $\,y' = \lambda y$.
 
 :::{admonition} Solution
-:class: tip
+:class: solution
 The characteristic equation is 
 
 $$

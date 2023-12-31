@@ -1,10 +1,12 @@
 (chap:errorConstant:constants)=
 # Order and Error Constants
 
+:::{prf:theorem} Global Error and Order of Accuracy
 If the {index}`local error` associated to a multistep formula is $\,O(h)^{p+1}$
 then, the {index}`global error` is expected to be $\,O(h)^p$, and we can say that
 the method is of order $p$. To determine the order of a multistep method
 we can use the following approach.
+:::
 
 The most general linear multistep method has the form 
 
@@ -249,7 +251,7 @@ Construct an implicit linear two-step method of maximal order,
 containing one free parameter, and find its order.
 
 :::{admonition} Solution
-:class: tip
+:class: solution
 
 For a two-step method $\,k \!=\! 2;\ \alpha_2 \!=\! 1\,$, by hypothesis.
 Let $\,\alpha_0 \!=\! a\,$ be the free parameter. There remain four
