@@ -7,8 +7,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proof Index &#8212; Linear Multistep Methods</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>ODE-book &#8212; Linear Multistep Methods</title>
   
   
   
@@ -64,19 +65,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'prf-prf';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
     <link rel="shortcut icon" href="_static/ode.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-
-    <script>
-      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
-    </script>
-
-
   </head>
   
   
@@ -294,6 +288,54 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/README.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
@@ -325,7 +367,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -336,11 +380,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1></h1>
+    <h1>ODE-book</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">ODE-book</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#warning">Warning</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -350,384 +404,35 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
+  <section class="tex2jax_ignore mathjax_ignore" id="ode-book">
+<h1>ODE-book<a class="headerlink" href="#ode-book" title="Permalink to this headline">#</a></h1>
+<p>Computational Methods in Ordinary Differential Equations</p>
+<p>Part B: Linear Multistep Methods and Sparse Matrices</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="warning">
+<h1>Warning<a class="headerlink" href="#warning" title="Permalink to this headline">#</a></h1>
+<p>Don’t install furo</p>
+</section>
 
-   <h1>Proof Index</h1>
-
-   <div class="modindex-jumpbox">
-   <a href="#cap-ch04-example-4"><strong>ch04-example-4</strong></a> | 
-   <a href="#cap-ch08-example-columncount"><strong>ch08-example-columncount</strong></a> | 
-   <a href="#cap-ch08-example-comparison"><strong>ch08-example-comparison</strong></a> | 
-   <a href="#cap-ch08-example-mindegree"><strong>ch08-example-mindegree</strong></a> | 
-   <a href="#cap-ch08-example-rcm"><strong>ch08-example-rcm</strong></a> | 
-   <a href="#cap-chap04-example-3"><strong>chap04-example-3</strong></a> | 
-   <a href="#cap-chap04-example-5"><strong>chap04-example-5</strong></a> | 
-   <a href="#cap-chap07-example-3"><strong>chap07-example-3</strong></a> | 
-   <a href="#cap-def-sequence"><strong>def-sequence</strong></a> | 
-   <a href="#cap-def:char-poly"><strong>def:char-poly</strong></a> | 
-   <a href="#cap-definition-0"><strong>definition-0</strong></a> | 
-   <a href="#cap-definition-1"><strong>definition-1</strong></a> | 
-   <a href="#cap-definition-2"><strong>definition-2</strong></a> | 
-   <a href="#cap-definition-3"><strong>definition-3</strong></a> | 
-   <a href="#cap-definition-4"><strong>definition-4</strong></a> | 
-   <a href="#cap-definition-5"><strong>definition-5</strong></a> | 
-   <a href="#cap-definition-6"><strong>definition-6</strong></a> | 
-   <a href="#cap-example-0"><strong>example-0</strong></a> | 
-   <a href="#cap-example-1"><strong>example-1</strong></a> | 
-   <a href="#cap-example-2"><strong>example-2</strong></a> | 
-   <a href="#cap-example-3"><strong>example-3</strong></a> | 
-   <a href="#cap-example-3.2"><strong>example-3.2</strong></a> | 
-   <a href="#cap-example-4"><strong>example-4</strong></a> | 
-   <a href="#cap-example-5"><strong>example-5</strong></a> | 
-   <a href="#cap-example-6"><strong>example-6</strong></a> | 
-   <a href="#cap-example-7"><strong>example-7</strong></a> | 
-   <a href="#cap-example-8"><strong>example-8</strong></a> | 
-   <a href="#cap-example-8.5"><strong>example-8.5</strong></a> | 
-   <a href="#cap-example:chap06:4"><strong>example:chap06:4</strong></a> | 
-   <a href="#cap-remark-0"><strong>remark-0</strong></a> | 
-   <a href="#cap-remark-1"><strong>remark-1</strong></a> | 
-   <a href="#cap-remark-2"><strong>remark-2</strong></a> | 
-   <a href="#cap-remark-3"><strong>remark-3</strong></a> | 
-   <a href="#cap-remark-5"><strong>remark-5</strong></a> | 
-   <a href="#cap-remark-6"><strong>remark-6</strong></a> | 
-   <a href="#cap-theorem-0"><strong>theorem-0</strong></a> | 
-   <a href="#cap-theorem-1"><strong>theorem-1</strong></a> | 
-   <a href="#cap-theorem-2"><strong>theorem-2</strong></a> | 
-   <a href="#cap-theorem-3"><strong>theorem-3</strong></a> | 
-   <a href="#cap-theorem-5"><strong>theorem-5</strong></a> | 
-   <a href="#cap-theorem-6"><strong>theorem-6</strong></a>
-   </div>
-
-   <table class="indextable modindextable">
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-ch04-example-4"><td></td><td>
-       <strong>ch04-example-4</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/04/chap04_2_errorConstant.html#ch04-example-4"><code class="xref">ch04-example-4</code></a> <em>(chaps/04/chap04_2_errorConstant)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-ch08-example-columncount"><td></td><td>
-       <strong>ch08-example-columncount</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/08/chap08_5_reordering.html#ch08-example-columncount"><code class="xref">ch08-example-columncount</code></a> <em>(chaps/08/chap08_5_reordering)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-ch08-example-comparison"><td></td><td>
-       <strong>ch08-example-comparison</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/08/chap08_5_reordering.html#ch08-example-comparison"><code class="xref">ch08-example-comparison</code></a> <em>(chaps/08/chap08_5_reordering)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-ch08-example-mindegree"><td></td><td>
-       <strong>ch08-example-mindegree</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/08/chap08_5_reordering.html#ch08-example-mindegree"><code class="xref">ch08-example-mindegree</code></a> <em>(chaps/08/chap08_5_reordering)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-ch08-example-rcm"><td></td><td>
-       <strong>ch08-example-rcm</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/08/chap08_5_reordering.html#ch08-example-rcm"><code class="xref">ch08-example-rcm</code></a> <em>(chaps/08/chap08_5_reordering)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-chap04-example-3"><td></td><td>
-       <strong>chap04-example-3</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/04/chap04_2_errorConstant.html#chap04-example-3"><code class="xref">chap04-example-3</code></a> <em>(chaps/04/chap04_2_errorConstant)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-chap04-example-5"><td></td><td>
-       <strong>chap04-example-5</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/04/chap04_3_MilineDevice.html#chap04-example-5"><code class="xref">chap04-example-5</code></a> <em>(chaps/04/chap04_3_MilineDevice)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-chap07-example-3"><td></td><td>
-       <strong>chap07-example-3</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/07/chap07_2_stiffSystem.html#chap07-example-3"><code class="xref">chap07-example-3</code></a> <em>(chaps/07/chap07_2_stiffSystem)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-def-sequence"><td></td><td>
-       <strong>def-sequence</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/01/chap01_2_sequence.html#def-sequence"><code class="xref">def-sequence</code></a> <em>(chaps/01/chap01_2_sequence)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-def:char-poly"><td></td><td>
-       <strong>def:char-poly</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/05/chap05_1_rootCondition.html#def:char-poly"><code class="xref">def:char-poly</code></a> <em>(chaps/05/chap05_1_rootCondition)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-0"><td></td><td>
-       <strong>definition-0</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/08/chap08_2_sparseMatrix.html#definition-0"><code class="xref">definition-0</code></a> <em>(chaps/08/chap08_2_sparseMatrix)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-1"><td></td><td>
-       <strong>definition-1</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/06/chap06_3_boundaryRootLocus.html#definition-1"><code class="xref">definition-1</code></a> <em>(chaps/06/chap06_3_boundaryRootLocus)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-2"><td></td><td>
-       <strong>definition-2</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/06/chap06_1_stabilityInterval.html#definition-2"><code class="xref">definition-2</code></a> <em>(chaps/06/chap06_1_stabilityInterval)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-3"><td></td><td>
-       <strong>definition-3</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/05/chap05_1_rootCondition.html#definition-3"><code class="xref">definition-3</code></a> <em>(chaps/05/chap05_1_rootCondition)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-4"><td></td><td>
-       <strong>definition-4</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/05/chap05_1_rootCondition.html#definition-4"><code class="xref">definition-4</code></a> <em>(chaps/05/chap05_1_rootCondition)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-5"><td></td><td>
-       <strong>definition-5</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/05/chap05_1_rootCondition.html#definition-5"><code class="xref">definition-5</code></a> <em>(chaps/05/chap05_1_rootCondition)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-6"><td></td><td>
-       <strong>definition-6</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/01/chap01_3_differenceEquation.html#definition-6"><code class="xref">definition-6</code></a> <em>(chaps/01/chap01_3_differenceEquation)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-0"><td></td><td>
-       <strong>example-0</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/08/chap08_3_graphTheory.html#example-0"><code class="xref">example-0</code></a> <em>(chaps/08/chap08_3_graphTheory)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-1"><td></td><td>
-       <strong>example-1</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/08/chap08_4_storage.html#example-1"><code class="xref">example-1</code></a> <em>(chaps/08/chap08_4_storage)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-2"><td></td><td>
-       <strong>example-2</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/08/chap08_3_graphTheory.html#example-2"><code class="xref">example-2</code></a> <em>(chaps/08/chap08_3_graphTheory)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-3"><td></td><td>
-       <strong>example-3</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/08/chap08_3_graphTheory.html#example-3"><code class="xref">example-3</code></a> <em>(chaps/08/chap08_3_graphTheory)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-3.2"><td></td><td>
-       <strong>example-3.2</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/03/chap03_5_predictorCorrector.html#example-3.2"><code class="xref">example-3.2</code></a> <em>(chaps/03/chap03_5_predictorCorrector)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-4"><td></td><td>
-       <strong>example-4</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/05/chap05_2_convergence.html#example-4"><code class="xref">example-4</code></a> <em>(chaps/05/chap05_2_convergence)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-5"><td></td><td>
-       <strong>example-5</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/05/chap05_2_convergence.html#example-5"><code class="xref">example-5</code></a> <em>(chaps/05/chap05_2_convergence)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-6"><td></td><td>
-       <strong>example-6</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/05/chap05_1_rootCondition.html#example-6"><code class="xref">example-6</code></a> <em>(chaps/05/chap05_1_rootCondition)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-7"><td></td><td>
-       <strong>example-7</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/01/chap01_3_differenceEquation.html#example-7"><code class="xref">example-7</code></a> <em>(chaps/01/chap01_3_differenceEquation)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-8"><td></td><td>
-       <strong>example-8</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/00/chap00_3_analytical.html#example-8"><code class="xref">example-8</code></a> <em>(chaps/00/chap00_3_analytical)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-8.5"><td></td><td>
-       <strong>example-8.5</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/08/chap08_4_storage.html#example-8.5"><code class="xref">example-8.5</code></a> <em>(chaps/08/chap08_4_storage)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example:chap06:4"><td></td><td>
-       <strong>example:chap06:4</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/07/chap07_2_stiffSystem.html#example:chap06:4"><code class="xref">example:chap06:4</code></a> <em>(chaps/07/chap07_2_stiffSystem)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-0"><td></td><td>
-       <strong>remark-0</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/08/chap08_1_introduction.html#remark-0"><code class="xref">remark-0</code></a> <em>(chaps/08/chap08_1_introduction)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-1"><td></td><td>
-       <strong>remark-1</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/01/chap01_3_differenceEquation.html#remark-1"><code class="xref">remark-1</code></a> <em>(chaps/01/chap01_3_differenceEquation)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-2"><td></td><td>
-       <strong>remark-2</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/05/chap05_2_convergence.html#remark-2"><code class="xref">remark-2</code></a> <em>(chaps/05/chap05_2_convergence)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-3"><td></td><td>
-       <strong>remark-3</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/00/chap00_1_definition.html#remark-3"><code class="xref">remark-3</code></a> <em>(chaps/00/chap00_1_definition)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-5"><td></td><td>
-       <strong>remark-5</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/01/chap01_1_complexNumber.html#remark-5"><code class="xref">remark-5</code></a> <em>(chaps/01/chap01_1_complexNumber)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-6"><td></td><td>
-       <strong>remark-6</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/05/chap05_2_convergence.html#remark-6"><code class="xref">remark-6</code></a> <em>(chaps/05/chap05_2_convergence)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-theorem-0"><td></td><td>
-       <strong>theorem-0</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/04/chap04_2_errorConstant.html#theorem-0"><code class="xref">theorem-0</code></a> <em>(chaps/04/chap04_2_errorConstant)</em></td><td>
-       <em>theorem</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-theorem-1"><td></td><td>
-       <strong>theorem-1</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/04/chap04_1_errorIntegration.html#theorem-1"><code class="xref">theorem-1</code></a> <em>(chaps/04/chap04_1_errorIntegration)</em></td><td>
-       <em>theorem</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-theorem-2"><td></td><td>
-       <strong>theorem-2</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/01/chap01_4_homogenous.html#theorem-2"><code class="xref">theorem-2</code></a> <em>(chaps/01/chap01_4_homogenous)</em></td><td>
-       <em>theorem</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-theorem-3"><td></td><td>
-       <strong>theorem-3</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/05/chap05_2_convergence.html#theorem-3"><code class="xref">theorem-3</code></a> <em>(chaps/05/chap05_2_convergence)</em></td><td>
-       <em>theorem</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-theorem-5"><td></td><td>
-       <strong>theorem-5</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/00/chap00_3_analytical.html#theorem-5"><code class="xref">theorem-5</code></a> <em>(chaps/00/chap00_3_analytical)</em></td><td>
-       <em>theorem</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-theorem-6"><td></td><td>
-       <strong>theorem-6</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="chaps/02/chap02_2_differenceOperator.html#theorem-6"><code class="xref">theorem-6</code></a> <em>(chaps/02/chap02_2_differenceOperator)</em></td><td>
-       <em>theorem</em></td></tr>
-   </table>
-
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -749,6 +454,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">ODE-book</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#warning">Warning</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>

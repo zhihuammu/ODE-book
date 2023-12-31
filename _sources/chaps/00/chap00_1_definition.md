@@ -6,6 +6,9 @@
 (chap:pre:1)=
 # Definitions, Classification and Terminology
 
+:::{index} Differential Equations
+:::
+
 ```{prf:definition} Differential Equations
 An equation containing the derivatives of one or more unknown functions (or
 dependent variables), with respect to one or more independent variables, is said to be a **{index}`differential equation`** (DE).
