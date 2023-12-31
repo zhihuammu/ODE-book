@@ -58,5 +58,11 @@ parts:
   - caption: Appendix
     numbered: false
     chapters:  
-    - file: chaps/append/chapY_odeSolvers
+    - file: genindex
+    - url: https://uk.mathworks.com/help/matlab/ordinary-differential-equations.html
+      title: ODE Solvers in Matlab
+    - url: https://docs.scipy.org/doc/scipy/reference/integrate.html
+      title: ODE Solvers in Scipy    
+
+    # - file: chaps/append/chapY_odeSolvers
     # - file: chaps/append/chapZ_test

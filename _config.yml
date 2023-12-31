@@ -7,7 +7,7 @@ copyright : "2023--2025"  # Copyright year to be placed in the footer
 logo      : images/logo2.png
 email     : "z.ma@mmu.ac.uk"
 
-only_build_toc_files: true  
+only_build_toc_files: true 
 
 
 # Force re-execution of notebooks on each build.
@@ -48,6 +48,7 @@ html:
 sphinx:
   config:
 # bibtex_reference_style: author_year    
+    charset_table : A..Z->a..z
     html_show_copyright: true
     language: en          
     latex_elements:
@@ -85,16 +86,25 @@ sphinx:
     # html_theme: pydata_sphinx_theme
     html_theme_options:    
       show_toc_level  : 3
-      # footer_start  : author
+      footer_start  : sphinx-version
       # footer_center : sphinx-version
-      # footer_end    : theme-version    
-      extra_footer  : "<div>Created using <a href='https://jupyterbook.org'>Jupyter Book</a></div>"
-    html_sidebars :
-      '**': 
-        - navbar-logo
-        - sbt-sidebar-nav
-        - indices
-        # - sphinx-version
+      footer_end    : theme-version    
+      # extra_footer  : "<div>Powered by <a href='https://jupyterbook.org'>Jupyter Book</a></div>"
+      # primary_sidebar_end: 
+      #   - sphinx-version
+      #   - copyright
+      #   - theme-version
+      #   - last-updated
+      # content_footer_items:
+      #   - theme-version
+      #   - last-updated
+      #   - copyright
+      #   - sphinx-version
+    # html_sidebars :
+    #   '**': 
+    #     - navbar-logo
+    #     - sbt-sidebar-nav
+    #     - indices        
     html_last_updated_fmt : "%d %B %Y"
   extra_extensions:
     - sphinx_proof
