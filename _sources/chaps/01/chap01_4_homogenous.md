@@ -89,7 +89,7 @@ y_n = c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n,
 where the constants $c_p~(p=1,2,\ldots,k)$ are arbitrary.
 
 :::{dropdown} Proof (click to show)
-::::{prf:proof}
+<!-- ::::{prf:proof} -->
 Substituting Eq. {eq}`eq:DE:linear:homo:sol` into Eq. {eq}`eq:DE:linear:homogeneous:constant:aux`, we get 
 \begin{align*}
 L(\S) y_n  = ~ & L(\S) \left(c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n\right) \\
@@ -110,7 +110,7 @@ $$ y_{n+1}-ay_n =0, ~ y_0 = Q.$$
 
 
 :::::{admonition} **Solution:**
-:class: tip
+:class: solution
 ````{tab-set}
 ```{tab-item} Method 1 (iterative method)
 From the equation, we get
@@ -151,7 +151,8 @@ Find the solution to
 
 $$y_{n+2} + a y_{n+1} + b y_n = 0.$$
 
-**Solution**:
+:::{admonition} **Solution**
+:class: solution
 
 Substituting $y_n = \xi^n$ into the equation, we get
 
@@ -172,6 +173,7 @@ $$\xi_{1,2}=\frac{-a\pm \sqrt{a^2-4b}}{2}.$$
 - Case 1: Two distinct real solutions;
 - Case 2: Two identical real solutions;
 - Case 3: Two complex conjugate solutions.
+:::
 
 ````{admonition} **Case (1) Two different real solutions: $\xi_1 \neq \xi_2$ and $\xi_{1,2}\in \mathbb{R}$**:
 :class: hint

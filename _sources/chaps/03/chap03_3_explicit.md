@@ -87,7 +87,7 @@ $\,y = 2\text{e}^x - x - 1$). Thus, the computed value has an error of
 $0.00164$.
 :::
 
-Now we can use the following table, obtained by using the RKF method
+Now we can use the following table, obtained by using the RK4 method
 with $\,h = 0.1\,$, and use the values at $\,x = 0.3\,$, $\,x = 0.4\,$
 and $\,x = 0.5\,$ to obtain a better approximation for $y$ at
 $\,x = 0.6\,$.

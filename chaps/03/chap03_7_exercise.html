@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>3.7. Chapter 3 Exercises &#8212; Linear Multistep Methods</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -41,14 +42,12 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -69,14 +68,13 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/03/chap03_7_exercise';</script>
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="shortcut icon" href="../../_static/ode.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4. Multistep Methods: Order and Error Constants" href="../04/chap04_0.html" />
     <link rel="prev" title="3.6. Example Programs" href="chap03_6_codes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Dec 30, 2023"/>
   </head>
   
   
@@ -85,15 +83,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -147,11 +136,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="../../index.html">
-  
   
   
   
@@ -161,8 +148,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo2c.svg" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
-    <script>document.write(`<img src="../../_static/logo2c.svg" class="logo__image only-dark" alt="Linear Multistep Methods - Home"/>`);</script>
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -258,8 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
 
     </div>
 </nav></div>
-        <div class="sidebar-primary-item">
-<nav class="sidebar-indices-items">
+        <div class="sidebar-primary-item"><nav class="sidebar-indices-items">
   <p class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
   <ul class="indices-link">
         <li class="toctree-l1">
@@ -269,13 +255,6 @@ const thebe_selector_output = ".output, .cell_output"
         </li>
   </ul>
 </nav></div>
-        <div class="sidebar-primary-item">
-
-  <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
-    <br/>
-  </p>
-</div>
     </div>
   
   
@@ -378,22 +357,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -422,13 +399,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-3-exercises">
-<span id="chap-derivation-exercises"></span><h1><span class="section-number">3.7. </span>Chapter 3 Exercises<a class="headerlink" href="#chapter-3-exercises" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-3-exercises">
+<span id="chap-derivation-exercises"></span><h1><span class="section-number">3.7. </span>Chapter 3 Exercises<a class="headerlink" href="#chapter-3-exercises" title="Permalink to this headline">#</a></h1>
 <p>You should try the following exercise questions first, then check with the answers.</p>
 <div class="exercise admonition" id="ex3-q1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 3.1 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Use a G-N interpolation formula to derive the following multistep
 formulae:</p>
 <ul class="simple">
@@ -438,19 +415,19 @@ formulae:</p>
 <li><p><span class="math notranslate nohighlight">\( y_j     = y_{j-1} + (5f_j + 8f_{j-1} - f_{j-2}) \)</span>     [ G-N backward 0 to -1 ]</p></li>
 </ul>
 <!-- Find the detailed solutions in Moodle. -->
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/03/chap03_7_exercise-solution-1">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex3-q1"> Exercise 3.1</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><a class="reference download internal" download="" href="../../_downloads/6138e0e1121ed9762d85f08af00b1551/Ex3_1_annotated.pdf"><code class="xref download docutils literal notranslate"><span class="pre">handwritten</span> <span class="pre">full</span> <span class="pre">solution</span> <span class="pre">for</span> <span class="pre">Exercise</span> <span class="pre">3.1</span></code></a></p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ex3-q2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 3.2 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>The family of Multistep explicit Adams methods can be expanded as</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
@@ -517,12 +494,12 @@ Comment on the accuracy of your results.</p>
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/03/chap03_7_exercise-solution-3">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex3-q2"> Exercise 3.2</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><span class="math notranslate nohighlight">\(y_1 = -0.9000\)</span>, <span class="math notranslate nohighlight">\(y_2 = -0.8450\)</span>, <span class="math notranslate nohighlight">\(y_3 = -0.8114\)</span>, <span class="math notranslate nohighlight">\(y_4 = -0.8019\)</span>,  <span class="math notranslate nohighlight">\(y_5 = -0.8102\)</span>.</p>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="../../_downloads/a9260a97c297f8c540e1d3fc03fba8ba/Ex3_2.xlsx"><code class="xref download docutils literal notranslate"><span class="pre">excel</span> <span class="pre">solution</span> <span class="pre">for</span> <span class="pre">Exercise</span> <span class="pre">3.2</span></code></a></p></li>
@@ -532,12 +509,12 @@ Comment on the accuracy of your results.</p>
 <div align="center">
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1128062/sp/112806200/embedIframeJs/uiconf_id/27474902/partner_id/1128062?iframeembed=true&playerId=kaltura_player&entry_id=1_0l6yp5n6&flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[streamerType]=hdnetwork&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_k4lu5co3" width="575" height="360" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="ch2_q2_v3"></iframe>
 </div>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ex3-q3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 3.3 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>The family of Multistep explicit Adams methods can be expanded as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch02-1">
 <span class="eqno">(3.6)<a class="headerlink" href="#equation-eq-ch02-1" title="Permalink to this equation">#</a></span>\[\begin{aligned}
@@ -685,12 +662,12 @@ corresponding solution obtained in question 2, above, and comment.\</p>
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/03/chap03_7_exercise-solution-5">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex3-q3"> Exercise 3.3</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><span class="math notranslate nohighlight">\(x = 0.1\)</span>, <span class="math notranslate nohighlight">\(y^p = -0.9000\)</span>, <span class="math notranslate nohighlight">\(y^c = -0.9150\)</span>, <span class="math notranslate nohighlight">\(y_{ex} = -0.9145\)</span><br />
 <span class="math notranslate nohighlight">\(x = 0.2\)</span>, <span class="math notranslate nohighlight">\(y^p = -0.8577\)</span>, <span class="math notranslate nohighlight">\(y^c = -0.8566\)</span>, <span class="math notranslate nohighlight">\(y_{ex} = -0.8562\)</span><br />
 <span class="math notranslate nohighlight">\(x = 0.3\)</span>, <span class="math notranslate nohighlight">\(y^p = -0.8227\)</span>, <span class="math notranslate nohighlight">\(y^c = -0.8228\)</span>, <span class="math notranslate nohighlight">\(y_{ex} = -0.8225\)</span><br />
@@ -703,12 +680,12 @@ corresponding solution obtained in question 2, above, and comment.\</p>
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1128062/sp/112806200/embedIframeJs/uiconf_id/27474902/partner_id/1128062?iframeembed=true&playerId=kaltura_player&entry_id=1_t6hm00wx&flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[streamerType]=hdnetwork&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_klbv8o8b" width="575" height="360" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="odeEx2Q3">
 </iframe>
 </div>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ex3-q4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 3.4 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Consider the initial–value problem</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
@@ -733,12 +710,12 @@ values and comment on your results.</p></li>
 solution and comment on your results. Try different tolerance
 values for <em>AbsTol</em> and <em>RelTol</em> and comment on your findings.</p></li>
 </ol>
-</div>
+</section>
 </div>
 <div class="solution admonition" id="chaps/03/chap03_7_exercise-solution-7">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex3-q4"> Exercise 3.4</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <ol class="arabic">
 <li><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -766,60 +743,60 @@ Answer<div class="sd-summary-down docutils">
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(x = 0.5\)</span>, <span class="math notranslate nohighlight">\(y^c = 0.6434699\)</span>, <span class="math notranslate nohighlight">\(y_{ex} = 0.6434693\)</span>,
 <span class="math notranslate nohighlight">\(|y_{ex} - y| = 0.00000056\)</span></p>
 <p class="sd-card-text">Matlab code</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Exercise 3.4 Question 2</span>
-<span class="c">%Scriptfile to solve a single 1st order Ordinary Differential Equation,</span>
-<span class="c">%using the exact solution to calculate the starting values and the 4th order</span>
-<span class="c">%Adams-Bashforth-Moulton method for the remaining integration time span.</span>
-<span class="c">%The result table is also written to a file called ‘c2ex2p1.res&#39;.</span>
-<span class="c">%</span>
-<span class="n">fout</span><span class="p">=</span><span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;c2ex2p1.res&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span>
-<span class="n">h</span><span class="p">=</span><span class="mf">0.1</span><span class="p">;</span><span class="w"> </span><span class="c">%steplength h</span>
-<span class="n">nsteps</span><span class="p">=</span><span class="mi">11</span><span class="p">;</span><span class="w"> </span><span class="c">%number of steps</span>
-<span class="n">nsteps</span><span class="p">=</span><span class="mi">6</span><span class="p">;</span>
-<span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mf">0.0</span><span class="p">;</span><span class="w">  </span><span class="c">%set starting value of the independent variable t</span>
-<span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w">  </span><span class="c">%set initial value of the dependent variable y</span>
-<span class="n">F</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w"> </span><span class="c">%calculate the value of y&#39;=F, at t(1), y(1).</span>
-<span class="n">yp</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mf">0.0</span><span class="p">;</span><span class="w"> </span><span class="c">%set first predictor value=0 (for formatting table of output)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Exercise 3.4 Question 2</span><span class="w"></span>
+<span class="c">%Scriptfile to solve a single 1st order Ordinary Differential Equation,</span><span class="w"></span>
+<span class="c">%using the exact solution to calculate the starting values and the 4th order</span><span class="w"></span>
+<span class="c">%Adams-Bashforth-Moulton method for the remaining integration time span.</span><span class="w"></span>
+<span class="c">%The result table is also written to a file called ‘c2ex2p1.res&#39;.</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="n">fout</span><span class="p">=</span><span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;c2ex2p1.res&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">h</span><span class="p">=</span><span class="mf">0.1</span><span class="p">;</span><span class="w"> </span><span class="c">%steplength h</span><span class="w"></span>
+<span class="n">nsteps</span><span class="p">=</span><span class="mi">11</span><span class="p">;</span><span class="w"> </span><span class="c">%number of steps</span><span class="w"></span>
+<span class="n">nsteps</span><span class="p">=</span><span class="mi">6</span><span class="p">;</span><span class="w"></span>
+<span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mf">0.0</span><span class="p">;</span><span class="w">  </span><span class="c">%set starting value of the independent variable t</span><span class="w"></span>
+<span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w">  </span><span class="c">%set initial value of the dependent variable y</span><span class="w"></span>
+<span class="n">F</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w"> </span><span class="c">%calculate the value of y&#39;=F, at t(1), y(1).</span><span class="w"></span>
+<span class="n">yp</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mf">0.0</span><span class="p">;</span><span class="w"> </span><span class="c">%set first predictor value=0 (for formatting table of output)</span><span class="w"></span>
 
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span>
-<span class="w">    </span><span class="c">%calculate the first 3 starting values using the exact solution</span>
-<span class="w">    </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="p">;</span><span class="w"> </span><span class="c">%calculate the next step in t</span>
-<span class="w">    </span><span class="c">%y(i)=exp(-t(i))+t(i); %exact solution used for calculating starting values</span>
-<span class="w">    </span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="w">    </span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="mf">0.0</span><span class="p">;</span>
-<span class="k">end</span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="w"></span>
+<span class="w">    </span><span class="c">%calculate the first 3 starting values using the exact solution</span><span class="w"></span>
+<span class="w">    </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="p">;</span><span class="w"> </span><span class="c">%calculate the next step in t</span><span class="w"></span>
+<span class="w">    </span><span class="c">%y(i)=exp(-t(i))+t(i); %exact solution used for calculating starting values</span><span class="w"></span>
+<span class="w">    </span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">5</span><span class="p">:</span><span class="n">nsteps</span><span class="w"> </span><span class="c">%calculate the remaining y values using ABM 4th order method</span>
-<span class="w">    </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="p">;</span>
-<span class="w">    </span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">55</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">59</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">37</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">9</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">4</span><span class="p">));</span>
-<span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="w">    </span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">9</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">+</span><span class="mi">19</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">));</span>
-<span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="k">end</span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">5</span><span class="p">:</span><span class="n">nsteps</span><span class="w"> </span><span class="c">%calculate the remaining y values using ABM 4th order method</span><span class="w"></span>
+<span class="w">    </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">55</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">59</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">37</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">9</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">4</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">9</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">+</span><span class="mi">19</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 
-<span class="nb">disp</span><span class="p">(</span><span class="s">&#39; t        yp          y         f       y_ex       AbsError&#39;</span><span class="p">);</span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="n">fout</span><span class="p">,</span><span class="s">&#39; t        yp          y         f       y_ex       AbsError\n&#39;</span><span class="p">);</span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="n">fout</span><span class="p">,</span><span class="s">&#39; ---------------------------------------------------------\n&#39;</span><span class="p">);</span>
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">nsteps</span>
-<span class="w">    </span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="w">    </span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">abs</span><span class="p">(</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%4.2f %10.7f %10.7f %10.7f %10.7f %11.8f\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="n">fout</span><span class="p">,</span><span class="s">&#39;%4.2f %10.7f %10.7f %10.7f %10.7f %11.8f\n&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="k">end</span>
-<span class="nb">fclose</span><span class="p">(</span><span class="n">fout</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39; t        yp          y         f       y_ex       AbsError&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="n">fout</span><span class="p">,</span><span class="s">&#39; t        yp          y         f       y_ex       AbsError\n&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="n">fout</span><span class="p">,</span><span class="s">&#39; ---------------------------------------------------------\n&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">nsteps</span><span class="w"></span>
+<span class="w">    </span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">abs</span><span class="p">(</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%4.2f %10.7f %10.7f %10.7f %10.7f %11.8f\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="n">fout</span><span class="p">,</span><span class="s">&#39;%4.2f %10.7f %10.7f %10.7f %10.7f %11.8f\n&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fout</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% --------------------------------------------------------------------------</span>
-<span class="c">% Defining the ODE problem (or function) to be solved</span>
-<span class="k">function</span><span class="w"> </span>f<span class="p">=</span><span class="nf">f</span><span class="p">(</span>t,y<span class="p">)</span>
-<span class="n">f</span><span class="p">=</span><span class="n">t</span>^<span class="mi">2</span><span class="o">-</span><span class="n">y</span><span class="p">;</span>
-<span class="k">end</span>
-<span class="c">% --------------------------------------------------------------------------</span>
-<span class="c">% The exact solution</span>
-<span class="k">function</span><span class="w"> </span>yexact<span class="p">=</span><span class="nf">yexact</span><span class="p">(</span>x<span class="p">)</span>
-<span class="w">    </span><span class="n">yexact</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">x</span>^<span class="mi">2</span><span class="o">-</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">);</span>
-<span class="k">end</span>
-<span class="c">% --------------------------------------------------------------------------</span>
+<span class="c">% --------------------------------------------------------------------------</span><span class="w"></span>
+<span class="c">% Defining the ODE problem (or function) to be solved</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span>f<span class="p">=</span><span class="nf">f</span><span class="p">(</span>t,y<span class="p">)</span><span class="w"></span>
+<span class="n">f</span><span class="p">=</span><span class="n">t</span>^<span class="mi">2</span><span class="o">-</span><span class="n">y</span><span class="p">;</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="c">% --------------------------------------------------------------------------</span><span class="w"></span>
+<span class="c">% The exact solution</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span>yexact<span class="p">=</span><span class="nf">yexact</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">yexact</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">x</span>^<span class="mi">2</span><span class="o">-</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="c">% --------------------------------------------------------------------------</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -836,67 +813,67 @@ Answer<div class="sd-summary-down docutils">
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(x = 0.5\)</span>, <span class="math notranslate nohighlight">\(y = 0.6434702\)</span>, <span class="math notranslate nohighlight">\(y_{ex} = 0.6434693\)</span>,
 <span class="math notranslate nohighlight">\(|y_{ex} - y| = 0.00000085\)</span></p>
 <p class="sd-card-text">Matlab code</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Exercise 3.4 Question 3</span>
-<span class="c">%Scriptfile to solve a single 1st order Ordinary Differential Equation,</span>
-<span class="c">%using the standard 4th order RK method to calculate the starting values and</span>
-<span class="c">%4th order ABM method for the solution of the remaining integration time span.</span>
-<span class="c">%The result is written to a file called &#39;c2ex2p2.res&#39;.</span>
-<span class="k">function</span><span class="w"> </span><span class="nf">ch2_prog2</span>
-<span class="n">fout</span><span class="p">=</span><span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;c2ex2p2.res&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span>
-<span class="n">h</span><span class="p">=</span><span class="mf">0.1</span><span class="p">;</span><span class="w"> </span><span class="c">%steplength h</span>
-<span class="n">nsteps</span><span class="p">=</span><span class="mi">11</span><span class="p">;</span><span class="w"> </span><span class="c">%number of steps</span>
-<span class="n">nsteps</span><span class="p">=</span><span class="mi">6</span><span class="p">;</span>
-<span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mf">0.0</span><span class="p">;</span><span class="w"> </span><span class="c">%set starting value of the independent variable t</span>
-<span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w"> </span><span class="c">%set initial value of the dependent variable y</span>
-<span class="n">yp</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mf">0.0</span><span class="p">;</span><span class="w"> </span><span class="c">%set first predictor value =0 (in this program for formatting output)</span>
-<span class="n">F</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w"> </span><span class="c">%calculate the value of y&#39;=F, at t(1), y(1).</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Exercise 3.4 Question 3</span><span class="w"></span>
+<span class="c">%Scriptfile to solve a single 1st order Ordinary Differential Equation,</span><span class="w"></span>
+<span class="c">%using the standard 4th order RK method to calculate the starting values and</span><span class="w"></span>
+<span class="c">%4th order ABM method for the solution of the remaining integration time span.</span><span class="w"></span>
+<span class="c">%The result is written to a file called &#39;c2ex2p2.res&#39;.</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span><span class="nf">ch2_prog2</span><span class="w"></span>
+<span class="n">fout</span><span class="p">=</span><span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;c2ex2p2.res&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">h</span><span class="p">=</span><span class="mf">0.1</span><span class="p">;</span><span class="w"> </span><span class="c">%steplength h</span><span class="w"></span>
+<span class="n">nsteps</span><span class="p">=</span><span class="mi">11</span><span class="p">;</span><span class="w"> </span><span class="c">%number of steps</span><span class="w"></span>
+<span class="n">nsteps</span><span class="p">=</span><span class="mi">6</span><span class="p">;</span><span class="w"></span>
+<span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mf">0.0</span><span class="p">;</span><span class="w"> </span><span class="c">%set starting value of the independent variable t</span><span class="w"></span>
+<span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w"> </span><span class="c">%set initial value of the dependent variable y</span><span class="w"></span>
+<span class="n">yp</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mf">0.0</span><span class="p">;</span><span class="w"> </span><span class="c">%set first predictor value =0 (in this program for formatting output)</span><span class="w"></span>
+<span class="n">F</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w"> </span><span class="c">%calculate the value of y&#39;=F, at t(1), y(1).</span><span class="w"></span>
 
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="w"> </span><span class="c">% calculate the next 3 starting values using RK 4th order method</span>
-<span class="w">    </span><span class="n">k</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="n">h</span><span class="o">*</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
-<span class="w">    </span><span class="n">k</span><span class="p">(</span><span class="mi">2</span><span class="p">)=</span><span class="n">h</span><span class="o">*</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">k</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">0.5</span><span class="p">);</span>
-<span class="w">    </span><span class="n">k</span><span class="p">(</span><span class="mi">3</span><span class="p">)=</span><span class="n">h</span><span class="o">*</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">k</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mf">0.5</span><span class="p">);</span>
-<span class="w">    </span><span class="n">k</span><span class="p">(</span><span class="mi">4</span><span class="p">)=</span><span class="n">h</span><span class="o">*</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="p">,</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">k</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
-<span class="w">    </span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mf">2.0</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">k</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span><span class="o">+</span><span class="n">k</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
-<span class="w">    </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="p">;</span>
-<span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="w">    </span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="mf">0.0</span><span class="p">;</span>
-<span class="k">end</span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="w"> </span><span class="c">% calculate the next 3 starting values using RK 4th order method</span><span class="w"></span>
+<span class="w">    </span><span class="n">k</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="n">h</span><span class="o">*</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">k</span><span class="p">(</span><span class="mi">2</span><span class="p">)=</span><span class="n">h</span><span class="o">*</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">k</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">0.5</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">k</span><span class="p">(</span><span class="mi">3</span><span class="p">)=</span><span class="n">h</span><span class="o">*</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">k</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mf">0.5</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">k</span><span class="p">(</span><span class="mi">4</span><span class="p">)=</span><span class="n">h</span><span class="o">*</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="p">,</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">k</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mf">2.0</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">k</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span><span class="o">+</span><span class="n">k</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">5</span><span class="p">:</span><span class="n">nsteps</span>
-<span class="w">    </span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">55</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">59</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">37</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">9</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">4</span><span class="p">));</span>
-<span class="w">    </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="p">;</span>
-<span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="w">    </span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">9</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">+</span><span class="mi">19</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">));</span>
-<span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="k">end</span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">5</span><span class="p">:</span><span class="n">nsteps</span><span class="w"></span>
+<span class="w">    </span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">55</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">59</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">37</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">9</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">4</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">9</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">+</span><span class="mi">19</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">3</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">feval</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 
-<span class="nb">disp</span><span class="p">(</span><span class="s">&#39; t yp y F y_ex abs_err&#39;</span><span class="p">);</span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="n">fout</span><span class="p">,</span><span class="s">&#39; t yp y F y_ex abs_err\n&#39;</span><span class="p">);</span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="n">fout</span><span class="p">,</span><span class="s">&#39;------------------------------------------------------------\n&#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39; t yp y F y_ex abs_err&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="n">fout</span><span class="p">,</span><span class="s">&#39; t yp y F y_ex abs_err\n&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="n">fout</span><span class="p">,</span><span class="s">&#39;------------------------------------------------------------\n&#39;</span><span class="p">);</span><span class="w"></span>
 
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">nsteps</span>
-<span class="w">    </span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="w">    </span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">abs</span><span class="p">(</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%4.2f %10.7f %10.7f %10.7f %10.7f %11.8f\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="n">fout</span><span class="p">,</span><span class="s">&#39;%4.2f %10.7f %10.7f %10.7f %10.7f %11.8f\n&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="k">end</span>
-
-
-<span class="c">% --------------------------------------------------------------------------</span>
-<span class="nb">fclose</span><span class="p">(</span><span class="n">fout</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">nsteps</span><span class="w"></span>
+<span class="w">    </span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">abs</span><span class="p">(</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%4.2f %10.7f %10.7f %10.7f %10.7f %11.8f\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="n">fout</span><span class="p">,</span><span class="s">&#39;%4.2f %10.7f %10.7f %10.7f %10.7f %11.8f\n&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yp</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 
 
-<span class="c">% --------------------------------------------------------------------------</span>
-<span class="c">% Defining the ODE problem (or function) to be solved</span>
-<span class="k">function</span><span class="w"> </span>f<span class="p">=</span><span class="nf">f</span><span class="p">(</span>t,y<span class="p">)</span>
-<span class="w">    </span><span class="n">f</span><span class="p">=</span><span class="n">t</span>^<span class="mi">2</span><span class="o">-</span><span class="n">y</span><span class="p">;</span>
+<span class="c">% --------------------------------------------------------------------------</span><span class="w"></span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fout</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% --------------------------------------------------------------------------</span>
-<span class="c">% The exact solution</span>
-<span class="k">function</span><span class="w"> </span>yexact<span class="p">=</span><span class="nf">yexact</span><span class="p">(</span>x<span class="p">)</span>
-<span class="w">    </span><span class="n">yexact</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">x</span>^<span class="mi">2</span><span class="o">-</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">);</span>
 
-<span class="c">% --------------------------------------------------------------------------</span>
+<span class="c">% --------------------------------------------------------------------------</span><span class="w"></span>
+<span class="c">% Defining the ODE problem (or function) to be solved</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span>f<span class="p">=</span><span class="nf">f</span><span class="p">(</span>t,y<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">f</span><span class="p">=</span><span class="n">t</span>^<span class="mi">2</span><span class="o">-</span><span class="n">y</span><span class="p">;</span><span class="w"></span>
+
+<span class="c">% --------------------------------------------------------------------------</span><span class="w"></span>
+<span class="c">% The exact solution</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span>yexact<span class="p">=</span><span class="nf">yexact</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">yexact</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">x</span>^<span class="mi">2</span><span class="o">-</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% --------------------------------------------------------------------------</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -917,38 +894,38 @@ Case 1: RelTol=AbsTol=1.e-4</label><div class="sd-tab-content docutils">
 <span class="math notranslate nohighlight">\(x = 0.5\)</span>, <span class="math notranslate nohighlight">\(y = 0.6434691\)</span>, <span class="math notranslate nohighlight">\(y_{ex} = 0.6434693\)</span>,
 <span class="math notranslate nohighlight">\(|y_{ex} - y| = 0.00000021\)</span></p>
 <p class="sd-card-text">Matlab code</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Exercise 3.4 Question 4</span>
-<span class="c">%Scriptfile to solve a single 1st order ordinary differential equation, using</span>
-<span class="c">%a non-stiff ODE solver, called ode113, from the Matlab ODE solver routines</span>
-<span class="c">%based on Adam-Bashforth-Moulton methods.</span>
-<span class="k">function</span><span class="w"> </span><span class="nf">ch2_prog3</span>
-<span class="n">y0</span><span class="p">=</span><span class="mf">1.0</span><span class="p">;</span><span class="w">  </span><span class="c">%set the initial value of the dependent variable y</span>
-<span class="c">%tspan=[0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]; %set specific output point</span>
-<span class="n">tspan</span><span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>
-<span class="n">options</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">odeset</span><span class="p">(</span><span class="s">&#39;RelTol&#39;</span><span class="p">,</span><span class="mf">1e-4</span><span class="p">,</span><span class="s">&#39;AbsTol&#39;</span><span class="p">,</span><span class="mf">1e-4</span><span class="p">);</span><span class="w"> </span><span class="c">%set tolerances</span>
-<span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">]=</span><span class="nb">ode113</span><span class="p">(@</span><span class="n">f</span><span class="p">,</span><span class="n">tspan</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">options</span><span class="p">);</span><span class="w"> </span><span class="c">%call the ODE solver routine ode113</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Exercise 3.4 Question 4</span><span class="w"></span>
+<span class="c">%Scriptfile to solve a single 1st order ordinary differential equation, using</span><span class="w"></span>
+<span class="c">%a non-stiff ODE solver, called ode113, from the Matlab ODE solver routines</span><span class="w"></span>
+<span class="c">%based on Adam-Bashforth-Moulton methods.</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span><span class="nf">ch2_prog3</span><span class="w"></span>
+<span class="n">y0</span><span class="p">=</span><span class="mf">1.0</span><span class="p">;</span><span class="w">  </span><span class="c">%set the initial value of the dependent variable y</span><span class="w"></span>
+<span class="c">%tspan=[0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]; %set specific output point</span><span class="w"></span>
+<span class="n">tspan</span><span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="n">options</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">odeset</span><span class="p">(</span><span class="s">&#39;RelTol&#39;</span><span class="p">,</span><span class="mf">1e-4</span><span class="p">,</span><span class="s">&#39;AbsTol&#39;</span><span class="p">,</span><span class="mf">1e-4</span><span class="p">);</span><span class="w"> </span><span class="c">%set tolerances</span><span class="w"></span>
+<span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">]=</span><span class="nb">ode113</span><span class="p">(@</span><span class="n">f</span><span class="p">,</span><span class="n">tspan</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">options</span><span class="p">);</span><span class="w"> </span><span class="c">%call the ODE solver routine ode113</span><span class="w"></span>
 
 
-<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;  t        y          f(t)      y_ex     Abs_error &#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;  t        y          f(t)      y_ex     Abs_error &#39;</span><span class="p">);</span><span class="w"></span>
 
 
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="w">  </span><span class="c">%in this case length(t)=11, from tspan</span>
-<span class="w">    </span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w">  </span><span class="c">%calculating the exact solutions at each step</span>
-<span class="w">    </span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">abs</span><span class="p">(</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w">  </span><span class="c">%calculating the absolute error</span>
-<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%5.2f %10.7f %10.7f %10.7f %11.8f\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)),</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="k">end</span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="w">  </span><span class="c">%in this case length(t)=11, from tspan</span><span class="w"></span>
+<span class="w">    </span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w">  </span><span class="c">%calculating the exact solutions at each step</span><span class="w"></span>
+<span class="w">    </span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">abs</span><span class="p">(</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w">  </span><span class="c">%calculating the absolute error</span><span class="w"></span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%5.2f %10.7f %10.7f %10.7f %11.8f\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)),</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 
-<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
-<span class="nb">title</span><span class="p">([</span><span class="s">&#39;Solution of dy/dt = -y+t+1, y0 = &#39;</span><span class="w"> </span><span class="nb">num2str</span><span class="p">(</span><span class="n">y0</span><span class="p">),</span><span class="s">&#39;, using ode113&#39;</span><span class="p">]);</span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">);</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;solution y&#39;</span><span class="p">);</span>
-<span class="c">%--------------------------------------------------------------------------</span>
-<span class="c">%Defining the ODE to be solved</span>
-<span class="k">function</span><span class="w"> </span>f<span class="p">=</span><span class="nf">f</span><span class="p">(</span>t,y<span class="p">)</span>
-<span class="n">f</span><span class="p">=</span><span class="n">t</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="n">y</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="nb">title</span><span class="p">([</span><span class="s">&#39;Solution of dy/dt = -y+t+1, y0 = &#39;</span><span class="w"> </span><span class="nb">num2str</span><span class="p">(</span><span class="n">y0</span><span class="p">),</span><span class="s">&#39;, using ode113&#39;</span><span class="p">]);</span><span class="w"></span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;solution y&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="c">%--------------------------------------------------------------------------</span><span class="w"></span>
+<span class="c">%Defining the ODE to be solved</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span>f<span class="p">=</span><span class="nf">f</span><span class="p">(</span>t,y<span class="p">)</span><span class="w"></span>
+<span class="n">f</span><span class="p">=</span><span class="n">t</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="n">y</span><span class="p">;</span><span class="w"></span>
 
-<span class="c">% The exact solution</span>
-<span class="k">function</span><span class="w"> </span>yexact<span class="p">=</span><span class="nf">yexact</span><span class="p">(</span>x<span class="p">)</span>
+<span class="c">% The exact solution</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span>yexact<span class="p">=</span><span class="nf">yexact</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="n">yexact</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">x</span>^<span class="mi">2</span><span class="o">-</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">);</span><span class="w">        </span>
 </pre></div>
 </div>
@@ -961,38 +938,38 @@ Case 2: RelTol=AbsTol=1.e-6</label><div class="sd-tab-content docutils">
 <span class="math notranslate nohighlight">\(x = 0.5\)</span>, <span class="math notranslate nohighlight">\(y = 0.6434693\)</span>, <span class="math notranslate nohighlight">\(y_{ex} = 0.6434693\)</span>,
 <span class="math notranslate nohighlight">\(|y_{ex} - y| = 0.00000001\)</span></p>
 <p class="sd-card-text">Matlab code</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Exercise 3.4 Question 4</span>
-<span class="c">%Scriptfile to solve a single 1st order ordinary differential equation, using</span>
-<span class="c">%a non-stiff ODE solver, called ode113, from the Matlab ODE solver routines</span>
-<span class="c">%based on Adam-Bashforth-Moulton methods.</span>
-<span class="k">function</span><span class="w"> </span><span class="nf">ch2_prog3</span>
-<span class="n">y0</span><span class="p">=</span><span class="mf">1.0</span><span class="p">;</span><span class="w">  </span><span class="c">%set the initial value of the dependent variable y</span>
-<span class="c">%tspan=[0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]; %set specific output point</span>
-<span class="n">tspan</span><span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>
-<span class="n">options</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">odeset</span><span class="p">(</span><span class="s">&#39;RelTol&#39;</span><span class="p">,</span><span class="mf">1e-6</span><span class="p">,</span><span class="s">&#39;AbsTol&#39;</span><span class="p">,</span><span class="mf">1e-6</span><span class="p">);</span><span class="w"> </span><span class="c">%set tolerances</span>
-<span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">]=</span><span class="nb">ode113</span><span class="p">(@</span><span class="n">f</span><span class="p">,</span><span class="n">tspan</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">options</span><span class="p">);</span><span class="w"> </span><span class="c">%call the ODE solver routine ode113</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Exercise 3.4 Question 4</span><span class="w"></span>
+<span class="c">%Scriptfile to solve a single 1st order ordinary differential equation, using</span><span class="w"></span>
+<span class="c">%a non-stiff ODE solver, called ode113, from the Matlab ODE solver routines</span><span class="w"></span>
+<span class="c">%based on Adam-Bashforth-Moulton methods.</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span><span class="nf">ch2_prog3</span><span class="w"></span>
+<span class="n">y0</span><span class="p">=</span><span class="mf">1.0</span><span class="p">;</span><span class="w">  </span><span class="c">%set the initial value of the dependent variable y</span><span class="w"></span>
+<span class="c">%tspan=[0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]; %set specific output point</span><span class="w"></span>
+<span class="n">tspan</span><span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="n">options</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">odeset</span><span class="p">(</span><span class="s">&#39;RelTol&#39;</span><span class="p">,</span><span class="mf">1e-6</span><span class="p">,</span><span class="s">&#39;AbsTol&#39;</span><span class="p">,</span><span class="mf">1e-6</span><span class="p">);</span><span class="w"> </span><span class="c">%set tolerances</span><span class="w"></span>
+<span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">]=</span><span class="nb">ode113</span><span class="p">(@</span><span class="n">f</span><span class="p">,</span><span class="n">tspan</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">options</span><span class="p">);</span><span class="w"> </span><span class="c">%call the ODE solver routine ode113</span><span class="w"></span>
 
 
-<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;  t        y          f(t)      y_ex     Abs_error &#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;  t        y          f(t)      y_ex     Abs_error &#39;</span><span class="p">);</span><span class="w"></span>
 
 
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="w">  </span><span class="c">%in this case length(t)=11, from tspan</span>
-<span class="w">    </span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w">  </span><span class="c">%calculating the exact solutions at each step</span>
-<span class="w">    </span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">abs</span><span class="p">(</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w">  </span><span class="c">%calculating the absolute error</span>
-<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%5.2f %10.7f %10.7f %10.7f %11.8f\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)),</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="k">end</span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="w">  </span><span class="c">%in this case length(t)=11, from tspan</span><span class="w"></span>
+<span class="w">    </span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w">  </span><span class="c">%calculating the exact solutions at each step</span><span class="w"></span>
+<span class="w">    </span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">abs</span><span class="p">(</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w">  </span><span class="c">%calculating the absolute error</span><span class="w"></span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%5.2f %10.7f %10.7f %10.7f %11.8f\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)),</span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">abserror</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 
-<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
-<span class="nb">title</span><span class="p">([</span><span class="s">&#39;Solution of dy/dt = -y+t+1, y0 = &#39;</span><span class="w"> </span><span class="nb">num2str</span><span class="p">(</span><span class="n">y0</span><span class="p">),</span><span class="s">&#39;, using ode113&#39;</span><span class="p">]);</span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">);</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;solution y&#39;</span><span class="p">);</span>
-<span class="c">%--------------------------------------------------------------------------</span>
-<span class="c">%Defining the ODE to be solved</span>
-<span class="k">function</span><span class="w"> </span>f<span class="p">=</span><span class="nf">f</span><span class="p">(</span>t,y<span class="p">)</span>
-<span class="n">f</span><span class="p">=</span><span class="n">t</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="n">y</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="nb">title</span><span class="p">([</span><span class="s">&#39;Solution of dy/dt = -y+t+1, y0 = &#39;</span><span class="w"> </span><span class="nb">num2str</span><span class="p">(</span><span class="n">y0</span><span class="p">),</span><span class="s">&#39;, using ode113&#39;</span><span class="p">]);</span><span class="w"></span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;solution y&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="c">%--------------------------------------------------------------------------</span><span class="w"></span>
+<span class="c">%Defining the ODE to be solved</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span>f<span class="p">=</span><span class="nf">f</span><span class="p">(</span>t,y<span class="p">)</span><span class="w"></span>
+<span class="n">f</span><span class="p">=</span><span class="n">t</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="n">y</span><span class="p">;</span><span class="w"></span>
 
-<span class="c">% The exact solution</span>
-<span class="k">function</span><span class="w"> </span>yexact<span class="p">=</span><span class="nf">yexact</span><span class="p">(</span>x<span class="p">)</span>
+<span class="c">% The exact solution</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span>yexact<span class="p">=</span><span class="nf">yexact</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="n">yexact</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">x</span>^<span class="mi">2</span><span class="o">-</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">);</span><span class="w">        </span>
 </pre></div>
 </div>
@@ -1001,9 +978,9 @@ Case 2: RelTol=AbsTol=1.e-6</label><div class="sd-tab-content docutils">
 </div>
 </details></li>
 </ol>
+</section>
 </div>
-</div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1018,7 +995,7 @@ Case 2: RelTol=AbsTol=1.e-6</label><div class="sd-tab-content docutils">
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/03"
+            path: "./chaps\03"
         },
         predefinedOutput: true
     }
@@ -1030,10 +1007,11 @@ Case 2: RelTol=AbsTol=1.e-6</label><div class="sd-tab-content docutils">
 
               
               
-              
-              
-                <footer class="prev-next-footer">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap03_6_codes.html"
@@ -1053,7 +1031,10 @@ Case 2: RelTol=AbsTol=1.e-6</label><div class="sd-tab-content docutils">
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1069,14 +1050,13 @@ Case 2: RelTol=AbsTol=1.e-6</label><div class="sd-tab-content docutils">
   <div class="footer-item">
     
 <p class="component-author">
-By Dr Zhihua Ma
+By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
 </p>
 
   </div>
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2023--2025.
@@ -1088,7 +1068,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 30, 2023.
+  Last updated on 31 December 2023.
   <br/>
 </p>
   </div>
@@ -1096,7 +1076,7 @@ By Dr Zhihua Ma
   <div class="footer-item">
     
 <div class="extra_footer">
-  <div>Email: <a href='mailto:z.ma@mmu.ac.uk'>z.ma@mmu.ac.uk</a></div>
+  <div>Created using <a href='https://jupyterbook.org'>Jupyter Book</a></div>
 </div>
   </div>
   
@@ -1109,8 +1089,8 @@ By Dr Zhihua Ma
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

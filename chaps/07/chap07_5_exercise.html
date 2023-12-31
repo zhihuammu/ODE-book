@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>7.5. Chapter 7 Exercise &#8212; Linear Multistep Methods</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -41,14 +42,12 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -69,14 +68,13 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/07/chap07_5_exercise';</script>
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="shortcut icon" href="../../_static/ode.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="8. Computational Methods with Sparse Matrices" href="../08/chap08_0.html" />
     <link rel="prev" title="7.4. MATLAB Program 4" href="chap07_4_codeExample.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Dec 30, 2023"/>
   </head>
   
   
@@ -85,15 +83,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -147,11 +136,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="../../index.html">
-  
   
   
   
@@ -161,8 +148,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo2c.svg" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
-    <script>document.write(`<img src="../../_static/logo2c.svg" class="logo__image only-dark" alt="Linear Multistep Methods - Home"/>`);</script>
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -258,8 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
 
     </div>
 </nav></div>
-        <div class="sidebar-primary-item">
-<nav class="sidebar-indices-items">
+        <div class="sidebar-primary-item"><nav class="sidebar-indices-items">
   <p class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
   <ul class="indices-link">
         <li class="toctree-l1">
@@ -269,13 +255,6 @@ const thebe_selector_output = ".output, .cell_output"
         </li>
   </ul>
 </nav></div>
-        <div class="sidebar-primary-item">
-
-  <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
-    <br/>
-  </p>
-</div>
     </div>
   
   
@@ -378,22 +357,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -422,13 +399,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-7-exercise">
-<span id="chap-stiff-exercise"></span><h1><span class="section-number">7.5. </span>Chapter 7 Exercise<a class="headerlink" href="#chapter-7-exercise" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-7-exercise">
+<span id="chap-stiff-exercise"></span><h1><span class="section-number">7.5. </span>Chapter 7 Exercise<a class="headerlink" href="#chapter-7-exercise" title="Permalink to this headline">#</a></h1>
 <p>You should try the following exercise questions first, then check with the answers.</p>
 <div class="exercise admonition" id="ex-ch07-q1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.1 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>A certain chemical reaction is described by a stiff system</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -442,19 +419,19 @@ document.write(`
 <li><p>Show that <span class="math notranslate nohighlight">\(\,y_1\,\)</span> decays rapidly while <span class="math notranslate nohighlight">\(\,y_2\,\)</span> decays slowly.</p></li>
 <li><p>Find the eigenvalues of the associated Jacobian matrix and the stiffness ratio.</p></li>
 </ol>
-</div>
+</section>
 </div>
 <div class="solution admonition" id="chaps/07/chap07_5_exercise-solution-1">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex-ch07-q1"> Exercise 7.1</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><a class="reference download internal" download="" href="../../_downloads/871df474d348cfeb5fe2f7d54c41e121/Ex7_1.mlx"><code class="xref download docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">live</span> <span class="pre">script</span> <span class="pre">solution</span> <span class="pre">for</span> <span class="pre">Exercise</span> <span class="pre">7.1</span></code></a></p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ex-ch07-q2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.2 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Consider the problem</p>
 <div class="math notranslate nohighlight">
 \[
@@ -468,12 +445,12 @@ document.write(`
 single equation be said to exhibit stiffness? If Euler’s rule were
 used to obtain a numerical solution, what would be the maximum
 allowable steplength.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/07/chap07_5_exercise-solution-3">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex-ch07-q2"> Exercise 7.2</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p>From both the equation and the analytical solution it can be seen that the solution has a fast decaying element as well as a slowly varying element, hence the problem can be considered as stiff.</p>
 <p>The stability region for Euler method is <span class="math notranslate nohighlight">\([-2, 0]\)</span>, this means</p>
 <div class="math notranslate nohighlight">
@@ -481,12 +458,12 @@ allowable steplength.</p>
 <p>as <span class="math notranslate nohighlight">\(\lambda =-100\)</span>, so</p>
 <div class="math notranslate nohighlight">
 \[ h \in (0, 0.02)\]</div>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ex-ch07-q3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.3 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Detertermine whether the following problem is stiff</p>
 <div class="math notranslate nohighlight">
 \[
@@ -498,12 +475,12 @@ allowable steplength.</p>
 <p>[Hint: reduce the equation to a system of two first
 order ODEs i.e. let <span class="math notranslate nohighlight">\(y = y_1\)</span>, <span class="math notranslate nohighlight">\(y' = y_2\)</span>, then differentiation
 gives <span class="math notranslate nohighlight">\(y' = y_1'\)</span>, and <span class="math notranslate nohighlight">\(y'' = y'_2\,\)</span>].</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/07/chap07_5_exercise-solution-5">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex-ch07-q3"> Exercise 7.3</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
@@ -565,32 +542,32 @@ J = \begin{bmatrix}
 \]</div>
 </div>
 </div>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ex-ch07-q4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.4 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Consider the non-linear chemical system in <a class="reference internal" href="chap07_2_stiffSystem.html#chap07-example-3">Example 7.3</a>. Find
 time-dependent solution of the species <span class="math notranslate nohighlight">\(y_1\)</span>, <span class="math notranslate nohighlight">\(y_2\)</span>, and <span class="math notranslate nohighlight">\(y_3\)</span> for a
 duration of 60 seconds using the stiff equation solver routine
 ode15s from the MATLAB ODE solver routines. Try to run the model
 using ode113 solver and comment on your results. Change both
 tolerances RelTol and AbsTol and comment on your results.</p>
-</div>
+</section>
 </div>
 <div class="solution admonition" id="chaps/07/chap07_5_exercise-solution-7">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex-ch07-q4"> Exercise 7.4</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><a class="reference download internal" download="" href="../../_downloads/3636229363385bb9608e7261d096d0ed/Ex7_4_ode15s.m"><code class="xref download docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">code</span> <span class="pre">using</span> <span class="pre">ode15s</span> <span class="pre">solver</span></code></a></p>
 <p><a class="reference download internal" download="" href="../../_downloads/6da1653261f248cad8a7e4cb0f7f8d8d/Ex7_4_ode113.m"><code class="xref download docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">code</span> <span class="pre">using</span> <span class="pre">ode113</span> <span class="pre">solver</span></code></a></p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ex-ch07-q5">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.5 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Consider the Robertson Problem in the <a class="reference internal" href="chap07_4_codeExample.html#chap-stiff-code"><span class="std std-ref">MATLAB Program 4</span></a>. Find
 time-dependent solution of the species <span class="math notranslate nohighlight">\(y_1\)</span>, <span class="math notranslate nohighlight">\(y_2\)</span>, and <span class="math notranslate nohighlight">\(y_3\)</span> for a
 duration of <span class="math notranslate nohighlight">\(t = 100\)</span> seconds using the stiff equation solver
@@ -602,39 +579,39 @@ ode15s, find the eigenvalues of the the Jacobian Matrix at <span class="math not
 <span class="math notranslate nohighlight">\(t = 1.0e-5\)</span> and <span class="math notranslate nohighlight">\(t = 60\)</span> seconds, and by finding the corresponding
 stiffness ratio, comment on the stability of the system. Produce a
 table to record the run times and your computational stats.</p>
-</div>
+</section>
 </div>
 <div class="solution admonition" id="chaps/07/chap07_5_exercise-solution-9">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex-ch07-q5"> Exercise 7.5</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p>You will find the running time for ode15s is much shorter than that
 for ode113. Check your results and comment.</p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ex-ch07-q6">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.6 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Find the interval of absolute stability for the backward
 differentiation formulae (BDF) for <span class="math notranslate nohighlight">\(k = 1,2,\dots,4\)</span> methods using
 <em>root locus</em> method, and show whether they are convergent. For the
 same BDF methods plot the region of absolute stability using
 <em>boundary root locus</em> method.</p>
-</div>
+</section>
 </div>
 <div class="solution admonition" id="chaps/07/chap07_5_exercise-solution-11">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex-ch07-q6"> Exercise 7.6</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><a class="reference download internal" download="" href="../../_downloads/9c539034a3fc3b5f86b17a962548bff4/Ex7_6.m"><code class="xref download docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">code</span> <span class="pre">for</span> <span class="pre">Exercise</span> <span class="pre">7.6</span></code></a></p>
 <p>Solution are shown in the lecture notes <a class="reference internal" href="chap07_3_method.html#fig-chap07-c6m31f2"><span class="std std-numref">Fig. 7.1</span></a>.</p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ex-ch07-q7">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.7 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Consider the following system of ODEs which represents the
 mathematical formulation of an electric circuit:</p>
 <div class="math notranslate nohighlight">
@@ -666,23 +643,23 @@ ode15s from the MATLAB ODE solver routines. Try to run the model
 using ode113 solver and comment on your results. Change both
 tolerances RelTol and AbsTol and comment on your results. Set the
 option ‘Stats’ ‘on’ in the options=odeset command, e.g.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">options</span><span class="p">=</span><span class="nb">odeset</span><span class="p">(</span><span class="s">&#39;Stats&#39;</span><span class="p">,</span><span class="s">&#39;on&#39;</span><span class="p">,</span><span class="s">&#39;RelTol&#39;</span><span class="p">,</span><span class="mf">1e-6</span><span class="p">,</span><span class="s">&#39;AbsTol&#39;</span><span class="p">,</span><span class="mf">1.e-8</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">options</span><span class="p">=</span><span class="nb">odeset</span><span class="p">(</span><span class="s">&#39;Stats&#39;</span><span class="p">,</span><span class="s">&#39;on&#39;</span><span class="p">,</span><span class="s">&#39;RelTol&#39;</span><span class="p">,</span><span class="mf">1e-6</span><span class="p">,</span><span class="s">&#39;AbsTol&#39;</span><span class="p">,</span><span class="mf">1.e-8</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>and prepare a table for comparison of the stats using the two
 different solvers. Comment on your results.</p>
-</div>
+</section>
 </div>
 <div class="solution admonition" id="chaps/07/chap07_5_exercise-solution-13">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex-ch07-q7"> Exercise 7.7</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><a class="reference download internal" download="" href="../../_downloads/ffdc38fd3965c328fc3d1a99b2241eb2/Ex7_7.m"><code class="xref download docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">code</span> <span class="pre">for</span> <span class="pre">Exercise</span> <span class="pre">7.7</span></code></a></p>
 <p>The plot of the solutions is shown below:</p>
-<div class="figure align-default" id="fig-chap07-c6ans7">
+<figure class="align-default" id="fig-chap07-c6ans7">
 <a class="reference internal image-reference" href="../../_images/fig-chap07-c6ans7.svg"><img alt="../../_images/fig-chap07-c6ans7.svg" src="../../_images/fig-chap07-c6ans7.svg" width="500px" /></a>
-</div>
-</div>
+</figure>
+</section>
 </div>
 <!-- (chap07-ex-sol)=
 ## Answers to Chapter 7 Exercises 
@@ -705,7 +682,7 @@ different solvers. Comment on your results.</p>
 
 6.  
 
-7.   --></div>
+7.   --></section>
 
     <script type="text/x-thebe-config">
     {
@@ -720,7 +697,7 @@ different solvers. Comment on your results.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/07"
+            path: "./chaps\07"
         },
         predefinedOutput: true
     }
@@ -732,10 +709,11 @@ different solvers. Comment on your results.</p>
 
               
               
-              
-              
-                <footer class="prev-next-footer">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap07_4_codeExample.html"
@@ -755,7 +733,10 @@ different solvers. Comment on your results.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -771,14 +752,13 @@ different solvers. Comment on your results.</p>
   <div class="footer-item">
     
 <p class="component-author">
-By Dr Zhihua Ma
+By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
 </p>
 
   </div>
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2023--2025.
@@ -790,7 +770,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 30, 2023.
+  Last updated on 31 December 2023.
   <br/>
 </p>
   </div>
@@ -798,7 +778,7 @@ By Dr Zhihua Ma
   <div class="footer-item">
     
 <div class="extra_footer">
-  <div>Email: <a href='mailto:z.ma@mmu.ac.uk'>z.ma@mmu.ac.uk</a></div>
+  <div>Created using <a href='https://jupyterbook.org'>Jupyter Book</a></div>
 </div>
   </div>
   
@@ -811,8 +791,8 @@ By Dr Zhihua Ma
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

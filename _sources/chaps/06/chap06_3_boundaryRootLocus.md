@@ -15,7 +15,7 @@ $$
  when applied to $y' = \lambda y$.
 
 :::{admonition} Solution
-:class: tip
+:class: solution
 
 The characteristic equation is 
 
@@ -171,7 +171,7 @@ $$
  is A-stable.
 
 :::{admonition} Solution
-:class: tip
+:class: solution
 
 Applying this formula to the test equation $y' = \lambda y$ we find
 

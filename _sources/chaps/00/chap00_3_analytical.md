@@ -40,10 +40,12 @@ $$
 H(y) = G(x) + C.
 $$
 
-```{prf:example}
+````{prf:example}
 Solve $(1+x)\dy - y \dx=0$
 
-**Solution:**
+:::{admonition} Solution
+:class: solution
+<!-- **Solution:** -->
 Re-arranging the equation as
 
 $$
@@ -69,12 +71,14 @@ y & = e^{\ln |1+x| + c_1} \\
   & = C |1+x|
 \end{aligned}
 $$
-```
+:::
+````
 
-```{prf:example}
+````{prf:example}
 Solve $\displaystyle \diff{y}{x} = \frac{x-5}{y^2}$.
 
-**Solution:**
+:::{admonition} Solution
+:class: solution
 Rearranging the equation as
 
 $$
@@ -92,7 +96,7 @@ So the implicit solution is
 $$
     \frac{1}{3} y^3 = \frac{1}{2}x^2 - 5x + C
 $$
-```
+````
 
 ## Linear Equations with Constant Coefficients
 
@@ -187,7 +191,8 @@ We will work step by step to look at the solutions of:
 Solve $a_1 y' + a_0 y =0$
 
 `````{admonition} Solution
-:class: hint
+:class: solution
+<!-- :class: hint -->
 
 ::::{tab-set}
 ```{tab-item} Method 1 (integration)
@@ -248,7 +253,8 @@ $$
 Solve $a y'' + b y'+ c y=0$
 
 ```{admonition} Solution
-:class: hint
+:class: solution
+<!-- :class: hint -->
 
 The characteristic equation is
 
@@ -304,6 +310,7 @@ Solving the following ODEs:
 3. $y''+4y'+7y=0$
 
 :::{admonition} Solution
+:class: solution
 1. $2\xi^2-5\xi-3=(2\xi+1)(\xi-3)=0$,  $\quad\xi_1=-\frac{1}{2}$ and $\xi_2=3$
 
     $y=c_1 e^{-\frac{x}{2}}+c_2 e^{3x}$
@@ -326,7 +333,8 @@ $
 $
 
 ```{admonition} Solution
-:class: hint
+:class: solution
+<!-- :class: hint -->
 The characteristic equation is
 
 $$
@@ -412,7 +420,8 @@ y''+3y'+2y=3t
 $$
 
 :::{admonition} Solution
-:class: hint
+:class: solution
+<!-- :class: hint -->
 
 - Step 1: find a particular solution to the equation
 
@@ -494,6 +503,7 @@ y''+3y'+2y=10e^{3t}
 $$
 
 :::{admonition} Solution
+:class: solution
 The right hand side is $10e^{3t}$, so we guess $y_p(t)=Ae^{3t}$. Substituting our guess into the differential equation, we can get
 
 $$

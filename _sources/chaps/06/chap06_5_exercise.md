@@ -16,7 +16,10 @@ $$
 $$
 
  is absolutely stable for all $h\lambda \not\in (0,2)$.
+:::
+
 :::{hint}
+:class: dropdown
 To show that the method is absolutely stable for all $h\lambda \not\in (0,2)$, we just need to show that the stability interval is $h\lambda \in (-\infty, 0] \cup [2, \infty )$.
 :::
 
