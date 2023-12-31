@@ -73,7 +73,11 @@ div.exercise p.admonition-title::before {
 
 div.exercise p.admonition-title:after {
   color: black;
-  content: "\f303"; /* the pencil icon */
+  /* the fa-pencil icon */
+  /* content: "\f303";  */
+
+  /* the fa-pen-to-square icon */  
+  content: "\f044"; 
 }
 
 
@@ -103,7 +107,11 @@ div.solution {
 
 div.solution  p.admonition-title:after {
   color: green;
-  content: "\f3e5"; /* the fa-reply icon */   
+  /* the fa-reply icon */
+  content: "\f3e5";    
+
+  /* the fa-key icon */
+  content: "\f084";      
 }
 
 /*********************************************

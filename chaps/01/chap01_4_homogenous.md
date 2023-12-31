@@ -187,8 +187,9 @@ Find the general solution to
 
 $$y_{n+2} + \frac{5}{6} y_{n+1} + \frac{1}{6} y_n = 0.$$
 
-```{dropdown} Solution (click to show)
-<!-- :class: dropdown -->
+<!-- ```{dropdown} Solution (click to show) -->
+```{admonition} Solution
+:class: dropdown, solution
 
 The characteristic equation is 
 
@@ -221,8 +222,8 @@ Find the general solution to
 
 $$y_{n+2}+y_{n+1}+\frac{1}{4} y_n = 0$$
 
-```{dropdown} Solution (click to show)
-<!-- :class: dropdown -->
+```{admonition} Solution
+:class: dropdown, solution
 
 The characteristic equation is
 
@@ -250,8 +251,8 @@ where $r=\sqrt{\alpha^2+\beta^2}$, $\theta=\tan^{-1}\left(\dfrac{\beta}{\alpha}\
 ::::{prf:example}
 $$ y_{n+2} + \frac{1}{4} y_n = 0 $$
 
-```{dropdown} Solution (click to show)
-<!-- :class: dropdown -->
+```{admonition} Solution
+:class: dropdown, solution
 The characteristic equation is
 
 $$ \xi^2 + \frac{1}{4}=0, $$
@@ -342,8 +343,8 @@ $$\xi_1 \sim \xi_{13} = -\frac{1}{2}, \frac{1}{3}, \frac{3}{4}, \frac{3}{4}, \fr
 
 find the general solution to the corresponding difference equation.
 
-```{dropdown} Solution (click to show)
-<!-- :class: dropdown -->
+```{admonition} Solution
+:class: dropdown, solution
 
 $$1+\sqrt{3}=2 e^{i \frac{\pi}{3}},~ 1+i = \sqrt{2} e^{i\frac{\pi}{4}},$$
 

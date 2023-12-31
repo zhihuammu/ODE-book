@@ -72,7 +72,9 @@ a single--step method.
 
 Calculate $y(0.6)$ using the Adams--Bashforth three step method.
 
-:::{dropdown} Solution (click to show)
+<!-- :::{dropdown} Solution (click to show) -->
+:::{admonition} Solution
+:class: solution, dropdown
 $$
 \begin{aligned}
         y_3 ~&=~ y_2 + \frac{h}{12}\bigl[23f_2 - 16f_1 + 5f_0\bigr]\\
@@ -101,7 +103,9 @@ $\,x = 0.6\,$.
 |4 | 0.4 | 1.58364 | 1.98364|
 |5 | 0.5 | 1.79744 | 2.29744|
 
-:::{dropdown} Solution (click to show)
+<!-- :::{dropdown} Solution (click to show) -->
+:::{admonition} Solution
+:class: solution, dropdown
 $$
 \begin{aligned}
         y_6 ~&=~ y_5 + \frac{h}{12}\bigl[23f_5 - 16f_4 + 5f_3\bigr]\\

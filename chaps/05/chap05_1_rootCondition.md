@@ -138,7 +138,8 @@ $$
 = h(\beta_0f_{j-2 } + \beta_1 f_{j-1} + \beta_2 f_{j})    
 $$
 
-:::{dropdown} Solution (click to show)
+:::{admonition} Solution
+:class: solution, dropdown
 
 - Method 1:
 
@@ -253,12 +254,13 @@ A method is *{index}`weakly stable`* if it is stable (i.e. satisfies the root
 condition) but has more than one root on the unit circle.
 :::
 
-::::{prf:example}
+:::::{prf:example}
 Find the roots associated with the following characteristic polynomials:
 
 1.  $\rho(\xi)= \xi^3 + \xi $
 
-    :::{dropdown} Solution (click to show)
+    ::::{dropdown} Solution (click to show)
+    
     Let $\xi^3 + \xi ~=~ 0$\
     $\therefore\quad \xi(\xi^2 + 1) ~=~ 0$\
     $\therefore\quad \xi_1 ~=~ 0, ~~ \xi_2 ~=~ i, ~~\xi_3 ~= -i$
@@ -279,8 +281,6 @@ Find the roots associated with the following characteristic polynomials:
         0.0000 + 1.0000i
         0.0000 - 1.0000i
     ```
-
-    
 
     $\xi_1$, $\xi_2$, and $\xi_3$ are shown on the unit circle. Because
     there are more than one root on the unit circle, the method is
@@ -309,7 +309,7 @@ Find the roots associated with the following characteristic polynomials:
     \fill (xi3) circle (1mm);
     \node[anchor = north west] at (xi3) {$\xi_3 = -i$};     
     ```
-    :::      
+    ::::      
 
 2.  $\rho(\xi)=\xi^4 + \xi$
 
@@ -369,4 +369,4 @@ Find the roots associated with the following characteristic polynomials:
     }
     ```  
     ::: 
-::::
+:::::

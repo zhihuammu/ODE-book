@@ -148,10 +148,11 @@ $~C_0 = C_1 = C_2 = \dots = C_p=0,~$ and $~C_{p+1}\neq 0$.
 :label: chap04-example-3
 Find the order and the error constants of the following formulae,
 
-1.  $\displaystyle y_{j+4} ~=~ y_j + \frac{h}{3}(8f_{j+3} - 4f_{j+2} + 8f_{j+1}{)}$
+1.  $\displaystyle y_{j+4} = y_j + \frac{h}{3}(8f_{j+3} - 4f_{j+2} + 8f_{j+1})$
 
-    ::::{dropdown} Solution (click to show)
-    <!-- $\displaystyle y_{j+4} ~=~ y_j + \frac{h}{3}(8f_{j+3} - 4f_{j+2} + 8f_{j+1}{)}$ -->
+    ::::{admonition} Solution 
+    :class: solution, dropdown
+
 
     A comparison with 
 
@@ -196,7 +197,9 @@ Find the order and the error constants of the following formulae,
 
 2.  $\displaystyle y_{j+3} ~=~ y_{j+2} + \frac{h}{12}(23f_{j+2} - 16f_{j+1} + 5f_j)$
 
-    ::::{dropdown} Solution (click to show)
+    ::::{admonition} Solution
+    :class: solution, dropdown
+    
     A comparison with
     
      $$\begin{aligned}

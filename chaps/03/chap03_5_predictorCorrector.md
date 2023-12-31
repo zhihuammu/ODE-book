@@ -77,7 +77,9 @@ corrector iteration for each step.
     corrector evaluation only.
 :::
 
-:::{dropdown} Solution (click to show)
+<!-- :::{dropdown} Solution (click to show) -->
+:::{admonition} Solution
+:class: solution, dropdown
 
 <!-- **Solution** -->
 
@@ -92,7 +94,7 @@ corrector iteration for each step.
     |2 | 0.2 | 1.0187308 | 0.1812692|
     |3 | 0.3 | 1.0408182 | 0.2591818|
 
-- Steps 2 and 3 - using the starting values we can now advance the
+- Step 2 - using the starting values we can now advance the
     solution to $x = {0.4}$, i.e. to calculate $y_4$ using the
     following $4^\text{th}$ Adams--Bashforth formula: 
     
@@ -120,56 +122,55 @@ corrector iteration for each step.
          ~&=~ {1.0703229}       
     \end{aligned}$$
 
-To calculate the function value, we substitute $\,y_4^p = 1.0703229\,$
-and $\,x = 0.4\,$ in $\,f(x,y) = -y + x + 1\,$, to get
-$f_4^p = 0.3296671$. This completes the $PE$ stage.
+    To calculate the function value, we substitute $\,y_4^p = 1.0703229\,$
+    and $\,x = 0.4\,$ in $\,f(x,y) = -y + x + 1\,$, to get
+    $f_4^p = 0.3296671$. This completes the $PE$ stage.
 
-We now use $\,f_4^p = 0.3296771$ in the corrector formula to obtain a
-corrector value for $y_4$: 
+- Step 3 - We now use $\,f_4^p = 0.3296771$ in the corrector formula to obtain a
+    corrector value for $y_4$: 
 
-$$\begin{aligned}
-        y_4^c ~&=~ 1.0408182 + \frac{0.1}{24}\bigl[
-        9(0.3296771) + 19(0.2591818) - 5(0.1812692) + 0.0951626
-        \bigr] \\
-         ~&=~ 1.0408182 + \frac{0.1}{24}\bigl[
-        2.9670937 + 4.9244538 - 0.906346 + 0.0951626
-        \bigr] \\
-        ~&=~ {1.0703197}        
-\end{aligned}$$
+    $$\begin{aligned}
+            y_4^c ~&=~ 1.0408182 + \frac{0.1}{24}\bigl[
+            9(0.3296771) + 19(0.2591818) - 5(0.1812692) + 0.0951626
+            \bigr] \\
+            ~&=~ 1.0408182 + \frac{0.1}{24}\bigl[
+            2.9670937 + 4.9244538 - 0.906346 + 0.0951626
+            \bigr] \\
+            ~&=~ {1.0703197}        
+    \end{aligned}$$
 
-We now substitute the corrector value of $y_{4}^c = 1.0703197$ and
-$x = 0.4$ in $f(x,y) ~=~ -y + x + 1$, to get
-$f_4^c = 0.3296803$. This completes the $CE$ stage. Check
-this value in the following completed table of results for $x_j = 0.4$.
+    We now substitute the corrector value of $y_{4}^c = 1.0703197$ and
+    $x = 0.4$ in $f(x,y) ~=~ -y + x + 1$, to get
+    $f_4^c = 0.3296803$. This completes the $CE$ stage. Check
+    this value in the following completed table of results for $x_j = 0.4$.
 
-We then advance the solution to $x = 0.5$ by repeating the $PE$
-procedure to calculate $y^{p}_{5}$ and $f^{p}_5$, then $y_{5}$ of
-corrector, and then $f_5$, and so on, (i.e. repeating steps 2 and 3).
-Remember, once the corrector value of $y$ is calculated for each step in
-$x$, we take this as new $y$ value and cross out the predictor
-estimates.
+    We then advance the solution to $x = 0.5$ by repeating the $PE$
+    procedure to calculate $y^{p}_{5}$ and $f^{p}_5$, then $y_{5}$ of
+    corrector, and then $f_5$, and so on, (i.e. repeating steps 2 and 3).
+    Remember, once the corrector value of $y$ is calculated for each step in
+    $x$, we take this as new $y$ value and cross out the predictor
+    estimates.
 
-The computed solution, including the absolute error, up to $x=1.0$ are
-displayed in the following table. (Reproduce all the results using
-step-by-step $PECE$ calculation to ensure that you follow the method
-completely).
-
-
-| $j$ | $x_j$ | $y^{AB}_j$ | $f^{AB}_j$ | $y^{AM}_j$ | $f^{AM}_j$ | $y_{ex}$ | $\|y_{ex} - y^{AM}_j\|$ |
-|--|--|--|--|--|--|--|--|
-|4 | 0.4 | 1.0703229 | 0.3296771 | 1.0703197 | 0.3296803 | 1.0703200 | 0.0000003|
-|5 | 0.5 | 1.1065330 | 0.3934670 | 1.1065301 | 0.3934699 | 1.1065307 | 0.0000006|
-|6 | 0.6 | 1.1488135 | 0.4511865 | 1.1488109 | 0.4511891 | 1.1488116 | 0.0000007|
-|7 | 0.7 | 1.1965868 | 0.5034132 | 1.1965844 | 0.5034156 | 1.1965853 | 0.0000009|
-|8 | 0.8 | 1.2493301 | 0.5506699 | 1.2493279 | 0.5506721 | 1.2493290 | 0.0000010|
-|9 | 0.9 | 1.3065705 | 0.5934295 | 1.3065685 | 0.5934315 | 1.3065697 | 0.0000011|
-|10 | 1.0 | 1.3678800 | 0.6321200 | 1.3678783 | 0.6321217 | 1.3678794 | 0.0000012|
+    The computed solution, including the absolute error, up to $x=1.0$ are
+    displayed in the following table. (Reproduce all the results using
+    step-by-step $PECE$ calculation to ensure that you follow the method
+    completely).
 
 
-Note that the method produces an absolute error of the order $10^{-7}$
-to $10^{-6}$, which is expected for a $4^\text{th}$order ABM method,
-using $h = 0.1$ -- remember, the error should be of the $O(h^5)$ from
-the truncation error terms listed for each ABM formulae above.
+    | $j$ | $x_j$ | $y^{AB}_j$ | $f^{AB}_j$ | $y^{AM}_j$ | $f^{AM}_j$ | $y_{ex}$ | $\|y_{ex} - y^{AM}_j\|$ |
+    |--|--|--|--|--|--|--|--|
+    |4 | 0.4 | 1.0703229 | 0.3296771 | 1.0703197 | 0.3296803 | 1.0703200 | 0.0000003|
+    |5 | 0.5 | 1.1065330 | 0.3934670 | 1.1065301 | 0.3934699 | 1.1065307 | 0.0000006|
+    |6 | 0.6 | 1.1488135 | 0.4511865 | 1.1488109 | 0.4511891 | 1.1488116 | 0.0000007|
+    |7 | 0.7 | 1.1965868 | 0.5034132 | 1.1965844 | 0.5034156 | 1.1965853 | 0.0000009|
+    |8 | 0.8 | 1.2493301 | 0.5506699 | 1.2493279 | 0.5506721 | 1.2493290 | 0.0000010|
+    |9 | 0.9 | 1.3065705 | 0.5934295 | 1.3065685 | 0.5934315 | 1.3065697 | 0.0000011|
+    |10 | 1.0 | 1.3678800 | 0.6321200 | 1.3678783 | 0.6321217 | 1.3678794 | 0.0000012|
 
+
+    Note that the method produces an absolute error of the order $10^{-7}$
+    to $10^{-6}$, which is expected for a $4^\text{th}$order ABM method,
+    using $h = 0.1$ -- remember, the error should be of the $O(h^5)$ from
+    the truncation error terms listed for each ABM formulae above.
 :::
 :::::

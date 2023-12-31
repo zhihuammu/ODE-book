@@ -259,8 +259,8 @@ Find the stability interval and region for the following methods:
 
 ::::{solution} chap06-ex6-3
 
-1.  :::{admonition} Solution (click to show)
-    :class: dropdown
+1.  :::{admonition} Solution
+    :class: dropdown, solution
 
     - Stability interval
         The characteristic equation is
@@ -349,8 +349,8 @@ Find the stability interval and region for the following methods:
         ```
     :::
 
-2.  :::{admonition} Solution (click to show)
-    :class: dropdown
+2.  :::{admonition} Solution 
+    :class: dropdown, solution
 
     - Stability interval
     

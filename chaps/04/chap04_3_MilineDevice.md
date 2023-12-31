@@ -214,7 +214,8 @@ $\,y^{(c)} \!=\! 1.3678784\,$.
 solution $(y = e^{-x} + x)$.
 
 
-:::{dropdown} Solution (click to show)
+:::{admonition} Solution
+:class: solution, dropdown
 
 
 
