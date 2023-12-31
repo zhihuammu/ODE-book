@@ -3,23 +3,31 @@
 \newcommand{\pdiff}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
 ```
 
+```{index} Ordinary Differential Equation
+```
 (chap:pre:2)=
 # Ordinary Differential Equations
 
 For an $n$-th order ordinary differential equation, we can write it in
 
+```{index} Ordinary Differential Equation; General Form
+```
 - **General Form**
 
     $$
     F(x, y, y', y'', \ldots, y^{(n)}) = 0
     $$(eq:ode:form:general)
 
+```{index} Ordinary Differential Equation; Normal Form
+```
 - **Normal form**
 
     $$
     \diff[n]{y}{x} = f(x, y', y'', \ldots, y^{(n-1)})
     $$(eq:ode:form:normal)
 
+```{index} Ordinary Differential Equation; Interval
+```
 ```{prf:remark} Interval of definition $I$
 For a problem governed/represented by an ODE, we need to give the actual ODE in form {eq}`eq:ode:form:general` or {eq}`eq:ode:form:normal`, besides we also need to give the interval $I$ that defines the problem. We call this interval $I$:
 
@@ -37,6 +45,8 @@ The interval $I$ can be
 and so on.
 ```
 
+```{index} pair: Ordinary Differential Equation; Explicit Solution
+```
 
 ```{prf:definition} Explicit Solution of an ODE
 A function $\phi(x)$ that when substituted for $y$ in equation {eq}`eq:ode:form:general` or {eq}`eq:ode:form:normal`
@@ -57,6 +67,8 @@ satisfies the equation for all $x$ in the interval $I$ is called an **{index}`ex
     $$
 ```
 
+```{index} pair: Ordinary Differential Equation; Implicit Solution
+```
 
 ```{prf:definition} Implicit Solution of an ODE
 A relation $G(x, y) = 0$ is said to be an **{index}`implicit solution`** of an ordinary differential equation {eq}`eq:ode:form:general` on an interval $I$, provided that there exists at least one function $\phi$ that satisfies the relation as well as the differential equation on $I$.
@@ -80,8 +92,11 @@ A relation $G(x, y) = 0$ is said to be an **{index}`implicit solution`** of an o
 
 <!-- ## Initial value problem -->
 
+```{index} triple: Ordinary Differential Equation; Initial Value Problem; IVP
+```
+
 ```{prf:definition} Initial Value Problem
-By an **{index}`initial value problem`** for an $n$-th order differential equation 
+By an **initial value problem** (IVP) for an $n$-th order differential equation 
 
 $$
 F(x, y, y', y'', \ldots, y^{(n)}) = 0,
@@ -97,6 +112,9 @@ y^{(n-1)}(x_0) = & ~y_{n-1}
 $$
 
 where $x_0 \in I$ and $y_0$, $y_1$, ... , $y_{n-1}$ are given constants.
+```
+
+```{index} Ordinary Differential Equation; Existence and Uniqueness
 ```
 
 ```{prf:theorem} Existence and Uniqueness of Solution

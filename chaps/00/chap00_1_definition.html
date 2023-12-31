@@ -401,14 +401,14 @@ document.write(`
 <span id="index-0"></span><p class="admonition-title"><span class="caption-number">Definition 1 </span> (Differential Equations)</p>
 <section class="definition-content" id="proof-content">
 <p>An equation containing the derivatives of one or more unknown functions (or
-dependent variables), with respect to one or more independent variables, is said to be a <strong><span class="target" id="index-1"></span>differential equation</strong> (DE).</p>
+dependent variables), with respect to one or more independent variables, is said to be a <strong>differential equation</strong> (DE).</p>
 </section>
 </div><p>We can classify differential equations by <strong>type</strong>, <strong>order</strong>, <strong>linearity</strong> and <strong>homogeneity</strong>.</p>
 <ol class="arabic">
 <li><p>Classification by Type</p>
-<ul>
+<ul id="index-1">
 <li><p><strong>Ordinary Differential Equation (ODE)</strong></p>
-<p>If a differential equation contains only ordinary derivatives of one or more unknown functions with respect to a single independent variable, it is said to be an <span class="target" id="index-2"></span>ordinary differential equation (ODE).</p>
+<p>If a differential equation contains only ordinary derivatives of one or more unknown functions with respect to a single independent variable, it is said to be an ordinary differential equation (ODE).</p>
 <div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 1 </span></p>
 <section class="example-content" id="proof-content">
@@ -426,8 +426,10 @@ dependent variables), with respect to one or more independent variables, is said
 <p>The functions here are functions of a single variable.</p>
 </section>
 </div></li>
+</ul>
+<ul id="index-2">
 <li><p><strong>Partial Differential Equation (PDE)</strong></p>
-<p>An equation involving partial derivatives of one or more unknown functions of two or more independent variables is called a <span class="target" id="index-3"></span>partial differential equation (PDE).</p>
+<p>An equation involving partial derivatives of one or more unknown functions of two or more independent variables is called a partial differential equation (PDE).</p>
 <div class="proof example admonition" id="example-2">
 <p class="admonition-title"><span class="caption-number">Example 2 </span></p>
 <section class="example-content" id="proof-content">
@@ -450,24 +452,26 @@ dependent variables), with respect to one or more independent variables, is said
 </li>
 </ol>
 <div class="proof remark admonition" id="remark-3">
-<p class="admonition-title"><span class="caption-number">Remark 1 </span> (Notations of derivatives)</p>
+<span id="index-3"></span><p class="admonition-title"><span class="caption-number">Remark 1 </span> (Notations of derivatives)</p>
 <section class="remark-content" id="proof-content">
 <p>Ordinary derivatives can be written by using</p>
-<ul>
+<ul id="index-4">
 <li><p>Leibniz notation</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle \diff{y}{x}\)</span>, <span class="math notranslate nohighlight">\(\displaystyle \diff[2]{y}{x}\)</span>, <span class="math notranslate nohighlight">\(\displaystyle \diff[3]{y}{x}\)</span>, …</p>
 </li>
+</ul>
+<ul class="simple" id="index-5">
 <li><p>Prime notation</p>
-<ul class="simple">
+<ul>
 <li><p><span class="math notranslate nohighlight">\(y'\)</span>, <span class="math notranslate nohighlight">\(y''\)</span>, <span class="math notranslate nohighlight">\(y'''\)</span></p></li>
 <li><p>The fourth derivative <span class="math notranslate nohighlight">\(y^{(4)}\)</span></p></li>
 <li><p>The <span class="math notranslate nohighlight">\(k\)</span>-th derivative <span class="math notranslate nohighlight">\(y^{(k)}\)</span></p></li>
 </ul>
 </li>
-<li><p>Newton’s dot notation</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\dot y\)</span>, <span class="math notranslate nohighlight">\(\ddot y\)</span></p></li>
 </ul>
+<ul id="index-6">
+<li><p>Newton’s dot notation</p>
+<p><span class="math notranslate nohighlight">\(\dot y\)</span>, <span class="math notranslate nohighlight">\(\ddot y\)</span></p>
 </li>
 </ul>
 </section>
@@ -485,7 +489,7 @@ dependent variables), with respect to one or more independent variables, is said
 <p>is a second-order ordinary differential equation.</p>
 </section>
 </div><div class="proof remark admonition" id="remark-5">
-<p class="admonition-title"><span class="caption-number">Remark 2 </span> (Order and Degree of differential equations)</p>
+<span id="index-7"></span><p class="admonition-title"><span class="caption-number">Remark 2 </span> (Order and Degree of differential equations)</p>
 <section class="remark-content" id="proof-content">
 <ul class="simple">
 <li><p><strong>Order</strong>: The order of a differential equation is defined to be that of the highest order derivative it contains.</p></li>
@@ -504,13 +508,15 @@ dependent variables), with respect to one or more independent variables, is said
 <p class="admonition-title"><span class="caption-number">Remark 3 </span> (Forms of Differential Equations)</p>
 <section class="remark-content" id="proof-content">
 <p>For an <span class="math notranslate nohighlight">\(n\)</span>-th order ordinary differential equation, we can express it in</p>
-<ul>
+<ul id="index-8">
 <li><p><strong>General Form</strong></p>
 <div class="math notranslate nohighlight">
 \[
     F(x, y, y', y'', \ldots, y^{(n)}) = 0
     \]</div>
 </li>
+</ul>
+<ul id="index-9">
 <li><p><strong>Normal form</strong></p>
 <div class="math notranslate nohighlight">
 \[
@@ -526,7 +532,7 @@ dependent variables), with respect to one or more independent variables, is said
 </section>
 </div><ol class="arabic" start="3">
 <li><p>Classification by Linearity</p>
-<ul>
+<ul id="index-10">
 <li><p><strong>Linear</strong></p>
 <p>An <span class="math notranslate nohighlight">\(n\)</span>-th order ordinary equation is linear if it can be expressed as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear">
@@ -540,6 +546,8 @@ dependent variables), with respect to one or more independent variables, is said
 <li><p>The coefficients <span class="math notranslate nohighlight">\(a_0(x) \)</span>, <span class="math notranslate nohighlight">\(a_1(x) \)</span>, …, <span class="math notranslate nohighlight">\(a_n(x) \)</span> depend at most on the independent variable <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
 </ul>
 </li>
+</ul>
+<ul id="index-11">
 <li><p><strong>Nonlinear</strong></p>
 <p>A non-linear ordinary differential equation is one that is not linear. If an ordinary differential equation involves any of the followings</p>
 <ul class="simple">
@@ -552,10 +560,12 @@ dependent variables), with respect to one or more independent variables, is said
 </ul>
 </li>
 <li><p>Classification by Homogeneity</p>
-<ul>
+<ul id="index-12">
 <li><p><strong>Homogeneous</strong></p>
 <p>Equation <a class="reference internal" href="#equation-eq-ode-linear">(1)</a> is <em>homogeneous</em> if <span class="math notranslate nohighlight">\(g(x) = 0\)</span>.</p>
 </li>
+</ul>
+<ul id="index-13">
 <li><p><strong>Nonhomogeneous</strong></p>
 <p>Equation <a class="reference internal" href="#equation-eq-ode-linear">(1)</a> is <em>nonhomogeneous</em> if <span class="math notranslate nohighlight">\(g(x)\neq 0\)</span>.</p>
 </li>

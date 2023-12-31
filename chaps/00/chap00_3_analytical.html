@@ -437,14 +437,14 @@ document.write(`
 <section id="separable-equations">
 <h2><a class="toc-backref" href="#id1">Separable Equations</a><a class="headerlink" href="#separable-equations" title="Permalink to this headline">#</a></h2>
 <div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 5 </span> (Separable Equation)</p>
+<span id="index-0"></span><p class="admonition-title"><span class="caption-number">Definition 5 </span> (Separable Equation)</p>
 <section class="definition-content" id="proof-content">
 <p>A first-order differential equation of the form</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-separable">
 <span class="eqno">(4)<a class="headerlink" href="#equation-eq-ode-separable" title="Permalink to this equation">#</a></span>\[
 \diff{y}{x} = g(x) h(y)
 \]</div>
-<p>is said to be separable or to have <span class="target" id="index-0"></span>separable variables.</p>
+<p>is said to be separable or to have separable variables.</p>
 </section>
 </div><p>To solve the separable ODE <a class="reference internal" href="#equation-eq-ode-separable">(4)</a>, we re-arrange it as</p>
 <div class="math notranslate nohighlight">
@@ -527,9 +527,9 @@ a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(x),
 \]</div>
 <p>where the coefficients <span class="math notranslate nohighlight">\(a_p~(p=0, 1, \ldots, n)\)</span> are constants.</p>
 <div class="proof definition admonition" id="definition-3">
-<p class="admonition-title"><span class="caption-number">Definition 6 </span> (Differential Operator <span class="math notranslate nohighlight">\(\D\)</span>)</p>
+<span id="index-1"></span><p class="admonition-title"><span class="caption-number">Definition 6 </span> (Differential Operator <span class="math notranslate nohighlight">\(\D\)</span>)</p>
 <section class="definition-content" id="proof-content">
-<p>We define <span class="math notranslate nohighlight">\(\D\)</span> as the <span class="target" id="index-1"></span>differential operator, which can be applied on a function <span class="math notranslate nohighlight">\(y=y(x)\)</span> to obtain its derivative</p>
+<p>We define <span class="math notranslate nohighlight">\(\D\)</span> as the <span class="target" id="index-2"></span>differential operator, which can be applied on a function <span class="math notranslate nohighlight">\(y=y(x)\)</span> to obtain its derivative</p>
 <div class="math notranslate nohighlight">
 \[
     \D y = \diff{y}{x},
@@ -539,7 +539,7 @@ a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(x),
 \[
     \D^n y = \diff[n]{y}{x}.
 \]</div>
-<p>Thus we can write the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(5)</a> in an <strong><span class="target" id="index-2"></span>operator form</strong> as</p>
+<p id="index-3">Thus we can write the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(5)</a> in an <strong>operator form</strong> as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-operator-form">
 <span class="eqno">(6)<a class="headerlink" href="#equation-eq-ode-operator-form" title="Permalink to this equation">#</a></span>\[
 \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = g(x).
@@ -555,10 +555,10 @@ L(\D)= a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0,
 L(\D) y = g(x).
 \]</div>
 </section>
-</div><div class="proof definition admonition" id="definition-4">
-<p class="admonition-title"><span class="caption-number">Definition 7 </span> (Characteristic Polynomial and Characteristic Equation)</p>
+</div><span class="target" id="index-4"></span><span class="target" id="index-5"></span><div class="proof definition admonition" id="definition-4">
+<span id="index-6"></span><p class="admonition-title"><span class="caption-number">Definition 7 </span> (Characteristic Polynomial and Characteristic Equation)</p>
 <section class="definition-content" id="proof-content">
-<p>For equation <a class="reference internal" href="#equation-eq-ode-linear-constant">(5)</a>, we define its <strong><span class="target" id="index-3"></span>characteristic polynomial</strong> as</p>
+<p>For equation <a class="reference internal" href="#equation-eq-ode-linear-constant">(5)</a>, we define its <strong><span class="target" id="index-7"></span>characteristic polynomial</strong> as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear-constant-char-polynomial">
 <span class="eqno">(8)<a class="headerlink" href="#equation-eq-ode-linear-constant-char-polynomial" title="Permalink to this equation">#</a></span>\[
 L(\xi) = a_n \xi^n + a_{n-1} \xi^{n-1} + \cdots + a_1 \xi + a_0.
@@ -569,7 +569,7 @@ L(\xi) = a_n \xi^n + a_{n-1} \xi^{n-1} + \cdots + a_1 \xi + a_0.
 <span class="eqno">(9)<a class="headerlink" href="#equation-eq-ode-linear-constant-char-equation" title="Permalink to this equation">#</a></span>\[
 L(\xi) = a_n \xi^n + a_{n-1} \xi^{n-1} + \cdots + a_1 \xi + a_0 = 0
 \]</div>
-<p>is called the <strong><span class="target" id="index-4"></span>characteristic equation</strong> of the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(5)</a>.</p>
+<p>is called the <strong><span class="target" id="index-8"></span>characteristic equation</strong> of the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(5)</a>.</p>
 <p>Note: In some books, the characteristic equation is also called <em>auxiliary equation</em>.</p>
 </section>
 </div><section id="homogeneous-odes">
@@ -580,7 +580,7 @@ L(\xi) = a_n \xi^n + a_{n-1} \xi^{n-1} + \cdots + a_1 \xi + a_0 = 0
 L(\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = 0
 \]</div>
 <div class="proof theorem admonition" id="theorem-5">
-<p class="admonition-title"><span class="caption-number">Theorem 2 </span> (Superposition Principle — Homogeneous Equations)</p>
+<span id="index-9"></span><p class="admonition-title"><span class="caption-number">Theorem 2 </span> (Superposition Principle — Homogeneous Equations)</p>
 <section class="theorem-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(y_1(x)\)</span>, <span class="math notranslate nohighlight">\(y_2(x)\)</span>, … , <span class="math notranslate nohighlight">\(y_n(x)\)</span> be solutions to the homogeneous <span class="math notranslate nohighlight">\(n\)</span>-th order differential equation <a class="reference internal" href="#equation-eq-ode-linear-homogeneous-constant">(10)</a> on an interval <span class="math notranslate nohighlight">\(I\)</span>, then the linear combination</p>
 <div class="math notranslate nohighlight">
@@ -799,7 +799,7 @@ L(\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y =
 \end{aligned}
 \right.
 \end{split}\]</div>
-<p>The way to find <span class="math notranslate nohighlight">\(y_h(x)\)</span> is the same as described in <a class="reference internal" href="#chapx-homo-ode-sol"><span class="std std-ref">Homogeneous ODEs</span></a>. Here we will introduce the <strong><span class="target" id="index-5"></span>Undetermined Coefficients Method</strong> to find the particular solution <span class="math notranslate nohighlight">\(y_p(x)\)</span></p>
+<p id="index-10">The way to find <span class="math notranslate nohighlight">\(y_h(x)\)</span> is the same as described in <a class="reference internal" href="#chapx-homo-ode-sol"><span class="std std-ref">Homogeneous ODEs</span></a>. Here we will introduce the <strong><span class="target" id="index-11"></span>Undetermined Coefficients Method</strong> to find the particular solution <span class="math notranslate nohighlight">\(y_p(x)\)</span></p>
 <div class="proof example admonition" id="example-7">
 <p class="admonition-title"><span class="caption-number">Example 9 </span></p>
 <section class="example-content" id="proof-content">

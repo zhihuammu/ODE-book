@@ -6,20 +6,22 @@
 (chap:pre:1)=
 # Definitions, Classification and Terminology
 
-:::{index} Differential Equations
+:::{index} Differential Equation
 :::
 
 ```{prf:definition} Differential Equations
 An equation containing the derivatives of one or more unknown functions (or
-dependent variables), with respect to one or more independent variables, is said to be a **{index}`differential equation`** (DE).
+dependent variables), with respect to one or more independent variables, is said to be a **differential equation** (DE).
 ```
 
 We can classify differential equations by **type**, **order**, **linearity** and **homogeneity**.
 
 1. Classification by Type
+    :::{index} pair: Differential Equation; Ordinary Differential Equation
+    :::
     - **Ordinary Differential Equation (ODE)**
 
-        If a differential equation contains only ordinary derivatives of one or more unknown functions with respect to a single independent variable, it is said to be an {index}`ordinary differential equation` (ODE).
+        If a differential equation contains only ordinary derivatives of one or more unknown functions with respect to a single independent variable, it is said to be an ordinary differential equation (ODE).
 
         ```{prf:example}    
         The following equations are ordinary differential equations:
@@ -36,9 +38,11 @@ We can classify differential equations by **type**, **order**, **linearity** and
         The functions here are functions of a single variable.
         ```
 
+    :::{index} pair: Differential Equation; Partial Differential Equation
+    :::
     - **Partial Differential Equation (PDE)**
 
-        An equation involving partial derivatives of one or more unknown functions of two or more independent variables is called a {index}`partial differential equation` (PDE).
+        An equation involving partial derivatives of one or more unknown functions of two or more independent variables is called a partial differential equation (PDE).
 
         ```{prf:example}
         The following equations are partial differential equations:
@@ -55,19 +59,36 @@ We can classify differential equations by **type**, **order**, **linearity** and
 
         The functions here are multi-variable functions.
         ```
-```{prf:remark} Notations of derivatives
+
+```{index} Derivatives
+```        
+
+````{prf:remark} Notations of derivatives
 Ordinary derivatives can be written by using
+
+```{index} pair: Derivatives; Leibniz notation
+```        
+
 - Leibniz notation
 
     $\displaystyle \diff{y}{x}$, $\displaystyle \diff[2]{y}{x}$, $\displaystyle \diff[3]{y}{x}$, ...
+
+```{index} pair: Derivatives; Prime notation
+```        
 
 - Prime notation
     - $y'$, $y''$, $y'''$
     - The fourth derivative $y^{(4)}$
     - The $k$-th derivative $y^{(k)}$
+
+```{index} pair: Derivatives; Newton's dot notation
+```        
+
 - Newton's dot notation
-    - $\dot y$, $\ddot y$
-```
+
+    $\dot y$, $\ddot y$
+````
+
 2. Classification by Order
 
     The order of a differential equation is the order of the highest derivative in the equation.
@@ -80,6 +101,9 @@ Ordinary derivatives can be written by using
     $$
 
     is a second-order ordinary differential equation.
+    ```
+
+    ```{index} pair: Differential Equation; Order and Degree
     ```
 
     ```{prf:remark} Order and Degree of differential equations
@@ -97,14 +121,20 @@ Ordinary derivatives can be written by using
     ```
 
 
-```{prf:remark} Forms of Differential Equations
+````{prf:remark} Forms of Differential Equations
 For an $n$-th order ordinary differential equation, we can express it in
+
+```{index} pair: Differential Equation; General Form
+```
 
 - **General Form**
 
     $$
     F(x, y, y', y'', \ldots, y^{(n)}) = 0
     $$
+
+```{index} pair: Differential Equation; Normal Form
+```
 
 - **Normal form**
 
@@ -116,8 +146,13 @@ For an $n$-th order ordinary differential equation, we can express it in
     - A *first-order* ordinary differential equation: $\displaystyle \diff{y}{x}= f(x, y)$
 
     - A *second-order* ordinary differential equation: $\displaystyle \diff[2]{y}{x}= f(x, y, y')$
-```
+````
+
 3. Classification by Linearity
+
+    ```{index} pair: Differential Equation; Linear
+    ```
+
     - **Linear**
 
         An $n$-th order ordinary equation is linear if it can be expressed as
@@ -132,6 +167,9 @@ For an $n$-th order ordinary differential equation, we can express it in
         - The dependant variable $y$ and all its derivatives $y'$, $y''$, ... $y^{(n)}$ are of the first degree.
         - The coefficients $a_0(x) $, $a_1(x) $, ..., $a_n(x) $ depend at most on the independent variable $x$.
 
+    ```{index} pair: Differential Equation; Nonlinear
+    ```        
+
     - **Nonlinear**
 
         A non-linear ordinary differential equation is one that is not linear. If an ordinary differential equation involves any of the followings 
@@ -143,10 +181,15 @@ For an $n$-th order ordinary differential equation, we can express it in
         it is then non-linear.
 
 4. Classification by Homogeneity
+
+    ```{index} pair: Differential Equation; Homogeneous
+    ```
     - **Homogeneous**
 
         Equation {eq}`eq:ode:linear` is *homogeneous* if $g(x) = 0$.
 
+    ```{index} pair: Differential Equation; Nonhomogeneous
+    ```
     - **Nonhomogeneous**
 
         Equation {eq}`eq:ode:linear` is *nonhomogeneous* if $g(x)\neq 0$.
