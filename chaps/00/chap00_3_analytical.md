@@ -12,6 +12,9 @@
 
 ## Separable Equations
 
+```{index} pair: Ordinary Differential Equation; Separable Equation
+
+```
 ```{prf:definition} Separable Equation
 A first-order differential equation of the form
 
@@ -19,7 +22,7 @@ $$
 \diff{y}{x} = g(x) h(y)
 $$(eq:ode:separable)
 
-is said to be separable or to have {index}`separable variables`.
+is said to be separable or to have separable variables.
 ```
 
 To solve the separable ODE {eq}`eq:ode:separable`, we re-arrange it as
@@ -109,7 +112,10 @@ $$(eq:ode:linear:constant)
 
 where the coefficients $a_p~(p=0, 1, \ldots, n)$ are constants.
 
-```{prf:definition} Differential Operator $\D$
+```{index} pair: Ordinary Differential Equation; Differential Operator
+```
+
+````{prf:definition} Differential Operator $\D$
 We define $\D$ as the {index}`differential operator`, which can be applied on a function $y=y(x)$ to obtain its derivative
 
 $$
@@ -122,7 +128,10 @@ $$
     \D^n y = \diff[n]{y}{x}.
 $$
 
-Thus we can write the ODE {eq}`eq:ode:linear:constant` in an **{index}`operator form`** as
+```{index} pair: Ordinary Differential Equation; Operator Form
+```
+
+Thus we can write the ODE {eq}`eq:ode:linear:constant` in an **operator form** as
 
 $$
 \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = g(x).
@@ -139,6 +148,13 @@ then the equation can also be written as
 $$
 L(\D) y = g(x).
 $$
+````
+
+```{index} pair: Ordinary Differential Equation; Characteristic Polynomial
+```
+```{index} pair: Ordinary Differential Equation; Characteristic Equation
+```
+```{index} pair: Ordinary Differential Equation; Auxiliary Equation
 ```
 
 ```{prf:definition} Characteristic Polynomial and Characteristic Equation
@@ -170,6 +186,8 @@ $$
 L(\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = 0
 $$(eq:ode:linear:homogeneous:constant)
 
+```{index} pair: Ordinary Differential Equation; Superposition Principle
+```
 
 ```{prf:theorem} Superposition Principle --- Homogeneous Equations
 Let $y_1(x)$, $y_2(x)$, ... , $y_n(x)$ be solutions to the homogeneous $n$-th order differential equation {eq}`eq:ode:linear:homogeneous:constant` on an interval $I$, then the linear combination
@@ -409,6 +427,9 @@ $$
 \end{aligned}
 \right.
 $$(eq:inhomo:ode:sol)
+
+```{index} pair: Ordinary Differential Equation; Undetermined Coefficients Method
+```
 
 The way to find $y_h(x)$ is the same as described in [](chapX-homo-ode-sol). Here we will introduce the **{index}`Undetermined Coefficients Method`** to find the particular solution $y_p(x)$
 
