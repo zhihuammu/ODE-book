@@ -422,14 +422,8 @@ through the following examples.</p>
         \int_{x_0}^{x_2} f(x)\,\dx ~=~ \frac{h}{3}(f_2 + 4f_1 + f_0) + \epsilon
     
 \end{aligned}\]</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Solution (click to show)<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<!-- :class: tip -->
+<div class="solution dropdown admonition">
+<p class="admonition-title">Solution</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
         &amp;Using      &amp; s ~&amp;=~ \frac{x - x_0}{h}, &amp; \dx ~&amp;=~ h\,\ds\\
@@ -460,7 +454,7 @@ Solution (click to show)<div class="sd-summary-down docutils">
         &amp;=~ \frac{h}{3}\bigl[f_0 + 4f_1 + f_2\bigr] + \epsilon
     
 \end{aligned}\end{split}\]</div>
-<p class="sd-card-text">For the derivation of the error term we integrate the
+<p>For the derivation of the error term we integrate the
 terms involving third and fourth differences (i.e. <span class="math notranslate nohighlight">\(\Delta^3\)</span> and
 <span class="math notranslate nohighlight">\(\Delta^4\)</span>), thus</p>
 <div class="math notranslate nohighlight">
@@ -492,7 +486,7 @@ terms involving third and fourth differences (i.e. <span class="math notranslate
         \right\}
     
 \end{aligned}\end{split}\]</div>
-<p class="sd-card-text">Use the <a class="reference external" href="https://en.wikipedia.org/wiki/Mean_value_theorem">Mean Value Theorem</a>
+<p>Use the <a class="reference external" href="https://en.wikipedia.org/wiki/Mean_value_theorem">Mean Value Theorem</a>
 and LET <span class="math notranslate nohighlight">\(\Delta^{4} f_0 = h^4f^{iv}(\xi)\)</span> where
 <span class="math notranslate nohighlight">\(x_0 \leq \xi \leq x_2\)</span></p>
 <div class="math notranslate nohighlight">
@@ -505,9 +499,10 @@ and LET <span class="math notranslate nohighlight">\(\Delta^{4} f_0 = h^4f^{iv}(
     
 \end{aligned}\end{split}\]</div>
 </div>
-</details></section>
-</div><div class="note admonition">
-<p class="admonition-title">Mean Value Theorem</p>
+</section>
+</div><div class="proof theorem admonition" id="theorem-1">
+<p class="admonition-title"><span class="caption-number">Theorem 4.1 </span> (Mean Value Theorem)</p>
+<section class="theorem-content" id="proof-content">
 <p>Let  <span class="math notranslate nohighlight">\(f\)</span>  be continuous over the closed interval  <span class="math notranslate nohighlight">\([a, b]\)</span>
 and differentiable over the open interval  <span class="math notranslate nohighlight">\((a, b)\)</span>.
 Then, there exists at least one point  <span class="math notranslate nohighlight">\(c\in (a,b)\)</span> such that</p>
@@ -515,8 +510,8 @@ Then, there exists at least one point  <span class="math notranslate nohighlight
 \[
 f'(c)=\frac{f(b)-f(a)}{b-a}
 \]</div>
-</div>
-<div class="proof example admonition" id="example-1">
+</section>
+</div><div class="proof example admonition" id="example-2">
 <p class="admonition-title"><span class="caption-number">Example 4.2 </span></p>
 <section class="example-content" id="proof-content">
 <p>Use the Gregory-Newton forward-interpolation formula:</p>
@@ -539,14 +534,9 @@ f'(c)=\frac{f(b)-f(a)}{b-a}
 \end{aligned}\]</div>
 <p>can be obtained by integrating the terms involving third
 and fourth differences.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Solution (click to show)<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<!-- :class: tip -->
+<!-- :::{dropdown} Solution (click to show) -->
+<div class="solution dropdown admonition">
+<p class="admonition-title">Solution</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
         &amp;Using      &amp; x ~&amp;=~ x_0 + sh &amp; \dx ~&amp;=~ h\,\ds\\
@@ -554,7 +544,7 @@ Solution (click to show)<div class="sd-summary-down docutils">
         &amp;           &amp; x ~&amp;=~ x_3,     &amp;  s ~&amp;=~  3
     
 \end{aligned}\end{split}\]</div>
-<p class="sd-card-text">For the derivation of the error term we integrate the
+<p>For the derivation of the error term we integrate the
 terms involving third and fourth differences (i.e. <span class="math notranslate nohighlight">\(\Delta^3\)</span> and
 <span class="math notranslate nohighlight">\(\Delta^4\)</span>), thus</p>
 <div class="math notranslate nohighlight">
@@ -591,7 +581,7 @@ terms involving third and fourth differences (i.e. <span class="math notranslate
         \right] \Delta^4 f_0
     
 \end{aligned}\end{split}\]</div>
-<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(\Delta^4 f_0 ~=~ h^4 f^{iv}(\xi)\)</span> where
+<p>Let <span class="math notranslate nohighlight">\(\Delta^4 f_0 ~=~ h^4 f^{iv}(\xi)\)</span> where
 <span class="math notranslate nohighlight">\(x_{-1} \leq \xi \leq x_3\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
@@ -599,7 +589,7 @@ terms involving third and fourth differences (i.e. <span class="math notranslate
     
 \end{aligned}\]</div>
 </div>
-</details></section>
+</section>
 </div></section>
 
     <script type="text/x-thebe-config">

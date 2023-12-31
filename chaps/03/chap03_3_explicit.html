@@ -482,13 +482,9 @@ a single–step method.</p>
 </tbody>
 </table>
 <p>Calculate <span class="math notranslate nohighlight">\(y(0.6)\)</span> using the Adams–Bashforth three step method.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Solution (click to show)<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<!-- :::{dropdown} Solution (click to show) -->
+<div class="solution dropdown admonition">
+<p class="admonition-title">Solution</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -498,11 +494,11 @@ Solution (click to show)<div class="sd-summary-down docutils">
         \bigr] = {2.04263}        
 \end{aligned}
 \end{split}\]</div>
-<p class="sd-card-text">The exact solution is <span class="math notranslate nohighlight">\(2.04424\)</span> (using the analytic solution
+<p>The exact solution is <span class="math notranslate nohighlight">\(2.04424\)</span> (using the analytic solution
 <span class="math notranslate nohighlight">\(\,y = 2\text{e}^x - x - 1\)</span>). Thus, the computed value has an error of
 <span class="math notranslate nohighlight">\(0.00164\)</span>.</p>
 </div>
-</details><p>Now we can use the following table, obtained by using the RK4 method
+<p>Now we can use the following table, obtained by using the RK4 method
 with <span class="math notranslate nohighlight">\(\,h = 0.1\,\)</span>, and use the values at <span class="math notranslate nohighlight">\(\,x = 0.3\,\)</span>, <span class="math notranslate nohighlight">\(\,x = 0.4\,\)</span>
 and <span class="math notranslate nohighlight">\(\,x = 0.5\,\)</span> to obtain a better approximation for <span class="math notranslate nohighlight">\(y\)</span> at
 <span class="math notranslate nohighlight">\(\,x = 0.6\,\)</span>.</p>
@@ -547,13 +543,9 @@ and <span class="math notranslate nohighlight">\(\,x = 0.5\,\)</span> to obtain 
 </tr>
 </tbody>
 </table>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Solution (click to show)<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<!-- :::{dropdown} Solution (click to show) -->
+<div class="solution dropdown admonition">
+<p class="admonition-title">Solution</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -563,11 +555,11 @@ Solution (click to show)<div class="sd-summary-down docutils">
         \bigr] ~=~ 2.04412        
 \end{aligned}
 \end{split}\]</div>
-<p class="sd-card-text">which has an error of <span class="math notranslate nohighlight">\(0.00012\)</span> compared with the exact
+<p>which has an error of <span class="math notranslate nohighlight">\(0.00012\)</span> compared with the exact
 answer <span class="math notranslate nohighlight">\(2.04424\)</span>. We can reduce the error further by using more past
 points for fitting the polynomial.</p>
 </div>
-</details></section>
+</section>
 </div><p>Some of the more common open methods together with their local
 truncation errors are listed below:</p>
 <ul>

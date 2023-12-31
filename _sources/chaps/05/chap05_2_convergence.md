@@ -76,7 +76,8 @@ $$
 \end{aligned}
 $$
 
-:::{dropdown} Solution (click to show)
+:::{admonition} Solution
+:class: solution, dropdown
 
  Rearranging the formula to obtain 
 
@@ -147,8 +148,10 @@ $$
 \end{aligned}
 $$
 
-:::{dropdown} Solution (click to show)
- We find the following coefficients: 
+:::{admonition} Solution
+:class: solution, dropdown
+
+We find the following coefficients: 
 
 $$
 \begin{aligned}

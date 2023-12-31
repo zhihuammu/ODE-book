@@ -98,7 +98,7 @@ $$
 so
 
 $$
-A=1, \quad B=0
+A=1, \quad B=0.
 $$
 
 Thus the solution to the IVP is

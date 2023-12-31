@@ -49,7 +49,7 @@ $  \Delta^2 f_0 =\nabla^2 f_2 .$
 
 ## Use Difference Table for interpolation
 
-::::{prf:example}
+:::::{prf:example}
 Given the following sequence $\left\{f_j\right\}_{j=0}^{4}$ with $h=1$,
 find $f(0.1)$ and $f(3.8)$.
 
@@ -68,23 +68,24 @@ find $f(0.1)$ and $f(3.8)$.
 |    4  |    4  |        16   |     
 :::
 
-::::{dropdown} Solution (click to show)
+<!-- ::::{dropdown} Solution (click to show) -->
+````{admonition} Solution
+:class: solution, dropdown
 
 - Complete the difference table
 
-:::{table} 
-|   $j$ | $x_j$ | $f_j=f(x_j)$| $1^\text{st}$diff | $2^\text{nd}$diff |  $3^\text{rd}$diff |  $4^\text{th}$diff |
-|:-----:| :---: |:-----------:| :---------------: | :----------------:| :----------------: | :-----------------:|
-|    0  |    0  |        1    |                                                                 
-|       |       |             |           1       |
-|    1  |    1  |        2    |                   |         1         |
-|       |       |             |           2       |                   |         1          |   
-|    2  |    2  |        4    |                   |         2         |                    |         1          |
-|       |       |             |           4       |                   |         2          |   
-|    3  |    3  |        8    |                   |         4         |                        
-|       |       |             |           8       |                                               
-|    4  |    4  |        16   |     
-:::
+  |   $j$ | $x_j$ | $f_j=f(x_j)$| $1^\text{st}$diff | $2^\text{nd}$diff |  $3^\text{rd}$diff |  $4^\text{th}$diff |
+  |:-----:| :---: |:-----------:| :---------------: | :----------------:| :----------------: | :-----------------:|
+  |    0  |    0  |        1    |                                                                 
+  |       |       |             |           1       |
+  |    1  |    1  |        2    |                   |         1         |
+  |       |       |             |           2       |                   |         1          |   
+  |    2  |    2  |        4    |                   |         2         |                    |         1          |
+  |       |       |             |           4       |                   |         2          |   
+  |    3  |    3  |        8    |                   |         4         |                        
+  |       |       |             |           8       |                                               
+  |    4  |    4  |        16   |     
+
 
 - $x=0.1$
 
@@ -117,8 +118,8 @@ find $f(0.1)$ and $f(3.8)$.
         = & 13.9504
   \end{aligned}
   $$
-
-::::
+````
+:::::
 
 ::::{prf:example}
 From the tabulated values of the function $f(x)$ given below interpolate a value for $f(0.55)$.
@@ -142,7 +143,8 @@ From the tabulated values of the function $f(x)$ given below interpolate a value
 |1.7 |  0.99166 | 
 :::
 
-:::{dropdown} Solution (Click to show)
+:::{admonition} Solution
+:class: solution, dropdown
 
 - Choose $x_j=x_0=0.5$;
 

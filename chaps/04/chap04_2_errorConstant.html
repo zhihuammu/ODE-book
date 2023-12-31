@@ -402,7 +402,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="order-and-error-constants">
 <span id="chap-errorconstant-constants"></span><h1><span class="section-number">4.2. </span>Order and Error Constants<a class="headerlink" href="#order-and-error-constants" title="Permalink to this headline">#</a></h1>
 <div class="proof theorem admonition" id="theorem-0">
-<p class="admonition-title"><span class="caption-number">Theorem 4.1 </span> (Global Error and Order of Accuracy)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 4.2 </span> (Global Error and Order of Accuracy)</p>
 <section class="theorem-content" id="proof-content">
 <p>If the <span class="target" id="index-0"></span>local error associated to a multistep formula is <span class="math notranslate nohighlight">\(\,O(h)^{p+1}\)</span>
 then, the <span class="target" id="index-1"></span>global error is expected to be <span class="math notranslate nohighlight">\(\,O(h)^p\)</span>, and we can say that
@@ -536,21 +536,15 @@ principal or leading <span class="target" id="index-2"></span>local truncation e
 <section class="example-content" id="proof-content">
 <p>Find the order and the error constants of the following formulae,</p>
 <ol class="arabic">
-<li><p><span class="math notranslate nohighlight">\(\displaystyle y_{j+4} ~=~ y_j + \frac{h}{3}(8f_{j+3} - 4f_{j+2} + 8f_{j+1}{)}\)</span></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Solution (click to show)<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<!-- $\displaystyle y_{j+4} ~=~ y_j + \frac{h}{3}(8f_{j+3} - 4f_{j+2} + 8f_{j+1}{)}$ -->
-<p class="sd-card-text">A comparison with</p>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle y_{j+4} = y_j + \frac{h}{3}(8f_{j+3} - 4f_{j+2} + 8f_{j+1})\)</span></p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>A comparison with</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
             \sum_{i=0}^{4} \alpha_i y_{j+i} ~=~ h \sum_{i=0}^{4} \beta_i f_{j+i},            
 \end{aligned}\]</div>
-<p class="sd-card-text">gives,</p>
+<p>gives,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
             &amp;&amp; \alpha_0 &amp;= -1, &amp; \alpha_1 &amp;= 0, &amp; \alpha_2 &amp;= 0,
@@ -560,7 +554,7 @@ Solution (click to show)<div class="sd-summary-down docutils">
              &amp; \beta_3 &amp;= \frac{8}{3}, &amp; \beta_4 &amp;= 0 &amp;&amp;
         
 \end{aligned}\end{split}\]</div>
-<p class="sd-card-text">Thus</p>
+<p>Thus</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
             C_0 ~&amp;=~ \alpha_0 + \alpha_1 + \alpha_2 + \alpha_3 + \alpha_4 ~=~ 0 \phantom{\frac{}{0}}\\
@@ -571,9 +565,9 @@ Solution (click to show)<div class="sd-summary-down docutils">
             C_5 ~&amp;=~ \frac{1}{5!}(\alpha_1 + 2^5\alpha_2 + 3^5\alpha_3 + 4^5\alpha_4) - \frac{1}{4!}(\beta_1 + 2^4\beta_2 + 3^4\beta_3 + 4^4\beta_4) ~=~ \frac{28}{90}=\frac{14}{45}\\
         
 \end{aligned}\end{split}\]</div>
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(\therefore\)</span> The method is of order <span class="math notranslate nohighlight">\(4\)</span> and the error constant is
+<p><span class="math notranslate nohighlight">\(\therefore\)</span> The method is of order <span class="math notranslate nohighlight">\(4\)</span> and the error constant is
 <span class="math notranslate nohighlight">\(\dfrac{14}{45}\)</span>.</p>
-<p class="sd-card-text">Matlab code for error constant calculation:</p>
+<p>Matlab code for error constant calculation:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%matlab code: calculating the error constant for chapter 3 example 3(i)</span><span class="w"></span>
 <span class="c">%show results in fractions</span><span class="w"></span>
 <span class="nb">format</span><span class="w"> </span><span class="n">rational</span><span class="w"></span>
@@ -592,22 +586,17 @@ Solution (click to show)<div class="sd-summary-down docutils">
 </pre></div>
 </div>
 </div>
-</details></li>
+</li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle y_{j+3} ~=~ y_{j+2} + \frac{h}{12}(23f_{j+2} - 16f_{j+1} + 5f_j)\)</span></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Solution (click to show)<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">A comparison with</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>A comparison with</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
             \sum_{i=0}^{3} \alpha_i y_{j+i} ~=~ h \sum_{i=0}^{3} \beta_i f_{j+i}
         
 \end{aligned}\]</div>
-<p class="sd-card-text">gives,</p>
+<p>gives,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
             &amp;&amp; \alpha_0 &amp;=  0, &amp; \alpha_1 &amp;=  0,
@@ -617,7 +606,7 @@ Solution (click to show)<div class="sd-summary-down docutils">
              &amp; \beta_2 &amp;= \frac{23}{12}, &amp; \beta_3 &amp;= 0 &amp;&amp;
         
 \end{aligned}\end{split}\]</div>
-<p class="sd-card-text">Thus</p>
+<p>Thus</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
             C_0 ~&amp;=~ \alpha_0 + \alpha_1 + \alpha_2 + \alpha_3 ~=~ 0 \phantom{\frac{}{0}}\\
@@ -626,9 +615,9 @@ Solution (click to show)<div class="sd-summary-down docutils">
             C_3 ~&amp;=~ \frac{1}{3!}(\alpha_1 + 2^3\alpha_2 + 3^3\alpha_3) - \frac{1}{2!}(\beta_1 + 2^2\beta_2 + 3^2\beta_3) ~=~ 0\\
             C_4 ~&amp;=~ \frac{1}{4!}(\alpha_1 + 2^4\alpha_2 + 3^4\alpha_3) - \frac{1}{3!}(\beta_1 + 2^3\beta_2 + 3^3\beta_3) ~=~ \frac{9}{24}\\            
 \end{aligned}\end{split}\]</div>
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(\therefore\)</span> The method is of order <span class="math notranslate nohighlight">\(3\)</span> and the error constant in
+<p><span class="math notranslate nohighlight">\(\therefore\)</span> The method is of order <span class="math notranslate nohighlight">\(3\)</span> and the error constant in
 <span class="math notranslate nohighlight">\(\dfrac{3}{8}\)</span>.</p>
-<p class="sd-card-text">Matlab code for error constant calculation:</p>
+<p>Matlab code for error constant calculation:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%matlab code: calculating the error constant for chapter 3 example 3(ii)</span><span class="w"></span>
 <span class="c">%show results in fractions</span><span class="w"></span>
 <span class="nb">format</span><span class="w"> </span><span class="n">rational</span><span class="w"></span>
@@ -647,7 +636,7 @@ Solution (click to show)<div class="sd-summary-down docutils">
 </pre></div>
 </div>
 </div>
-</details></li>
+</li>
 </ol>
 </section>
 </div><div class="admonition note">

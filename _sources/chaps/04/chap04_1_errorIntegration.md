@@ -22,8 +22,8 @@ $$\begin{aligned}
     
 \end{aligned}$$
 
-:::{dropdown} Solution (click to show)
-<!-- :class: tip -->
+:::{Admonition} Solution 
+:class: solution, dropdown
 
 $$\begin{aligned}
         &Using      & s ~&=~ \frac{x - x_0}{h}, & \dx ~&=~ h\,\ds\\
@@ -102,8 +102,7 @@ $x_0 \leq \xi \leq x_2$
 \end{aligned}$$
 :::
 
-:::{admonition} Mean Value Theorem
-:class: note
+:::{prf:theorem} Mean Value Theorem
 Let  $f$  be continuous over the closed interval  $[a, b]$
 and differentiable over the open interval  $(a, b)$. 
 Then, there exists at least one point  $c\in (a,b)$ such that
@@ -139,8 +138,9 @@ $$\begin{aligned}
 can be obtained by integrating the terms involving third
 and fourth differences.
 
-:::{dropdown} Solution (click to show)
-<!-- :class: tip -->
+<!-- :::{dropdown} Solution (click to show) -->
+:::{admonition} Solution
+:class: solution, dropdown
 
 $$\begin{aligned}
         &Using      & x ~&=~ x_0 + sh & \dx ~&=~ h\,\ds\\
