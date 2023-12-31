@@ -136,6 +136,12 @@ div.admonition.admonition-youtube > .admonition-title:after {
   content: "\f26c"; /* fa-solid fa-tv */
 }
 
+/*********************************************
+* Footer *
+*********************************************/
+.footer-start__start, .footer-start__end {
+  flex-direction: row;
+}
 
 /*********************************************
 * hyperlink *

@@ -44,7 +44,7 @@ html:
   comments:
     hypothesis          : false
   announcement          : ""
-
+  
 sphinx:
   config:
 # bibtex_reference_style: author_year    
@@ -81,14 +81,15 @@ sphinx:
           "dt": "\\mathrm{d}t"
     hide_solutions: false
 #    html_extra_path: exSol
-    # html_theme: sphinx_material
     html_theme: sphinx_book_theme
     # html_theme: pydata_sphinx_theme
+    # templates_path: ['_templates']  #This conflicts with sphinx_book_theme
     html_theme_options:    
       show_toc_level  : 3
-      footer_start  : sphinx-version
-      # footer_center : sphinx-version
-      footer_end    : theme-version    
+      footer_start  : 
+        - sphinx-version
+      footer_end    : 
+        - theme-version    
       # extra_footer  : "<div>Powered by <a href='https://jupyterbook.org'>Jupyter Book</a></div>"
       # primary_sidebar_end: 
       #   - sphinx-version
