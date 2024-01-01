@@ -428,15 +428,15 @@ document.write(`
 a_0 y_n + a_1 y_{n+1} + a_2 y_{n+2} + \ldots + a_{k-1} y_{n+k-1} + a_k y_{n+k} = 0,
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(a_p~(p=0,1,2,\ldots,k)\)</span> are a given set of <span class="math notranslate nohighlight">\(k+1\)</span> constants, with <span class="math notranslate nohighlight">\(a_0 \neq 0\)</span> and <span class="math notranslate nohighlight">\(a_k=1\)</span>.</p>
-<p>Using the shift operator <span class="math notranslate nohighlight">\(\S\)</span>, Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a> can be written as</p>
+<p>Using the shift operator <span class="math notranslate nohighlight">\(\E\)</span>, Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a> can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq-de-linear-homogeneous-constant-aux">
 <span class="eqno">(1.17)<a class="headerlink" href="#equation-eq-de-linear-homogeneous-constant-aux" title="Permalink to this equation">#</a></span>\[\begin{equation}
-L(\S) y_n =0,
+L(\E) y_n =0,
 \end{equation}\]</div>
-<p>where <span class="math notranslate nohighlight">\(L(\S)\)</span> is the operator function</p>
+<p>where <span class="math notranslate nohighlight">\(L(\E)\)</span> is the operator function</p>
 <div class="math notranslate nohighlight" id="equation-eq-de-linear-constant-le">
 <span class="eqno">(1.18)<a class="headerlink" href="#equation-eq-de-linear-constant-le" title="Permalink to this equation">#</a></span>\[\begin{equation}
-L(\S)= a_0 + a_1 \S + a_2 \S^2 + \ldots + a_{k-1} \S^{k-1} + a_k \S^{k}.
+L(\E)= a_0 + a_1 \E + a_2 \E^2 + \ldots + a_{k-1} \E^{k-1} + a_k \E^{k}.
 \end{equation}\]</div>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 1.10 </span> (Characteristic Equation)</p>
@@ -449,14 +449,14 @@ L(z)= a_0 + a_1 z + a_2 z^2 + \ldots + a_{k-1} z^{k-1} + a_k z^{k}=0.
 </div>
 </div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Note: We can replace the shift operator <span class="math notranslate nohighlight">\(\S\)</span> with <span class="math notranslate nohighlight">\(z\)</span> in Eq. <a class="reference internal" href="#equation-eq-de-linear-constant-le">(1.18)</a> to obtain the characteristic equation. <span class="math notranslate nohighlight">\(L(z)\)</span> is a <span class="math notranslate nohighlight">\(k\)</span>th-order polynomial and thus has <span class="math notranslate nohighlight">\(k\)</span> roots <span class="math notranslate nohighlight">\(\{z_p\}~ (p=1,2,3,\ldots,k)\)</span>.</p>
+<p>Note: We can replace the shift operator <span class="math notranslate nohighlight">\(\E\)</span> with <span class="math notranslate nohighlight">\(z\)</span> in Eq. <a class="reference internal" href="#equation-eq-de-linear-constant-le">(1.18)</a> to obtain the characteristic equation. <span class="math notranslate nohighlight">\(L(z)\)</span> is a <span class="math notranslate nohighlight">\(k\)</span>th-order polynomial and thus has <span class="math notranslate nohighlight">\(k\)</span> roots <span class="math notranslate nohighlight">\(\{z_p\}~ (p=1,2,3,\ldots,k)\)</span>.</p>
 </div>
 <div class="proof theorem admonition" id="theorem-1">
 <p class="admonition-title"><span class="caption-number">Theorem 1.2 </span></p>
 <div class="theorem-content section" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(z_p~(p=1,2,3,\ldots,k)\)</span> be any solution to the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(1.19)</a>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6096faf6-ffc5-4ecf-8a6c-66bd3c2ff3e4">
-<span class="eqno">(1.20)<a class="headerlink" href="#equation-6096faf6-ffc5-4ecf-8a6c-66bd3c2ff3e4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ba8139b7-d98a-430e-b4fb-4909c3f34ce7">
+<span class="eqno">(1.20)<a class="headerlink" href="#equation-ba8139b7-d98a-430e-b4fb-4909c3f34ce7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_n = z_p^n
 \end{equation}\]</div>
 <p>is a solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a>.</p>
@@ -471,7 +471,7 @@ Proof (click to show)<div class="sd-summary-down docutils">
 <p class="sd-card-text">Substituting <span class="math notranslate nohighlight">\(y_n=z_p^n\)</span> into Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant-aux">(1.17)</a>, we get</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}     
-L(\S) z_p^n = ~ &amp; \left(a_0 + a_1 \S + a_2 \S^2 + \ldots + a_{k-1}\S^{k-1}+a_k \S^k\right) z_p^n \\
+L(\E) z_p^n = ~ &amp; \left(a_0 + a_1 \E + a_2 \E^2 + \ldots + a_{k-1}\E^{k-1}+a_k \E^k\right) z_p^n \\
 ~ = ~ &amp;  a_0 z_p^n + a_1 z_p^{n+1} + a_2 z_p^{n+2} + \ldots + a_{k-1} z_p^{n+k-1} + a_{k} z_p^{n+k} \\
 ~ = ~ &amp;  \left( a_0  + a_1 z_p + a_2 z_p^{2} + \ldots + a_{k-1} z_p^{k-1} + a_{k} z_p^{k} \right) z_p^n \\
 ~ = ~ &amp; 0 \cdot z_p^n \\
@@ -485,8 +485,8 @@ L(\S) z_p^n = ~ &amp; \left(a_0 + a_1 \S + a_2 \S^2 + \ldots + a_{k-1}\S^{k-1}+a
 <p class="admonition-title"><span class="caption-number">Theorem 1.3 </span></p>
 <div class="theorem-content section" id="proof-content">
 <p>Assume the <span class="math notranslate nohighlight">\(k\)</span> roots of  the characteristic equation are distinct, then a fundamental set of solutions is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-881b7280-9908-4443-9f61-fa30ec449a8c">
-<span class="eqno">(1.21)<a class="headerlink" href="#equation-881b7280-9908-4443-9f61-fa30ec449a8c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-27f5c979-1745-4d88-8b8c-78bd79dfea1a">
+<span class="eqno">(1.21)<a class="headerlink" href="#equation-27f5c979-1745-4d88-8b8c-78bd79dfea1a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z_p^n \quad (p=1,2,\ldots,k).
 \end{equation}\]</div>
 <p>An immediate consequence of this theorem, for this particular case, is that the general solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a> is</p>
@@ -506,8 +506,8 @@ Proof (click to show)<div class="sd-summary-down docutils">
 <p class="sd-card-text">Substituting Eq. <a class="reference internal" href="#equation-eq-de-linear-homo-sol">(1.22)</a> into Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant-aux">(1.17)</a>, we get</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-L(\S) y_n  = ~ &amp; L(\S) \left(c_1 z_1^n + c_2 z_2^n + \ldots + c_k z_k^n\right) \\
-~ = ~ &amp; c_1 L(\S) z_1^n + c_2 L(\S) z_2^n + \ldots + c_k L(\S)z_k^n \\
+L(\E) y_n  = ~ &amp; L(\E) \left(c_1 z_1^n + c_2 z_2^n + \ldots + c_k z_k^n\right) \\
+~ = ~ &amp; c_1 L(\E) z_1^n + c_2 L(\E) z_2^n + \ldots + c_k L(\E)z_k^n \\
 ~ = ~ &amp; c_1 \cdot 0 + c_2 \cdot 0 + \ldots + c_k \cdot 0 \\
 ~ = ~ &amp; 0 
 \end{align*}\]</div>
@@ -534,9 +534,9 @@ Method 1 (iterative method)</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
 Method 2 (characteristic equation)</label><div class="sd-tab-content docutils">
-<p>Using the shift operator <span class="math notranslate nohighlight">\(\S\)</span>, write the equation into</p>
+<p>Using the shift operator <span class="math notranslate nohighlight">\(\E\)</span>, write the equation into</p>
 <div class="math notranslate nohighlight">
-\[(\S-a) y_n = 0,\]</div>
+\[(\E-a) y_n = 0,\]</div>
 <p>we get the characteristic equation</p>
 <div class="math notranslate nohighlight">
 \[z -a =0,\]</div>

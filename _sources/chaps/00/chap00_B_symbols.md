@@ -1,8 +1,5 @@
 # Symbols and Notation
 
-
-
-
 :::{table} 
 :align: center  
 |     |   |
@@ -14,22 +11,26 @@
 | $\i$      | imaginary unit, $\i^2=-1$ |
 | $z$      | a complex number|
 | $\|z\|$   | the modulus of $z$ |
-| $\C$      | the complex number set $\{z=x+\i y~ \|~ x \in \R, y \in \R\}$ |
-| $\{y_n\}_n^{+\infty}$ | a sequence defined on $\N_0$ |
+| $\theta$  | angle |
+| $\C$      | the complex number set $\{z \| z=x+\i y~, ~ x \in \R, y \in \R\}$ |
+| $\{y_n\}_{n=0}^{+\infty}$ | a sequence defined on $\N_0$ |
 | $\D$      | differential operator|
 | $\Delta$  | forward difference operator|
 | $\nabla$  | backward difference operator|
-| $\S$      | forward shift operator |
-| $\S^{-1}$ | backward shift operator|   
+| $\E$      | forward shift operator |
+| $\E^{-1}$ | backward shift operator|   
 | $I$       | interval of definition |
+| $t$       | time variable |
+| $h$       | step size, step length |
 | $k$       | number of steps |
 | $\alpha_i$, $\beta_i$ | the coefficients of a linear multistep method ($i=0, 1, 2, \ldots, k$)|
 | $\epsilon$ | error           |
 | $T$, LTE    | local (truncation) error| 
 | $L(\D)$   | linear differential operation|
-| $L(\S)$   | linear shift operation|
+| $L(\E)$   | linear shift operation|
 | $L(z)$    | characteristic polynomial|
-| $L(z, h\lambda)$    | characteristic polynomial|
+| $L(z, h\lambda)$, $\pi(z, h\lambda)$    | characteristic polynomial, stability polynomial|
 | $\rho(z)$    | first characteristic polynomial|
 | $\sigma(z)$    | second characteristic polynomial|
+| $\begin{pmatrix} n \\ k \end{pmatrix}$       | binomial coefficient |
 :::

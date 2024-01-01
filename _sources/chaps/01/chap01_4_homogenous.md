@@ -12,21 +12,21 @@ a_0 y_n + a_1 y_{n+1} + a_2 y_{n+2} + \ldots + a_{k-1} y_{n+k-1} + a_k y_{n+k} =
 
 where $a_p~(p=0,1,2,\ldots,k)$ are a given set of $k+1$ constants, with $a_0 \neq 0$ and $a_k=1$.
 
-Using the shift operator $\S$, Eq. {eq}`eq:DE:linear:homogeneous:constant` can be written as
+Using the shift operator $\E$, Eq. {eq}`eq:DE:linear:homogeneous:constant` can be written as
 
 ````{math}
 :label: eq:DE:linear:homogeneous:constant:aux
 \begin{equation}
-L(\S) y_n =0,
+L(\E) y_n =0,
 \end{equation}
 ````
 
-where $L(\S)$ is the operator function
+where $L(\E)$ is the operator function
 
 ````{math}
 :label: eq:DE:linear:constant:LE
 \begin{equation}
-L(\S)= a_0 + a_1 \S + a_2 \S^2 + \ldots + a_{k-1} \S^{k-1} + a_k \S^{k}.
+L(\E)= a_0 + a_1 \E + a_2 \E^2 + \ldots + a_{k-1} \E^{k-1} + a_k \E^{k}.
 \end{equation}
 ````
 
@@ -44,7 +44,7 @@ L(z)= a_0 + a_1 z + a_2 z^2 + \ldots + a_{k-1} z^{k-1} + a_k z^{k}=0.
 
 
 ````{note}
-Note: We can replace the shift operator $\S$ with $z$ in Eq. {eq}`eq:DE:linear:constant:LE` to obtain the characteristic equation. $L(z)$ is a $k$th-order polynomial and thus has $k$ roots $\{z_p\}~ (p=1,2,3,\ldots,k)$.
+Note: We can replace the shift operator $\E$ with $z$ in Eq. {eq}`eq:DE:linear:constant:LE` to obtain the characteristic equation. $L(z)$ is a $k$th-order polynomial and thus has $k$ roots $\{z_p\}~ (p=1,2,3,\ldots,k)$.
 ````
 
 ::::{prf:theorem}
@@ -59,7 +59,7 @@ is a solution to the homogeneous equation {eq}`eq:DE:linear:homogeneous:constant
 
 Substituting $y_n=z_p^n$ into Eq. {eq}`eq:DE:linear:homogeneous:constant:aux`, we get
 \begin{align*}     
-L(\S) z_p^n = ~ & \left(a_0 + a_1 \S + a_2 \S^2 + \ldots + a_{k-1}\S^{k-1}+a_k \S^k\right) z_p^n \\
+L(\E) z_p^n = ~ & \left(a_0 + a_1 \E + a_2 \E^2 + \ldots + a_{k-1}\E^{k-1}+a_k \E^k\right) z_p^n \\
 ~ = ~ &  a_0 z_p^n + a_1 z_p^{n+1} + a_2 z_p^{n+2} + \ldots + a_{k-1} z_p^{n+k-1} + a_{k} z_p^{n+k} \\
 ~ = ~ &  \left( a_0  + a_1 z_p + a_2 z_p^{2} + \ldots + a_{k-1} z_p^{k-1} + a_{k} z_p^{k} \right) z_p^n \\
 ~ = ~ & 0 \cdot z_p^n \\
@@ -92,8 +92,8 @@ where the constants $c_p~(p=1,2,\ldots,k)$ are arbitrary.
 <!-- ::::{prf:proof} -->
 Substituting Eq. {eq}`eq:DE:linear:homo:sol` into Eq. {eq}`eq:DE:linear:homogeneous:constant:aux`, we get 
 \begin{align*}
-L(\S) y_n  = ~ & L(\S) \left(c_1 z_1^n + c_2 z_2^n + \ldots + c_k z_k^n\right) \\
-~ = ~ & c_1 L(\S) z_1^n + c_2 L(\S) z_2^n + \ldots + c_k L(\S)z_k^n \\
+L(\E) y_n  = ~ & L(\E) \left(c_1 z_1^n + c_2 z_2^n + \ldots + c_k z_k^n\right) \\
+~ = ~ & c_1 L(\E) z_1^n + c_2 L(\E) z_2^n + \ldots + c_k L(\E)z_k^n \\
 ~ = ~ & c_1 \cdot 0 + c_2 \cdot 0 + \ldots + c_k \cdot 0 \\
 ~ = ~ & 0 
 \end{align*}
@@ -123,9 +123,9 @@ $$y_n = a y_{n-1} = a ( a y_{n-2}) = a(a(ay_{n-3}))=\ldots=a^n y_0 = Q a^n.$$
 ```
 
 ```{tab-item} Method 2 (characteristic equation)
-Using the shift operator $\S$, write the equation into
+Using the shift operator $\E$, write the equation into
 
-$$(\S-a) y_n = 0,$$
+$$(\E-a) y_n = 0,$$
 
 we get the characteristic equation
 
