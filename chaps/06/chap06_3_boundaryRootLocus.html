@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>6.3. The Boundary Root Locus Method for Finding Regions of Absolute Stability &#8212; Linear Multistep Methods</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -42,12 +41,14 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -65,7 +66,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\hat{i}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/06/chap06_3_boundaryRootLocus';</script>
     <link rel="shortcut icon" href="../../_static/ode.png"/>
@@ -75,6 +76,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="6.2. The Root Locus Method for Finding the Interval of Absolute Stability" href="chap06_2_rootLocus.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="01 January 2024"/>
   </head>
   
   
@@ -83,6 +85,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -136,9 +147,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -148,8 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Linear Multistep Methods - Home"/>`);</script>
   
   
 </a></div>
@@ -164,10 +177,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_0.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_1_definition.html">Definitions, Classification and Terminology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_2_ode.html">Ordinary Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_3_analytical.html">Analytical Methods for ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_symbols.html">Symbols and Notation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_A0_DE.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A1_definition.html">Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A2_ode.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A3_analytical.html">Analytical Methods for ODEs</a></li>
 </ul>
 </li>
 </ul>
@@ -350,20 +364,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -392,12 +408,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="the-boundary-root-locus-method-for-finding-regions-of-absolute-stability">
-<h1><span class="section-number">6.3. </span>The Boundary Root Locus Method for Finding Regions of Absolute Stability<a class="headerlink" href="#the-boundary-root-locus-method-for-finding-regions-of-absolute-stability" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="the-boundary-root-locus-method-for-finding-regions-of-absolute-stability">
+<h1><span class="section-number">6.3. </span>The Boundary Root Locus Method for Finding Regions of Absolute Stability<a class="headerlink" href="#the-boundary-root-locus-method-for-finding-regions-of-absolute-stability" title="Permalink to this heading">#</a></h1>
 <p>We illustrate this method by considering the following example.</p>
 <div class="proof example admonition" id="example-0">
 <p class="admonition-title"><span class="caption-number">Example 6.3 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Find the region of absolute stability for the two-step explicit Adams
 method</p>
 <div class="math notranslate nohighlight">
@@ -413,40 +429,40 @@ method</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
-        \xi^2 - (1 + \frac{3}{2}h\lambda)\xi + \frac{1}{2}h\lambda ~=~ 0    
+        z^2 - (1 + \frac{3}{2}h\lambda)z + \frac{1}{2}h\lambda ~=~ 0    
 \end{aligned}
 \]</div>
 <p>thus</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
-        \rho(\xi) ~=~ \xi^2 - \xi
+        \rho(z) ~=~ z^2 - z
         \qquad\text{and}\qquad
-        \sigma(\xi) ~=~ \frac{1}{2}(3\xi - 1)    
+        \sigma(z) ~=~ \frac{1}{2}(3z - 1)    
 \end{aligned}
 \]</div>
 <p>Since
-<span class="math notranslate nohighlight">\(\qquad \pi ~=~ \rho(\xi) - h\lambda\sigma(\xi) ~=~ 0
+<span class="math notranslate nohighlight">\(\qquad \pi ~=~ \rho(z) - h\lambda\sigma(z) ~=~ 0
     \qquad\Rightarrow\qquad
-    h\lambda ~=~\dfrac{\rho(\xi)}{\sigma(\xi)}\)</span></p>
+    h\lambda ~=~\dfrac{\rho(z)}{\sigma(z)}\)</span></p>
 <p>and we get
-<span class="math notranslate nohighlight">\(\displaystyle\qquad h\lambda ~=~ \frac{\xi^2 - \xi}{\frac{1}{2}(3\xi - 1)} ~=~ \frac{2(\xi^2 - \xi)}{3\xi - 1}\,\)</span>.</p>
-<p>Using the relation <span class="math notranslate nohighlight">\(\xi = e^{i\theta}\)</span> for the locus of points on the
+<span class="math notranslate nohighlight">\(\displaystyle\qquad h\lambda ~=~ \frac{z^2 - z}{\frac{1}{2}(3z - 1)} ~=~ \frac{2(z^2 - z)}{3z - 1}\,\)</span>.</p>
+<p>Using the relation <span class="math notranslate nohighlight">\(z = e^{\i\theta}\)</span> for the locus of points on the
 boundary of the unit circle we get</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
-        h\lambda ~=~ \frac{2(e^{2i\theta} - e^{i\theta})}{3e^{i\theta} - 1}\,.    
+        h\lambda ~=~ \frac{2(e^{\i 2\theta} - e^{i\theta})}{3e^{\i\theta} - 1}\,.    
 \end{aligned}
 \]</div>
 <p>The following derivations illustrate in detail the steps
 required for finding the <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> coordinates of the points on the
 boundary locus of the region of absolute stability. We can use
-<span class="math notranslate nohighlight">\(\,e^{ni\theta} = \cos n\theta + i\sin n\theta\,\)</span> and get:</p>
+<span class="math notranslate nohighlight">\(\,e^{\i n\theta} = \cos n\theta + \i\sin n\theta\,\)</span> and get:</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
-        h\lambda ~=~ \frac{2\,(\cos2\theta + i\sin2\theta - \cos\theta - i\sin\theta)}{3(\cos\theta + i\sin\theta) - 1}    
+        h\lambda ~=~ \frac{2\,(\cos2\theta + \i\sin2\theta - \cos\theta - \i\sin\theta)}{3(\cos\theta + \i\sin\theta) - 1}    
 \end{aligned}
 \]</div>
 <p>Since <span class="math notranslate nohighlight">\(\,h\lambda\)</span> expression is complex, we can now
@@ -454,7 +470,7 @@ separate the real and imaginary components as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-        h\lambda ~=~ x(\theta) + i\,y(\theta) \qquad
+        h\lambda ~=~ x(\theta) + \i\,y(\theta) \qquad
         \text{where}&amp;\qquad x(\theta) ~=~\frac{2(\cos\theta - 1)^2}{3\cos\theta - 5}
         \\[1ex]
         \text{and}&amp;\qquad y(\theta) ~=~ \frac{2\sin\theta\,(\cos\theta - 2)}{3\cos\theta - 5}\,.    
@@ -498,34 +514,28 @@ we obtain the following table:</p>
 </tbody>
 </table>
 <p>These points are plotted in the complex <span class="math notranslate nohighlight">\(h\lambda\)</span> plane, and the
-resulting region <span class="math notranslate nohighlight">\(\Re\)</span> of absolute stability is shown in the following
+resulting region <span class="math notranslate nohighlight">\(\Re\)</span>, <span class="math notranslate nohighlight">\(\Re \subset \C\)</span>, of absolute stability is shown in the following
 figure:</p>
-<figure class="align-default" id="figure-ab2">
+<div class="figure align-default" id="figure-ab2">
 <a class="reference internal image-reference" href="../../_images/fig-chap06-c5m39f1shade.svg"><img alt="../../_images/fig-chap06-c5m39f1shade.svg" src="../../_images/fig-chap06-c5m39f1shade.svg" width="500px" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Stability region of AB 2-step method.</span><a class="headerlink" href="#figure-ab2" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Stability region of AB 2-step method.</span><a class="headerlink" href="#figure-ab2" title="Permalink to this image">#</a></p>
 </div>
-</section>
+</div>
+</div>
 </div><p>The region of absolute stability can be easily found by using a
 mathematical package. A worksheet solution for Example 3 above is
 attached which illustrates the computational steps involved when a
 Matlab program for finding the region of absolute stability is used.</p>
 <p>The boundaries of the regions of absolute stability for various order
 Adams methods are shown</p>
-<figure class="align-default" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../../_images/fig-chap06-c5m39f2.svg"><img alt="../../_images/fig-chap06-c5m39f2.svg" src="../../_images/fig-chap06-c5m39f2.svg" width="500px" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 6.2 </span><span class="caption-text">Stability region of AB <span class="math notranslate nohighlight">\(k\)</span>-step method.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id2">
+<p class="caption"><span class="caption-number">Fig. 6.2 </span><span class="caption-text">Stability region of AB <span class="math notranslate nohighlight">\(k\)</span>-step method.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</div>
+<div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../../_images/fig-chap06-c5m39f3.svg"><img alt="../../_images/fig-chap06-c5m39f3.svg" src="../../_images/fig-chap06-c5m39f3.svg" width="500px" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 6.3 </span><span class="caption-text">Stability region of AM <span class="math notranslate nohighlight">\(k\)</span>-step method.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 6.3 </span><span class="caption-text">Stability region of AM <span class="math notranslate nohighlight">\(k\)</span>-step method.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</div>
 <p>We learn from these diagrams that the region of
 absolute stability becomes smaller as the order of the method increases;
 for the formula of the same order the Adams-Moulton formula has a
@@ -546,16 +556,16 @@ them there is no restriction on <span class="math notranslate nohighlight">\(h\)
 type we have been considering.</p>
 <div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 6.4 </span> (<span class="math notranslate nohighlight">\(A\)</span>-stability)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>The property that <span class="math notranslate nohighlight">\(\displaystyle\,\lim_{j \to \infty} y_j = 0\;\)</span>
 (<span class="math notranslate nohighlight">\(y_j\,\)</span> approximated solution) for all <span class="math notranslate nohighlight">\(\,h&gt;0\,\)</span> and all complex
 <span class="math notranslate nohighlight">\(\lambda\)</span> with <span class="math notranslate nohighlight">\(\,Real(\lambda)&lt;0\,\)</span> is called <em><span class="target" id="index-0"></span>A-stability</em>.</p>
-</section>
+</div>
 </div><p>For certain applications, stiff differential equations, the A-stability
 property of the numerical method is an important consideration.</p>
 <div class="proof example admonition" id="example-2">
 <p class="admonition-title"><span class="caption-number">Example 6.4 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Show that the backward Euler method (or first order Adams-Moulton
 formula)</p>
 <div class="math notranslate nohighlight">
@@ -576,12 +586,12 @@ y_{j+1} &amp; =  y_j + hy_{j+1} \\
 (1-h\lambda) y_{j+1} - y_j &amp; =0
 \end{aligned}
 \end{split}\]</div>
-<p>This has a solution of the form <span class="math notranslate nohighlight">\(y_j = A_1\xi_1^j\)</span>.</p>
+<p>This has a solution of the form <span class="math notranslate nohighlight">\(y_j = A_1z_1^j\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
-        &amp;&amp; (1 - h\lambda)\xi - 1 ~&amp;=~ 0
-        &amp; \therefore\quad \xi ~&amp;=~ \frac{1}{1 - h\lambda}\,. &amp;&amp;    
+        &amp;&amp; (1 - h\lambda)z - 1 ~&amp;=~ 0
+        &amp; \therefore\quad z ~&amp;=~ \frac{1}{1 - h\lambda}\,. &amp;&amp;    
 \end{aligned}
 \]</div>
 <p>Substituting gives:</p>
@@ -604,11 +614,11 @@ y_{j+1} &amp; =  y_j + hy_{j+1} \\
 <span class="math notranslate nohighlight">\(Real(\lambda) &lt; 0\)</span>, and thus the backward Euler formula is an A-stable
 method.</p>
 </div>
-</section>
+</div>
 </div><p>It would have been useful to have A-stable multistep methods of order
 greater than 2, but it has been shown that, Dahlquist (1963), there are
 no such methods.</p>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -623,7 +633,7 @@ no such methods.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\06"
+            path: "./chaps/06"
         },
         predefinedOutput: true
     }
@@ -635,11 +645,10 @@ no such methods.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap06_2_rootLocus.html"
@@ -659,10 +668,7 @@ no such methods.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -685,6 +691,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023--2025.
@@ -696,7 +703,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 31 December 2023.
+  Last updated on 01 January 2024.
   <br/>
 </p>
   </div>
@@ -714,8 +721,8 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -723,8 +730,9 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
     <div class="footer-items__start">
       
         <div class="footer-item">
+
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     <br/>
   </p>
 </div>
@@ -732,10 +740,12 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
     </div>
   
   
+  
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
 </p></div>
       
     </div>

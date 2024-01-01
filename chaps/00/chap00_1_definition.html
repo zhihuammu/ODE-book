@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Definitions, Classification and Terminology &#8212; Linear Multistep Methods</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -42,12 +41,14 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -65,7 +66,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\hat{i}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/00/chap00_1_definition';</script>
     <link rel="shortcut icon" href="../../_static/ode.png"/>
@@ -75,6 +76,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Basics of Differential Equations" href="chap00_0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="01 January 2024"/>
   </head>
   
   
@@ -83,6 +85,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -136,9 +147,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -148,8 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Linear Multistep Methods - Home"/>`);</script>
   
   
 </a></div>
@@ -241,6 +254,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../append/chapX_symbols.html">Symbols and Notation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://uk.mathworks.com/help/matlab/ordinary-differential-equations.html">ODE Solvers in Matlab</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/integrate.html">ODE Solvers in Scipy</a></li>
@@ -350,20 +364,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -395,14 +411,14 @@ document.write(`
   <div class="math notranslate nohighlight">
 \[\newcommand{\diff}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}
 \newcommand{\pdiff}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}\]</div>
-<section class="tex2jax_ignore mathjax_ignore" id="definitions-classification-and-terminology">
-<span id="chap-pre-1"></span><h1>Definitions, Classification and Terminology<a class="headerlink" href="#definitions-classification-and-terminology" title="Permalink to this headline">#</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="definitions-classification-and-terminology">
+<span id="chap-pre-1"></span><h1>Definitions, Classification and Terminology<a class="headerlink" href="#definitions-classification-and-terminology" title="Permalink to this heading">#</a></h1>
 <div class="proof definition admonition" id="definition-0">
 <span id="index-0"></span><p class="admonition-title"><span class="caption-number">Definition 1 </span> (Differential Equations)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>An equation containing the derivatives of one or more unknown functions (or
 dependent variables), with respect to one or more independent variables, is said to be a <strong>differential equation</strong> (DE).</p>
-</section>
+</div>
 </div><p>We can classify differential equations by <strong>type</strong>, <strong>order</strong>, <strong>linearity</strong> and <strong>homogeneity</strong>.</p>
 <ol class="arabic">
 <li><p>Classification by Type</p>
@@ -411,7 +427,7 @@ dependent variables), with respect to one or more independent variables, is said
 <p>If a differential equation contains only ordinary derivatives of one or more unknown functions with respect to a single independent variable, it is said to be an ordinary differential equation (ODE).</p>
 <div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 1 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>The following equations are ordinary differential equations:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -424,7 +440,7 @@ dependent variables), with respect to one or more independent variables, is said
 <li><p>In the third equation, <span class="math notranslate nohighlight">\(x=x(t)\)</span> and <span class="math notranslate nohighlight">\(y=y(t)\)</span>.</p></li>
 </ul>
 <p>The functions here are functions of a single variable.</p>
-</section>
+</div>
 </div></li>
 </ul>
 <ul id="index-2">
@@ -432,7 +448,7 @@ dependent variables), with respect to one or more independent variables, is said
 <p>An equation involving partial derivatives of one or more unknown functions of two or more independent variables is called a partial differential equation (PDE).</p>
 <div class="proof example admonition" id="example-2">
 <p class="admonition-title"><span class="caption-number">Example 2 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>The following equations are partial differential equations:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -446,14 +462,14 @@ dependent variables), with respect to one or more independent variables, is said
 <li><p>In the second equation, <span class="math notranslate nohighlight">\(u=u(y,\ldots)\)</span>, <span class="math notranslate nohighlight">\(v=v(x,\ldots)\)</span></p></li>
 </ul>
 <p>The functions here are multi-variable functions.</p>
-</section>
+</div>
 </div></li>
 </ul>
 </li>
 </ol>
 <div class="proof remark admonition" id="remark-3">
 <span id="index-3"></span><p class="admonition-title"><span class="caption-number">Remark 1 </span> (Notations of derivatives)</p>
-<section class="remark-content" id="proof-content">
+<div class="remark-content section" id="proof-content">
 <p>Ordinary derivatives can be written by using</p>
 <ul id="index-4">
 <li><p>Leibniz notation</p>
@@ -461,36 +477,31 @@ dependent variables), with respect to one or more independent variables, is said
 </li>
 </ul>
 <ul class="simple" id="index-5">
-<li><p>Prime notation</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(y'\)</span>, <span class="math notranslate nohighlight">\(y''\)</span>, <span class="math notranslate nohighlight">\(y'''\)</span></p></li>
-<li><p>The fourth derivative <span class="math notranslate nohighlight">\(y^{(4)}\)</span></p></li>
-<li><p>The <span class="math notranslate nohighlight">\(k\)</span>-th derivative <span class="math notranslate nohighlight">\(y^{(k)}\)</span></p></li>
-</ul>
-</li>
+<li><p>Prime notation
+<span class="math notranslate nohighlight">\(y'\)</span>, <span class="math notranslate nohighlight">\(y''\)</span>, <span class="math notranslate nohighlight">\(y'''\)</span>, <span class="math notranslate nohighlight">\(y^{(4)}\)</span>, …, <span class="math notranslate nohighlight">\(y^{(k)}\)</span></p></li>
 </ul>
 <ul id="index-6">
 <li><p>Newton’s dot notation</p>
 <p><span class="math notranslate nohighlight">\(\dot y\)</span>, <span class="math notranslate nohighlight">\(\ddot y\)</span></p>
 </li>
 </ul>
-</section>
+</div>
 </div><ol class="arabic" start="2">
 <li><p>Classification by Order</p>
 <p>The order of a differential equation is the order of the highest derivative in the equation.</p>
 <div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 3 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>The following equation</p>
 <div class="math notranslate nohighlight">
 \[
 \diff[2]{y}{x} + 5 \left(\diff{y}{x}\right)^3 - 4y = e^x
 \]</div>
 <p>is a second-order ordinary differential equation.</p>
-</section>
+</div>
 </div><div class="proof remark admonition" id="remark-5">
 <span id="index-7"></span><p class="admonition-title"><span class="caption-number">Remark 2 </span> (Order and Degree of differential equations)</p>
-<section class="remark-content" id="proof-content">
+<div class="remark-content section" id="proof-content">
 <ul class="simple">
 <li><p><strong>Order</strong>: The order of a differential equation is defined to be that of the highest order derivative it contains.</p></li>
 <li><p><strong>Degree</strong>: The degree of a differential equation is defined as the power to which the highest order derivative is raised.</p></li>
@@ -501,12 +512,12 @@ dependent variables), with respect to one or more independent variables, is said
     \left(y'''\right)^2 + \left(y''\right)^4+ y =x
 \]</div>
 <p>is a second-degree, third-order differential equation.</p>
-</section>
+</div>
 </div></li>
 </ol>
 <div class="proof remark admonition" id="remark-6">
 <p class="admonition-title"><span class="caption-number">Remark 3 </span> (Forms of Differential Equations)</p>
-<section class="remark-content" id="proof-content">
+<div class="remark-content section" id="proof-content">
 <p>For an <span class="math notranslate nohighlight">\(n\)</span>-th order ordinary differential equation, we can express it in</p>
 <ul id="index-8">
 <li><p><strong>General Form</strong></p>
@@ -529,7 +540,7 @@ dependent variables), with respect to one or more independent variables, is said
 </ul>
 </li>
 </ul>
-</section>
+</div>
 </div><ol class="arabic" start="3">
 <li><p>Classification by Linearity</p>
 <ul id="index-10">
@@ -572,7 +583,7 @@ dependent variables), with respect to one or more independent variables, is said
 </ul>
 </li>
 </ol>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -587,7 +598,7 @@ dependent variables), with respect to one or more independent variables, is said
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\00"
+            path: "./chaps/00"
         },
         predefinedOutput: true
     }
@@ -599,11 +610,10 @@ dependent variables), with respect to one or more independent variables, is said
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap00_0.html"
@@ -623,10 +633,7 @@ dependent variables), with respect to one or more independent variables, is said
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -649,6 +656,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023--2025.
@@ -660,7 +668,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 31 December 2023.
+  Last updated on 01 January 2024.
   <br/>
 </p>
   </div>
@@ -678,8 +686,8 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -687,8 +695,9 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
     <div class="footer-items__start">
       
         <div class="footer-item">
+
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     <br/>
   </p>
 </div>
@@ -696,10 +705,12 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
     </div>
   
   
+  
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
 </p></div>
       
     </div>

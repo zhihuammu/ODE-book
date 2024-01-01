@@ -21,7 +21,7 @@ The characteristic equation is
 
 $$
 \begin{aligned}
-        \xi^2 - (1 + \frac{3}{2}h\lambda)\xi + \frac{1}{2}h\lambda ~=~ 0    
+        z^2 - (1 + \frac{3}{2}h\lambda)z + \frac{1}{2}h\lambda ~=~ 0    
 \end{aligned}
 $$
 
@@ -29,38 +29,38 @@ $$
 
 $$
 \begin{aligned}
-        \rho(\xi) ~=~ \xi^2 - \xi
+        \rho(z) ~=~ z^2 - z
         \qquad\text{and}\qquad
-        \sigma(\xi) ~=~ \frac{1}{2}(3\xi - 1)    
+        \sigma(z) ~=~ \frac{1}{2}(3z - 1)    
 \end{aligned}
 $$
 
  Since
-$\qquad \pi ~=~ \rho(\xi) - h\lambda\sigma(\xi) ~=~ 0
+$\qquad \pi ~=~ \rho(z) - h\lambda\sigma(z) ~=~ 0
     \qquad\Rightarrow\qquad
-    h\lambda ~=~\dfrac{\rho(\xi)}{\sigma(\xi)}$
+    h\lambda ~=~\dfrac{\rho(z)}{\sigma(z)}$
 
 and we get
-$\displaystyle\qquad h\lambda ~=~ \frac{\xi^2 - \xi}{\frac{1}{2}(3\xi - 1)} ~=~ \frac{2(\xi^2 - \xi)}{3\xi - 1}\,$.
+$\displaystyle\qquad h\lambda ~=~ \frac{z^2 - z}{\frac{1}{2}(3z - 1)} ~=~ \frac{2(z^2 - z)}{3z - 1}\,$.
 
-Using the relation $\xi = e^{i\theta}$ for the locus of points on the
+Using the relation $z = e^{\i\theta}$ for the locus of points on the
 boundary of the unit circle we get 
 
 $$
 \begin{aligned}
-        h\lambda ~=~ \frac{2(e^{2i\theta} - e^{i\theta})}{3e^{i\theta} - 1}\,.    
+        h\lambda ~=~ \frac{2(e^{\i 2\theta} - e^{i\theta})}{3e^{\i\theta} - 1}\,.    
 \end{aligned}
 $$
 
  The following derivations illustrate in detail the steps
 required for finding the $x$, $y$ coordinates of the points on the
 boundary locus of the region of absolute stability. We can use
-$\,e^{ni\theta} = \cos n\theta + i\sin n\theta\,$ and get:
+$\,e^{\i n\theta} = \cos n\theta + \i\sin n\theta\,$ and get:
 
 
 $$
 \begin{aligned}
-        h\lambda ~=~ \frac{2\,(\cos2\theta + i\sin2\theta - \cos\theta - i\sin\theta)}{3(\cos\theta + i\sin\theta) - 1}    
+        h\lambda ~=~ \frac{2\,(\cos2\theta + \i\sin2\theta - \cos\theta - \i\sin\theta)}{3(\cos\theta + \i\sin\theta) - 1}    
 \end{aligned}
 $$
 
@@ -70,7 +70,7 @@ separate the real and imaginary components as
 
 $$
 \begin{aligned}
-        h\lambda ~=~ x(\theta) + i\,y(\theta) \qquad
+        h\lambda ~=~ x(\theta) + \i\,y(\theta) \qquad
         \text{where}&\qquad x(\theta) ~=~\frac{2(\cos\theta - 1)^2}{3\cos\theta - 5}
         \\[1ex]
         \text{and}&\qquad y(\theta) ~=~ \frac{2\sin\theta\,(\cos\theta - 2)}{3\cos\theta - 5}\,.    
@@ -92,7 +92,7 @@ we obtain the following table:
 
 
 These points are plotted in the complex $h\lambda$ plane, and the
-resulting region $\Re$ of absolute stability is shown in the following
+resulting region $\Re$, $\Re \subset \C$, of absolute stability is shown in the following
 figure:
 
 ```{figure} /images/06/fig-chap06-c5m39f1shade.svg
@@ -183,12 +183,12 @@ y_{j+1} & =  y_j + hy_{j+1} \\
 \end{aligned}
 $$
 
-This has a solution of the form $y_j = A_1\xi_1^j$. 
+This has a solution of the form $y_j = A_1z_1^j$. 
 
 $$
 \begin{aligned}
-        && (1 - h\lambda)\xi - 1 ~&=~ 0
-        & \therefore\quad \xi ~&=~ \frac{1}{1 - h\lambda}\,. &&    
+        && (1 - h\lambda)z - 1 ~&=~ 0
+        & \therefore\quad z ~&=~ \frac{1}{1 - h\lambda}\,. &&    
 \end{aligned}
 $$
 

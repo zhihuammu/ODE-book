@@ -161,15 +161,15 @@ $$
 For equation {eq}`eq:ode:linear:constant`, we define its **{index}`characteristic polynomial`** as
 
 $$
-L(\xi) = a_n \xi^n + a_{n-1} \xi^{n-1} + \cdots + a_1 \xi + a_0.
+L(z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0.
 $$(eq:ode:linear:constant:char:polynomial)
 
-Note: We can simply replace the operator $\D$ in formula {eq}`eq:ode:operator:LD` with $\xi$ to obtain the characteristic polynomial.
+Note: We can simply replace the operator $\D$ in formula {eq}`eq:ode:operator:LD` with $z$ to obtain the characteristic polynomial.
 
 The equation
 
 $$
-L(\xi) = a_n \xi^n + a_{n-1} \xi^{n-1} + \cdots + a_1 \xi + a_0 = 0
+L(z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0 = 0
 $$(eq:ode:linear:constant:char:equation)
 
 is called the **{index}`characteristic equation`** of the ODE {eq}`eq:ode:linear:constant`.
@@ -251,13 +251,13 @@ $$
 and we get the characteristic equation
 
 $$
-a_1 \xi + a_0 = 0,
+a_1 z + a_0 = 0,
 $$
 
-and its root is $\xi = -\dfrac{a_0}{a_1}$. Therefore the general solution to the first-order ODE is 
+and its root is $z = -\dfrac{a_0}{a_1}$. Therefore the general solution to the first-order ODE is 
 
 $$
-y = C e^{\xi x} = C e^{-\frac{a_0}{a_1} x}
+y = C e^{z x} = C e^{-\frac{a_0}{a_1} x}
 $$
 ```
 ::::
@@ -277,34 +277,34 @@ Solve $a y'' + b y'+ c y=0$
 The characteristic equation is
 
 $$
-    a \xi^2 + b \xi + c=0,
+    a z^2 + b z + c=0,
 $$
 
 and its roots 
 
 $$
-\xi_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+z_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
 $$
 
 can be:
 
-- Case 1: two distinct real solutions ($\xi_1\neq\xi_2 \in \R$);
+- Case 1: two distinct real solutions ($z_1\neqz_2 \in \R$);
 
     The general solution of the second-order ODE is
 
     $$
-    y=c_1 e^{\xi_1 x} + c_2 e^{\xi_2 x}
+    y=c_1 e^{z_1 x} + c_2 e^{z_2 x}
     $$
 
-- Case 2: two identical real solutions ($\xi_1 = \xi_2 =\xi \in \R$);
+- Case 2: two identical real solutions ($z_1 = z_2 =z \in \R$);
 
     The general solution of the second-order ODE is
 
     $$
-    y=c_1 e^{\xi x} + c_2 x e^{\xi x}
+    y=c_1 e^{z x} + c_2 x e^{z x}
     $$
 
-- Case 3: two complex conjugate solution ($\xi_{1,2} = \alpha \pm i \beta \in \C$);. 
+- Case 3: two complex conjugate solution ($z_{1,2} = \alpha \pm i \beta \in \C$);. 
 
     The general solution of the second-order ODE is
 
@@ -329,15 +329,15 @@ Solving the following ODEs:
 
 :::{admonition} Solution
 :class: solution
-1. $2\xi^2-5\xi-3=(2\xi+1)(\xi-3)=0$,  $\quad\xi_1=-\frac{1}{2}$ and $\xi_2=3$
+1. $2z^2-5z-3=(2z+1)(z-3)=0$,  $\quadz_1=-\frac{1}{2}$ and $z_2=3$
 
     $y=c_1 e^{-\frac{x}{2}}+c_2 e^{3x}$
 
-2. $\xi^2-10\xi+25=(\xi-5)^2=0$,  $\quad\xi_1=\xi_2=5$
+2. $z^2-10z+25=(z-5)^2=0$,  $\quadz_1=z_2=5$
 
     $y=c_1 e^{5x} + c_2 x e^{5x}$
 
-3. $\xi^2+4\xi+7=0$,  $\quad\xi_1=-2+\sqrt{3}i$ and $\xi_2=-2-\sqrt{3}i$
+3. $z^2+4z+7=0$,  $\quadz_1=-2+\sqrt{3}i$ and $z_2=-2-\sqrt{3}i$
 
     $y=e^{-2x} \left( c_1 \cos \sqrt{3}x + c_2 \sin \sqrt{3}x \right)$
 :::
@@ -356,33 +356,33 @@ $
 The characteristic equation is
 
 $$
-a_n \xi^n + a_{n-1} \xi^{n-1} + \cdots + a_1 \xi + a_0 = 0
+a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0 = 0
 $$
 
-- Case 1: $n$ distinct real solutions ($\xi_1 \neq \xi_2 \neq \cdots \neq \xi_n \in \R$)
+- Case 1: $n$ distinct real solutions ($z_1 \neq z_2 \neq \cdots \neq z_n \in \R$)
 
     The general solution is
 
     $$
-    y=c_1 e^{\xi_1 x} + c_2 e^{\xi_2 x} + \cdots + c_n e^{\xi_n x}
+    y=c_1 e^{z_1 x} + c_2 e^{z_2 x} + \cdots + c_n e^{z_n x}
     $$
 
-- Case 1: $n$ repeated real solutions ($\xi_1=\xi_2= \cdots =\xi_n=\xi \in \R$)
+- Case 1: $n$ repeated real solutions ($z_1=z_2= \cdots =z_n=z \in \R$)
 
     The general solution is
 
     $$
-    y=c_1 e^{\xi x} + c_2 x e^{\xi x} + \cdots + c_n x^{n-1} e^{\xi x}
+    y=c_1 e^{z x} + c_2 x e^{z x} + \cdots + c_n x^{n-1} e^{z x}
     $$
 
 - Case 3: $m$-pair ($n=2m$) conjugate complex solutions
 
     $$
     \begin{aligned}
-    \xi_{1,2} & = \alpha_1 \pm i \beta_1 \\
-    \xi_{3,4} & = \alpha_2 \pm i \beta_2 \\
+    z_{1,2} & = \alpha_1 \pm i \beta_1 \\
+    z_{3,4} & = \alpha_2 \pm i \beta_2 \\
               & \vdots ~ \\
-    \xi_{2m-1, 2m} & = \alpha_m \pm i \beta_m 
+    z_{2m-1, 2m} & = \alpha_m \pm i \beta_m 
     \end{aligned}
     $$
 
@@ -498,10 +498,10 @@ $$
     The characteristic equation is
 
     $$
-    \xi^2 + 3\xi + 2 =0,
+    z^2 + 3z + 2 =0,
     $$
 
-    so $\xi_1 = -1$ and $\xi_2 = -2$. Therefore the homogeneous solution is 
+    so $z_1 = -1$ and $z_2 = -2$. Therefore the homogeneous solution is 
 
     $$
     y_h(t) = c_1 e^{-t} + c_2 e^{-2t}

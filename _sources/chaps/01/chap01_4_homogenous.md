@@ -36,7 +36,7 @@ The {index}`characteristic equation` associated with Eq. {eq}`eq:DE:linear:homog
 ````{math}
 :label: eq:DE:linear:char
 \begin{equation}
-L(\xi)= a_0 + a_1 \xi + a_2 \xi^2 + \ldots + a_{k-1} \xi^{k-1} + a_k \xi^{k}=0.
+L(z)= a_0 + a_1 z + a_2 z^2 + \ldots + a_{k-1} z^{k-1} + a_k z^{k}=0.
 \end{equation}
 ````
 
@@ -44,25 +44,25 @@ L(\xi)= a_0 + a_1 \xi + a_2 \xi^2 + \ldots + a_{k-1} \xi^{k-1} + a_k \xi^{k}=0.
 
 
 ````{note}
-Note: We can replace the shift operator $\S$ with $\xi$ in Eq. {eq}`eq:DE:linear:constant:LE` to obtain the characteristic equation. $L(\xi)$ is a $k$th-order polynomial and thus has $k$ roots $\{\xi_p\}~ (p=1,2,3,\ldots,k)$.
+Note: We can replace the shift operator $\S$ with $z$ in Eq. {eq}`eq:DE:linear:constant:LE` to obtain the characteristic equation. $L(z)$ is a $k$th-order polynomial and thus has $k$ roots $\{z_p\}~ (p=1,2,3,\ldots,k)$.
 ````
 
 ::::{prf:theorem}
-Let $\xi_p~(p=1,2,3,\ldots,k)$ be any solution to the characteristic equation {eq}`eq:DE:linear:char`, then 
+Let $z_p~(p=1,2,3,\ldots,k)$ be any solution to the characteristic equation {eq}`eq:DE:linear:char`, then 
 \begin{equation}
-y_n = \xi_p^n
+y_n = z_p^n
 \end{equation}
 is a solution to the homogeneous equation {eq}`eq:DE:linear:homogeneous:constant`.
 
 :::{dropdown} Proof (click to show)
 <!-- :::{prf:proof} -->
 
-Substituting $y_n=\xi_p^n$ into Eq. {eq}`eq:DE:linear:homogeneous:constant:aux`, we get
+Substituting $y_n=z_p^n$ into Eq. {eq}`eq:DE:linear:homogeneous:constant:aux`, we get
 \begin{align*}     
-L(\S) \xi_p^n = ~ & \left(a_0 + a_1 \S + a_2 \S^2 + \ldots + a_{k-1}\S^{k-1}+a_k \S^k\right) \xi_p^n \\
-~ = ~ &  a_0 \xi_p^n + a_1 \xi_p^{n+1} + a_2 \xi_p^{n+2} + \ldots + a_{k-1} \xi_p^{n+k-1} + a_{k} \xi_p^{n+k} \\
-~ = ~ &  \left( a_0  + a_1 \xi_p + a_2 \xi_p^{2} + \ldots + a_{k-1} \xi_p^{k-1} + a_{k} \xi_p^{k} \right) \xi_p^n \\
-~ = ~ & 0 \cdot \xi_p^n \\
+L(\S) z_p^n = ~ & \left(a_0 + a_1 \S + a_2 \S^2 + \ldots + a_{k-1}\S^{k-1}+a_k \S^k\right) z_p^n \\
+~ = ~ &  a_0 z_p^n + a_1 z_p^{n+1} + a_2 z_p^{n+2} + \ldots + a_{k-1} z_p^{n+k-1} + a_{k} z_p^{n+k} \\
+~ = ~ &  \left( a_0  + a_1 z_p + a_2 z_p^{2} + \ldots + a_{k-1} z_p^{k-1} + a_{k} z_p^{k} \right) z_p^n \\
+~ = ~ & 0 \cdot z_p^n \\
 ~ = ~ & 0
 \end{align*}
 Note: Eq. {eq}`eq:DE:linear:homogeneous:constant:aux` is equivalent to Eq. {eq}`eq:DE:linear:homogeneous:constant`.
@@ -75,14 +75,14 @@ Note: Eq. {eq}`eq:DE:linear:homogeneous:constant:aux` is equivalent to Eq. {eq}`
 ::::{prf:theorem}
 Assume the $k$ roots of  the characteristic equation are distinct, then a fundamental set of solutions is
 \begin{equation}
-\xi_p^n \quad (p=1,2,\ldots,k).
+z_p^n \quad (p=1,2,\ldots,k).
 \end{equation}
 An immediate consequence of this theorem, for this particular case, is that the general solution to the homogeneous equation {eq}`eq:DE:linear:homogeneous:constant` is
 
 ````{math}
 :label: eq:DE:linear:homo:sol
 \begin{equation}
-y_n = c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n,
+y_n = c_1 z_1^n + c_2 z_2^n + \ldots + c_k z_k^n,
 \end{equation}
 ````
 
@@ -92,8 +92,8 @@ where the constants $c_p~(p=1,2,\ldots,k)$ are arbitrary.
 <!-- ::::{prf:proof} -->
 Substituting Eq. {eq}`eq:DE:linear:homo:sol` into Eq. {eq}`eq:DE:linear:homogeneous:constant:aux`, we get 
 \begin{align*}
-L(\S) y_n  = ~ & L(\S) \left(c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n\right) \\
-~ = ~ & c_1 L(\S) \xi_1^n + c_2 L(\S) \xi_2^n + \ldots + c_k L(\S)\xi_k^n \\
+L(\S) y_n  = ~ & L(\S) \left(c_1 z_1^n + c_2 z_2^n + \ldots + c_k z_k^n\right) \\
+~ = ~ & c_1 L(\S) z_1^n + c_2 L(\S) z_2^n + \ldots + c_k L(\S)z_k^n \\
 ~ = ~ & c_1 \cdot 0 + c_2 \cdot 0 + \ldots + c_k \cdot 0 \\
 ~ = ~ & 0 
 \end{align*}
@@ -129,11 +129,11 @@ $$(\S-a) y_n = 0,$$
 
 we get the characteristic equation
 
-$$\xi -a =0,$$
+$$z -a =0,$$
 
-and it has only one root $\xi=a$. So the general solution is
+and it has only one root $z=a$. So the general solution is
 
-$$y_n = c \xi^n, $$
+$$y_n = c z^n, $$
 
 Using the initial condition, we get
 
@@ -154,33 +154,33 @@ $$y_{n+2} + a y_{n+1} + b y_n = 0.$$
 :::{admonition} **Solution**
 :class: solution
 
-Substituting $y_n = \xi^n$ into the equation, we get
+Substituting $y_n = z^n$ into the equation, we get
 
-$$\xi^{n+2} + a \xi^{n+1} + b \xi^n=0,$$
+$$z^{n+2} + a z^{n+1} + b z^n=0,$$
 
 so
 
-$$\xi^n (\xi^2+a\xi+b)=0,$$
+$$z^n (z^2+az+b)=0,$$
 
 obviously the characteristic equation is
 
-$$\xi^2+a\xi+b=0,$$
+$$z^2+az+b=0,$$
 
 and we get
 
-$$\xi_{1,2}=\frac{-a\pm \sqrt{a^2-4b}}{2}.$$
+$$z_{1,2}=\frac{-a\pm \sqrt{a^2-4b}}{2}.$$
 
 - Case 1: Two distinct real solutions;
 - Case 2: Two identical real solutions;
 - Case 3: Two complex conjugate solutions.
 :::
 
-````{admonition} **Case (1) Two different real solutions: $\xi_1 \neq \xi_2$ and $\xi_{1,2}\in \mathbb{R}$**:
+````{admonition} **Case (1) Two different real solutions: $z_1 \neq z_2$ and $z_{1,2}\in \mathbb{R}$**:
 :class: hint
 
 The general solution is 
 
-$$y_n = c_1 \xi_1^n + c_2  \xi_2^n.$$
+$$y_n = c_1 z_1^n + c_2  z_2^n.$$
 
 ::::{prf:example}
 Find the general solution to
@@ -193,15 +193,15 @@ $$y_{n+2} + \frac{5}{6} y_{n+1} + \frac{1}{6} y_n = 0.$$
 
 The characteristic equation is 
 
-$$\xi^2 + \frac{5}{6} \xi + \frac{1}{6}=0,$$
+$$z^2 + \frac{5}{6} z + \frac{1}{6}=0,$$
 	
 using factorisation, we get
 
-$$\left(\xi+\frac{1}{2}\right)\left(\xi+\frac{1}{3}\right)=0,$$ 
+$$\left(z+\frac{1}{2}\right)\left(z+\frac{1}{3}\right)=0,$$ 
 	
 and we get two different real solutions
 	
-$$\xi_1 = -\frac{1}{2}, ~ \xi_2 = -\frac{1}{3}.$$
+$$z_1 = -\frac{1}{2}, ~ z_2 = -\frac{1}{3}.$$
 	
 So the general solution is
 	
@@ -210,12 +210,12 @@ $$y_n = c_1 \left(-\frac{1}{2}\right)^n+c_2\left(-\frac{1}{3}\right)^n$$
 
 ````
 
-````{admonition} **Case (2) Two repeated real solutions: $\xi_1 = \xi_2 = \xi \in \mathbb{R}$**:
+````{admonition} **Case (2) Two repeated real solutions: $z_1 = z_2 = z \in \mathbb{R}$**:
 :class: tip
 
 The general solution is
 
-$$y_n = \left(c_1  + c_2 n \right) \xi^n.$$
+$$y_n = \left(c_1  + c_2 n \right) z^n.$$
 
 ::::{prf:example}
 Find the general solution to
@@ -227,11 +227,11 @@ $$y_{n+2}+y_{n+1}+\frac{1}{4} y_n = 0$$
 
 The characteristic equation is
 
-$$\xi^2+\xi+\frac{1}{4}=0,$$
+$$z^2+z+\frac{1}{4}=0,$$
 
 so
 
-$$\xi_1=\xi_2=-\frac{1}{2},$$
+$$z_1=z_2=-\frac{1}{2},$$
 
 and the general solution is
 
@@ -239,7 +239,7 @@ $$y_n = c_1 \left(-\frac{1}{2}\right)^n + c_2 n \left(-\frac{1}{2}\right)^n =\le
 ::::
 ````
 
-````{admonition} **Case (3) Two conjugate complex solutions: $\xi_{1,2}=\alpha\pm  \beta i \in \mathbb{C}$, $i=\sqrt{-1}$**:
+````{admonition} **Case (3) Two conjugate complex solutions: $z_{1,2}=\alpha\pm  \i \beta  \in \mathbb{C}$, $\i=\sqrt{-1}$**:
 :class: tip
 
 The general solution is 
@@ -255,11 +255,11 @@ $$ y_{n+2} + \frac{1}{4} y_n = 0 $$
 :class: dropdown, solution
 The characteristic equation is
 
-$$ \xi^2 + \frac{1}{4}=0, $$
+$$ z^2 + \frac{1}{4}=0, $$
 
 so
 
-$$ \xi_{1,2}= \pm  \frac{1}{2} i , $$
+$$ z_{1,2}= \pm  \frac{1}{2} \i , $$
 
 and
 
@@ -280,27 +280,27 @@ $$ 	a_0 y_n + a_1 y_{n+1} + a_2 y_{n+2} + \ldots + a_{k-1} y_{n+k-1} + a_k y_{n+
 
 its characteristic equation  
 
-$$ a_0 + a_1 \xi + a_2 \xi^2 + \ldots + a_{k-1} \xi^{k-1} + a_k \xi^{k}=0 $$
+$$ a_0 + a_1 z + a_2 z^2 + \ldots + a_{k-1} z^{k-1} + a_k z^{k}=0 $$
 
-has $k$ roots $\xi_p~(p=1,2,3,\ldots,k)$.
+has $k$ roots $z_p~(p=1,2,3,\ldots,k)$.
 
-````{admonition} Case (1) $k$ distinct real roots: $\xi_1 \neq \xi_2 \neq \ldots \neq \xi_k \in \mathbb{R}$
+````{admonition} Case (1) $k$ distinct real roots: $z_1 \neq z_2 \neq \ldots \neq z_k \in \mathbb{R}$
 :class: tip
 
 The general solution to the difference equation is
 
 
-$$ y_n = c_1 \xi_1^n + c_2 \xi_2^n + \ldots + c_k \xi_k^n $$
+$$ y_n = c_1 z_1^n + c_2 z_2^n + \ldots + c_k z_k^n $$
 
 ````
 
 
-````{admonition} Case (2) $k$ repeated real roots: $\xi_1 = \xi_2 = \ldots = \xi_k = \xi \in \mathbb{R}$
+````{admonition} Case (2) $k$ repeated real roots: $z_1 = z_2 = \ldots = z_k = z \in \mathbb{R}$
 :class: tip
 
 The general solution to the difference equation is
 
-$$ y_n = \left( c_1  + c_2 n + c_3 n^2 \ldots + c_k n^{k-1} \right) \xi^n $$
+$$ y_n = \left( c_1  + c_2 n + c_3 n^2 \ldots + c_k n^{k-1} \right) z^n $$
 
 ````
 
@@ -308,7 +308,7 @@ $$ y_n = \left( c_1  + c_2 n + c_3 n^2 \ldots + c_k n^{k-1} \right) \xi^n $$
 ````{admonition} Case (3) $m$-pair ($k=2m$) distinct complex conjugate roots:
 :class: tip
 
-$$\xi_1 \sim  \xi_k = \alpha_p \pm \beta_p i=r_p e^{\pm i \theta_p}~ \left(i^2=-1, ~ p=1,2,\ldots,m\right)$$
+$$z_1 \sim  z_k = \alpha_p \pm \i \beta_p =r_p e^{\pm \i \theta_p}~ \left(\i^2=-1, ~ p=1,2,\ldots,m\right)$$
 
 The general solution to the difference equation is
 
@@ -323,7 +323,7 @@ The general solution to the difference equation is
 ````{admonition} Case (4) $m$-pair ($k=2m$) repeated complex conjugate roots
 :class: tip
 
-$$\xi_1 \sim  \xi_k = \alpha \pm \beta i=r e^{\pm i \theta}~ \left(i^2=-1, ~ p=1,2,\ldots,m\right)$$
+$$z_1 \sim  z_k = \alpha \pm \i \beta =r e^{\pm \i \theta}~ \left(i^2=-1, ~ p=1,2,\ldots,m\right)$$
 
 The general solution to the difference equation is
 
@@ -339,14 +339,14 @@ The general solution to the difference equation is
 
 If the roots of a characteristic equation are
 
-$$\xi_1 \sim \xi_{13} = -\frac{1}{2}, \frac{1}{3}, \frac{3}{4}, \frac{3}{4}, \frac{3}{4}, 1\pm\sqrt{3}i, 1\pm i, 1\pm i, 1\pm i, $$
+$$z_1 \sim z_{13} = -\frac{1}{2}, \frac{1}{3}, \frac{3}{4}, \frac{3}{4}, \frac{3}{4}, 1\pm\sqrt{3}\i, 1\pm \i, 1\pm i, 1\pm \i, $$
 
 find the general solution to the corresponding difference equation.
 
 ```{admonition} Solution
 :class: dropdown, solution
 
-$$1+\sqrt{3}=2 e^{i \frac{\pi}{3}},~ 1+i = \sqrt{2} e^{i\frac{\pi}{4}},$$
+$$1+\sqrt{3}=2 e^{\i \frac{\pi}{3}},~ 1+\i = \sqrt{2} e^{\i\frac{\pi}{4}},$$
 
 so the general solution is 
 

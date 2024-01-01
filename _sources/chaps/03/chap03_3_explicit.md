@@ -23,7 +23,7 @@ $$\begin{aligned}
     ~=~ y_{j+2} &+ h\int_{2}^{3} \left(
     f_j + s\Delta f_j + \frac{s(s-1)}{2!}\Delta^2 f_j
     \right) \ds\\
-    &+ h\int_{2}^{3} \frac{s(s-1)(s-2)}{3!}f'''(\xi) \ds
+    &+ h\int_{2}^{3} \frac{s(s-1)(s-2)}{3!}f'''(z) \ds
     
 \end{aligned}$$ 
 
@@ -128,32 +128,32 @@ truncation errors are listed below:
 
     $\displaystyle y_{j+1} = y_j + hf_j \phantom{\frac00}$ (this is the *Euler* method)\
     with the local truncation error: 
-    $\displaystyle \tau_{j+1} = \frac{1}{2}y^{(2)}(\xi_j)h^2, ~\ x_j < \xi_j < x_{j+1}$.
+    $\displaystyle \tau_{j+1} = \frac{1}{2}y^{(2)}(z_j)h^2, ~\ x_j < z_j < x_{j+1}$.
 
 - Adams--Bashforth Two--Step Method, $k=2$
 
     $\displaystyle y_{j+1} = y_j + \frac{h}{2}\bigl[\,3f_j - f_{j-1}\,\bigr]$\
     with the local truncation error:
-    $\displaystyle \tau_{j+1} = \frac{5}{12}y^{(3)}(\xi_j)h^3,
-    ~\ x_j < \xi_j < x_{j+1}$.
+    $\displaystyle \tau_{j+1} = \frac{5}{12}y^{(3)}(z_j)h^3,
+    ~\ x_j < z_j < x_{j+1}$.
 
 - Adams--Bashforth Three--Step Method, $k=3$
 
     $\displaystyle y_{j+1} = y_j + \frac{h}{12}\bigl[\,23f_j - 16f_{j-1} + 5f_{j-2}\,\bigr]$\
     with the local truncation error:
-    $\displaystyle \tau_{j+1} = \frac{9}{24}y^{(4)}(\xi_j)h^4,
-    ~\ x_j < \xi_j < x_{j+1}$.
+    $\displaystyle \tau_{j+1} = \frac{9}{24}y^{(4)}(z_j)h^4,
+    ~\ x_j < z_j < x_{j+1}$.
 
 - Adams--Bashforth Four--Step Method, $k=4$
 
     $\displaystyle y_{j+1} = y_j + \frac{h}{24}\bigl[\,55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}\,\bigr]$\
     with the local truncation error:
-    $\displaystyle \tau_{j+1} = \frac{251}{720}y^{(5)}(\xi_j)h^5,
-    ~\ x_j < \xi_j < x_{j+1}$.
+    $\displaystyle \tau_{j+1} = \frac{251}{720}y^{(5)}(z_j)h^5,
+    ~\ x_j < z_j < x_{j+1}$.
 
 - Adams--Bashforth Five--Step Method, $k=1$
 
     $\displaystyle y_{j+1} = y_j + \frac{h}{720}\bigl[\,1901f_j - 2774f_{j-1} + 2616f_{j-2} - 1274f_{j-3} + 251f_{j-4}\,\bigr]$\
     with the local truncation error:
-    $\displaystyle \tau_{j+1} = \frac{95}{288}y^{(6)}(\xi_j)h^6,
-    ~\ x_j < \xi_j < x_{j+1}$.
+    $\displaystyle \tau_{j+1} = \frac{95}{288}y^{(6)}(z_j)h^6,
+    ~\ x_j < z_j < x_{j+1}$.

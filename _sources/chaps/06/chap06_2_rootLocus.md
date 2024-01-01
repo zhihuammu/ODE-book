@@ -4,7 +4,7 @@ This method consists of repeatedly solving the characteristic polynomial
 for various values of $h\lambda$ in the neighbourhood of the origin. Note
 that for simple linear and quadratic cases the resulting characteristic
 polynomial can be solved and a table or plots of values of
-$\,h\lambda\,$ against roots $|\xi_1|$ and $|\xi_2|$ allows us to
+$\,h\lambda\,$ against roots $|z_1|$ and $|z_2|$ allows us to
 determine the interval of absolute stability. Any numerical method such
 as Newton Raphson iteration, or mathematics software packages like
 Matlab may be used for the approximate solution of the characteristic
@@ -30,7 +30,7 @@ The characteristic equation is
 
 $$
 \begin{aligned}
-        L(\xi,h\lambda) ~=~ \xi^2 - \left(1 + \frac{3}{2}h\lambda\right)\xi + \frac{1}{2}h\lambda ~=~ 0    
+        L(z,h\lambda) ~=~ z^2 - \left(1 + \frac{3}{2}h\lambda\right)z + \frac{1}{2}h\lambda ~=~ 0    
 \end{aligned}
 $$
 
@@ -39,24 +39,24 @@ and its roots are
 
 $$
 \begin{aligned}
-        \xi_1 ~&=~ \frac{1}{2} \left(
+        z_1 ~&=~ \frac{1}{2} \left(
             1 + \frac{3}{2}h\lambda + \sqrt{1 + h\lambda + \frac{9}{4}\left(h\lambda\right)^2}
         \right)
         \\[1ex]
-        \xi_2 ~&=~ \frac{1}{2} \left(
+        z_2 ~&=~ \frac{1}{2} \left(
             1 + \frac{3}{2}h\lambda - \sqrt{1 + h\lambda + \frac{9}{4}\left(h\lambda\right)^2}
         \right)    
 \end{aligned}
 $$
 
  The following table gives the calculated values of
-$|\xi_1|$ and $|\xi_2|$ for various $h\lambda$.
+$|z_1|$ and $|z_2|$ for various $h\lambda$.
 
 
 | $h\lambda$ | -1.1  | -1.0  | -0.67  | -0.50  | 0.0  | 0.50  | 1.0 |
 | -- | -- | -- | -- | -- | -- | -- | -- |
-|\|$\xi_1$\|  | 0.48  | 0.50  | 0.58  | 0.39  | 1.00  | 0.16  | 0.22 |
-|\|$\xi_2$\|  | 1.13  | 1.00  | 0.58  | 0.64  | 0.00  | 1.59  | 2.28 |
+|\|$z_1$\|  | 0.48  | 0.50  | 0.58  | 0.39  | 1.00  | 0.16  | 0.22 |
+|\|$z_2$\|  | 1.13  | 1.00  | 0.58  | 0.64  | 0.00  | 1.59  | 2.28 |
 
 
 By definition the interval of absolute stability is the set of $h\lambda$
@@ -64,8 +64,8 @@ for which
 
 $$
 \begin{aligned}
-        \left| \xi_1(h\lambda) \right| < 1,
-        \qquad \left| \xi_2(h\lambda) \right| < 1\,.    
+        \left| z_1(h\lambda) \right| < 1,
+        \qquad \left| z_2(h\lambda) \right| < 1\,.    
 \end{aligned}
 $$
 
@@ -97,8 +97,8 @@ The characteristic equation is
 
 $$
 \begin{aligned}
-        L(\xi,h\lambda) ~=~ \left(1 - \frac{5}{12}h\lambda\right)\xi^2
-        - \left(1 + \frac{8}{12}h\lambda\right)\xi + \frac{1}{12}h\lambda ~=~ 0    
+        L(z,h\lambda) ~=~ \left(1 - \frac{5}{12}h\lambda\right)z^2
+        - \left(1 + \frac{8}{12}h\lambda\right)z + \frac{1}{12}h\lambda ~=~ 0    
 \end{aligned}
 $$
 
@@ -107,21 +107,21 @@ $$
 
 $$
 \begin{aligned}
-        \xi_{1,2} = \frac{1 + 8a
+        z_{1,2} = \frac{1 + 8a
         \pm\sqrt{\left(1 + 8a\right)^2 - 4a\left(1 - 5a\right)}}{2(1 - 5a)}    
 \end{aligned}
 $$
 
  The following table gives the calculated values of
-$|\xi_1|$ and $|\xi_2|$ for various $h\lambda$. Note that the interval
+$|z_1|$ and $|z_2|$ for various $h\lambda$. Note that the interval
 $-6 \leq h\lambda \leq 0$ is an interval of absolute stability for the
 method which becomes partially unstable when $h > \dfrac{6}{|\lambda|}$.
 
 
 | $h\lambda$ | -7.0  | -6.0  | -5.0  | -4.0  | -3.0  | -2.0  | -1.5  | -1.0  | -0.5  | 0.0  | 0.5  | 1.0 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-|\|$\xi_1$\|  | 0.14  | 0.14  | 0.15  | 0.16  | 0.18  | 0.22  | 0.28  | 0.15  | 0.06  | 1.0  | 0.03  | 0.05 |
-|\|$\xi_2$\|  | 1.07  | 1.00  | 0.91  | 0.78  | 0.62  | 0.41  | 0.28  | 0.39  | 0.61  | 0.0  | 1.65  | 2.81 |
+|\|$z_1$\|  | 0.14  | 0.14  | 0.15  | 0.16  | 0.18  | 0.22  | 0.28  | 0.15  | 0.06  | 1.0  | 0.03  | 0.05 |
+|\|$z_2$\|  | 1.07  | 1.00  | 0.91  | 0.78  | 0.62  | 0.41  | 0.28  | 0.39  | 0.61  | 0.0  | 1.65  | 2.81 |
 
 :::
 

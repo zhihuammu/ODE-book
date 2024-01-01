@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5.1. Characteristic Polynomials and Root Condition &#8212; Linear Multistep Methods</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -42,12 +41,14 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -65,7 +66,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\hat{i}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/05/chap05_1_rootCondition';</script>
     <link rel="shortcut icon" href="../../_static/ode.png"/>
@@ -75,6 +76,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="5. Multistep Methods: Stability I" href="chap05_0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="01 January 2024"/>
   </head>
   
   
@@ -83,6 +85,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -136,9 +147,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -148,8 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Linear Multistep Methods - Home"/>`);</script>
   
   
 </a></div>
@@ -164,10 +177,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_0.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_1_definition.html">Definitions, Classification and Terminology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_2_ode.html">Ordinary Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_3_analytical.html">Analytical Methods for ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_symbols.html">Symbols and Notation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_A0_DE.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A1_definition.html">Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A2_ode.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A3_analytical.html">Analytical Methods for ODEs</a></li>
 </ul>
 </li>
 </ul>
@@ -350,20 +364,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -392,8 +408,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="characteristic-polynomials-and-root-condition">
-<h1><span class="section-number">5.1. </span>Characteristic Polynomials and Root Condition<a class="headerlink" href="#characteristic-polynomials-and-root-condition" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="characteristic-polynomials-and-root-condition">
+<h1><span class="section-number">5.1. </span>Characteristic Polynomials and Root Condition<a class="headerlink" href="#characteristic-polynomials-and-root-condition" title="Permalink to this heading">#</a></h1>
 <p>It is possible to derive any number of multistep methods of various
 order, but the most important factor related to each method is its
 stability property. For simplicity, we study the stability by
@@ -446,17 +462,17 @@ L(\S) y_j =
 <p>and get its <span class="target" id="index-0"></span>characteristic equation</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch04-1-5">
 <span class="eqno">(5.5)<a class="headerlink" href="#equation-eq-ch04-1-5" title="Permalink to this equation">#</a></span>\[
-L(\xi, h\lambda)=
-\gamma_0 + \gamma_1 \xi + \gamma_2 \xi^2 + \cdots + \gamma_k \xi^k = 0
+L(z, h\lambda)=
+\gamma_0 + \gamma_1 z + \gamma_2 z^2 + \cdots + \gamma_k z^k = 0
 \]</div>
 <p>This is a polynomial equation of degree <span class="math notranslate nohighlight">\(k\)</span> and has <span class="math notranslate nohighlight">\(k\)</span>
-roots, <span class="math notranslate nohighlight">\(\,\xi_1, \xi_2, \dots, \xi_k\,\)</span>, which may be real or complex.
+roots, <span class="math notranslate nohighlight">\(\,z_1, z_2, \dots, z_k\,\)</span>, which may be real or complex.
 If these roots are distinct, the general solution of the difference
 equation <a class="reference internal" href="#equation-eq-ch04-1-4">(5.4)</a> is</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch04-1-6">
 <span class="eqno">(5.6)<a class="headerlink" href="#equation-eq-ch04-1-6" title="Permalink to this equation">#</a></span>\[
 \begin{aligned}
-y_j ~=~ A_1\, \xi_1^j + A_2\, \xi_2^j + \,\dots\, + A_k\,\xi_k^j
+y_j ~=~ A_1\, z_1^j + A_2\, z_2^j + \,\dots\, + A_k\,z_k^j
 \end{aligned}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(A_1\)</span>, <span class="math notranslate nohighlight">\(A_2\)</span>, …, <span class="math notranslate nohighlight">\(A_k\)</span> are constant. See <a class="reference internal" href="../01/chap01_4_homogenous.html#chap01-complexnumber-de"><span class="std std-numref">Section 1.4</span></a> for more details on difference and characteristic equations.</p>
@@ -466,7 +482,7 @@ y_j ~=~ A_1\, \xi_1^j + A_2\, \xi_2^j + \,\dots\, + A_k\,\xi_k^j
 </div>
 <div class="proof definition admonition" id="def:char-poly">
 <p class="admonition-title"><span class="caption-number">Definition 5.1 </span> (Characteristic Polynomials)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>For a general linear multistep method</p>
 <div class="math notranslate nohighlight">
 \[
@@ -475,34 +491,34 @@ y_j ~=~ A_1\, \xi_1^j + A_2\, \xi_2^j + \,\dots\, + A_k\,\xi_k^j
 <p>the expression in the form</p>
 <div class="math notranslate nohighlight" id="equation-eq-chap04-charpoly">
 <span class="eqno">(5.7)<a class="headerlink" href="#equation-eq-chap04-charpoly" title="Permalink to this equation">#</a></span>\[
-L(\xi, h\lambda) = \sum_{i=0}^k \left(\alpha_i - h\lambda \beta_i\right) \xi^i
+L(z, h\lambda) = \sum_{i=0}^k \left(\alpha_i - h\lambda \beta_i\right) z^i
 \]</div>
 <p>is called its <strong><span class="target" id="index-1"></span>characteristic polynomial</strong>.</p>
 <div class="dropdown admonition note">
 <p class="admonition-title">Note</p>
-<p>In some books, <span class="math notranslate nohighlight">\(\pi(\xi, h\lambda)\)</span> is used to represent the characteristic polynomial.</p>
+<p>In some books, <span class="math notranslate nohighlight">\(\pi(z, h\lambda)\)</span> is used to represent the characteristic polynomial.</p>
 </div>
 <p>We call</p>
 <div class="math notranslate nohighlight" id="equation-eq-chap04-charpoly-first">
 <span class="eqno">(5.8)<a class="headerlink" href="#equation-eq-chap04-charpoly-first" title="Permalink to this equation">#</a></span>\[
-\rho(\xi) = \sum_{i=0}^{k} \alpha_i \xi^i
+\rho(z) = \sum_{i=0}^{k} \alpha_i z^i
 \]</div>
 <p>the <strong><span class="target" id="index-2"></span>first characteristic polynomial</strong>, and</p>
 <div class="math notranslate nohighlight" id="equation-eq-chap04-charpoly-second">
 <span class="eqno">(5.9)<a class="headerlink" href="#equation-eq-chap04-charpoly-second" title="Permalink to this equation">#</a></span>\[
-\sigma(\xi) = \sum_{i=0}^{k} \beta_i \xi^i
+\sigma(z) = \sum_{i=0}^{k} \beta_i z^i
 \]</div>
 <p>the <strong><span class="target" id="index-3"></span>second characteristic polynomial</strong> of the multistep method.</p>
 <p>These polynomails given in equations <a class="reference internal" href="#equation-eq-chap04-charpoly">(5.7)</a>, <a class="reference internal" href="#equation-eq-chap04-charpoly-first">(5.8)</a> and <a class="reference internal" href="#equation-eq-chap04-charpoly-second">(5.9)</a> have the following relation</p>
 <div class="math notranslate nohighlight" id="equation-eq-chap04-chapoly-relation">
 <span class="eqno">(5.10)<a class="headerlink" href="#equation-eq-chap04-chapoly-relation" title="Permalink to this equation">#</a></span>\[
-L(\xi, h\lambda) = \rho(\xi) - h\lambda \sigma(\xi)
+L(z, h\lambda) = \rho(z) - h\lambda \sigma(z)
 \]</div>
-</section>
+</div>
 </div><div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 5.1 </span></p>
-<section class="example-content" id="proof-content">
-<p>Find the characteristic polynomial <span class="math notranslate nohighlight">\(L(\xi, h\lambda)\)</span> for a 2-step method</p>
+<div class="example-content section" id="proof-content">
+<p>Find the characteristic polynomial <span class="math notranslate nohighlight">\(L(z, h\lambda)\)</span> for a 2-step method</p>
 <div class="math notranslate nohighlight">
 \[
 \alpha_0 y_{j-2} + \alpha_1 y_{j-1} + \alpha_2 y_{j}
@@ -538,11 +554,11 @@ L(\xi, h\lambda) = \rho(\xi) - h\lambda \sigma(\xi)
 <div class="math notranslate nohighlight">
 \[\begin{split}
     \begin{aligned}
-    L(\xi, h\lambda) 
-    &amp;=\sum_{i=0}^{2} (\alpha_i - h\lambda \beta_i) \xi^i\\
-    &amp; = (\alpha_0-h\lambda \beta_0) \xi^0
-    + (\alpha_1-h\lambda \beta_1) \xi^1
-    + (\alpha_2-h\lambda \beta_2) \xi^2
+    L(z, h\lambda) 
+    &amp;=\sum_{i=0}^{2} (\alpha_i - h\lambda \beta_i) z^i\\
+    &amp; = (\alpha_0-h\lambda \beta_0) z^0
+    + (\alpha_1-h\lambda \beta_1) z^1
+    + (\alpha_2-h\lambda \beta_2) z^2
     \end{aligned}
     \end{split}\]</div>
 </li>
@@ -551,57 +567,57 @@ L(\xi, h\lambda) = \rho(\xi) - h\lambda \sigma(\xi)
 <div class="math notranslate nohighlight">
 \[\begin{split}
     \begin{aligned}
-    L(\xi, h\lambda) 
-    &amp;=\sum_{i=0}^{2} (\alpha_i - h\lambda \beta_i) \xi^i\\
-    &amp; = (\alpha_0-h\lambda \beta_0) \xi^0
-    + (\alpha_1-h\lambda \beta_1) \xi^1
-    + (\alpha_2-h\lambda \beta_2) \xi^2
+    L(z, h\lambda) 
+    &amp;=\sum_{i=0}^{2} (\alpha_i - h\lambda \beta_i) z^i\\
+    &amp; = (\alpha_0-h\lambda \beta_0) z^0
+    + (\alpha_1-h\lambda \beta_1) z^1
+    + (\alpha_2-h\lambda \beta_2) z^2
     \end{aligned}
     \end{split}\]</div>
 </li>
 </ul>
 </div>
-</section>
+</div>
 </div><div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 5.2 </span> (Root Condition)</p>
-<section class="definition-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(\,\xi_1,\xi_2,\dots,\xi_k\,\)</span> denote the roots of the first
-characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(\xi)\,\)</span> associated with a
-linear multistep method. If <span class="math notranslate nohighlight">\(\,|\xi_i|\leq1\,\)</span>, for each
+<div class="definition-content section" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\,z_1,z_2,\dots,z_k\,\)</span> denote the roots of the first
+characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> associated with a
+linear multistep method. If <span class="math notranslate nohighlight">\(\,|z_i|\leq1\,\)</span>, for each
 <span class="math notranslate nohighlight">\(\,i=1,2,...,k\,\)</span>, and all roots with absolute value <span class="math notranslate nohighlight">\(1\)</span> are simple
 roots (i.e. not repeated), then the difference method is said to satisfy
 the <strong><span class="target" id="index-4"></span>root condition</strong>.</p>
-</section>
-</div><div class="figure" id="id1" style="text-align: center"><p><img width="48%" src="../../_images/tikz-8862abc5ed811de2ee79a90e762944da982410a6.svg" alt="Figure made with TikZ" /></p>
-<p><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Unit circle in the complex plane <span class="math notranslate nohighlight">\(\C\)</span>.</span></p>
+</div>
+</div><div class="figure" id="id1" style="text-align: center"><p><img width="48%" src="../../_images/tikz-ea392d229e90d2ec97267bb4c58b1db4cdbf4185.svg" alt="Figure made with TikZ" /></p>
+<p class="caption"><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Unit circle in the complex plane <span class="math notranslate nohighlight">\(\C\)</span>.</span></p>
 </div><div class="proof definition admonition" id="definition-3">
 <p class="admonition-title"><span class="caption-number">Definition 5.3 </span> (Stability)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>A linear multistep method of order <span class="math notranslate nohighlight">\(\,\geq1\,\)</span> is called <em><span class="target" id="index-5"></span>stable</em> if the
-roots of its first characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(\xi)\,\)</span> satisfies
-the root condition, i.e. the roots of <span class="math notranslate nohighlight">\(\,\rho(\xi)\,\)</span> lie inside or on
+roots of its first characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> satisfies
+the root condition, i.e. the roots of <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> lie inside or on
 the unit circle, and the roots on the unit circle are distinct (or
 simple) - this is called the root condition.</p>
-</section>
+</div>
 </div><div class="proof definition admonition" id="definition-4">
 <p class="admonition-title"><span class="caption-number">Definition 5.4 </span> (Strong Stability)</p>
-<section class="definition-content" id="proof-content">
-<p>A method is <em><span class="target" id="index-6"></span>strongly stable</em> if the roots of <span class="math notranslate nohighlight">\(\rho(\xi) = 0\)</span> are inside
+<div class="definition-content section" id="proof-content">
+<p>A method is <em><span class="target" id="index-6"></span>strongly stable</em> if the roots of <span class="math notranslate nohighlight">\(\rho(z) = 0\)</span> are inside
 the unit circle except for only one root, call <em>principal root</em>, with
-the magnitude of one(i.e. <span class="math notranslate nohighlight">\(|\xi| = 1\)</span>).</p>
-</section>
+the magnitude of one(i.e. <span class="math notranslate nohighlight">\(|z| = 1\)</span>).</p>
+</div>
 </div><div class="proof definition admonition" id="definition-5">
 <p class="admonition-title"><span class="caption-number">Definition 5.5 </span> (Weak Stability)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>A method is <em><span class="target" id="index-7"></span>weakly stable</em> if it is stable (i.e. satisfies the root
 condition) but has more than one root on the unit circle.</p>
-</section>
+</div>
 </div><div class="proof example admonition" id="example-6">
 <p class="admonition-title"><span class="caption-number">Example 5.2 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Find the roots associated with the following characteristic polynomials:</p>
 <ol class="arabic">
-<li><p><span class="math notranslate nohighlight">\(\rho(\xi)= \xi^3 + \xi \)</span></p>
+<li><p><span class="math notranslate nohighlight">\(\rho(z)= z^3 + z \)</span></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Solution (click to show)<div class="sd-summary-down docutils">
@@ -609,29 +625,29 @@ Solution (click to show)<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(\xi^3 + \xi ~=~ 0\)</span><br />
-<span class="math notranslate nohighlight">\(\therefore\quad \xi(\xi^2 + 1) ~=~ 0\)</span><br />
-<span class="math notranslate nohighlight">\(\therefore\quad \xi_1 ~=~ 0, ~~ \xi_2 ~=~ i, ~~\xi_3 ~= -i\)</span></p>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(z^3 + z ~=~ 0\)</span><br />
+<span class="math notranslate nohighlight">\(\therefore\quad z(z^2 + 1) ~=~ 0\)</span><br />
+<span class="math notranslate nohighlight">\(\therefore\quad z_1 ~=~ 0, ~~ z_2 ~=~ i, ~~z_3 ~= -i\)</span></p>
 <p class="sd-card-text">We can also use Matlab to find the roots of the polynomial</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">];</span><span class="w">     </span><span class="c">%vector defining the coefficients of the polynomial</span><span class="w"></span>
-<span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w">         </span><span class="c">%solve the polynomial equation</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">];</span><span class="w">     </span><span class="c">%vector defining the coefficients of the polynomial</span>
+<span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w">         </span><span class="c">%solve the polynomial equation</span>
 </pre></div>
 </div>
 <p class="sd-card-text">Output</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">ans</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">ans</span><span class="w"> </span><span class="p">=</span>
 
-<span class="w">    </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>0000<span class="nb">i</span><span class="w"></span>
-<span class="w">    </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span>0000<span class="nb">i</span><span class="w"></span>
-<span class="w">    </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span>0000<span class="nb">i</span><span class="w"></span>
+<span class="w">    </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>0000<span class="nb">i</span>
+<span class="w">    </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span>0000<span class="nb">i</span>
+<span class="w">    </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span>0000<span class="nb">i</span>
 </pre></div>
 </div>
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(\xi_1\)</span>, <span class="math notranslate nohighlight">\(\xi_2\)</span>, and <span class="math notranslate nohighlight">\(\xi_3\)</span> are shown on the unit circle. Because
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(z_1\)</span>, <span class="math notranslate nohighlight">\(z_2\)</span>, and <span class="math notranslate nohighlight">\(z_3\)</span> are shown on the unit circle. Because
 there are more than one root on the unit circle, the method is
 weakly stable.</p>
-<div class="figure" style="text-align: center"><p><img width="40%" src="../../_images/tikz-8c9d5936bf992fc3cb6b3f0ffd2d3cad05801d09.svg" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img width="40%" src="../../_images/tikz-2046bc9f69c0cfdd831463cdd501286650d439f3.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </details></li>
-<li><p><span class="math notranslate nohighlight">\(\rho(\xi)=\xi^4 + \xi\)</span></p>
+<li><p><span class="math notranslate nohighlight">\(\rho(z)=z^4 + z\)</span></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Solution (click to show)<div class="sd-summary-down docutils">
@@ -639,38 +655,38 @@ Solution (click to show)<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(\xi^4 + \xi ~=~ 0\)</span></p>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(z^4 + z ~=~ 0\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-\xi^4 + \xi  &amp; = \xi(\xi^3 + 1) \\
-             &amp; = \xi (\xi+1) (\xi^2-\xi+1) \\
+z^4 + z  &amp; = z(z^3 + 1) \\
+             &amp; = z (z+1) (z^2-z+1) \\
 \end{aligned}
 \end{split}\]</div>
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(\therefore\quad \xi_1 ~=~ 0\)</span>, <span class="math notranslate nohighlight">\(\xi_2 = -1\)</span>,  <span class="math notranslate nohighlight">\(\xi_3 = \dfrac{1}{2} + i\dfrac{\sqrt{3}}{2}\)</span>, 
-<span class="math notranslate nohighlight">\(\xi_4 = \dfrac{1}{2} - i\dfrac{\sqrt{3}}{2}\)</span>.</p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(\therefore\quad z_1 ~=~ 0\)</span>, <span class="math notranslate nohighlight">\(z_2 = -1\)</span>,  <span class="math notranslate nohighlight">\(z_3 = \dfrac{1}{2} + i\dfrac{\sqrt{3}}{2}\)</span>, 
+<span class="math notranslate nohighlight">\(z_4 = \dfrac{1}{2} - i\dfrac{\sqrt{3}}{2}\)</span>.</p>
 <p class="sd-card-text">We can also use Matlab to find the roots of the polynomial</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">];</span><span class="w">     </span><span class="c">%vector defining the coefficients of the polynomial</span><span class="w"></span>
-<span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w">         </span><span class="c">%solve the polynomial equation</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">];</span><span class="w">     </span><span class="c">%vector defining the coefficients of the polynomial</span>
+<span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w">         </span><span class="c">%solve the polynomial equation</span>
 </pre></div>
 </div>
 <p class="sd-card-text">Output</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">ans</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">ans</span><span class="w"> </span><span class="p">=</span>
 
-<span class="w">    </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>0000<span class="nb">i</span><span class="w"></span>
-<span class="w">   </span><span class="o">-</span><span class="mf">1.0000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>0000<span class="nb">i</span><span class="w"></span>
-<span class="w">    </span><span class="mf">0.5000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>8660<span class="nb">i</span><span class="w"></span>
-<span class="w">    </span><span class="mf">0.5000</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>8660<span class="nb">i</span><span class="w"></span>
+<span class="w">    </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>0000<span class="nb">i</span>
+<span class="w">   </span><span class="o">-</span><span class="mf">1.0000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>0000<span class="nb">i</span>
+<span class="w">    </span><span class="mf">0.5000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>8660<span class="nb">i</span>
+<span class="w">    </span><span class="mf">0.5000</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>8660<span class="nb">i</span>
 </pre></div>
 </div>
 <p class="sd-card-text">Because there are more than one root on the unit circle, the method
 is weakly stable.</p>
-<div class="figure" style="text-align: center"><p><img width="40%" src="../../_images/tikz-6369f7b8f232e84417e6dc75519c8808009db481.svg" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img width="40%" src="../../_images/tikz-72087dd068e1a5a4befd6d55bf71ed47a44bf895.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </details></li>
 </ol>
-</section>
-</div></section>
+</div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {
@@ -685,7 +701,7 @@ is weakly stable.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\05"
+            path: "./chaps/05"
         },
         predefinedOutput: true
     }
@@ -697,11 +713,10 @@ is weakly stable.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap05_0.html"
@@ -721,10 +736,7 @@ is weakly stable.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -747,6 +759,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023--2025.
@@ -758,7 +771,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 31 December 2023.
+  Last updated on 01 January 2024.
   <br/>
 </p>
   </div>
@@ -776,8 +789,8 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -785,8 +798,9 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
     <div class="footer-items__start">
       
         <div class="footer-item">
+
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     <br/>
   </p>
 </div>
@@ -794,10 +808,12 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
     </div>
   
   
+  
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
 </p></div>
       
     </div>

@@ -89,15 +89,15 @@ $$\begin{aligned}
 \end{aligned}$$ 
 
 Use the [Mean Value Theorem](https://en.wikipedia.org/wiki/Mean_value_theorem)
-and LET $\Delta^{4} f_0 = h^4f^{iv}(\xi)$ where
-$x_0 \leq \xi \leq x_2$
+and LET $\Delta^{4} f_0 = h^4f^{iv}(z)$ where
+$x_0 \leq z \leq x_2$
 
  $$\begin{aligned}
         \therefore \quad \epsilon ~&=~ h^5 \left\{
             \frac{1}{24} \left(-\frac{4}{15}\right)
-        \right\} f^{iv}(\xi)
+        \right\} f^{iv}(z)
         \\
-        \epsilon ~&=~ -\frac{1}{90}h^5f^{iv}(\xi).
+        \epsilon ~&=~ -\frac{1}{90}h^5f^{iv}(z).
     
 \end{aligned}$$
 :::
@@ -130,8 +130,8 @@ $$\begin{aligned}
 the error term 
 
 $$\begin{aligned}
-        \epsilon ~=~ \frac{14}{45}h^5 f^{iv}(\xi)
-        \quad for \quad x_{-1} \leq \xi \leq x_3
+        \epsilon ~=~ \frac{14}{45}h^5 f^{iv}(z)
+        \quad for \quad x_{-1} \leq z \leq x_3
     
 \end{aligned}$$ 
 
@@ -187,11 +187,11 @@ $$\begin{aligned}
     
 \end{aligned}$$ 
 
-Let $\Delta^4 f_0 ~=~ h^4 f^{iv}(\xi)$ where
-$x_{-1} \leq \xi \leq x_3$
+Let $\Delta^4 f_0 ~=~ h^4 f^{iv}(z)$ where
+$x_{-1} \leq z \leq x_3$
 
  $$\begin{aligned}
-        \therefore \quad \epsilon ~=~ \frac{14}{45}\,h^5f^{iv}(\xi).
+        \therefore \quad \epsilon ~=~ \frac{14}{45}\,h^5f^{iv}(z).
     
 \end{aligned}$$
 :::

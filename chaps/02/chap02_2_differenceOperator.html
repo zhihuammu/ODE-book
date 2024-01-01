@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2.2. Finite Difference Operators &#8212; Linear Multistep Methods</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -42,12 +41,14 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -65,7 +66,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\hat{i}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/02/chap02_2_differenceOperator';</script>
     <link rel="shortcut icon" href="../../_static/ode.png"/>
@@ -75,6 +76,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="2.1. Introduction" href="chap02_1_introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="01 January 2024"/>
   </head>
   
   
@@ -83,6 +85,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -136,9 +147,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -148,8 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Linear Multistep Methods - Home"/>`);</script>
   
   
 </a></div>
@@ -164,10 +177,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_0.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_1_definition.html">Definitions, Classification and Terminology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_2_ode.html">Ordinary Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_3_analytical.html">Analytical Methods for ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_symbols.html">Symbols and Notation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_A0_DE.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A1_definition.html">Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A2_ode.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A3_analytical.html">Analytical Methods for ODEs</a></li>
 </ul>
 </li>
 </ul>
@@ -350,20 +364,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -405,10 +421,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="finite-difference-operators">
-<h1><span class="section-number">2.2. </span>Finite Difference Operators<a class="headerlink" href="#finite-difference-operators" title="Permalink to this headline">#</a></h1>
-<section id="discrete-data-points-and-general-sequences">
-<h2><span class="section-number">2.2.1. </span>Discrete Data Points and General Sequences<a class="headerlink" href="#discrete-data-points-and-general-sequences" title="Permalink to this headline">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="finite-difference-operators">
+<h1><span class="section-number">2.2. </span>Finite Difference Operators<a class="headerlink" href="#finite-difference-operators" title="Permalink to this heading">#</a></h1>
+<div class="section" id="discrete-data-points-and-general-sequences">
+<h2><span class="section-number">2.2.1. </span>Discrete Data Points and General Sequences<a class="headerlink" href="#discrete-data-points-and-general-sequences" title="Permalink to this heading">#</a></h2>
 <p>For a function defined on a continuous domain</p>
 <div class="math notranslate nohighlight">
 \[f=f(x), ~~ x\in \mathbb{R},\]</div>
@@ -421,10 +437,10 @@ document.write(`
 \[x_j= jh\]</div>
 <p>where <span class="math notranslate nohighlight">\(h=x_{j+1}-x_j\)</span> is called the <span class="target" id="index-0"></span>step size (or step length), <span class="math notranslate nohighlight">\(h\in(0,+\infty)\)</span>.</p>
 <div class="figure" id="id1" style="text-align: center"><p><img width="60%" src="../../_images/tikz-1f29acf5f13703899c764cdc085861dbaec89815.svg" alt="Figure made with TikZ" /></p>
-<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">A general sequence <span class="math notranslate nohighlight">\(\{f_j\}_{j=0}^{6}\)</span>.</span></p>
+<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">A general sequence <span class="math notranslate nohighlight">\(\{f_j\}_{j=0}^{6}\)</span>.</span></p>
 </div><div class="proof remark admonition" id="remark-0">
 <p class="admonition-title"><span class="caption-number">Remark 2.1 </span></p>
-<section class="remark-content" id="proof-content">
+<div class="remark-content section" id="proof-content">
 <p>In <a class="reference internal" href="../01/chap01_2_sequence.html#chap01-sequence"><span class="std std-numref">Section 1.2</span></a>, a sequence is defined as a function of integers i.e.</p>
 <div class="math notranslate nohighlight">
 \[y_j=y(j), \quad j \in \mathbb{Z}.\]</div>
@@ -433,32 +449,32 @@ document.write(`
 \[y_j = y(x_j), \quad x_j = jh,~ j\in \mathbb{Z}\]</div>
 <p>where
 <span class="math notranslate nohighlight">\(x\)</span> coordinates are not necessarily intergers.</p>
-</section>
-</div></section>
-<section id="forward-difference-operator-delta">
-<h2><span class="section-number">2.2.2. </span>Forward Difference Operator <span class="math notranslate nohighlight">\(\Delta\)</span><a class="headerlink" href="#forward-difference-operator-delta" title="Permalink to this headline">#</a></h2>
+</div>
+</div></div>
+<div class="section" id="forward-difference-operator-delta">
+<h2><span class="section-number">2.2.2. </span>Forward Difference Operator <span class="math notranslate nohighlight">\(\Delta\)</span><a class="headerlink" href="#forward-difference-operator-delta" title="Permalink to this heading">#</a></h2>
 <div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (Forward Difference)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order <span class="target" id="index-1"></span>forward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between the next member and itself:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-21718c24-5bb2-4958-8d78-4c9b371a42ec">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-21718c24-5bb2-4958-8d78-4c9b371a42ec" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3ecb4e2b-b4ee-4ae3-ad4e-e97240052b99">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-3ecb4e2b-b4ee-4ae3-ad4e-e97240052b99" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta f_j = f_{j+1} - f_j,
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k-\)</span>th order forward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-72a7a619-5a59-413a-b9f8-50c14f2dbadf">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-72a7a619-5a59-413a-b9f8-50c14f2dbadf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cfa8eda9-f149-4817-a462-54d481971c93">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-cfa8eda9-f149-4817-a462-54d481971c93" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta^k f_j= \Delta\left(\Delta^{k-1} f_j \right).
 \end{equation}\]</div>
-</section>
+</div>
 </div><div class="proof example admonition" id="example-2">
 <p class="admonition-title"><span class="caption-number">Example 2.1 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\Delta f_0 = f_1 - f_0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\Delta f_{10}= f_{11} - f_{10}\)</span></p></li>
 </ul>
-</section>
+</div>
 </div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For function <span class="math notranslate nohighlight">\(f(x)\)</span>, <span class="math notranslate nohighlight">\(x\in\mathbb{R}\)</span> with a step size <span class="math notranslate nohighlight">\(h\)</span>,</p>
@@ -492,31 +508,31 @@ document.write(`
   \]</div>
 </li>
 </ul>
-</section>
-<section id="backward-difference-operator-nabla">
-<h2><span class="section-number">2.2.3. </span>Backward difference operator <span class="math notranslate nohighlight">\(\nabla\)</span><a class="headerlink" href="#backward-difference-operator-nabla" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="backward-difference-operator-nabla">
+<h2><span class="section-number">2.2.3. </span>Backward difference operator <span class="math notranslate nohighlight">\(\nabla\)</span><a class="headerlink" href="#backward-difference-operator-nabla" title="Permalink to this heading">#</a></h2>
 <div class="proof definition admonition" id="definition-3">
 <p class="admonition-title"><span class="caption-number">Definition 2.2 </span> (Backward Difference)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order <span class="target" id="index-2"></span>backward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between itself and the previous member:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-338aab2d-a989-4a9f-8154-090b9391bfaf">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-338aab2d-a989-4a9f-8154-090b9391bfaf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-43619fcb-fc39-4c93-9e00-021476f12f88">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-43619fcb-fc39-4c93-9e00-021476f12f88" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla f_j = f_{j} - f_{j-1},
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k\)</span>-th order backward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2086c002-74bb-43cc-8e1b-5c96ec013a16">
-<span class="eqno">(2.4)<a class="headerlink" href="#equation-2086c002-74bb-43cc-8e1b-5c96ec013a16" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9d3ca9c2-03b0-48f1-a882-9b429e8ffb69">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-9d3ca9c2-03b0-48f1-a882-9b429e8ffb69" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla^k f_j= \nabla\left(\nabla^{k-1} f_j \right).
 \end{equation}\]</div>
-</section>
+</div>
 </div><div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 2.2 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\nabla f_1 = f_1 - f_0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\nabla f_0 = f_0 - f_{-1}\)</span></p></li>
 </ul>
-</section>
+</div>
 </div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For function <span class="math notranslate nohighlight">\(f(x)\)</span>, <span class="math notranslate nohighlight">\(x\in\mathbb{R}\)</span> with a step size <span class="math notranslate nohighlight">\(h\)</span>,</p>
@@ -552,16 +568,16 @@ document.write(`
   \]</div>
 </li>
 </ul>
-</section>
-<section id="shift-operators-s-and-s-1">
-<h2><span class="section-number">2.2.4. </span>Shift operators <span class="math notranslate nohighlight">\(\S\)</span> and <span class="math notranslate nohighlight">\(\S ^{-1}\)</span><a class="headerlink" href="#shift-operators-s-and-s-1" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="shift-operators-s-and-s-1">
+<h2><span class="section-number">2.2.4. </span>Shift operators <span class="math notranslate nohighlight">\(\S\)</span> and <span class="math notranslate nohighlight">\(\S ^{-1}\)</span><a class="headerlink" href="#shift-operators-s-and-s-1" title="Permalink to this heading">#</a></h2>
 <div class="proof definition admonition" id="definition-5">
 <p class="admonition-title"><span class="caption-number">Definition 2.3 </span></p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>,
 we define <span class="math notranslate nohighlight">\(\S\)</span> as an operator <span class="target" id="index-3"></span>shifting a member in a sequence to the next member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d84b07e2-0190-4bfd-8e6f-25f8dd886f75">
-<span class="eqno">(2.5)<a class="headerlink" href="#equation-d84b07e2-0190-4bfd-8e6f-25f8dd886f75" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0e1888a5-abfa-4195-90f4-c47472cf2067">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-0e1888a5-abfa-4195-90f4-c47472cf2067" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \S  f_j = f_{j+1},
 \end{equation}\]</div>
 <p>and shifting a member forward <span class="math notranslate nohighlight">\(k\)</span> times gives</p>
@@ -569,14 +585,14 @@ we define <span class="math notranslate nohighlight">\(\S\)</span> as an operato
 \[\S ^k f_j= \S  \S ^{k-1}f_j)= f_{j+k}.\]</div>
 <p>Similarly, we define <span class="math notranslate nohighlight">\(\S ^{-1}\)</span> as an operator shifting a member in a
 sequence to the previous member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bc05f75a-8f27-4596-9a9e-72dc7e3a02dc">
-<span class="eqno">(2.6)<a class="headerlink" href="#equation-bc05f75a-8f27-4596-9a9e-72dc7e3a02dc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d6c55000-44ee-4f99-8580-1a252d23c112">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-d6c55000-44ee-4f99-8580-1a252d23c112" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \S ^{-1} f_j = f_{j-1}
 \end{equation}\]</div>
 <p>and shifting a member backward <span class="math notranslate nohighlight">\(k\)</span> (<span class="math notranslate nohighlight">\(k&gt;0\)</span>) times gives</p>
 <div class="math notranslate nohighlight">
 \[\S ^{-k} f_j= \S ^{-1}(\S ^{-(k-1)}f_j)= f_{j-k}.\]</div>
-</section>
+</div>
 </div><div class="admonition-note admonition">
 <p class="admonition-title">Note</p>
 <p>The forward and backward shifting operations can also be applied to
@@ -606,14 +622,14 @@ functions defined on continuous domains</p>
 </div>
 <div class="proof theorem admonition" id="theorem-6">
 <p class="admonition-title"><span class="caption-number">Theorem 2.1 </span></p>
-<section class="theorem-content" id="proof-content">
+<div class="theorem-content section" id="proof-content">
 <p>The <span class="target" id="index-4"></span>difference operators and <span class="target" id="index-5"></span>shift operators have the following
 relations:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\S =1+\Delta\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\S ^{-1}=1-\nabla\)</span></p></li>
 </ul>
-</section>
+</div>
 </div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Proof (click to show)<div class="sd-summary-down docutils">
@@ -647,8 +663,8 @@ Proof (click to show)<div class="sd-summary-down docutils">
 \end{aligned}
 \end{split}\]</div>
 </div>
-</details></section>
-</section>
+</details></div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -663,7 +679,7 @@ Proof (click to show)<div class="sd-summary-down docutils">
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\02"
+            path: "./chaps/02"
         },
         predefinedOutput: true
     }
@@ -675,11 +691,10 @@ Proof (click to show)<div class="sd-summary-down docutils">
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap02_1_introduction.html"
@@ -699,10 +714,7 @@ Proof (click to show)<div class="sd-summary-down docutils">
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -742,6 +754,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023--2025.
@@ -753,7 +766,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 31 December 2023.
+  Last updated on 01 January 2024.
   <br/>
 </p>
   </div>
@@ -771,8 +784,8 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -780,8 +793,9 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
     <div class="footer-items__start">
       
         <div class="footer-item">
+
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     <br/>
   </p>
 </div>
@@ -789,10 +803,12 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
     </div>
   
   
+  
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
 </p></div>
       
     </div>

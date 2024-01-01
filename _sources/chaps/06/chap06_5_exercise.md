@@ -43,9 +43,9 @@ Thus the characteristic equation is
 
 $$
 \begin{aligned}
-L(\xi, h\lambda) & = \sum_{i=0}^{k} \left(\alpha_i - h\lambda \beta_i \right) \xi^i \\
-& = (\alpha_1 - h\lambda \beta_1) \xi +  (\alpha_0 - h\lambda \beta_0) \\
-& = (1-h\lambda) \xi - 1 \\
+L(z, h\lambda) & = \sum_{i=0}^{k} \left(\alpha_i - h\lambda \beta_i \right) z^i \\
+& = (\alpha_1 - h\lambda \beta_1) z +  (\alpha_0 - h\lambda \beta_0) \\
+& = (1-h\lambda) z - 1 \\
 & = 0
 \end{aligned}
 $$
@@ -53,10 +53,10 @@ $$
 so
 
 $$
-\xi = \frac{1}{1-h\lambda}
+z = \frac{1}{1-h\lambda}
 $$
 
-In the stability interval, it is requested that $|\xi(h\lambda)|\leq 1$, so
+In the stability interval, it is requested that $|z(h\lambda)|\leq 1$, so
 
 $$
 \left\vert \frac{1}{1-h\lambda} \right\vert \leq 1
@@ -112,7 +112,7 @@ show that
     so we get the characteristic equation
 
     $$
-    L(\xi, h\lambda) = \xi^2 - \frac{1}{2} h\lambda \xi - \left(1+\frac{3}{2} h \lambda\right)
+    L(z, h\lambda) = z^2 - \frac{1}{2} h\lambda z - \left(1+\frac{3}{2} h \lambda\right)
     =0
     $$
 
@@ -121,7 +121,7 @@ show that
     ```matlab
     format rat
 
-    disp(['       H           |\xi_1|         |\xi_2|']);
+    disp(['       H           |z_1|         |z_2|']);
     disp(['------------------------------------------']);
     for H=-12/6: 1/6 : 6/6
         p=[1 -0.5*H -(1+1.5*H)];
@@ -132,7 +132,7 @@ show that
 
     Output
     ```none
-        H           |\xi_1|         |\xi_2|
+        H           |z_1|         |z_2|
     ------------------------------------------
         -2           1393/985       1393/985   
         -11/6         1012/765       1012/765   
@@ -162,20 +162,20 @@ show that
     The first and second characteristic polynomials are
 
     $$
-    \rho(\xi) = \xi^2 - 1, \quad \sigma(\xi) = \frac{1}{2}\xi  + \frac{3}{2}
+    \rho(z) = z^2 - 1, \quad \sigma(z) = \frac{1}{2}z  + \frac{3}{2}
     $$
 
-    Let $L(\xi,h\lambda)=\rho(\xi)-h\lambda \sigma(\xi)=0$ and $\xi=e^{i\theta}$
+    Let $L(z,h\lambda)=\rho(z)-h\lambda \sigma(z)=0$ and $z=e^{\i\theta}$
 
     $$
     \begin{aligned}
-    h \lambda = \frac{\rho(\xi)}{\sigma(\xi)} 
-             = \frac{\xi^2 - 1}{\frac{1}{2}\xi  + \frac{3}{2}}
-            & = \frac{2(e^{i\theta}-1)}{e^{i\theta}+3} \\
-            & = \frac{2(e^{i\theta}-1)(e^{-i\theta+3})}{(e^{i\theta}+3)(e^{-i\theta+3})} \\
-            & = \frac{2\left[-6\sin^2 \theta + i \sin \theta (6\cos \theta +2)\right]}{10+6\cos \theta} \\
-            & = \frac{-6\sin^2 \theta }{5+3\cos \theta} + i \frac{\sin \theta (6\cos \theta +2)}{5+3\cos \theta} \\
-            & = x(h\lambda) + i y(h\lambda)
+    h \lambda = \frac{\rho(z)}{\sigma(z)} 
+             = \frac{z^2 - 1}{\frac{1}{2}z  + \frac{3}{2}}
+            & = \frac{2(e^{\i\theta}-1)}{e^{\i\theta}+3} \\
+            & = \frac{2(e^{\i\theta}-1)(e^{-\i\theta+3})}{(e^{\i\theta}+3)(e^{-\i\theta+3})} \\
+            & = \frac{2\left[-6\sin^2 \theta + \i \sin \theta (6\cos \theta +2)\right]}{10+6\cos \theta} \\
+            & = \frac{-6\sin^2 \theta }{5+3\cos \theta} + \i \frac{\sin \theta (6\cos \theta +2)}{5+3\cos \theta} \\
+            & = x(\theta) + \i y(\theta)
     \end{aligned}
     $$
 
@@ -266,7 +266,7 @@ Find the stability interval and region for the following methods:
         The characteristic equation is
 
         $$
-        L(\xi, h\lambda) = \xi^3 - (1+\frac{23}{12}h\lambda) \xi^2 + \frac{16}{12}h\lambda\xi - \frac{5}{12} h \lambda=0
+        L(z, h\lambda) = z^3 - (1+\frac{23}{12}h\lambda) z^2 + \frac{16}{12}h\lambda z - \frac{5}{12} h \lambda=0
         $$
 
         Use Matlab
@@ -313,15 +313,15 @@ Find the stability interval and region for the following methods:
         The first and second characteristic polynomials are
 
         $$
-        \rho(\xi)=\xi^3-\xi^2, \quad 
-        \sigma(\xi)=\frac{23}{12}\xi^2 - \frac{16}{12}\xi + \frac{5}{12}
+        \rho(z)=z^3-z^2, \quad 
+        \sigma(z)=\frac{23}{12}z^2 - \frac{16}{12}z + \frac{5}{12}
         $$
 
         so
 
         $$
-            H = h \lambda = \frac{\rho(\xi)}{\sigma(\xi)}
-                =\frac{\xi^3-\xi^2}{\frac{23}{12}\xi^2 - \frac{16}{12}\xi + \frac{5}{12}}
+            H = h \lambda = \frac{\rho(z)}{\sigma(z)}
+                =\frac{z^3-z^2}{\frac{23}{12}z^2 - \frac{16}{12}z + \frac{5}{12}}
         $$
 
         Use Matlab
@@ -357,8 +357,8 @@ Find the stability interval and region for the following methods:
         The characteristic equation is
 
         $$
-        L(\xi, h\lambda) = \left(1-\frac{5}{12}h\lambda\right)\xi^2
-        - \left(1+\frac{8}{12}h\lambda\right)\xi + \frac{1}{12} h \lambda
+        L(z, h\lambda) = \left(1-\frac{5}{12}h\lambda\right)z^2
+        - \left(1+\frac{8}{12}h\lambda\right)z + \frac{1}{12} h \lambda
         =0
         $$
 
@@ -406,9 +406,9 @@ Find the stability interval and region for the following methods:
         The first and second characteristic polynomials are
 
         $$
-        \rho(\xi) = \xi^2 - \xi,
+        \rho(z) = z^2 - z,
         \quad
-        \sigma(\xi) = \frac{5\xi^2 + 8 \xi - 1}{12}
+        \sigma(z) = \frac{5z^2 + 8 z - 1}{12}
         $$
 
         Use Matlab
@@ -459,17 +459,17 @@ $$
 The characteristic polynomial is
 
 $$
-L(\xi, h\lambda) = (1-\frac{1}{2}h\lambda)\xi - (1+\frac{1}{2}h\lambda)
+L(z, h\lambda) = (1-\frac{1}{2}h\lambda)z - (1+\frac{1}{2}h\lambda)
 $$
 
 $$
-\therefore \quad \xi = \frac{1+\frac{1}{2}h\lambda}{1-\frac{1}{2}h\lambda}
+\therefore \quad z = \frac{1+\frac{1}{2}h\lambda}{1-\frac{1}{2}h\lambda}
 $$
 
 To ensure 
 
 $$
-|\xi|= \frac{|1+\frac{1}{2}h\lambda|}{|1-\frac{1}{2}h\lambda|}
+|z|= \frac{|1+\frac{1}{2}h\lambda|}{|1-\frac{1}{2}h\lambda|}
      = \frac{|\frac{1}{2}h\lambda - (-1)|}{|\frac{1}{2}h\lambda - 1|}
      \leq 1
 $$ 
@@ -512,7 +512,7 @@ $$
 The characteristic equation
 
 $$
-\left(1-\frac{1}{3}h\lambda\right) \xi^2 - \frac{4}{3} h\lambda \xi - \left(1+\frac{1}{3}h\lambda\right)=0
+\left(1-\frac{1}{3}h\lambda\right) z^2 - \frac{4}{3} h\lambda z - \left(1+\frac{1}{3}h\lambda\right)=0
 $$
 
 Let $H=h\lambda$
@@ -545,7 +545,7 @@ Output
     1.0000    2.7321    0.7321
 ```
 
-From the output we can see that the modulus of one root is alway larger than $1$, so the method has no stability region.
+From the output we can see that the modulus of one root is alway larger than $1$, so the method has no stability interval.
 
 Now let's have a look at the stability region
 

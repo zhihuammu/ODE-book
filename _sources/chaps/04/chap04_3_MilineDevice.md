@@ -32,7 +32,7 @@ $$
 \begin{aligned}
     Y^{}_{j+1} &= y_j
     + \frac{h}{24}(55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3})
-    + C^{(p)}_5 h^5y^{(5)}(\xi_1), & x_{{j-3}} &\leq \xi_1 \leq x_{{j+1}}
+    + C^{(p)}_5 h^5y^{(5)}(z_1), & x_{{j-3}} &\leq z_1 \leq x_{{j+1}}
 \end{aligned}
 $$(eq:ch03:3.3)
 
@@ -40,7 +40,7 @@ $$
 \begin{aligned}
     Y_{j+1} &= y_j
     + \frac{h}{24}(9F_{j+1} + 19f_j - 5f_{j-1} + f_{j-2})
-    +C^{(c)}_5 h^5y^{(5)}(\xi_2), & x_{{j-2}} &\leq \xi_2 \leq x_{{j+1}}    
+    +C^{(c)}_5 h^5y^{(5)}(z_2), & x_{{j-2}} &\leq z_2 \leq x_{{j+1}}    
 \end{aligned}
 $$(eq:ch03:3.4)
 
@@ -50,7 +50,7 @@ From equations {eq}`eq:ch03:3.1` and {eq}`eq:ch03:3.3`
 
 $$
 \begin{aligned}
-    Y_{j+1} - y^{(p)}_{j+1} ~=~ C^{(p)}_5 h^5y^{(5)}(\xi_1)
+    Y_{j+1} - y^{(p)}_{j+1} ~=~ C^{(p)}_5 h^5y^{(5)}(z_1)
 \end{aligned}
 $$(eq:ch03:3.5)
 
@@ -60,10 +60,10 @@ $$
 
 \begin{aligned}
     Y_{j+1} - y_{j+1}^{(c)} ~&=~  \frac{9h}{24}
-    \left(F_{j+1} - f_{j+1}^{(p)}\right) +C^{(c)}_5 h^5y^{(5)}(\xi_2)\\[4pt]    
+    \left(F_{j+1} - f_{j+1}^{(p)}\right) +C^{(c)}_5 h^5y^{(5)}(z_2)\\[4pt]    
     &=~ \frac{9h}{24}
-    \left(f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(p)})\right) +C^{(c)}_5 h^5y^{(5)}(\xi_2)\\[4pt]
-    &=~ \frac{3h}{8}(Y_{j+1} - y_{j+1}^{(c)})f_y(x_{j+1},\eta){+C^{(c)}_5 h^5y^{(5)}(\xi_2)}
+    \left(f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(p)})\right) +C^{(c)}_5 h^5y^{(5)}(z_2)\\[4pt]
+    &=~ \frac{3h}{8}(Y_{j+1} - y_{j+1}^{(c)})f_y(x_{j+1},\eta){+C^{(c)}_5 h^5y^{(5)}(z_2)}
 \end{aligned}
 
 $$
@@ -75,16 +75,16 @@ Using the Mean Value Theorem, we can get
 $$
 \begin{aligned}
 f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(p)}) 
-& = f_y (x_{j+1},\xi) \left( Y_{j+1} - y_{j+1}^{(p)} \right) \\
-& = f_y (x_{j+1},\xi) \left( Y_{j+1} - y_{j+1}^{(c)} \right)  \left[1+ \frac{y_{j+1}^{(c)}-y_{j+1}^{(p)}}{Y_{j+1}-y_{j+1}^{(c)}}   \right] \\
+& = f_y (x_{j+1},z) \left( Y_{j+1} - y_{j+1}^{(p)} \right) \\
+& = f_y (x_{j+1},z) \left( Y_{j+1} - y_{j+1}^{(c)} \right)  \left[1+ \frac{y_{j+1}^{(c)}-y_{j+1}^{(p)}}{Y_{j+1}-y_{j+1}^{(c)}}   \right] \\
 & = \left( Y_{j+1} - y_{j+1}^{(c)} \right)  f_y (x_{j+1},\eta)   \\
 \end{aligned}
 $$
 
-where $Y_{j+1}\leq \xi \leq y_{j+1}^{(p)}$, $Y_{j+1}\leq \eta \leq y_{j+1}^{(c)}$ and we assume
+where $Y_{j+1}\leq z \leq y_{j+1}^{(p)}$, $Y_{j+1}\leq \eta \leq y_{j+1}^{(c)}$ and we assume
 
 $$
-f_y (x_{j+1},\eta) = f_y (x_{j+1},\xi) \left[1+ \frac{y_{j+1}^{(c)}-y_{j+1}^{(p)}}{Y_{j+1}-y_{j+1}^{(c)}}   \right]
+f_y (x_{j+1},\eta) = f_y (x_{j+1},z) \left[1+ \frac{y_{j+1}^{(c)}-y_{j+1}^{(p)}}{Y_{j+1}-y_{j+1}^{(c)}}   \right]
 $$
 
 :::
@@ -103,7 +103,7 @@ $$
 \begin{aligned}
     \left(Y_{j+1} - y_{j+1}^{(c)}\right) \left\{
         1 - \frac{3h}{8}f_y(x_{j+1},\eta)
-    \right\} ~=~ C_5^{(c)} h^5 y^{(5)}(\xi_2)
+    \right\} ~=~ C_5^{(c)} h^5 y^{(5)}(z_2)
 \end{aligned}
 
 $$
@@ -123,13 +123,13 @@ $$
 
 $$
 \begin{aligned}
-    Y_{j+1} - y_{j+1}^{(c)} ~\simeq~ C_5^{(c)} h^5y^{(5)}(\xi_2)  
+    Y_{j+1} - y_{j+1}^{(c)} ~\simeq~ C_5^{(c)} h^5y^{(5)}(z_2)  
 \end{aligned}
 $$(eq:ch03:3.6)
 
  We also assume that $\,y^{(5)}(x)\,$ does not vary strongly
-over the interval $\,(x_{j-3},x_{j+1})\,$ so that $y^{(5)}(\xi_1)\,$ and
-$\,y^{(5)}(\xi_2)\,$ are approximately equal. Eliminating these fifth
+over the interval $\,(x_{j-3},x_{j+1})\,$ so that $y^{(5)}(z_1)\,$ and
+$\,y^{(5)}(z_2)\,$ are approximately equal. Eliminating these fifth
 derivatives between {eq}`eq:ch03:3.5` and {eq}`eq:ch03:3.6`
 gives 
 
@@ -183,7 +183,7 @@ errors propagated from previous calculations are negligible.
 
 The above analysis easily generalizes to any predictor-corrector process
 in which the predictor formula has a truncation error of the form
-$\,C_n^{(p)}h^ny^{(n)}(\xi_1)\,$ and the corrector formula has a truncation error of the form $\,C_n^{(c)}h^ny^{(n)}(\xi_2)\,$, then
+$\,C_n^{(p)}h^ny^{(n)}(z_1)\,$ and the corrector formula has a truncation error of the form $\,C_n^{(c)}h^ny^{(n)}(z_2)\,$, then
 an estimate of the error arising from the truncation is given by,
 
 $$

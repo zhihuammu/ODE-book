@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3.4. Implicit or Closed Multistep Methods &#8212; Linear Multistep Methods</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -42,12 +41,14 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -65,7 +66,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\hat{i}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/03/chap03_4_implicit';</script>
     <link rel="shortcut icon" href="../../_static/ode.png"/>
@@ -75,6 +76,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="3.3. Explicit or Open Multistep Methods" href="chap03_3_explicit.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="01 January 2024"/>
   </head>
   
   
@@ -83,6 +85,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -136,9 +147,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -148,8 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
+    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Linear Multistep Methods - Home"/>`);</script>
   
   
 </a></div>
@@ -164,10 +177,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_0.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_1_definition.html">Definitions, Classification and Terminology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_2_ode.html">Ordinary Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_3_analytical.html">Analytical Methods for ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_symbols.html">Symbols and Notation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_A0_DE.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A1_definition.html">Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A2_ode.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A3_analytical.html">Analytical Methods for ODEs</a></li>
 </ul>
 </li>
 </ul>
@@ -350,20 +364,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -392,8 +408,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="implicit-or-closed-multistep-methods">
-<h1><span class="section-number">3.4. </span>Implicit or Closed Multistep Methods<a class="headerlink" href="#implicit-or-closed-multistep-methods" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="implicit-or-closed-multistep-methods">
+<h1><span class="section-number">3.4. </span>Implicit or Closed Multistep Methods<a class="headerlink" href="#implicit-or-closed-multistep-methods" title="Permalink to this heading">#</a></h1>
 <p>Implicit (closed) methods are derived by using the additional point
 <span class="math notranslate nohighlight">\(\,(x_{j+1},y_{j+1})\,\)</span> as an interpolation node in the approximation of
 the integral <span class="math notranslate nohighlight">\(\displaystyle \int_{x_j}^{x_{j+1}} f(x,y) \dx\)</span>. The simplest of the
@@ -405,45 +421,45 @@ implicit methods is the <em>Backward Euler</em> method:</p>
 \end{aligned}
 \]</div>
 <p>with the local truncation error:
-<span class="math notranslate nohighlight">\(\displaystyle \tau_{j+1} = -\frac{1}{2}y^{(2)}(\xi_j)h^2,
-    ~\ x_j &lt; \xi_j &lt; x_{j+1}\)</span>.</p>
+<span class="math notranslate nohighlight">\(\displaystyle \tau_{j+1} = -\frac{1}{2}y^{(2)}(z_j)h^2,
+    ~\ x_j &lt; z_j &lt; x_{j+1}\)</span>.</p>
 <p>Some of the more common implicit methods are listed below:</p>
 <ul>
 <li><p><span class="target" id="index-0"></span>Adams–Moulton One–Step Method, <span class="math notranslate nohighlight">\(k=1\)</span></p>
 <p><span class="math notranslate nohighlight">\(\displaystyle y_{j+1} = y_j + \frac{h}{2}\bigl[\,f_{j+1} + f_j\,\bigr]\)</span>
 (this is the <em>Trapezoidal</em> method)<br />
 with the local truncation error:
-<span class="math notranslate nohighlight">\(\displaystyle \tau_{j+1} = -\frac{1}{12}y^{(3)}(\xi_j)h^3,
-  ~\ x_j &lt; \xi_j &lt; x_{j+1}\)</span>.</p>
+<span class="math notranslate nohighlight">\(\displaystyle \tau_{j+1} = -\frac{1}{12}y^{(3)}(z_j)h^3,
+  ~\ x_j &lt; z_j &lt; x_{j+1}\)</span>.</p>
 </li>
 <li><p>Adams–Moulton Two–Step Method, <span class="math notranslate nohighlight">\(k=2\)</span></p>
 <p><span class="math notranslate nohighlight">\(\displaystyle y_{j+1} = y_j + \frac{h}{12}\bigl[\,5f_{j+1} + 8f_j - f_{j-1}\,\bigr]\)</span><br />
 with the local truncation error:
-<span class="math notranslate nohighlight">\(\displaystyle \tau_{j+1} = -\frac{1}{24}y^{(4)}(\xi_j)h^4,
-  ~\ x_j &lt; \xi_j &lt; x_{j+1}\)</span>.</p>
+<span class="math notranslate nohighlight">\(\displaystyle \tau_{j+1} = -\frac{1}{24}y^{(4)}(z_j)h^4,
+  ~\ x_j &lt; z_j &lt; x_{j+1}\)</span>.</p>
 </li>
 <li><p>Adams–Moulton Three–Step Method, <span class="math notranslate nohighlight">\(k=3\)</span></p>
 <p><span class="math notranslate nohighlight">\(\displaystyle y_{j+1} = y_j + \frac{h}{24}\bigl[\,9f_{j+1} + 19f_j - 5f_{j-1} + f_{j-2}\,\bigr]\)</span><br />
 with the local truncation error:
-<span class="math notranslate nohighlight">\(\displaystyle \tau_{j+1} = -\frac{19}{720}y^{(5)}(\xi_j)h^5,
-  ~\ x_j &lt; \xi_j &lt; x_{j+1}\)</span>.</p>
+<span class="math notranslate nohighlight">\(\displaystyle \tau_{j+1} = -\frac{19}{720}y^{(5)}(z_j)h^5,
+  ~\ x_j &lt; z_j &lt; x_{j+1}\)</span>.</p>
 </li>
 <li><p>Adams–Moulton Four–Step Method, <span class="math notranslate nohighlight">\(k=4\)</span></p>
 <p><span class="math notranslate nohighlight">\(\displaystyle y_{j+1} = y_j + \frac{h}{720}\bigl[\,251f_{j+1} + 646f_j - 264f_{j-1} + 106f_{j-2} - 19f_{j-3}\,\bigr]\)</span><br />
 with the local truncation error:
-<span class="math notranslate nohighlight">\(\displaystyle \tau_{j+1} = -\frac{3}{160}y^{(6)}(\xi_j)h^6,
-  ~\ x_j &lt; \xi_j &lt; x_{j+1}\)</span>.</p>
+<span class="math notranslate nohighlight">\(\displaystyle \tau_{j+1} = -\frac{3}{160}y^{(6)}(z_j)h^6,
+  ~\ x_j &lt; z_j &lt; x_{j+1}\)</span>.</p>
 </li>
 </ul>
 <p>It is important to compare an <span class="math notranslate nohighlight">\(m\)</span>–step Adams–Bashforth open method to
 an <span class="math notranslate nohighlight">\((m\!-\!1)\)</span>–step Adams–Moulton closed method. Both require <span class="math notranslate nohighlight">\(m\)</span>
 evaluations of <span class="math notranslate nohighlight">\(f\)</span> per step, and both have the terms
-<span class="math notranslate nohighlight">\(\,y^{m\!+\!1}(\xi)\,h^{m\!+\!1}\,\)</span> in their local truncation errors. In
+<span class="math notranslate nohighlight">\(\,y^{m\!+\!1}(z)\,h^{m\!+\!1}\,\)</span> in their local truncation errors. In
 general, the coefficients of the terms involving <span class="math notranslate nohighlight">\(f\)</span> and those in the
 local truncation error are smaller for the Adams–Moulton methods. This
 means a greater stability for the closed methods and smaller rounding
 errors.</p>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -458,7 +474,7 @@ errors.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\03"
+            path: "./chaps/03"
         },
         predefinedOutput: true
     }
@@ -470,11 +486,10 @@ errors.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap03_3_explicit.html"
@@ -494,10 +509,7 @@ errors.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -520,6 +532,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023--2025.
@@ -531,7 +544,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 31 December 2023.
+  Last updated on 01 January 2024.
   <br/>
 </p>
   </div>
@@ -549,8 +562,8 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -558,8 +571,9 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
     <div class="footer-items__start">
       
         <div class="footer-item">
+
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     <br/>
   </p>
 </div>
@@ -567,10 +581,12 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
     </div>
   
   
+  
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
 </p></div>
       
     </div>
