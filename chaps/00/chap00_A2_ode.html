@@ -76,7 +76,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Definitions, Classification and Terminology" href="chap00_A1_definition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Monday 01 January 2024 18:01:51 GMT"/>
+    <meta name="docbuild:last-update" content="Monday 01 January 2024 20:19:11 GMT"/>
   </head>
   
   
@@ -178,6 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00_B_symbols.html">Symbols and Notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap00_B_theorems.html">Basic Theorems</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chap00_A0_DE.html">Basics of Differential Equations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chap00_A1_definition.html">Definitions, Classification and Terminology</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Ordinary Differential Equations</a></li>
@@ -427,7 +428,7 @@ document.write(`
 <ul id="index-1">
 <li><p><strong>General Form</strong></p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-form-general">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eq-ode-form-general" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq-ode-form-general" title="Permalink to this equation">#</a></span>\[
     F(x, y, y', y'', \ldots, y^{(n)}) = 0
     \]</div>
 </li>
@@ -435,7 +436,7 @@ document.write(`
 <ul id="index-2">
 <li><p><strong>Normal form</strong></p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-form-normal">
-<span class="eqno">(3)<a class="headerlink" href="#equation-eq-ode-form-normal" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq-ode-form-normal" title="Permalink to this equation">#</a></span>\[
     \diff[n]{y}{x} = f(x, y', y'', \ldots, y^{(n-1)})
     \]</div>
 </li>
@@ -443,7 +444,7 @@ document.write(`
 <div class="proof remark admonition" id="remark-0">
 <span id="index-3"></span><p class="admonition-title"><span class="caption-number">Remark 4 </span> (Interval of definition <span class="math notranslate nohighlight">\(I\)</span>)</p>
 <div class="remark-content section" id="proof-content">
-<p>For a problem governed/represented by an ODE, we need to give the actual ODE in form <a class="reference internal" href="#equation-eq-ode-form-general">(2)</a> or <a class="reference internal" href="#equation-eq-ode-form-normal">(3)</a>, besides we also need to give the interval <span class="math notranslate nohighlight">\(I\)</span> that defines the problem. We call this interval <span class="math notranslate nohighlight">\(I\)</span>:</p>
+<p>For a problem governed/represented by an ODE, we need to give the actual ODE in form <a class="reference internal" href="#equation-eq-ode-form-general">(6)</a> or <a class="reference internal" href="#equation-eq-ode-form-normal">(7)</a>, besides we also need to give the interval <span class="math notranslate nohighlight">\(I\)</span> that defines the problem. We call this interval <span class="math notranslate nohighlight">\(I\)</span>:</p>
 <ul class="simple">
 <li><p>the <strong><span class="target" id="index-4"></span>interval of definition</strong>,</p></li>
 <li><p>the <strong>interval of existence</strong>,</p></li>
@@ -461,7 +462,7 @@ document.write(`
 </div><div class="proof definition admonition" id="definition-1">
 <span id="index-5"></span><p class="admonition-title"><span class="caption-number">Definition 2 </span> (Explicit Solution of an ODE)</p>
 <div class="definition-content section" id="proof-content">
-<p>A function <span class="math notranslate nohighlight">\(\phi(x)\)</span> that when substituted for <span class="math notranslate nohighlight">\(y\)</span> in equation <a class="reference internal" href="#equation-eq-ode-form-general">(2)</a> or <a class="reference internal" href="#equation-eq-ode-form-normal">(3)</a>
+<p>A function <span class="math notranslate nohighlight">\(\phi(x)\)</span> that when substituted for <span class="math notranslate nohighlight">\(y\)</span> in equation <a class="reference internal" href="#equation-eq-ode-form-general">(6)</a> or <a class="reference internal" href="#equation-eq-ode-form-normal">(7)</a>
 satisfies the equation for all <span class="math notranslate nohighlight">\(x\)</span> in the interval <span class="math notranslate nohighlight">\(I\)</span> is called an <strong><span class="target" id="index-6"></span>explicit solution</strong> to the equation on <span class="math notranslate nohighlight">\(I\)</span>.</p>
 </div>
 </div><div class="proof example admonition" id="example-2">
@@ -485,7 +486,7 @@ satisfies the equation for all <span class="math notranslate nohighlight">\(x\)<
 </div><div class="proof definition admonition" id="definition-3">
 <span id="index-7"></span><p class="admonition-title"><span class="caption-number">Definition 3 </span> (Implicit Solution of an ODE)</p>
 <div class="definition-content section" id="proof-content">
-<p>A relation <span class="math notranslate nohighlight">\(G(x, y) = 0\)</span> is said to be an <strong><span class="target" id="index-8"></span>implicit solution</strong> of an ordinary differential equation <a class="reference internal" href="#equation-eq-ode-form-general">(2)</a> on an interval <span class="math notranslate nohighlight">\(I\)</span>, provided that there exists at least one function <span class="math notranslate nohighlight">\(\phi\)</span> that satisfies the relation as well as the differential equation on <span class="math notranslate nohighlight">\(I\)</span>.</p>
+<p>A relation <span class="math notranslate nohighlight">\(G(x, y) = 0\)</span> is said to be an <strong><span class="target" id="index-8"></span>implicit solution</strong> of an ordinary differential equation <a class="reference internal" href="#equation-eq-ode-form-general">(6)</a> on an interval <span class="math notranslate nohighlight">\(I\)</span>, provided that there exists at least one function <span class="math notranslate nohighlight">\(\phi\)</span> that satisfies the relation as well as the differential equation on <span class="math notranslate nohighlight">\(I\)</span>.</p>
 </div>
 </div><div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 5 </span></p>
@@ -662,7 +663,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Monday 01 January 2024 18:01:51 GMT.
+  Last updated on Monday 01 January 2024 20:19:11 GMT.
   <br/>
 </p>
   </div>

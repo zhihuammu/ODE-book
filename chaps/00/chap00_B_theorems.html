@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8.6. Chapter 8 Exercises &#8212; Linear Multistep Methods</title>
+    <title>Basic Theorems &#8212; Linear Multistep Methods</title>
   
   
   
@@ -68,12 +68,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/08/chap08_6_exercise';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/00/chap00_B_theorems';</script>
     <link rel="shortcut icon" href="../../_static/ode.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="8.7. Answers to Chapter 8 Exercises" href="chap08_7_answers.html" />
-    <link rel="prev" title="8.5. Reordering and Matrix Bandwidth" href="chap08_5_reordering.html" />
+    <link rel="next" title="Basics of Differential Equations" href="chap00_A0_DE.html" />
+    <link rel="prev" title="Symbols and Notation" href="chap00_B_symbols.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Monday 01 January 2024 20:19:11 GMT"/>
@@ -176,18 +176,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../overview/readingList.html">Further Reading List</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_symbols.html">Symbols and Notation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_theorems.html">Basic Theorems</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_A0_DE.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A1_definition.html">Definitions, Classification and Terminology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A2_ode.html">Ordinary Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A3_analytical.html">Analytical Methods for ODEs</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap00_B_symbols.html">Symbols and Notation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Basic Theorems</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chap00_A0_DE.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chap00_A1_definition.html">Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap00_A2_ode.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap00_A3_analytical.html">Analytical Methods for ODEs</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">1. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../01/chap01_1_complexNumber.html">1.1. Complex Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01/chap01_2_sequence.html">1.2. Sequences</a></li>
@@ -243,14 +243,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_5_exercise.html">7.5. Chapter 7 Exercise</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap08_0.html">8. Computational Methods with Sparse Matrices</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chap08_1_introduction.html">8.1. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap08_2_sparseMatrix.html">8.2. Sparse Matrices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap08_3_graphTheory.html">8.3. Matrix Sparsity and Graph Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap08_4_storage.html">8.4. Sparse Matrices Storage and Reordering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap08_5_reordering.html">8.5. Reordering and Matrix Bandwidth</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.6. Chapter 8 Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap08_7_answers.html">8.7. Answers to Chapter 8 Exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08/chap08_0.html">8. Computational Methods with Sparse Matrices</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_1_introduction.html">8.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_2_sparseMatrix.html">8.2. Sparse Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_3_graphTheory.html">8.3. Matrix Sparsity and Graph Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_4_storage.html">8.4. Sparse Matrices Storage and Reordering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_5_reordering.html">8.5. Reordering and Matrix Bandwidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_6_exercise.html">8.6. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_7_answers.html">8.7. Answers to Chapter 8 Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -313,7 +313,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/chaps/08/chap08_6_exercise.md" target="_blank"
+      <li><a href="../../_sources/chaps/00/chap00_B_theorems.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -384,7 +384,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -395,11 +397,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 8 Exercises</h1>
+    <h1>Basic Theorems</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-expansion">Binomial expansion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-s-general-binomial-expansion">Newton’s general binomial expansion</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -409,56 +420,46 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-8-exercises">
-<span id="chap-sparsematrix-exercise"></span><h1><span class="section-number">8.6. </span>Chapter 8 Exercises<a class="headerlink" href="#chapter-8-exercises" title="Permalink to this heading">#</a></h1>
-<p>You should try the following exercise questions first, then check with the answers.</p>
-<p>For detailed solutions, please find them in the Moodle area for this Unit.</p>
-<div class="exercise admonition" id="ex-ch08-q1">
-
-<p class="admonition-title"><span class="caption-number">Exercise 8.1 </span></p>
-<div class="section" id="exercise-content">
-<ol class="arabic simple">
-<li><p>Write a Matlab mfile that produces the adjacency graph for the symmetric matrix A given in <a class="reference internal" href="chap08_5_reordering.html#ch08-example-comparison">Example 8.10</a>.</p></li>
-<li><p>Modify your mfile and repeat for the matrix :</p></li>
-</ol>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="basic-theorems">
+<h1>Basic Theorems<a class="headerlink" href="#basic-theorems" title="Permalink to this heading">#</a></h1>
+<div class="section" id="binomial-expansion">
+<span id="index-0"></span><h2>Binomial expansion<a class="headerlink" href="#binomial-expansion" title="Permalink to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\forall x \in \R,~ y\in \R\)</span> and <span class="math notranslate nohighlight">\(n \in \N\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq-bi-exap">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-bi-exap" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{aligned}
+(x+y)^n &amp; =  \begin{pmatrix} n \\ 0 \end{pmatrix} x^{n} y^0 + \begin{pmatrix} n \\ 1 \end{pmatrix} x^{n-1} y
+            + \begin{pmatrix} n \\ 2 \end{pmatrix} x^{n-2} y^2
+            + \ldots
+            + \begin{pmatrix} n \\ n-1 \end{pmatrix} x y^{n-1}
+            + \begin{pmatrix} n \\ n \end{pmatrix} x^0  y^{n} \\
+        &amp; = \sum_{k=0}^{n} \begin{pmatrix} n \\ k \end{pmatrix} x^{n-k} y^k,                
+\end{aligned}
+\end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-eq-bi-coe">
+<span id="index-1"></span><span class="eqno">(2)<a class="headerlink" href="#equation-eq-bi-coe" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{pmatrix} n \\ k \end{pmatrix} = \dfrac{n!}{k!(n-k)!}
+=\dfrac{n(n-1)(n-2)\cdots(n-k+1)}{k!}
+\end{split}\]</div>
+<p>is called the <em>binomial coefficient</em>.</p>
+<p>Let <span class="math notranslate nohighlight">\(y=1\)</span>, we get</p>
+<div class="math notranslate nohighlight" id="equation-eq-bi-exap-variant">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-bi-exap-variant" title="Permalink to this equation">#</a></span>\[
+(1+x)^{n}=1+nx+\frac{n(n-1)}{2!} x^{2}+\frac{n(n-1)(n-2)}{3!}x^{3}+\cdots +nx^{n-1}+x^{n}.
+\]</div>
+</div>
+<div class="section" id="newton-s-general-binomial-expansion">
+<h2>Newton’s general binomial expansion<a class="headerlink" href="#newton-s-general-binomial-expansion" title="Permalink to this heading">#</a></h2>
+<p>Instead of strictly using natural numbers <span class="math notranslate nohighlight">\(n\)</span> as the power in the binomial formula <a class="reference internal" href="#equation-eq-bi-exap">(1)</a>, we can loose the condition to introduce any real number <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(r\in\R\)</span>, as the power. Thus we can define the generalised binomial coefficient as</p>
+<div class="math notranslate nohighlight" id="equation-eq-bi-coe-general">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-bi-coe-general" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{pmatrix} r \\ k \end{pmatrix} 
+=\dfrac{r(r-1)(r-2)\cdots(r-k+1)}{k!},
+\end{split}\]</div>
+<p>and the generalised bionomial expansion</p>
 </div>
 </div>
-</div>
-<div class="exercise admonition" id="ex-ch08-q2">
-
-<p class="admonition-title"><span class="caption-number">Exercise 8.2 </span></p>
-<div class="section" id="exercise-content">
-<p>Consider the following adjacency graph with 10 nodes:</p>
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-ea1c5d3019c7476778c146c283b46223bbb3b3dd.svg" alt="Figure made with TikZ" /></p>
-</div><ol class="arabic simple">
-<li><p>Show the corresponding adjacency matrix <span class="math notranslate nohighlight">\(A\)</span> and calculate its bandwidth using the MATLAB command <code class="docutils literal notranslate"><span class="pre">bandwidth</span></code> (see <a class="reference external" href="https://uk.mathworks.com/help/matlab/ref/bandwidth.html?s_tid=srchtitle_site_search_1_bandwidth">here</a> for this command).</p></li>
-<li><p>Reorder the matrix <span class="math notranslate nohighlight">\(A\)</span> using the Cuthill-McKee (CM) algorithm and label the corresponding matrix <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
-<li><p>Reorder the matrix <span class="math notranslate nohighlight">\(A\)</span> using the RCM algorithm and label the corresponding matrix <span class="math notranslate nohighlight">\(C\)</span>.</p></li>
-<li><p>Compare the bandwidths of matrices <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(C\)</span> and comment on the computational efficiency when using matrix re-ordering.</p></li>
-<li><p>Plot the sparsity pattern of matrices <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span>, and verify your results by using the MATLAB function <code class="docutils literal notranslate"><span class="pre">symrcm(A)</span></code> (see <a class="reference external" href="https://uk.mathworks.com/help/matlab/ref/symrcm.html?searchHighlight=symrcm&amp;s_tid=srchtitle_support_results_1_symrcm">here</a> for this command).</p></li>
-<li><p>Reorder the Matrix <span class="math notranslate nohighlight">\(A\)</span> by Column Count (label <span class="math notranslate nohighlight">\(D\)</span>) and Minimum Degree (label <span class="math notranslate nohighlight">\(M\)</span>) schemes, write down the corresponding adjacency matrices and plot the adjacency graphs.</p></li>
-<li><p>For the three schemes RCM, CC and MD (i.e. matrices <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span> and <span class="math notranslate nohighlight">\(M\)</span>), perform LU factorisation and record the number of fill-in elements in a table, prepare a summary result table (similar to Figure 6 shown in <a class="reference internal" href="chap08_5_reordering.html#chap08-reorder-comparsion"><span class="std std-numref">Section 8.5.4</span></a>) and comment.</p></li>
-</ol>
-</div>
-</div>
-<!-- ::::{exercise}
-Repeat question 2 with the following adjacency graph with 9 nodes.
-
-```{tikz}
-:include: /images/08/ch7ex2v2.tikz
-```
-
-Calculate the storage in units of bytes for the full and sparse
-matrix $A$ and the reordered Matrices $D$ (Column Count) and $M$
-(Minimum Degree), and comment.
-:::: --></div>
 
     <script type="text/x-thebe-config">
     {
@@ -473,7 +474,7 @@ matrix $A$ and the reordered Matrices $D$ (Column Count) and $M$
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/08"
+            path: "./chaps/00"
         },
         predefinedOutput: true
     }
@@ -491,20 +492,20 @@ matrix $A$ and the reordered Matrices $D$ (Column Count) and $M$
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="chap08_5_reordering.html"
+       href="chap00_B_symbols.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8.5. </span>Reordering and Matrix Bandwidth</p>
+        <p class="prev-next-title">Symbols and Notation</p>
       </div>
     </a>
     <a class="right-next"
-       href="chap08_7_answers.html"
+       href="chap00_A0_DE.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8.7. </span>Answers to Chapter 8 Exercises</p>
+        <p class="prev-next-title">Basics of Differential Equations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -514,6 +515,21 @@ matrix $A$ and the reordered Matrices $D$ (Column Count) and $M$
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-expansion">Binomial expansion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-s-general-binomial-expansion">Newton’s general binomial expansion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
