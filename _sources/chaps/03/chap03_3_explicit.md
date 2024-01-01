@@ -1,4 +1,4 @@
-# Explicit or Open Multistep Methods
+# Explicit  Multistep Methods
 
 Although any type of the interpolating polynomials can be used for
 deriving the multistep methods, some can lead to algebraically easier

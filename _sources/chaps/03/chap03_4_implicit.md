@@ -1,4 +1,4 @@
-# Implicit or Closed Multistep Methods
+# Implicit  Multistep Methods
 
 Implicit (closed) methods are derived by using the additional point
 $\,(x_{j+1},y_{j+1})\,$ as an interpolation node in the approximation of
