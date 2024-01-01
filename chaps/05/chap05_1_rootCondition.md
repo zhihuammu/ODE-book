@@ -63,18 +63,18 @@ $$
 and get its {index}`characteristic equation`
 
 $$
-L(\xi, h\lambda)=
-\gamma_0 + \gamma_1 \xi + \gamma_2 \xi^2 + \cdots + \gamma_k \xi^k = 0
+L(z, h\lambda)=
+\gamma_0 + \gamma_1 z + \gamma_2 z^2 + \cdots + \gamma_k z^k = 0
 $$(eq:ch04:1.5)
 
 This is a polynomial equation of degree $k$ and has $k$
-roots, $\,\xi_1, \xi_2, \dots, \xi_k\,$, which may be real or complex.
+roots, $\,z_1, z_2, \dots, z_k\,$, which may be real or complex.
 If these roots are distinct, the general solution of the difference
 equation {eq}`eq:ch04:1.4` is 
 
 $$
 \begin{aligned}
-y_j ~=~ A_1\, \xi_1^j + A_2\, \xi_2^j + \,\dots\, + A_k\,\xi_k^j
+y_j ~=~ A_1\, z_1^j + A_2\, z_2^j + \,\dots\, + A_k\,z_k^j
 \end{aligned}
 $$(eq:ch04:1.6)
 
@@ -99,26 +99,26 @@ $$
 the expression in the form
 
 $$
-L(\xi, h\lambda) = \sum_{i=0}^k \left(\alpha_i - h\lambda \beta_i\right) \xi^i
+L(z, h\lambda) = \sum_{i=0}^k \left(\alpha_i - h\lambda \beta_i\right) z^i
 $$(eq:chap04:charpoly)
 
 is called its **{index}`characteristic polynomial`**.
 
 :::{note}
 :class: dropdown
-In some books, $\pi(\xi, h\lambda)$ is used to represent the characteristic polynomial.
+In some books, $\pi(z, h\lambda)$ is used to represent the characteristic polynomial.
 :::
 
 We call
 
 $$
-\rho(\xi) = \sum_{i=0}^{k} \alpha_i \xi^i
+\rho(z) = \sum_{i=0}^{k} \alpha_i z^i
 $$(eq:chap04:charpoly:first)
 
 the **{index}`first characteristic polynomial`**, and
 
 $$
-\sigma(\xi) = \sum_{i=0}^{k} \beta_i \xi^i
+\sigma(z) = \sum_{i=0}^{k} \beta_i z^i
 $$(eq:chap04:charpoly:second)
 
 the **{index}`second characteristic polynomial`** of the multistep method.
@@ -126,12 +126,12 @@ the **{index}`second characteristic polynomial`** of the multistep method.
 These polynomails given in equations {eq}`eq:chap04:charpoly`, {eq}`eq:chap04:charpoly:first` and {eq}`eq:chap04:charpoly:second` have the following relation
 
 $$
-L(\xi, h\lambda) = \rho(\xi) - h\lambda \sigma(\xi)
+L(z, h\lambda) = \rho(z) - h\lambda \sigma(z)
 $$(eq:chap04:chapoly:relation)
 ::::
 
 :::{prf:example}
-Find the characteristic polynomial $L(\xi, h\lambda)$ for a 2-step method 
+Find the characteristic polynomial $L(z, h\lambda)$ for a 2-step method 
 
 $$
 \alpha_0 y_{j-2} + \alpha_1 y_{j-1} + \alpha_2 y_{j}
@@ -172,11 +172,11 @@ $$
 
     $$
     \begin{aligned}
-    L(\xi, h\lambda) 
-    &=\sum_{i=0}^{2} (\alpha_i - h\lambda \beta_i) \xi^i\\
-    & = (\alpha_0-h\lambda \beta_0) \xi^0
-    + (\alpha_1-h\lambda \beta_1) \xi^1
-    + (\alpha_2-h\lambda \beta_2) \xi^2
+    L(z, h\lambda) 
+    &=\sum_{i=0}^{2} (\alpha_i - h\lambda \beta_i) z^i\\
+    & = (\alpha_0-h\lambda \beta_0) z^0
+    + (\alpha_1-h\lambda \beta_1) z^1
+    + (\alpha_2-h\lambda \beta_2) z^2
     \end{aligned}
     $$
 
@@ -186,11 +186,11 @@ $$
 
     $$
     \begin{aligned}
-    L(\xi, h\lambda) 
-    &=\sum_{i=0}^{2} (\alpha_i - h\lambda \beta_i) \xi^i\\
-    & = (\alpha_0-h\lambda \beta_0) \xi^0
-    + (\alpha_1-h\lambda \beta_1) \xi^1
-    + (\alpha_2-h\lambda \beta_2) \xi^2
+    L(z, h\lambda) 
+    &=\sum_{i=0}^{2} (\alpha_i - h\lambda \beta_i) z^i\\
+    & = (\alpha_0-h\lambda \beta_0) z^0
+    + (\alpha_1-h\lambda \beta_1) z^1
+    + (\alpha_2-h\lambda \beta_2) z^2
     \end{aligned}
     $$
 
@@ -198,9 +198,9 @@ $$
 
 
 :::{prf:definition} Root Condition
-Let $\,\xi_1,\xi_2,\dots,\xi_k\,$ denote the roots of the first
-characteristic polynomial $\,\rho(\xi)\,$ associated with a
-linear multistep method. If $\,|\xi_i|\leq1\,$, for each
+Let $\,z_1,z_2,\dots,z_k\,$ denote the roots of the first
+characteristic polynomial $\,\rho(z)\,$ associated with a
+linear multistep method. If $\,|z_i|\leq1\,$, for each
 $\,i=1,2,...,k\,$, and all roots with absolute value $1$ are simple
 roots (i.e. not repeated), then the difference method is said to satisfy
 the **{index}`root condition`**.
@@ -216,37 +216,37 @@ the **{index}`root condition`**.
 \coordinate (Z) at (35:20mm);
 
 \node[anchor = north west, inner sep = 0pt] at (2mm,24mm)
-{\scriptsize Im$(\xi)$};
-\node[anchor = west] at (24mm,0mm) {\scriptsize Re$(\xi)$};
+{\scriptsize Im$(z)$};
+\node[anchor = west] at (24mm,0mm) {\scriptsize Re$(z)$};
 
 \draw[domain=0:35, smooth] plot ({8mm*cos(\x)},{8mm*sin(\x)});
-\node at (17.5:6mm) {\scriptsize$\phi$};
+\node at (17.5:6mm) {\scriptsize$\theta$};
 
 \draw
 (0mm,0mm)
--- node[anchor = north, inner sep = 2pt] {\scriptsize\hspace*{2ex}cos$(\phi)$}
+-- node[anchor = north, inner sep = 2pt] {\scriptsize\hspace*{2ex}cos$(\theta)$}
 ({20mm*cos(35)},0mm)
 --
 (Z)
 -- node[anchor = south east, inner sep = 1pt] {\scriptsize$z$}
 (0mm,0mm);
 
-\node[anchor = south west, inner sep = 1pt] (S) at (20mm,8mm) {\scriptsize sin$(\phi)$};
+\node[anchor = south west, inner sep = 1pt] (S) at (20mm,8mm) {\scriptsize sin$(\theta)$};
 \draw[-Stealth] ({20mm*cos(35)},4mm) -- (S);
 ```
 
 :::{prf:definition} Stability
 A linear multistep method of order $\,\geq1\,$ is called *{index}`stable`* if the
-roots of its first characteristic polynomial $\,\rho(\xi)\,$ satisfies
-the root condition, i.e. the roots of $\,\rho(\xi)\,$ lie inside or on
+roots of its first characteristic polynomial $\,\rho(z)\,$ satisfies
+the root condition, i.e. the roots of $\,\rho(z)\,$ lie inside or on
 the unit circle, and the roots on the unit circle are distinct (or
 simple) - this is called the root condition.
 :::
 
 :::{prf:definition} Strong Stability
-A method is *{index}`strongly stable`* if the roots of $\rho(\xi) = 0$ are inside
+A method is *{index}`strongly stable`* if the roots of $\rho(z) = 0$ are inside
 the unit circle except for only one root, call *principal root*, with
-the magnitude of one(i.e. $|\xi| = 1$).
+the magnitude of one(i.e. $|z| = 1$).
 :::
 
 :::{prf:definition} Weak Stability
@@ -257,13 +257,13 @@ condition) but has more than one root on the unit circle.
 :::::{prf:example}
 Find the roots associated with the following characteristic polynomials:
 
-1.  $\rho(\xi)= \xi^3 + \xi $
+1.  $\rho(z)= z^3 + z $
 
     ::::{dropdown} Solution (click to show)
     
-    Let $\xi^3 + \xi ~=~ 0$\
-    $\therefore\quad \xi(\xi^2 + 1) ~=~ 0$\
-    $\therefore\quad \xi_1 ~=~ 0, ~~ \xi_2 ~=~ i, ~~\xi_3 ~= -i$
+    Let $z^3 + z ~=~ 0$\
+    $\therefore\quad z(z^2 + 1) ~=~ 0$\
+    $\therefore\quad z_1 ~=~ 0, ~~ z_2 ~=~ i, ~~z_3 ~= -i$
 
     We can also use Matlab to find the roots of the polynomial
 
@@ -282,7 +282,7 @@ Find the roots associated with the following characteristic polynomials:
         0.0000 - 1.0000i
     ```
 
-    $\xi_1$, $\xi_2$, and $\xi_3$ are shown on the unit circle. Because
+    $z_1$, $z_2$, and $z_3$ are shown on the unit circle. Because
     there are more than one root on the unit circle, the method is
     weakly stable.
 
@@ -292,40 +292,40 @@ Find the roots associated with the following characteristic polynomials:
 
     \draw[-Stealth] (-25mm,0mm) -- (25mm,0mm);
     \draw[-Stealth] (0mm,-25mm) -- (0mm,25mm);
-    \node[inner sep = 0pt, anchor = west] at (27mm,0mm) {Re$(\xi)$};
-    \node[inner sep = 0pt, anchor = west] at (2mm,25mm) {Im$(\xi)$};
+    \node[inner sep = 0pt, anchor = west] at (27mm,0mm) {Re$(z)$};
+    \node[inner sep = 0pt, anchor = west] at (2mm,25mm) {Im$(z)$};
     \draw (0mm,0mm) circle (20mm);
 
     \coordinate (xi1) at (0:0mm);
     \fill (xi1) circle (1mm);
-    \node[anchor = south west] at (xi1) {$\xi_1 = 0$};
+    \node[anchor = south west] at (xi1) {$z_1 = 0$};
 
     \coordinate (xi2) at (90:20mm);
     \fill (xi2) circle (1mm);
-    \node (l2) at (20mm,20mm) {$\xi_2 = i$};
+    \node (l2) at (20mm,20mm) {$z_2 = i$};
     \draw[-Stealth] (xi2) -- (l2);
 
     \coordinate (xi3) at (270:20mm);
     \fill (xi3) circle (1mm);
-    \node[anchor = north west] at (xi3) {$\xi_3 = -i$};     
+    \node[anchor = north west] at (xi3) {$z_3 = -i$};     
     ```
     ::::      
 
-2.  $\rho(\xi)=\xi^4 + \xi$
+2.  $\rho(z)=z^4 + z$
 
     :::{dropdown} Solution (click to show)
 
-    Let $\xi^4 + \xi ~=~ 0$
+    Let $z^4 + z ~=~ 0$
 
     $$
     \begin{aligned}
-    \xi^4 + \xi  & = \xi(\xi^3 + 1) \\
-                 & = \xi (\xi+1) (\xi^2-\xi+1) \\
+    z^4 + z  & = z(z^3 + 1) \\
+                 & = z (z+1) (z^2-z+1) \\
     \end{aligned}
     $$
 
-    $\therefore\quad \xi_1 ~=~ 0$, $\xi_2 = -1$,  $\xi_3 = \dfrac{1}{2} + i\dfrac{\sqrt{3}}{2}$, 
-    $\xi_4 = \dfrac{1}{2} - i\dfrac{\sqrt{3}}{2}$.
+    $\therefore\quad z_1 ~=~ 0$, $z_2 = -1$,  $z_3 = \dfrac{1}{2} + i\dfrac{\sqrt{3}}{2}$, 
+    $z_4 = \dfrac{1}{2} - i\dfrac{\sqrt{3}}{2}$.
 
     We can also use Matlab to find the roots of the polynomial
 
@@ -354,18 +354,18 @@ Find the roots associated with the following characteristic polynomials:
 
     \draw[-Stealth] (-25mm,0mm) -- (25mm,0mm);
     \draw[-Stealth] (0mm,-25mm) -- (0mm,25mm);
-    \node[inner sep = 0pt, anchor = west] at (27mm,0mm) {Re$(\xi)$};
-    \node[inner sep = 0pt, anchor = west] at (2mm,25mm) {Im$(\xi)$};
+    \node[inner sep = 0pt, anchor = west] at (27mm,0mm) {Re$(z)$};
+    \node[inner sep = 0pt, anchor = west] at (2mm,25mm) {Im$(z)$};
     \draw (0mm,0mm) circle (20mm);
 
     \coordinate (xi1) at (0:0mm);
     \fill (xi1) circle (1mm);
-    \node[anchor = south west] at (xi1) {$\xi_1$};
+    \node[anchor = south west] at (xi1) {$z_1$};
 
     \foreach\x/\a/\d in {2/180/south,3/60/west,4/300/west}
     {
         \fill (\a:20mm) circle (1mm);
-        \node[anchor = \d, inner sep = 1mm] at (\a:23mm) {$\xi_\x$};
+        \node[anchor = \d, inner sep = 1mm] at (\a:23mm) {$z_\x$};
     }
     ```  
     ::: 

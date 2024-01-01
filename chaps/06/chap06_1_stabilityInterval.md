@@ -23,12 +23,12 @@ $$(eq:ch05:1.2)
 :::{prf:definition} Abosolute Stability
 A linear multistep method is said to be *{index}`absolutely stable`* in a region
 $\,\Re\,$ of the complex plane if for all $\,h\lambda\,$ all roots of
-the stability polynomial $\,L(\xi,h\lambda)$ associated with the
+the stability polynomial $\,L(z,h\lambda)$ associated with the
 method satisfy 
 
 $$
 \begin{aligned}
-    && \left| \xi_i(h\lambda) \right| \,&<\, 1,
+    && \left| z_i(h\lambda) \right| \,&<\, 1,
     & i &= 1,\,2,\dots,k &&
 \end{aligned}
 $$(eq:ch05:1.3)
@@ -37,17 +37,17 @@ $$(eq:ch05:1.3)
 :::{prf:definition} Relative Stability
 A linear multistep method is said to be *{index}`relatively stable`* in a region
 $\,\Re\,$ of the complex plane if, for all $\,h\lambda\,$ all roots of
-the stability polynomial $\,L(\xi,h\lambda)$ associated with the
+the stability polynomial $\,L(z,h\lambda)$ associated with the
 method satisfy 
 
 $$
 \begin{aligned}
-    && \left| \xi_i(h\lambda) \right| \,&<\, \left| \xi_1(h\lambda) \right|\,
+    && \left| z_i(h\lambda) \right| \,&<\, \left| z_1(h\lambda) \right|\,
     & \qquad i &= 2,\,3,\dots,k &&    
 \end{aligned}
 $$(eq:ch05:1.4)
 
- where $\xi_1(h\lambda) = +1$ is a simple root (i.e. the
+ where $z_1(h\lambda) = +1$ is a simple root (i.e. the
 parasitic roots are less in magnitude than the principal root).
 :::
 

@@ -14,8 +14,8 @@
     width=10cm,
     height=10cm	        
     ]
-    \node[label={45:$z=3+4i$},circle,fill,inner sep=1.5pt] (A) at (axis cs:3,4) {};  
-    \node[label={-45:$\bar{z}=3-4i$},circle,fill,inner sep=1.5pt] () at (axis cs:3,-4) {};        
+    \node[label={45:$z=3+4\hat{i}$},circle,fill,inner sep=1.5pt] (A) at (axis cs:3,4) {};  
+    \node[label={-45:$\bar{z}=3-4\hat{i}$},circle,fill,inner sep=1.5pt] () at (axis cs:3,-4) {};        
     \addplot[domain = 0:3,	thick, 	black, ] {4*x/3};
     \addplot[domain = 0:3,	thick, 	black, ] {-4*x/3};
     

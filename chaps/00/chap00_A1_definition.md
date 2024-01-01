@@ -77,9 +77,7 @@ Ordinary derivatives can be written by using
 ```        
 
 - Prime notation
-    - $y'$, $y''$, $y'''$
-    - The fourth derivative $y^{(4)}$
-    - The $k$-th derivative $y^{(k)}$
+    $y'$, $y''$, $y'''$, $y^{(4)}$, ..., $y^{(k)}$
 
 ```{index} pair: Derivatives; Newton's dot notation
 ```        

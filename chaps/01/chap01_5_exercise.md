@@ -10,23 +10,23 @@ For detailed solutions, you can download {download}`the full solutions for Chapt
 
 Simplify the following expressions used to calculate $z$, and find the real and imaginary components of $z$:
 
-1. $\displaystyle z=\frac{4+3i}{3-4i}$,
-1. $\displaystyle z=e^{i\theta}-e^{-i\theta}$,
-1. $\displaystyle z=e^{i2\theta} \cdot e^{-i\theta}$,
-1. $\displaystyle z=\frac{2e^{i\theta}(e^{i\theta}-1)}{3e^{i\theta}-1}$.
+1. $\displaystyle z=\frac{4+3\i}{3-4\i}$,
+1. $\displaystyle z=e^{\i\theta}-e^{-\i\theta}$,
+1. $\displaystyle z=e^{\i 2\theta} \cdot e^{-\i\theta}$,
+1. $\displaystyle z=\frac{2e^{\i\theta}(e^{\i\theta}-1)}{3e^{\i\theta}-1}$.
 
 :::
 
 :::{solution} ch1-ex-q1
 :class: dropdown
 
-1.  $z=i$
+1.  $z=\i$
 
-1.  $z=i2\sin\theta$
+1.  $z=\i 2\sin\theta$
 
-1. $z=\cos\theta+i\sin\theta$
+1. $z=\cos\theta+\i\sin\theta$
 
-1. $z=\dfrac{4\cos\theta-\cos 2\theta-3}{5-3\cos\theta}+i\dfrac{4\sin\theta-\sin 2\theta}{5-3\cos\theta}$
+1. $z=\dfrac{4\cos\theta-\cos 2\theta-3}{5-3\cos\theta}+\i\dfrac{4\sin\theta-\sin 2\theta}{5-3\cos\theta}$
 
 :::
 
@@ -104,11 +104,11 @@ For each of the following difference equations, form the characteristic equation
 		
 
 1. $y_{n+2}-9y_{n+1}+20y_n=0$
-1. $y_{n+2}+y_{n}+y_{n-1}=0$        
-1. $y_{n+2}=\dfrac{y_{n+1}+y_{n-1}}{2}$
-1. $y_{n+2}=-\dfrac{y_{n+1}+y_{n-1}}{2}$
-1. $y_{n+4}-16 y_n=0$
-1. $y_{n+4}+16 y_n=0$        
+2. $y_{n+2}+y_{n}+y_{n-1}=0$        
+3. $y_{n+2}=\dfrac{y_{n+1}+y_{n-1}}{2}$
+4. $y_{n+2}=-\dfrac{y_{n+1}+y_{n-1}}{2}$
+5. $y_{n+4}-16 y_n=0$
+6. $y_{n+4}+16 y_n=0$        
 
 :::
 
@@ -117,15 +117,15 @@ For each of the following difference equations, form the characteristic equation
 
 1. $y_n=c_1 (4)^n + c_2 (5)^n$
 
-1. $y_n=c_1 \left(\dfrac{-1+\sqrt{3}i}{2}\right)^n + c_2 \left(\dfrac{-1-\sqrt{3}i}{2}\right)^n$
+2. $y_n=c_1 \left(\dfrac{-1+\sqrt{3}\i}{2}\right)^n + c_2 \left(\dfrac{-1-\sqrt{3}\i}{2}\right)^n$
 
-1. $y_n=c_1+c_2 \left(\dfrac{-1+\sqrt{7}i}{4}\right)^n + c_3 \left(\dfrac{-1-\sqrt{7}i}{4}\right)^n$
+3. $y_n=c_1+c_2 \left(\dfrac{-1+\sqrt{7}\i}{4}\right)^n + c_3 \left(\dfrac{-1-\sqrt{7}\i}{4}\right)^n$
 
-1. $y_n=c_1 (-1)^n+c_2 \left(\dfrac{1+\sqrt{7}i}{4}\right)^n + c_3 \left(\dfrac{1-\sqrt{7}i}{4}\right)^n$
+4. $y_n=c_1 (-1)^n+c_2 \left(\dfrac{1+\sqrt{7}\i}{4}\right)^n + c_3 \left(\dfrac{1-\sqrt{7}\i}{4}\right)^n$
 
-1. $y_n = c_1 (2)^n + c_2 (-2)^n + 2^n \left(c_3 \cos\dfrac{n\pi}{2}+c_4 \sin\dfrac{n\pi}{2}\right)$
+5. $y_n = c_1 (2)^n + c_2 (-2)^n + 2^n \left(c_3 \cos\dfrac{n\pi}{2}+c_4 \sin\dfrac{n\pi}{2}\right)$
 
-1. $y_n=2^n\left(c_1\cos\dfrac{n\pi}{4}+c_2\sin\dfrac{n\pi}{4}\right)+2^n\left(c_3\cos\dfrac{3n\pi}{4}+c_4\sin\dfrac{3n\pi}{4}\right)$
+6. $y_n=2^n\left(c_1\cos\dfrac{n\pi}{4}+c_2\sin\dfrac{n\pi}{4}\right)+2^n\left(c_3\cos\dfrac{3n\pi}{4}+c_4\sin\dfrac{3n\pi}{4}\right)$
 		
 :::
 

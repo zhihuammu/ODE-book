@@ -67,10 +67,10 @@ $$
 so its auxiliary (characteristic) equation is
 
 $$
-\xi+40=0,
+z+40=0,
 $$
 
-and we get the root $\xi=-40$.
+and we get the root $z=-40$.
 
 Therefore the complementary (homogeneous) solution to the problem is
 

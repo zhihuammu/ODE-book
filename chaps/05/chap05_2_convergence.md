@@ -4,7 +4,7 @@
 A method is said to be {index}`zero-stable` if it satisfies the root condition,
 i.e. the linear multistep method {eq}`eq:ch04:1.1`
  is said to be **zero-stable** if no root of the
-first characteristic polynomial $\,\rho(\xi)\,$ has modulus greater that
+first characteristic polynomial $\,\rho(z)\,$ has modulus greater that
 one, and every root of modulus one is simple.
 :::
 
@@ -26,8 +26,8 @@ $$
 \end{aligned}
 $$
 
- and in terms of the polynomials $\rho(\xi)$ and
-$\sigma(\xi)$ the condition of consistency can be expressed by the
+ and in terms of the polynomials $\rho(z)$ and
+$\sigma(z)$ the condition of consistency can be expressed by the
 relations - i.e. the linear multistep method {eq}`eq:ch04:1.1` is consistent *iff*: 
 
 $$
@@ -37,8 +37,8 @@ $$
 $$
 
 Thus, for a consistent method, the first characteristic polynomial
-always has a root at $+1$, i.e. the *principal root* $\xi_1$. The
-remaining roots $\,\xi_i\,, ~i=2,3,\dots,k\,$, are the *parasitic
+always has a root at $+1$, i.e. the *principal root* $z_1$. The
+remaining roots $\,z_i\,, ~i=2,3,\dots,k\,$, are the *parasitic
 roots*.
 
 :::{prf:remark} Three ways to assess consistency
@@ -105,22 +105,22 @@ $$
 
 $$
 \begin{aligned}
-        &\rho (\xi) = \alpha_3\xi^3 + \alpha_2\xi^2 + \alpha_1\xi + \alpha_0 = \xi^3 - \xi^2
+        &\rho (z) = \alpha_3z^3 + \alpha_2z^2 + \alpha_1z + \alpha_0 = z^3 - z^2
         \\
-        &\sigma(\xi) = \beta_3\xi^3 + \beta_2\xi^2 + \beta_1\xi + \beta_0 = \frac{1}{12}(23\xi^2 - 16\xi + 5)    
+        &\sigma(z) = \beta_3z^3 + \beta_2z^2 + \beta_1z + \beta_0 = \frac{1}{12}(23z^2 - 16z + 5)    
 \end{aligned}
 $$
 
 Let
 
 $$
-\rho (\xi) = \xi^3 - \xi^2 = \xi^2(\xi - 1) = 0
+\rho (z) = z^3 - z^2 = z^2(z - 1) = 0
 $$
 
-so we get the roots $\xi_1 = 0\,, \qquad \xi_2 = 0\,, \qquad \xi_3 = 1$. 
+so we get the roots $z_1 = 0\,, \qquad z_2 = 0\,, \qquad z_3 = 1$. 
 
- Since $\,\xi_1,\,\xi_2\,$ are less than $1$, and
-$\,\xi_3\!=\!1$ is simple, the corresponding characteristic polynomial
+ Since $\,z_1,\,z_2\,$ are less than $1$, and
+$\,z_3\!=\!1$ is simple, the corresponding characteristic polynomial
 satisfies the root condition and is zero-stable.
 
 Checking the consistency, we have
@@ -128,7 +128,7 @@ Checking the consistency, we have
 $$
 \begin{aligned}
     \rho(1)=&1^3 - 1^2 =0 \\
-    \rho'(1)= & \left.(3\xi^2-2\xi)\right\vert_{\xi=1} = 3(1)-2(1) = 1 \\
+    \rho'(1)= & \left.(3z^2-2z)\right\vert_{z=1} = 3(1)-2(1) = 1 \\
     \sigma(1)= & \frac{1}{12}\left(23(1)^2-16(1)+5\right) = 1
 \end{aligned}
 $$
@@ -173,16 +173,16 @@ $$
 
 $$
 \begin{aligned}
-        \rho(\xi) ~&=~ \alpha_4\xi^4 + \alpha_3\xi^3 + \alpha_2\xi^2 + \alpha_1\xi + \alpha_0 ~=~ \xi^4 - 1
+        \rho(z) ~&=~ \alpha_4z^4 + \alpha_3z^3 + \alpha_2z^2 + \alpha_1z + \alpha_0 ~=~ z^4 - 1
         \\
-        \sigma(\xi) ~&=~ \frac{4}{3} \bigl[
-            2\xi^3 - \xi^2 + 2\xi
+        \sigma(z) ~&=~ \frac{4}{3} \bigl[
+            2z^3 - z^2 + 2z
         \bigr]    
 \end{aligned}
 $$
 
- $\therefore\qquad \xi^4 - 1 = 0\,,$\
-$\therefore\qquad \xi^2 = \pm 1\,,\qquad \xi_1 = 1\,,\quad \xi_2 = -1\,,\quad \xi_3 = -i\,,\quad \xi_4 = +i$\
+ $\therefore\qquad z^4 - 1 = 0\,,$\
+$\therefore\qquad z^2 = \pm 1\,,\qquad z_1 = 1\,,\quad z_2 = -1\,,\quad z_3 = -i\,,\quad z_4 = +i$\
 There are no repeated roots, and modulus of all roots are $\,\leq 1\,$,
 therefore the method satisfies the root condition, but since there are
 more than one root with modulus one the method is weakly stable. The
@@ -197,13 +197,13 @@ The characteristic polynomial $\rho$ for all Adams methods
 
 $$
 \begin{aligned}
-    \rho(\xi) ~&=~ \xi^k - \xi^{k-1}\\
-                &=~ \xi^{k-1}(\xi - 1)
+    \rho(z) ~&=~ z^k - z^{k-1}\\
+                &=~ z^{k-1}(z - 1)
 \end{aligned}
 $$
 
- Hence, $\xi_1 = 1$, and the reminding roots
-$\xi_2,\xi_3,\dots,\xi_k = 0$, they all satisfy the root conditions and
+ Hence, $z_1 = 1$, and the reminding roots
+$z_2,z_3,\dots,z_k = 0$, they all satisfy the root conditions and
 are zero stable. It can be shown that they are consistent and therefore,
 all Adams methods are convergent.
 :::

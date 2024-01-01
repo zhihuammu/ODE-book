@@ -16,9 +16,10 @@ parts:
     maxdepth: 1
     numbered: false
     chapters: 
-    - file: chaps/00/chap00_0
+    - file: chaps/00/chap00_B_symbols    
+    - file: chaps/00/chap00_A0_DE
       sections: 
-      - glob: chaps/00/chap00_*
+      - glob: chaps/00/chap00_A*
     
   - caption: Lecture Notes
     maxdepth: 1

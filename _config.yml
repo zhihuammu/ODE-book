@@ -47,8 +47,7 @@ html:
   
 sphinx:
   config:
-# bibtex_reference_style: author_year    
-    charset_table : A..Z->a..z
+    # bibtex_reference_style: author_year    
     html_show_copyright: true
     language: en          
     latex_elements:
@@ -79,6 +78,7 @@ sphinx:
           "dx": "\\mathrm{d}x"
           "ds": "\\mathrm{d}s"
           "dt": "\\mathrm{d}t"
+          "i" : "\\hat{i}"          
     hide_solutions: false
 #    html_extra_path: exSol
     html_theme: sphinx_book_theme
