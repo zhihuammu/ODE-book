@@ -11,6 +11,8 @@
 | $\i$      | imaginary unit, $\i^2=-1$ |
 | $z$      | a complex number|
 | $\|z\|$   | the modulus of $z$ |
+| $\Re(z)$  | the real component of $z$|
+| $\Im(z)$  | the imaginary component of $z$|
 | $\theta$  | angle |
 | $\C$      | the complex number set $\{z \| z=x+\i y~, ~ x \in \R, y \in \R\}$ |
 | $\{y_n\}_{n=0}^{+\infty}$ | a sequence defined on $\N_0$ |
