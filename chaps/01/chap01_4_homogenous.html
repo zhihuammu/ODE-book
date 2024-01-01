@@ -66,7 +66,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\hat{i}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/01/chap01_4_homogenous';</script>
     <link rel="shortcut icon" href="../../_static/ode.png"/>
@@ -455,8 +455,8 @@ L(z)= a_0 + a_1 z + a_2 z^2 + \ldots + a_{k-1} z^{k-1} + a_k z^{k}=0.
 <p class="admonition-title"><span class="caption-number">Theorem 1.2 </span></p>
 <div class="theorem-content section" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(z_p~(p=1,2,3,\ldots,k)\)</span> be any solution to the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(1.19)</a>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-562a34b4-a90f-41b3-bda2-0be09665f92b">
-<span class="eqno">(1.20)<a class="headerlink" href="#equation-562a34b4-a90f-41b3-bda2-0be09665f92b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6096faf6-ffc5-4ecf-8a6c-66bd3c2ff3e4">
+<span class="eqno">(1.20)<a class="headerlink" href="#equation-6096faf6-ffc5-4ecf-8a6c-66bd3c2ff3e4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_n = z_p^n
 \end{equation}\]</div>
 <p>is a solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a>.</p>
@@ -485,8 +485,8 @@ L(\S) z_p^n = ~ &amp; \left(a_0 + a_1 \S + a_2 \S^2 + \ldots + a_{k-1}\S^{k-1}+a
 <p class="admonition-title"><span class="caption-number">Theorem 1.3 </span></p>
 <div class="theorem-content section" id="proof-content">
 <p>Assume the <span class="math notranslate nohighlight">\(k\)</span> roots of  the characteristic equation are distinct, then a fundamental set of solutions is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-89ec1d91-464d-48b1-bd41-242a9622fdf7">
-<span class="eqno">(1.21)<a class="headerlink" href="#equation-89ec1d91-464d-48b1-bd41-242a9622fdf7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-881b7280-9908-4443-9f61-fa30ec449a8c">
+<span class="eqno">(1.21)<a class="headerlink" href="#equation-881b7280-9908-4443-9f61-fa30ec449a8c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z_p^n \quad (p=1,2,\ldots,k).
 \end{equation}\]</div>
 <p>An immediate consequence of this theorem, for this particular case, is that the general solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a> is</p>
