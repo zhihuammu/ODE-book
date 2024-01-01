@@ -80,48 +80,48 @@ Identify the order, linearity and homogeneity of the following difference equati
 ::::
 
 ::::{prf:definition} {index}`Shift Operator`
-We define $\S$ as an operator shifting a member in a sequence to the next member
+We define $\E$ as an operator shifting a member in a sequence to the next member
 ````{math}  
 \begin{equation}
-\S y_n = y_{n+1}.
+\E y_n = y_{n+1}.
 \end{equation} 
 ````
 If we apply the shift operator consecutively for $2$ times, we write it as
 ````{math}  
 \begin{equation}
-\S ^2 y_n = \S  (\S  y_n) = \S  y_{n+1} = y_{n+2}.
+\E ^2 y_n = \E  (\E  y_n) = \E  y_{n+1} = y_{n+2}.
 \end{equation} 
 ````
 If we apply the shift operator consecutively for $k$ times, we write it as
 ````{math}  
 \begin{equation}
-\S ^k y_n = y_{n+k}.
+\E ^k y_n = y_{n+k}.
 \end{equation} 
 ````    
 ::::
 
 ::::{prf:example}
 
-- Use the definition of the shift Operator $\S$ to expand the following expression \
-    $\left(\S ^4 - \S ^2 +1 \right) y_n $
+- Use the definition of the shift Operator $\E$ to expand the following expression \
+    $\left(\E ^4 - \E ^2 +1 \right) y_n $
 
-- Write the following expression into a shift operator $\S$ form \
+- Write the following expression into a shift operator $\E$ form \
     $ y_{n+2} - 2y_{n+1} + y_n  $
 
 <!-- We can apply multiple shifting operations on a member in a sequence
 
-$$\left(\S ^4 - \S ^2 +1 \right) y_n = y_{n+4} - y_{n+2} + y_n.$$
+$$\left(\E ^4 - \E ^2 +1 \right) y_n = y_{n+4} - y_{n+2} + y_n.$$
 
 We can also express algebraic operations on several members in a sequence as shifting operations on a single member, e.g.
 
-$$ y_{n+2} - 2y_{n+1} + y_n = \left( \S ^2 - 2E + 1\right) y_n.  $$ -->
+$$ y_{n+2} - 2y_{n+1} + y_n = \left( \E ^2 - 2E + 1\right) y_n.  $$ -->
 
 ```{admonition} Solution
 :class: dropdown, solution
 
-- $\left(\S ^4 - \S ^2 +1 \right) y_n = y_{n+4} - y_{n+2} + y_n$
+- $\left(\E ^4 - \E ^2 +1 \right) y_n = y_{n+4} - y_{n+2} + y_n$
 
-- $ y_{n+2} - 2y_{n+1} + y_n = \left( \S ^2 - 2\S + 1\right) y_n  $
+- $ y_{n+2} - 2y_{n+1} + y_n = \left( \E ^2 - 2\E + 1\right) y_n  $
 
 ::::
 

@@ -17,7 +17,7 @@ A {index}`complex number` is a number in the form of
 \begin{equation}
     z=x+\i y,\qquad x \in \R, y\in \mathbb{R},
 \end{equation}
-where $x$ is the real component of the complex number and $iy$ is its imaginary component. We often call $y$ the imaginary component for simplicity. The modulus of the complex number is calculated as
+where $x$ is the real component of the complex number and $\i y$ is its imaginary component. We often call $y$ the imaginary component for simplicity. The modulus of the complex number is calculated as
 \begin{equation}
     |z|=\sqrt{x^2+y^2}.
 \end{equation}

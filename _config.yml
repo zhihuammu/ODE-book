@@ -78,7 +78,7 @@ sphinx:
           "dx": "\\mathrm{d}x"
           "ds": "\\mathrm{d}s"
           "dt": "\\mathrm{d}t"
-          "i" : "\\hat{i}"          
+          "i" : "\\mathbf{\\hat{i}}"          
     hide_solutions: false
 #    html_extra_path: exSol
     html_theme: sphinx_book_theme

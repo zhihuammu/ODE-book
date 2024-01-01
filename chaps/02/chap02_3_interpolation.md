@@ -26,7 +26,7 @@ name: figure-discretepoints
 
 Possiple options are:
 -   Take an average: $f(x)=\dfrac{f_j + f_{j+1}}{2}$
--   A precise forward-shift: $f(x)=\S ^{s} f_j$,
+-   A precise forward-shift: $f(x)=\E ^{s} f_j$,
     $0<s=\dfrac{x-x_j}{x_{j+1}-x_j}<1$
 
 For the first option, we may ask "Is this accurate?" For the second option, we may ask "How to SHIFT?"
@@ -39,13 +39,13 @@ $f_{j+s}$, where:
 
 $$s \>=\> \dfrac{x - x_j}{h}$$
 
-Note that we have $\,f_{j+s}=f(x_j\!+\!sh)=\S ^sf(x_j)=\S ^sf_j\,$.
+Note that we have $\,f_{j+s}=f(x_j\!+\!sh)=\E ^sf(x_j)=\E ^sf_j\,$.
 
 To obtain a formula involving forward differences we substitute
-$\,\S =1+\Delta\,$ therefore: 
+$\,\E =1+\Delta\,$ therefore: 
 
 $$\begin{aligned}
-        f_{j+s} &= \S ^{s} f_j \\
+        f_{j+s} &= \E ^{s} f_j \\
                 &= (1 + \Delta)^s f_j     
 \end{aligned}
 $$
@@ -75,7 +75,7 @@ So the shift operator can be expanded as
 
 $$
 \begin{align}
-\S ^{s} & =  (1+\Delta)^s  \\
+\E ^{s} & =  (1+\Delta)^s  \\
       & =  \sum_{n=0}^{\infty} \begin{pmatrix} s \\ n \end{pmatrix} 1^{s-n}\Delta^{n} \\
       & = \begin{pmatrix} s \\ 0 \end{pmatrix} \Delta^{0} 
             + \begin{pmatrix} s \\ 1 \end{pmatrix} \Delta^{1}
@@ -141,7 +141,7 @@ f_{j+s}= f_j + s\nabla f_j
 :::
 
 <!-- $$\begin{aligned}
-        f_{j+s} & = \S^{s} f_j  \hspace{4cm}  \\
+        f_{j+s} & = \E^{s} f_j  \hspace{4cm}  \\
         \>&=\> (1 - \nabla)^{-s} f_j\\
         \>&=\> \left(1 + \frac{(-s)}{1!}(-\nabla)
         + \frac{(-s)(-s-1)}{2!}(-\nabla)^2
