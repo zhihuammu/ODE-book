@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>8.7. Answers to Chapter 8 Exercises &#8212; Linear Multistep Methods</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -42,12 +42,14 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -75,6 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="8.6. Chapter 8 Exercises" href="chap08_6_exercise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Tuesday 02 January 2024 22:09:49"/>
   </head>
   
   
@@ -83,6 +86,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -136,9 +148,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -148,8 +162,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo1.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo1.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo1.svg" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
+    <script>document.write(`<img src="../../_static/logo1.svg" class="logo__image only-dark" alt="Linear Multistep Methods - Home"/>`);</script>
   
   
 </a></div>
@@ -352,20 +366,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -406,9 +422,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="answers-to-chapter-8-exercises">
-<h1><span class="section-number">8.7. </span>Answers to Chapter 8 Exercises<a class="headerlink" href="#answers-to-chapter-8-exercises" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">8.7. </span>Answers to Chapter 8 Exercises<a class="headerlink" href="#answers-to-chapter-8-exercises" title="Permalink to this heading">#</a></h1>
 <section id="answer-to-ex-ch08-q1">
-<h2><span class="section-number">8.7.1. </span>Answer to <a class="reference internal" href="chap08_6_exercise.html#ex-ch08-q1"><span class="std std-numref">Exercise 8.1</span></a><a class="headerlink" href="#answer-to-ex-ch08-q1" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">8.7.1. </span>Answer to <a class="reference internal" href="chap08_6_exercise.html#ex-ch08-q1"><span class="std std-numref">Exercise 8.1</span></a><a class="headerlink" href="#answer-to-ex-ch08-q1" title="Permalink to this heading">#</a></h2>
 <ol class="arabic">
 <li><div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -430,25 +446,25 @@ document.write(`
 </div></div>
 </div>
 </div>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Exercise 8-qn1(a)</span><span class="w"></span>
-<span class="n">A</span><span class="p">=[</span><span class="w"></span>
-<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
-<span class="n">xy</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="n">3</span><span class="w"> </span><span class="s">1</span><span class="p">;</span><span class="n">4</span><span class="w"> </span><span class="s">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">1</span><span class="w"> </span><span class="s">2</span><span class="p">;</span><span class="n">2</span><span class="w"> </span><span class="s">2</span><span class="p">;</span><span class="n">4</span><span class="w"> </span><span class="s">2]</span><span class="p">;</span><span class="w"></span>
-<span class="nb">gplot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">xy</span><span class="p">,</span><span class="s">&#39;k-*&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">3</span><span class="p">]);</span><span class="w"></span>
-<span class="nb">text</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;1&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">text</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;2&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">text</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;3&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">text</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="s">&#39;4&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="s">&#39;5&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">text</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="s">&#39;6&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="c">%End</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Exercise 8-qn1(a)</span>
+<span class="n">A</span><span class="p">=[</span>
+<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+<span class="n">xy</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="n">3</span><span class="w"> </span><span class="s">1</span><span class="p">;</span><span class="n">4</span><span class="w"> </span><span class="s">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">1</span><span class="w"> </span><span class="s">2</span><span class="p">;</span><span class="n">2</span><span class="w"> </span><span class="s">2</span><span class="p">;</span><span class="n">4</span><span class="w"> </span><span class="s">2]</span><span class="p">;</span>
+<span class="nb">gplot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">xy</span><span class="p">,</span><span class="s">&#39;k-*&#39;</span><span class="p">);</span>
+<span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">3</span><span class="p">]);</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;1&#39;</span><span class="p">);</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;2&#39;</span><span class="p">);</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;3&#39;</span><span class="p">);</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="s">&#39;4&#39;</span><span class="p">);</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="s">&#39;5&#39;</span><span class="p">);</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="s">&#39;6&#39;</span><span class="p">);</span>
+<span class="c">%End</span>
 </pre></div>
 </div>
 </li>
@@ -472,32 +488,32 @@ document.write(`
 </div></div>
 </div>
 </div>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Exercise 8-qn1(b)</span><span class="w"></span>
-<span class="n">A</span><span class="p">=[</span><span class="w"></span>
-<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
-<span class="n">xy</span><span class="p">=[</span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="n">3</span><span class="w"> </span><span class="s">1</span><span class="p">;</span><span class="n">4</span><span class="w"> </span><span class="s">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">1</span><span class="w"> </span><span class="s">1</span><span class="p">;</span><span class="n">3</span><span class="w"> </span><span class="s">2</span><span class="p">;</span><span class="n">2</span><span class="w"> </span><span class="s">2]</span><span class="p">;</span><span class="w"></span>
-<span class="nb">gplot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">xy</span><span class="p">,</span><span class="s">&#39;k-*&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">3</span><span class="p">]);</span><span class="w"></span>
-<span class="nb">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;1&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">text</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;2&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">text</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;3&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">text</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;4&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">text</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="s">&#39;5&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="s">&#39;6&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="c">%End</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Exercise 8-qn1(b)</span>
+<span class="n">A</span><span class="p">=[</span>
+<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+<span class="n">xy</span><span class="p">=[</span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="n">3</span><span class="w"> </span><span class="s">1</span><span class="p">;</span><span class="n">4</span><span class="w"> </span><span class="s">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">1</span><span class="w"> </span><span class="s">1</span><span class="p">;</span><span class="n">3</span><span class="w"> </span><span class="s">2</span><span class="p">;</span><span class="n">2</span><span class="w"> </span><span class="s">2]</span><span class="p">;</span>
+<span class="nb">gplot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">xy</span><span class="p">,</span><span class="s">&#39;k-*&#39;</span><span class="p">);</span>
+<span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">3</span><span class="p">]);</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;1&#39;</span><span class="p">);</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;2&#39;</span><span class="p">);</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;3&#39;</span><span class="p">);</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;4&#39;</span><span class="p">);</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="s">&#39;5&#39;</span><span class="p">);</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="s">&#39;6&#39;</span><span class="p">);</span>
+<span class="c">%End</span>
 </pre></div>
 </div>
 </li>
 </ol>
 </section>
 <section id="answer-to-ex-ch08-q2">
-<h2><span class="section-number">8.7.2. </span>Answer to <a class="reference internal" href="chap08_6_exercise.html#ex-ch08-q2"><span class="std std-numref">Exercise 8.2</span></a><a class="headerlink" href="#answer-to-ex-ch08-q2" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">8.7.2. </span>Answer to <a class="reference internal" href="chap08_6_exercise.html#ex-ch08-q2"><span class="std std-numref">Exercise 8.2</span></a><a class="headerlink" href="#answer-to-ex-ch08-q2" title="Permalink to this heading">#</a></h2>
 <p>Consider the following adjacency graph:</p>
 <div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-ea1c5d3019c7476778c146c283b46223bbb3b3dd.svg" alt="Figure made with TikZ" /></p>
 </div><div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
@@ -539,7 +555,7 @@ bw =
 <p>Next we apply the Cuthill-McKee (CM) and reverse Cuthill-McKee (RCM)
 ordering algorithms to reduce the bandwidth.</p>
 <p>we need to construct the following table</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Original nodes</p></th>
 <th class="head"><p>No. of connections</p></th>
@@ -656,7 +672,7 @@ write down 2, 3 in the Queue column.</p></li>
 <li><p>Next, we bring 9 and follow the above procedure until all 10 nodes
 are listed in the results/Head column.</p></li>
 </ul>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Original nodes</p></th>
 <th class="head"><p>No. of connections</p></th>
@@ -880,7 +896,7 @@ write down the associated adjacency matrix and plot:</p>
 </div>
 </div>
 <p><strong>Column Count reordering:</strong></p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>vertex</p></th>
 <th class="head"><p>1</p></th>
@@ -910,7 +926,7 @@ write down the associated adjacency matrix and plot:</p>
 </tr>
 </tbody>
 </table>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>vertex</p></th>
 <th class="head"><p>1</p></th>
@@ -1323,11 +1339,10 @@ $$
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap08_6_exercise.html"
@@ -1347,10 +1362,7 @@ $$
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1388,6 +1400,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023---2025.
@@ -1399,13 +1412,16 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 02 January 2024 17:13:22.
+  Last updated on Tuesday 02 January 2024 22:09:49.
   <br/>
 </p>
   </div>
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <div>Powered by <a href='https://jupyterbook.org'>Jupyter Book</a></div>
+</div>
   </div>
   
 </div>
@@ -1417,8 +1433,8 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1426,19 +1442,32 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
     <div class="footer-items__start">
       
         <div class="footer-item">
+
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023---2025.
+      <br/>
+    
   </p>
 </div>
       
     </div>
   
   
+  
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
 </p></div>
       
     </div>
