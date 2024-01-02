@@ -22,7 +22,7 @@ parts:
       sections: 
       - glob: chaps/00/chap00_A*
     
-  - caption: Lecture Notes and Exercises
+  - caption: Lectures
     maxdepth: 1
     numbered: true      
     chapters:

@@ -4,7 +4,7 @@
 title     : Linear Multistep Methods
 author    : "<a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>"
 copyright : "2023---2025"  # Copyright year to be placed in the footer
-logo      : images/logo.png
+logo      : images/logo/logo1.svg
 email     : "z.ma@mmu.ac.uk"
 
 only_build_toc_files: true 
@@ -33,7 +33,7 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  favicon               : images/ode.png  # A path to a favicon image
+  favicon               : images/logo/odefavicon.png  # A path to a favicon image
   home_page_in_navbar   : false
   use_multitoc_numbering: false      
   use_repository_button : false
@@ -106,7 +106,7 @@ sphinx:
     #     - navbar-logo
     #     - sbt-sidebar-nav
     #     - indices        
-    html_last_updated_fmt : "%A %d %B %Y %H:%M:%S %Z"
+    html_last_updated_fmt : "%A %d %B %Y %H:%M:%S"
     # html_last_updated_fmt : "%c"    
   extra_extensions:
     - sphinx_proof

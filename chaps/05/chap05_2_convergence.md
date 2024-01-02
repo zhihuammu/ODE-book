@@ -9,15 +9,27 @@ one, and every root of modulus one is simple.
 :::
 
 :::{prf:definition} Consistency
-The linear multistep method {eq}`eq:ch04:1.1`
- is said to be *consistent* if it has order
-$\geq 1$. The condition that the order $p \geq 1$ is called the
-condition of *{index}`consistency`*.
+In numerical analysis, consistency is the property of a numerical method performing differentiation or integration in a way similar to the actual differentiation or integration. In another word, consistency tells how similar is the discrete system to the original continuous system.
+
+The condition for the discrete system produced by a linear multistep method {eq}`eq:ch04:1.1`
+
+$$
+\sum_{i=0}^{k}\alpha_i y_{j+i}~=~ h\sum_{i=0}^{k}\beta_i f_{j+i}, \qquad
+     \text{with}~ \alpha_k =1 
+$$
+
+being *consistent* with the continuous integral equation
+
+$$
+\int_{x_j}^{x_{j+k}} \dy = \int_{x_j}^{x_{j+k}} f \dx
+$$
+
+is that the method has an order of accuracy $p \geq 1$.
 :::
 
-In terms of constants $C_p$, introduced in Chapter (3), the condition is
-equivalent to $C_0 = 0$, $C_1 = 0$. The condition of consistency can be
-expressed by the relations 
+
+In terms of error constants $C_p$ introduced in {numref}`chap:errorConstant:constants`, the condition of consistency is
+equivalent to $C_0 = 0$, $C_1 = 0$. This ensures the method has an order of accuracy $p\geq 1$. Thus the condition of consistency can also be expressed by the relations 
 
 $$
 \begin{aligned}
@@ -26,9 +38,7 @@ $$
 \end{aligned}
 $$
 
- and in terms of the polynomials $\rho(z)$ and
-$\sigma(z)$ the condition of consistency can be expressed by the
-relations - i.e. the linear multistep method {eq}`eq:ch04:1.1` is consistent *iff*: 
+And in terms of the first and second characteristic polynomials $\rho(z)$ and $\sigma(z)$, the condition of consistency can be expressed by the following relations - i.e. the linear multistep method {eq}`eq:ch04:1.1` is consistent *iff*: 
 
 $$
 \begin{aligned}
@@ -41,15 +51,16 @@ always has a root at $+1$, i.e. the *principal root* $z_1$. The
 remaining roots $\,z_i\,, ~i=2,3,\dots,k\,$, are the *parasitic
 roots*.
 
-:::{prf:remark} Three ways to assess consistency
-<!-- :class: dropdown -->
+:::{prf:remark} Condition of Consistency
+In summary there are three equivalent conditions of consistency: 
 
-- The method's order of accuray $\geq 1$. 
+1. The method's order of accuracy $p \geq 1$. 
 
-- The constants satisfy $C_0=0$ and $C_1=0$.
+2. The error constants satisfy $C_0=0$ and $C_1=0$.
 
-- $\rho(1)=0$ and $\rho'(1)=\sigma(1)$.
+3. $\rho(1)=0$ and $\rho'(1)=\sigma(1)$.
 
+If a linear multistep method satisfies any of these three conditions, then it is a *consistent* method.
 :::
 
 A linear multistep method which is zero-stable is frequently called

@@ -4,7 +4,7 @@
 
 # Binomial Expansion
 
-$\forall x \in \R,~ y\in \R$ and $n \in \N_0$
+For any two real numbers $x$ and $y$, and a whole number $n$ as the power, the [binomial expansion](https://en.wikipedia.org/wiki/Binomial_theorem), also named binomial theorem, describes the algebraic expansion of powers of a binomial as below
 
 $$
 \begin{aligned}
@@ -38,7 +38,7 @@ $$(eq:bi:exap:variant)
 
 ## Newton's general binomial expansion
 
-Instead of strictly using whole numbers $n$ as the power in the binomial formula {eq}`eq:bi:exap`, we can loose the condition to introduce any real number $s$ as the power. Thus we get the generalised binomial coefficient 
+Instead of strictly using a whole number $n$ as the power in the binomial formula {eq}`eq:bi:exap`, we can loose the condition to introduce any real number $s$ as the power. Thus we get the generalised binomial coefficient 
 
 $$
 \begin{pmatrix} s \\ k \end{pmatrix} 
@@ -50,12 +50,12 @@ and the generalised bionomial expansion
 $$
 \begin{aligned}
  (x+y)^{s}&=\sum _{k=0}^{\infty }{s \choose k}x^{s-k}y^{k}\\
-          &=x^{s}+rx^{s-1}y+{\frac {s(s-1)}{2!}}x^{s-2}y^{2}+{\frac {s(s-1)(s-2)}{3!}}x^{s-3}y^{3}+\cdots .
+          &=x^{s}y^{0}+s x^{s-1}y+{\frac {s(s-1)}{2!}}x^{s-2}y^{2}+{\frac {s(s-1)(s-2)}{3!}}x^{s-3}y^{3}+\cdots .
 \end{aligned}
 $$(eq:bi:exap:general)
 
 Substituting $x=1$ into {eq}`eq:bi:exap:general`, we get
 
 $$
-(1+y)^r = 1 + s y + \frac{s(s-1)}{2!}y^2+\frac{s(s-1)(s-2)}{3!}y^3 + \cdots
+(1+y)^s = 1 + s y + \frac{s(s-1)}{2!}y^2+\frac{s(s-1)(s-2)}{3!}y^3 + \cdots
 $$(eq:bi:exap:variant:general)
