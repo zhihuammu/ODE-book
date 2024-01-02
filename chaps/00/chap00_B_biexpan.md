@@ -1,0 +1,61 @@
+
+:::{index} Binomial Expansion
+:::
+
+# Binomial Expansion
+
+$\forall x \in \R,~ y\in \R$ and $n \in \N_0$
+
+$$
+\begin{aligned}
+(x+y)^n & =  \begin{pmatrix} n \\ 0 \end{pmatrix} x^{n} y^0 + \begin{pmatrix} n \\ 1 \end{pmatrix} x^{n-1} y
+            + \begin{pmatrix} n \\ 2 \end{pmatrix} x^{n-2} y^2
+            + \ldots
+            + \begin{pmatrix} n \\ n-1 \end{pmatrix} x y^{n-1}
+            + \begin{pmatrix} n \\ n \end{pmatrix} x^0  y^{n} \\
+        & = \sum_{k=0}^{n} \begin{pmatrix} n \\ k \end{pmatrix} x^{n-k} y^k,                
+\end{aligned}
+$$(eq:bi:exap)
+
+:::{index} Binomial Expansion; binomial coefficient
+:::
+
+where
+
+$$
+\begin{pmatrix} n \\ k \end{pmatrix} = \dfrac{n!}{k!(n-k)!}
+=\dfrac{n(n-1)(n-2)\cdots(n-k+1)}{k!}
+$$(eq:bi:coe)
+
+is called the *binomial coefficient*.
+
+Substituting $x=1$ into {eq}`eq:bi:exap`, we get 
+
+$$
+(1+y)^{n}=1+ny+\frac{n(n-1)}{2!} y^{2}+\frac{n(n-1)(n-2)}{3!}y^{3}+\cdots +ny^{n-1}+y^{n}.
+$$(eq:bi:exap:variant)
+
+
+## Newton's general binomial expansion
+
+Instead of strictly using whole numbers $n$ as the power in the binomial formula {eq}`eq:bi:exap`, we can loose the condition to introduce any real number $s$ as the power. Thus we get the generalised binomial coefficient 
+
+$$
+\begin{pmatrix} s \\ k \end{pmatrix} 
+=\dfrac{s(s-1)(s-2)\cdots(s-k+1)}{k!},
+$$(eq:bi:coe:general)
+
+and the generalised bionomial expansion
+
+$$
+\begin{aligned}
+ (x+y)^{s}&=\sum _{k=0}^{\infty }{s \choose k}x^{s-k}y^{k}\\
+          &=x^{s}+rx^{s-1}y+{\frac {s(s-1)}{2!}}x^{s-2}y^{2}+{\frac {s(s-1)(s-2)}{3!}}x^{s-3}y^{3}+\cdots .
+\end{aligned}
+$$(eq:bi:exap:general)
+
+Substituting $x=1$ into {eq}`eq:bi:exap:general`, we get
+
+$$
+(1+y)^r = 1 + s y + \frac{s(s-1)}{2!}y^2+\frac{s(s-1)(s-2)}{3!}y^3 + \cdots
+$$(eq:bi:exap:variant:general)

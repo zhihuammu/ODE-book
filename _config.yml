@@ -4,7 +4,7 @@
 title     : Linear Multistep Methods
 author    : "<a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>"
 copyright : "2023---2025"  # Copyright year to be placed in the footer
-logo      : images/logo2.png
+logo      : images/logo.png
 email     : "z.ma@mmu.ac.uk"
 
 only_build_toc_files: true 
@@ -106,7 +106,8 @@ sphinx:
     #     - navbar-logo
     #     - sbt-sidebar-nav
     #     - indices        
-    html_last_updated_fmt : "%d %B %Y"
+    html_last_updated_fmt : "%A %d %B %Y %H:%M:%S %Z"
+    # html_last_updated_fmt : "%c"    
   extra_extensions:
     - sphinx_proof
     - sphinx_exercise    
