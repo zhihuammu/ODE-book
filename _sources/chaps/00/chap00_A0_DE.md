@@ -1,4 +1,4 @@
-# Basics of Differential Equations
+# Differential Equations
 
 This part gives an introduction to differential equations (DE), touching on:
 

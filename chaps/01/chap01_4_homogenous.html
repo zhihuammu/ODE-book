@@ -76,7 +76,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="1.3. Difference Equations" href="chap01_3_differenceEquation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Monday 01 January 2024 20:19:11 GMT"/>
+    <meta name="docbuild:last-update" content="Tuesday 02 January 2024 00:03:55 GMT"/>
   </head>
   
   
@@ -161,8 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo2.png" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
-    <script>document.write(`<img src="../../_static/logo2.png" class="logo__image only-dark" alt="Linear Multistep Methods - Home"/>`);</script>
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Linear Multistep Methods - Home"/>`);</script>
   
   
 </a></div>
@@ -178,15 +178,15 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_symbols.html">Symbols and Notation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_theorems.html">Basic Theorems</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_A0_DE.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_biexpan.html">Binomial Expansion</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_A0_DE.html">Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../00/chap00_A1_definition.html">Definitions, Classification and Terminology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../00/chap00_A2_ode.html">Ordinary Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../00/chap00_A3_analytical.html">Analytical Methods for ODEs</a></li>
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Exercises</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chap01_0.html">1. Complex Numbers and Difference Equations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chap01_1_complexNumber.html">1.1. Complex Numbers</a></li>
@@ -243,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../07/chap07_5_exercise.html">7.5. Chapter 7 Exercise</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../08/chap08_0.html">8. Computational Methods with Sparse Matrices</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08/chap08_0.html">8. Sparse Matrices</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../08/chap08_1_introduction.html">8.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../08/chap08_2_sparseMatrix.html">8.2. Sparse Matrices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../08/chap08_3_graphTheory.html">8.3. Matrix Sparsity and Graph Theory</a></li>
@@ -456,8 +456,8 @@ L(z)= a_0 + a_1 z + a_2 z^2 + \ldots + a_{k-1} z^{k-1} + a_k z^{k}=0.
 <p class="admonition-title"><span class="caption-number">Theorem 1.2 </span></p>
 <div class="theorem-content section" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(z_p~(p=1,2,3,\ldots,k)\)</span> be any solution to the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(1.19)</a>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-610482fc-cbd6-4bb5-a405-2c23f37c227e">
-<span class="eqno">(1.20)<a class="headerlink" href="#equation-610482fc-cbd6-4bb5-a405-2c23f37c227e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-18d0466b-ad79-4549-b050-073b9cbd1833">
+<span class="eqno">(1.20)<a class="headerlink" href="#equation-18d0466b-ad79-4549-b050-073b9cbd1833" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_n = z_p^n
 \end{equation}\]</div>
 <p>is a solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a>.</p>
@@ -486,8 +486,8 @@ L(\E) z_p^n = ~ &amp; \left(a_0 + a_1 \E + a_2 \E^2 + \ldots + a_{k-1}\E^{k-1}+a
 <p class="admonition-title"><span class="caption-number">Theorem 1.3 </span></p>
 <div class="theorem-content section" id="proof-content">
 <p>Assume the <span class="math notranslate nohighlight">\(k\)</span> roots of  the characteristic equation are distinct, then a fundamental set of solutions is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3cd87a5f-0a49-4e7f-b8a1-64113e4c8a2c">
-<span class="eqno">(1.21)<a class="headerlink" href="#equation-3cd87a5f-0a49-4e7f-b8a1-64113e4c8a2c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-66789731-3432-4d6d-9b39-8a0fcbac3771">
+<span class="eqno">(1.21)<a class="headerlink" href="#equation-66789731-3432-4d6d-9b39-8a0fcbac3771" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z_p^n \quad (p=1,2,\ldots,k).
 \end{equation}\]</div>
 <p>An immediate consequence of this theorem, for this particular case, is that the general solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a> is</p>
@@ -829,7 +829,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Monday 01 January 2024 20:19:11 GMT.
+  Last updated on Tuesday 02 January 2024 00:03:55 GMT.
   <br/>
 </p>
   </div>

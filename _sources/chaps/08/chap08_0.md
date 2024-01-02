@@ -1,5 +1,5 @@
 (chap:sparseMatrix)=
-# Computational Methods with Sparse Matrices
+# Sparse Matrices
 
 
 **Learning Objective**

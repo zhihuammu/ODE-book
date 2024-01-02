@@ -29,7 +29,12 @@
 * theorem *
 *********************************************/
 div.theorem {
-  background-color: transparent;
+	border-color: var(--hint-border-color);
+	background-color: transparent;
+}
+
+div.theorem p.admonition-title {
+	background-color: var(--hint-title-color);
 }
 
 /*********************************************
@@ -49,6 +54,15 @@ div.remark {
 /*********************************************
 * example *
 *********************************************/
+div.example {
+	border-color: var(--example-border-color);
+	background-color: none;
+}
+
+/* div.example p.admonition-title {
+	background-color: var(--example-title-color);
+} */
+
 div.example p.admonition-title:after {
   /* content: "\f0cb"; the fa-list-ol icon */
   content: "\f03a"; 

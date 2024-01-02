@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic Theorems &#8212; Linear Multistep Methods</title>
+    <title>Binomial Expansion &#8212; Linear Multistep Methods</title>
   
   
   
@@ -76,7 +76,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Symbols and Notation" href="chap00_B_symbols.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Monday 01 January 2024 20:19:11 GMT"/>
+    <meta name="docbuild:last-update" content="Monday 01 January 2024 22:33:37 GMT"/>
   </head>
   
   
@@ -178,7 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00_B_symbols.html">Symbols and Notation</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Basic Theorems</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Binomial Expansion</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="chap00_A0_DE.html">Basics of Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="chap00_A1_definition.html">Definitions, Classification and Terminology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap00_A2_ode.html">Ordinary Differential Equations</a></li>
@@ -397,7 +397,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Basic Theorems</h1>
+    <h1>Binomial Expansion</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -407,7 +407,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-expansion">Binomial expansion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-s-general-binomial-expansion">Newton’s general binomial expansion</a></li>
 </ul>
             </nav>
@@ -420,11 +419,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="basic-theorems">
-<h1>Basic Theorems<a class="headerlink" href="#basic-theorems" title="Permalink to this heading">#</a></h1>
-<div class="section" id="binomial-expansion">
-<span id="index-0"></span><h2>Binomial expansion<a class="headerlink" href="#binomial-expansion" title="Permalink to this heading">#</a></h2>
-<p><span class="math notranslate nohighlight">\(\forall x \in \R,~ y\in \R\)</span> and <span class="math notranslate nohighlight">\(n \in \N\)</span></p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="binomial-expansion">
+<span id="index-0"></span><h1>Binomial Expansion<a class="headerlink" href="#binomial-expansion" title="Permalink to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(\forall x \in \R,~ y\in \R\)</span> and <span class="math notranslate nohighlight">\(n \in \N_0\)</span></p>
 <div class="math notranslate nohighlight" id="equation-eq-bi-exap">
 <span class="eqno">(1)<a class="headerlink" href="#equation-eq-bi-exap" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
@@ -436,28 +433,39 @@ document.write(`
         &amp; = \sum_{k=0}^{n} \begin{pmatrix} n \\ k \end{pmatrix} x^{n-k} y^k,                
 \end{aligned}
 \end{split}\]</div>
-<p>where</p>
+<p id="index-1">where</p>
 <div class="math notranslate nohighlight" id="equation-eq-bi-coe">
-<span id="index-1"></span><span class="eqno">(2)<a class="headerlink" href="#equation-eq-bi-coe" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-bi-coe" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{pmatrix} n \\ k \end{pmatrix} = \dfrac{n!}{k!(n-k)!}
 =\dfrac{n(n-1)(n-2)\cdots(n-k+1)}{k!}
 \end{split}\]</div>
 <p>is called the <em>binomial coefficient</em>.</p>
-<p>Let <span class="math notranslate nohighlight">\(y=1\)</span>, we get</p>
+<p>Substituting <span class="math notranslate nohighlight">\(x=1\)</span> into <a class="reference internal" href="#equation-eq-bi-exap">(1)</a>, we get</p>
 <div class="math notranslate nohighlight" id="equation-eq-bi-exap-variant">
 <span class="eqno">(3)<a class="headerlink" href="#equation-eq-bi-exap-variant" title="Permalink to this equation">#</a></span>\[
-(1+x)^{n}=1+nx+\frac{n(n-1)}{2!} x^{2}+\frac{n(n-1)(n-2)}{3!}x^{3}+\cdots +nx^{n-1}+x^{n}.
+(1+y)^{n}=1+ny+\frac{n(n-1)}{2!} y^{2}+\frac{n(n-1)(n-2)}{3!}y^{3}+\cdots +ny^{n-1}+y^{n}.
 \]</div>
-</div>
 <div class="section" id="newton-s-general-binomial-expansion">
 <h2>Newton’s general binomial expansion<a class="headerlink" href="#newton-s-general-binomial-expansion" title="Permalink to this heading">#</a></h2>
-<p>Instead of strictly using natural numbers <span class="math notranslate nohighlight">\(n\)</span> as the power in the binomial formula <a class="reference internal" href="#equation-eq-bi-exap">(1)</a>, we can loose the condition to introduce any real number <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(r\in\R\)</span>, as the power. Thus we can define the generalised binomial coefficient as</p>
+<p>Instead of strictly using whole numbers <span class="math notranslate nohighlight">\(n\)</span> as the power in the binomial formula <a class="reference internal" href="#equation-eq-bi-exap">(1)</a>, we can loose the condition to introduce any real number <span class="math notranslate nohighlight">\(r\)</span> as the power. Thus we get the generalised binomial coefficient</p>
 <div class="math notranslate nohighlight" id="equation-eq-bi-coe-general">
 <span class="eqno">(4)<a class="headerlink" href="#equation-eq-bi-coe-general" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{pmatrix} r \\ k \end{pmatrix} 
 =\dfrac{r(r-1)(r-2)\cdots(r-k+1)}{k!},
 \end{split}\]</div>
 <p>and the generalised bionomial expansion</p>
+<div class="math notranslate nohighlight" id="equation-eq-bi-exap-general">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-bi-exap-general" title="Permalink to this equation">#</a></span>\[\begin{split}
+\begin{aligned}
+ (x+y)^{r}&amp;=\sum _{k=0}^{\infty }{r \choose k}x^{r-k}y^{k}\\
+          &amp;=x^{r}+rx^{r-1}y+{\frac {r(r-1)}{2!}}x^{r-2}y^{2}+{\frac {r(r-1)(r-2)}{3!}}x^{r-3}y^{3}+\cdots .
+\end{aligned}
+\end{split}\]</div>
+<p>Substituting <span class="math notranslate nohighlight">\(x=1\)</span> into <a class="reference internal" href="#equation-eq-bi-exap-general">(5)</a>, we get</p>
+<div class="math notranslate nohighlight" id="equation-eq-bi-exap-variant-general">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq-bi-exap-variant-general" title="Permalink to this equation">#</a></span>\[
+(1+y)^r = 1 + r y + \frac{r(r-1)}{2!}y^2+\frac{r(r-1)(r-2)}{3!}y^3 + \cdots
+\]</div>
 </div>
 </div>
 
@@ -524,7 +532,6 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-expansion">Binomial expansion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-s-general-binomial-expansion">Newton’s general binomial expansion</a></li>
 </ul>
   </nav></div>
@@ -559,7 +566,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Monday 01 January 2024 20:19:11 GMT.
+  Last updated on Monday 01 January 2024 22:33:37 GMT.
   <br/>
 </p>
   </div>

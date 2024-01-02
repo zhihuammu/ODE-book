@@ -4,17 +4,19 @@
 :align: center  
 |     |   |
 |-----------| -------------------------- |
-| $\N$      | the natural number set $\{1, 2, 3, \ldots\}$ |
-| $\N_0$    | the whole number set $\{0, 1, 2, 3, \ldots\}$|
-| $\Z$      | the integer number set $\{\ldots, -2, -1, 0, 1, 2, 3, \ldots\}$ |
-| $\R$      | the real number set $(-\infty, \infty)$|
-| $\i$      | imaginary unit, $\i^2=-1$ |
+| $\N$      | the set of natural numbers $\{1, 2, 3, \ldots\}$ |
+| $\N_0$    | the set of whole numbers $\{0, 1, 2, 3, \ldots\}$|
+| $\Z$      | the set of integer numbers $\{\ldots, -2, -1, 0, 1, 2, 3, \ldots\}$ |
+| $\R$      | the set of real numbers|
+| $i$, $j$, $k$, $m$, $n$, $p$    | whole numbers|
+| $r$, $s$  | real numbers |
+| $\i$      | the imaginary unit, $\i^2=-1$ |
 | $z$      | a complex number|
 | $\|z\|$   | the modulus of $z$ |
 | $\Re(z)$  | the real component of $z$|
 | $\Im(z)$  | the imaginary component of $z$|
 | $\theta$  | angle |
-| $\C$      | the complex number set $\{z \| z=x+\i y~, ~ x \in \R, y \in \R\}$ |
+| $\C$      | the set of complex numbers $\{z \| z=x+\i y~, ~ x \in \R, y \in \R\}$ |
 | $\{y_n\}_{n=0}^{+\infty}$ | a sequence defined on $\N_0$ |
 | $\D$      | differential operator|
 | $\Delta$  | forward difference operator|
