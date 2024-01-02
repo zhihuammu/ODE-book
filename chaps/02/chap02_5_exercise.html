@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>2.5. Chapter 2 Exercises &#8212; Linear Multistep Methods</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -41,14 +42,12 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -69,14 +68,13 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "D": "\\mathrm{D}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/02/chap02_5_exercise';</script>
-    <link rel="shortcut icon" href="../../_static/ode.png"/>
+    <link rel="shortcut icon" href="../../_static/odefavicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="3. Multistep Methods: Derivation by Finite Difference formulae" href="../03/chap03_0.html" />
     <link rel="prev" title="2.4. Finite Difference Tables" href="chap02_4_differenceTable.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Tuesday 02 January 2024 00:03:55 GMT"/>
   </head>
   
   
@@ -85,15 +83,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -147,11 +136,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="../../index.html">
-  
   
   
   
@@ -161,8 +148,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Linear Multistep Methods - Home"/>`);</script>
+    <img src="../../_static/logo1.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo1.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -186,7 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture Notes and Exercises</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">1. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../01/chap01_1_complexNumber.html">1.1. Complex Numbers</a></li>
@@ -365,22 +352,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -409,8 +394,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-2-exercises">
-<span id="chap02-exercises"></span><h1><span class="section-number">2.5. </span>Chapter 2 Exercises<a class="headerlink" href="#chapter-2-exercises" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-2-exercises">
+<span id="chap02-exercises"></span><h1><span class="section-number">2.5. </span>Chapter 2 Exercises<a class="headerlink" href="#chapter-2-exercises" title="Permalink to this headline">#</a></h1>
 <p>You should try the following exercise questions first, then check with the answers.</p>
 <p>For detailed solutions, you can download</p>
 <ul class="simple">
@@ -419,7 +404,7 @@ document.write(`
 <div class="exercise admonition" id="ch2-ex-q1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Complete a difference table for the following data:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -448,23 +433,23 @@ document.write(`
 <p>What degree of polynomial is required to fit exactly all seven data
 pairs? What lesser-degree polynomial will nearly fit the data?
 Justify your answer.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-1">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q1"> Exercise 2.1</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <!-- :class: dropdown -->
 <p>A sixth-degree polynomial is required to fit exactly all the 7 data
 points; however, since the third order differences are small and
 nearly constant, a third degree polynomial will almost fit all seven
 points.</p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ch2-ex-q2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Complete the difference table for the following data and by using
 the Gregory-Newton backward interpolating polynomial of degree 1, 2,
 3, 4 and 5 estimate <span class="math notranslate nohighlight">\(\,f(4.12)\)</span>, using <span class="math notranslate nohighlight">\(\,x_j=5\,\)</span>. By comparing the
@@ -492,21 +477,21 @@ improved.</p>
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-3">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q2"> Exercise 2.2</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><span class="math notranslate nohighlight">\(P_1(4.12) = 17.92\)</span>, <span class="math notranslate nohighlight">\(P_2 = 17.4976\)</span>, <span class="math notranslate nohighlight">\(P_3 = 17.41875\)</span>,
 <span class="math notranslate nohighlight">\(P_4 = 17.39785\)</span>, <span class="math notranslate nohighlight">\(P_5 = 17.39135\)</span>.</p>
 <p>Find the full solution in Moodle.</p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ch2-ex-q3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Use the table below and the Gregory-Newton forward-interpolating
 polynomials of degree 3 and 4 to estimate <span class="math notranslate nohighlight">\(\,f(0.158)\,\)</span>. Choose
 <span class="math notranslate nohighlight">\(\,x_0=0.125\,\)</span>. Compare the two estimates and comment on the
@@ -601,21 +586,21 @@ results.</p>
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-5">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q3"> Exercise 2.3</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><span class="math notranslate nohighlight">\(P_3(0.158) = 0.78801\)</span> for degree 3, and <span class="math notranslate nohighlight">\(P_4(0.158) = 0.78800\)</span> for
 degree 4.</p>
 <p>Find the full solution in Moodle.</p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ch2-ex-q5">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.4 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Complete the difference table for the following data and by using
 the Gregory-Newton forward interpolating polynomial find
 <span class="math notranslate nohighlight">\(f(1.72)\)</span>.</p>
@@ -639,7 +624,7 @@ the Gregory-Newton forward interpolating polynomial find
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -653,7 +638,7 @@ whether the accuracy of your solution is within the expected range.</p>
 <div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-7">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q5"> Exercise 2.4</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><span class="math notranslate nohighlight">\(f(1.72) = P_4(1.72) = 0.38641856\)</span>, MATLAB answer is
 <span class="math notranslate nohighlight">\(besselj(0,1.72) = 0.38641848\)</span>.</p>
 <ul>
@@ -665,12 +650,12 @@ whether the accuracy of your solution is within the expected range.</p>
 </div>
 </li>
 </ul>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ch2-ex-q6">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.5 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Given the finite difference table below, find <span class="math notranslate nohighlight">\(\,f(2.25)\,\)</span> using the Gregory-Newton</p>
 <ul class="simple">
 <li><p>forward difference interpolation formula</p></li>
@@ -759,23 +744,23 @@ estimated solutions with the exact value together with the data
 provided in the difference table, comment on the behaviour of the
 corresponding polynomial function. Can you suggest a way of
 improving the approximated solution.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-9">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q6"> Exercise 2.5</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <ul class="simple">
 <li><p>Forward <span class="math notranslate nohighlight">\(f(2.25) = 7.386171\)</span></p></li>
 <li><p>Backward <span class="math notranslate nohighlight">\(f(2.25) = 7.386171\)</span>.</p></li>
 </ul>
 <p>Find the full solution in Moodle.</p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ch2-ex-q7">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.6 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Repeat Exercise 6, using the finite difference table below which is
 drawn from the same function, but in the interval <span class="math notranslate nohighlight">\([0,\,2.0]\)</span>, to
 find <span class="math notranslate nohighlight">\(\,f(0.75)\,\)</span>, including comments on the results and analysis.
@@ -861,37 +846,37 @@ decimal places. However, from Exercise 6, the estimated solution for
 <span class="math notranslate nohighlight">\(\,f(2.25)\,\)</span> is only correct to 2 decimal places. By giving at
 least one reason, explain why there is such a difference in the
 accuracy of the estimated solutions.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-11">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q7"> Exercise 2.6</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <ul class="simple">
 <li><p>Forward <span class="math notranslate nohighlight">\(f(0.75) = P_4 (0.75) = 1.437778\)</span></p></li>
 <li><p>Backward <span class="math notranslate nohighlight">\(f(0.75) = P_4 (0.75) = 1.437778\)</span>.</p></li>
 </ul>
 <p>Find the full solution in Moodle.</p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ch2-ex-q4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.7 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Following the method used to derive the Gregory-Newton forward interpolation formula, derive the  Gregory-Newton backward difference interpolation formula.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-13">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q4"> Exercise 2.7</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p>Use Binomial Expansion to expand <span class="math notranslate nohighlight">\((1-\nabla)^{-s}\)</span>. See</p>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="../../_downloads/26bec5762f970f61b4e5a153133632e2/Ex2_Q7_solution_annotated.pdf"><code class="xref download docutils literal notranslate"><span class="pre">handwritten</span> <span class="pre">full</span> <span class="pre">solution</span> <span class="pre">for</span> <span class="pre">Exercise</span> <span class="pre">2.7</span></code></a></p></li>
 </ul>
+</section>
 </div>
-</div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -906,7 +891,7 @@ accuracy of the estimated solutions.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/02"
+            path: "./chaps\02"
         },
         predefinedOutput: true
     }
@@ -918,10 +903,11 @@ accuracy of the estimated solutions.</p>
 
               
               
-              
-              
-                <footer class="prev-next-footer">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="chap02_4_differenceTable.html"
@@ -941,7 +927,10 @@ accuracy of the estimated solutions.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -964,7 +953,6 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2023---2025.
@@ -976,7 +964,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 02 January 2024 00:03:55 GMT.
+  Last updated on Tuesday 02 January 2024 17:13:22.
   <br/>
 </p>
   </div>
@@ -994,8 +982,8 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1003,9 +991,8 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
     <div class="footer-items__start">
       
         <div class="footer-item">
-
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
     <br/>
   </p>
 </div>
@@ -1013,12 +1000,10 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
     </div>
   
   
-  
     <div class="footer-items__end">
       
-        <div class="footer-item">
-<p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
 </p></div>
       
     </div>

@@ -4,6 +4,8 @@
 :align: center  
 |     |   |
 |-----------| -------------------------- |
+| *iff*| if and only if |
+|  $\forall$    | for all |
 | $\N$      | the set of natural numbers $\{1, 2, 3, \ldots\}$ |
 | $\N_0$    | the set of whole numbers $\{0, 1, 2, 3, \ldots\}$|
 | $\Z$      | the set of integer numbers $\{\ldots, -2, -1, 0, 1, 2, 3, \ldots\}$ |
@@ -37,4 +39,5 @@
 | $\rho(z)$    | first characteristic polynomial|
 | $\sigma(z)$    | second characteristic polynomial|
 | $\begin{pmatrix} n \\ k \end{pmatrix}$       | binomial coefficient |
+
 :::

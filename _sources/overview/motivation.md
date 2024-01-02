@@ -55,6 +55,7 @@ Ordinary differential equations have wide applications in science and engineerin
 
 - Life Insurance
 
+Cultivating skills in dealing with Ordinary Differential Equations opens a door for mathematicians to solve real problems in lots of areas.
 
 ## Why are we learning Computational Methods?
 
