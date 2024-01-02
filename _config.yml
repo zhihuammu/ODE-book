@@ -35,12 +35,12 @@ repository:
 html:
   favicon               : images/logo/odefavicon.png  # A path to a favicon image
   home_page_in_navbar   : false
-  use_multitoc_numbering: false      
+  use_multitoc_numbering: false     
   use_repository_button : false
   use_edit_page_button  : false
   use_issues_button     : false
-  use_download_button   : true
-  use_source_button     : false  
+  use_download_button   : false
+  use_source_button     : false 
   comments:
     hypothesis          : false
   announcement          : ""
@@ -85,7 +85,8 @@ sphinx:
     # html_theme: pydata_sphinx_theme
     # templates_path: ['_templates']  #This conflicts with sphinx_book_theme
     html_theme_options:    
-      show_toc_level  : 3
+      navigation_with_keys: True
+      show_toc_level  : 3      
       footer_start  : 
         - sphinx-version
         # - copyright
@@ -97,16 +98,24 @@ sphinx:
       #   - copyright
       #   - theme-version
       #   - last-updated
-      content_footer_items:
-        - theme-version
-        - last-updated
-        - copyright
-        - sphinx-version
+      # content_footer_items:
+      #   - theme-version
+      #   - last-updated
+      #   - copyright
+      #   - sphinx-version
+      # navbar_start      : navbar-logo
+      # navbar_center     : navbar-nav
+      # navbar_end        : navbar-icon-links
+      # navbar_persistent : search-button
+      # navbar_align      : right
     # html_sidebars :
     #   '**': 
     #     - navbar-logo
     #     - sbt-sidebar-nav
     #     - indices        
+      # secondary_sidebar_items:
+        # - page-toc
+        # - edit-this-page
     html_last_updated_fmt : "%A %d %B %Y %H:%M:%S"
   extra_extensions:
     - sphinx_proof
