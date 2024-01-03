@@ -59,3 +59,19 @@ Substituting $x=1$ into {eq}`eq:bi:exap:general`, we get
 $$
 (1+y)^s = 1 + s y + \frac{s(s-1)}{2!}y^2+\frac{s(s-1)(s-2)}{3!}y^3 + \cdots
 $$(eq:bi:exap:variant:general)
+
+------
+
+test
+
+$$
+\dda[2]{y}{x}=0
+$$
+
+$$
+\dda{y}{x}=0
+$$
+
+$$\ddx{y}$$
+
+$$\ddx[t]{y}$$
