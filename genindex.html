@@ -50,6 +50,7 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -72,7 +73,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 15:25:12"/>
+    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 22:47:24"/>
   </head>
   
   
@@ -416,14 +417,14 @@ document.write(`
 </li>
       <li><a href="chaps/07/chap07_3_method.html#index-0">backward differentiation formulae</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="chaps/02/chap02_3_interpolation.html#index-1">backward interpolation</a>
-</li>
       <li><a href="chaps/00/chap00_B_biexpan.html#index-0">Binomial Expansion</a>
 
       <ul>
         <li><a href="chaps/00/chap00_B_biexpan.html#index-1">binomial coefficient</a>
+</li>
+        <li><a href="chaps/00/chap00_B_biexpan.html#index-3">general binomial coefficient</a>
+</li>
+        <li><a href="chaps/00/chap00_B_biexpan.html#index-2">general binomial expansion</a>
 </li>
       </ul></li>
   </ul></td>
@@ -546,8 +547,6 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="chaps/02/chap02_2_differenceOperator.html#index-1">forward difference</a>
 </li>
-      <li><a href="chaps/02/chap02_3_interpolation.html#index-0">forward Gregory-Newton Interpolation</a>
-</li>
   </ul></td>
 </tr></table>
 
@@ -561,10 +560,18 @@ document.write(`
         <li><a href="chaps/00/chap00_A1_definition.html#index-8">Differential Equation</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="chaps/04/chap04_2_errorConstant.html#index-1">global error</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="chaps/02/chap02_3_interpolation.html#index-0">Gregory-Newton Interpolation Formulae</a>
+
+      <ul>
+        <li><a href="chaps/02/chap02_3_interpolation.html#index-2">Gregory-Newton Backward Interpolation</a>
+</li>
+        <li><a href="chaps/02/chap02_3_interpolation.html#index-1">Gregory-Newton Forward Interpolation</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -910,7 +917,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
+By Dr Zhihua Ma
 </p>
 
   </div>
@@ -929,7 +936,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 03 January 2024 15:25:12.
+  Last updated on Wednesday 03 January 2024 22:47:24.
   <br/>
 </p>
   </div>
@@ -961,7 +968,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     <br/>
   </p>
 </div>

@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>8.4. Sparse Matrices Storage and Reordering &#8212; Linear Multistep Methods</title>
   
   
@@ -51,6 +50,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="8.3. Matrix Sparsity and Graph Theory" href="chap08_3_graphTheory.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 15:25:12"/>
+    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 22:47:24"/>
   </head>
   
   
@@ -421,16 +421,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sparse-matrices-storage-and-reordering">
+  <div class="tex2jax_ignore mathjax_ignore section" id="sparse-matrices-storage-and-reordering">
 <h1><span class="section-number">8.4. </span>Sparse Matrices Storage and Reordering<a class="headerlink" href="#sparse-matrices-storage-and-reordering" title="Permalink to this heading">#</a></h1>
-<section id="storing-sparse-matrices">
+<div class="section" id="storing-sparse-matrices">
 <h2><span class="section-number">8.4.1. </span>Storing Sparse Matrices<a class="headerlink" href="#storing-sparse-matrices" title="Permalink to this heading">#</a></h2>
 <p>The coordinate scheme is the most preferred way to specify a sparse
 matrix in the form of an unordered set of triples <span class="math notranslate nohighlight">\((i,j, a_{ij})\)</span>.
 Consider the following example.</p>
 <div class="proof example admonition" id="example-8.5">
 <p class="admonition-title"><span class="caption-number">Example 8.5 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Consider a <span class="math notranslate nohighlight">\(5\times5\)</span> sparse matrix A:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}A=
@@ -444,7 +444,7 @@ Consider the following example.</p>
 <p>where <span class="math notranslate nohighlight">\(i\)</span> denotes the row and <span class="math notranslate nohighlight">\(j\)</span> denotes the column
 numbers. Note that the number of nonzero elements is 10. The coordinate
 scheme representation of matrix <span class="math notranslate nohighlight">\(A\)</span> is shown in the following table:</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Subscripts</p></th>
 <th class="head"><p>1</p></th>
@@ -504,10 +504,10 @@ approach to store the nonzero elements and their indices. The
 <code class="docutils literal notranslate"><span class="pre">sparse</span></code> function generates matrices in the MATLAB sparse storage
 organisation. It converts a full matrix to sparse form by only
 considering the nonzero elements.</p>
-</section>
+</div>
 </div><div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 8.6 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Consider matrix <span class="math notranslate nohighlight">\(A\)</span> in <a class="reference internal" href="#example-8.5">Example 8.5</a>, with 10
 nonzero elements. To convert matrix <span class="math notranslate nohighlight">\(A\)</span> to sparse form in MATLAB use
 <code class="docutils literal notranslate"><span class="pre">sparse</span></code> function:</p>
@@ -532,9 +532,9 @@ ans =
    (4,5)        4
 </pre></div>
 </div>
-</section>
-</div></section>
-<section id="matrix-storage-information">
+</div>
+</div></div>
+<div class="section" id="matrix-storage-information">
 <h2><span class="section-number">8.4.2. </span>Matrix Storage Information<a class="headerlink" href="#matrix-storage-information" title="Permalink to this heading">#</a></h2>
 <p>A matrix can be stored in full or only by its nonzero elements. For
 example, it will have the same entries and their elements, eigenvalues
@@ -543,7 +543,7 @@ In general, the computation storage of sparse matrices is proportional
 to the number of nonzero elements. The <strong>whos</strong> command in MATLAB
 provides the general information about matrix size and storage as shown
 in <a class="reference internal" href="#example-8.5">Example 8.5</a>.</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Size</p></th>
@@ -575,8 +575,8 @@ Zero-valued elements require the same amount of storage space as any
 other matrix element. For large matrices with a high percentage of
 zero-valued elements, this scheme significantly reduces the amount of
 memory required for data storage.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -657,7 +657,7 @@ memory required for data storage.</p>
   <div class="footer-item">
     
 <p class="component-author">
-By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
+By Dr Zhihua Ma
 </p>
 
   </div>
@@ -676,7 +676,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 03 January 2024 15:25:12.
+  Last updated on Wednesday 03 January 2024 22:47:24.
   <br/>
 </p>
   </div>
@@ -708,7 +708,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     <br/>
   </p>
 </div>

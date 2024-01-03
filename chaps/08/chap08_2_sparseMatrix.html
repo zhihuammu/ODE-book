@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>8.2. Sparse Matrices &#8212; Linear Multistep Methods</title>
   
   
@@ -51,6 +50,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="8.1. Introduction" href="chap08_1_introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 15:25:12"/>
+    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 22:47:24"/>
   </head>
   
   
@@ -410,16 +410,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sparse-matrices">
+  <div class="tex2jax_ignore mathjax_ignore section" id="sparse-matrices">
 <h1><span class="section-number">8.2. </span>Sparse Matrices<a class="headerlink" href="#sparse-matrices" title="Permalink to this heading">#</a></h1>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 8.1 </span> (Sparse Matrix)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>A <span class="target" id="index-0"></span>sparse matrix is a matrix with a large number of zero
 elements, compared to the total number of elements. Alternatively, we
 say a matrix can be considered as sparse if the number of nonzero
 elements <span class="math notranslate nohighlight">\(nnz \ll (N^{2} + N)/2\)</span></p>
-</section>
+</div>
 </div><p>The Newton iteration solution technique introduces a large amount of
 computational overhead necessary to solve the linear algebraic system
 related to the Jacobian matrix of a stiff system of ODEs. Some matrices
@@ -442,7 +442,7 @@ processes, i.e. the L and U parts of the LU factorization will have the
 same structures as the lower and upper parts of the original matrix,
 respectively. Thus, ordering allows the sparsity structure of the system
 to be preserved in the factorization processes.</p>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -508,7 +508,7 @@ to be preserved in the factorization processes.</p>
   <div class="footer-item">
     
 <p class="component-author">
-By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
+By Dr Zhihua Ma
 </p>
 
   </div>
@@ -527,7 +527,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 03 January 2024 15:25:12.
+  Last updated on Wednesday 03 January 2024 22:47:24.
   <br/>
 </p>
   </div>
@@ -559,7 +559,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     <br/>
   </p>
 </div>

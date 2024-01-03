@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>8.7. Answers to Chapter 8 Exercises &#8212; Linear Multistep Methods</title>
   
   
@@ -51,6 +50,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="8.6. Chapter 8 Exercises" href="chap08_6_exercise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 15:25:12"/>
+    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 22:47:24"/>
   </head>
   
   
@@ -421,9 +421,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="answers-to-chapter-8-exercises">
+  <div class="tex2jax_ignore mathjax_ignore section" id="answers-to-chapter-8-exercises">
 <h1><span class="section-number">8.7. </span>Answers to Chapter 8 Exercises<a class="headerlink" href="#answers-to-chapter-8-exercises" title="Permalink to this heading">#</a></h1>
-<section id="answer-to-ex-ch08-q1">
+<div class="section" id="answer-to-ex-ch08-q1">
 <h2><span class="section-number">8.7.1. </span>Answer to <a class="reference internal" href="chap08_6_exercise.html#ex-ch08-q1"><span class="std std-numref">Exercise 8.1</span></a><a class="headerlink" href="#answer-to-ex-ch08-q1" title="Permalink to this heading">#</a></h2>
 <ol class="arabic">
 <li><div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
@@ -442,7 +442,7 @@ document.write(`
 \end{aligned}\end{split}\]</div>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-b34d27122032b2f92f4b48275505318d44e9caa1.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-b34d27122032b2f92f4b48275505318d44e9caa1.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -484,7 +484,7 @@ document.write(`
 \end{aligned}\end{split}\]</div>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-df74a555bf88240fc86f17d535cb27fd2145ddd1.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-df74a555bf88240fc86f17d535cb27fd2145ddd1.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -511,11 +511,11 @@ document.write(`
 </div>
 </li>
 </ol>
-</section>
-<section id="answer-to-ex-ch08-q2">
+</div>
+<div class="section" id="answer-to-ex-ch08-q2">
 <h2><span class="section-number">8.7.2. </span>Answer to <a class="reference internal" href="chap08_6_exercise.html#ex-ch08-q2"><span class="std std-numref">Exercise 8.2</span></a><a class="headerlink" href="#answer-to-ex-ch08-q2" title="Permalink to this heading">#</a></h2>
 <p>Consider the following adjacency graph:</p>
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-ea1c5d3019c7476778c146c283b46223bbb3b3dd.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-ea1c5d3019c7476778c146c283b46223bbb3b3dd.svg" alt="Figure made with TikZ" /></p>
 </div><div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
 <div class="sd-col sd-d-flex-column docutils">
@@ -539,7 +539,7 @@ matrices within this file for multiple use.</p>
 number of nonzero elements.</p>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-072de8dde5f703bcf4d4ecfa68b8b1e07e4942c1.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-072de8dde5f703bcf4d4ecfa68b8b1e07e4942c1.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -555,7 +555,7 @@ bw =
 <p>Next we apply the Cuthill-McKee (CM) and reverse Cuthill-McKee (RCM)
 ordering algorithms to reduce the bandwidth.</p>
 <p>we need to construct the following table</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Original nodes</p></th>
 <th class="head"><p>No. of connections</p></th>
@@ -672,7 +672,7 @@ write down 2, 3 in the Queue column.</p></li>
 <li><p>Next, we bring 9 and follow the above procedure until all 10 nodes
 are listed in the results/Head column.</p></li>
 </ul>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Original nodes</p></th>
 <th class="head"><p>No. of connections</p></th>
@@ -773,14 +773,14 @@ column header ‘New nodes’.</p>
 column, and say that, the original node 3 becomes node 1, original
 node 2 remains node 2, original node 10 becomes 3, and so on.</p>
 <p>Repeat this for CM method.</p>
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-b495c632cabe031ea840233eaa98a269b161db55.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-b495c632cabe031ea840233eaa98a269b161db55.svg" alt="Figure made with TikZ" /></p>
 </div><div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-2e866753343e810a055a1062457cb78d72d5d488.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-2e866753343e810a055a1062457cb78d72d5d488.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-bf333d58b9ad4d816b59cf3f43137402f768615b.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-bf333d58b9ad4d816b59cf3f43137402f768615b.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -804,7 +804,7 @@ with the reordered RCM adjacency plot:</p>
 </div>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-7343537fad67bd65cda08b9cfc9a90b93d0dd6a5.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-7343537fad67bd65cda08b9cfc9a90b93d0dd6a5.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -840,7 +840,7 @@ bw = 4
 </div>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-41e44f73bdbcb9583dbddc8d4e20d410967510f1.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-41e44f73bdbcb9583dbddc8d4e20d410967510f1.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -868,7 +868,7 @@ bw = 4
 <span class="math notranslate nohighlight">\(= 4 + 4 + 1 = 9\)</span>.</p>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-d17c93004bcb21f27b49b5226ed0f92aaf68851f.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-d17c93004bcb21f27b49b5226ed0f92aaf68851f.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -891,12 +891,12 @@ write down the associated adjacency matrix and plot:</p>
 </div>
 </div>
 <div class="sd-col sd-d-flex-column sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-e3667a52da3226c8789c3a4ccc70888daad1f539.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-e3667a52da3226c8789c3a4ccc70888daad1f539.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
 <p><strong>Column Count reordering:</strong></p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>vertex</p></th>
 <th class="head"><p>1</p></th>
@@ -926,7 +926,7 @@ write down the associated adjacency matrix and plot:</p>
 </tr>
 </tbody>
 </table>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>vertex</p></th>
 <th class="head"><p>1</p></th>
@@ -959,10 +959,10 @@ write down the associated adjacency matrix and plot:</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-b495c632cabe031ea840233eaa98a269b161db55.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-b495c632cabe031ea840233eaa98a269b161db55.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-3ae04f67c956f140bcf85497f58526e2450ccc42.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-3ae04f67c956f140bcf85497f58526e2450ccc42.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <p><span class="math notranslate nohighlight">\(
@@ -980,7 +980,7 @@ write down the associated adjacency matrix and plot:</p>
         \end{pmatrix}\)</span></p>
 </div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-3dea16fe597aea698864673163ba52095a4c7af7.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-3dea16fe597aea698864673163ba52095a4c7af7.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <p>Note that D (ordered Matrix <span class="math notranslate nohighlight">\(A\)</span> by Column Count algorithm) is identical to Matrix A ordered by using the MATLAB command <code class="docutils literal notranslate"><span class="pre">colperm</span></code> i.e.</p>
@@ -990,7 +990,7 @@ write down the associated adjacency matrix and plot:</p>
 </div>
 </div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-8a2ba0433aa68a4d2099cbfefd44abbb2172a5b7.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-8a2ba0433aa68a4d2099cbfefd44abbb2172a5b7.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -1021,15 +1021,15 @@ write down the associated adjacency matrix and plot:</p>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-ed80327951234b18e932bc13f71fd12dfe919793.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-ed80327951234b18e932bc13f71fd12dfe919793.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-28ec85692418280346a71d9dfcca391c35562c56.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-28ec85692418280346a71d9dfcca391c35562c56.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-18803a72618cb5c5637b6875e31639bdae1817e5.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-18803a72618cb5c5637b6875e31639bdae1817e5.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -1046,28 +1046,28 @@ answer will be checked in the tutorial session.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-a938bf0036b884d88d10d25f8a8072d0397ccdd4.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-a938bf0036b884d88d10d25f8a8072d0397ccdd4.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-2a7526b2d93233adc3ca6f677a98b46ef2ede45d.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-2a7526b2d93233adc3ca6f677a98b46ef2ede45d.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-ed4ce054e16cd6673b35db479f5499ee0f31ca62.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-ed4ce054e16cd6673b35db479f5499ee0f31ca62.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-d017ea577258f9d3df39a3afb59b11e939fcefce.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-d017ea577258f9d3df39a3afb59b11e939fcefce.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-97458318151aed659381fd4437dbc53deb25a8a3.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-97458318151aed659381fd4437dbc53deb25a8a3.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-e0e506d536b457638e5d56175b30337eecd2a803.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-e0e506d536b457638e5d56175b30337eecd2a803.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-8fc731bb95c3b1a252c6ae2dc1805025b07cdf10.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-8fc731bb95c3b1a252c6ae2dc1805025b07cdf10.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-ee9d35b72fc2deab492b54d7a5333df19c383d29.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-ee9d35b72fc2deab492b54d7a5333df19c383d29.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -1311,8 +1311,8 @@ $$
 
     Repeat for matrices $D$ (column count) and $M$ (minimum degree) and
     comment. -->
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1393,7 +1393,7 @@ $$
   <div class="footer-item">
     
 <p class="component-author">
-By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
+By Dr Zhihua Ma
 </p>
 
   </div>
@@ -1412,7 +1412,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 03 January 2024 15:25:12.
+  Last updated on Wednesday 03 January 2024 22:47:24.
   <br/>
 </p>
   </div>
@@ -1444,7 +1444,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     <br/>
   </p>
 </div>

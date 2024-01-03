@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>8.3. Matrix Sparsity and Graph Theory &#8212; Linear Multistep Methods</title>
   
   
@@ -51,6 +50,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="8.2. Sparse Matrices" href="chap08_2_sparseMatrix.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 15:25:12"/>
+    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 22:47:24"/>
   </head>
   
   
@@ -410,7 +410,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="matrix-sparsity-and-graph-theory">
+  <div class="tex2jax_ignore mathjax_ignore section" id="matrix-sparsity-and-graph-theory">
 <h1><span class="section-number">8.3. </span>Matrix Sparsity and Graph Theory<a class="headerlink" href="#matrix-sparsity-and-graph-theory" title="Permalink to this heading">#</a></h1>
 <p>A graph <span class="math notranslate nohighlight">\(G = \{v,E\}\)</span> consists of a set of vertices <span class="math notranslate nohighlight">\(v\text{(nodes)}\)</span>
 and a set of edges <span class="math notranslate nohighlight">\(E\)</span> connecting the vertices. A graph can be used to
@@ -428,7 +428,7 @@ or symbol represents the nonzero entry, e.g. <span class="math notranslate nohig
 (or the number of edges connected to it).</p>
 <div class="proof example admonition" id="example-0">
 <p class="admonition-title"><span class="caption-number">Example 8.1 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Consider the following matrix <span class="math notranslate nohighlight">\(A\)</span> and its corresponding adjacency graph.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -456,7 +456,7 @@ A=
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Graph</div>
-<div class="figure" style="text-align: center"><p><img width="60%" src="../../_images/tikz-c218ed160db3f2c3dcf9da141a56c7c4124624ea.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img width="60%" src="../../_images/tikz-c218ed160db3f2c3dcf9da141a56c7c4124624ea.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -476,10 +476,10 @@ Graph</div>
 <span class="nb">text</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="s">&#39;5&#39;</span><span class="p">);</span><span class="w">        </span>
 </pre></div>
 </div>
-</section>
+</div>
 </div><div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 8.2 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Consider the following matrix <span class="math notranslate nohighlight">\(A\)</span> and its corresponding adjacency graph.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -508,7 +508,7 @@ A=
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Graph</div>
-<div class="figure" style="text-align: center"><p><img width="60%" src="../../_images/tikz-864756156e38069542588dd89486e81c4e9fa27a.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img width="60%" src="../../_images/tikz-864756156e38069542588dd89486e81c4e9fa27a.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -531,10 +531,10 @@ Graph</div>
 </div>
 <p>In MATLAB the function <strong>spy</strong> plots the sparsity pattern (i.e. the
 non-zero elements) of any matrix A.</p>
-</section>
+</div>
 </div><div class="proof example admonition" id="example-2">
 <p class="admonition-title"><span class="caption-number">Example 8.3 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Enter the matrix A in MATLAB</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w">   </span><span class="n">A</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">0</span>
 <span class="w">        </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">0</span>
@@ -546,13 +546,13 @@ non-zero elements) of any matrix A.</p>
 </div>
 <p>MATLAB will produce the sparsity pattern (nonzero elements) for matrix
 <span class="math notranslate nohighlight">\(A\)</span> as:</p>
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-8b999c3f16abc53e7b83696cc90cb754338aa07a.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-8b999c3f16abc53e7b83696cc90cb754338aa07a.svg" alt="Figure made with TikZ" /></p>
 </div><p>The number of nonzero elements in matrix <span class="math notranslate nohighlight">\(A\)</span> is <span class="math notranslate nohighlight">\(10\)</span> and this is noted
 by <span class="math notranslate nohighlight">\(nnz=10\)</span> in Fig. 3.</p>
-</section>
+</div>
 </div><div class="proof example admonition" id="example-3">
 <p class="admonition-title"><span class="caption-number">Example 8.4 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Define the matrix <span class="math notranslate nohighlight">\(A\)</span>, from Example 2, in
 MATLAB, followed by the command spy(A), gives:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w">   </span><span class="n">A</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span>
@@ -565,9 +565,9 @@ MATLAB, followed by the command spy(A), gives:</p>
 <span class="o">&gt;&gt;</span><span class="w"> </span><span class="nb">spy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-4db2435b232f7ee02ba35d3662cdd7429c3d261e.png" alt="Figure made with TikZ" /></p>
-</div></section>
-</div></section>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-4db2435b232f7ee02ba35d3662cdd7429c3d261e.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {
@@ -633,7 +633,7 @@ MATLAB, followed by the command spy(A), gives:</p>
   <div class="footer-item">
     
 <p class="component-author">
-By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
+By Dr Zhihua Ma
 </p>
 
   </div>
@@ -652,7 +652,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 03 January 2024 15:25:12.
+  Last updated on Wednesday 03 January 2024 22:47:24.
   <br/>
 </p>
   </div>
@@ -684,7 +684,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     <br/>
   </p>
 </div>

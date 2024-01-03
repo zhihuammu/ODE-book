@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Overview &#8212; Linear Multistep Methods</title>
   
   
@@ -51,6 +50,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Linear Multistep Methods and Sparse Matrices" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 15:25:12"/>
+    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 22:47:24"/>
   </head>
   
   
@@ -423,10 +423,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="overview">
+  <div class="tex2jax_ignore mathjax_ignore section" id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h1>
 <dl class="myst field-list simple">
-<dt class="field-odd">Unit Title<span class="colon">:</span></dt>
+<dt class="field-odd">Unit Title</dt>
 <dd class="field-odd"><p>Computational Methods in Ordinary Differential Equations</p>
 </dd>
 </dl>
@@ -434,7 +434,7 @@ document.write(`
 <li><p>Runge-Kutta Methods and Linear Algebra – Jon Shiach</p></li>
 <li><p>Linear Multistep Methods and Sparse Matrices – Zhihua Ma</p></li>
 </ul>
-<section id="what-will-we-learn">
+<div class="section" id="what-will-we-learn">
 <h2>What will we learn?<a class="headerlink" href="#what-will-we-learn" title="Permalink to this heading">#</a></h2>
 <p>Our main focus is to learn and apply a range of numerical methods to solve a single or a system of <strong>First-Order</strong> Ordinary Differential Equation(s) given as</p>
 <ul class="simple">
@@ -446,8 +446,8 @@ document.write(`
 <li><p>Form adjacency matrix for a graph,</p></li>
 <li><p>Reorder a graph to reduce the bandwidth and fill-ins of its adjacency matrix.</p></li>
 </ul>
-</section>
-<section id="why-are-we-learning-about-ordinary-differential-equations">
+</div>
+<div class="section" id="why-are-we-learning-about-ordinary-differential-equations">
 <h2>Why are we learning about Ordinary Differential Equations?<a class="headerlink" href="#why-are-we-learning-about-ordinary-differential-equations" title="Permalink to this heading">#</a></h2>
 <p>Ordinary differential equations have wide applications in science and engineering:</p>
 <ul>
@@ -483,8 +483,8 @@ document.write(`
 <li><p>Life Insurance</p></li>
 </ul>
 <p>Cultivating skills in dealing with Ordinary Differential Equations opens a door for mathematicians to solve real problems in lots of areas.</p>
-</section>
-<section id="why-are-we-learning-computational-methods">
+</div>
+<div class="section" id="why-are-we-learning-computational-methods">
 <h2>Why are we learning Computational Methods?<a class="headerlink" href="#why-are-we-learning-computational-methods" title="Permalink to this heading">#</a></h2>
 <p>In general there are two ways to solve ordinary differential equations:</p>
 <ul class="simple">
@@ -492,8 +492,8 @@ document.write(`
 <li><p>computational methods</p></li>
 </ul>
 <p>Analytical methods only work for a very limited number of simple cases, for most of the realistic complex problems we need to solve them numerically.</p>
-</section>
-<section id="learning-objectives">
+</div>
+<div class="section" id="learning-objectives">
 <h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
 <!-- - Successfully use a range of practical computational methods in ODEs for solving initial value and boundary value problems, and recognise their limitations and applications.
 
@@ -509,8 +509,8 @@ document.write(`
 <li><p>Solve IVPs, BVPs and linear systems of equations, plot results, perform comparison analysis and determine the most suitable methods for the solution of a given problem. Prepare an academic report.</p></li>
 <li><p>Model and solve real-world systems of linear and ordinary differential equations.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -593,7 +593,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
+By Dr Zhihua Ma
 </p>
 
   </div>
@@ -612,7 +612,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 03 January 2024 15:25:12.
+  Last updated on Wednesday 03 January 2024 22:47:24.
   <br/>
 </p>
   </div>
@@ -644,7 +644,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     <br/>
   </p>
 </div>

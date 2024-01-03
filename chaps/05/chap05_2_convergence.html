@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5.2. Zero-Stability, Consistency and Convergence Theorem &#8212; Linear Multistep Methods</title>
   
   
@@ -51,6 +50,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="5.1. Characteristic Polynomials and Root Condition" href="chap05_1_rootCondition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 15:25:12"/>
+    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 22:47:24"/>
   </head>
   
   
@@ -410,20 +410,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="zero-stability-consistency-and-convergence-theorem">
+  <div class="tex2jax_ignore mathjax_ignore section" id="zero-stability-consistency-and-convergence-theorem">
 <h1><span class="section-number">5.2. </span>Zero-Stability, Consistency and Convergence Theorem<a class="headerlink" href="#zero-stability-consistency-and-convergence-theorem" title="Permalink to this heading">#</a></h1>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 5.6 </span> (Zero-Stability)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>A method is said to be <span class="target" id="index-0"></span>zero-stable if it satisfies the root condition,
 i.e. the linear multistep method <a class="reference internal" href="chap05_1_rootCondition.html#equation-eq-ch04-1-1">(5.1)</a>
 is said to be <strong>zero-stable</strong> if no root of the
 first characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> has modulus greater that
 one, and every root of modulus one is simple.</p>
-</section>
+</div>
 </div><div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 5.7 </span> (Consistency)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>In numerical analysis, consistency is the property of a numerical method performing differentiation or integration in a way similar to the actual differentiation or integration. In another word, consistency tells how similar is the discrete system to the original continuous system.</p>
 <p>The condition for the discrete system produced by a linear multistep method <a class="reference internal" href="chap05_1_rootCondition.html#equation-eq-ch04-1-1">(5.1)</a></p>
 <div class="math notranslate nohighlight">
@@ -437,7 +437,7 @@ one, and every root of modulus one is simple.</p>
 \int_{x_j}^{x_{j+k}} \dy = \int_{x_j}^{x_{j+k}} f \dx
 \]</div>
 <p>is that the method has an order of accuracy <span class="math notranslate nohighlight">\(p \geq 1\)</span>.</p>
-</section>
+</div>
 </div><p>In terms of error constants <span class="math notranslate nohighlight">\(C_p\)</span> introduced in <a class="reference internal" href="../04/chap04_2_errorConstant.html#chap-errorconstant-constants"><span class="std std-numref">Section 4.2</span></a>, the condition of consistency is
 equivalent to <span class="math notranslate nohighlight">\(C_0 = 0\)</span>, <span class="math notranslate nohighlight">\(C_1 = 0\)</span>. This ensures the method has an order of accuracy <span class="math notranslate nohighlight">\(p\geq 1\)</span>. Thus the condition of consistency can also be expressed by the relations</p>
 <div class="math notranslate nohighlight">
@@ -460,7 +460,7 @@ remaining roots <span class="math notranslate nohighlight">\(\,z_i\,, ~i=2,3,\do
 roots</em>.</p>
 <div class="proof remark admonition" id="remark-2">
 <p class="admonition-title"><span class="caption-number">Remark 5.1 </span> (Condition of Consistency)</p>
-<section class="remark-content" id="proof-content">
+<div class="remark-content section" id="proof-content">
 <p>In summary there are three equivalent conditions of consistency:</p>
 <ol class="arabic simple">
 <li><p>The method’s order of accuracy <span class="math notranslate nohighlight">\(p \geq 1\)</span>.</p></li>
@@ -468,7 +468,7 @@ roots</em>.</p>
 <li><p><span class="math notranslate nohighlight">\(\rho(1)=0\)</span> and <span class="math notranslate nohighlight">\(\rho'(1)=\sigma(1)\)</span>.</p></li>
 </ol>
 <p>If a linear multistep method satisfies any of these three conditions, then it is a <em>consistent</em> method.</p>
-</section>
+</div>
 </div><p>A linear multistep method which is zero-stable is frequently called
 ‘stable’. Essentially a method is stable if errors introduced at one
 step are not propagated at subsequent steps. Zero-stability ensures that
@@ -477,13 +477,13 @@ are damped out in the limit as <span class="math notranslate nohighlight">\(\,h 
 to the fundamental theorem on linear multistep methods by ‘Dahlquist’:</p>
 <div class="proof theorem admonition" id="theorem-3">
 <p class="admonition-title"><span class="caption-number">Theorem 5.1 </span> (Convergence)</p>
-<section class="theorem-content" id="proof-content">
+<div class="theorem-content section" id="proof-content">
 <p>The necessary and sufficient conditions for a linear multistep method to
 be <span class="target" id="index-1"></span>convergent are that it is consistent and zero-stable.</p>
-</section>
+</div>
 </div><div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 5.3 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Investigate the convergence of the third order Adams-Bashforth formula:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -545,10 +545,10 @@ satisfies the root condition and is zero-stable.</p>
 <p>so the method is also consistent <span class="math notranslate nohighlight">\((\text{i.e.}\,\rho(1) = 0,~ \rho'(1) = \sigma(1) )\)</span>.</p>
 <p>Therefore the method is convergent.</p>
 </div>
-</section>
+</div>
 </div><div class="proof example admonition" id="example-5">
 <p class="admonition-title"><span class="caption-number">Example 5.4 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Investigate the stability of the Milne’s predictor method:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -597,10 +597,10 @@ method is consistent
 <span class="math notranslate nohighlight">\((\text{i.e.}\ \,\rho(1) = 0,~ \rho'(1) = \sigma(1) = 4)\)</span>, and since
 zero stable, the method is also convergent.</p>
 </div>
-</section>
+</div>
 </div><div class="proof remark admonition" id="remark-6">
 <p class="admonition-title"><span class="caption-number">Remark 5.2 </span> (Adams methods)</p>
-<section class="remark-content" id="proof-content">
+<div class="remark-content section" id="proof-content">
 <p>The characteristic polynomial <span class="math notranslate nohighlight">\(\rho\)</span> for all Adams methods
 (AB and AM) are of the form:</p>
 <div class="math notranslate nohighlight">
@@ -614,8 +614,8 @@ zero stable, the method is also convergent.</p>
 <span class="math notranslate nohighlight">\(z_2,z_3,\dots,z_k = 0\)</span>, they all satisfy the root conditions and
 are zero stable. It can be shown that they are consistent and therefore,
 all Adams methods are convergent.</p>
-</section>
-</div></section>
+</div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {
@@ -681,7 +681,7 @@ all Adams methods are convergent.</p>
   <div class="footer-item">
     
 <p class="component-author">
-By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
+By Dr Zhihua Ma
 </p>
 
   </div>
@@ -700,7 +700,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 03 January 2024 15:25:12.
+  Last updated on Wednesday 03 January 2024 22:47:24.
   <br/>
 </p>
   </div>
@@ -732,7 +732,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     <br/>
   </p>
 </div>

@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3.3. Explicit Multistep Methods &#8212; Linear Multistep Methods</title>
   
   
@@ -51,6 +50,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="3.2. Derivation of Multistep Methods by Numerical Integration" href="chap03_2_derivation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 15:25:12"/>
+    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 22:47:24"/>
   </head>
   
   
@@ -410,7 +410,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="explicit-multistep-methods">
+  <div class="tex2jax_ignore mathjax_ignore section" id="explicit-multistep-methods">
 <h1><span class="section-number">3.3. </span>Explicit  Multistep Methods<a class="headerlink" href="#explicit-multistep-methods" title="Permalink to this heading">#</a></h1>
 <p>Although any type of the interpolating polynomials can be used for
 deriving the multistep methods, some can lead to algebraically easier
@@ -462,11 +462,11 @@ suffices to take the terms in the G-N interpolation formula up to
 <span class="math notranslate nohighlight">\(\Delta^{p-1}\)</span> (or <span class="math notranslate nohighlight">\(\nabla^{p-1}\)</span>) inclusive.</p>
 <div class="proof example admonition" id="example-0">
 <p class="admonition-title"><span class="caption-number">Example 3.1 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Consider the following table for <span class="math notranslate nohighlight">\(\,\dfrac{\dy}{\dx} = x + y\,\)</span>,
 <span class="math notranslate nohighlight">\(\,y(0) = 1\,\)</span>. The values of <span class="math notranslate nohighlight">\(y(0.2)\)</span> and <span class="math notranslate nohighlight">\(y(0.4)\)</span> are calculated using
 a single–step method.</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(j\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
@@ -513,7 +513,7 @@ a single–step method.</p>
 with <span class="math notranslate nohighlight">\(\,h = 0.1\,\)</span>, and use the values at <span class="math notranslate nohighlight">\(\,x = 0.3\,\)</span>, <span class="math notranslate nohighlight">\(\,x = 0.4\,\)</span>
 and <span class="math notranslate nohighlight">\(\,x = 0.5\,\)</span> to obtain a better approximation for <span class="math notranslate nohighlight">\(y\)</span> at
 <span class="math notranslate nohighlight">\(\,x = 0.6\,\)</span>.</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(j\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
@@ -570,7 +570,7 @@ and <span class="math notranslate nohighlight">\(\,x = 0.5\,\)</span> to obtain 
 answer <span class="math notranslate nohighlight">\(2.04424\)</span>. We can reduce the error further by using more past
 points for fitting the polynomial.</p>
 </div>
-</section>
+</div>
 </div><p>Some of the more common open methods together with their local
 truncation errors are listed below:</p>
 <ul>
@@ -604,7 +604,7 @@ with the local truncation error:
   ~\ x_j &lt; z_j &lt; x_{j+1}\)</span>.</p>
 </li>
 </ul>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -670,7 +670,7 @@ with the local truncation error:
   <div class="footer-item">
     
 <p class="component-author">
-By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
+By Dr Zhihua Ma
 </p>
 
   </div>
@@ -689,7 +689,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 03 January 2024 15:25:12.
+  Last updated on Wednesday 03 January 2024 22:47:24.
   <br/>
 </p>
   </div>
@@ -721,7 +721,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     <br/>
   </p>
 </div>

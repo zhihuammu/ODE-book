@@ -35,11 +35,15 @@ $$
 (1+y)^{n}=1+ny+\frac{n(n-1)}{2!} y^{2}+\frac{n(n-1)(n-2)}{3!}y^{3}+\cdots +ny^{n-1}+y^{n}.
 $$(eq:bi:exap:variant)
 
+:::{index} Binomial Expansion; general binomial expansion
+:::
 
 ## Newton's general binomial expansion
 
 Instead of strictly using a whole number $n$ as the power in the binomial formula {eq}`eq:bi:exap`, we can loose the condition to introduce any real number $s$ as the power. First we replace the whole number $n$ with a real number $s$ to get the generalised binomial coefficient 
 
+:::{index} Binomial Expansion; general binomial coefficient
+:::
 $$
 \begin{pmatrix} s \\ k \end{pmatrix} 
 =\dfrac{s(s-1)(s-2)\cdots(s-k+1)}{k!},

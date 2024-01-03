@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5.3. Chapter 5 Exercise &#8212; Linear Multistep Methods</title>
   
   
@@ -51,6 +50,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="5.2. Zero-Stability, Consistency and Convergence Theorem" href="chap05_2_convergence.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 15:25:12"/>
+    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 22:47:24"/>
   </head>
   
   
@@ -410,7 +410,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="chapter-5-exercise">
+  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-5-exercise">
 <span id="chap-stability1-exercise"></span><h1><span class="section-number">5.3. </span>Chapter 5 Exercise<a class="headerlink" href="#chapter-5-exercise" title="Permalink to this heading">#</a></h1>
 <p>You should try the following exercise questions first, then check with the answers.</p>
 <ul class="simple">
@@ -419,7 +419,7 @@ document.write(`
 <div class="exercise admonition" id="ch5-ex-q1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 5.1 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Find the first and second characteristic polynomials and investigate
 the stability of the following multistep methods.</p>
 <ol class="arabic simple">
@@ -428,45 +428,45 @@ the stability of the following multistep methods.</p>
 <li><p><span class="math notranslate nohighlight">\(y_{j+1} ~=~ 4y_j - 3y_{j-1} - 2hf_{j-1}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y_{j+1} ~=~ 2y_{j-1} - y_j + \frac{h}{2}(5f_j + f_{j-1})\)</span></p></li>
 </ol>
-</section>
+</div>
 </div>
 <div class="solution dropdown admonition" id="chaps/05/chap05_3_exercise-solution-1">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch5-ex-q1"> Exercise 5.1</a></p>
-<section id="solution-content">
+<div class="section" id="solution-content">
 <ol class="arabic simple">
 <li><p>Roots are 0 and 1</p></li>
 <li><p>Roots are 1, -0.1, -9.9</p></li>
 <li><p>Roots are 1 and 3</p></li>
 <li><p>Roots are 1 and -2</p></li>
 </ol>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="ch5-ex-q2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 5.2 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Consider the multistep methods in <a class="reference internal" href="#ch5-ex-q1"><span class="std std-numref">Exercise 5.1</span></a>,
 determine their order of accuracy and error constants using the techniques
 covered in <a class="reference internal" href="../04/chap04_2_errorConstant.html#chap-errorconstant-constants"><span class="std std-ref">Order and Error Constants</span></a>.</p>
-</section>
+</div>
 </div>
 <div class="solution dropdown admonition" id="chaps/05/chap05_3_exercise-solution-3">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch5-ex-q2"> Exercise 5.2</a></p>
-<section id="solution-content">
+<div class="section" id="solution-content">
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> order, <span class="math notranslate nohighlight">\(\frac{5}{12}\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(4^\text{th}\)</span> order, <span class="math notranslate nohighlight">\(\frac{1}{10}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> order, <span class="math notranslate nohighlight">\(\frac{2}{3}\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> order, <span class="math notranslate nohighlight">\(\frac{1}{4}\)</span></p></li>
 </ol>
-</section>
+</div>
 </div>
 <div class="exercise admonition" id="ch5-ex-q3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 5.3 </span></p>
-<section id="exercise-content">
+<div class="section" id="exercise-content">
 <p>Investigate the stability of the following explicit 2-step method
 (i.e. mid-point rule):</p>
 <div class="math notranslate nohighlight">
@@ -490,12 +490,12 @@ calculations, compare the two solution methods and comment on your
 results.</p>
 <!-- Note: You could simply use an Excel sheet to both find
 the approximate solution and plot the results. -->
-</section>
+</div>
 </div>
 <div class="solution dropdown admonition" id="chaps/05/chap05_3_exercise-solution-5">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch5-ex-q3"> Exercise 5.3</a></p>
-<section id="solution-content">
+<div class="section" id="solution-content">
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="../../_downloads/d0eaf32731cb42ea0d9bdc32935cbf60/Ex5_3_Solution.mlx"><code class="xref download docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">solution</span> <span class="pre">for</span> <span class="pre">Exercise</span> <span class="pre">5.3</span></code></a></p></li>
 </ul>
@@ -509,9 +509,9 @@ the approximate solution and plot the results. -->
 </div>
 </div>
 </div>
-</section>
 </div>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -577,7 +577,7 @@ the approximate solution and plot the results. -->
   <div class="footer-item">
     
 <p class="component-author">
-By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
+By Dr Zhihua Ma
 </p>
 
   </div>
@@ -596,7 +596,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 03 January 2024 15:25:12.
+  Last updated on Wednesday 03 January 2024 22:47:24.
   <br/>
 </p>
   </div>
@@ -628,7 +628,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     <br/>
   </p>
 </div>

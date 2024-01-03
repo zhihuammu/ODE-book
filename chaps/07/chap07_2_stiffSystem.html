@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>7.2. Stiff Systems of Differential Equations &#8212; Linear Multistep Methods</title>
   
   
@@ -51,6 +50,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="7.1. Introduction and background" href="chap07_1_introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 15:25:12"/>
+    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 22:47:24"/>
   </head>
   
   
@@ -410,7 +410,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="stiff-systems-of-differential-equations">
+  <div class="tex2jax_ignore mathjax_ignore section" id="stiff-systems-of-differential-equations">
 <h1><span class="section-number">7.2. </span>Stiff Systems of Differential Equations<a class="headerlink" href="#stiff-systems-of-differential-equations" title="Permalink to this heading">#</a></h1>
 <p>Although there are situations when a single differential equation is
 stiff, in real life problems, stiffness is mainly a phenomenon related
@@ -481,7 +481,7 @@ integration proceeds.</p>
 </div>
 <div class="proof example admonition" id="chap07-example-3">
 <p class="admonition-title"><span class="caption-number">Example 7.3 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Consider the non-linear system</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -525,10 +525,10 @@ between the columns is a characteristic of stiff systems. Note that at
 any time step <span class="math notranslate nohighlight">\(j\)</span>, the calculated values of <span class="math notranslate nohighlight">\(y_1\)</span>, <span class="math notranslate nohighlight">\(y_2\)</span>, and <span class="math notranslate nohighlight">\(y_3\)</span> can
 be used for calculating the corresponding values of <span class="math notranslate nohighlight">\(\lambda_1\)</span>,
 <span class="math notranslate nohighlight">\(\lambda_2\)</span>, and <span class="math notranslate nohighlight">\(\lambda_3\)</span>.</p>
-</section>
+</div>
 </div><div class="proof example admonition" id="example:chap06:4">
 <p class="admonition-title"><span class="caption-number">Example 7.4 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Consider the differential equation system</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -683,8 +683,8 @@ insignificant.</p>
 Jacobian, <span class="math notranslate nohighlight">\(\,\dfrac{\partial \mathbf{f}}{\partial \mathbf{y}}\,\)</span>, and thus the
 corresponding eigenvalues are constant throughout the integration!</p>
 </div>
-</section>
-</div></section>
+</div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {
@@ -750,7 +750,7 @@ corresponding eigenvalues are constant throughout the integration!</p>
   <div class="footer-item">
     
 <p class="component-author">
-By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
+By Dr Zhihua Ma
 </p>
 
   </div>
@@ -769,7 +769,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 03 January 2024 15:25:12.
+  Last updated on Wednesday 03 January 2024 22:47:24.
   <br/>
 </p>
   </div>
@@ -801,7 +801,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     <br/>
   </p>
 </div>

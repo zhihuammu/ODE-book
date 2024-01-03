@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1.2. Sequences &#8212; Linear Multistep Methods</title>
   
   
@@ -51,6 +50,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="1.1. Complex Numbers" href="chap01_1_complexNumber.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 15:25:12"/>
+    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 22:47:24"/>
   </head>
   
   
@@ -410,11 +410,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sequences">
+  <div class="tex2jax_ignore mathjax_ignore section" id="sequences">
 <span id="chap01-sequence"></span><h1><span class="section-number">1.2. </span>Sequences<a class="headerlink" href="#sequences" title="Permalink to this heading">#</a></h1>
 <p>In analysis, we often deal with functions defined on continuous domains. For example, a cubic function defined on the real number set <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-94eece57-e8e8-4f28-85d1-d91fc01947fd">
-<span class="eqno">(1.9)<a class="headerlink" href="#equation-94eece57-e8e8-4f28-85d1-d91fc01947fd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-00f73fe6-03da-4a53-b580-9dadfbb1901f">
+<span class="eqno">(1.9)<a class="headerlink" href="#equation-00f73fe6-03da-4a53-b580-9dadfbb1901f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x)=x^3, \qquad x \in \mathbb{R}.
 \end{equation}\]</div>
 <p>Sometimes the domain might not be continuous but discrete. For example, we can define an exponential  function, with base <span class="math notranslate nohighlight">\(3\)</span>, on the integer number set <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> as</p>
@@ -436,15 +436,15 @@ f(n)=n^2, \qquad n \in \mathbb{N}_0,
 <p>Functions given in <a class="reference internal" href="#equation-eq-sequence-example-1">(1.10)</a> and <a class="reference internal" href="#equation-eq-sequence-example-2">(1.11)</a> are called sequences.</p>
 <div class="proof definition admonition" id="def-sequence">
 <p class="admonition-title"><span class="caption-number">Definition 1.5 </span> (<span class="target" id="index-0"></span>Sequence)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>In mathematics, a sequence is a function whose domain is a set of integers. An output of a sequence is called a member or term of it.
 Specifically, we will regard the expression <span class="math notranslate nohighlight">\(\{y_n\}_{n=0}^{+\infty}\)</span> to be an alternative notation for the function <span class="math notranslate nohighlight">\(y_n=y(n), n=0,1,2,\ldots\)</span></p>
-</section>
+</div>
 </div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A sequence is not necessarily a set. The elements in a set cannot be repeated, while the members in a sequence can be repeated, e.g. <span class="math notranslate nohighlight">\(0, 1, 1, 2, 2, 2, 3.7, 4.9, 4.9,\ldots\)</span></p>
 </div>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -510,7 +510,7 @@ Specifically, we will regard the expression <span class="math notranslate nohigh
   <div class="footer-item">
     
 <p class="component-author">
-By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
+By Dr Zhihua Ma
 </p>
 
   </div>
@@ -529,7 +529,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 03 January 2024 15:25:12.
+  Last updated on Wednesday 03 January 2024 22:47:24.
   <br/>
 </p>
   </div>
@@ -561,7 +561,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     <br/>
   </p>
 </div>

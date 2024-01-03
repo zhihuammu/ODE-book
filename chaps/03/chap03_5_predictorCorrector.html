@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3.5. Predictor-Corrector Methods &#8212; Linear Multistep Methods</title>
   
   
@@ -51,6 +50,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="3.4. Implicit Multistep Methods" href="chap03_4_implicit.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 15:25:12"/>
+    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 22:47:24"/>
   </head>
   
   
@@ -410,7 +410,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="predictor-corrector-methods">
+  <div class="tex2jax_ignore mathjax_ignore section" id="predictor-corrector-methods">
 <h1><span class="section-number">3.5. </span>Predictor-Corrector Methods<a class="headerlink" href="#predictor-corrector-methods" title="Permalink to this heading">#</a></h1>
 <p>Implicit methods are useful for so-called stiff equations, to be
 discussed later. However, another use of implicit methods is to combine
@@ -443,7 +443,7 @@ corrector iterations can be carried out until the difference between two
 successive iterations is less than a pre-specified tolerance.</p>
 <div class="proof example admonition" id="example-3.2">
 <p class="admonition-title"><span class="caption-number">Example 3.2 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <p>Consider the initial–value problem</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
@@ -492,7 +492,7 @@ corrector evaluation only.</p>
 <li><p>Step 1 - using the exact solution, <span class="math notranslate nohighlight">\(\,y(x) = e^{-x} + x\,\)</span>, the
 calculated starting values <span class="math notranslate nohighlight">\(y_0\)</span>, <span class="math notranslate nohighlight">\(y_1\)</span>, <span class="math notranslate nohighlight">\(y_2\)</span> and <span class="math notranslate nohighlight">\(y_3\)</span>, and the
 corresponding function values <span class="math notranslate nohighlight">\(f(x,y)\)</span> are shown in the table below:</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(j\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
@@ -580,7 +580,7 @@ estimates.</p>
 displayed in the following table. (Reproduce all the results using
 step-by-step <span class="math notranslate nohighlight">\(PECE\)</span> calculation to ensure that you follow the method
 completely).</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(j\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(x_j\)</span></p></th>
@@ -665,8 +665,8 @@ the truncation error terms listed for each ABM formulae above.</p>
 </li>
 </ul>
 </div>
-</section>
-</div></section>
+</div>
+</div></div>
 
     <script type="text/x-thebe-config">
     {
@@ -732,7 +732,7 @@ the truncation error terms listed for each ABM formulae above.</p>
   <div class="footer-item">
     
 <p class="component-author">
-By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
+By Dr Zhihua Ma
 </p>
 
   </div>
@@ -751,7 +751,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 03 January 2024 15:25:12.
+  Last updated on Wednesday 03 January 2024 22:47:24.
   <br/>
 </p>
   </div>
@@ -783,7 +783,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     <br/>
   </p>
 </div>

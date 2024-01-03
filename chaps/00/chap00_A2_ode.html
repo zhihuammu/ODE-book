@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ordinary Differential Equations &#8212; Linear Multistep Methods</title>
   
   
@@ -51,6 +50,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Definitions, Classification and Terminology" href="chap00_A1_definition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 15:25:12"/>
+    <meta name="docbuild:last-update" content="Wednesday 03 January 2024 22:47:24"/>
   </head>
   
   
@@ -420,11 +420,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <!-- ```{math}
-\newcommand{\diff}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}
-\newcommand{\pdiff}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
-``` -->
-<section class="tex2jax_ignore mathjax_ignore" id="ordinary-differential-equations">
+  <div class="tex2jax_ignore mathjax_ignore section" id="ordinary-differential-equations">
 <span id="chap-pre-2"></span><span id="index-0"></span><h1>Ordinary Differential Equations<a class="headerlink" href="#ordinary-differential-equations" title="Permalink to this heading">#</a></h1>
 <p>For an <span class="math notranslate nohighlight">\(n\)</span>-th order ordinary differential equation, we can write it in</p>
 <ul id="index-1">
@@ -445,7 +441,7 @@ document.write(`
 </ul>
 <div class="proof remark admonition" id="remark-0">
 <span id="index-3"></span><p class="admonition-title"><span class="caption-number">Remark 4 </span> (Interval of definition <span class="math notranslate nohighlight">\(I\)</span>)</p>
-<section class="remark-content" id="proof-content">
+<div class="remark-content section" id="proof-content">
 <p>For a problem governed/represented by an ODE, we need to give the actual ODE in form <a class="reference internal" href="#equation-eq-ode-form-general">(8)</a> or <a class="reference internal" href="#equation-eq-ode-form-normal">(9)</a>, besides we also need to give the interval <span class="math notranslate nohighlight">\(I\)</span> that defines the problem. We call this interval <span class="math notranslate nohighlight">\(I\)</span>:</p>
 <ul class="simple">
 <li><p>the <strong><span class="target" id="index-4"></span>interval of definition</strong>,</p></li>
@@ -460,16 +456,16 @@ document.write(`
 <li><p>an infinite interval <span class="math notranslate nohighlight">\((a, \infty)\)</span>,</p></li>
 </ul>
 <p>and so on.</p>
-</section>
+</div>
 </div><div class="proof definition admonition" id="definition-1">
 <span id="index-5"></span><p class="admonition-title"><span class="caption-number">Definition 2 </span> (Explicit Solution of an ODE)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>A function <span class="math notranslate nohighlight">\(\phi(x)\)</span> that when substituted for <span class="math notranslate nohighlight">\(y\)</span> in equation <a class="reference internal" href="#equation-eq-ode-form-general">(8)</a> or <a class="reference internal" href="#equation-eq-ode-form-normal">(9)</a>
 satisfies the equation for all <span class="math notranslate nohighlight">\(x\)</span> in the interval <span class="math notranslate nohighlight">\(I\)</span> is called an <strong><span class="target" id="index-6"></span>explicit solution</strong> to the equation on <span class="math notranslate nohighlight">\(I\)</span>.</p>
-</section>
+</div>
 </div><div class="proof example admonition" id="example-2">
 <p class="admonition-title"><span class="caption-number">Example 4 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <ol class="arabic">
 <li><p><span class="math notranslate nohighlight">\(\phi(x)=x^2 - x^{-1}\)</span> is an explicit solution to the equation</p>
 <div class="math notranslate nohighlight">
@@ -484,15 +480,15 @@ satisfies the equation for all <span class="math notranslate nohighlight">\(x\)<
     \]</div>
 </li>
 </ol>
-</section>
+</div>
 </div><div class="proof definition admonition" id="definition-3">
 <span id="index-7"></span><p class="admonition-title"><span class="caption-number">Definition 3 </span> (Implicit Solution of an ODE)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>A relation <span class="math notranslate nohighlight">\(G(x, y) = 0\)</span> is said to be an <strong><span class="target" id="index-8"></span>implicit solution</strong> of an ordinary differential equation <a class="reference internal" href="#equation-eq-ode-form-general">(8)</a> on an interval <span class="math notranslate nohighlight">\(I\)</span>, provided that there exists at least one function <span class="math notranslate nohighlight">\(\phi\)</span> that satisfies the relation as well as the differential equation on <span class="math notranslate nohighlight">\(I\)</span>.</p>
-</section>
+</div>
 </div><div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 5 </span></p>
-<section class="example-content" id="proof-content">
+<div class="example-content section" id="proof-content">
 <ol class="arabic">
 <li><p>The relation <span class="math notranslate nohighlight">\(x^2+y^2=25\)</span> is an implicit solution to the equation</p>
 <div class="math notranslate nohighlight">
@@ -508,11 +504,11 @@ satisfies the equation for all <span class="math notranslate nohighlight">\(x\)<
     \]</div>
 </li>
 </ol>
-</section>
+</div>
 </div><!-- ## Initial value problem -->
 <div class="proof definition admonition" id="definition-5">
 <span id="index-9"></span><p class="admonition-title"><span class="caption-number">Definition 4 </span> (Initial Value Problem)</p>
-<section class="definition-content" id="proof-content">
+<div class="definition-content section" id="proof-content">
 <p>By an <strong>initial value problem</strong> (IVP) for an <span class="math notranslate nohighlight">\(n\)</span>-th order differential equation</p>
 <div class="math notranslate nohighlight">
 \[
@@ -527,23 +523,23 @@ y'(x_0) = &amp; ~y_1, \\
 y^{(n-1)}(x_0) = &amp; ~y_{n-1}
 \end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_0 \in I\)</span> and <span class="math notranslate nohighlight">\(y_0\)</span>, <span class="math notranslate nohighlight">\(y_1\)</span>, … , <span class="math notranslate nohighlight">\(y_{n-1}\)</span> are given constants.</p>
-</section>
+</div>
 </div><div class="proof theorem admonition" id="theorem-6">
 <span id="index-10"></span><p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Existence and Uniqueness of Solution)</p>
-<section class="theorem-content" id="proof-content">
+<div class="theorem-content section" id="proof-content">
 <p>Consider the initial value problem</p>
 <div class="math notranslate nohighlight">
 \[
 \diff{y}{x} = f(x,y), \quad y(x_0) = y_0.
 \]</div>
-<p>If <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(\pdiff{f}{y}\)</span> are continuous functions in some rectangle</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(\displaystyle\pdiff{f}{y}\)</span> are continuous functions in some rectangle</p>
 <div class="math notranslate nohighlight">
 \[
 R=\left\{ (x,y): a&lt;x&lt;b, ~ c&lt;y&lt;d \right\}
 \]</div>
 <p>that contains the point <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>, then the initial value problem has a unique solution <span class="math notranslate nohighlight">\(\phi(x)\)</span> in some interval <span class="math notranslate nohighlight">\(x_0 - \delta &lt; x &lt; x_0 + \delta\)</span>, where <span class="math notranslate nohighlight">\(\delta\)</span> is a positive number.</p>
-</section>
-</div><section id="systems-of-differential-equations">
+</div>
+</div><div class="section" id="systems-of-differential-equations">
 <h2>Systems of Differential Equations<a class="headerlink" href="#systems-of-differential-equations" title="Permalink to this heading">#</a></h2>
 <p>A system of ordinary differential equations is two or more
 equations involving the derivatives of two or more unknown functions of a single
@@ -565,8 +561,8 @@ on this interval.</p>
 $\N$, $\N_0$
 $\Z$
 $\R$
-$\C$ --></section>
-</section>
+$\C$ --></div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -646,7 +642,7 @@ $\C$ --></section>
   <div class="footer-item">
     
 <p class="component-author">
-By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
+By Dr Zhihua Ma
 </p>
 
   </div>
@@ -665,7 +661,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 03 January 2024 15:25:12.
+  Last updated on Wednesday 03 January 2024 22:47:24.
   <br/>
 </p>
   </div>
@@ -697,7 +693,7 @@ By <a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     <br/>
   </p>
 </div>

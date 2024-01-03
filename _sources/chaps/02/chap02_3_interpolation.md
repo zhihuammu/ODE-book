@@ -1,3 +1,5 @@
+```{index} Gregory-Newton Interpolation Formulae
+```
 # Gregory-Newton Interpolation Formulae
 
 ## The need for interpolation
@@ -31,7 +33,8 @@ Possiple options are:
 
 For the first option, we may ask "Is this accurate?" For the second option, we may ask "How to SHIFT?"
 
-
+```{index} Gregory-Newton Interpolation Formulae; Gregory-Newton Forward Interpolation
+```
 ## Gregory-Newton Forward Interpolation
 
 Let $f_j$ denote $f(x_j)$. We wish to obtain an approximate value for
@@ -93,7 +96,7 @@ $\begin{pmatrix} s \\ k \end{pmatrix} = \dfrac{s!}{k!(s-k)!} =\dfrac{s(s-1)(s-2)
 $\begin{pmatrix} s \\ 0 \end{pmatrix} = \dfrac{s!}{0!(s-0)!}=1$.
 :::
 
-Therefore, the {index}`forward Gregory-Newton Interpolation`` formulae is
+Therefore, the forward Gregory-Newton Interpolation formulae is
 
 :::{math}
 :label: eq:GN:forward
@@ -122,6 +125,9 @@ The G-N forward interpolation formula (polynomial) is useful for
 interpolating near the *beginning* of a sequence.
 :::
 
+
+```{index} Gregory-Newton Interpolation Formulae; Gregory-Newton Backward Interpolation
+```
 ## Gregory-Newton Backward Interpolation
 
 
@@ -132,26 +138,12 @@ $$
 s=\frac{x-x_j}{h}<0
 $$
 
-:::{math}
-:label: eq:GN:backward
+$$
 f_{j+s}= f_j + s\nabla f_j
             + \frac{s(s+1)}{2!}\nabla^2 f_j
             + \cdots
             + \frac{s(s+1)\cdots(s+k-1)}{k!}\nabla^k f_j + \cdots
-:::
-
-<!-- $$\begin{aligned}
-        f_{j+s} & = \E^{s} f_j  \hspace{4cm}  \\
-        \>&=\> (1 - \nabla)^{-s} f_j\\
-        \>&=\> \left(1 + \frac{(-s)}{1!}(-\nabla)
-        + \frac{(-s)(-s-1)}{2!}(-\nabla)^2
-        + \frac{(-s)(-s-1)(-s-2)}{3!}(-\nabla)^3
-        + \cdots\right) f_j\\
-        \>&=\> f_j + s\nabla f_j + \frac{s(s+1)}{2!}\nabla^2 f_j + \cdots
-        + \frac{s(s+1)\cdots(s+k-1)}{k!}\nabla^k f_j + \dots
-    
-\end{aligned}
-$$  -->
+$$(eq:GN:backward)
 
 We can separate the whole polynomial into two parts:
 
@@ -159,10 +151,8 @@ $$f(x_j + sh) = P_k(x_s) + e_k(x_s) \simeq P_k(x_s)$$
 
 
 
-
-
 :::{note}
-The G-N {index}`backward interpolation` formula (polynomial) is useful for
+The G-N backward interpolation formula (polynomial) is useful for
 interpolating near the *end* of a sequence.
 :::
 
