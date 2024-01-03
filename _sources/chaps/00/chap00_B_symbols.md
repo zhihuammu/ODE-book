@@ -41,3 +41,4 @@
 | $\begin{pmatrix} n \\ k \end{pmatrix}$       | binomial coefficient |
 
 :::
+
