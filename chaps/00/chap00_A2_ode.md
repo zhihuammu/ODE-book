@@ -1,8 +1,3 @@
-<!-- ```{math}
-\newcommand{\diff}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}
-\newcommand{\pdiff}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
-``` -->
-
 ```{index} Ordinary Differential Equation
 ```
 (chap:pre:2)=
@@ -124,7 +119,7 @@ $$
 \diff{y}{x} = f(x,y), \quad y(x_0) = y_0.
 $$
 
-If $f$ and $\pdiff{f}{y}$ are continuous functions in some rectangle
+If $f$ and $\displaystyle\pdiff{f}{y}$ are continuous functions in some rectangle
 
 $$
 R=\left\{ (x,y): a<x<b, ~ c<y<d \right\}

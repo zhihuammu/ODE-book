@@ -39,7 +39,7 @@ The {index}`characteristic equation` associated with Eq. {eq}`eq:DE:linear:homog
 L(z)= a_0 + a_1 z + a_2 z^2 + \ldots + a_{k-1} z^{k-1} + a_k z^{k}=0.
 \end{equation}
 ````
-
+The characteristic equation is also called *auxiliary equation*.
 ::::
 
 

@@ -1,8 +1,3 @@
-<!-- ```{math}
-\newcommand{\diff}[3][]{\frac{\mathrm{d}^{#1} #2}{\mathrm{d} #3^{#1}}}
-\newcommand{\pdiff}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
-``` -->
-
 (chap:pre:3)=
 # Analytical Methods for ODEs
 
@@ -13,8 +8,8 @@
 ## Separable Equations
 
 ```{index} pair: Ordinary Differential Equation; Separable Equation
-
 ```
+
 ```{prf:definition} Separable Equation
 A first-order differential equation of the form
 
@@ -396,9 +391,6 @@ $$
         + & ~ e^{\alpha_m x} (c_{2m-1} \cos \beta_m x + c_{2m} \sin \beta_m x) 
     \end{aligned}
     $$
-
-
-
 ```
 
 

@@ -157,7 +157,7 @@ we define $\E$ as an operator {index}`shifting` a member in a sequence to the ne
 \end{equation}
 and shifting a member forward $k$ times gives
 
-$$\E ^k f_j= \E  \E ^{k-1}f_j)= f_{j+k}.$$
+$$\E ^k f_j= \E  (\E ^{k-1}f_j)= f_{j+k}.$$
 
 Similarly, we define $\E ^{-1}$ as an operator shifting a member in a
 sequence to the previous member

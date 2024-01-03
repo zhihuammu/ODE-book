@@ -8,6 +8,6 @@ sphinx_proof
 sphinx_exercise    
 sphinxcontrib.tikz
 sphinx-inline-tabs
-pydata_sphinx_theme
 pdf2svg
 latex
+
