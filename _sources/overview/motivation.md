@@ -9,9 +9,9 @@
 
 Our main focus is to learn and apply a range of numerical methods to solve a single or a system of **First-Order** Ordinary Differential Equation(s) given as
 
-- A single equation: $\displaystyle \frac{dy}{dt}=f(t, y)$
+- A single equation: $\displaystyle \diff{y}{t}=f(t, y)$
 
-- A system of equations: $\displaystyle \frac{d\mathbf{Y}}{dt}=\mathbf{F}(t, \mathbf{Y})$
+- A system of equations: $\displaystyle \diff{\mathbf{Y}}{t}=\mathbf{F}(t, \mathbf{Y})$
 
 We will also touch on graph theory and sparse matrix computation to:
 
