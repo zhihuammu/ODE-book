@@ -49,20 +49,22 @@ sphinx:
   config:
     # bibtex_reference_style: author_year    
     html_show_copyright: true
-    language: en          
-    latex_elements:
-        preamble: |
-          \newcommand{\N}{\mathbb{N}}
-          \newcommand{\Z}{\mathbb{Z}}
-          \newcommand{\R}{\mathbb{R}}
-          \newcommand{\C}{\mathbb{C}}
-          \newcommand{\D}{\mathrm{D}}
-          \newcommand{\E}{\mathrm{E}}
-          \newcommand{\S}{\mathrm{S}}          
-          \newcommand{\dy}{\mathrm{d}y}
-          \newcommand{\dx}{\mathrm{d}x}
-          \newcommand{\ds}{\mathrm{d}s}
-          \newcommand{\dt}{\mathrm{d}t}                                        
+    language: en
+    # latex_engine: 'xelatex'
+    # latex_elements:
+    #     preamble: |
+    #       \newcommand{\N}{\mathbb{N}}
+    #       \newcommand{\Z}{\mathbb{Z}}
+    #       \newcommand{\R}{\mathbb{R}}
+    #       \newcommand{\C}{\mathbb{C}}
+    #       \newcommand{\D}{\mathrm{D}}
+    #       \newcommand{\E}{\mathrm{E}}
+    #       \newcommand{\S}{\mathrm{S}}
+    #       \newcommand{\dy}{\mathrm{d}y}
+    #       \newcommand{\dx}{\mathrm{d}x}
+    #       \newcommand{\ds}{\mathrm{d}s}
+    #       \newcommand{\dt}{\mathrm{d}t}
+    #       \usepackage{physics}                                            
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     mathjax3_config:
       tex:
@@ -137,8 +139,8 @@ parse:
     - colon_fence
     - html_admonition
     - fieldlist   
-    - deflist
-    
+    - deflist    
   # myst_url_schemes: [mailto, http, https] # URI schemes that will be recognised as external URLs in Markdown links
-  # myst_dmath_double_inline: true  # Allow display math ($$) within an inline context    
+  myst_dmath_double_inline: true  # Allow display math ($$) within an inline context    
+
   

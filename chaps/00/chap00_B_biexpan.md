@@ -38,14 +38,14 @@ $$(eq:bi:exap:variant)
 
 ## Newton's general binomial expansion
 
-Instead of strictly using a whole number $n$ as the power in the binomial formula {eq}`eq:bi:exap`, we can loose the condition to introduce any real number $s$ as the power. Thus we get the generalised binomial coefficient 
+Instead of strictly using a whole number $n$ as the power in the binomial formula {eq}`eq:bi:exap`, we can loose the condition to introduce any real number $s$ as the power. First we replace the whole number $n$ with a real number $s$ to get the generalised binomial coefficient 
 
 $$
 \begin{pmatrix} s \\ k \end{pmatrix} 
 =\dfrac{s(s-1)(s-2)\cdots(s-k+1)}{k!},
 $$(eq:bi:coe:general)
 
-and the generalised bionomial expansion
+then we can get the generalised bionomial expansion
 
 $$
 \begin{aligned}
@@ -59,19 +59,3 @@ Substituting $x=1$ into {eq}`eq:bi:exap:general`, we get
 $$
 (1+y)^s = 1 + s y + \frac{s(s-1)}{2!}y^2+\frac{s(s-1)(s-2)}{3!}y^3 + \cdots
 $$(eq:bi:exap:variant:general)
-
-------
-
-test
-
-$$
-\dda[2]{y}{x}=0
-$$
-
-$$
-\dda{y}{x}=0
-$$
-
-$$\ddx{y}$$
-
-$$\ddx[t]{y}$$
