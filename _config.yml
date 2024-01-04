@@ -110,11 +110,12 @@ sphinx:
       # navbar_end        : navbar-icon-links
       # navbar_persistent : search-button
       # navbar_align      : right
-    # html_sidebars :
-    #   '**': 
-    #     - navbar-logo
-    #     - sbt-sidebar-nav
-    #     - indices        
+    html_sidebars :
+      '**': 
+        - navbar-logo
+        # - search-field        
+        - sbt-sidebar-nav
+        # - indices        
       # secondary_sidebar_items:
         # - page-toc
         # - edit-this-page
