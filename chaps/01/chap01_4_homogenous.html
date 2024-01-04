@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -37,8 +37,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
@@ -53,7 +53,7 @@
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="1.3. Difference Equations" href="chap01_3_differenceEquation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Thursday 04 January 2024 09:54:29"/>
+    <meta name="docbuild:last-update" content="Thursday 04 January 2024 22:55:28"/>
   </head>
   
   
@@ -167,7 +167,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -426,28 +437,28 @@ document.write(`
 <span id="chap01-complexnumber-de"></span><h1><span class="section-number">1.4. </span>Homogeneous Linear Difference Equations with Constant Coefficients<a class="headerlink" href="#homogeneous-linear-difference-equations-with-constant-coefficients" title="Permalink to this heading">#</a></h1>
 <p>Here we focus on homogeneous linear difference equations with constant coefficients,</p>
 <div class="math notranslate nohighlight" id="equation-eq-de-linear-homogeneous-constant">
-<span class="eqno">(1.16)<a class="headerlink" href="#equation-eq-de-linear-homogeneous-constant" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<span class="eqno">(1.16)<a class="headerlink" href="#equation-eq-de-linear-homogeneous-constant" title="Permalink to this equation">#</a></span>\[
 a_0 y_n + a_1 y_{n+1} + a_2 y_{n+2} + \ldots + a_{k-1} y_{n+k-1} + a_k y_{n+k} = 0,
-\end{equation}\]</div>
+\]</div>
 <p>where <span class="math notranslate nohighlight">\(a_p~(p=0,1,2,\ldots,k)\)</span> are a given set of <span class="math notranslate nohighlight">\(k+1\)</span> constants, with <span class="math notranslate nohighlight">\(a_0 \neq 0\)</span> and <span class="math notranslate nohighlight">\(a_k=1\)</span>.</p>
 <p>Using the shift operator <span class="math notranslate nohighlight">\(\E\)</span>, Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a> can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq-de-linear-homogeneous-constant-aux">
-<span class="eqno">(1.17)<a class="headerlink" href="#equation-eq-de-linear-homogeneous-constant-aux" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<span class="eqno">(1.17)<a class="headerlink" href="#equation-eq-de-linear-homogeneous-constant-aux" title="Permalink to this equation">#</a></span>\[
 L(\E) y_n =0,
-\end{equation}\]</div>
+\]</div>
 <p>where <span class="math notranslate nohighlight">\(L(\E)\)</span> is the operator function</p>
 <div class="math notranslate nohighlight" id="equation-eq-de-linear-constant-le">
-<span class="eqno">(1.18)<a class="headerlink" href="#equation-eq-de-linear-constant-le" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<span class="eqno">(1.18)<a class="headerlink" href="#equation-eq-de-linear-constant-le" title="Permalink to this equation">#</a></span>\[
 L(\E)= a_0 + a_1 \E + a_2 \E^2 + \ldots + a_{k-1} \E^{k-1} + a_k \E^{k}.
-\end{equation}\]</div>
+\]</div>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 1.10 </span> (Characteristic Equation)</p>
 <div class="definition-content section" id="proof-content">
 <p>The <span class="target" id="index-0"></span>characteristic equation associated with Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a> or <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant-aux">(1.17)</a> is</p>
 <div class="math notranslate nohighlight" id="equation-eq-de-linear-char">
-<span class="eqno">(1.19)<a class="headerlink" href="#equation-eq-de-linear-char" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<span class="eqno">(1.19)<a class="headerlink" href="#equation-eq-de-linear-char" title="Permalink to this equation">#</a></span>\[
 L(z)= a_0 + a_1 z + a_2 z^2 + \ldots + a_{k-1} z^{k-1} + a_k z^{k}=0.
-\end{equation}\]</div>
+\]</div>
 <p>The characteristic equation is also called <em>auxiliary equation</em>.</p>
 </div>
 </div><div class="admonition note">
@@ -458,8 +469,8 @@ L(z)= a_0 + a_1 z + a_2 z^2 + \ldots + a_{k-1} z^{k-1} + a_k z^{k}=0.
 <p class="admonition-title"><span class="caption-number">Theorem 1.2 </span></p>
 <div class="theorem-content section" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(z_p~(p=1,2,3,\ldots,k)\)</span> be any solution to the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(1.19)</a>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bc458309-e302-44af-84c6-cba0fc543a9a">
-<span class="eqno">(1.20)<a class="headerlink" href="#equation-bc458309-e302-44af-84c6-cba0fc543a9a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8c302215-be4c-4e5b-910f-e30eaede9eb3">
+<span class="eqno">(1.20)<a class="headerlink" href="#equation-8c302215-be4c-4e5b-910f-e30eaede9eb3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_n = z_p^n
 \end{equation}\]</div>
 <p>is a solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a>.</p>
@@ -488,8 +499,8 @@ L(\E) z_p^n = ~ &amp; \left(a_0 + a_1 \E + a_2 \E^2 + \ldots + a_{k-1}\E^{k-1}+a
 <p class="admonition-title"><span class="caption-number">Theorem 1.3 </span></p>
 <div class="theorem-content section" id="proof-content">
 <p>Assume the <span class="math notranslate nohighlight">\(k\)</span> roots of  the characteristic equation are distinct, then a fundamental set of solutions is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ed325d1a-69a4-4915-9cbc-484fa9c770e6">
-<span class="eqno">(1.21)<a class="headerlink" href="#equation-ed325d1a-69a4-4915-9cbc-484fa9c770e6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e53cf7c3-2e83-4eb1-8697-87bd7461383f">
+<span class="eqno">(1.21)<a class="headerlink" href="#equation-e53cf7c3-2e83-4eb1-8697-87bd7461383f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z_p^n \quad (p=1,2,\ldots,k).
 \end{equation}\]</div>
 <p>An immediate consequence of this theorem, for this particular case, is that the general solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.16)</a> is</p>
@@ -580,7 +591,7 @@ Method 2 (characteristic equation)</label><div class="sd-tab-content docutils">
 <li><p>Case 3: Two complex conjugate solutions.</p></li>
 </ul>
 </div>
-<div class="hint admonition">
+<div class="important admonition">
 <p class="admonition-title"><strong>Case (1) Two different real solutions: <span class="math notranslate nohighlight">\(z_1 \neq z_2\)</span> and <span class="math notranslate nohighlight">\(z_{1,2}\in \mathbb{R}\)</span></strong>:</p>
 <p>The general solution is</p>
 <div class="math notranslate nohighlight">
@@ -609,7 +620,7 @@ Method 2 (characteristic equation)</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div></div>
-<div class="tip admonition">
+<div class="important admonition">
 <p class="admonition-title"><strong>Case (2) Two repeated real solutions: <span class="math notranslate nohighlight">\(z_1 = z_2 = z \in \mathbb{R}\)</span></strong>:</p>
 <p>The general solution is</p>
 <div class="math notranslate nohighlight">
@@ -634,7 +645,7 @@ Method 2 (characteristic equation)</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div></div>
-<div class="tip admonition">
+<div class="important admonition">
 <p class="admonition-title"><strong>Case (3) Two conjugate complex solutions: <span class="math notranslate nohighlight">\(z_{1,2}=\alpha\pm  \i \beta  \in \mathbb{C}\)</span>, <span class="math notranslate nohighlight">\(\i=\sqrt{-1}\)</span></strong>:</p>
 <p>The general solution is</p>
 <div class="math notranslate nohighlight">
@@ -672,19 +683,19 @@ Method 2 (characteristic equation)</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[ a_0 + a_1 z + a_2 z^2 + \ldots + a_{k-1} z^{k-1} + a_k z^{k}=0 \]</div>
 <p>has <span class="math notranslate nohighlight">\(k\)</span> roots <span class="math notranslate nohighlight">\(z_p~(p=1,2,3,\ldots,k)\)</span>.</p>
-<div class="tip admonition">
+<div class="important admonition">
 <p class="admonition-title">Case (1) <span class="math notranslate nohighlight">\(k\)</span> distinct real roots: <span class="math notranslate nohighlight">\(z_1 \neq z_2 \neq \ldots \neq z_k \in \mathbb{R}\)</span></p>
 <p>The general solution to the difference equation is</p>
 <div class="math notranslate nohighlight">
 \[ y_n = c_1 z_1^n + c_2 z_2^n + \ldots + c_k z_k^n \]</div>
 </div>
-<div class="tip admonition">
+<div class="important admonition">
 <p class="admonition-title">Case (2) <span class="math notranslate nohighlight">\(k\)</span> repeated real roots: <span class="math notranslate nohighlight">\(z_1 = z_2 = \ldots = z_k = z \in \mathbb{R}\)</span></p>
 <p>The general solution to the difference equation is</p>
 <div class="math notranslate nohighlight">
 \[ y_n = \left( c_1  + c_2 n + c_3 n^2 \ldots + c_k n^{k-1} \right) z^n \]</div>
 </div>
-<div class="tip admonition">
+<div class="important admonition">
 <p class="admonition-title">Case (3) <span class="math notranslate nohighlight">\(m\)</span>-pair (<span class="math notranslate nohighlight">\(k=2m\)</span>) distinct complex conjugate roots:</p>
 <div class="math notranslate nohighlight">
 \[z_1 \sim  z_k = \alpha_p \pm \i \beta_p =r_p e^{\pm \i \theta_p}~ \left(\i^2=-1, ~ p=1,2,\ldots,m\right)\]</div>
@@ -695,7 +706,7 @@ Method 2 (characteristic equation)</label><div class="sd-tab-content docutils">
 	~ &amp; ~ + \ldots + r_m^n \left(c_{2m-1} \cos n\theta_m + c_{2m} \sin n\theta_m\right),    
 \end{align*}\]</div>
 </div>
-<div class="tip admonition">
+<div class="important admonition">
 <p class="admonition-title">Case (4) <span class="math notranslate nohighlight">\(m\)</span>-pair (<span class="math notranslate nohighlight">\(k=2m\)</span>) repeated complex conjugate roots</p>
 <div class="math notranslate nohighlight">
 \[z_1 \sim  z_k = \alpha \pm \i \beta =r e^{\pm \i \theta}~ \left(i^2=-1, ~ p=1,2,\ldots,m\right)\]</div>
@@ -831,16 +842,13 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 04 January 2024 09:54:29.
+  Last updated on Thursday 04 January 2024 22:55:28.
   <br/>
 </p>
   </div>
   
   <div class="footer-item">
     
-<div class="extra_footer">
-  <div>Powered by <a href='https://jupyterbook.org'>Jupyter Book</a></div>
-</div>
   </div>
   
 </div>

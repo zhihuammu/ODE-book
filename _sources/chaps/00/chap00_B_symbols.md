@@ -1,7 +1,7 @@
 # Symbols and Notation
 
 :::{table} 
-:align: center  
+:align: left  
 |     |   |
 |-----------| -------------------------- |
 | $\N$      | the set of natural numbers $\{1, 2, 3, \ldots\}$ |
@@ -40,8 +40,7 @@
 |  $\forall$    | for all |
 |  $\exists$    | there exists |
 |  $\implies$    | implies; if ... then |
-| *iff*| if and only if |
-| $\iff$| if and only if |
+| *iff*, $\iff$| if and only if |
 | $\because$| because, since |
 | $\therefore$| therefore |
 | $\subset$| is proper subset of |
