@@ -49,7 +49,7 @@ Applying four arithmetic operations on $1+2i$ and $2-5i$, calculate
 - $\dfrac{1+2\i}{2-5\i}$
 
 ```{admonition} Solution
-:class: solution, dropdown, toggle-shown
+:class: solution, dropdown
 
 \begin{align*}
 & (1+2\i) + (2-5\i)= 3-3\i \\
