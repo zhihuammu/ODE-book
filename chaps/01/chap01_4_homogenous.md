@@ -3,42 +3,30 @@
 
 Here we focus on homogeneous linear difference equations with constant coefficients,
 
-````{math}
-:label: eq:DE:linear:homogeneous:constant
-\begin{equation}
+$$
 a_0 y_n + a_1 y_{n+1} + a_2 y_{n+2} + \ldots + a_{k-1} y_{n+k-1} + a_k y_{n+k} = 0,
-\end{equation}
-````
+$$(eq:DE:linear:homogeneous:constant)
 
 where $a_p~(p=0,1,2,\ldots,k)$ are a given set of $k+1$ constants, with $a_0 \neq 0$ and $a_k=1$.
 
 Using the shift operator $\E$, Eq. {eq}`eq:DE:linear:homogeneous:constant` can be written as
 
-````{math}
-:label: eq:DE:linear:homogeneous:constant:aux
-\begin{equation}
+$$
 L(\E) y_n =0,
-\end{equation}
-````
+$$(eq:DE:linear:homogeneous:constant:aux)
 
 where $L(\E)$ is the operator function
 
-````{math}
-:label: eq:DE:linear:constant:LE
-\begin{equation}
+$$
 L(\E)= a_0 + a_1 \E + a_2 \E^2 + \ldots + a_{k-1} \E^{k-1} + a_k \E^{k}.
-\end{equation}
-````
+$$(eq:DE:linear:constant:LE)
 
 ::::{prf:definition} Characteristic Equation
 The {index}`characteristic equation` associated with Eq. {eq}`eq:DE:linear:homogeneous:constant` or {eq}`eq:DE:linear:homogeneous:constant:aux` is
 
-````{math}
-:label: eq:DE:linear:char
-\begin{equation}
+$$
 L(z)= a_0 + a_1 z + a_2 z^2 + \ldots + a_{k-1} z^{k-1} + a_k z^{k}=0.
-\end{equation}
-````
+$$(eq:DE:linear:char)
 The characteristic equation is also called *auxiliary equation*.
 ::::
 
@@ -176,7 +164,7 @@ $$z_{1,2}=\frac{-a\pm \sqrt{a^2-4b}}{2}.$$
 :::
 
 ````{admonition} **Case (1) Two different real solutions: $z_1 \neq z_2$ and $z_{1,2}\in \mathbb{R}$**:
-:class: hint
+:class: important
 
 The general solution is 
 
@@ -211,7 +199,7 @@ $$y_n = c_1 \left(-\frac{1}{2}\right)^n+c_2\left(-\frac{1}{3}\right)^n$$
 ````
 
 ````{admonition} **Case (2) Two repeated real solutions: $z_1 = z_2 = z \in \mathbb{R}$**:
-:class: tip
+:class: important
 
 The general solution is
 
@@ -240,7 +228,7 @@ $$y_n = c_1 \left(-\frac{1}{2}\right)^n + c_2 n \left(-\frac{1}{2}\right)^n =\le
 ````
 
 ````{admonition} **Case (3) Two conjugate complex solutions: $z_{1,2}=\alpha\pm  \i \beta  \in \mathbb{C}$, $\i=\sqrt{-1}$**:
-:class: tip
+:class: important
 
 The general solution is 
 
@@ -285,7 +273,7 @@ $$ a_0 + a_1 z + a_2 z^2 + \ldots + a_{k-1} z^{k-1} + a_k z^{k}=0 $$
 has $k$ roots $z_p~(p=1,2,3,\ldots,k)$.
 
 ````{admonition} Case (1) $k$ distinct real roots: $z_1 \neq z_2 \neq \ldots \neq z_k \in \mathbb{R}$
-:class: tip
+:class: important
 
 The general solution to the difference equation is
 
@@ -296,7 +284,7 @@ $$ y_n = c_1 z_1^n + c_2 z_2^n + \ldots + c_k z_k^n $$
 
 
 ````{admonition} Case (2) $k$ repeated real roots: $z_1 = z_2 = \ldots = z_k = z \in \mathbb{R}$
-:class: tip
+:class: important
 
 The general solution to the difference equation is
 
@@ -306,7 +294,7 @@ $$ y_n = \left( c_1  + c_2 n + c_3 n^2 \ldots + c_k n^{k-1} \right) z^n $$
 
 
 ````{admonition} Case (3) $m$-pair ($k=2m$) distinct complex conjugate roots:
-:class: tip
+:class: important
 
 $$z_1 \sim  z_k = \alpha_p \pm \i \beta_p =r_p e^{\pm \i \theta_p}~ \left(\i^2=-1, ~ p=1,2,\ldots,m\right)$$
 
@@ -321,7 +309,7 @@ The general solution to the difference equation is
 
 
 ````{admonition} Case (4) $m$-pair ($k=2m$) repeated complex conjugate roots
-:class: tip
+:class: important
 
 $$z_1 \sim  z_k = \alpha \pm \i \beta =r e^{\pm \i \theta}~ \left(i^2=-1, ~ p=1,2,\ldots,m\right)$$
 

@@ -92,7 +92,7 @@ we obtain the following table:
 
 
 These points are plotted in the complex $h\lambda$ plane, and the
-resulting region $\Re$, $\Re \subset \C$, of absolute stability is shown in the following
+resulting region $A$, $A \subset \C$, of absolute stability is shown in the following
 figure:
 
 ```{figure} /images/06/fig-chap06-c5m39f1shade.svg
