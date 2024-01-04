@@ -44,7 +44,7 @@ The characteristic equation is also called *auxiliary equation*.
 
 
 ````{note}
-Note: We can replace the shift operator $\E$ with $z$ in Eq. {eq}`eq:DE:linear:constant:LE` to obtain the characteristic equation. $L(z)$ is a $k$th-order polynomial and thus has $k$ roots $\{z_p\}~ (p=1,2,3,\ldots,k)$.
+Note: We can replace the shift operator $\E$ with $z$ in Eq. {eq}`eq:DE:linear:constant:LE` to obtain the characteristic equation. $L(z)$ is a $k$th-degree polynomial and thus has $k$ roots $\{z_p\}~ (p=1,2,3,\ldots,k)$.
 ````
 
 ::::{prf:theorem}
