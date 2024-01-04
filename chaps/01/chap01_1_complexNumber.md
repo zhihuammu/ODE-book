@@ -55,7 +55,7 @@ Applying four arithmetic operations on $1+2i$ and $2-5i$, calculate
 & (1+2\i) + (2-5\i)= 3-3\i \\
 & (1+2\i) - (2-5\i)= -1+7\i \\
 & (1+2\i) \times (2-5\i)= 2-5\i +4\i -10\i^2=12-\i \\
-& \frac{1+2\i}{2-5i}=\frac{(1+2\i)(2+5\i)}{(2-5\i)(2+5\i)}=\frac{-8+9\i}{29}
+& \frac{1+2\i}{2-5\i}=\frac{(1+2\i)(2+5\i)}{(2-5\i)(2+5\i)}=\frac{-8+9\i}{29}
 \end{align*}
 ::::
 
