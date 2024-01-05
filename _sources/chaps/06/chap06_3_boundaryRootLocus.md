@@ -115,7 +115,7 @@ Adams methods are shown
 ```{figure} /images/06/fig-chap06-c5m39f2.svg
 ---
 width: 500px
-name: figure-AB2
+name: figure-ABk
 ---
 Stability region of AB $k$-step method.
 ```
@@ -123,7 +123,7 @@ Stability region of AB $k$-step method.
 ```{figure} /images/06/fig-chap06-c5m39f3.svg
 ---
 width: 500px
-name: figure-AB2
+name: figure-AMk
 ---
 Stability region of AM $k$-step method.
 ```

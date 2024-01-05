@@ -45,7 +45,7 @@ Output
 ```{figure} /images/06/AB2_lines_result.svg
 ---
 width: 500px
-name: figure-AB2
+name: figure-AB2-2
 ---
 Stability region of AB 2-step method.
 ```
@@ -109,7 +109,7 @@ Output
 ```{figure} /images/06/AB2shaded_result.svg
 ---
 width: 500px
-name: figure-AB2
+name: figure-AB2-3
 ---
 Stability region of AB 2-step method.
 ```
