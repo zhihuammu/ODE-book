@@ -1,4 +1,4 @@
-# Linear Multistep Methods and Sparse Matrices
+# Linear Multistep Methods
 
 
 ```{tableofcontents}

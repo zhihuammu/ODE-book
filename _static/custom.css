@@ -160,26 +160,37 @@ div.admonition.admonition-youtube > .admonition-title:after {
 /*********************************************
 * hyperlink *
 *********************************************/
-a:link, a:link * {
+a:link {
+  color: #176DE8;
+  background-color: transparent;
   text-decoration: none !important;
 }
 
-/* visited link */
-/* a:visited {
-  color: green;  
-} */
+a:visited {
+  color: #176DE8;
+  background-color: transparent;
+  text-decoration: none;
+}
 
-/* mouse over link */
-/* a:hover {
-  color: hotpink;
-} */
+a:hover {
+  /* color: orange; */
+  background-color: rgba(255, 166, 0, 0.1);
+  text-decoration: none;
+}
 
-/* selected link */
 /* a:active {
+  color: red;
+  background-color: rgba(255, 166, 0, 0.1);
+  text-decoration: none;
+} */
+
+/* .prev-next-subtitle {
+  color: red;
+}
+
+.prev-next-title {
   color: blue;
 } */
-
-
 /*********************************************
 * header style *
 *********************************************/
