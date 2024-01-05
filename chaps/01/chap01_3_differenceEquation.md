@@ -57,7 +57,6 @@ $$(eq:DE:linear:homogeneous)
 which is called a homogeneous linear difference equation.
 ::::
 
-
 ::::{prf:example}
 Identify the order, linearity and homogeneity of the following difference equations:
 

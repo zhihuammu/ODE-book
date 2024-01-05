@@ -98,9 +98,9 @@ where $r=|z|$, and $\theta$ is the angle defined by the real axis and the straig
 ```
 
 ```{prf:remark} Three forms of a complex number
-:Standard form: $z=x+\i y$
-:Polar form: $z=r(\cos\theta+\i\sin\theta)$
-:Exponential form: $z=r e^{\i \theta}$
+- **Standard form**: $z=x+\i y$
+- **Polar form**: $z=r(\cos\theta+\i\sin\theta)$
+- **Exponential form**: $z=r e^{\i \theta}$
 
 where $r=|z|=\sqrt{x^2+y^2}$, $\tan \theta = \dfrac{y}{x}$.
 ```
