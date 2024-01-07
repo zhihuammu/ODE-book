@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Definitions, Classification and Terminology &#8212; Linear Multistep Methods</title>
   
   
@@ -29,7 +30,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_orange_book_theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -50,10 +51,9 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Differential Equations" href="chap00_A0_DE.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Friday 05 January 2024 15:18:10"/>
+    <meta name="docbuild:last-update" content="Sunday 07 January 2024 14:19:03"/>
   </head>
   
   
@@ -167,18 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -421,14 +410,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="definitions-classification-and-terminology">
+  <section class="tex2jax_ignore mathjax_ignore" id="definitions-classification-and-terminology">
 <span id="chap-pre-1"></span><h1>Definitions, Classification and Terminology<a class="headerlink" href="#definitions-classification-and-terminology" title="Permalink to this heading">#</a></h1>
 <div class="proof definition admonition" id="definition-0">
 <span id="index-0"></span><p class="admonition-title"><span class="caption-number">Definition 1 </span> (Differential Equations)</p>
-<div class="definition-content section" id="proof-content">
-<p>An equation containing the derivatives of one or more unknown functions (or
-dependent variables), with respect to one or more independent variables, is said to be a <strong>differential equation</strong> (DE).</p>
-</div>
+<section class="definition-content" id="proof-content">
+<p>An equation containing the derivatives of one or more unknown functions (or dependent variables), with respect to one or more independent variables, is said to be a <strong>differential equation</strong> (DE).</p>
+</section>
 </div><p>We can classify differential equations by <strong>type</strong>, <strong>order</strong>, <strong>linearity</strong> and <strong>homogeneity</strong>.</p>
 <ol class="arabic">
 <li><p>Classification by Type</p>
@@ -437,7 +425,7 @@ dependent variables), with respect to one or more independent variables, is said
 <p>If a differential equation contains only ordinary derivatives of one or more unknown functions with respect to a single independent variable, it is said to be an ordinary differential equation (ODE).</p>
 <div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 1 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>The following equations are ordinary differential equations:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -450,7 +438,7 @@ dependent variables), with respect to one or more independent variables, is said
 <li><p>In the third equation, <span class="math notranslate nohighlight">\(x=x(t)\)</span> and <span class="math notranslate nohighlight">\(y=y(t)\)</span>.</p></li>
 </ul>
 <p>The functions here are functions of a single variable.</p>
-</div>
+</section>
 </div></li>
 </ul>
 <ul id="index-2">
@@ -458,7 +446,7 @@ dependent variables), with respect to one or more independent variables, is said
 <p>An equation involving partial derivatives of one or more unknown functions of two or more independent variables is called a partial differential equation (PDE).</p>
 <div class="proof example admonition" id="example-2">
 <p class="admonition-title"><span class="caption-number">Example 2 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>The following equations are partial differential equations:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -472,14 +460,14 @@ dependent variables), with respect to one or more independent variables, is said
 <li><p>In the second equation, <span class="math notranslate nohighlight">\(u=u(y,\ldots)\)</span>, <span class="math notranslate nohighlight">\(v=v(x,\ldots)\)</span></p></li>
 </ul>
 <p>The functions here are multi-variable functions.</p>
-</div>
+</section>
 </div></li>
 </ul>
 </li>
 </ol>
 <div class="proof remark admonition" id="remark-3">
 <span id="index-3"></span><p class="admonition-title"><span class="caption-number">Remark 1 </span> (Notations of derivatives)</p>
-<div class="remark-content section" id="proof-content">
+<section class="remark-content" id="proof-content">
 <p>Ordinary derivatives can be written by using</p>
 <ul id="index-4">
 <li><p>Leibniz notation</p>
@@ -496,23 +484,23 @@ dependent variables), with respect to one or more independent variables, is said
 <p><span class="math notranslate nohighlight">\(\dot y\)</span>, <span class="math notranslate nohighlight">\(\ddot y\)</span></p>
 </li>
 </ul>
-</div>
+</section>
 </div><ol class="arabic" start="2">
 <li><p>Classification by Order</p>
 <p>The order of a differential equation is the order of the highest derivative in the equation.</p>
 <div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 3 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>The following equation</p>
 <div class="math notranslate nohighlight">
 \[
 \diff[2]{y}{x} + 5 \left(\diff{y}{x}\right)^3 - 4y = e^x
 \]</div>
 <p>is a second-order ordinary differential equation.</p>
-</div>
+</section>
 </div><div class="proof remark admonition" id="remark-5">
 <span id="index-7"></span><p class="admonition-title"><span class="caption-number">Remark 2 </span> (Order and Degree of differential equations)</p>
-<div class="remark-content section" id="proof-content">
+<section class="remark-content" id="proof-content">
 <ul class="simple">
 <li><p><strong>Order</strong>: The order of a differential equation is defined to be that of the highest order derivative it contains.</p></li>
 <li><p><strong>Degree</strong>: The degree of a differential equation is defined as the power to which the highest order derivative is raised.</p></li>
@@ -523,12 +511,12 @@ dependent variables), with respect to one or more independent variables, is said
     \left(y'''\right)^2 + \left(y''\right)^4+ y =x
 \]</div>
 <p>is a second-degree, third-order differential equation.</p>
-</div>
+</section>
 </div></li>
 </ol>
 <div class="proof remark admonition" id="remark-6">
 <p class="admonition-title"><span class="caption-number">Remark 3 </span> (Forms of Differential Equations)</p>
-<div class="remark-content section" id="proof-content">
+<section class="remark-content" id="proof-content">
 <p>For an <span class="math notranslate nohighlight">\(n\)</span>-th order ordinary differential equation, we can express it in</p>
 <ul id="index-8">
 <li><p><strong>General Form</strong></p>
@@ -551,7 +539,7 @@ dependent variables), with respect to one or more independent variables, is said
 </ul>
 </li>
 </ul>
-</div>
+</section>
 </div><ol class="arabic" start="3">
 <li><p>Classification by Linearity</p>
 <ul id="index-10">
@@ -594,7 +582,7 @@ dependent variables), with respect to one or more independent variables, is said
 </ul>
 </li>
 </ol>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -670,7 +658,7 @@ By Dr Zhihua Ma
 
   <p class="copyright">
     
-      © Copyright 2023---2025.
+      © Copyright 2023--2025.
       <br/>
     
   </p>
@@ -679,7 +667,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 05 January 2024 15:18:10.
+  Last updated on Sunday 07 January 2024 14:19:03.
   <br/>
 </p>
   </div>
@@ -708,7 +696,7 @@ By Dr Zhihua Ma
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     <br/>
   </p>
 </div>

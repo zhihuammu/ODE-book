@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>8.7. Answers to Chapter 8 Exercises &#8212; Linear Multistep Methods</title>
   
   
@@ -29,7 +30,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_orange_book_theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -50,10 +51,9 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="8.6. Chapter 8 Exercises" href="chap08_6_exercise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Friday 05 January 2024 15:18:10"/>
+    <meta name="docbuild:last-update" content="Sunday 07 January 2024 14:19:03"/>
   </head>
   
   
@@ -167,18 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -432,9 +421,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="answers-to-chapter-8-exercises">
+  <section class="tex2jax_ignore mathjax_ignore" id="answers-to-chapter-8-exercises">
 <h1><span class="section-number">8.7. </span>Answers to Chapter 8 Exercises<a class="headerlink" href="#answers-to-chapter-8-exercises" title="Permalink to this heading">#</a></h1>
-<div class="section" id="answer-to-ex-ch08-q1">
+<section id="answer-to-ex-ch08-q1">
 <h2><span class="section-number">8.7.1. </span>Answer to <a class="reference internal" href="chap08_6_exercise.html#ex-ch08-q1"><span class="std std-numref">Exercise 8.1</span></a><a class="headerlink" href="#answer-to-ex-ch08-q1" title="Permalink to this heading">#</a></h2>
 <ol class="arabic">
 <li><div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
@@ -522,8 +511,8 @@ document.write(`
 </div>
 </li>
 </ol>
-</div>
-<div class="section" id="answer-to-ex-ch08-q2">
+</section>
+<section id="answer-to-ex-ch08-q2">
 <h2><span class="section-number">8.7.2. </span>Answer to <a class="reference internal" href="chap08_6_exercise.html#ex-ch08-q2"><span class="std std-numref">Exercise 8.2</span></a><a class="headerlink" href="#answer-to-ex-ch08-q2" title="Permalink to this heading">#</a></h2>
 <p>Consider the following adjacency graph:</p>
 <div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-ea1c5d3019c7476778c146c283b46223bbb3b3dd.svg" alt="Figure made with TikZ" /></p>
@@ -566,7 +555,7 @@ bw =
 <p>Next we apply the Cuthill-McKee (CM) and reverse Cuthill-McKee (RCM)
 ordering algorithms to reduce the bandwidth.</p>
 <p>we need to construct the following table</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Original nodes</p></th>
 <th class="head"><p>No. of connections</p></th>
@@ -683,7 +672,7 @@ write down 2, 3 in the Queue column.</p></li>
 <li><p>Next, we bring 9 and follow the above procedure until all 10 nodes
 are listed in the results/Head column.</p></li>
 </ul>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Original nodes</p></th>
 <th class="head"><p>No. of connections</p></th>
@@ -907,7 +896,7 @@ write down the associated adjacency matrix and plot:</p>
 </div>
 </div>
 <p><strong>Column Count reordering:</strong></p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>vertex</p></th>
 <th class="head"><p>1</p></th>
@@ -937,7 +926,7 @@ write down the associated adjacency matrix and plot:</p>
 </tr>
 </tbody>
 </table>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>vertex</p></th>
 <th class="head"><p>1</p></th>
@@ -1322,8 +1311,8 @@ $$
 
     Repeat for matrices $D$ (column count) and $M$ (minimum degree) and
     comment. -->
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1414,7 +1403,7 @@ By Dr Zhihua Ma
 
   <p class="copyright">
     
-      © Copyright 2023---2025.
+      © Copyright 2023--2025.
       <br/>
     
   </p>
@@ -1423,7 +1412,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 05 January 2024 15:18:10.
+  Last updated on Sunday 07 January 2024 14:19:03.
   <br/>
 </p>
   </div>
@@ -1452,7 +1441,7 @@ By Dr Zhihua Ma
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     <br/>
   </p>
 </div>

@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>1.4. Homogeneous Linear Difference Equations with Constant Coefficients &#8212; Linear Multistep Methods</title>
   
   
@@ -29,7 +30,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_orange_book_theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -50,10 +51,9 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="1.3. Difference Equations" href="chap01_3_differenceEquation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Friday 05 January 2024 15:18:10"/>
+    <meta name="docbuild:last-update" content="Sunday 07 January 2024 14:19:03"/>
   </head>
   
   
@@ -167,18 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -433,7 +422,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="homogeneous-linear-difference-equations-with-constant-coefficients">
+  <section class="tex2jax_ignore mathjax_ignore" id="homogeneous-linear-difference-equations-with-constant-coefficients">
 <span id="chap01-complexnumber-de"></span><h1><span class="section-number">1.4. </span>Homogeneous Linear Difference Equations with Constant Coefficients<a class="headerlink" href="#homogeneous-linear-difference-equations-with-constant-coefficients" title="Permalink to this heading">#</a></h1>
 <p>Here we focus on homogeneous linear difference equations with constant coefficients,</p>
 <div class="math notranslate nohighlight" id="equation-eq-de-linear-homogeneous-constant">
@@ -453,24 +442,24 @@ L(\E)= a_0 + a_1 \E + a_2 \E^2 + \ldots + a_{k-1} \E^{k-1} + a_k \E^{k}.
 \]</div>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 1.10 </span> (Characteristic Equation)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>The <span class="target" id="index-0"></span>characteristic equation associated with Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.12)</a> or <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant-aux">(1.13)</a> is</p>
 <div class="math notranslate nohighlight" id="equation-eq-de-linear-char">
 <span class="eqno">(1.15)<a class="headerlink" href="#equation-eq-de-linear-char" title="Permalink to this equation">#</a></span>\[
 L(z)= a_0 + a_1 z + a_2 z^2 + \ldots + a_{k-1} z^{k-1} + a_k z^{k}=0.
 \]</div>
 <p>The characteristic equation is also called <em>auxiliary equation</em>.</p>
-</div>
+</section>
 </div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Note: We can replace the shift operator <span class="math notranslate nohighlight">\(\E\)</span> with <span class="math notranslate nohighlight">\(z\)</span> in Eq. <a class="reference internal" href="#equation-eq-de-linear-constant-le">(1.14)</a> to obtain the characteristic equation. <span class="math notranslate nohighlight">\(L(z)\)</span> is a <span class="math notranslate nohighlight">\(k\)</span>th-degree polynomial and thus has <span class="math notranslate nohighlight">\(k\)</span> roots <span class="math notranslate nohighlight">\(\{z_p\}~ (p=1,2,3,\ldots,k)\)</span>.</p>
 </div>
 <div class="proof theorem admonition" id="theorem-1">
 <p class="admonition-title"><span class="caption-number">Theorem 1.2 </span></p>
-<div class="theorem-content section" id="proof-content">
+<section class="theorem-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(z_p~(p=1,2,3,\ldots,k)\)</span> be any solution to the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(1.15)</a>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-96c1974e-e2d1-4aa9-9a32-8e6656e3c8ca">
-<span class="eqno">(1.16)<a class="headerlink" href="#equation-96c1974e-e2d1-4aa9-9a32-8e6656e3c8ca" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0224c8ff-6bec-4b47-8b2e-eff250d7e33f">
+<span class="eqno">(1.16)<a class="headerlink" href="#equation-0224c8ff-6bec-4b47-8b2e-eff250d7e33f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_n = z_p^n
 \end{equation}\]</div>
 <p>is a solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.12)</a>.</p>
@@ -494,13 +483,13 @@ L(\E) z_p^n = ~ &amp; \left(a_0 + a_1 \E + a_2 \E^2 + \ldots + a_{k-1}\E^{k-1}+a
 <p class="sd-card-text">Note: Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant-aux">(1.13)</a> is equivalent to Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.12)</a>.</p>
 <!-- ::: -->
 </div>
-</details></div>
+</details></section>
 </div><div class="proof theorem admonition" id="theorem-2">
 <p class="admonition-title"><span class="caption-number">Theorem 1.3 </span></p>
-<div class="theorem-content section" id="proof-content">
+<section class="theorem-content" id="proof-content">
 <p>Assume the <span class="math notranslate nohighlight">\(k\)</span> roots of  the characteristic equation are distinct, then a fundamental set of solutions is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ae4786ee-d2a0-4c4a-a500-060941d61aa0">
-<span class="eqno">(1.17)<a class="headerlink" href="#equation-ae4786ee-d2a0-4c4a-a500-060941d61aa0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-198c2cfa-4617-41de-97ab-8f25f5bf2b48">
+<span class="eqno">(1.17)<a class="headerlink" href="#equation-198c2cfa-4617-41de-97ab-8f25f5bf2b48" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z_p^n \quad (p=1,2,\ldots,k).
 \end{equation}\]</div>
 <p>An immediate consequence of this theorem, for this particular case, is that the general solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.12)</a> is</p>
@@ -526,8 +515,8 @@ L(\E) y_n  = ~ &amp; L(\E) \left(c_1 z_1^n + c_2 z_2^n + \ldots + c_k z_k^n\righ
 ~ = ~ &amp; 0 
 \end{align*}\]</div>
 </div>
-</details></div>
-</div><div class="section" id="first-order-difference-equations">
+</details></section>
+</div><section id="first-order-difference-equations">
 <h2><span class="section-number">1.4.1. </span>First-order Difference Equations<a class="headerlink" href="#first-order-difference-equations" title="Permalink to this heading">#</a></h2>
 <p>Find the solution to</p>
 <div class="math notranslate nohighlight">
@@ -565,8 +554,8 @@ Method 2 (characteristic equation)</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="second-order-difference-equations">
+</section>
+<section id="second-order-difference-equations">
 <h2><span class="section-number">1.4.2. </span>Second-order Difference Equations<a class="headerlink" href="#second-order-difference-equations" title="Permalink to this heading">#</a></h2>
 <p>Find the solution to</p>
 <div class="math notranslate nohighlight">
@@ -598,7 +587,7 @@ Method 2 (characteristic equation)</label><div class="sd-tab-content docutils">
 \[y_n = c_1 z_1^n + c_2  z_2^n.\]</div>
 <div class="proof example admonition" id="example-3">
 <p class="admonition-title"><span class="caption-number">Example 1.4 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Find the general solution to</p>
 <div class="math notranslate nohighlight">
 \[y_{n+2} + \frac{5}{6} y_{n+1} + \frac{1}{6} y_n = 0.\]</div>
@@ -618,7 +607,7 @@ Method 2 (characteristic equation)</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[y_n = c_1 \left(-\frac{1}{2}\right)^n+c_2\left(-\frac{1}{3}\right)^n\]</div>
 </div>
-</div>
+</section>
 </div></div>
 <div class="important admonition">
 <p class="admonition-title"><strong>Case (2) Two repeated real solutions: <span class="math notranslate nohighlight">\(z_1 = z_2 = z \in \mathbb{R}\)</span></strong>:</p>
@@ -627,7 +616,7 @@ Method 2 (characteristic equation)</label><div class="sd-tab-content docutils">
 \[y_n = \left(c_1  + c_2 n \right) z^n.\]</div>
 <div class="proof example admonition" id="example-4">
 <p class="admonition-title"><span class="caption-number">Example 1.5 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Find the general solution to</p>
 <div class="math notranslate nohighlight">
 \[y_{n+2}+y_{n+1}+\frac{1}{4} y_n = 0\]</div>
@@ -643,7 +632,7 @@ Method 2 (characteristic equation)</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[y_n = c_1 \left(-\frac{1}{2}\right)^n + c_2 n \left(-\frac{1}{2}\right)^n =\left( c_1  + c_2 n \right) \left(-\frac{1}{2}\right)^n. \]</div>
 </div>
-</div>
+</section>
 </div></div>
 <div class="important admonition">
 <p class="admonition-title"><strong>Case (3) Two conjugate complex solutions: <span class="math notranslate nohighlight">\(z_{1,2}=\alpha\pm  \i \beta  \in \mathbb{C}\)</span>, <span class="math notranslate nohighlight">\(\i=\sqrt{-1}\)</span></strong>:</p>
@@ -653,7 +642,7 @@ Method 2 (characteristic equation)</label><div class="sd-tab-content docutils">
 <p>where <span class="math notranslate nohighlight">\(r=\sqrt{\alpha^2+\beta^2}\)</span>, <span class="math notranslate nohighlight">\(\theta=\tan^{-1}\left(\dfrac{\beta}{\alpha}\right)\)</span>.</p>
 <div class="proof example admonition" id="example-5">
 <p class="admonition-title"><span class="caption-number">Example 1.6 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <div class="math notranslate nohighlight">
 \[ y_{n+2} + \frac{1}{4} y_n = 0 \]</div>
 <div class="dropdown solution admonition">
@@ -671,10 +660,10 @@ Method 2 (characteristic equation)</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[ y_n = \left(\frac{1}{2}\right)^n \left(c_1 \cos \left(\frac{n \pi}{2}\right) + c_2 \sin \left(\frac{n \pi}{2}\right)\right). \]</div>
 </div>
-</div>
+</section>
 </div></div>
-</div>
-<div class="section" id="higher-order-difference-equations">
+</section>
+<section id="higher-order-difference-equations">
 <h2><span class="section-number">1.4.3. </span>Higher-order Difference Equations<a class="headerlink" href="#higher-order-difference-equations" title="Permalink to this heading">#</a></h2>
 <p>For a <span class="math notranslate nohighlight">\(k\)</span>-th order difference equation</p>
 <div class="math notranslate nohighlight">
@@ -719,7 +708,7 @@ Method 2 (characteristic equation)</label><div class="sd-tab-content docutils">
 </div>
 <div class="proof example admonition" id="example-6">
 <p class="admonition-title"><span class="caption-number">Example 1.7 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>If the roots of a characteristic equation are</p>
 <div class="math notranslate nohighlight">
 \[z_1 \sim z_{13} = -\frac{1}{2}, \frac{1}{3}, \frac{3}{4}, \frac{3}{4}, \frac{3}{4}, 1\pm\sqrt{3}\i, 1\pm \i, 1\pm i, 1\pm \i, \]</div>
@@ -739,9 +728,9 @@ Method 2 (characteristic equation)</label><div class="sd-tab-content docutils">
 	~ &amp; ~ + (\sqrt{2})^n n^2 \left[c_{12} \cos \left(\frac{n\pi}{4}\right) + c_{13} \sin \left(\frac{n\pi}{4}\right)\right]\\        
 \end{align*}\]</div>
 </div>
-</div>
-</div></div>
-</div>
+</section>
+</div></section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -833,7 +822,7 @@ By Dr Zhihua Ma
 
   <p class="copyright">
     
-      © Copyright 2023---2025.
+      © Copyright 2023--2025.
       <br/>
     
   </p>
@@ -842,7 +831,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 05 January 2024 15:18:10.
+  Last updated on Sunday 07 January 2024 14:19:03.
   <br/>
 </p>
   </div>
@@ -871,7 +860,7 @@ By Dr Zhihua Ma
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     <br/>
   </p>
 </div>

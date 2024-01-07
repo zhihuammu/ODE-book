@@ -15,7 +15,7 @@
 | $\|z\|$   | the modulus of $z$ |
 | $\Re(z)$  | the real component of $z$|
 | $\Im(z)$  | the imaginary component of $z$|
-| $\theta$  | angle |
+| $\theta$  | angle, argument |
 | $\C$      | the set of complex numbers $\{z \| z=x+\i y~, ~ x \in \R, y \in \R\}$ |
 | $\{y_n\}_{n=0}^{+\infty}$ | a sequence defined on $\N_0$ |
 | $\D$      | differential operator|
@@ -46,6 +46,6 @@
 | $\subset$| is proper subset of |
 | $\subseteq$| is subset of |
 | $\in$| is member of |
-| $\angle$| angle |
+| $\angle$| angle, argument |
 :::
 

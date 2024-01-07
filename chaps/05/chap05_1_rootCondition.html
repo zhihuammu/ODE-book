@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>5.1. Characteristic Polynomials and Root Condition &#8212; Linear Multistep Methods</title>
   
   
@@ -29,7 +30,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_orange_book_theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -50,10 +51,9 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="5. Multistep Methods: Stability I" href="chap05_0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Friday 05 January 2024 15:18:10"/>
+    <meta name="docbuild:last-update" content="Sunday 07 January 2024 14:19:03"/>
   </head>
   
   
@@ -167,18 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -421,7 +410,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="characteristic-polynomials-and-root-condition">
+  <section class="tex2jax_ignore mathjax_ignore" id="characteristic-polynomials-and-root-condition">
 <h1><span class="section-number">5.1. </span>Characteristic Polynomials and Root Condition<a class="headerlink" href="#characteristic-polynomials-and-root-condition" title="Permalink to this heading">#</a></h1>
 <p>It is possible to derive any number of multistep methods of various
 order, but the most important factor related to each method is its
@@ -495,7 +484,7 @@ y_j ~=~ A_1\, z_1^j + A_2\, z_2^j + \,\dots\, + A_k\,z_k^j
 </div>
 <div class="proof definition admonition" id="def:char-poly">
 <p class="admonition-title"><span class="caption-number">Definition 5.1 </span> (Characteristic Polynomials)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>For a general linear multistep method</p>
 <div class="math notranslate nohighlight">
 \[
@@ -527,10 +516,10 @@ L(z, h\lambda) = \sum_{i=0}^k \left(\alpha_i - h\lambda \beta_i\right) z^i
 <span class="eqno">(5.10)<a class="headerlink" href="#equation-eq-chap04-chapoly-relation" title="Permalink to this equation">#</a></span>\[
 L(z, h\lambda) = \rho(z) - h\lambda \sigma(z)
 \]</div>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 5.1 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Find the characteristic polynomial <span class="math notranslate nohighlight">\(L(z, h\lambda)\)</span> for a 2-step method</p>
 <div class="math notranslate nohighlight">
 \[
@@ -590,44 +579,44 @@ L(z, h\lambda) = \rho(z) - h\lambda \sigma(z)
 </li>
 </ul>
 </div>
-</div>
+</section>
 </div><div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 5.2 </span> (Root Condition)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\,z_1,z_2,\dots,z_k\,\)</span> denote the roots of the first
 characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> associated with a
 linear multistep method. If <span class="math notranslate nohighlight">\(\,|z_i|\leq1\,\)</span>, for each
 <span class="math notranslate nohighlight">\(\,i=1,2,...,k\,\)</span>, and all roots with absolute value <span class="math notranslate nohighlight">\(1\)</span> are simple
 roots (i.e. not repeated), then the difference method is said to satisfy
 the <strong><span class="target" id="index-4"></span>root condition</strong>.</p>
-</div>
+</section>
 </div><div class="figure" id="id1" style="text-align: center"><p><img width="48%" src="../../_images/tikz-ea392d229e90d2ec97267bb4c58b1db4cdbf4185.svg" alt="Figure made with TikZ" /></p>
-<p class="caption"><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Unit circle in the complex plane <span class="math notranslate nohighlight">\(\C\)</span>.</span></p>
+<p><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Unit circle in the complex plane <span class="math notranslate nohighlight">\(\C\)</span>.</span></p>
 </div><div class="proof definition admonition" id="definition-3">
 <p class="admonition-title"><span class="caption-number">Definition 5.3 </span> (Stability)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>A linear multistep method of order <span class="math notranslate nohighlight">\(\,\geq1\,\)</span> is called <em><span class="target" id="index-5"></span>stable</em> if the
 roots of its first characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> satisfies
 the root condition, i.e. the roots of <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> lie inside or on
 the unit circle, and the roots on the unit circle are distinct (or
 simple) - this is called the root condition.</p>
-</div>
+</section>
 </div><div class="proof definition admonition" id="definition-4">
 <p class="admonition-title"><span class="caption-number">Definition 5.4 </span> (Strong Stability)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>A method is <em><span class="target" id="index-6"></span>strongly stable</em> if the roots of <span class="math notranslate nohighlight">\(\rho(z) = 0\)</span> are inside
 the unit circle except for only one root, call <em>principal root</em>, with
 the magnitude of one(i.e. <span class="math notranslate nohighlight">\(|z| = 1\)</span>).</p>
-</div>
+</section>
 </div><div class="proof definition admonition" id="definition-5">
 <p class="admonition-title"><span class="caption-number">Definition 5.5 </span> (Weak Stability)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>A method is <em><span class="target" id="index-7"></span>weakly stable</em> if it is stable (i.e. satisfies the root
 condition) but has more than one root on the unit circle.</p>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-6">
 <p class="admonition-title"><span class="caption-number">Example 5.2 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Find the roots associated with the following characteristic polynomials:</p>
 <ol class="arabic">
 <li><p><span class="math notranslate nohighlight">\(\rho(z)= z^3 + z \)</span></p>
@@ -698,8 +687,8 @@ is weakly stable.</p>
 </div></div>
 </details></li>
 </ol>
-</div>
-</div></div>
+</section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -775,7 +764,7 @@ By Dr Zhihua Ma
 
   <p class="copyright">
     
-      © Copyright 2023---2025.
+      © Copyright 2023--2025.
       <br/>
     
   </p>
@@ -784,7 +773,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 05 January 2024 15:18:10.
+  Last updated on Sunday 07 January 2024 14:19:03.
   <br/>
 </p>
   </div>
@@ -813,7 +802,7 @@ By Dr Zhihua Ma
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     <br/>
   </p>
 </div>

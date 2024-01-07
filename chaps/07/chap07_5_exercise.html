@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>7.5. Chapter 7 Exercise &#8212; Linear Multistep Methods</title>
   
   
@@ -29,7 +30,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_orange_book_theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -50,10 +51,9 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="7.4. MATLAB Program 4" href="chap07_4_codeExample.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Friday 05 January 2024 15:18:10"/>
+    <meta name="docbuild:last-update" content="Sunday 07 January 2024 14:19:03"/>
   </head>
   
   
@@ -167,18 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -421,13 +410,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-7-exercise">
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-7-exercise">
 <span id="chap-stiff-exercise"></span><h1><span class="section-number">7.5. </span>Chapter 7 Exercise<a class="headerlink" href="#chapter-7-exercise" title="Permalink to this heading">#</a></h1>
 <p>You should try the following exercise questions first, then check with the answers.</p>
 <div class="exercise admonition" id="ex-ch07-q1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.1 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>A certain chemical reaction is described by a stiff system</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -441,19 +430,19 @@ document.write(`
 <li><p>Show that <span class="math notranslate nohighlight">\(\,y_1\,\)</span> decays rapidly while <span class="math notranslate nohighlight">\(\,y_2\,\)</span> decays slowly.</p></li>
 <li><p>Find the eigenvalues of the associated Jacobian matrix and the stiffness ratio.</p></li>
 </ol>
-</div>
+</section>
 </div>
 <div class="solution admonition" id="chaps/07/chap07_5_exercise-solution-1">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex-ch07-q1"> Exercise 7.1</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><a class="reference download internal" download="" href="../../_downloads/871df474d348cfeb5fe2f7d54c41e121/Ex7_1.mlx"><code class="xref download docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">live</span> <span class="pre">script</span> <span class="pre">solution</span> <span class="pre">for</span> <span class="pre">Exercise</span> <span class="pre">7.1</span></code></a></p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ex-ch07-q2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.2 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Consider the problem</p>
 <div class="math notranslate nohighlight">
 \[
@@ -467,12 +456,12 @@ document.write(`
 single equation be said to exhibit stiffness? If Euler’s rule were
 used to obtain a numerical solution, what would be the maximum
 allowable steplength.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/07/chap07_5_exercise-solution-3">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex-ch07-q2"> Exercise 7.2</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p>From both the equation and the analytical solution it can be seen that the solution has a fast decaying element as well as a slowly varying element, hence the problem can be considered as stiff.</p>
 <p>The stability region for Euler method is <span class="math notranslate nohighlight">\([-2, 0]\)</span>, this means</p>
 <div class="math notranslate nohighlight">
@@ -480,12 +469,12 @@ allowable steplength.</p>
 <p>as <span class="math notranslate nohighlight">\(\lambda =-100\)</span>, so</p>
 <div class="math notranslate nohighlight">
 \[ h \in (0, 0.02)\]</div>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ex-ch07-q3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.3 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Detertermine whether the following problem is stiff</p>
 <div class="math notranslate nohighlight">
 \[
@@ -497,12 +486,12 @@ allowable steplength.</p>
 <p>[Hint: reduce the equation to a system of two first
 order ODEs i.e. let <span class="math notranslate nohighlight">\(y = y_1\)</span>, <span class="math notranslate nohighlight">\(y' = y_2\)</span>, then differentiation
 gives <span class="math notranslate nohighlight">\(y' = y_1'\)</span>, and <span class="math notranslate nohighlight">\(y'' = y'_2\,\)</span>].</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/07/chap07_5_exercise-solution-5">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex-ch07-q3"> Exercise 7.3</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
@@ -564,32 +553,32 @@ J = \begin{bmatrix}
 \]</div>
 </div>
 </div>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ex-ch07-q4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.4 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Consider the non-linear chemical system in <a class="reference internal" href="chap07_2_stiffSystem.html#chap07-example-3">Example 7.3</a>. Find
 time-dependent solution of the species <span class="math notranslate nohighlight">\(y_1\)</span>, <span class="math notranslate nohighlight">\(y_2\)</span>, and <span class="math notranslate nohighlight">\(y_3\)</span> for a
 duration of 60 seconds using the stiff equation solver routine
 ode15s from the MATLAB ODE solver routines. Try to run the model
 using ode113 solver and comment on your results. Change both
 tolerances RelTol and AbsTol and comment on your results.</p>
-</div>
+</section>
 </div>
 <div class="solution admonition" id="chaps/07/chap07_5_exercise-solution-7">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex-ch07-q4"> Exercise 7.4</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><a class="reference download internal" download="" href="../../_downloads/3636229363385bb9608e7261d096d0ed/Ex7_4_ode15s.m"><code class="xref download docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">code</span> <span class="pre">using</span> <span class="pre">ode15s</span> <span class="pre">solver</span></code></a></p>
 <p><a class="reference download internal" download="" href="../../_downloads/6da1653261f248cad8a7e4cb0f7f8d8d/Ex7_4_ode113.m"><code class="xref download docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">code</span> <span class="pre">using</span> <span class="pre">ode113</span> <span class="pre">solver</span></code></a></p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ex-ch07-q5">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.5 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Consider the Robertson Problem in the <a class="reference internal" href="chap07_4_codeExample.html#chap-stiff-code"><span class="std std-ref">MATLAB Program 4</span></a>. Find
 time-dependent solution of the species <span class="math notranslate nohighlight">\(y_1\)</span>, <span class="math notranslate nohighlight">\(y_2\)</span>, and <span class="math notranslate nohighlight">\(y_3\)</span> for a
 duration of <span class="math notranslate nohighlight">\(t = 100\)</span> seconds using the stiff equation solver
@@ -601,39 +590,39 @@ ode15s, find the eigenvalues of the the Jacobian Matrix at <span class="math not
 <span class="math notranslate nohighlight">\(t = 1.0e-5\)</span> and <span class="math notranslate nohighlight">\(t = 60\)</span> seconds, and by finding the corresponding
 stiffness ratio, comment on the stability of the system. Produce a
 table to record the run times and your computational stats.</p>
-</div>
+</section>
 </div>
 <div class="solution admonition" id="chaps/07/chap07_5_exercise-solution-9">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex-ch07-q5"> Exercise 7.5</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p>You will find the running time for ode15s is much shorter than that
 for ode113. Check your results and comment.</p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ex-ch07-q6">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.6 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Find the interval of absolute stability for the backward
 differentiation formulae (BDF) for <span class="math notranslate nohighlight">\(k = 1,2,\dots,4\)</span> methods using
 <em>root locus</em> method, and show whether they are convergent. For the
 same BDF methods plot the region of absolute stability using
 <em>boundary root locus</em> method.</p>
-</div>
+</section>
 </div>
 <div class="solution admonition" id="chaps/07/chap07_5_exercise-solution-11">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex-ch07-q6"> Exercise 7.6</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><a class="reference download internal" download="" href="../../_downloads/9c539034a3fc3b5f86b17a962548bff4/Ex7_6.m"><code class="xref download docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">code</span> <span class="pre">for</span> <span class="pre">Exercise</span> <span class="pre">7.6</span></code></a></p>
 <p>Solution are shown in the lecture notes <a class="reference internal" href="chap07_3_method.html#fig-chap07-c6m31f2"><span class="std std-numref">Fig. 7.1</span></a>.</p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ex-ch07-q7">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.7 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Consider the following system of ODEs which represents the
 mathematical formulation of an electric circuit:</p>
 <div class="math notranslate nohighlight">
@@ -670,18 +659,18 @@ option ‘Stats’ ‘on’ in the options=odeset command, e.g.</p>
 </div>
 <p>and prepare a table for comparison of the stats using the two
 different solvers. Comment on your results.</p>
-</div>
+</section>
 </div>
 <div class="solution admonition" id="chaps/07/chap07_5_exercise-solution-13">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ex-ch07-q7"> Exercise 7.7</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><a class="reference download internal" download="" href="../../_downloads/ffdc38fd3965c328fc3d1a99b2241eb2/Ex7_7.m"><code class="xref download docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">code</span> <span class="pre">for</span> <span class="pre">Exercise</span> <span class="pre">7.7</span></code></a></p>
 <p>The plot of the solutions is shown below:</p>
-<div class="figure align-default" id="fig-chap07-c6ans7">
+<figure class="align-default" id="fig-chap07-c6ans7">
 <a class="reference internal image-reference" href="../../_images/fig-chap07-c6ans7.svg"><img alt="../../_images/fig-chap07-c6ans7.svg" src="../../_images/fig-chap07-c6ans7.svg" width="500px" /></a>
-</div>
-</div>
+</figure>
+</section>
 </div>
 <!-- (chap07-ex-sol)=
 ## Answers to Chapter 7 Exercises 
@@ -704,7 +693,7 @@ different solvers. Comment on your results.</p>
 
 6.  
 
-7.   --></div>
+7.   --></section>
 
     <script type="text/x-thebe-config">
     {
@@ -780,7 +769,7 @@ By Dr Zhihua Ma
 
   <p class="copyright">
     
-      © Copyright 2023---2025.
+      © Copyright 2023--2025.
       <br/>
     
   </p>
@@ -789,7 +778,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 05 January 2024 15:18:10.
+  Last updated on Sunday 07 January 2024 14:19:03.
   <br/>
 </p>
   </div>
@@ -818,7 +807,7 @@ By Dr Zhihua Ma
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     <br/>
   </p>
 </div>

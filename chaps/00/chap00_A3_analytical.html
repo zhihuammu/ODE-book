@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Analytical Methods for ODEs &#8212; Linear Multistep Methods</title>
   
   
@@ -29,7 +30,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_orange_book_theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -50,10 +51,9 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Ordinary Differential Equations" href="chap00_A2_ode.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Friday 05 January 2024 15:18:10"/>
+    <meta name="docbuild:last-update" content="Sunday 07 January 2024 14:19:03"/>
   </head>
   
   
@@ -167,18 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -441,9 +430,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="analytical-methods-for-odes">
+  <section class="tex2jax_ignore mathjax_ignore" id="analytical-methods-for-odes">
 <span id="chap-pre-3"></span><h1>Analytical Methods for ODEs<a class="headerlink" href="#analytical-methods-for-odes" title="Permalink to this heading">#</a></h1>
-<div class="contents local topic" id="contents">
+<nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#separable-equations" id="id1">Separable Equations</a></p></li>
 <li><p><a class="reference internal" href="#linear-equations-with-constant-coefficients" id="id2">Linear Equations with Constant Coefficients</a></p>
@@ -459,19 +448,19 @@ document.write(`
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="separable-equations">
-<h2><a class="toc-backref" href="#id1">Separable Equations</a><a class="headerlink" href="#separable-equations" title="Permalink to this heading">#</a></h2>
+</nav>
+<section id="separable-equations">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Separable Equations</a><a class="headerlink" href="#separable-equations" title="Permalink to this heading">#</a></h2>
 <div class="proof definition admonition" id="definition-0">
 <span id="index-0"></span><p class="admonition-title"><span class="caption-number">Definition 5 </span> (Separable Equation)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>A first-order differential equation of the form</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-separable">
 <span class="eqno">(10)<a class="headerlink" href="#equation-eq-ode-separable" title="Permalink to this equation">#</a></span>\[
 \diff{y}{x} = g(x) h(y)
 \]</div>
 <p>is said to be separable or to have separable variables.</p>
-</div>
+</section>
 </div><p>To solve the separable ODE <a class="reference internal" href="#equation-eq-ode-separable">(10)</a>, we re-arrange it as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -489,7 +478,7 @@ H(y) = G(x) + C.
 \]</div>
 <div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 6 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Solve <span class="math notranslate nohighlight">\((1+x)\dy - y \dx=0\)</span></p>
 <div class="solution admonition">
 <p class="admonition-title">Solution</p>
@@ -518,10 +507,10 @@ y &amp; = e^{\ln |1+x| + c_1} \\
 \end{aligned}
 \end{split}\]</div>
 </div>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-2">
 <p class="admonition-title"><span class="caption-number">Example 7 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Solve <span class="math notranslate nohighlight">\(\displaystyle \diff{y}{x} = \frac{x-5}{y^2}\)</span>.</p>
 <div class="solution admonition">
 <p class="admonition-title">Solution</p>
@@ -541,10 +530,10 @@ y^2 \dy = (x-5) \dx
     \frac{1}{3} y^3 = \frac{1}{2}x^2 - 5x + C
 \]</div>
 </div>
-</div>
-</div></div>
-<div class="section" id="linear-equations-with-constant-coefficients">
-<h2><a class="toc-backref" href="#id2">Linear Equations with Constant Coefficients</a><a class="headerlink" href="#linear-equations-with-constant-coefficients" title="Permalink to this heading">#</a></h2>
+</section>
+</div></section>
+<section id="linear-equations-with-constant-coefficients">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Linear Equations with Constant Coefficients</a><a class="headerlink" href="#linear-equations-with-constant-coefficients" title="Permalink to this heading">#</a></h2>
 <p>Here we focus on a particular type of <span class="math notranslate nohighlight">\(n\)</span>-th order ODE given as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear-constant">
 <span class="eqno">(11)<a class="headerlink" href="#equation-eq-ode-linear-constant" title="Permalink to this equation">#</a></span>\[
@@ -554,7 +543,7 @@ a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(x),
 <p>where the coefficients <span class="math notranslate nohighlight">\(a_p~(p=0, 1, \ldots, n)\)</span> are constants.</p>
 <div class="proof definition admonition" id="definition-3">
 <span id="index-1"></span><p class="admonition-title"><span class="caption-number">Definition 6 </span> (Differential Operator <span class="math notranslate nohighlight">\(\D\)</span>)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>We define <span class="math notranslate nohighlight">\(\D\)</span> as the <span class="target" id="index-2"></span>differential operator, which can be applied on a function <span class="math notranslate nohighlight">\(y=y(x)\)</span> to obtain its derivative</p>
 <div class="math notranslate nohighlight">
 \[
@@ -580,10 +569,10 @@ L(\D)= a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0,
 \[
 L(\D) y = g(x).
 \]</div>
-</div>
+</section>
 </div><span class="target" id="index-4"></span><span class="target" id="index-5"></span><div class="proof definition admonition" id="definition-4">
 <span id="index-6"></span><p class="admonition-title"><span class="caption-number">Definition 7 </span> (Characteristic Polynomial and Characteristic Equation)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>For equation <a class="reference internal" href="#equation-eq-ode-linear-constant">(11)</a>, we define its <strong><span class="target" id="index-7"></span>characteristic polynomial</strong> as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear-constant-char-polynomial">
 <span class="eqno">(14)<a class="headerlink" href="#equation-eq-ode-linear-constant-char-polynomial" title="Permalink to this equation">#</a></span>\[
@@ -597,9 +586,9 @@ L(z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0 = 0
 \]</div>
 <p>is called the <strong><span class="target" id="index-8"></span>characteristic equation</strong> of the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(11)</a>.</p>
 <p>Note: In some books, the characteristic equation is also called <em>auxiliary equation</em>.</p>
-</div>
-</div><div class="section" id="homogeneous-odes">
-<span id="chapx-homo-ode-sol"></span><h3><a class="toc-backref" href="#id3">Homogeneous ODEs</a><a class="headerlink" href="#homogeneous-odes" title="Permalink to this heading">#</a></h3>
+</section>
+</div><section id="homogeneous-odes">
+<span id="chapx-homo-ode-sol"></span><h3><a class="toc-backref" href="#id3" role="doc-backlink">Homogeneous ODEs</a><a class="headerlink" href="#homogeneous-odes" title="Permalink to this heading">#</a></h3>
 <p>When the right hand side of equation <a class="reference internal" href="#equation-eq-ode-linear-constant">(11)</a> vanishes, i.e. <span class="math notranslate nohighlight">\(g(x)\)</span>, we obtain a linear homogeneous ordinary differential equation with constant coefficients</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear-homogeneous-constant">
 <span class="eqno">(16)<a class="headerlink" href="#equation-eq-ode-linear-homogeneous-constant" title="Permalink to this equation">#</a></span>\[
@@ -607,22 +596,22 @@ L(\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y =
 \]</div>
 <div class="proof theorem admonition" id="theorem-5">
 <span id="index-9"></span><p class="admonition-title"><span class="caption-number">Theorem 2 </span> (Superposition Principle — Homogeneous Equations)</p>
-<div class="theorem-content section" id="proof-content">
+<section class="theorem-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(y_1(x)\)</span>, <span class="math notranslate nohighlight">\(y_2(x)\)</span>, … , <span class="math notranslate nohighlight">\(y_n(x)\)</span> be solutions to the homogeneous <span class="math notranslate nohighlight">\(n\)</span>-th order differential equation <a class="reference internal" href="#equation-eq-ode-linear-homogeneous-constant">(16)</a> on an interval <span class="math notranslate nohighlight">\(I\)</span>, then the linear combination</p>
 <div class="math notranslate nohighlight">
 \[
     y=c_1 y_1(x) + c_2 y_2(x) + \cdots + c_n y_n(x)
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(c_p ~ (p=1, 2, \ldots, n)\)</span> are arbitrary constants, is also a solution on the interval.</p>
-</div>
+</section>
 </div><p>We will work step by step to look at the solutions of:</p>
 <ul class="simple">
 <li><p>First-order ODEs</p></li>
 <li><p>Second-order ODEs</p></li>
 <li><p>Higher-order ODEs</p></li>
 </ul>
-<div class="section" id="first-order-odes">
-<h4><a class="toc-backref" href="#id4">First-order ODEs</a><a class="headerlink" href="#first-order-odes" title="Permalink to this heading">#</a></h4>
+<section id="first-order-odes">
+<h4><a class="toc-backref" href="#id4" role="doc-backlink">First-order ODEs</a><a class="headerlink" href="#first-order-odes" title="Permalink to this heading">#</a></h4>
 <p>Solve <span class="math notranslate nohighlight">\(a_1 y' + a_0 y =0\)</span></p>
 <div class="solution admonition">
 <p class="admonition-title">Solution</p>
@@ -676,9 +665,9 @@ y = C e^{z x} = C e^{-\frac{a_0}{a_1} x}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="second-order-odes">
-<h4><a class="toc-backref" href="#id5">Second-order ODEs</a><a class="headerlink" href="#second-order-odes" title="Permalink to this heading">#</a></h4>
+</section>
+<section id="second-order-odes">
+<h4><a class="toc-backref" href="#id5" role="doc-backlink">Second-order ODEs</a><a class="headerlink" href="#second-order-odes" title="Permalink to this heading">#</a></h4>
 <p>Solve <span class="math notranslate nohighlight">\(a y'' + b y'+ c y=0\)</span></p>
 <div class="solution admonition">
 <p class="admonition-title">Solution</p>
@@ -725,7 +714,7 @@ z_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
 </div>
 <div class="proof example admonition" id="example-6">
 <p class="admonition-title"><span class="caption-number">Example 8 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Solving the following ODEs:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(2y''-5y'-3y=0\)</span></p></li>
@@ -746,10 +735,10 @@ z_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
 </li>
 </ol>
 </div>
-</div>
-</div></div>
-<div class="section" id="higher-order-odes">
-<h4><a class="toc-backref" href="#id6">Higher-order ODEs</a><a class="headerlink" href="#higher-order-odes" title="Permalink to this heading">#</a></h4>
+</section>
+</div></section>
+<section id="higher-order-odes">
+<h4><a class="toc-backref" href="#id6" role="doc-backlink">Higher-order ODEs</a><a class="headerlink" href="#higher-order-odes" title="Permalink to this heading">#</a></h4>
 <p>Solve an <span class="math notranslate nohighlight">\(n\)</span>-th order ODE
 <span class="math notranslate nohighlight">\(
 \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = 0
@@ -800,10 +789,10 @@ a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0 = 0
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="section" id="nonhomogeneous-odes">
-<h3><a class="toc-backref" href="#id7">Nonhomogeneous ODEs</a><a class="headerlink" href="#nonhomogeneous-odes" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="nonhomogeneous-odes">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Nonhomogeneous ODEs</a><a class="headerlink" href="#nonhomogeneous-odes" title="Permalink to this heading">#</a></h3>
 <p>Here we consider a linear nonhomogeneous ODE with constant coefficients given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear-nonhomogeneous-constant">
 <span class="eqno">(17)<a class="headerlink" href="#equation-eq-ode-linear-nonhomogeneous-constant" title="Permalink to this equation">#</a></span>\[
@@ -828,7 +817,7 @@ L(\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y =
 <p id="index-10">The way to find <span class="math notranslate nohighlight">\(y_h(x)\)</span> is the same as described in <a class="reference internal" href="#chapx-homo-ode-sol"><span class="std std-ref">Homogeneous ODEs</span></a>. Here we will introduce the <strong><span class="target" id="index-11"></span>Undetermined Coefficients Method</strong> to find the particular solution <span class="math notranslate nohighlight">\(y_p(x)\)</span></p>
 <div class="proof example admonition" id="example-7">
 <p class="admonition-title"><span class="caption-number">Example 9 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Find the solution to</p>
 <div class="math notranslate nohighlight">
 \[
@@ -900,10 +889,10 @@ y''+3y'+2y=3t
 </li>
 </ul>
 </div>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-8">
 <p class="admonition-title"><span class="caption-number">Example 10 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p>Find a particular solution to</p>
 <div class="math notranslate nohighlight">
 \[
@@ -926,10 +915,10 @@ y''+3y'+2y=10e^{3t}
 y_p(t)=\frac{1}{2}e^{3t}
 \]</div>
 </div>
-</div>
-</div></div>
-</div>
-</div>
+</section>
+</div></section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1029,7 +1018,7 @@ By Dr Zhihua Ma
 
   <p class="copyright">
     
-      © Copyright 2023---2025.
+      © Copyright 2023--2025.
       <br/>
     
   </p>
@@ -1038,7 +1027,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 05 January 2024 15:18:10.
+  Last updated on Sunday 07 January 2024 14:19:03.
   <br/>
 </p>
   </div>
@@ -1067,7 +1056,7 @@ By Dr Zhihua Ma
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     <br/>
   </p>
 </div>

@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>4.4. Chapter 4 Exercises &#8212; Linear Multistep Methods</title>
   
   
@@ -29,7 +30,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_orange_book_theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -50,10 +51,9 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="4.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device" href="chap04_3_MilineDevice.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Friday 05 January 2024 15:18:10"/>
+    <meta name="docbuild:last-update" content="Sunday 07 January 2024 14:19:03"/>
   </head>
   
   
@@ -167,18 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -421,13 +410,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-4-exercises">
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-4-exercises">
 <span id="chap-errorconstant-exercise"></span><h1><span class="section-number">4.4. </span>Chapter 4 Exercises<a class="headerlink" href="#chapter-4-exercises" title="Permalink to this heading">#</a></h1>
 <p>You should try the following exercise questions first, then check with the answers.</p>
 <div class="exercise admonition" id="chap04-ex-4.1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 4.1 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Use a Gregory-Newton interpolation formula to derive the error term
 for the following integration formulae:</p>
 <ol class="arabic simple">
@@ -435,12 +424,12 @@ for the following integration formulae:</p>
 Hint: G-N backward <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(-1\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle y_{j+1} ~=~ y_j + \tfrac{h}{2}(f_{j+1} + f_j)\)</span></p></li>
 </ol>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/04/chap04_4_exercise-solution-1">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#chap04-ex-4.1"> Exercise 4.1</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(\frac{-1}{24}h^4f'''(z)\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\frac{-1}{12}h^3f''(z)\)</span></p></li>
@@ -458,12 +447,12 @@ Hint: G-N backward <span class="math notranslate nohighlight">\(0\)</span> to <s
  </div>
 </li>
 </ul>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="chap04-ex-4.2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 4.2 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Use the method described in the text (see <a class="reference internal" href="chap04_2_errorConstant.html#chap04-example-3">Example 4.3</a>) to find the
 order and the error constants of the following formulae:</p>
 <ol class="arabic simple">
@@ -476,12 +465,12 @@ order and the error constants of the following formulae:</p>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle y_{j+1} ~=~ y_j + \tfrac{h}{720}(1901f_j - 2774f_{j-1}
         + 2616f_{j-2} - 1274f_{j-3} + 251f_{j-4})\)</span></p></li>
 </ol>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/04/chap04_4_exercise-solution-3">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#chap04-ex-4.2"> Exercise 4.2</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(\frac{-1}{24}h^4f'''(z)\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\frac{-1}{90}h^5f^{iv}(z)\)</span>，</p></li>
@@ -492,12 +481,12 @@ order and the error constants of the following formulae:</p>
 <div align="center">
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1128062/sp/112806200/embedIframeJs/uiconf_id/27474902/partner_id/1128062?iframeembed=true&playerId=kaltura_player&entry_id=1_mrrhokm2&flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[streamerType]=hdnetwork&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_sy5vqlkn" width="575" height="360" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="odeEx2Q2_a_b"></iframe>
 </div>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="chap04-ex-4.3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 4.3 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Derive a Milne’s Device local error estimate for the Milne-Simpson
 Predictor-Corrector method:</p>
 <div class="math notranslate nohighlight">
@@ -508,12 +497,12 @@ Predictor-Corrector method:</p>
         y^{(c)}_{j+1} ~&amp;=~ y_{j-1} + \tfrac{h}{3}(f_{j+1} + 4f_j + f_{j-1})
         - \tfrac{1}{90}h^5y^v(z_2)   
 \end{aligned}\end{split}\]</div>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/04/chap04_4_exercise-solution-5">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#chap04-ex-4.3"> Exercise 4.3</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -523,12 +512,12 @@ Predictor-Corrector method:</p>
 &amp; = \frac{-1}{29} \left( y_{j+1}^{(c)} - y_{j+1}^{(p)} \right)
 \end{aligned}
 \end{split}\]</div>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="chap04-ex-4.4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 4.4 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Modify <a class="reference internal" href="../03/chap03_6_codes.html#ch03-program2"><span class="std std-ref">Program 2 (Matlab and Python)</span></a> for Adams–Bashforth method (Chapter 2)
 to implement Milne-Simpson Predictor-Corrector method given in <a class="reference internal" href="#chap04-ex-4.3"><span class="std std-numref">Exercise 4.3</span></a>. Use your
 program to find solution for the initial–value–problem</p>
@@ -543,12 +532,12 @@ formula, derived in question 3 above to find an error estimate at
 <span class="math notranslate nohighlight">\(\,x \!=\! 1.0\,\)</span>. Compare the error with the actual error and that
 of the Adams–Bashforth–Moulton method calculated in the lecture
 notes, <a class="reference internal" href="chap04_3_MilineDevice.html#chap04-example-5">Example 4.5</a>, and comment.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/04/chap04_4_exercise-solution-7">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#chap04-ex-4.4"> Exercise 4.4</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p>At <span class="math notranslate nohighlight">\(x = 1.0\)</span>:</p>
 <p>The error in ABM method using Milne’s Device error formula is
 <span class="math notranslate nohighlight">\(\approx 1.2\times10^{-7}\)</span>, the actual error is
@@ -560,9 +549,9 @@ notes, <a class="reference internal" href="chap04_3_MilineDevice.html#chap04-exa
 <div>
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1128062/sp/112806200/embedIframeJs/uiconf_id/27474902/partner_id/1128062?iframeembed=true&playerId=kaltura_player&entry_id=1_xjg10vmf&flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[streamerType]=hdnetwork&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_u6yq2gnk" width="575" height="360" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="odeEx2Q4"></iframe>
 </div>
+</section>
 </div>
-</div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -638,7 +627,7 @@ By Dr Zhihua Ma
 
   <p class="copyright">
     
-      © Copyright 2023---2025.
+      © Copyright 2023--2025.
       <br/>
     
   </p>
@@ -647,7 +636,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 05 January 2024 15:18:10.
+  Last updated on Sunday 07 January 2024 14:19:03.
   <br/>
 </p>
   </div>
@@ -676,7 +665,7 @@ By Dr Zhihua Ma
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     <br/>
   </p>
 </div>

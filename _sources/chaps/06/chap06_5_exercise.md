@@ -7,22 +7,19 @@ For detailed solutions, please find them in the Moodle area for this Unit.
 
 :::{exercise}
 :label: chap06-ex6-1
-Show that the method 
+Show that the method
 
 $$
-\begin{aligned}
-            y_{j+1} ~=~ y_j + hf_{j+1}        
-    \end{aligned}
+y_{j+1} = y_j + hf_{j+1}
 $$
 
- is absolutely stable for all $h\lambda \not\in (0,2)$.
+is absolutely stable for all $h\lambda \not\in (0,2)$.
 :::
 
 :::{hint}
 :class: dropdown
 To show that the method is absolutely stable for all $h\lambda \not\in (0,2)$, we just need to show that the stability interval is $h\lambda \in (-\infty, 0] \cup [2, \infty )$.
 :::
-
 
 :::{solution} chap06-ex6-1
 :class: dropdown
@@ -347,6 +344,7 @@ Find the stability interval and region for the following methods:
         ```{image} /exSol/Ex6/Ex6_4_1_sol.svg
         :width: 500px
         ```
+
     :::
 
 2.  :::{admonition} Solution 
@@ -373,6 +371,7 @@ Find the stability interval and region for the following methods:
         ```
 
         Output
+
         ```none
            -10.0000    1.2281    0.1313
             -9.5000    1.2078    0.1322

@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>2.5. Chapter 2 Exercises &#8212; Linear Multistep Methods</title>
   
   
@@ -29,7 +30,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_orange_book_theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -50,10 +51,9 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="2.4. Finite Difference Tables" href="chap02_4_differenceTable.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Friday 05 January 2024 15:18:10"/>
+    <meta name="docbuild:last-update" content="Sunday 07 January 2024 14:19:03"/>
   </head>
   
   
@@ -167,18 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -421,7 +410,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="chapter-2-exercises">
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-2-exercises">
 <span id="chap02-exercises"></span><h1><span class="section-number">2.5. </span>Chapter 2 Exercises<a class="headerlink" href="#chapter-2-exercises" title="Permalink to this heading">#</a></h1>
 <p>You should try the following exercise questions first, then check with the answers.</p>
 <p>For detailed solutions, you can download</p>
@@ -431,18 +420,18 @@ document.write(`
 <div class="exercise admonition" id="ch2-ex-q1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Complete a difference table for the following data:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="text-center head"><p>1.20</p></th>
-<th class="text-center head"><p>1.25</p></th>
-<th class="text-center head"><p>1.30</p></th>
-<th class="text-center head"><p>1.35</p></th>
-<th class="text-center head"><p>1.40</p></th>
-<th class="text-center head"><p>1.45</p></th>
-<th class="text-center head"><p>1.50</p></th>
+<tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-center"><p>1.20</p></th>
+<th class="head text-center"><p>1.25</p></th>
+<th class="head text-center"><p>1.30</p></th>
+<th class="head text-center"><p>1.35</p></th>
+<th class="head text-center"><p>1.40</p></th>
+<th class="head text-center"><p>1.45</p></th>
+<th class="head text-center"><p>1.50</p></th>
 </tr>
 </thead>
 <tbody>
@@ -460,37 +449,37 @@ document.write(`
 <p>What degree of polynomial is required to fit exactly all seven data
 pairs? What lesser-degree polynomial will nearly fit the data?
 Justify your answer.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-1">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q1"> Exercise 2.1</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <!-- :class: dropdown -->
 <p>A sixth-degree polynomial is required to fit exactly all the 7 data
 points; however, since the third order differences are small and
 nearly constant, a third degree polynomial will almost fit all seven
 points.</p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ch2-ex-q2">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Complete the difference table for the following data and by using
 the Gregory-Newton backward interpolating polynomial of degree 1, 2,
 3, 4 and 5 estimate <span class="math notranslate nohighlight">\(\,f(4.12)\)</span>, using <span class="math notranslate nohighlight">\(\,x_j=5\,\)</span>. By comparing the
 results, explain briefly how the computed results can be checked and
 improved.</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="text-center head"><p>0</p></th>
-<th class="text-center head"><p>1</p></th>
-<th class="text-center head"><p>2</p></th>
-<th class="text-center head"><p>3</p></th>
-<th class="text-center head"><p>4</p></th>
-<th class="text-center head"><p>5</p></th>
+<tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-center"><p>0</p></th>
+<th class="head text-center"><p>1</p></th>
+<th class="head text-center"><p>2</p></th>
+<th class="head text-center"><p>3</p></th>
+<th class="head text-center"><p>4</p></th>
+<th class="head text-center"><p>5</p></th>
 </tr>
 </thead>
 <tbody>
@@ -504,33 +493,33 @@ improved.</p>
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-3">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q2"> Exercise 2.2</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><span class="math notranslate nohighlight">\(P_1(4.12) = 17.92\)</span>, <span class="math notranslate nohighlight">\(P_2 = 17.4976\)</span>, <span class="math notranslate nohighlight">\(P_3 = 17.41875\)</span>,
 <span class="math notranslate nohighlight">\(P_4 = 17.39785\)</span>, <span class="math notranslate nohighlight">\(P_5 = 17.39135\)</span>.</p>
 <p>Find the full solution in Moodle.</p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ch2-ex-q3">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Use the table below and the Gregory-Newton forward-interpolating
 polynomials of degree 3 and 4 to estimate <span class="math notranslate nohighlight">\(\,f(0.158)\,\)</span>. Choose
 <span class="math notranslate nohighlight">\(\,x_0=0.125\,\)</span>. Compare the two estimates and comment on the
 results.</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(\Delta f\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(\Delta^2 f\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(\Delta^3 f\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(\Delta^4 f\)</span></p></th>
+<tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(\Delta f\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(\Delta^2 f\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(\Delta^3 f\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(\Delta^4 f\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -613,32 +602,32 @@ results.</p>
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-5">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q3"> Exercise 2.3</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><span class="math notranslate nohighlight">\(P_3(0.158) = 0.78801\)</span> for degree 3, and <span class="math notranslate nohighlight">\(P_4(0.158) = 0.78800\)</span> for
 degree 4.</p>
 <p>Find the full solution in Moodle.</p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ch2-ex-q5">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.4 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Complete the difference table for the following data and by using
 the Gregory-Newton forward interpolating polynomial find
 <span class="math notranslate nohighlight">\(f(1.72)\)</span>.</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="text-center head"><p>1.7</p></th>
-<th class="text-center head"><p>1.8</p></th>
-<th class="text-center head"><p>1.9</p></th>
-<th class="text-center head"><p>2.0</p></th>
-<th class="text-center head"><p>2.1</p></th>
+<tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-center"><p>1.7</p></th>
+<th class="head text-center"><p>1.8</p></th>
+<th class="head text-center"><p>1.9</p></th>
+<th class="head text-center"><p>2.0</p></th>
+<th class="head text-center"><p>2.1</p></th>
 </tr>
 </thead>
 <tbody>
@@ -651,7 +640,7 @@ the Gregory-Newton forward interpolating polynomial find
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -665,7 +654,7 @@ whether the accuracy of your solution is within the expected range.</p>
 <div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-7">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q5"> Exercise 2.4</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p><span class="math notranslate nohighlight">\(f(1.72) = P_4(1.72) = 0.38641856\)</span>, MATLAB answer is
 <span class="math notranslate nohighlight">\(besselj(0,1.72) = 0.38641848\)</span>.</p>
 <ul>
@@ -677,25 +666,25 @@ whether the accuracy of your solution is within the expected range.</p>
 </div>
 </li>
 </ul>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ch2-ex-q6">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.5 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Given the finite difference table below, find <span class="math notranslate nohighlight">\(\,f(2.25)\,\)</span> using the Gregory-Newton</p>
 <ul class="simple">
 <li><p>forward difference interpolation formula</p></li>
 <li><p>backward difference interpolation formula</p></li>
 </ul>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(1^\text{st}\)</span> diff</p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> diff</p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(3^\text{rd}\)</span> diff</p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(4^\text{th}\)</span> diff</p></th>
+<tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(1^\text{st}\)</span> diff</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> diff</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(3^\text{rd}\)</span> diff</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(4^\text{th}\)</span> diff</p></th>
 </tr>
 </thead>
 <tbody>
@@ -771,35 +760,35 @@ estimated solutions with the exact value together with the data
 provided in the difference table, comment on the behaviour of the
 corresponding polynomial function. Can you suggest a way of
 improving the approximated solution.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-9">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q6"> Exercise 2.5</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <ul class="simple">
 <li><p>Forward <span class="math notranslate nohighlight">\(f(2.25) = 7.386171\)</span></p></li>
 <li><p>Backward <span class="math notranslate nohighlight">\(f(2.25) = 7.386171\)</span>.</p></li>
 </ul>
 <p>Find the full solution in Moodle.</p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ch2-ex-q7">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.6 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Repeat Exercise 6, using the finite difference table below which is
 drawn from the same function, but in the interval <span class="math notranslate nohighlight">\([0,\,2.0]\)</span>, to
 find <span class="math notranslate nohighlight">\(\,f(0.75)\,\)</span>, including comments on the results and analysis.
 The exact value of <span class="math notranslate nohighlight">\(\,f(0.75) = 1.437778\)</span>.</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(1^\text{st}\)</span> diff</p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> diff</p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(3^\text{rd}\)</span> diff</p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(4^\text{th}\)</span> diff</p></th>
+<tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(1^\text{st}\)</span> diff</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> diff</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(3^\text{rd}\)</span> diff</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(4^\text{th}\)</span> diff</p></th>
 </tr>
 </thead>
 <tbody>
@@ -873,37 +862,37 @@ decimal places. However, from Exercise 6, the estimated solution for
 <span class="math notranslate nohighlight">\(\,f(2.25)\,\)</span> is only correct to 2 decimal places. By giving at
 least one reason, explain why there is such a difference in the
 accuracy of the estimated solutions.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-11">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q7"> Exercise 2.6</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <ul class="simple">
 <li><p>Forward <span class="math notranslate nohighlight">\(f(0.75) = P_4 (0.75) = 1.437778\)</span></p></li>
 <li><p>Backward <span class="math notranslate nohighlight">\(f(0.75) = P_4 (0.75) = 1.437778\)</span>.</p></li>
 </ul>
 <p>Find the full solution in Moodle.</p>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="ch2-ex-q4">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.7 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Following the method used to derive the Gregory-Newton forward interpolation formula, derive the  Gregory-Newton backward difference interpolation formula.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="chaps/02/chap02_5_exercise-solution-13">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch2-ex-q4"> Exercise 2.7</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <p>Use Binomial Expansion to expand <span class="math notranslate nohighlight">\((1-\nabla)^{-s}\)</span>. See</p>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="../../_downloads/26bec5762f970f61b4e5a153133632e2/Ex2_Q7_solution_annotated.pdf"><code class="xref download docutils literal notranslate"><span class="pre">handwritten</span> <span class="pre">full</span> <span class="pre">solution</span> <span class="pre">for</span> <span class="pre">Exercise</span> <span class="pre">2.7</span></code></a></p></li>
 </ul>
+</section>
 </div>
-</div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -979,7 +968,7 @@ By Dr Zhihua Ma
 
   <p class="copyright">
     
-      © Copyright 2023---2025.
+      © Copyright 2023--2025.
       <br/>
     
   </p>
@@ -988,7 +977,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 05 January 2024 15:18:10.
+  Last updated on Sunday 07 January 2024 14:19:03.
   <br/>
 </p>
   </div>
@@ -1017,7 +1006,7 @@ By Dr Zhihua Ma
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     <br/>
   </p>
 </div>

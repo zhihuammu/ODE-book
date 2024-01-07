@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Overview &#8212; Linear Multistep Methods</title>
   
   
@@ -29,7 +30,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_orange_book_theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -50,10 +51,9 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -74,10 +74,10 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Teaching Schedule" href="schedule.html" />
-    <link rel="prev" title="Linear Multistep Methods and Sparse Matrices" href="../index.html" />
+    <link rel="prev" title="Linear Multistep Methods" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Friday 05 January 2024 15:18:10"/>
+    <meta name="docbuild:last-update" content="Sunday 07 January 2024 14:19:03"/>
   </head>
   
   
@@ -167,18 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
 <ul class="current nav bd-sidenav">
@@ -434,10 +423,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="overview">
+  <section class="tex2jax_ignore mathjax_ignore" id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h1>
 <dl class="myst field-list simple">
-<dt class="field-odd">Unit Title</dt>
+<dt class="field-odd">Unit Title<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Computational Methods in Ordinary Differential Equations</p>
 </dd>
 </dl>
@@ -445,7 +434,7 @@ document.write(`
 <li><p>Runge-Kutta Methods and Linear Algebra – Jon Shiach</p></li>
 <li><p>Linear Multistep Methods and Sparse Matrices – Zhihua Ma</p></li>
 </ul>
-<div class="section" id="what-will-we-learn">
+<section id="what-will-we-learn">
 <h2>What will we learn?<a class="headerlink" href="#what-will-we-learn" title="Permalink to this heading">#</a></h2>
 <p>Our main focus is to learn and apply a range of numerical methods to solve a single or a system of <strong>First-Order</strong> Ordinary Differential Equation(s) given as</p>
 <ul class="simple">
@@ -457,8 +446,8 @@ document.write(`
 <li><p>Form adjacency matrix for a graph,</p></li>
 <li><p>Reorder a graph to reduce the bandwidth and fill-ins of its adjacency matrix.</p></li>
 </ul>
-</div>
-<div class="section" id="why-are-we-learning-about-ordinary-differential-equations">
+</section>
+<section id="why-are-we-learning-about-ordinary-differential-equations">
 <h2>Why are we learning about Ordinary Differential Equations?<a class="headerlink" href="#why-are-we-learning-about-ordinary-differential-equations" title="Permalink to this heading">#</a></h2>
 <p>Ordinary differential equations have wide applications in science and engineering:</p>
 <ul>
@@ -494,8 +483,8 @@ document.write(`
 <li><p>Life Insurance</p></li>
 </ul>
 <p>Cultivating skills in dealing with Ordinary Differential Equations opens a door for mathematicians to solve real problems in lots of areas.</p>
-</div>
-<div class="section" id="why-are-we-learning-computational-methods">
+</section>
+<section id="why-are-we-learning-computational-methods">
 <h2>Why are we learning Computational Methods?<a class="headerlink" href="#why-are-we-learning-computational-methods" title="Permalink to this heading">#</a></h2>
 <p>In general there are two ways to solve ordinary differential equations:</p>
 <ul class="simple">
@@ -503,8 +492,8 @@ document.write(`
 <li><p>computational methods</p></li>
 </ul>
 <p>Analytical methods only work for a very limited number of simple cases, for most of the realistic complex problems we need to solve them numerically.</p>
-</div>
-<div class="section" id="learning-objectives">
+</section>
+<section id="learning-objectives">
 <h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
 <!-- - Successfully use a range of practical computational methods in ODEs for solving initial value and boundary value problems, and recognise their limitations and applications.
 
@@ -520,8 +509,8 @@ document.write(`
 <li><p>Solve IVPs, BVPs and linear systems of equations, plot results, perform comparison analysis and determine the most suitable methods for the solution of a given problem. Prepare an academic report.</p></li>
 <li><p>Model and solve real-world systems of linear and ordinary differential equations.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -559,7 +548,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Linear Multistep Methods and Sparse Matrices</p>
+        <p class="prev-next-title">Linear Multistep Methods</p>
       </div>
     </a>
     <a class="right-next"
@@ -614,7 +603,7 @@ By Dr Zhihua Ma
 
   <p class="copyright">
     
-      © Copyright 2023---2025.
+      © Copyright 2023--2025.
       <br/>
     
   </p>
@@ -623,7 +612,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 05 January 2024 15:18:10.
+  Last updated on Sunday 07 January 2024 14:19:03.
   <br/>
 </p>
   </div>
@@ -652,7 +641,7 @@ By Dr Zhihua Ma
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     <br/>
   </p>
 </div>

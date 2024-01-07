@@ -5,8 +5,7 @@
 :::
 
 ```{prf:definition} Differential Equations
-An equation containing the derivatives of one or more unknown functions (or
-dependent variables), with respect to one or more independent variables, is said to be a **differential equation** (DE).
+An equation containing the derivatives of one or more unknown functions (or dependent variables), with respect to one or more independent variables, is said to be a **differential equation** (DE).
 ```
 
 We can classify differential equations by **type**, **order**, **linearity** and **homogeneity**.
@@ -18,7 +17,7 @@ We can classify differential equations by **type**, **order**, **linearity** and
 
         If a differential equation contains only ordinary derivatives of one or more unknown functions with respect to a single independent variable, it is said to be an ordinary differential equation (ODE).
 
-        ```{prf:example}    
+        ```{prf:example}
         The following equations are ordinary differential equations:
 
         $$
