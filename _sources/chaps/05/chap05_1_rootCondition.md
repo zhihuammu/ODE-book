@@ -198,6 +198,7 @@ $$
 
 
 :::{prf:definition} Root Condition
+:label: definition-root-condition
 Let $\,z_1,z_2,\dots,z_k\,$ denote the roots of the first
 characteristic polynomial $\,\rho(z)\,$ associated with a
 linear multistep method. If $\,|z_i|\leq1\,$, for each
