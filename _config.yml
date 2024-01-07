@@ -4,7 +4,7 @@
 title     : Linear Multistep Methods
 # author    : "<a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>"
 author    : "Dr Zhihua Ma"
-copyright : "2023---2025"  # Copyright year to be placed in the footer
+copyright : "2023--2025"  # Copyright year to be placed in the footer
 logo      : images/logo/logo1.svg
 email     : "z.ma@mmu.ac.uk"
 
@@ -14,7 +14,7 @@ only_build_toc_files: true
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: cache
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -86,6 +86,7 @@ sphinx:
           "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}",3,'']
     hide_solutions: false
     html_theme: sphinx_book_theme
+    # html_theme: sphinx_orange_book_theme    
     # html_theme: sphinx_rtd_theme
     # html_theme: pydata_sphinx_theme
     # templates_path: ['_templates']  #This conflicts with sphinx_book_theme
