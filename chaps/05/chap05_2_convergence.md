@@ -1,9 +1,9 @@
 # Zero-Stability, Consistency and Convergence Theorem
 
 :::{prf:definition} Zero-Stability
-A method is said to be {index}`zero-stable` if it satisfies the root condition,
-i.e. the linear multistep method {eq}`eq:ch04:1.1`
- is said to be **zero-stable** if no root of the
+A linear multistep method {eq}`eq:ch04:1.1` is said to be {index}`zero-stable` if it satisfies the root condition given in {prf:ref}`definition-root-condition`.
+
+This means no root of the
 first characteristic polynomial $\,\rho(z)\,$ has modulus greater that
 one, and every root of modulus one is simple.
 :::
