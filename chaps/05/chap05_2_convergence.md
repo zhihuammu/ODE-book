@@ -65,12 +65,40 @@ If a linear multistep method satisfies any of these three conditions, then it is
 
 A linear multistep method which is zero-stable is frequently called
 'stable'. Essentially a method is stable if errors introduced at one
-step are not propagated at subsequent steps. Zero-stability ensures that
+step are not propagated at subsequent steps. 
+
+In addition, it is also important for us to know whether the numerical solution $y${sub}`num` will approach
+the exact solution $y${sub}`ex` when we reduce the step size $h$ towards zero. 
+
+:::{prf:definition} Convergence
+For an initial value problem
+
+$$
+\left\{
+\begin{aligned}
+ y'&=f(t, y) \\
+ y(0)&=y_0
+\end{aligned}
+\right.
+\qquad  t \in [0, T],
+$$
+
+when we reduce the step size $h$ towards zero, if the numerical solution $y${sub}`num` approaches to
+the exact solution $y${sub}`ex`, we says the numerical solution converges to the exact solution, and we call the numerical method a convergent method.
+
+$$
+\max _{t\in [0, T]} \| y_\text{num}(t) - y_\text{ex}(t) \| \rightarrow 0 \qquad \mbox{as} \qquad {h}\rightarrow 0.
+$$
+
+:::
+
+
+Zero-stability ensures that
 the parasitic solutions of the general solution to a difference equation
 are damped out in the limit as $\,h \to 0\,$ -- this effect is related
-to the fundamental theorem on linear multistep methods by 'Dahlquist':
+to the fundamental theorem on linear multistep methods by **Dahlquist**:
 
-:::{prf:theorem} Convergence
+:::{prf:theorem} Dahlquist Equivalence
 The necessary and sufficient conditions for a linear multistep method to
 be {index}`convergent` are that it is consistent and zero-stable.
 :::

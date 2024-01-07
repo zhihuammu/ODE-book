@@ -13,6 +13,13 @@ Our main focus is to learn and apply a range of numerical methods to solve a sin
 
 - A system of equations: $\displaystyle \diff{\mathbf{Y}}{t}=\mathbf{F}(t, \mathbf{Y})$
 
+We will learn to derive linear multistep methods and analyse their properties:
+
+- accuracy, 
+- consistency,
+- stability,
+- convergency.
+
 We will also touch on graph theory and sparse matrix computation to:
 
 - Form adjacency matrix for a graph,
