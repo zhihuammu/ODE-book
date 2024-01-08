@@ -18,7 +18,7 @@ $$
 y_{n+k} = F(n, y_{n}, y_{n+1}, y_{n+2} ..., y_{n+k-2}, y_{n+k-1}), \quad n \in \mathbb{N}_0
 $$(eq:DE:definition)
 
-where $y_{n+k}$ is the current value in the sequence, $F$ is a function, and $k$ is the order of the equation (the difference between the highest and lowest indices that appear in the equation). The subscript $n+k$ is an index representing the current time step, and the variables $y_{n}$, $y_{n+1}$, $\ldots$, $y_{n+k-1}$ represent previous members in the sequence. 
+where $y_{n+k}$ is the current value in the sequence, $F$ is a function, and $k$ is the **order** of the equation (the difference between the highest and lowest indices that appear in the equation). The subscript $n+k$ is an index representing the current step, and the variables $y_{n}$, $y_{n+1}$, $\ldots$, $y_{n+k-1}$ represent previous members in the sequence. 
 ::::
 
 ```{prf:remark}
@@ -43,6 +43,13 @@ a_0(n) y_n + a_1(n) y_{n+1} + a_2(n) y_{n+2} + \ldots + a_k(n) y_{n+k} = R(n),
 $$(eq:DE:linear)
 
 where $a_p(n), p=1,2,\ldots, n$ and $R(n)$ are given functions of $n$.
+
+If a difference equation involves non-linear terms of $y_n$:
+- power $y_n^2$, $y_n^3$, ...
+- exponent $2^{y_n}$, $e^{y_n}$, ...
+- trigonometry $\sin (y_n)$, $\cos (y_n)$, $\tan (y_n)$ ...
+
+then it is a non-linear difference equation.
 ::::
 
 ```{index} Difference Equation; Homogeneous Linear Difference Equation

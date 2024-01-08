@@ -27,12 +27,12 @@ The {index}`characteristic equation` associated with Eq. {eq}`eq:DE:linear:homog
 $$
 L(z)= a_0 + a_1 z + a_2 z^2 + \ldots + a_{k-1} z^{k-1} + a_k z^{k}=0.
 $$(eq:DE:linear:char)
-The characteristic equation is also called *auxiliary equation*.
+The characteristic equation is also called **auxiliary equation**.
 ::::
 
 
 ````{note}
-Note: We can replace the shift operator $\E$ with $z$ in Eq. {eq}`eq:DE:linear:constant:LE` to obtain the characteristic equation. $L(z)$ is a $k$th-degree polynomial and thus has $k$ roots $\{z_p\}~ (p=1,2,3,\ldots,k)$.
+Note: We can replace the shift operator $\E$ with $z$ in Eq. {eq}`eq:DE:linear:constant:LE` to obtain the characteristic equation. $L(z)$ is a $k$th-degree polynomial and thus has $k$ roots $z_p~ (p=1,2,3,\ldots,k)$.
 ````
 
 ::::{prf:theorem}
