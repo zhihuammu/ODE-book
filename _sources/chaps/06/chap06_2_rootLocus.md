@@ -30,7 +30,7 @@ The characteristic equation is
 
 $$
 \begin{aligned}
-        L(z,h\lambda) ~=~ z^2 - \left(1 + \frac{3}{2}h\lambda\right)z + \frac{1}{2}h\lambda ~=~ 0    
+        \L (z,h\lambda) ~=~ z^2 - \left(1 + \frac{3}{2}h\lambda\right)z + \frac{1}{2}h\lambda ~=~ 0    
 \end{aligned}
 $$
 
@@ -97,7 +97,7 @@ The characteristic equation is
 
 $$
 \begin{aligned}
-        L(z,h\lambda) ~=~ \left(1 - \frac{5}{12}h\lambda\right)z^2
+        \L (z,h\lambda) ~=~ \left(1 - \frac{5}{12}h\lambda\right)z^2
         - \left(1 + \frac{8}{12}h\lambda\right)z + \frac{1}{12}h\lambda ~=~ 0    
 \end{aligned}
 $$
