@@ -135,13 +135,13 @@ $$(eq:ode:operator:form)
 We define the overall operation on $y$ as
 
 $$
-L(\D)= a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0,
+\L (\D)= a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0,
 $$(eq:ode:operator:LD)
 
 then the equation can also be written as
 
 $$
-L(\D) y = g(x).
+\L (\D) y = g(x).
 $$
 ````
 
@@ -156,7 +156,7 @@ $$
 For equation {eq}`eq:ode:linear:constant`, we define its **{index}`characteristic polynomial`** as
 
 $$
-L(z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0.
+\L (z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0.
 $$(eq:ode:linear:constant:char:polynomial)
 
 Note: We can simply replace the operator $\D$ in formula {eq}`eq:ode:operator:LD` with $z$ to obtain the characteristic polynomial.
@@ -164,7 +164,7 @@ Note: We can simply replace the operator $\D$ in formula {eq}`eq:ode:operator:LD
 The equation
 
 $$
-L(z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0 = 0
+\L (z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0 = 0
 $$(eq:ode:linear:constant:char:equation)
 
 is called the **{index}`characteristic equation`** of the ODE {eq}`eq:ode:linear:constant`.
@@ -178,7 +178,7 @@ Note: In some books, the characteristic equation is also called *auxiliary equat
 When the right hand side of equation {eq}`eq:ode:linear:constant` vanishes, i.e. $g(x)$, we obtain a linear homogeneous ordinary differential equation with constant coefficients
 
 $$
-L(\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = 0
+\L (\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = 0
 $$(eq:ode:linear:homogeneous:constant)
 
 ```{index} pair: Ordinary Differential Equation; Superposition Principle
@@ -269,7 +269,13 @@ Solve $a y'' + b y'+ c y=0$
 :class: solution
 <!-- :class: hint -->
 
-The characteristic equation is
+Using the differential operator $\D$, we write the equation as
+
+$$
+\left( a\D^2 + b\D + c \right) y = 0,
+$$
+
+so characteristic/auxiliary equation is
 
 $$
     a z^2 + b z + c=0,
@@ -374,10 +380,10 @@ $$
 
     $$
     \begin{aligned}
-    z_{1,2} & = \alpha_1 \pm i \beta_1 \\
-    z_{3,4} & = \alpha_2 \pm i \beta_2 \\
+    z_{1,2} & = \alpha_1 \pm \i \beta_1 \\
+    z_{3,4} & = \alpha_2 \pm \i \beta_2 \\
               & \vdots ~ \\
-    z_{2m-1, 2m} & = \alpha_m \pm i \beta_m 
+    z_{2m-1, 2m} & = \alpha_m \pm \i \beta_m 
     \end{aligned}
     $$
 
@@ -399,22 +405,22 @@ $$
 Here we consider a linear nonhomogeneous ODE with constant coefficients given by
 
 $$
-L(\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = g(x), \quad g(x)\neq 0
+\L (\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = g(x), \quad g(x)\neq 0
 $$(eq:ode:linear:nonhomogeneous:constant)
 
 The solution $y(x)$ to equation {eq}`eq:ode:linear:nonhomogeneous:constant` includes two parts:
 
-- A homogeneous component $y_h(x)$, which is the general solution to the homogeneous equation $L(\D) y_h = 0$;
+- A homogeneous component $y_h(x)$, which is the general solution to the homogeneous equation $\L (\D) y_h = 0$. In some books $y_h (x)$ is also called complementary solution.
 
-- A particular component $y_p(x)$, which is a particular solution to the nonhomogeneous equation $L(\D) y_p = g(x)$.
+- A particular component $y_p(x)$, which is a particular solution to the nonhomogeneous equation $\L (\D) y_p = g(x)$.
 
 In conclusion, the solution to equation {eq}`eq:ode:linear:nonhomogeneous:constant` is 
 
 $$
 \left\{
 \begin{aligned}
- L(\D) y_h(x) & = 0 \\
- L(\D) y_p(x) & = g(x) \\
+ \L (\D) y_h(x) & = 0 \\
+ \L (\D) y_p(x) & = g(x) \\
  y(x) & = y_h (x) + y_p(x) \\
 \end{aligned}
 \right.

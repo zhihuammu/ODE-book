@@ -23,7 +23,7 @@ $$(eq:ch05:1.2)
 :::{prf:definition} Abosolute Stability
 A linear multistep method is said to be *{index}`absolutely stable`* in a region
 $\,\Re\,$ of the complex plane if for all $\,h\lambda\,$ all roots of
-the stability polynomial $\,L(z,h\lambda)$ associated with the
+the stability polynomial $\,\L (z,h\lambda)$ associated with the
 method satisfy 
 
 $$
@@ -37,7 +37,7 @@ $$(eq:ch05:1.3)
 :::{prf:definition} Relative Stability
 A linear multistep method is said to be *{index}`relatively stable`* in a region
 $\,\Re\,$ of the complex plane if, for all $\,h\lambda\,$ all roots of
-the stability polynomial $\,L(z,h\lambda)$ associated with the
+the stability polynomial $\,\L (z,h\lambda)$ associated with the
 method satisfy 
 
 $$

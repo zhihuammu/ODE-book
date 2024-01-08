@@ -56,14 +56,14 @@ $$(eq:ch04:1.4)
 We can write equation {eq}`eq:ch04:1.4` in the operator form as
 
 $$
-L(\E) y_j = 
+\L (\E) y_j = 
 \left(\gamma_0 \E^0 + \gamma_1 \E^1 + \gamma_2 \E^2 + \cdots + \gamma_k \E^k \right) y_j =0~\,
 $$
 
 and get its {index}`characteristic equation`
 
 $$
-L(z, h\lambda)=
+\L (z, h\lambda)=
 \gamma_0 + \gamma_1 z + \gamma_2 z^2 + \cdots + \gamma_k z^k = 0
 $$(eq:ch04:1.5)
 
@@ -99,7 +99,7 @@ $$
 the expression in the form
 
 $$
-L(z, h\lambda) = \sum_{i=0}^k \left(\alpha_i - h\lambda \beta_i\right) z^i
+\L (z, h\lambda) = \sum_{i=0}^k \left(\alpha_i - h\lambda \beta_i\right) z^i
 $$(eq:chap04:charpoly)
 
 is called its **{index}`characteristic polynomial`**.
@@ -126,12 +126,12 @@ the **{index}`second characteristic polynomial`** of the multistep method.
 These polynomails given in equations {eq}`eq:chap04:charpoly`, {eq}`eq:chap04:charpoly:first` and {eq}`eq:chap04:charpoly:second` have the following relation
 
 $$
-L(z, h\lambda) = \rho(z) - h\lambda \sigma(z)
+\L (z, h\lambda) = \rho(z) - h\lambda \sigma(z)
 $$(eq:chap04:chapoly:relation)
 ::::
 
 :::{prf:example}
-Find the characteristic polynomial $L(z, h\lambda)$ for a 2-step method 
+Find the characteristic polynomial $\L (z, h\lambda)$ for a 2-step method 
 
 $$
 \alpha_0 y_{j-2} + \alpha_1 y_{j-1} + \alpha_2 y_{j}
@@ -172,7 +172,7 @@ $$
 
     $$
     \begin{aligned}
-    L(z, h\lambda) 
+    \L (z, h\lambda) 
     &=\sum_{i=0}^{2} (\alpha_i - h\lambda \beta_i) z^i\\
     & = (\alpha_0-h\lambda \beta_0) z^0
     + (\alpha_1-h\lambda \beta_1) z^1
@@ -186,7 +186,7 @@ $$
 
     $$
     \begin{aligned}
-    L(z, h\lambda) 
+    \L (z, h\lambda) 
     &=\sum_{i=0}^{2} (\alpha_i - h\lambda \beta_i) z^i\\
     & = (\alpha_0-h\lambda \beta_0) z^0
     + (\alpha_1-h\lambda \beta_1) z^1

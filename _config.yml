@@ -74,9 +74,10 @@ sphinx:
           "Z": "\\mathbb{Z}"
           "R": "\\mathbb{R}"
           "C": "\\mathbb{C}"
-          "D": "\\mathrm{D}"
           "E": "\\mathrm{E}"
-          "S": "\\mathrm{S}"          
+          "S": "\\mathrm{S}"
+          "D": "\\mathcal{D}"          
+          "L": "\\mathcal{L}"          
           "dy": "\\mathrm{d}y"
           "dx": "\\mathrm{d}x"
           "ds": "\\mathrm{d}s"
@@ -93,8 +94,8 @@ sphinx:
     html_theme_options:    
       navigation_with_keys: True
       show_toc_level  : 3      
-      footer_start  : sphinx-version
-      footer_end    : theme-version    
+      # footer_start  : sphinx-version
+      # footer_end    : theme-version    
       # extra_navbar  : "FOOBAR2" #not supported anymore
       # extra_footer  : "<div>Powered by <a href='https://jupyterbook.org'>Jupyter Book</a></div>"
       # primary_sidebar_end: 
@@ -113,11 +114,13 @@ sphinx:
       # navbar_persistent : search-button
       # navbar_align      : right
     # html_sidebars :
-      # '**': 
+    #   '**': 
+    #     - sbt-sidebar-nav
+    #     - indices          
         # - navbar-logo
-        # - search-field        
-        # - sbt-sidebar-nav
-        # - indices        
+        # - search-field                
+        # - sidebar-nav-bs
+      
       # secondary_sidebar_items:
         # - page-toc
         # - edit-this-page
