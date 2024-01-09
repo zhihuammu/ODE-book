@@ -91,22 +91,22 @@ A relation $G(x, y) = 0$ is said to be an **{index}`implicit solution`** of an o
 ```
 
 ```{prf:definition} Initial Value Problem
-By an **initial value problem** (IVP) for an $n$-th order differential equation 
+For an $n${sup}`th` order differential equation
 
 $$
 F(x, y, y', y'', \ldots, y^{(n)}) = 0,
-$$
+$$(eq:IVP)
 
-we mean: Find a solution to the ODE on an interval $I$ that satisfies at $x_0$ the $n$ **initial conditions**
+if we specify the value of $y$, $y'$, ..., $y^{(n-1)}$ at the lower bound $x_0$ of its interval of definition $I$ as
 
 $$
 y(x_0) = & ~y_0, \\
 y'(x_0) = & ~y_1, \\
   \vdots ~ & ~ \\
 y^{(n-1)}(x_0) = & ~y_{n-1}
-$$
+$$ (eq:IVP:initial:condition)
 
-where $x_0 \in I$ and $y_0$, $y_1$, ... , $y_{n-1}$ are given constants.
+where $y_0$, $y_1$, ... , $y_{n-1}$ are given constants, then we call this problem an initial value problem.  The values specified in {eq}`eq:IVP:initial:condition` are called initial conditions.
 ```
 
 ```{index} Ordinary Differential Equation; Existence and Uniqueness
