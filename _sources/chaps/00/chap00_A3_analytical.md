@@ -410,7 +410,7 @@ $$(eq:ode:linear:nonhomogeneous:constant)
 
 The solution $y(x)$ to equation {eq}`eq:ode:linear:nonhomogeneous:constant` includes two parts:
 
-- A homogeneous component $y_h(x)$, which is the general solution to the homogeneous equation $\L (\D) y_h = 0$. $y_h (x)$ is also called complementary solution.
+- A homogeneous component $y_h(x)$, which is the general solution to the homogeneous equation $\L (\D) y_h = 0$. In some books $y_h (x)$ is also called complementary solution.
 
 - A particular component $y_p(x)$, which is a particular solution to the nonhomogeneous equation $\L (\D) y_p = g(x)$.
 
