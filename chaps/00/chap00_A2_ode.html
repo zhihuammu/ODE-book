@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Definitions, Classification and Terminology" href="chap00_A1_definition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Tuesday 09 January 2024 11:12:47"/>
+    <meta name="docbuild:last-update" content="Tuesday 09 January 2024 23:04:47"/>
   </head>
   
   
@@ -509,20 +509,20 @@ satisfies the equation for all <span class="math notranslate nohighlight">\(x\)<
 <div class="proof definition admonition" id="definition-5">
 <span id="index-9"></span><p class="admonition-title"><span class="caption-number">Definition 4 </span> (Initial Value Problem)</p>
 <section class="definition-content" id="proof-content">
-<p>By an <strong>initial value problem</strong> (IVP) for an <span class="math notranslate nohighlight">\(n\)</span>-th order differential equation</p>
-<div class="math notranslate nohighlight">
-\[
+<p>For an <span class="math notranslate nohighlight">\(n\)</span><sup>th</sup> order differential equation</p>
+<div class="math notranslate nohighlight" id="equation-eq-ivp">
+<span class="eqno">(10)<a class="headerlink" href="#equation-eq-ivp" title="Permalink to this equation">#</a></span>\[
 F(x, y, y', y'', \ldots, y^{(n)}) = 0,
 \]</div>
-<p>we mean: Find a solution to the ODE on an interval <span class="math notranslate nohighlight">\(I\)</span> that satisfies at <span class="math notranslate nohighlight">\(x_0\)</span> the <span class="math notranslate nohighlight">\(n\)</span> <strong>initial conditions</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p>if we specify the value of <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(y'\)</span>, …, <span class="math notranslate nohighlight">\(y^{(n-1)}\)</span> at the lower bound <span class="math notranslate nohighlight">\(x_0\)</span> of its interval of definition <span class="math notranslate nohighlight">\(I\)</span> as</p>
+<div class="math notranslate nohighlight" id="equation-eq-ivp-initial-condition">
+<span class="eqno">(11)<a class="headerlink" href="#equation-eq-ivp-initial-condition" title="Permalink to this equation">#</a></span>\[\begin{split}
 y(x_0) = &amp; ~y_0, \\
 y'(x_0) = &amp; ~y_1, \\
   \vdots ~ &amp; ~ \\
 y^{(n-1)}(x_0) = &amp; ~y_{n-1}
 \end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(x_0 \in I\)</span> and <span class="math notranslate nohighlight">\(y_0\)</span>, <span class="math notranslate nohighlight">\(y_1\)</span>, … , <span class="math notranslate nohighlight">\(y_{n-1}\)</span> are given constants.</p>
+<p>where <span class="math notranslate nohighlight">\(y_0\)</span>, <span class="math notranslate nohighlight">\(y_1\)</span>, … , <span class="math notranslate nohighlight">\(y_{n-1}\)</span> are given constants, then we call this problem an initial value problem.  The values specified in <a class="reference internal" href="#equation-eq-ivp-initial-condition">(11)</a> are called initial conditions.</p>
 </section>
 </div><div class="proof theorem admonition" id="theorem-6">
 <span id="index-10"></span><p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Existence and Uniqueness of Solution)</p>
@@ -661,7 +661,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 09 January 2024 11:12:47.
+  Last updated on Tuesday 09 January 2024 23:04:47.
   <br/>
 </p>
   </div>

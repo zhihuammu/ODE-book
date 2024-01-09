@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Ordinary Differential Equations" href="chap00_A2_ode.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Tuesday 09 January 2024 11:12:47"/>
+    <meta name="docbuild:last-update" content="Tuesday 09 January 2024 23:04:47"/>
   </head>
   
   
@@ -456,12 +456,12 @@ document.write(`
 <section class="definition-content" id="proof-content">
 <p>A first-order differential equation of the form</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-separable">
-<span class="eqno">(10)<a class="headerlink" href="#equation-eq-ode-separable" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(12)<a class="headerlink" href="#equation-eq-ode-separable" title="Permalink to this equation">#</a></span>\[
 \diff{y}{x} = g(x) h(y)
 \]</div>
 <p>is said to be separable or to have separable variables.</p>
 </section>
-</div><p>To solve the separable ODE <a class="reference internal" href="#equation-eq-ode-separable">(10)</a>, we re-arrange it as</p>
+</div><p>To solve the separable ODE <a class="reference internal" href="#equation-eq-ode-separable">(12)</a>, we re-arrange it as</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{1}{h(y)} \dy= g(x) \dx, 
@@ -536,7 +536,7 @@ y^2 \dy = (x-5) \dx
 <h2><a class="toc-backref" href="#id2" role="doc-backlink">Linear Equations with Constant Coefficients</a><a class="headerlink" href="#linear-equations-with-constant-coefficients" title="Permalink to this heading">#</a></h2>
 <p>Here we focus on a particular type of <span class="math notranslate nohighlight">\(n\)</span>-th order ODE given as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear-constant">
-<span class="eqno">(11)<a class="headerlink" href="#equation-eq-ode-linear-constant" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(13)<a class="headerlink" href="#equation-eq-ode-linear-constant" title="Permalink to this equation">#</a></span>\[
 a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(x),
 \quad a_n \neq 0
 \]</div>
@@ -554,14 +554,14 @@ a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(x),
 \[
     \D^n y = \diff[n]{y}{x}.
 \]</div>
-<p id="index-3">Thus we can write the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(11)</a> in an <strong>operator form</strong> as</p>
+<p id="index-3">Thus we can write the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(13)</a> in an <strong>operator form</strong> as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-operator-form">
-<span class="eqno">(12)<a class="headerlink" href="#equation-eq-ode-operator-form" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(14)<a class="headerlink" href="#equation-eq-ode-operator-form" title="Permalink to this equation">#</a></span>\[
 \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = g(x).
 \]</div>
 <p>We define the overall operation on <span class="math notranslate nohighlight">\(y\)</span> as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-operator-ld">
-<span class="eqno">(13)<a class="headerlink" href="#equation-eq-ode-operator-ld" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(15)<a class="headerlink" href="#equation-eq-ode-operator-ld" title="Permalink to this equation">#</a></span>\[
 \L (\D)= a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0,
 \]</div>
 <p>then the equation can also be written as</p>
@@ -573,31 +573,31 @@ a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(x),
 </div><span class="target" id="index-4"></span><span class="target" id="index-5"></span><div class="proof definition admonition" id="definition-4">
 <span id="index-6"></span><p class="admonition-title"><span class="caption-number">Definition 7 </span> (Characteristic Polynomial and Characteristic Equation)</p>
 <section class="definition-content" id="proof-content">
-<p>For equation <a class="reference internal" href="#equation-eq-ode-linear-constant">(11)</a>, we define its <strong><span class="target" id="index-7"></span>characteristic polynomial</strong> as</p>
+<p>For equation <a class="reference internal" href="#equation-eq-ode-linear-constant">(13)</a>, we define its <strong><span class="target" id="index-7"></span>characteristic polynomial</strong> as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear-constant-char-polynomial">
-<span class="eqno">(14)<a class="headerlink" href="#equation-eq-ode-linear-constant-char-polynomial" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(16)<a class="headerlink" href="#equation-eq-ode-linear-constant-char-polynomial" title="Permalink to this equation">#</a></span>\[
 \L (z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0.
 \]</div>
-<p>Note: We can simply replace the operator <span class="math notranslate nohighlight">\(\D\)</span> in formula <a class="reference internal" href="#equation-eq-ode-operator-ld">(13)</a> with <span class="math notranslate nohighlight">\(z\)</span> to obtain the characteristic polynomial.</p>
+<p>Note: We can simply replace the operator <span class="math notranslate nohighlight">\(\D\)</span> in formula <a class="reference internal" href="#equation-eq-ode-operator-ld">(15)</a> with <span class="math notranslate nohighlight">\(z\)</span> to obtain the characteristic polynomial.</p>
 <p>The equation</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear-constant-char-equation">
-<span class="eqno">(15)<a class="headerlink" href="#equation-eq-ode-linear-constant-char-equation" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(17)<a class="headerlink" href="#equation-eq-ode-linear-constant-char-equation" title="Permalink to this equation">#</a></span>\[
 \L (z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0 = 0
 \]</div>
-<p>is called the <strong><span class="target" id="index-8"></span>characteristic equation</strong> of the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(11)</a>.</p>
+<p>is called the <strong><span class="target" id="index-8"></span>characteristic equation</strong> of the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(13)</a>.</p>
 <p>Note: In some books, the characteristic equation is also called <em>auxiliary equation</em>.</p>
 </section>
 </div><section id="homogeneous-odes">
 <span id="chapx-homo-ode-sol"></span><h3><a class="toc-backref" href="#id3" role="doc-backlink">Homogeneous ODEs</a><a class="headerlink" href="#homogeneous-odes" title="Permalink to this heading">#</a></h3>
-<p>When the right hand side of equation <a class="reference internal" href="#equation-eq-ode-linear-constant">(11)</a> vanishes, i.e. <span class="math notranslate nohighlight">\(g(x)\)</span>, we obtain a linear homogeneous ordinary differential equation with constant coefficients</p>
+<p>When the right hand side of equation <a class="reference internal" href="#equation-eq-ode-linear-constant">(13)</a> vanishes, i.e. <span class="math notranslate nohighlight">\(g(x)\)</span>, we obtain a linear homogeneous ordinary differential equation with constant coefficients</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear-homogeneous-constant">
-<span class="eqno">(16)<a class="headerlink" href="#equation-eq-ode-linear-homogeneous-constant" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(18)<a class="headerlink" href="#equation-eq-ode-linear-homogeneous-constant" title="Permalink to this equation">#</a></span>\[
 \L (\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = 0
 \]</div>
 <div class="proof theorem admonition" id="theorem-5">
 <span id="index-9"></span><p class="admonition-title"><span class="caption-number">Theorem 2 </span> (Superposition Principle — Homogeneous Equations)</p>
 <section class="theorem-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(y_1(x)\)</span>, <span class="math notranslate nohighlight">\(y_2(x)\)</span>, … , <span class="math notranslate nohighlight">\(y_n(x)\)</span> be solutions to the homogeneous <span class="math notranslate nohighlight">\(n\)</span>-th order differential equation <a class="reference internal" href="#equation-eq-ode-linear-homogeneous-constant">(16)</a> on an interval <span class="math notranslate nohighlight">\(I\)</span>, then the linear combination</p>
+<p>Let <span class="math notranslate nohighlight">\(y_1(x)\)</span>, <span class="math notranslate nohighlight">\(y_2(x)\)</span>, … , <span class="math notranslate nohighlight">\(y_n(x)\)</span> be solutions to the homogeneous <span class="math notranslate nohighlight">\(n\)</span>-th order differential equation <a class="reference internal" href="#equation-eq-ode-linear-homogeneous-constant">(18)</a> on an interval <span class="math notranslate nohighlight">\(I\)</span>, then the linear combination</p>
 <div class="math notranslate nohighlight">
 \[
     y=c_1 y_1(x) + c_2 y_2(x) + \cdots + c_n y_n(x)
@@ -800,17 +800,17 @@ a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0 = 0
 <h3><a class="toc-backref" href="#id7" role="doc-backlink">Nonhomogeneous ODEs</a><a class="headerlink" href="#nonhomogeneous-odes" title="Permalink to this heading">#</a></h3>
 <p>Here we consider a linear nonhomogeneous ODE with constant coefficients given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear-nonhomogeneous-constant">
-<span class="eqno">(17)<a class="headerlink" href="#equation-eq-ode-linear-nonhomogeneous-constant" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(19)<a class="headerlink" href="#equation-eq-ode-linear-nonhomogeneous-constant" title="Permalink to this equation">#</a></span>\[
 \L (\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = g(x), \quad g(x)\neq 0
 \]</div>
-<p>The solution <span class="math notranslate nohighlight">\(y(x)\)</span> to equation <a class="reference internal" href="#equation-eq-ode-linear-nonhomogeneous-constant">(17)</a> includes two parts:</p>
+<p>The solution <span class="math notranslate nohighlight">\(y(x)\)</span> to equation <a class="reference internal" href="#equation-eq-ode-linear-nonhomogeneous-constant">(19)</a> includes two parts:</p>
 <ul class="simple">
 <li><p>A homogeneous component <span class="math notranslate nohighlight">\(y_h(x)\)</span>, which is the general solution to the homogeneous equation <span class="math notranslate nohighlight">\(\L (\D) y_h = 0\)</span>. In some books <span class="math notranslate nohighlight">\(y_h (x)\)</span> is also called complementary solution.</p></li>
 <li><p>A particular component <span class="math notranslate nohighlight">\(y_p(x)\)</span>, which is a particular solution to the nonhomogeneous equation <span class="math notranslate nohighlight">\(\L (\D) y_p = g(x)\)</span>.</p></li>
 </ul>
-<p>In conclusion, the solution to equation <a class="reference internal" href="#equation-eq-ode-linear-nonhomogeneous-constant">(17)</a> is</p>
+<p>In conclusion, the solution to equation <a class="reference internal" href="#equation-eq-ode-linear-nonhomogeneous-constant">(19)</a> is</p>
 <div class="math notranslate nohighlight" id="equation-eq-inhomo-ode-sol">
-<span class="eqno">(18)<a class="headerlink" href="#equation-eq-inhomo-ode-sol" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(20)<a class="headerlink" href="#equation-eq-inhomo-ode-sol" title="Permalink to this equation">#</a></span>\[\begin{split}
 \left\{
 \begin{aligned}
  \L (\D) y_h(x) &amp; = 0 \\
@@ -1032,7 +1032,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 09 January 2024 11:12:47.
+  Last updated on Tuesday 09 January 2024 23:04:47.
   <br/>
 </p>
   </div>
