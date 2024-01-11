@@ -11,7 +11,5 @@
 |  7   | [Chapter 7: Stiff Differential Equations](chap:stiff)                      | [Chapter 7 Exercises](chap:stiff:exercise)  |
 | 8--9 | [Chapter 8: Computational Methods with Sparse Matrices](chap:sparseMatrix) | [Chapter 8 Exercises](chap:sparseMatrix:exercise) | 
 | 10   | Revision: Past exam Paper                                                  |                                         |  
-| 11   | Consolidation: Mock exam questions                                         |                                         |  **1CWK40 due** |
-
-
-
+| 11   | Consolidation: Mock exam questions                                         |                                         |   |
+|    |                                           |                                         |  <span style="color:red">**1CWK40 due**<br>11/12/2024</span>  |

@@ -2,7 +2,7 @@
 
 :::{table} 
 :align: left  
-|     |   |
+|  Symbol   | Description |
 |-----------| -------------------------- |
 | $\N$, $\Z^{+}$      | the set of natural (positive integer) numbers $\{1, 2, 3, \ldots\}$ |
 | $\Z$      | the set of integer numbers $\{\ldots, -2, -1, 0, 1, 2, 3, \ldots\}$ |
