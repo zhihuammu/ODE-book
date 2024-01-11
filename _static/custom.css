@@ -214,11 +214,11 @@ a:hover {
 * table styling *
 *********************************************/
 thead {
-  background-color: rgba(210,204,204,1);
+  background-color: rgba(210,204,204,0.8);
 }
 
 tr:nth-child(even) {
-  background-color: rgba(210,204,204,.2);
+  background-color: rgba(210,204,204,.3);
 }
 
 td {

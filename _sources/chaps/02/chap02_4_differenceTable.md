@@ -4,6 +4,7 @@
 
 
 :::{table} A forward difference table
+:name: table-forward-difference
 :align: center
 |   $x$   |  $f(x)$  |    $\Delta f$    |  $\Delta^2 f$     | $\Delta^3 f$       |  $\Delta^4 f$     |
 | :------:| :------: |:----------------:| :---------------: | :-----------------:| :---------------: |
@@ -26,6 +27,7 @@ top left to bottom right.
 ## Backward Difference Table
 
 :::{table} A backward difference table
+:name: table-backward-difference
 :align: center
 |   $x$   |  $f(x)$  |    $\nabla f$    |  $\nabla^2 f$     | $\nabla^3 f$       |  $\nabla^4 f$     |
 | :------:| :------: |:----------------:| :---------------: | :-----------------:| :---------------: |
@@ -46,6 +48,20 @@ Note that with this notation the same suffixes appear along diagonals running
 from bottom left to top right of the difference table.
 Note that $ \Delta f_1 =\nabla f_2  $ and
 $  \Delta^2 f_0 =\nabla^2 f_2 .$
+
+```{prf:remark}
+At same locations in a difference table, the forward and backward differences are the same. For example, if the sequences $\{f_n\} (n\in \Z)$ given in {numref}`table-forward-difference`
+ and {numref}`table-backward-difference` are the same, then 
+ 
+ $$
+ \Delta f_{-2} & = \nabla f_{-1} \\
+ \nabla f_2 & = \Delta f_1\\
+ \Delta^2 f_{-1} & = \nabla^2 f_{ 1} \\
+\Delta^3 f_{-2} & = \nabla^3 f_{ 1} \\
+\Delta^4 f_{-2} & = \nabla^4 f_{2}\\
+& \vdots \\
+ $$ 
+```
 
 ## Use Difference Table for interpolation
 

@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="2.3. Gregory-Newton Interpolation Formulae" href="chap02_3_interpolation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Thursday 11 January 2024 16:11:50"/>
+    <meta name="docbuild:last-update" content="Thursday 11 January 2024 22:25:47"/>
   </head>
   
   
@@ -427,8 +427,8 @@ document.write(`
 <h1><span class="section-number">2.4. </span>Finite Difference Tables<a class="headerlink" href="#finite-difference-tables" title="Permalink to this heading">#</a></h1>
 <section id="forward-difference-table">
 <h2><span class="section-number">2.4.1. </span>Forward Difference Table<a class="headerlink" href="#forward-difference-table" title="Permalink to this heading">#</a></h2>
-<table class="table table-center" id="id1">
-<caption><span class="caption-number">Table 2.1 </span><span class="caption-text">A forward difference table</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<table class="table table-center" id="table-forward-difference">
+<caption><span class="caption-number">Table 2.1 </span><span class="caption-text">A forward difference table</span><a class="headerlink" href="#table-forward-difference" title="Permalink to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
 <th class="head text-center"><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
@@ -511,8 +511,8 @@ top left to bottom right.</p>
 </section>
 <section id="backward-difference-table">
 <h2><span class="section-number">2.4.2. </span>Backward Difference Table<a class="headerlink" href="#backward-difference-table" title="Permalink to this heading">#</a></h2>
-<table class="table table-center" id="id2">
-<caption><span class="caption-number">Table 2.2 </span><span class="caption-text">A backward difference table</span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
+<table class="table table-center" id="table-backward-difference">
+<caption><span class="caption-number">Table 2.2 </span><span class="caption-text">A backward difference table</span><a class="headerlink" href="#table-backward-difference" title="Permalink to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
 <th class="head text-center"><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
@@ -594,10 +594,25 @@ Note that with this notation the same suffixes appear along diagonals running
 from bottom left to top right of the difference table.
 Note that <span class="math notranslate nohighlight">\( \Delta f_1 =\nabla f_2  \)</span> and
 <span class="math notranslate nohighlight">\(  \Delta^2 f_0 =\nabla^2 f_2 .\)</span></p>
+<div class="proof remark admonition" id="remark-0">
+<p class="admonition-title"><span class="caption-number">Remark 2.2 </span></p>
+<section class="remark-content" id="proof-content">
+<p>At same locations in a difference table, the forward and backward differences are the same. For example, if the sequences <span class="math notranslate nohighlight">\(\{f_n\} (n\in \Z)\)</span> given in <a class="reference internal" href="#table-forward-difference"><span class="std std-numref">Table 2.1</span></a>
+and <a class="reference internal" href="#table-backward-difference"><span class="std std-numref">Table 2.2</span></a> are the same, then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ \Delta f_{-2} &amp; = \nabla f_{-1} \\
+ \nabla f_2 &amp; = \Delta f_1\\
+ \Delta^2 f_{-1} &amp; = \nabla^2 f_{ 1} \\
+\Delta^3 f_{-2} &amp; = \nabla^3 f_{ 1} \\
+\Delta^4 f_{-2} &amp; = \nabla^4 f_{2}\\
+&amp; \vdots \\
+ \end{split}\]</div>
 </section>
+</div></section>
 <section id="use-difference-table-for-interpolation">
 <h2><span class="section-number">2.4.3. </span>Use Difference Table for interpolation<a class="headerlink" href="#use-difference-table-for-interpolation" title="Permalink to this heading">#</a></h2>
-<div class="proof example admonition" id="example-0">
+<div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 2.3 </span></p>
 <section class="example-content" id="proof-content">
 <p>Given the following sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=0}^{4}\)</span> with <span class="math notranslate nohighlight">\(h=1\)</span>,
@@ -813,7 +828,7 @@ find <span class="math notranslate nohighlight">\(f(0.1)\)</span> and <span clas
 </ul>
 </div>
 </section>
-</div><div class="proof example admonition" id="example-1">
+</div><div class="proof example admonition" id="example-2">
 <p class="admonition-title"><span class="caption-number">Example 2.4 </span></p>
 <section class="example-content" id="proof-content">
 <p>From the tabulated values of the function <span class="math notranslate nohighlight">\(f(x)\)</span> given below interpolate a value for <span class="math notranslate nohighlight">\(f(0.55)\)</span>.</p>
@@ -1194,7 +1209,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 11 January 2024 16:11:50.
+  Last updated on Thursday 11 January 2024 22:25:47.
   <br/>
 </p>
   </div>
