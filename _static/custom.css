@@ -209,3 +209,18 @@ a:hover {
 /* p {
   text-align: justify;
 } */
+
+/*********************************************
+* table styling *
+*********************************************/
+thead {
+  background-color: rgba(210,204,204,1);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(210,204,204,.2);
+}
+
+td {
+  border: 0;
+}
