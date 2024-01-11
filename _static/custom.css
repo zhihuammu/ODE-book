@@ -218,5 +218,9 @@ thead {
 }
 
 tr:nth-child(even) {
-  background-color: rgba(210,204,204,.3);
+  background-color: rgba(210,204,204,.2);
+}
+
+td {
+  border: 0;
 }
