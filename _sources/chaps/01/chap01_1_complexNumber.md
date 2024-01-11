@@ -46,7 +46,7 @@ The arithmetic operations on two complex numbers given as $z_1=x_1+\i y_1$ and $
 ````
 
 ````{prf:example}
-Applying four arithmetic operations on $1+2i$ and $2-5i$, calculate
+Applying four arithmetic operations on $1+2\i$ and $2-5\i$, calculate
 - $(1+2\i) + (2-5\i)$
 - $(1+2\i) - (2-5\i)$
 - $(1+2\i) \times (2-5\i)$
@@ -92,7 +92,7 @@ $$
 z  = r e^{\i \theta},
 $$
 
-where $r=|z|$, and $\theta$ is the angle defined by the real axis and the straight line connecting the origin and $z$ in the complex plane.
+where $\theta$ is called the argument of $z$, defined by the real axis and the straight line connecting the origin and $z$ in the complex plane, and $r=|z|$.
 
 ```{index} Complex Number; Three forms
 ```

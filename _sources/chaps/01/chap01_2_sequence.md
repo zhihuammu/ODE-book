@@ -36,5 +36,5 @@ Specifically, we will regard the expression $\{y_n\}_{n=0}^{+\infty}$ to be an a
 ::::
 
 ```{Note}
-A sequence is not necessarily a set. The elements in a set cannot be repeated, while the members in a sequence can be repeated, e.g. $0, 1, 1, 2, 2, 2, 3.7, 4.9, 4.9,\ldots$
+A sequence is not necessarily a set. Elements in a set cannot be repeated, while members in a sequence can be repeated, e.g. $0, 1, 1, 2, 2, 2, 3.7, 4.9, 4.9,\ldots$
 ```

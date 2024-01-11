@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="1.2. Sequences" href="chap01_2_sequence.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Thursday 11 January 2024 10:47:23"/>
+    <meta name="docbuild:last-update" content="Thursday 11 January 2024 15:00:37"/>
   </head>
   
   
@@ -413,8 +413,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="difference-equations">
 <h1><span class="section-number">1.3. </span>Difference Equations<a class="headerlink" href="#difference-equations" title="Permalink to this heading">#</a></h1>
 <p>For some sequences, their algebraic expressions are directly given, such as the sequences we defined in <a class="reference internal" href="chap01_2_sequence.html#equation-eq-sequence-example-1">(1.6)</a> and <a class="reference internal" href="chap01_2_sequence.html#equation-eq-sequence-example-2">(1.7)</a>. While for some other sequences, a member of a sequence <span class="math notranslate nohighlight">\(y_n\)</span> is determined by one or several previous members of the sequence, e.g.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-47200c1f-e628-480b-8ea2-cce9c3b2f03a">
-<span class="eqno">(1.8)<a class="headerlink" href="#equation-47200c1f-e628-480b-8ea2-cce9c3b2f03a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-32751b76-756f-4755-9a7d-0b99ce2d4886">
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-32751b76-756f-4755-9a7d-0b99ce2d4886" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp; y_n = y_{n-1}, \\
 &amp; y_n = y_{n-1}+3, \\
 &amp; y_n = 2y_{n-1}, \\
@@ -429,10 +429,16 @@ document.write(`
 <span class="eqno">(1.9)<a class="headerlink" href="#equation-eq-de-definition" title="Permalink to this equation">#</a></span>\[
 y_{n+k} = F(n, y_{n}, y_{n+1}, y_{n+2} ..., y_{n+k-2}, y_{n+k-1}), \quad n \in \mathbb{N}_0
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(y_{n+k}\)</span> is the current value in the sequence, <span class="math notranslate nohighlight">\(F\)</span> is a function, and <span class="math notranslate nohighlight">\(k\)</span> is the <strong>order</strong> of the equation (the difference between the highest and lowest indices that appear in the equation). The subscript <span class="math notranslate nohighlight">\(n+k\)</span> is an index representing the current step, and the variables <span class="math notranslate nohighlight">\(y_{n}\)</span>, <span class="math notranslate nohighlight">\(y_{n+1}\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(y_{n+k-1}\)</span> represent previous members in the sequence.</p>
+<p>where <span class="math notranslate nohighlight">\(y_{n+k}\)</span> is the current value in the sequence, <span class="math notranslate nohighlight">\(F\)</span> is a function, and <span class="math notranslate nohighlight">\(k\)</span> is the <strong>order</strong> of the equation. The subscript <span class="math notranslate nohighlight">\(n+k\)</span> is an index representing the current step, and the variables <span class="math notranslate nohighlight">\(y_{n}\)</span>, <span class="math notranslate nohighlight">\(y_{n+1}\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(y_{n+k-1}\)</span> represent previous members in the sequence.</p>
 </section>
 </div><div class="proof remark admonition" id="remark-1">
-<p class="admonition-title"><span class="caption-number">Remark 1.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 1.2 </span> (Order of Difference Equations)</p>
+<section class="remark-content" id="proof-content">
+<p>The order of a difference equation <span class="math notranslate nohighlight">\(k\)</span> is calculated as the difference between the highest and lowest (subscript) indices that appear in the difference equation.</p>
+<p>If the highest subscript in a difference equation is <span class="math notranslate nohighlight">\(n+5\)</span> and the lowest subscript in the equation is <span class="math notranslate nohighlight">\(n-3\)</span>, then the order of the difference equation is <span class="math notranslate nohighlight">\(k=8\)</span>.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-2">
+<p class="admonition-title"><span class="caption-number">Remark 1.3 </span> (Equivalent Difference Equations)</p>
 <section class="remark-content" id="proof-content">
 <p>For a given difference equation, if we increase or decrease the subscript of each term by the same amount, the new equation actually represent the same sequence as the old equation does. Also, the properties of the new equation remain the same as the old one. So the new difference equation is equivalent to the old one (the roots of the two equations are the same). For example, we can increase the subscripts in the equation</p>
 <div class="math notranslate nohighlight">
@@ -441,12 +447,12 @@ y_{n+k} = F(n, y_{n}, y_{n+1}, y_{n+2} ..., y_{n+k-2}, y_{n+k-1}), \quad n \in \
 <div class="math notranslate nohighlight">
 \[y_{n+2} = y_{n+1} + y_{n}\]</div>
 </section>
-</div><div class="proof theorem admonition" id="theorem-2">
+</div><div class="proof theorem admonition" id="theorem-3">
 <p class="admonition-title"><span class="caption-number">Theorem 1.1 </span> (Existence and Uniqueness)</p>
 <section class="theorem-content" id="proof-content">
 <p>Equation <a class="reference internal" href="#equation-eq-de-definition">(1.9)</a> has one and only one solution corresponding to each arbitrary selection of the <span class="math notranslate nohighlight">\(k\)</span> initial values <span class="math notranslate nohighlight">\(y_0, y_1, y_2, \ldots, y_{k-1}\)</span>.</p>
 </section>
-</div><div class="proof definition admonition" id="definition-3">
+</div><div class="proof definition admonition" id="definition-4">
 <p class="admonition-title"><span class="caption-number">Definition 1.7 </span> (<span class="target" id="index-1"></span>Linear Difference Equation)</p>
 <section class="definition-content" id="proof-content">
 <p>A difference equation is linear if it can be expressed in the form</p>
@@ -454,7 +460,7 @@ y_{n+k} = F(n, y_{n}, y_{n+1}, y_{n+2} ..., y_{n+k-2}, y_{n+k-1}), \quad n \in \
 <span class="eqno">(1.10)<a class="headerlink" href="#equation-eq-de-linear" title="Permalink to this equation">#</a></span>\[
 a_0(n) y_n + a_1(n) y_{n+1} + a_2(n) y_{n+2} + \ldots + a_k(n) y_{n+k} = R(n),
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(a_p(n), p=1,2,\ldots, n\)</span> and <span class="math notranslate nohighlight">\(R(n)\)</span> are given functions of <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(a_p(n), p=1,2,\ldots, k\)</span> and <span class="math notranslate nohighlight">\(R(n)\)</span> are given functions of <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>If a difference equation involves non-linear terms of <span class="math notranslate nohighlight">\(y_n\)</span>:</p>
 <ul class="simple">
 <li><p>power <span class="math notranslate nohighlight">\(y_n^2\)</span>, <span class="math notranslate nohighlight">\(y_n^3\)</span>, …</p></li>
@@ -463,8 +469,8 @@ a_0(n) y_n + a_1(n) y_{n+1} + a_2(n) y_{n+2} + \ldots + a_k(n) y_{n+k} = R(n),
 </ul>
 <p>then it is a non-linear difference equation.</p>
 </section>
-</div><div class="proof definition admonition" id="definition-4">
-<span id="index-2"></span><p class="admonition-title"><span class="caption-number">Definition 1.8 </span></p>
+</div><div class="proof definition admonition" id="definition-5">
+<span id="index-2"></span><p class="admonition-title"><span class="caption-number">Definition 1.8 </span> (Homogeneous Linear Difference Equation)</p>
 <section class="definition-content" id="proof-content">
 <p>When the right hand side of Eq. <a class="reference internal" href="#equation-eq-de-linear">(1.10)</a> vanishes i.e. <span class="math notranslate nohighlight">\(R(n)=0\)</span>, we get</p>
 <div class="math notranslate nohighlight" id="equation-eq-de-linear-homogeneous">
@@ -473,7 +479,7 @@ a_0(n) y_n + a_1(n) y_{n+1} + a_2(n) y_{n+2} + \ldots + a_k(n) y_{n+k} = 0,
 \]</div>
 <p>which is called a homogeneous linear difference equation.</p>
 </section>
-</div><div class="proof example admonition" id="example-5">
+</div><div class="proof example admonition" id="example-6">
 <p class="admonition-title"><span class="caption-number">Example 1.2 </span></p>
 <section class="example-content" id="proof-content">
 <p>Identify the order, linearity and homogeneity of the following difference equations:</p>
@@ -494,7 +500,7 @@ a_0(n) y_n + a_1(n) y_{n+1} + a_2(n) y_{n+2} + \ldots + a_k(n) y_{n+k} = 0,
 \end{split}\]</div>
 </div>
 </section>
-</div><div class="proof definition admonition" id="definition-6">
+</div><div class="proof definition admonition" id="definition-7">
 <span id="index-3"></span><p class="admonition-title"><span class="caption-number">Definition 1.9 </span> (Shift Operator)</p>
 <section class="definition-content" id="proof-content">
 <p>We define <span class="math notranslate nohighlight">\(\E\)</span> as an operator shifting a member in a sequence to the next member</p>
@@ -513,7 +519,7 @@ a_0(n) y_n + a_1(n) y_{n+1} + a_2(n) y_{n+2} + \ldots + a_k(n) y_{n+k} = 0,
 \E ^k y_n = y_{n+k}.
 \]</div>
 </section>
-</div><div class="proof example admonition" id="example-7">
+</div><div class="proof example admonition" id="example-8">
 <p class="admonition-title"><span class="caption-number">Example 1.3 </span></p>
 <section class="example-content" id="proof-content">
 <ul class="simple">
@@ -615,7 +621,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 11 January 2024 10:47:23.
+  Last updated on Thursday 11 January 2024 15:00:37.
   <br/>
 </p>
   </div>

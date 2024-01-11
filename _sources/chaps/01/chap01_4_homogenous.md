@@ -61,7 +61,7 @@ Note: Eq. {eq}`eq:DE:linear:homogeneous:constant:aux` is equivalent to Eq. {eq}`
 
 
 ::::{prf:theorem}
-Assume the $k$ roots of  the characteristic equation are distinct, then a fundamental set of solutions is
+Assume the $k$ roots of  the characteristic equation {eq}`eq:DE:linear:char` are distinct, then a fundamental set of solutions is
 \begin{equation}
 z_p^n \quad (p=1,2,\ldots,k).
 \end{equation}
@@ -78,7 +78,7 @@ where the constants $c_p~(p=1,2,\ldots,k)$ are arbitrary.
 
 :::{dropdown} Proof (click to show)
 <!-- ::::{prf:proof} -->
-Substituting Eq. {eq}`eq:DE:linear:homo:sol` into Eq. {eq}`eq:DE:linear:homogeneous:constant:aux`, we get 
+Substituting Eq. {eq}`eq:DE:linear:homo:sol` into Eq. {eq}`eq:DE:linear:homogeneous:constant:aux`, which is equivalent to equation {eq}`eq:DE:linear:homogeneous:constant`, we get 
 \begin{align*}
 \L (\E) y_n  = ~ & \L (\E) \left(c_1 z_1^n + c_2 z_2^n + \ldots + c_k z_k^n\right) \\
 ~ = ~ & c_1 \L (\E) z_1^n + c_2 \L (\E) z_2^n + \ldots + c_k \L (\E)z_k^n \\
@@ -153,6 +153,20 @@ $$z^n (z^2+az+b)=0,$$
 obviously the characteristic equation is
 
 $$z^2+az+b=0,$$
+
+```{dropdown} Note
+To obtain the characteristic equation, we can also firstly write the difference equation into the $\E$ operator form
+
+$$
+\left(\E^2 + a\E + b\right) y_n = 0,
+$$
+
+replacing $\E$ with $z$ gives the characteristic equation
+
+$$
+z^2 + a z + b = 0
+$$
+```
 
 and we get
 
@@ -347,3 +361,15 @@ so the general solution is
 	~ & ~ + (\sqrt{2})^n n^2 \left[c_{12} \cos \left(\frac{n\pi}{4}\right) + c_{13} \sin \left(\frac{n\pi}{4}\right)\right]\\        
 \end{align*}
 ::::
+
+```{Note}
+If a difference equation with constant coefficients is NOT homogeneous
+
+$$
+a_0 y_n + a_1 y_{n+1} + a_2 y_{n+2} + \ldots + a_{k-1} y_{n+k-1} + a_k y_{n+k} = R(n), \quad R(n)\neq 0,
+$$
+
+then we need to do a bit extra work to find the general solution to the equation. This is beyond the scope of our ODEs unit, so we will not cover it. Student interested in solving non-homogeneous difference equations can read
+
+-  Aliakbar Montazer Haghighi and Dimitar P. Mishev, 2013, [Difference and differential equations with applications in queueing theory](https://ebookcentral.proquest.com/lib/mmu/detail.action?docID=1207568) (Chapter 4, Be careful of errors in model solutions).
+```
