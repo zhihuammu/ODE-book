@@ -77,7 +77,7 @@ sphinx:
           "E": "\\mathrm{E}"
           "S": "\\mathrm{S}"
           "D": "\\mathcal{D}"          
-          "L": "\\mathcal{L}"          
+          "L": "\\mathscr{L}"          
           "dy": "\\mathrm{d}y"
           "dx": "\\mathrm{d}x"
           "ds": "\\mathrm{d}s"

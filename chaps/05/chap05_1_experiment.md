@@ -1,0 +1,118 @@
+# An exploratory experiment
+
+:::{prf:example}
+Solve the following initial value problem
+
+$$
+y' = -y + t + 1, ~ t\in [0, 1], \quad y(0)=1
+$$
+
+by using a 2-step method given as
+
+$$
+y_n = -4 y_{n-1} + 5 y_{n-2} + 4 h f_{n-1} + 2h f_{n-2}.
+$$
+
+You should
+1. Find the accuracy of the method;
+2. Implement the method in Matlab/Python, and compare the numerical solution with the exact solution
+
+    $$y=e^{-t}+t.$$
+:::
+
+```{admonition} Solution
+:class: solution, dropdown
+
+1. Accuracy
+    
+    We can find the error constant of the method (see Chapter 3). Rearranging the formula as
+
+    $$
+    - 5 y_{n-2} + 4 y_{n-1} + y_n   = h \left( 2 f_{n-2} + 4  f_{n-1} + 0 f_n \right).
+    $$
+
+    So
+
+    $$
+    \alpha_0 = -5, ~ \alpha_1 = 4, ~ \alpha_2 = 1, \quad
+    \beta_0 = 2,~ \beta_1 = 4,~ \beta_2=0.  
+    $$
+
+    Using Matlab to calculate the error constant
+    :::{literalinclude} /codes/ch5_example1_errorConstant.m
+    :language: matlab
+    :::    
+
+    Output
+    ```none
+    0              0              0              0              1/6            2/15   
+    ```
+
+    $C_0 =0,~ C_1=0, ~ C_2=0,~ C_3 =0,~ C_4=\frac{1}{6}$
+
+    therefore the order of accuracy of the method is $3$.
+
+2. Implementing the method in Matlab.
+
+    - $h=0.1$
+
+        :::{literalinclude} /codes/ch5_example1_implement.m
+        :language: matlab
+        :::     
+
+        Output:
+        ```none
+          x         y          F         y_ex      AbsError
+        0.00 1.00000e+00 0.00000e+00 1.00000e+00 0.000000e+00
+        0.10 1.00484e+00 9.51626e-02 1.00484e+00 0.000000e+00
+        0.20 1.01873e+00 1.81269e-01 1.01873e+00 0.000000e+00
+        0.30 1.04082e+00 2.59182e-01 1.04082e+00 0.000000e+00
+        0.40 1.07031e+00 3.29693e-01 1.07032e+00 1.260226e-05
+        0.50 1.10657e+00 3.93425e-01 1.10653e+00 4.404695e-05
+        0.60 1.14855e+00 4.51453e-01 1.14881e+00 2.646153e-04
+        0.70 1.19795e+00 5.02048e-01 1.19659e+00 1.366397e-03
+        0.80 1.24204e+00 5.57962e-01 1.24933e+00 7.290746e-03
+        0.90 1.34520e+00 5.54800e-01 1.30657e+00 3.863034e-02
+        1.00 1.16290e+00 8.37097e-01 1.36788e+00 2.049760e-01
+        ```
+
+        ```{image} /images/05/ch5_example1_h01_plot.svg        
+        ```
+
+    - $h=0.05$
+
+        Output:
+        ```none
+          x         y          F         y_ex      AbsError
+        0.00 1.00000e+00 0.00000e+00 1.00000e+00 0.000000e+00
+        0.05 1.00123e+00 4.87706e-02 1.00123e+00 0.000000e+00
+        0.10 1.00484e+00 9.51626e-02 1.00484e+00 0.000000e+00
+        0.15 1.01071e+00 1.39292e-01 1.01071e+00 0.000000e+00
+        0.20 1.01873e+00 1.81270e-01 1.01873e+00 9.056870e-07
+        0.25 1.02880e+00 2.21196e-01 1.02880e+00 2.942369e-06
+        0.30 1.04080e+00 2.59199e-01 1.04082e+00 1.761532e-05
+        0.35 1.05478e+00 2.95224e-01 1.05469e+00 8.762241e-05
+        0.40 1.06986e+00 3.30135e-01 1.07032e+00 4.550707e-04
+        0.45 1.08997e+00 3.60032e-01 1.08763e+00 2.339941e-03
+        0.50 1.09447e+00 4.05528e-01 1.10653e+00 1.205827e-02
+        0.55 1.18906e+00 3.60940e-01 1.12695e+00 6.210981e-02
+        0.60 8.28864e-01 7.71136e-01 1.14881e+00 3.199473e-01
+        0.65 2.82016e+00 -1.17016e+00 1.17205e+00 1.648116e+00
+        0.70 -7.29325e+00 8.99325e+00 1.19659e+00 8.489831e+00
+        0.75 4.49554e+01 -4.32054e+01 1.22237e+00 4.373306e+01
+        0.80 -2.24030e+02 2.25830e+02 1.24933e+00 2.252790e+02
+        0.85 1.16174e+03 -1.15989e+03 1.27741e+00 1.160464e+03
+        0.90 -5.97651e+03 5.97841e+03 1.30657e+00 5.977816e+03
+        0.95 3.07944e+04 -3.07925e+04 1.33674e+00 3.079310e+04
+        1.00 -1.58621e+05 1.58623e+05 1.36788e+00 1.586223e+05
+        ```
+
+        ```{image} /images/05/ch5_example1_h005_plot.svg        
+        ```
+```
+
+```{admonition} Question
+:class: dropdown, question
+
+The 2-step looks so good, its order of accuracy is $3$. But why it produces such significant errors in the results?
+```
