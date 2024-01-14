@@ -2,7 +2,14 @@
 
 It is possible to derive any number of multistep methods of various
 order, but the most important factor related to each method is its
-stability property. For simplicity, we study the stability by
+stability property. 
+
+```{prf:definition} Stability
+Stability of a numerical method is its capability to keep errors at bay during computation. These errors are required to be dampened out eventually or remain bounded without contaminating the numerical solution significantly.
+```
+
+
+For simplicity, we study the stability by
 considering a general linear multistep method,
 
 
@@ -236,8 +243,11 @@ the **{index}`root condition`**.
 \draw[-Stealth] ({20mm*cos(35)},4mm) -- (S);
 ```
 
-:::{prf:definition} Stability
-A linear multistep method of order $\,\geq1\,$ is called *{index}`stable`* if the
+```{index} Stability
+```
+
+:::{prf:theorem} Stability
+A linear multistep method of order $\,\geq1\,$ is `stable` if the
 roots of its first characteristic polynomial $\,\rho(z)\,$ satisfies
 the root condition, i.e. the roots of $\,\rho(z)\,$ lie inside or on
 the unit circle, and the roots on the unit circle are distinct (or
