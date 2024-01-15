@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="2.1. Introduction" href="chap02_1_introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Sunday 14 January 2024 21:31:05"/>
+    <meta name="docbuild:last-update" content="Monday 15 January 2024 14:30:43"/>
   </head>
   
   
@@ -236,11 +236,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">6. Multistep Methods: Stability II</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_stabilityInterval.html">6.1. Interval and Region of Absolute Stability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_rootLocus.html">6.2. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_boundaryRootLocus.html">6.3. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_4_exampleCode.html">6.4. Example MATLAB Programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exercise.html">6.5. Chapter 6 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_experiment.html">6.1. An experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_stabilityInterval.html">6.2. Interval and Region of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_rootLocus.html">6.3. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_4_boundaryRootLocus.html">6.4. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exampleCode.html">6.5. Example MATLAB Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_6_exercise.html">6.6. Chapter 6 Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -466,13 +467,13 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (Forward Difference)</p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order <span class="target" id="index-1"></span>forward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between the next member and itself:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5424ada5-e060-4410-9dbd-df202a768998">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-5424ada5-e060-4410-9dbd-df202a768998" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c3cdfa2c-a11b-45e6-8aac-28b6d97c9d29">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-c3cdfa2c-a11b-45e6-8aac-28b6d97c9d29" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta f_j = f_{j+1} - f_j,
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k-\)</span>th order forward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ce9c77ff-b03c-4f68-bf30-7a3b17dbc09a">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-ce9c77ff-b03c-4f68-bf30-7a3b17dbc09a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-de8d82b5-86d8-411e-815f-5357a4b4b045">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-de8d82b5-86d8-411e-815f-5357a4b4b045" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta^k f_j= \Delta\left(\Delta^{k-1} f_j \right).
 \end{equation}\]</div>
 </section>
@@ -524,13 +525,13 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Definition 2.2 </span> (Backward Difference)</p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order <span class="target" id="index-2"></span>backward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between itself and the previous member:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5c53ceb-3848-4d59-a2d7-96bb6b824e65">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-b5c53ceb-3848-4d59-a2d7-96bb6b824e65" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3d32b85f-b70c-4ba7-8247-354c5437d899">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-3d32b85f-b70c-4ba7-8247-354c5437d899" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla f_j = f_{j} - f_{j-1},
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k\)</span>-th order backward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-313d8e0b-ce93-4eb7-8138-7f045d35a889">
-<span class="eqno">(2.4)<a class="headerlink" href="#equation-313d8e0b-ce93-4eb7-8138-7f045d35a889" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dc845433-9e92-4517-9131-c64a4c5d30e1">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-dc845433-9e92-4517-9131-c64a4c5d30e1" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla^k f_j= \nabla\left(\nabla^{k-1} f_j \right).
 \end{equation}\]</div>
 </section>
@@ -585,8 +586,8 @@ document.write(`
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>,
 we define <span class="math notranslate nohighlight">\(\E\)</span> as an operator <span class="target" id="index-3"></span>shifting a member in a sequence to the next member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9716253c-82e9-4e01-b6eb-0d68f1acde40">
-<span class="eqno">(2.5)<a class="headerlink" href="#equation-9716253c-82e9-4e01-b6eb-0d68f1acde40" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-15640c78-dadc-4dde-9a83-b36cdb587deb">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-15640c78-dadc-4dde-9a83-b36cdb587deb" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \E  f_j = f_{j+1},
 \end{equation}\]</div>
 <p>and shifting a member forward <span class="math notranslate nohighlight">\(k\)</span> times gives</p>
@@ -594,8 +595,8 @@ we define <span class="math notranslate nohighlight">\(\E\)</span> as an operato
 \[\E ^k f_j= \E  (\E ^{k-1}f_j)= f_{j+k}.\]</div>
 <p>Similarly, we define <span class="math notranslate nohighlight">\(\E ^{-1}\)</span> as an operator shifting a member in a
 sequence to the previous member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-82d13e05-f05f-44f1-aec6-dc2b5060ea63">
-<span class="eqno">(2.6)<a class="headerlink" href="#equation-82d13e05-f05f-44f1-aec6-dc2b5060ea63" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f889e093-6d1b-47e8-8f20-1583b668ac88">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-f889e093-6d1b-47e8-8f20-1583b668ac88" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \E ^{-1} f_j = f_{j-1}
 \end{equation}\]</div>
 <p>and shifting a member backward <span class="math notranslate nohighlight">\(k\)</span> (<span class="math notranslate nohighlight">\(k&gt;0\)</span>) times gives</p>
@@ -776,7 +777,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Sunday 14 January 2024 21:31:05.
+  Last updated on Monday 15 January 2024 14:30:43.
   <br/>
 </p>
   </div>

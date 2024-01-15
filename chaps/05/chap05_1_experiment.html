@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="5. Multistep Methods: Stability I" href="chap05_0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Sunday 14 January 2024 21:31:05"/>
+    <meta name="docbuild:last-update" content="Monday 15 January 2024 14:30:43"/>
   </head>
   
   
@@ -236,11 +236,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">6. Multistep Methods: Stability II</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_stabilityInterval.html">6.1. Interval and Region of Absolute Stability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_rootLocus.html">6.2. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_boundaryRootLocus.html">6.3. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_4_exampleCode.html">6.4. Example MATLAB Programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exercise.html">6.5. Chapter 6 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_experiment.html">6.1. An experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_stabilityInterval.html">6.2. Interval and Region of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_rootLocus.html">6.3. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_4_boundaryRootLocus.html">6.4. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exampleCode.html">6.5. Example MATLAB Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_6_exercise.html">6.6. Chapter 6 Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -484,6 +485,10 @@ y_n = -4 y_{n-1} + 5 y_{n-2} + 4 h f_{n-1} + 2h f_{n-2}.
 <li><p>Implementing the method in Matlab.</p>
 <ul>
 <li><p><span class="math notranslate nohighlight">\(h=0.1\)</span></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Matlab</label><div class="sd-tab-content docutils">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Scriptfile to solve a single 1st order Ordinary Differential Equation,</span>
 <span class="c">%using the exact solution to calculate the starting values and </span>
 <span class="c">% a 2-step method of third-order accuracy</span>
@@ -528,6 +533,66 @@ y_n = -4 y_{n-1} + 5 y_{n-2} + 4 h f_{n-1} + 2h f_{n-2}.
 <span class="k">function</span><span class="w"> </span>f<span class="p">=</span><span class="nf">f</span><span class="p">(</span>t,y<span class="p">)</span>
 <span class="n">f</span><span class="p">=</span><span class="o">-</span><span class="n">y</span><span class="o">+</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
 </pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">y</span><span class="o">+</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">#interval of definition</span>
+<span class="n">L</span><span class="o">=</span><span class="mf">1.0</span><span class="p">;</span>
+<span class="n">nsteps</span><span class="o">=</span><span class="mi">11</span><span class="p">;</span>
+<span class="n">h</span><span class="o">=</span><span class="n">L</span><span class="o">/</span><span class="p">(</span><span class="n">nsteps</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">#declare arrays</span>
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">F</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">yex</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">abserror</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="c1">#initial values</span>
+<span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">0.0</span><span class="p">;</span>
+<span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">1.0</span><span class="p">;</span>
+<span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+
+<span class="c1">#calculate the first 3 starting values using the exact solution</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="p">;</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+<span class="c1">#use multiple-step method to calculate y</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">nsteps</span><span class="p">):</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=-</span><span class="mi">4</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]);</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="p">;</span>
+    <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="c1">#screen output</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; t         y           F         y_ex      AbsError&quot;</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nsteps</span><span class="p">):</span>
+    <span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="n">abserror</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%4.2f</span><span class="s2"> </span><span class="si">%11.5e</span><span class="s2"> </span><span class="si">%11.5e</span><span class="s2"> </span><span class="si">%11.5e</span><span class="s2"> </span><span class="si">%11.5e</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">abserror</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    
+<span class="c1">#plot solution</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;r-o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;numerical&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">yex</span><span class="p">,</span><span class="s1">&#39;b-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;exact&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Solution to $y&#39;=-y+t+1, y(0)=1, h=0.1$&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>    
+</pre></div>
+</div>
+</div>
 </div>
 <p>Output:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  x         y          F         y_ex      AbsError
@@ -667,7 +732,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Sunday 14 January 2024 21:31:05.
+  Last updated on Monday 15 January 2024 14:30:43.
   <br/>
 </p>
   </div>

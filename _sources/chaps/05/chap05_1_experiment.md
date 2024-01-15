@@ -20,7 +20,7 @@ You should
     $$y=e^{-t}+t.$$
 :::
 
-```{admonition} Solution
+``````{admonition} Solution
 :class: solution, dropdown
 
 1. Accuracy
@@ -56,9 +56,19 @@ You should
 
     - $h=0.1$
 
+        :::::{tab-set}
+        ::::{tab-item} Matlab
         :::{literalinclude} /codes/ch5_example1_implement.m
         :language: matlab
-        :::     
+        :::
+        ::::
+
+        ::::{tab-item} Python
+        :::{literalinclude} /codes/ch5_example1_implement.py
+        :language: python
+        :::
+        ::::        
+        :::::
 
         Output:
         ```none
@@ -109,7 +119,7 @@ You should
 
         ```{image} /images/05/ch5_example1_h005_plot.svg        
         ```
-```
+``````
 
 ```{admonition} Question
 :class: dropdown, question

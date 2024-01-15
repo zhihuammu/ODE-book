@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="1.3. Difference Equations" href="chap01_3_differenceEquation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Sunday 14 January 2024 21:31:05"/>
+    <meta name="docbuild:last-update" content="Monday 15 January 2024 14:30:43"/>
   </head>
   
   
@@ -236,11 +236,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">6. Multistep Methods: Stability II</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_stabilityInterval.html">6.1. Interval and Region of Absolute Stability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_rootLocus.html">6.2. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_boundaryRootLocus.html">6.3. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_4_exampleCode.html">6.4. Example MATLAB Programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exercise.html">6.5. Chapter 6 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_experiment.html">6.1. An experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_stabilityInterval.html">6.2. Interval and Region of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_rootLocus.html">6.3. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_4_boundaryRootLocus.html">6.4. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exampleCode.html">6.5. Example MATLAB Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_6_exercise.html">6.6. Chapter 6 Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -465,8 +466,8 @@ a_0 y_n + a_1 y_{n+1} + a_2 y_{n+2} + \ldots + a_{k-1} y_{n+k-1} + a_k y_{n+k} =
 <p class="admonition-title"><span class="caption-number">Theorem 1.2 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(z_p~(p=1,2,3,\ldots,k)\)</span> be any solution to the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(1.15)</a>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-24a2c581-c880-49ab-b8f1-69b61f3f3c63">
-<span class="eqno">(1.16)<a class="headerlink" href="#equation-24a2c581-c880-49ab-b8f1-69b61f3f3c63" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-46aa4e05-4372-41a9-9584-3b43245ca27b">
+<span class="eqno">(1.16)<a class="headerlink" href="#equation-46aa4e05-4372-41a9-9584-3b43245ca27b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_n = z_p^n
 \end{equation}\]</div>
 <p>is a solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.12)</a>.</p>
@@ -495,8 +496,8 @@ Proof (click to show)<div class="sd-summary-down docutils">
 <p class="admonition-title"><span class="caption-number">Theorem 1.3 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Assume the <span class="math notranslate nohighlight">\(k\)</span> roots of  the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(1.15)</a> are distinct, then a fundamental set of solutions is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-76168231-c3e5-4b54-afcb-e9575568340f">
-<span class="eqno">(1.17)<a class="headerlink" href="#equation-76168231-c3e5-4b54-afcb-e9575568340f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bd5df98d-eefe-4e32-8240-33c91ad8d36c">
+<span class="eqno">(1.17)<a class="headerlink" href="#equation-bd5df98d-eefe-4e32-8240-33c91ad8d36c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z_p^n \quad (p=1,2,\ldots,k).
 \end{equation}\]</div>
 <p>An immediate consequence of this theorem, for this particular case, is that the general solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(1.12)</a> is</p>
@@ -869,7 +870,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Sunday 14 January 2024 21:31:05.
+  Last updated on Monday 15 January 2024 14:30:43.
   <br/>
 </p>
   </div>
