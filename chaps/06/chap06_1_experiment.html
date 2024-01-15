@@ -67,7 +67,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathcal{D}", "L": "\\mathscr{L}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/06/chap06_1_experiment';</script>
     <link rel="shortcut icon" href="../../_static/odefavicon.png"/>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="6. Multistep Methods: Stability II" href="chap06_0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Monday 15 January 2024 14:30:43"/>
+    <meta name="docbuild:last-update" content="Monday 15 January 2024 22:49:08"/>
   </head>
   
   
@@ -211,7 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../02/chap02_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03/chap03_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03/chap03_0.html">3. Multistep Methods: Derivation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_1_multistepMethod.html">3.1. Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_2_derivation.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_3_explicit.html">3.3. Explicit  Multistep Methods</a></li>
@@ -393,7 +393,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -409,6 +411,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-accuracy">6.1.1. Solution: Accuracy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-code-implementation">6.1.2. Solution: Code Implementation</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -418,7 +429,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="an-experiment">
+  <div class="cell tag_remove-input docutils container">
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="an-experiment">
 <h1><span class="section-number">6.1. </span>An experiment<a class="headerlink" href="#an-experiment" title="Permalink to this heading">#</a></h1>
 <div class="proof example admonition" id="example-0">
 <p class="admonition-title"><span class="caption-number">Example 6.1 </span></p>
@@ -426,7 +439,7 @@ document.write(`
 <p>Solve the following initial value problem</p>
 <div class="math notranslate nohighlight">
 \[
-y' = -\lambda y + \lambda t + 1, ~ t\in [0, 1], \quad y(0)=1, \lambda=10
+y' = -\lambda y + \lambda t + 1, ~ t\in [0, 1], ~ y(0)=1, ~\lambda=10
 \]</div>
 <p>by using the 4-step Adams-Bashforth method</p>
 <div class="math notranslate nohighlight">
@@ -442,57 +455,81 @@ y_{j+1} = y_j + \frac{h}{24}\left[\,55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}\rig
 </li>
 </ol>
 </section>
-</div><div class="solution dropdown admonition">
-<p class="admonition-title">Solution</p>
-<ol class="arabic">
-<li><p>Accuracy</p>
+</div><section id="solution-accuracy">
+<h2><span class="section-number">6.1.1. </span>Solution: Accuracy<a class="headerlink" href="#solution-accuracy" title="Permalink to this heading">#</a></h2>
 <p>We can find the error constant of the method (see Chapter 3). Rearranging the formula as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-    &amp; y_{j+1} - y_j + 0 y_{j-1} + 0 y_{j-2} + 0 y_{j-3}  \\
-      = &amp; h \left[ 0 f_{j+1}+ \tfrac{5}{24}f_j - \tfrac{59}{24}f_{j-1} + \tfrac{37}{24}f_{j-2} - \tfrac{9}{24}f_{j-3} \right].
-    \end{split}\]</div>
-<p>So</p>
+&amp; y_{j+1} - y_j + 0 y_{j-1} + 0 y_{j-2} + 0 y_{j-3}  \\
+    = &amp; h \left[ 0 f_{j+1}+ \tfrac{5}{24}f_j - \tfrac{59}{24}f_{j-1} + \tfrac{37}{24}f_{j-2} - \tfrac{9}{24}f_{j-3} \right],
+\end{split}\]</div>
+<p>so</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-    &amp; \alpha_0 = 0, ~ 
-    \alpha_1 = 0, ~ 
-    \alpha_2 = 0, ~
-    \alpha_3 = -1, ~ 
-    \alpha_4 = 1, \\
-    &amp; \beta_0 = -\tfrac{9}{24}, ~ 
-    \beta_1 = \tfrac{37}{24}, ~ 
-    \beta_2= -\tfrac{59}{24}, ~
-    \beta_3= \tfrac{5}{24}, ~
-    \beta_4=0
-    \end{split}\]</div>
-<p>Using Matlab to calculate the error constant</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">format</span><span class="w"> </span><span class="n">rational</span>
+&amp; \alpha_0 = 0, ~ 
+\alpha_1 = 0, ~ 
+\alpha_2 = 0, ~
+\alpha_3 = -1, ~ 
+\alpha_4 = 1, \\
+&amp; \beta_0 = -\tfrac{9}{24}, ~ 
+\beta_1 = \tfrac{37}{24}, ~ 
+\beta_2= -\tfrac{59}{24}, ~
+\beta_3= \tfrac{5}{24}, ~
+\beta_4=0
+\end{split}\]</div>
+<p>Using Python to calculate the error constant</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span>
 
-<span class="n">a0</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span><span class="w">      </span><span class="n">a1</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span><span class="w">      </span><span class="n">a2</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span><span class="w">       </span><span class="n">a3</span><span class="p">=</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w">     </span><span class="n">a4</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
-<span class="n">b0</span><span class="p">=</span><span class="o">-</span><span class="mi">9</span><span class="o">/</span><span class="mi">24</span><span class="p">;</span><span class="w">  </span><span class="n">b1</span><span class="p">=</span><span class="mi">37</span><span class="o">/</span><span class="mi">24</span><span class="p">;</span><span class="w">  </span><span class="n">b2</span><span class="p">=</span><span class="o">-</span><span class="mi">59</span><span class="o">/</span><span class="mi">24</span><span class="p">;</span><span class="w">  </span><span class="n">b3</span><span class="p">=</span><span class="mi">55</span><span class="o">/</span><span class="mi">24</span><span class="p">;</span><span class="w">  </span><span class="n">b4</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">a0</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>      
+<span class="n">a1</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>      
+<span class="n">a2</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>       
+<span class="n">a3</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>     
+<span class="n">a4</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 
-<span class="n">c0</span><span class="p">=</span><span class="w"> </span><span class="n">a0</span><span class="o">+</span><span class="n">a1</span><span class="o">+</span><span class="n">a2</span><span class="o">+</span><span class="n">a3</span><span class="o">+</span><span class="n">a4</span><span class="p">;</span>
-<span class="n">c1</span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b0</span><span class="o">+</span><span class="n">b1</span><span class="o">+</span><span class="n">b2</span><span class="o">+</span><span class="n">b3</span><span class="o">+</span><span class="n">b4</span><span class="p">);</span>
-<span class="n">c2</span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">2</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span>^<span class="mi">2</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span>^<span class="mi">2</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">b3</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">b4</span><span class="p">);</span>
-<span class="n">c3</span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">3</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span>^<span class="mi">3</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span>^<span class="mi">3</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">2</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span>^<span class="mi">2</span><span class="o">*</span><span class="n">b3</span><span class="o">+</span><span class="mi">4</span>^<span class="mi">2</span><span class="o">*</span><span class="n">b4</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">c4</span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">4</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span>^<span class="mi">4</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span>^<span class="mi">4</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">3</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span>^<span class="mi">3</span><span class="o">*</span><span class="n">b3</span><span class="o">+</span><span class="mi">4</span>^<span class="mi">3</span><span class="o">*</span><span class="n">b4</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-<span class="n">c5</span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">5</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span>^<span class="mi">5</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span>^<span class="mi">5</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">4</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span>^<span class="mi">4</span><span class="o">*</span><span class="n">b3</span><span class="o">+</span><span class="mi">4</span>^<span class="mi">4</span><span class="o">*</span><span class="n">b4</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">b0</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">24</span><span class="p">);</span>  
+<span class="n">b1</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">37</span><span class="p">,</span> <span class="mi">24</span><span class="p">);</span>  
+<span class="n">b2</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="o">-</span><span class="mi">59</span><span class="p">,</span> <span class="mi">24</span><span class="p">);</span>  
+<span class="n">b3</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">24</span><span class="p">);</span>  
+<span class="n">b4</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 
-<span class="nb">disp</span><span class="p">([</span><span class="n">c0</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="n">c3</span><span class="w"> </span><span class="n">c4</span><span class="w"> </span><span class="n">c5</span><span class="p">])</span>
+<span class="n">c0</span><span class="o">=</span> <span class="n">a0</span><span class="o">+</span><span class="n">a1</span><span class="o">+</span><span class="n">a2</span><span class="o">+</span><span class="n">a3</span><span class="o">+</span><span class="n">a4</span><span class="p">;</span>
+<span class="n">c1</span><span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b0</span><span class="o">+</span><span class="n">b1</span><span class="o">+</span><span class="n">b2</span><span class="o">+</span><span class="n">b3</span><span class="o">+</span><span class="n">b4</span><span class="p">);</span>
+<span class="n">c2</span><span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">b3</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">b4</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">c3</span><span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">b3</span><span class="o">+</span><span class="mi">4</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">b4</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">c4</span><span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">b3</span><span class="o">+</span><span class="mi">4</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">b4</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">c5</span><span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">5</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">**</span><span class="mi">5</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span><span class="o">**</span><span class="mi">5</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">b3</span><span class="o">+</span><span class="mi">4</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">b4</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c0=&quot;</span><span class="p">,</span><span class="n">c0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c1=&quot;</span><span class="p">,</span><span class="n">c1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c2=&quot;</span><span class="p">,</span><span class="n">c2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c3=&quot;</span><span class="p">,</span><span class="n">c3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c4=&quot;</span><span class="p">,</span><span class="n">c4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c5=&quot;</span><span class="p">,</span><span class="n">c5</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Output</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0              *              0              *              *            251/720
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c0= 0
+c1= 0
+c2= 0
+c3= 0
+c4= 0
+c5= 251/720
 </pre></div>
 </div>
-<p><span class="math notranslate nohighlight">\(C_0 =0,~ C_1=0, ~ C_2=0,~ C_3 =0,~, C_4=0,~ C_5=\frac{251}{720}\)</span></p>
+</div>
+</div>
 <p>therefore the order of accuracy of the method is <span class="math notranslate nohighlight">\(4\)</span>.</p>
-</li>
-<li><p>Implementing the method in Python.</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(h=0.05\)</span></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</section>
+<section id="solution-code-implementation">
+<h2><span class="section-number">6.1.2. </span>Solution: Code Implementation<a class="headerlink" href="#solution-code-implementation" title="Permalink to this heading">#</a></h2>
+<p>First, let’s try a step size <span class="math notranslate nohighlight">\(h=0.05\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -539,7 +576,7 @@ y_{j+1} = y_j + \frac{h}{24}\left[\,55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}\rig
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nsteps</span><span class="p">):</span>
     <span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">lam</span><span class="p">);</span>
     <span class="n">abserror</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%3i</span><span class="s2"> </span><span class="si">%5.2f</span><span class="s2"> </span><span class="si">%11.5e</span><span class="s2"> </span><span class="si">%11.5e</span><span class="s2"> </span><span class="si">%11.5e</span><span class="s2"> </span><span class="si">%11.5e</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">abserror</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%3i</span><span class="s2"> </span><span class="si">%6.3f</span><span class="s2"> </span><span class="si">%11.5e</span><span class="s2"> </span><span class="si">%11.5e</span><span class="s2"> </span><span class="si">%11.5e</span><span class="s2"> </span><span class="si">%11.5e</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">abserror</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
     
 <span class="c1">#exact solution for plot</span>
 <span class="n">ne</span><span class="o">=</span><span class="mi">101</span><span class="p">;</span>
@@ -562,88 +599,170 @@ y_{j+1} = y_j + \frac{h}{24}\left[\,55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}\rig
 <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 <span class="c1">#plt.ylim([0, 1.2])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>    
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>        
 </pre></div>
 </div>
-<p>Output:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> i   t         y           F         y_ex      AbsError
- 0  0.00 1.00000e+00 -9.00000e+00 1.00000e+00 0.00000e+00
- 1  0.05 6.56531e-01 -5.06531e+00 6.56531e-01 0.00000e+00
- 2  0.10 4.67879e-01 -2.67879e+00 4.67879e-01 0.00000e+00
- 3  0.15 3.73130e-01 -1.23130e+00 3.73130e-01 0.00000e+00
- 4  0.20 3.39611e-01 -3.96113e-01 3.35335e-01 4.27600e-03
- 5  0.25 3.34055e-01 1.59451e-01 3.32085e-01 1.96994e-03
- 6  0.30 3.56329e-01 4.36712e-01 3.49787e-01 6.54168e-03
- 7  0.35 3.79323e-01 7.06772e-01 3.80197e-01 8.74587e-04
- 8  0.40 4.26346e-01 7.36541e-01 4.18316e-01 8.03031e-03
- 9  0.45 4.54541e-01 9.54593e-01 4.61109e-01 6.56829e-03
-10  0.50 5.19680e-01 8.03200e-01 5.06738e-01 1.29421e-02
-11  0.55 5.37901e-01 1.12099e+00 5.54087e-01 1.61858e-02
-12  0.60 6.27394e-01 7.26058e-01 6.02479e-01 2.49155e-02
-13  0.65 6.16815e-01 1.33185e+00 6.51503e-01 3.46888e-02
-14  0.70 7.51528e-01 4.84721e-01 7.00912e-01 5.06160e-02
-15  0.75 6.78310e-01 1.71690e+00 7.50553e-01 7.22428e-02
-16  0.80 9.04508e-01 -4.50795e-02 8.00335e-01 1.04172e-01
-17  0.85 7.00699e-01 2.49301e+00 8.50203e-01 1.49505e-01
-18  0.90 1.11515e+00 -1.15153e+00 9.00123e-01 2.15030e-01
-19  0.95 6.41108e-01 4.08892e+00 9.50075e-01 3.08967e-01
-20  1.00 1.44419e+00 -3.44187e+00 1.00005e+00 4.44142e-01
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  i   t         y           F         y_ex      AbsError
+  0  0.000 1.00000e+00 -9.00000e+00 1.00000e+00 0.00000e+00
+  1  0.050 6.56531e-01 -5.06531e+00 6.56531e-01 0.00000e+00
+  2  0.100 4.67879e-01 -2.67879e+00 4.67879e-01 0.00000e+00
+  3  0.150 3.73130e-01 -1.23130e+00 3.73130e-01 0.00000e+00
+  4  0.200 3.39611e-01 -3.96113e-01 3.35335e-01 4.27600e-03
+  5  0.250 3.34055e-01 1.59451e-01 3.32085e-01 1.96994e-03
+  6  0.300 3.56329e-01 4.36712e-01 3.49787e-01 6.54168e-03
+  7  0.350 3.79323e-01 7.06772e-01 3.80197e-01 8.74587e-04
+  8  0.400 4.26346e-01 7.36541e-01 4.18316e-01 8.03031e-03
+  9  0.450 4.54541e-01 9.54593e-01 4.61109e-01 6.56829e-03
+ 10  0.500 5.19680e-01 8.03200e-01 5.06738e-01 1.29421e-02
+ 11  0.550 5.37901e-01 1.12099e+00 5.54087e-01 1.61858e-02
+ 12  0.600 6.27394e-01 7.26058e-01 6.02479e-01 2.49155e-02
+ 13  0.650 6.16815e-01 1.33185e+00 6.51503e-01 3.46888e-02
+ 14  0.700 7.51528e-01 4.84721e-01 7.00912e-01 5.06160e-02
+ 15  0.750 6.78310e-01 1.71690e+00 7.50553e-01 7.22428e-02
+ 16  0.800 9.04508e-01 -4.50795e-02 8.00335e-01 1.04172e-01
+ 17  0.850 7.00699e-01 2.49301e+00 8.50203e-01 1.49505e-01
+ 18  0.900 1.11515e+00 -1.15153e+00 9.00123e-01 2.15030e-01
+ 19  0.950 6.41108e-01 4.08892e+00 9.50075e-01 3.08967e-01
+ 20  1.000 1.44419e+00 -3.44187e+00 1.00005e+00 4.44142e-01
 </pre></div>
 </div>
-<img alt="../../_images/ch06_experiment_h005.svg" src="../../_images/ch06_experiment_h005.svg" /></li>
-<li><p><span class="math notranslate nohighlight">\(h=0.025\)</span></p>
-<p>Output:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> i   t         y           F         y_ex      AbsError
- 0  0.00 1.00000e+00 -9.00000e+00 1.00000e+00 0.00000e+00
- 1  0.03 8.03801e-01 -6.78801e+00 8.03801e-01 0.00000e+00
- 2  0.05 6.56531e-01 -5.06531e+00 6.56531e-01 0.00000e+00
- 3  0.08 5.47367e-01 -3.72367e+00 5.47367e-01 0.00000e+00
- 4  0.10 4.68091e-01 -2.68091e+00 4.67879e-01 2.11274e-04
- 5  0.12 4.11760e-01 -1.86760e+00 4.11505e-01 2.54771e-04
- 6  0.15 3.73497e-01 -1.23497e+00 3.73130e-01 3.66798e-04
- 7  0.17 3.49106e-01 -7.41055e-01 3.48774e-01 3.31602e-04
- 8  0.20 3.35702e-01 -3.57017e-01 3.35335e-01 3.66386e-04
- 9  0.22 3.30703e-01 -5.70254e-02 3.30399e-01 3.03320e-04
-10  0.25 3.32393e-01 1.76066e-01 3.32085e-01 3.08442e-04
-11  0.27 3.39173e-01 3.58274e-01 3.38928e-01 2.44736e-04
-12  0.30 3.50027e-01 4.99728e-01 3.49787e-01 2.40123e-04
-13  0.33 3.63959e-01 6.10410e-01 3.63774e-01 1.84789e-04
-14  0.35 3.80376e-01 6.96242e-01 3.80197e-01 1.78429e-04
-15  0.38 3.98651e-01 7.63486e-01 3.98518e-01 1.33675e-04
-16  0.40 4.18444e-01 8.15558e-01 4.18316e-01 1.28560e-04
-17  0.43 4.39358e-01 8.56420e-01 4.39264e-01 9.38065e-05
-18  0.45 4.61200e-01 8.88003e-01 4.61109e-01 9.06607e-05
-19  0.48 4.83716e-01 9.12840e-01 4.83652e-01 6.43233e-05
-20  0.50 5.06801e-01 9.31991e-01 5.06738e-01 6.29575e-05
-21  0.53 5.30291e-01 9.47092e-01 5.30248e-01 4.32860e-05
-22  0.55 5.54130e-01 9.58700e-01 5.54087e-01 4.32345e-05
-23  0.58 5.78211e-01 9.67886e-01 5.78183e-01 2.86609e-05
-24  0.60 6.02508e-01 9.74918e-01 6.02479e-01 2.94545e-05
-25  0.63 6.26949e-01 9.80508e-01 6.26930e-01 1.86975e-05
-26  0.65 6.51523e-01 9.84766e-01 6.51503e-01 1.99579e-05
-27  0.68 6.76183e-01 9.88171e-01 6.76171e-01 1.20220e-05
-28  0.70 7.00925e-01 9.90746e-01 7.00912e-01 1.34789e-05
-29  0.73 7.25718e-01 9.92822e-01 7.25710e-01 7.61376e-06
-30  0.75 7.50562e-01 9.94378e-01 7.50553e-01 9.09084e-06
-31  0.78 7.75435e-01 9.95645e-01 7.75431e-01 4.74128e-06
-32  0.80 8.00342e-01 9.96584e-01 8.00335e-01 6.13383e-06
-33  0.83 8.25264e-01 9.97358e-01 8.25261e-01 2.89364e-06
-34  0.85 8.50208e-01 9.97924e-01 8.50203e-01 4.14733e-06
-35  0.88 8.75160e-01 9.98398e-01 8.75158e-01 1.72106e-06
-36  0.90 9.00126e-01 9.98738e-01 9.00123e-01 2.81458e-06
-37  0.93 9.25097e-01 9.99029e-01 9.25096e-01 9.87817e-07
-38  0.95 9.50077e-01 9.99232e-01 9.50075e-01 1.92015e-06
-39  0.98 9.75059e-01 9.99412e-01 9.75058e-01 5.37202e-07
-40  1.00 1.00005e+00 9.99533e-01 1.00005e+00 1.31874e-06
+<img alt="../../_images/dcb1106f0e8b10f3091dee726c1ec8f0256607c2f2c5510eecb4c373cfb58a7b.svg" src="../../_images/dcb1106f0e8b10f3091dee726c1ec8f0256607c2f2c5510eecb4c373cfb58a7b.svg" /></div>
+</div>
+<p>It seems the errors are too big, so let’s try a smaller step size <span class="math notranslate nohighlight">\(h=0.025\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1">#plt.rcParams[&#39;text.usetex&#39;] = True</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">lam</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">lam</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">y</span><span class="o">+</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+
+<span class="k">def</span> <span class="nf">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">lam</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">lam</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">t</span><span class="p">;</span>
+
+<span class="c1">#interval of definition</span>
+<span class="n">L</span><span class="o">=</span><span class="mf">1.0</span><span class="p">;</span>
+<span class="n">nsteps</span><span class="o">=</span><span class="mi">41</span><span class="p">;</span>
+<span class="n">h</span><span class="o">=</span><span class="n">L</span><span class="o">/</span><span class="p">(</span><span class="n">nsteps</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">#lambda</span>
+<span class="n">lam</span><span class="o">=</span><span class="mf">10.0</span><span class="p">;</span>
+
+<span class="c1">#declare arrays</span>
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">F</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">yex</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="n">abserror</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="p">);</span>
+<span class="c1">#initial values</span>
+<span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">0.0</span><span class="p">;</span>
+<span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">lam</span><span class="p">);</span>
+<span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">lam</span><span class="p">,</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+
+<span class="c1">#calculate the first 3 starting values using the exact solution</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="p">;</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">lam</span><span class="p">);</span>
+    <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">lam</span><span class="p">,</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+<span class="c1">#use multiple-step method to calculate y</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">nsteps</span><span class="p">):</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">55</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">59</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="mi">37</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="mi">9</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">4</span><span class="p">]);</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="p">;</span>
+    <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">lam</span><span class="p">,</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="c1">#screen output</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  i   t         y           F         y_ex      AbsError&quot;</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nsteps</span><span class="p">):</span>
+    <span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">lam</span><span class="p">);</span>
+    <span class="n">abserror</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%3i</span><span class="s2"> </span><span class="si">%6.3f</span><span class="s2"> </span><span class="si">%11.5e</span><span class="s2"> </span><span class="si">%11.5e</span><span class="s2"> </span><span class="si">%11.5e</span><span class="s2"> </span><span class="si">%11.5e</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">yex</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">abserror</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    
+<span class="c1">#exact solution for plot</span>
+<span class="n">ne</span><span class="o">=</span><span class="mi">101</span><span class="p">;</span>
+<span class="n">he</span><span class="o">=</span><span class="n">L</span><span class="o">/</span><span class="p">(</span><span class="n">ne</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">te</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">ne</span><span class="p">);</span>
+<span class="n">ye</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">ne</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ne</span><span class="p">):</span>
+    <span class="n">te</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">i</span><span class="o">*</span><span class="n">he</span><span class="p">;</span>
+    <span class="n">ye</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">yexact</span><span class="p">(</span><span class="n">te</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">lam</span><span class="p">);</span>
+    
+<span class="c1">#plot solution</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;r-o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;numerical&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">te</span><span class="p">,</span><span class="n">ye</span><span class="p">,</span><span class="s1">&#39;b-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;exact&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$y$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper center&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Solution to $y&#39;=-10y+t+1, y(0)=1, h=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;$&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="c1">#plt.ylim([0, 1.2])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>        
 </pre></div>
 </div>
-<img alt="../../_images/ch06_experiment_h0025.svg" src="../../_images/ch06_experiment_h0025.svg" /></li>
-</ul>
-</li>
-</ol>
 </div>
-<div class="dropdown question admonition">
-<p class="admonition-title">Question</p>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  i   t         y           F         y_ex      AbsError
+  0  0.000 1.00000e+00 -9.00000e+00 1.00000e+00 0.00000e+00
+  1  0.025 8.03801e-01 -6.78801e+00 8.03801e-01 0.00000e+00
+  2  0.050 6.56531e-01 -5.06531e+00 6.56531e-01 0.00000e+00
+  3  0.075 5.47367e-01 -3.72367e+00 5.47367e-01 0.00000e+00
+  4  0.100 4.68091e-01 -2.68091e+00 4.67879e-01 2.11274e-04
+  5  0.125 4.11760e-01 -1.86760e+00 4.11505e-01 2.54771e-04
+  6  0.150 3.73497e-01 -1.23497e+00 3.73130e-01 3.66798e-04
+  7  0.175 3.49106e-01 -7.41055e-01 3.48774e-01 3.31602e-04
+  8  0.200 3.35702e-01 -3.57017e-01 3.35335e-01 3.66386e-04
+  9  0.225 3.30703e-01 -5.70254e-02 3.30399e-01 3.03320e-04
+ 10  0.250 3.32393e-01 1.76066e-01 3.32085e-01 3.08442e-04
+ 11  0.275 3.39173e-01 3.58274e-01 3.38928e-01 2.44736e-04
+ 12  0.300 3.50027e-01 4.99728e-01 3.49787e-01 2.40123e-04
+ 13  0.325 3.63959e-01 6.10410e-01 3.63774e-01 1.84789e-04
+ 14  0.350 3.80376e-01 6.96242e-01 3.80197e-01 1.78429e-04
+ 15  0.375 3.98651e-01 7.63486e-01 3.98518e-01 1.33675e-04
+ 16  0.400 4.18444e-01 8.15558e-01 4.18316e-01 1.28560e-04
+ 17  0.425 4.39358e-01 8.56420e-01 4.39264e-01 9.38065e-05
+ 18  0.450 4.61200e-01 8.88003e-01 4.61109e-01 9.06607e-05
+ 19  0.475 4.83716e-01 9.12840e-01 4.83652e-01 6.43233e-05
+ 20  0.500 5.06801e-01 9.31991e-01 5.06738e-01 6.29575e-05
+ 21  0.525 5.30291e-01 9.47092e-01 5.30248e-01 4.32860e-05
+ 22  0.550 5.54130e-01 9.58700e-01 5.54087e-01 4.32345e-05
+ 23  0.575 5.78211e-01 9.67886e-01 5.78183e-01 2.86609e-05
+ 24  0.600 6.02508e-01 9.74918e-01 6.02479e-01 2.94545e-05
+ 25  0.625 6.26949e-01 9.80508e-01 6.26930e-01 1.86975e-05
+ 26  0.650 6.51523e-01 9.84766e-01 6.51503e-01 1.99579e-05
+ 27  0.675 6.76183e-01 9.88171e-01 6.76171e-01 1.20220e-05
+ 28  0.700 7.00925e-01 9.90746e-01 7.00912e-01 1.34789e-05
+ 29  0.725 7.25718e-01 9.92822e-01 7.25710e-01 7.61376e-06
+ 30  0.750 7.50562e-01 9.94378e-01 7.50553e-01 9.09084e-06
+ 31  0.775 7.75435e-01 9.95645e-01 7.75431e-01 4.74128e-06
+ 32  0.800 8.00342e-01 9.96584e-01 8.00335e-01 6.13383e-06
+ 33  0.825 8.25264e-01 9.97358e-01 8.25261e-01 2.89364e-06
+ 34  0.850 8.50208e-01 9.97924e-01 8.50203e-01 4.14733e-06
+ 35  0.875 8.75160e-01 9.98398e-01 8.75158e-01 1.72106e-06
+ 36  0.900 9.00126e-01 9.98738e-01 9.00123e-01 2.81458e-06
+ 37  0.925 9.25097e-01 9.99029e-01 9.25096e-01 9.87817e-07
+ 38  0.950 9.50077e-01 9.99232e-01 9.50075e-01 1.92015e-06
+ 39  0.975 9.75059e-01 9.99412e-01 9.75058e-01 5.37202e-07
+ 40  1.000 1.00005e+00 9.99533e-01 1.00005e+00 1.31874e-06
+</pre></div>
+</div>
+<img alt="../../_images/3a72b2e54dc245571c02dba568590921d4d059659215c973334607a84588f3e7.svg" src="../../_images/3a72b2e54dc245571c02dba568590921d4d059659215c973334607a84588f3e7.svg" /></div>
+</div>
+<p>This time the solution looks quite good.</p>
+<div class="question admonition">
+<p class="admonition-title">Questions</p>
 <p>When the step size is <span class="math notranslate nohighlight">\(h=0.05\)</span>, the numerical solution is unstable. After we reduced it to <span class="math notranslate nohighlight">\(h=0.0025\)</span>, the solution become stable.</p>
 <ul class="simple">
 <li><p>Shall we limit the step size to keep the solution stable?</p></li>
@@ -651,6 +770,7 @@ y_{j+1} = y_j + \frac{h}{24}\left[\,55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}\rig
 <li><p>If we use a different linear multistep method, will the maximum allowable step size be the same?</p></li>
 </ul>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -666,7 +786,7 @@ y_{j+1} = y_j + \frac{h}{24}\left[\,55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}\rig
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/06"
+            path: "./chaps\06"
         },
         predefinedOutput: true
     }
@@ -708,7 +828,21 @@ y_{j+1} = y_j + \frac{h}{24}\left[\,55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}\rig
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-accuracy">6.1.1. Solution: Accuracy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-code-implementation">6.1.2. Solution: Code Implementation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -738,7 +872,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Monday 15 January 2024 14:30:43.
+  Last updated on Monday 15 January 2024 22:49:08.
   <br/>
 </p>
   </div>

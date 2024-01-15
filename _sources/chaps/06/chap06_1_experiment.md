@@ -1,10 +1,28 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+```{code-cell}ipython
+:tags: ["remove-input"]
+import matplotlib_inline.backend_inline
+matplotlib_inline.backend_inline.set_matplotlib_formats("svg")
+```
+
 # An experiment
 
 :::{prf:example}
 Solve the following initial value problem
 
 $$
-y' = -\lambda y + \lambda t + 1, ~ t\in [0, 1], \quad y(0)=1, \lambda=10
+y' = -\lambda y + \lambda t + 1, ~ t\in [0, 1], ~ y(0)=1, ~\lambda=10
 $$
 
 by using the 4-step Adams-Bashforth method
@@ -21,138 +39,226 @@ You should
 :::
 
 
-``````{admonition} Solution
-:class: solution, dropdown
+## Solution: Accuracy    
+We can find the error constant of the method (see Chapter 3). Rearranging the formula as
 
-1. Accuracy
+$$
+& y_{j+1} - y_j + 0 y_{j-1} + 0 y_{j-2} + 0 y_{j-3}  \\
+    = & h \left[ 0 f_{j+1}+ \tfrac{5}{24}f_j - \tfrac{59}{24}f_{j-1} + \tfrac{37}{24}f_{j-2} - \tfrac{9}{24}f_{j-3} \right],
+$$
+
+so
+
+$$
+& \alpha_0 = 0, ~ 
+\alpha_1 = 0, ~ 
+\alpha_2 = 0, ~
+\alpha_3 = -1, ~ 
+\alpha_4 = 1, \\
+& \beta_0 = -\tfrac{9}{24}, ~ 
+\beta_1 = \tfrac{37}{24}, ~ 
+\beta_2= -\tfrac{59}{24}, ~
+\beta_3= \tfrac{5}{24}, ~
+\beta_4=0
+$$
+
+Using Python to calculate the error constant
+
+```{code-cell} ipython
+import math
+from fractions import Fraction
+
+a0=Fraction(0, 1);      
+a1=Fraction(0, 1);      
+a2=Fraction(0, 1);       
+a3=Fraction(-1, 1);     
+a4=Fraction(1, 1);
+
+b0=Fraction(-9, 24);  
+b1=Fraction(37, 24);  
+b2=Fraction(-59, 24);  
+b3=Fraction(55, 24);  
+b4=Fraction(0, 1);
+
+c0= a0+a1+a2+a3+a4;
+c1= (a1+2*a2+3*a3+4*a4)-(b0+b1+b2+b3+b4);
+c2= (a1+2**2*a2+3**2*a3+4**2*a4)/math.factorial(2)-(b1+2*b2+3*b3+4*b4)/math.factorial(1);
+c3= (a1+2**3*a2+3**3*a3+4**3*a4)/math.factorial(3)-(b1+2**2*b2+3**2*b3+4**2*b4)/math.factorial(2);
+c4= (a1+2**4*a2+3**4*a3+4**4*a4)/math.factorial(4)-(b1+2**3*b2+3**3*b3+4**3*b4)/math.factorial(3);
+c5= (a1+2**5*a2+3**5*a3+4**5*a4)/math.factorial(5)-(b1+2**4*b2+3**4*b3+4**4*b4)/math.factorial(4);
+
+print("c0=",c0)
+print("c1=",c1)
+print("c2=",c2)
+print("c3=",c3)
+print("c4=",c4)
+print("c5=",c5)
+```
+
+therefore the order of accuracy of the method is $4$.
+
+## Solution: Code Implementation
+
+First, let's try a step size $h=0.05$
+
+
+
+```{code-cell} ipython
+import math
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.rcParams['text.usetex'] = True
+
+def f(t,lam,y):
+    return lam*(-y+t)+1;
+
+def yexact(t,lam):
+    return math.exp(-lam*t)+t;
+
+#interval of definition
+L=1.0;
+nsteps=21;
+h=L/(nsteps-1);
+
+#lambda
+lam=10.0;
+
+#declare arrays
+t=np.zeros(nsteps);
+y=np.zeros(nsteps);
+F=np.zeros(nsteps);
+yex=np.zeros(nsteps);
+abserror=np.zeros(nsteps);
+#initial values
+t[0]=0.0;
+y[0]=yexact(t[0],lam);
+F[0]=f(t[0],lam,y[0]);
+
+#calculate the first 3 starting values using the exact solution
+for i in range(1,4):
+    t[i]=t[i-1]+h;
+    y[i]=yexact(t[i],lam);
+    F[i]=f(t[i],lam,y[i]);
+
+#use multiple-step method to calculate y
+for i in range(4,nsteps):
+    y[i]=y[i-1]+(h/24)*(55*F[i-1]-59*F[i-2]+37*F[i-3]-9*F[i-4]);
+    t[i]=t[i-1]+h;
+    F[i]=f(t[i],lam,y[i]);
+#screen output
+print("  i   t         y           F         y_ex      AbsError");
+for i in range(nsteps):
+    yex[i]=yexact(t[i],lam);
+    abserror[i]=abs(yex[i]-y[i]);
+    print("%3i %6.3f %11.5e %11.5e %11.5e %11.5e" %(i, t[i],y[i],F[i],yex[i],abserror[i]))
     
-    We can find the error constant of the method (see Chapter 3). Rearranging the formula as
+#exact solution for plot
+ne=101;
+he=L/(ne-1);
+te=np.zeros(ne);
+ye=np.zeros(ne);
 
-    $$
-    & y_{j+1} - y_j + 0 y_{j-1} + 0 y_{j-2} + 0 y_{j-3}  \\
-      = & h \left[ 0 f_{j+1}+ \tfrac{5}{24}f_j - \tfrac{59}{24}f_{j-1} + \tfrac{37}{24}f_{j-2} - \tfrac{9}{24}f_{j-3} \right].
-    $$
+for i in range(ne):
+    te[i]=i*he;
+    ye[i]=yexact(te[i],lam);
+    
+#plot solution
+plt.figure(1)
+plt.plot(t,y,'r-o',label="numerical")
+plt.plot(te,ye,'b-',label="exact")
+plt.xlabel(r'$t$', fontsize=20)
+plt.ylabel(r'$y$', fontsize=20)
+plt.legend(loc="upper center", fontsize=14)
+plt.title("Solution to $y'=-10y+t+1, y(0)=1, h="+str(h)+"$",fontsize=16)
+plt.yticks(fontsize=14)
+plt.xticks(fontsize=14)
+#plt.ylim([0, 1.2])
+plt.show()        
+```
 
-    So
+It seems the errors are too big, so let's try a smaller step size $h=0.025$.
 
-    $$
-    & \alpha_0 = 0, ~ 
-    \alpha_1 = 0, ~ 
-    \alpha_2 = 0, ~
-    \alpha_3 = -1, ~ 
-    \alpha_4 = 1, \\
-    & \beta_0 = -\tfrac{9}{24}, ~ 
-    \beta_1 = \tfrac{37}{24}, ~ 
-    \beta_2= -\tfrac{59}{24}, ~
-    \beta_3= \tfrac{5}{24}, ~
-    \beta_4=0
-    $$
+```{code-cell} ipython
+:tags: [hide-input]
+import math
+import numpy as np
+import matplotlib.pyplot as plt
 
-    Using Matlab to calculate the error constant
-    :::{literalinclude} /codes/ch6_experiment_errorConstant.m
-    :language: matlab
-    :::    
+#plt.rcParams['text.usetex'] = True
 
-    Output
-    ```none
-    0              *              0              *              *            251/720
-    ```
+def f(t,lam,y):
+    return lam*(-y+t)+1;
 
-    $C_0 =0,~ C_1=0, ~ C_2=0,~ C_3 =0,~, C_4=0,~ C_5=\frac{251}{720}$
+def yexact(t,lam):
+    return math.exp(-lam*t)+t;
 
-    therefore the order of accuracy of the method is $4$.
+#interval of definition
+L=1.0;
+nsteps=41;
+h=L/(nsteps-1);
 
-2. Implementing the method in Python.
+#lambda
+lam=10.0;
 
-    - $h=0.05$
+#declare arrays
+t=np.zeros(nsteps);
+y=np.zeros(nsteps);
+F=np.zeros(nsteps);
+yex=np.zeros(nsteps);
+abserror=np.zeros(nsteps);
+#initial values
+t[0]=0.0;
+y[0]=yexact(t[0],lam);
+F[0]=f(t[0],lam,y[0]);
 
-        :::{literalinclude} /codes/ch6_experiment_implement.py
-        :language: python
-        :::
+#calculate the first 3 starting values using the exact solution
+for i in range(1,4):
+    t[i]=t[i-1]+h;
+    y[i]=yexact(t[i],lam);
+    F[i]=f(t[i],lam,y[i]);
 
-        Output:
-        ```none
-         i   t         y           F         y_ex      AbsError
-         0  0.00 1.00000e+00 -9.00000e+00 1.00000e+00 0.00000e+00
-         1  0.05 6.56531e-01 -5.06531e+00 6.56531e-01 0.00000e+00
-         2  0.10 4.67879e-01 -2.67879e+00 4.67879e-01 0.00000e+00
-         3  0.15 3.73130e-01 -1.23130e+00 3.73130e-01 0.00000e+00
-         4  0.20 3.39611e-01 -3.96113e-01 3.35335e-01 4.27600e-03
-         5  0.25 3.34055e-01 1.59451e-01 3.32085e-01 1.96994e-03
-         6  0.30 3.56329e-01 4.36712e-01 3.49787e-01 6.54168e-03
-         7  0.35 3.79323e-01 7.06772e-01 3.80197e-01 8.74587e-04
-         8  0.40 4.26346e-01 7.36541e-01 4.18316e-01 8.03031e-03
-         9  0.45 4.54541e-01 9.54593e-01 4.61109e-01 6.56829e-03
-        10  0.50 5.19680e-01 8.03200e-01 5.06738e-01 1.29421e-02
-        11  0.55 5.37901e-01 1.12099e+00 5.54087e-01 1.61858e-02
-        12  0.60 6.27394e-01 7.26058e-01 6.02479e-01 2.49155e-02
-        13  0.65 6.16815e-01 1.33185e+00 6.51503e-01 3.46888e-02
-        14  0.70 7.51528e-01 4.84721e-01 7.00912e-01 5.06160e-02
-        15  0.75 6.78310e-01 1.71690e+00 7.50553e-01 7.22428e-02
-        16  0.80 9.04508e-01 -4.50795e-02 8.00335e-01 1.04172e-01
-        17  0.85 7.00699e-01 2.49301e+00 8.50203e-01 1.49505e-01
-        18  0.90 1.11515e+00 -1.15153e+00 9.00123e-01 2.15030e-01
-        19  0.95 6.41108e-01 4.08892e+00 9.50075e-01 3.08967e-01
-        20  1.00 1.44419e+00 -3.44187e+00 1.00005e+00 4.44142e-01
-        ```
+#use multiple-step method to calculate y
+for i in range(4,nsteps):
+    y[i]=y[i-1]+(h/24)*(55*F[i-1]-59*F[i-2]+37*F[i-3]-9*F[i-4]);
+    t[i]=t[i-1]+h;
+    F[i]=f(t[i],lam,y[i]);
+#screen output
+print("  i   t         y           F         y_ex      AbsError");
+for i in range(nsteps):
+    yex[i]=yexact(t[i],lam);
+    abserror[i]=abs(yex[i]-y[i]);
+    print("%3i %6.3f %11.5e %11.5e %11.5e %11.5e" %(i, t[i],y[i],F[i],yex[i],abserror[i]))
+    
+#exact solution for plot
+ne=101;
+he=L/(ne-1);
+te=np.zeros(ne);
+ye=np.zeros(ne);
 
-        ```{image} /images/06/ch06_experiment_h005.svg        
-        ```
+for i in range(ne):
+    te[i]=i*he;
+    ye[i]=yexact(te[i],lam);
+    
+#plot solution
+plt.figure(1)
+plt.plot(t,y,'r-o',label="numerical")
+plt.plot(te,ye,'b-',label="exact")
+plt.xlabel(r'$t$', fontsize=20)
+plt.ylabel(r'$y$', fontsize=20)
+plt.legend(loc="upper center", fontsize=14)
+plt.title("Solution to $y'=-10y+t+1, y(0)=1, h="+str(h)+"$",fontsize=16)
+plt.yticks(fontsize=14)
+plt.xticks(fontsize=14)
+#plt.ylim([0, 1.2])
+plt.show()        
+```
 
-    - $h=0.025$
+This time the solution looks quite good.
 
-        Output:
-        ```none
-         i   t         y           F         y_ex      AbsError
-         0  0.00 1.00000e+00 -9.00000e+00 1.00000e+00 0.00000e+00
-         1  0.03 8.03801e-01 -6.78801e+00 8.03801e-01 0.00000e+00
-         2  0.05 6.56531e-01 -5.06531e+00 6.56531e-01 0.00000e+00
-         3  0.08 5.47367e-01 -3.72367e+00 5.47367e-01 0.00000e+00
-         4  0.10 4.68091e-01 -2.68091e+00 4.67879e-01 2.11274e-04
-         5  0.12 4.11760e-01 -1.86760e+00 4.11505e-01 2.54771e-04
-         6  0.15 3.73497e-01 -1.23497e+00 3.73130e-01 3.66798e-04
-         7  0.17 3.49106e-01 -7.41055e-01 3.48774e-01 3.31602e-04
-         8  0.20 3.35702e-01 -3.57017e-01 3.35335e-01 3.66386e-04
-         9  0.22 3.30703e-01 -5.70254e-02 3.30399e-01 3.03320e-04
-        10  0.25 3.32393e-01 1.76066e-01 3.32085e-01 3.08442e-04
-        11  0.27 3.39173e-01 3.58274e-01 3.38928e-01 2.44736e-04
-        12  0.30 3.50027e-01 4.99728e-01 3.49787e-01 2.40123e-04
-        13  0.33 3.63959e-01 6.10410e-01 3.63774e-01 1.84789e-04
-        14  0.35 3.80376e-01 6.96242e-01 3.80197e-01 1.78429e-04
-        15  0.38 3.98651e-01 7.63486e-01 3.98518e-01 1.33675e-04
-        16  0.40 4.18444e-01 8.15558e-01 4.18316e-01 1.28560e-04
-        17  0.43 4.39358e-01 8.56420e-01 4.39264e-01 9.38065e-05
-        18  0.45 4.61200e-01 8.88003e-01 4.61109e-01 9.06607e-05
-        19  0.48 4.83716e-01 9.12840e-01 4.83652e-01 6.43233e-05
-        20  0.50 5.06801e-01 9.31991e-01 5.06738e-01 6.29575e-05
-        21  0.53 5.30291e-01 9.47092e-01 5.30248e-01 4.32860e-05
-        22  0.55 5.54130e-01 9.58700e-01 5.54087e-01 4.32345e-05
-        23  0.58 5.78211e-01 9.67886e-01 5.78183e-01 2.86609e-05
-        24  0.60 6.02508e-01 9.74918e-01 6.02479e-01 2.94545e-05
-        25  0.63 6.26949e-01 9.80508e-01 6.26930e-01 1.86975e-05
-        26  0.65 6.51523e-01 9.84766e-01 6.51503e-01 1.99579e-05
-        27  0.68 6.76183e-01 9.88171e-01 6.76171e-01 1.20220e-05
-        28  0.70 7.00925e-01 9.90746e-01 7.00912e-01 1.34789e-05
-        29  0.73 7.25718e-01 9.92822e-01 7.25710e-01 7.61376e-06
-        30  0.75 7.50562e-01 9.94378e-01 7.50553e-01 9.09084e-06
-        31  0.78 7.75435e-01 9.95645e-01 7.75431e-01 4.74128e-06
-        32  0.80 8.00342e-01 9.96584e-01 8.00335e-01 6.13383e-06
-        33  0.83 8.25264e-01 9.97358e-01 8.25261e-01 2.89364e-06
-        34  0.85 8.50208e-01 9.97924e-01 8.50203e-01 4.14733e-06
-        35  0.88 8.75160e-01 9.98398e-01 8.75158e-01 1.72106e-06
-        36  0.90 9.00126e-01 9.98738e-01 9.00123e-01 2.81458e-06
-        37  0.93 9.25097e-01 9.99029e-01 9.25096e-01 9.87817e-07
-        38  0.95 9.50077e-01 9.99232e-01 9.50075e-01 1.92015e-06
-        39  0.98 9.75059e-01 9.99412e-01 9.75058e-01 5.37202e-07
-        40  1.00 1.00005e+00 9.99533e-01 1.00005e+00 1.31874e-06
-        ```
 
-        ```{image} /images/06/ch06_experiment_h0025.svg        
-        ```
-``````
-
-```{admonition} Question
-:class: dropdown, question
+```{admonition} Questions
+:class: question
 
 When the step size is $h=0.05$, the numerical solution is unstable. After we reduced it to $h=0.0025$, the solution become stable. 
 

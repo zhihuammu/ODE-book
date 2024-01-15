@@ -67,7 +67,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathcal{D}", "L": "\\mathscr{L}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/05/chap05_1_experiment';</script>
     <link rel="shortcut icon" href="../../_static/odefavicon.png"/>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="5. Multistep Methods: Stability I" href="chap05_0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Monday 15 January 2024 14:30:43"/>
+    <meta name="docbuild:last-update" content="Monday 15 January 2024 22:49:08"/>
   </head>
   
   
@@ -211,7 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../02/chap02_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03/chap03_0.html">3. Multistep Methods: Derivation by Finite Difference formulae</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03/chap03_0.html">3. Multistep Methods: Derivation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_1_multistepMethod.html">3.1. Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_2_derivation.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_3_explicit.html">3.3. Explicit  Multistep Methods</a></li>
@@ -393,7 +393,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -409,6 +411,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy">5.1.1. Accuracy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-implementation">5.1.2. Code Implementation</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -442,47 +453,68 @@ y_n = -4 y_{n-1} + 5 y_{n-2} + 4 h f_{n-1} + 2h f_{n-2}.
 </li>
 </ol>
 </section>
-</div><div class="solution dropdown admonition">
-<p class="admonition-title">Solution</p>
-<ol class="arabic">
-<li><p>Accuracy</p>
+</div><section id="accuracy">
+<h2><span class="section-number">5.1.1. </span>Accuracy<a class="headerlink" href="#accuracy" title="Permalink to this heading">#</a></h2>
 <p>We can find the error constant of the method (see Chapter 3). Rearranging the formula as</p>
 <div class="math notranslate nohighlight">
 \[
-    - 5 y_{n-2} + 4 y_{n-1} + y_n   = h \left( 2 f_{n-2} + 4  f_{n-1} + 0 f_n \right).
-    \]</div>
-<p>So</p>
+- 5 y_{n-2} + 4 y_{n-1} + y_n   = h \left( 2 f_{n-2} + 4  f_{n-1} + 0 f_n \right),
+\]</div>
+<p>so</p>
 <div class="math notranslate nohighlight">
 \[
-    \alpha_0 = -5, ~ \alpha_1 = 4, ~ \alpha_2 = 1, \quad
-    \beta_0 = 2,~ \beta_1 = 4,~ \beta_2=0.  
-    \]</div>
-<p>Using Matlab to calculate the error constant</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%matlab code: calculating the error constant for chapter 3 example 3(i)</span>
-<span class="c">%show results in fractions</span>
-<span class="nb">format</span><span class="w"> </span><span class="n">rational</span>
+\alpha_0 = -5, ~ \alpha_1 = 4, ~ \alpha_2 = 1, \quad
+\beta_0 = 2,~ \beta_1 = 4,~ \beta_2=0.  
+\]</div>
+<p>Using Python to calculate the error constant</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span>
 
-<span class="n">a0</span><span class="p">=</span><span class="o">-</span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">a1</span><span class="p">=</span><span class="mi">4</span><span class="p">;</span><span class="w">  </span><span class="n">a2</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="n">a3</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="n">a4</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
-<span class="n">b0</span><span class="p">=</span><span class="mi">2</span><span class="p">;</span><span class="w">  </span><span class="n">b1</span><span class="p">=</span><span class="mi">4</span><span class="p">;</span><span class="w">  </span><span class="n">b2</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="n">b3</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="n">b4</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">a0</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>      
+<span class="n">a1</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>      
+<span class="n">a2</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>       
+<span class="n">a3</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>     
+<span class="n">a4</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 
-<span class="n">c0</span><span class="p">=</span><span class="w"> </span><span class="n">a0</span><span class="o">+</span><span class="n">a1</span><span class="o">+</span><span class="n">a2</span><span class="o">+</span><span class="n">a3</span><span class="o">+</span><span class="n">a4</span><span class="p">;</span>
-<span class="n">c1</span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b0</span><span class="o">+</span><span class="n">b1</span><span class="o">+</span><span class="n">b2</span><span class="o">+</span><span class="n">b3</span><span class="o">+</span><span class="n">b4</span><span class="p">);</span>
-<span class="n">c2</span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">2</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span>^<span class="mi">2</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span>^<span class="mi">2</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">b3</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">b4</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">c3</span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">3</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span>^<span class="mi">3</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span>^<span class="mi">3</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">2</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span>^<span class="mi">2</span><span class="o">*</span><span class="n">b3</span><span class="o">+</span><span class="mi">4</span>^<span class="mi">2</span><span class="o">*</span><span class="n">b4</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">c4</span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">4</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span>^<span class="mi">4</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span>^<span class="mi">4</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">3</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span>^<span class="mi">3</span><span class="o">*</span><span class="n">b3</span><span class="o">+</span><span class="mi">4</span>^<span class="mi">3</span><span class="o">*</span><span class="n">b4</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-<span class="n">c5</span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">5</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span>^<span class="mi">5</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span>^<span class="mi">5</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">4</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span>^<span class="mi">4</span><span class="o">*</span><span class="n">b3</span><span class="o">+</span><span class="mi">4</span>^<span class="mi">4</span><span class="o">*</span><span class="n">b4</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">b0</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>  
+<span class="n">b1</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>  
+<span class="n">b2</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>  
+<span class="n">b3</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>  
+<span class="n">b4</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 
-<span class="nb">disp</span><span class="p">([</span><span class="n">c0</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="n">c3</span><span class="w"> </span><span class="n">c4</span><span class="w"> </span><span class="n">c5</span><span class="p">])</span>
+<span class="n">c0</span><span class="o">=</span> <span class="n">a0</span><span class="o">+</span><span class="n">a1</span><span class="o">+</span><span class="n">a2</span><span class="o">+</span><span class="n">a3</span><span class="o">+</span><span class="n">a4</span><span class="p">;</span>
+<span class="n">c1</span><span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b0</span><span class="o">+</span><span class="n">b1</span><span class="o">+</span><span class="n">b2</span><span class="o">+</span><span class="n">b3</span><span class="o">+</span><span class="n">b4</span><span class="p">);</span>
+<span class="n">c2</span><span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">b3</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">b4</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">c3</span><span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">b3</span><span class="o">+</span><span class="mi">4</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">b4</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">c4</span><span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">b3</span><span class="o">+</span><span class="mi">4</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">b4</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">c5</span><span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">5</span><span class="o">*</span><span class="n">a2</span><span class="o">+</span><span class="mi">3</span><span class="o">**</span><span class="mi">5</span><span class="o">*</span><span class="n">a3</span><span class="o">+</span><span class="mi">4</span><span class="o">**</span><span class="mi">5</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">b2</span><span class="o">+</span><span class="mi">3</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">b3</span><span class="o">+</span><span class="mi">4</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">b4</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c0=&quot;</span><span class="p">,</span><span class="n">c0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c1=&quot;</span><span class="p">,</span><span class="n">c1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c2=&quot;</span><span class="p">,</span><span class="n">c2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c3=&quot;</span><span class="p">,</span><span class="n">c3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c4=&quot;</span><span class="p">,</span><span class="n">c4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c5=&quot;</span><span class="p">,</span><span class="n">c5</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Output</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0              0              0              0              1/6            2/15   
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c0= 0
+c1= 0
+c2= 0
+c3= 0
+c4= 1/6
+c5= 2/15
 </pre></div>
 </div>
-<p><span class="math notranslate nohighlight">\(C_0 =0,~ C_1=0, ~ C_2=0,~ C_3 =0,~ C_4=\frac{1}{6}\)</span></p>
+</div>
+</div>
 <p>therefore the order of accuracy of the method is <span class="math notranslate nohighlight">\(3\)</span>.</p>
-</li>
-<li><p>Implementing the method in Matlab.</p>
+</section>
+<section id="code-implementation">
+<h2><span class="section-number">5.1.2. </span>Code Implementation<a class="headerlink" href="#code-implementation" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p><span class="math notranslate nohighlight">\(h=0.1\)</span></p>
 <div class="sd-tab-set docutils">
@@ -638,13 +670,11 @@ Python</label><div class="sd-tab-content docutils">
 </div>
 <img alt="../../_images/ch5_example1_h005_plot.svg" src="../../_images/ch5_example1_h005_plot.svg" /></li>
 </ul>
-</li>
-</ol>
-</div>
-<div class="dropdown question admonition">
+<div class="question admonition">
 <p class="admonition-title">Question</p>
 <p>The 2-step looks so good, its order of accuracy is <span class="math notranslate nohighlight">\(3\)</span>. But why it produces such significant errors in the results?</p>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -660,7 +690,7 @@ Python</label><div class="sd-tab-content docutils">
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/05"
+            path: "./chaps\05"
         },
         predefinedOutput: true
     }
@@ -702,7 +732,21 @@ Python</label><div class="sd-tab-content docutils">
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy">5.1.1. Accuracy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-implementation">5.1.2. Code Implementation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -732,7 +776,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Monday 15 January 2024 14:30:43.
+  Last updated on Monday 15 January 2024 22:49:08.
   <br/>
 </p>
   </div>

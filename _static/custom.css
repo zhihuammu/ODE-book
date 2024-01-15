@@ -224,3 +224,16 @@ tr:nth-child(even) {
 td {
   border: 0;
 }
+
+/*********************************************
+* article content width*
+*********************************************/
+
+.bd-main .bd-content .bd-article-container {
+  max-width: 65em;  /* default is 60em */
+}
+
+
+.bd-page-width {
+  max-width: 93em;  /* default is 88rem */
+}
