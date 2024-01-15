@@ -12,7 +12,7 @@ def yexact(t,lam):
 
 #interval of definition
 L=1.0;
-nsteps=21;
+nsteps=41;
 h=L/(nsteps-1);
 
 #lambda

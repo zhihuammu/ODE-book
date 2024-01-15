@@ -1,5 +1,5 @@
 (chap:derivation)=
-# Multistep Methods: Derivation by Finite Difference formulae
+# Multistep Methods: Derivation
 
 **Learning Objectives**:
 

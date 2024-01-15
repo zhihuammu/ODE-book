@@ -5,7 +5,7 @@ title     : Linear Multistep Methods
 # author    : "<a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>"
 author    : "Dr Zhihua Ma"
 copyright : "2023--2025"  # Copyright year to be placed in the footer
-logo      : images/logo/logo1.svg
+logo      : /images/logo/logo1.svg
 email     : "z.ma@mmu.ac.uk"
 
 only_build_toc_files: true 
@@ -35,13 +35,7 @@ repository:
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   favicon               : images/logo/odefavicon.png  # A path to a favicon image
-  home_page_in_navbar   : false
-  use_multitoc_numbering: false     
-  use_repository_button : false
-  use_edit_page_button  : false
-  use_issues_button     : false
-  use_download_button   : false
-  use_source_button     : false 
+  # use_multitoc_numbering: false     
   comments:
     hypothesis          : false
   announcement          : ""
@@ -50,22 +44,7 @@ sphinx:
   config:
     # bibtex_reference_style: author_year    
     html_show_copyright: true
-    language: en
-    # latex_engine: 'xelatex'
-    # latex_elements:
-    #     preamble: |
-    #       \newcommand{\N}{\mathbb{N}}
-    #       \newcommand{\Z}{\mathbb{Z}}
-    #       \newcommand{\R}{\mathbb{R}}
-    #       \newcommand{\C}{\mathbb{C}}
-    #       \newcommand{\D}{\mathrm{D}}
-    #       \newcommand{\E}{\mathrm{E}}
-    #       \newcommand{\S}{\mathrm{S}}
-    #       \newcommand{\dy}{\mathrm{d}y}
-    #       \newcommand{\dx}{\mathrm{d}x}
-    #       \newcommand{\ds}{\mathrm{d}s}
-    #       \newcommand{\dt}{\mathrm{d}t}
-    #       \usepackage{physics}                                            
+    language: en                                       
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     mathjax3_config:
       tex:
@@ -76,8 +55,9 @@ sphinx:
           "C": "\\mathbb{C}"
           "E": "\\mathrm{E}"
           "S": "\\mathrm{S}"
-          "D": "\\mathcal{D}"          
-          "L": "\\mathscr{L}"          
+          "D": "\\mathrm{D}"          
+          "L": "\\mathrm{L}"        
+          "F": "\\mathscr{F}"     
           "dy": "\\mathrm{d}y"
           "dx": "\\mathrm{d}x"
           "ds": "\\mathrm{d}s"
@@ -86,44 +66,9 @@ sphinx:
           "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}",3,'']
           "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}",3,'']
     hide_solutions: false
-    html_theme: sphinx_book_theme
-    # html_theme: sphinx_orange_book_theme    
-    # html_theme: sphinx_rtd_theme
-    # html_theme: pydata_sphinx_theme
-    # templates_path: ['_templates']  #This conflicts with sphinx_book_theme
-    html_theme_options:    
+    html_theme_options: 
       navigation_with_keys: True
       show_toc_level  : 3      
-      # footer_start  : sphinx-version
-      # footer_end    : theme-version    
-      # extra_navbar  : "FOOBAR2" #not supported anymore
-      # extra_footer  : "<div>Powered by <a href='https://jupyterbook.org'>Jupyter Book</a></div>"
-      # primary_sidebar_end: 
-      #   - sphinx-version
-      #   - copyright
-      #   - theme-version
-      #   - last-updated
-      # content_footer_items:
-      #   - theme-version
-      #   - last-updated
-      #   - copyright
-      #   - sphinx-version
-      # navbar_start      : navbar-logo
-      # navbar_center     : navbar-nav
-      # navbar_end        : navbar-icon-links
-      # navbar_persistent : search-button
-      # navbar_align      : right
-    # html_sidebars :
-    #   '**': 
-    #     - sbt-sidebar-nav
-    #     - indices          
-        # - navbar-logo
-        # - search-field                
-        # - sidebar-nav-bs
-      
-      # secondary_sidebar_items:
-        # - page-toc
-        # - edit-this-page
     html_last_updated_fmt : "%A %d %B %Y %H:%M:%S"
   extra_extensions:
     - sphinx_proof
