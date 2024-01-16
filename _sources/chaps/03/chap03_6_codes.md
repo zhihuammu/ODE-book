@@ -16,8 +16,7 @@ flowchart TD
     id6(END)   
 ```
 ::::
-
-::::{grid-item}
+::::{grid-item-card}
 :columns: 8
 ```{prf:algorithm} Linear Multistep Method for IVPs
 :label: algorithm-LMM
