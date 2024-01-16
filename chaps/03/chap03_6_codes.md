@@ -1,6 +1,6 @@
-
+# Computer Programs
 (ch03:program-design)=
-# Program Design
+## Program Design
 
 
 ```{figure} /images/03/Diagram1.svg
@@ -24,15 +24,16 @@ Flowchart of a general linear multistep method.
 
 4. Calculate step size $h=(\text{tEnd}-\text{tStart})/(N-1)$
 
-5. Give the initial values 
-     - $t(0)=\text{tStart}$
-     - $y(0)$ 
-     - $f(0)=f(t(0), y(0))$
+5. Give the initial values at step $0$
+     - $t_0=\text{tStart}$
+     - $y_0$ 
+     - $f_0=f(t_0, y_0)$
 
-**Produce** starting values from step $1$ to step $k-2$ by one of the following ways:
-- Apply single-step method to produce staring values,
-- Apply analytical solution to produce starting values.
+**Produce** starting values from step $1$ to step $k-1$:
+- $y_1$, $y_2$, ..., $y_{k-1}$
+- $f_1$, $f_2$, ..., $f_{k-1}$
 
+**Apply** Multistep Method
 **Inputs** Given a Network $G=(V,E)$ with flow capacity $c$, a source node $s$, and a sink node $t$
 
 **Output** Compute a flow $f$ from $s$ to $t$ of maximum value
@@ -52,7 +53,7 @@ Flowchart of a general linear multistep method.
 
 
 (ch03:example-program)=
-# Example Programs
+## Example Programs
 
 In order to illustrate the predictor-corrector methods computationally,
 three programs with the corresponding function definitions and
@@ -73,7 +74,7 @@ discussed in detail using Matlab documentation attached.
 Run these programs to check your results for {prf:ref}`example-3.2`.
 
 (ch03:program1)=
-## Program 1 (Matlab and Python)
+### Program 1 (Matlab and Python)
 Using the **analytical solution** to produce starting values.
 :::::{tab-set}
 
@@ -133,7 +134,7 @@ The output of this code is:
 ::::: 
 
 (ch03:program2)=
-## Program 2 (Matlab and Python)
+### Program 2 (Matlab and Python)
 Using the **RK4** method to produce starting values.
 :::::{tab-set}
 
@@ -190,7 +191,7 @@ Output:
 :::::
 
 (ch03:program3)=
-## Program 3 (Matlab only)
+### Program 3 (Matlab only)
 The following code has been tested under **Matlab 2022**
 
 :::{literalinclude} /codes/ch2_prog3.m
