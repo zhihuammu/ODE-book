@@ -8,15 +8,15 @@
 ```{mermaid}
 :align: center
 flowchart TD
-    id1(Start) --> 
+    id1([Start]) --> 
     id2[Define IVP] -->
     id3[Produce Starting Values] -->
     id4[Apply Multistep Method] -->
     id5[/Output Result/] -->
-    id6(END)   
+    id6([END])   
 ```
 ::::
-::::{grid-item-card}
+::::{grid-item}
 :columns: 8
 ```{prf:algorithm} Linear Multistep Method for IVPs
 :label: algorithm-LMM

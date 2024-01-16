@@ -79,7 +79,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="3.5. Predictor-Corrector Methods" href="chap03_5_predictorCorrector.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Tuesday 16 January 2024 21:38:28"/>
+    <meta name="docbuild:last-update" content="Tuesday 16 January 2024 22:00:44"/>
   </head>
   
   
@@ -447,46 +447,42 @@ document.write(`
 <div class="sd-card-body docutils">
 <div align="center" class="mermaid align-center">
             flowchart TD
-    id1(Start) --&gt; 
+    id1([Start]) --&gt; 
     id2[Define IVP] --&gt;
     id3[Produce Starting Values] --&gt;
     id4[Apply Multistep Method] --&gt;
     id5[/Output Result/] --&gt;
-    id6(END)   
+    id6([END])   
         </div>
         </div>
 </div>
 </div>
-<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
+<div class="sd-col sd-d-flex-column sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
 <div class="proof algorithm admonition" id="algorithm-LMM">
 <p class="admonition-title"><span class="caption-number">Algorithm 3.1 </span> (Linear Multistep Method for IVPs)</p>
 <section class="algorithm-content" id="proof-content">
-<p class="sd-card-text"><strong>Define</strong> the IVP</p>
+<p><strong>Define</strong> the IVP</p>
 <ul class="simple">
-<li><p class="sd-card-text">The ODE <span class="math notranslate nohighlight">\(y'=f(t, y)\)</span></p></li>
-<li><p class="sd-card-text">The interval of definition <span class="math notranslate nohighlight">\(I=[\text{tStart}, \text{tEnd}]\)</span></p></li>
-<li><p class="sd-card-text">Number of points <span class="math notranslate nohighlight">\(N\)</span> on <span class="math notranslate nohighlight">\(I\)</span></p></li>
-<li><p class="sd-card-text">Step size <span class="math notranslate nohighlight">\(h=(\text{tEnd}-\text{tStart})/(N-1)\)</span></p></li>
-<li><p class="sd-card-text">Initial values: <span class="math notranslate nohighlight">\(t_0\)</span>, <span class="math notranslate nohighlight">\(y_0\)</span>, <span class="math notranslate nohighlight">\(f_0\)</span></p></li>
+<li><p>The ODE <span class="math notranslate nohighlight">\(y'=f(t, y)\)</span></p></li>
+<li><p>The interval of definition <span class="math notranslate nohighlight">\(I=[\text{tStart}, \text{tEnd}]\)</span></p></li>
+<li><p>Number of points <span class="math notranslate nohighlight">\(N\)</span> on <span class="math notranslate nohighlight">\(I\)</span></p></li>
+<li><p>Step size <span class="math notranslate nohighlight">\(h=(\text{tEnd}-\text{tStart})/(N-1)\)</span></p></li>
+<li><p>Initial values: <span class="math notranslate nohighlight">\(t_0\)</span>, <span class="math notranslate nohighlight">\(y_0\)</span>, <span class="math notranslate nohighlight">\(f_0\)</span></p></li>
 </ul>
-<p class="sd-card-text"><strong>Produce</strong> starting values from step <span class="math notranslate nohighlight">\(1\)</span> to step <span class="math notranslate nohighlight">\(k-1\)</span>:</p>
+<p><strong>Produce</strong> starting values from step <span class="math notranslate nohighlight">\(1\)</span> to step <span class="math notranslate nohighlight">\(k-1\)</span>:</p>
 <ul class="simple">
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(y_1\)</span>, <span class="math notranslate nohighlight">\(y_2\)</span>, …, <span class="math notranslate nohighlight">\(y_{k-1}\)</span></p></li>
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(f_1\)</span>, <span class="math notranslate nohighlight">\(f_2\)</span>, …, <span class="math notranslate nohighlight">\(f_{k-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y_1\)</span>, <span class="math notranslate nohighlight">\(y_2\)</span>, …, <span class="math notranslate nohighlight">\(y_{k-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f_1\)</span>, <span class="math notranslate nohighlight">\(f_2\)</span>, …, <span class="math notranslate nohighlight">\(f_{k-1}\)</span></p></li>
 </ul>
-<p class="sd-card-text"><strong>Apply</strong> the linear multistep method for the remaining steps</p>
+<p><strong>Apply</strong> the linear multistep method for the remaining steps</p>
 <div class="math notranslate nohighlight">
 \[
 \sum_{i=0}^{k} \alpha_i y_{j-k+i} = h\sum_{i=0}^{k}\beta_i f_{j-k+i},
 \quad j=k, \ldots, N-1
 \]</div>
-<p class="sd-card-text"><strong>Output</strong> the result <span class="math notranslate nohighlight">\(\{y_j\}_{j=0}^{N-1}\)</span></p>
+<p><strong>Output</strong> the result <span class="math notranslate nohighlight">\(\{y_j\}_{j=0}^{N-1}\)</span></p>
 </section>
 </div></div>
-</div>
-</div>
 </div>
 </div>
 </section>
@@ -941,7 +937,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 16 January 2024 21:38:28.
+  Last updated on Tuesday 16 January 2024 22:00:44.
   <br/>
 </p>
   </div>
