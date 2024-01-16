@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="2.1. Introduction" href="chap02_1_introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Monday 15 January 2024 22:49:08"/>
+    <meta name="docbuild:last-update" content="Tuesday 16 January 2024 17:47:16"/>
   </head>
   
   
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_3_explicit.html">3.3. Explicit  Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_4_implicit.html">3.4. Implicit  Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_5_predictorCorrector.html">3.5. Predictor-Corrector Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03/chap03_6_codes.html">3.6. Example Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_6_codes.html">3.6. Computer Programs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_7_exercise.html">3.7. Chapter 3 Exercises</a></li>
 </ul>
 </li>
@@ -467,13 +467,13 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (Forward Difference)</p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order <span class="target" id="index-1"></span>forward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between the next member and itself:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8f22da25-58e1-4024-810e-5286a1d044d4">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-8f22da25-58e1-4024-810e-5286a1d044d4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f44572f1-e957-4628-9bf3-b92663733c6a">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-f44572f1-e957-4628-9bf3-b92663733c6a" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta f_j = f_{j+1} - f_j,
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k-\)</span>th order forward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-264d061c-0eba-41f8-b8aa-7f0eb23cb1f8">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-264d061c-0eba-41f8-b8aa-7f0eb23cb1f8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6b256541-30b4-4aa6-8820-2142b92422b1">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-6b256541-30b4-4aa6-8820-2142b92422b1" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta^k f_j= \Delta\left(\Delta^{k-1} f_j \right).
 \end{equation}\]</div>
 </section>
@@ -525,13 +525,13 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Definition 2.2 </span> (Backward Difference)</p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order <span class="target" id="index-2"></span>backward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between itself and the previous member:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-77866ddf-fa76-45a1-8621-8705259e261a">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-77866ddf-fa76-45a1-8621-8705259e261a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bae5347c-73e7-4800-bb07-6d4080ccf415">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-bae5347c-73e7-4800-bb07-6d4080ccf415" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla f_j = f_{j} - f_{j-1},
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k\)</span>-th order backward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6d1c72b0-454f-4eef-b0f1-5d2235cc7cb8">
-<span class="eqno">(2.4)<a class="headerlink" href="#equation-6d1c72b0-454f-4eef-b0f1-5d2235cc7cb8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f3ed4982-9327-4e65-9c27-d41777aae4d7">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-f3ed4982-9327-4e65-9c27-d41777aae4d7" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla^k f_j= \nabla\left(\nabla^{k-1} f_j \right).
 \end{equation}\]</div>
 </section>
@@ -586,8 +586,8 @@ document.write(`
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>,
 we define <span class="math notranslate nohighlight">\(\E\)</span> as an operator <span class="target" id="index-3"></span>shifting a member in a sequence to the next member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b4079495-436f-41d4-83b6-f143da7e7a2f">
-<span class="eqno">(2.5)<a class="headerlink" href="#equation-b4079495-436f-41d4-83b6-f143da7e7a2f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-df2dc314-8792-4fff-8d89-9c443d9b6975">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-df2dc314-8792-4fff-8d89-9c443d9b6975" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \E  f_j = f_{j+1},
 \end{equation}\]</div>
 <p>and shifting a member forward <span class="math notranslate nohighlight">\(k\)</span> times gives</p>
@@ -595,8 +595,8 @@ we define <span class="math notranslate nohighlight">\(\E\)</span> as an operato
 \[\E ^k f_j= \E  (\E ^{k-1}f_j)= f_{j+k}.\]</div>
 <p>Similarly, we define <span class="math notranslate nohighlight">\(\E ^{-1}\)</span> as an operator shifting a member in a
 sequence to the previous member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b55f7c8e-f753-4d3f-bfb1-6f9a42258abd">
-<span class="eqno">(2.6)<a class="headerlink" href="#equation-b55f7c8e-f753-4d3f-bfb1-6f9a42258abd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-836d9a18-2686-469f-a48a-d9e2e2b3b8cf">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-836d9a18-2686-469f-a48a-d9e2e2b3b8cf" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \E ^{-1} f_j = f_{j-1}
 \end{equation}\]</div>
 <p>and shifting a member backward <span class="math notranslate nohighlight">\(k\)</span> (<span class="math notranslate nohighlight">\(k&gt;0\)</span>) times gives</p>
@@ -777,7 +777,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Monday 15 January 2024 22:49:08.
+  Last updated on Tuesday 16 January 2024 17:47:16.
   <br/>
 </p>
   </div>

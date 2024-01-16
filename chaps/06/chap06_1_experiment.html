@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="6. Multistep Methods: Stability II" href="chap06_0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Monday 15 January 2024 22:49:08"/>
+    <meta name="docbuild:last-update" content="Tuesday 16 January 2024 17:47:16"/>
   </head>
   
   
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_3_explicit.html">3.3. Explicit  Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_4_implicit.html">3.4. Implicit  Multistep Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_5_predictorCorrector.html">3.5. Predictor-Corrector Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03/chap03_6_codes.html">3.6. Example Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_6_codes.html">3.6. Computer Programs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/chap03_7_exercise.html">3.7. Chapter 3 Exercises</a></li>
 </ul>
 </li>
@@ -416,8 +416,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-accuracy">6.1.1. Solution: Accuracy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-code-implementation">6.1.2. Solution: Code Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy">6.1.1. Accuracy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-implementation">6.1.2. Code Implementation</a></li>
 </ul>
             </nav>
         </div>
@@ -429,9 +429,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell tag_remove-input docutils container">
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="an-experiment">
+  <section class="tex2jax_ignore mathjax_ignore" id="an-experiment">
 <h1><span class="section-number">6.1. </span>An experiment<a class="headerlink" href="#an-experiment" title="Permalink to this heading">#</a></h1>
 <div class="proof example admonition" id="example-0">
 <p class="admonition-title"><span class="caption-number">Example 6.1 </span></p>
@@ -439,12 +437,12 @@ document.write(`
 <p>Solve the following initial value problem</p>
 <div class="math notranslate nohighlight">
 \[
-y' = -\lambda y + \lambda t + 1, ~ t\in [0, 1], ~ y(0)=1, ~\lambda=10
+y' = -\lambda y + \lambda t + 1, \quad t\in [0, 1], ~ y(0)=1, ~\lambda=10
 \]</div>
 <p>by using the 4-step Adams-Bashforth method</p>
 <div class="math notranslate nohighlight">
 \[
-y_{j+1} = y_j + \frac{h}{24}\left[\,55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}\right].
+y_{j+1} = y_j + \frac{h}{24}\left(\,55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}\right).
 \]</div>
 <p>You should</p>
 <ol class="arabic">
@@ -455,13 +453,13 @@ y_{j+1} = y_j + \frac{h}{24}\left[\,55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}\rig
 </li>
 </ol>
 </section>
-</div><section id="solution-accuracy">
-<h2><span class="section-number">6.1.1. </span>Solution: Accuracy<a class="headerlink" href="#solution-accuracy" title="Permalink to this heading">#</a></h2>
+</div><section id="accuracy">
+<h2><span class="section-number">6.1.1. </span>Accuracy<a class="headerlink" href="#accuracy" title="Permalink to this heading">#</a></h2>
 <p>We can find the error constant of the method (see Chapter 3). Rearranging the formula as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 &amp; y_{j+1} - y_j + 0 y_{j-1} + 0 y_{j-2} + 0 y_{j-3}  \\
-    = &amp; h \left[ 0 f_{j+1}+ \tfrac{5}{24}f_j - \tfrac{59}{24}f_{j-1} + \tfrac{37}{24}f_{j-2} - \tfrac{9}{24}f_{j-3} \right],
+    = &amp; h \left( 0 f_{j+1}+ \tfrac{5}{24}f_j - \tfrac{59}{24}f_{j-1} + \tfrac{37}{24}f_{j-2} - \tfrac{9}{24}f_{j-3} \right),
 \end{split}\]</div>
 <p>so</p>
 <div class="math notranslate nohighlight">
@@ -524,9 +522,13 @@ c5= 251/720
 </div>
 <p>therefore the order of accuracy of the method is <span class="math notranslate nohighlight">\(4\)</span>.</p>
 </section>
-<section id="solution-code-implementation">
-<h2><span class="section-number">6.1.2. </span>Solution: Code Implementation<a class="headerlink" href="#solution-code-implementation" title="Permalink to this heading">#</a></h2>
-<p>First, let’s try a step size <span class="math notranslate nohighlight">\(h=0.05\)</span></p>
+<section id="code-implementation">
+<h2><span class="section-number">6.1.2. </span>Code Implementation<a class="headerlink" href="#code-implementation" title="Permalink to this heading">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+</div>
+<ul class="simple">
+<li><p>First, let’s try a step size <span class="math notranslate nohighlight">\(h=0.05\)</span></p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -592,13 +594,13 @@ c5= 251/720
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;r-o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;numerical&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">te</span><span class="p">,</span><span class="n">ye</span><span class="p">,</span><span class="s1">&#39;b-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;exact&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$y$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$t$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$y$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper center&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Solution to $y&#39;=-10y+t+1, y(0)=1, h=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;$&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="c1">#plt.ylim([0, 1.2])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Solution to $y&#39;=-10y+t+1, y(0)=1, h=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;$&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>        
 </pre></div>
 </div>
@@ -628,9 +630,11 @@ c5= 251/720
  20  1.000 1.44419e+00 -3.44187e+00 1.00005e+00 4.44142e-01
 </pre></div>
 </div>
-<img alt="../../_images/dcb1106f0e8b10f3091dee726c1ec8f0256607c2f2c5510eecb4c373cfb58a7b.svg" src="../../_images/dcb1106f0e8b10f3091dee726c1ec8f0256607c2f2c5510eecb4c373cfb58a7b.svg" /></div>
+<img alt="../../_images/230fb60c55cb75ece2f3a3e109d9723bb436093a46a00890b41a218a3078f7e0.svg" src="../../_images/230fb60c55cb75ece2f3a3e109d9723bb436093a46a00890b41a218a3078f7e0.svg" /></div>
 </div>
-<p>It seems the errors are too big, so let’s try a smaller step size <span class="math notranslate nohighlight">\(h=0.025\)</span>.</p>
+<ul class="simple">
+<li><p>It seems the errors are too large, so let’s try a smaller step size <span class="math notranslate nohighlight">\(h=0.025\)</span>.</p></li>
+</ul>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -642,7 +646,7 @@ c5= 251/720
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="c1">#plt.rcParams[&#39;text.usetex&#39;] = True</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;text.usetex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">lam</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">lam</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">y</span><span class="o">+</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
@@ -701,13 +705,13 @@ c5= 251/720
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;r-o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;numerical&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">te</span><span class="p">,</span><span class="n">ye</span><span class="p">,</span><span class="s1">&#39;b-&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;exact&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$y$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$t$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$y$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper center&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Solution to $y&#39;=-10y+t+1, y(0)=1, h=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;$&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="c1">#plt.ylim([0, 1.2])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Solution to $y&#39;=-10y+t+1, y(0)=1, h=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;$&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>        
 </pre></div>
 </div>
@@ -758,9 +762,9 @@ c5= 251/720
  40  1.000 1.00005e+00 9.99533e-01 1.00005e+00 1.31874e-06
 </pre></div>
 </div>
-<img alt="../../_images/3a72b2e54dc245571c02dba568590921d4d059659215c973334607a84588f3e7.svg" src="../../_images/3a72b2e54dc245571c02dba568590921d4d059659215c973334607a84588f3e7.svg" /></div>
+<img alt="../../_images/d86cc345507823d36d979828e30a630ec83abc9a02413ce7bde1d5b488725bb1.svg" src="../../_images/d86cc345507823d36d979828e30a630ec83abc9a02413ce7bde1d5b488725bb1.svg" /></div>
 </div>
-<p>This time the solution looks quite good.</p>
+<p>The solution looks quite good now.</p>
 <div class="question admonition">
 <p class="admonition-title">Questions</p>
 <p>When the step size is <span class="math notranslate nohighlight">\(h=0.05\)</span>, the numerical solution is unstable. After we reduced it to <span class="math notranslate nohighlight">\(h=0.0025\)</span>, the solution become stable.</p>
@@ -837,8 +841,8 @@ c5= 251/720
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-accuracy">6.1.1. Solution: Accuracy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-code-implementation">6.1.2. Solution: Code Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy">6.1.1. Accuracy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-implementation">6.1.2. Code Implementation</a></li>
 </ul>
   </nav></div>
 
@@ -872,7 +876,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Monday 15 January 2024 22:49:08.
+  Last updated on Tuesday 16 January 2024 17:47:16.
   <br/>
 </p>
   </div>
