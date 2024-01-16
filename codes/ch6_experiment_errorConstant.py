@@ -8,11 +8,11 @@ Created on Mon Jan 15 13:00:22 2024
 import math
 from fractions import Fraction
 
-a0=0;      
-a1=0;      
-a2=0;       
-a3=-1;     
-a4=1;
+a0=Fraction(0, 1);      
+a1=Fraction(0, 1);      
+a2=Fraction(0, 1);       
+a3=Fraction(-1, 1);     
+a4=Fraction(1, 1);
 
 b0=Fraction(-9, 24);  
 b1=Fraction(37, 24);  

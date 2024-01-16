@@ -5,7 +5,7 @@ title     : Linear Multistep Methods
 # author    : "<a href='mailto:z.ma@mmu.ac.uk'>Dr Zhihua Ma</a>"
 author    : "Dr Zhihua Ma"
 copyright : "2023--2025"  # Copyright year to be placed in the footer
-logo      : /images/logo/logo1.svg
+logo      : images/logo/logo1.svg
 email     : "z.ma@mmu.ac.uk"
 
 only_build_toc_files: true 
