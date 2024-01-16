@@ -10,25 +10,19 @@ kernelspec:
   name: python3
 ---
 
-```{code-cell}ipython
-:tags: ["remove-input"]
-import matplotlib_inline.backend_inline
-matplotlib_inline.backend_inline.set_matplotlib_formats("svg")
-```
-
 # An experiment
 
 :::{prf:example}
 Solve the following initial value problem
 
 $$
-y' = -\lambda y + \lambda t + 1, ~ t\in [0, 1], ~ y(0)=1, ~\lambda=10
+y' = -\lambda y + \lambda t + 1, \quad t\in [0, 1], ~ y(0)=1, ~\lambda=10
 $$
 
 by using the 4-step Adams-Bashforth method
 
 $$
-y_{j+1} = y_j + \frac{h}{24}\left[\,55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}\right].
+y_{j+1} = y_j + \frac{h}{24}\left(\,55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}\right).
 $$
 
 You should
@@ -39,12 +33,12 @@ You should
 :::
 
 
-## Solution: Accuracy    
+## Accuracy    
 We can find the error constant of the method (see Chapter 3). Rearranging the formula as
 
 $$
 & y_{j+1} - y_j + 0 y_{j-1} + 0 y_{j-2} + 0 y_{j-3}  \\
-    = & h \left[ 0 f_{j+1}+ \tfrac{5}{24}f_j - \tfrac{59}{24}f_{j-1} + \tfrac{37}{24}f_{j-2} - \tfrac{9}{24}f_{j-3} \right],
+    = & h \left( 0 f_{j+1}+ \tfrac{5}{24}f_j - \tfrac{59}{24}f_{j-1} + \tfrac{37}{24}f_{j-2} - \tfrac{9}{24}f_{j-3} \right),
 $$
 
 so
@@ -97,11 +91,16 @@ print("c5=",c5)
 
 therefore the order of accuracy of the method is $4$.
 
-## Solution: Code Implementation
+## Code Implementation
 
-First, let's try a step size $h=0.05$
+```{code-cell}ipython
+:tags: ["remove-input"]
+import matplotlib.pyplot as plt
+import matplotlib_inline.backend_inline
+matplotlib_inline.backend_inline.set_matplotlib_formats("svg")
+```
 
-
+- First, let's try a step size $h=0.05$
 
 ```{code-cell} ipython
 import math
@@ -167,17 +166,17 @@ for i in range(ne):
 plt.figure(1)
 plt.plot(t,y,'r-o',label="numerical")
 plt.plot(te,ye,'b-',label="exact")
-plt.xlabel(r'$t$', fontsize=20)
-plt.ylabel(r'$y$', fontsize=20)
+plt.xlabel("$t$", fontsize=18)
+plt.ylabel("$y$", fontsize=18)
 plt.legend(loc="upper center", fontsize=14)
-plt.title("Solution to $y'=-10y+t+1, y(0)=1, h="+str(h)+"$",fontsize=16)
-plt.yticks(fontsize=14)
-plt.xticks(fontsize=14)
-#plt.ylim([0, 1.2])
+plt.title("Solution to $y'=-10y+t+1, y(0)=1, h="+str(h)+"$",fontsize=14)
+plt.yticks(fontsize=12)
+plt.xticks(fontsize=12)
+plt.ylim([0.2, 1.5])
 plt.show()        
 ```
 
-It seems the errors are too big, so let's try a smaller step size $h=0.025$.
+- It seems the errors are too large, so let's try a smaller step size $h=0.025$.
 
 ```{code-cell} ipython
 :tags: [hide-input]
@@ -185,7 +184,7 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
-#plt.rcParams['text.usetex'] = True
+plt.rcParams['text.usetex'] = True
 
 def f(t,lam,y):
     return lam*(-y+t)+1;
@@ -244,17 +243,17 @@ for i in range(ne):
 plt.figure(1)
 plt.plot(t,y,'r-o',label="numerical")
 plt.plot(te,ye,'b-',label="exact")
-plt.xlabel(r'$t$', fontsize=20)
-plt.ylabel(r'$y$', fontsize=20)
+plt.xlabel("$t$", fontsize=18)
+plt.ylabel("$y$", fontsize=18)
 plt.legend(loc="upper center", fontsize=14)
-plt.title("Solution to $y'=-10y+t+1, y(0)=1, h="+str(h)+"$",fontsize=16)
-plt.yticks(fontsize=14)
-plt.xticks(fontsize=14)
-#plt.ylim([0, 1.2])
+plt.title("Solution to $y'=-10y+t+1, y(0)=1, h="+str(h)+"$",fontsize=14)
+plt.yticks(fontsize=12)
+plt.xticks(fontsize=12)
+plt.ylim([0.2, 1.5])
 plt.show()        
 ```
 
-This time the solution looks quite good.
+The solution looks quite good now.
 
 
 ```{admonition} Questions

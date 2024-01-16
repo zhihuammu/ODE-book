@@ -1,3 +1,56 @@
+
+(ch03:program-design)=
+# Program Design
+
+
+```{figure} /images/03/Diagram1.svg
+---
+name: LMM-flowchart
+---
+Flowchart of a general linear multistep method.
+```
+
+
+
+```{prf:algorithm} Linear Multistep Method for IVPs
+:label: algorithm-LMM
+
+**Define** the IVP
+1. Define the ODE $y'=f(t, y)$
+
+2. Define the interval of definition $I=[\text{tStart}, \text{tEnd}]$
+
+3. Give number of points $N$ on $I$
+
+4. Calculate step size $h=(\text{tEnd}-\text{tStart})/(N-1)$
+
+5. Give the initial values 
+     - $t(0)=\text{tStart}$
+     - $y(0)$ 
+     - $f(0)=f(t(0), y(0))$
+
+**Produce** starting values from step $1$ to step $k-2$ by one of the following ways:
+- Apply single-step method to produce staring values,
+- Apply analytical solution to produce starting values.
+
+**Inputs** Given a Network $G=(V,E)$ with flow capacity $c$, a source node $s$, and a sink node $t$
+
+**Output** Compute a flow $f$ from $s$ to $t$ of maximum value
+
+1. $f(u, v) \leftarrow 0$ for all edges $(u,v)$
+2. While there is a path $p$ from $s$ to $t$ in $G_{f}$ such that $c_{f}(u,v)>0$
+	for all edges $(u,v) \in p$:
+
+	1. Find $c_{f}(p)= \min \{c_{f}(u,v):(u,v)\in p\}$
+	2. For each edge $(u,v) \in p$
+
+		1. $f(u,v) \leftarrow f(u,v) + c_{f}(p)$ *(Send flow along the path)*
+		2. $f(u,v) \leftarrow f(u,v) - c_{f}(p)$ *(The flow might be "returned" later)*
+```
+
+
+
+
 (ch03:example-program)=
 # Example Programs
 
