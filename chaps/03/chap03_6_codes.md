@@ -2,55 +2,47 @@
 (ch03:program-design)=
 ## Program Design
 
-
-```{figure} /images/03/Diagram1.svg
----
-name: LMM-flowchart
----
-Flowchart of a general linear multistep method.
+::::::{grid}
+::::{grid-item-card}
+:columns: 4
+```{mermaid}
+:align: center
+flowchart TD
+    id1([Start]) --> 
+    id2[Define IVP] -->
+    id3[Produce Starting Values] -->
+    id4[Apply Multistep Method] -->
+    id5[/Output Result/] -->
+    id6([END])   
 ```
-
-
-
+::::
+::::{grid-item}
+:columns: 8
 ```{prf:algorithm} Linear Multistep Method for IVPs
 :label: algorithm-LMM
 
 **Define** the IVP
-1. Define the ODE $y'=f(t, y)$
-
-2. Define the interval of definition $I=[\text{tStart}, \text{tEnd}]$
-
-3. Give number of points $N$ on $I$
-
-4. Calculate step size $h=(\text{tEnd}-\text{tStart})/(N-1)$
-
-5. Give the initial values at step $0$
-     - $t_0=\text{tStart}$
-     - $y_0$ 
-     - $f_0=f(t_0, y_0)$
+- The ODE $y'=f(t, y)$
+- The interval of definition $I=[\text{tStart}, \text{tEnd}]$
+- Number of points $N$ on $I$
+- Step size $h=(\text{tEnd}-\text{tStart})/(N-1)$
+- Initial values: $t_0$, $y_0$, $f_0$
 
 **Produce** starting values from step $1$ to step $k-1$:
 - $y_1$, $y_2$, ..., $y_{k-1}$
 - $f_1$, $f_2$, ..., $f_{k-1}$
 
-**Apply** Multistep Method
-**Inputs** Given a Network $G=(V,E)$ with flow capacity $c$, a source node $s$, and a sink node $t$
+**Apply** the linear multistep method for the remaining steps
 
-**Output** Compute a flow $f$ from $s$ to $t$ of maximum value
+$$
+\sum_{i=0}^{k} \alpha_i y_{j-k+i} = h\sum_{i=0}^{k}\beta_i f_{j-k+i},
+\quad j=k, \ldots, N-1
+$$
 
-1. $f(u, v) \leftarrow 0$ for all edges $(u,v)$
-2. While there is a path $p$ from $s$ to $t$ in $G_{f}$ such that $c_{f}(u,v)>0$
-	for all edges $(u,v) \in p$:
-
-	1. Find $c_{f}(p)= \min \{c_{f}(u,v):(u,v)\in p\}$
-	2. For each edge $(u,v) \in p$
-
-		1. $f(u,v) \leftarrow f(u,v) + c_{f}(p)$ *(Send flow along the path)*
-		2. $f(u,v) \leftarrow f(u,v) - c_{f}(p)$ *(The flow might be "returned" later)*
+**Output** the result $\{y_j\}_{j=0}^{N-1}$
 ```
-
-
-
+::::
+::::::
 
 (ch03:example-program)=
 ## Example Programs

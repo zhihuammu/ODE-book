@@ -72,10 +72,11 @@ sphinx:
     html_last_updated_fmt : "%A %d %B %Y %H:%M:%S"
   extra_extensions:
     - sphinx_proof
-    - sphinx_exercise    
-    - sphinxcontrib.tikz
+    - sphinx_exercise        
     - sphinx_togglebutton      
-    - sphinx_inline_tabs    
+    - sphinx_inline_tabs
+    - sphinxcontrib.tikz
+    - sphinxcontrib.mermaid    
 
 parse:
   myst_enable_extensions:
