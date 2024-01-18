@@ -1,5 +1,5 @@
 (chap02:interpolating)=
-# Interpolating Polynomial
+# Gregory-Newton Interpolating Polynomial
 
 **Learning Objectives:**
 
