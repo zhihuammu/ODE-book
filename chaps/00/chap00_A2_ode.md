@@ -10,7 +10,7 @@ For an $n$-th order ordinary differential equation, we can write it in
 - **General Form**
 
     $$
-    F(x, y, y', y'', \ldots, y^{(n)}) = 0
+    F(t, y, y', y'', \ldots, y^{(n)}) = 0
     $$(eq:ode:form:general)
 
 ```{index} Ordinary Differential Equation; Normal Form
@@ -18,7 +18,7 @@ For an $n$-th order ordinary differential equation, we can write it in
 - **Normal form**
 
     $$
-    \diff[n]{y}{x} = f(x, y', y'', \ldots, y^{(n-1)})
+    \diff[n]{y}{t} = f(t, y', y'', \ldots, y^{(n-1)})
     $$(eq:ode:form:normal)
 
 ```{index} Ordinary Differential Equation; Interval
@@ -44,18 +44,18 @@ and so on.
 ```
 
 ```{prf:definition} Explicit Solution of an ODE
-A function $\phi(x)$ that when substituted for $y$ in equation {eq}`eq:ode:form:general` or {eq}`eq:ode:form:normal`
-satisfies the equation for all $x$ in the interval $I$ is called an **{index}`explicit solution`** to the equation on $I$.
+A function $\phi(t)$ that when substituted for $y$ in equation {eq}`eq:ode:form:general` or {eq}`eq:ode:form:normal`
+satisfies the equation for all $t$ in the interval $I$ is called an **{index}`explicit solution`** to the equation on $I$.
 ```
 
 ```{prf:example}
-1. $\phi(x)=x^2 - x^{-1}$ is an explicit solution to the equation
+1. $\phi(t)=t^2 - t^{-1}$ is an explicit solution to the equation
 
     $$
-    \diff[2]{y}{x} - \frac{2y}{x^2}=0
+    \diff[2]{y}{t} - \frac{2y}{t^2}=0
     $$
 
-2. $\phi(x)=c_1 e^{-x} + c_2 e^{2x}$ is an explicit solution to the equation
+2. $\phi(t)=c_1 e^{-t} + c_2 e^{2t}$ is an explicit solution to the equation
 
     $$
     y'' - y' - 2y=0
@@ -66,26 +66,24 @@ satisfies the equation for all $x$ in the interval $I$ is called an **{index}`ex
 ```
 
 ```{prf:definition} Implicit Solution of an ODE
-A relation $G(x, y) = 0$ is said to be an **{index}`implicit solution`** of an ordinary differential equation {eq}`eq:ode:form:general` on an interval $I$, provided that there exists at least one function $\phi$ that satisfies the relation as well as the differential equation on $I$.
+A relation $G(t, y) = 0$ is said to be an **{index}`implicit solution`** of an ordinary differential equation {eq}`eq:ode:form:general` on an interval $I$, provided that there exists at least one function $\phi$ that satisfies the relation as well as the differential equation on $I$.
 ```
 
 ```{prf:example}
-1. The relation $x^2+y^2=25$ is an implicit solution to the equation
+1. The relation $t^2+y^2=25$ is an implicit solution to the equation
 
     $$
-        \diff{y}{x} = -\frac{x}{y}
+        \diff{y}{t} = -\frac{t}{y}
     $$
 
     on the open interval $(-5, 5)$.
 
-2.  The relation $y^2 - x^3 + 8=0$ implicitly defines a solution to the nonlinear equation
+2.  The relation $y^2 - t^3 + 8=0$ implicitly defines a solution to the nonlinear equation
 
     $$
-    \diff{y}{x}=\frac{3x^2}{2y}
+    \diff{y}{t}=\frac{3t^2}{2y}
     $$
 ```
-
-<!-- ## Initial value problem -->
 
 ```{index} triple: Ordinary Differential Equation; Initial Value Problem; IVP
 ```
@@ -94,20 +92,34 @@ A relation $G(x, y) = 0$ is said to be an **{index}`implicit solution`** of an o
 For an $n${sup}`th` order differential equation
 
 $$
-F(x, y, y', y'', \ldots, y^{(n)}) = 0,
+F(t, y, y', y'', \ldots, y^{(n)}) = 0,
 $$(eq:IVP)
 
-if we specify the value of $y$, $y'$, ..., $y^{(n-1)}$ at the lower bound $x_0$ of its interval of definition $I$ as
+if we specify the value of $y$, $y'$, ..., $y^{(n-1)}$ at the lower bound $t_0$ of its interval of definition $I$ as
 
 $$
-y(x_0) = & ~y_0, \\
-y'(x_0) = & ~y_1, \\
+y(t_0) = & ~y_0, \\
+y'(t_0) = & ~y_1, \\
   \vdots ~ & ~ \\
-y^{(n-1)}(x_0) = & ~y_{n-1}
+y^{(n-1)}(t_0) = & ~y_{n-1}
 $$ (eq:IVP:initial:condition)
 
 where $y_0$, $y_1$, ... , $y_{n-1}$ are given constants, then we call this problem an initial value problem.  The values specified in {eq}`eq:IVP:initial:condition` are called initial conditions.
 ```
+
+```{index} Ordinary Differential Equation; Lipschitz Continuity
+```
+
+```{prf:definition} Lipschitz Continuity
+For a real-value function $f: I \subseteq \R \rightarrow \R$, if there exists a real non-negative constant $K$ and 
+
+$$
+|f(a) - f(b)| \leq K |a-b| \quad \forall a, b \in I, 
+$$(eq:IVP:Lipschitz)
+
+then $f$ is Lipschitz continuous, and Eq. {eq}`eq:IVP:Lipschitz` is called the Lipschitz continuity condition.
+```
+
 
 ```{index} Ordinary Differential Equation; Existence and Uniqueness
 ```
@@ -116,16 +128,16 @@ where $y_0$, $y_1$, ... , $y_{n-1}$ are given constants, then we call this probl
 Consider the initial value problem
 
 $$
-\diff{y}{x} = f(x,y), \quad y(x_0) = y_0.
+\diff{y}{t} = f(t, y), \quad y(t_0) = y_0.
 $$
 
-If $f$ and $\displaystyle\pdiff{f}{y}$ are continuous functions (see also [Lipschitz continuity](https://en.wikipedia.org/wiki/Lipschitz_continuity)) in some rectangle
+If $f$ is continuous in $t$ and Lipschitz continuous in $y$ in some rectangle
 
 $$
-R=\left\{ (x,y): a<x<b, ~ c<y<d \right\}
+R=\left\{ (t, y): a<t<b, ~ c<y<d \right\}
 $$
 
-that contains the point $(x_0, y_0)$, then the initial value problem has a unique solution $\phi(x)$ in some interval $x_0 - \delta < x < x_0 + \delta$, where $\delta$ is a positive number.
+that contains the point $(t_0, y_0)$, then the initial value problem has a unique solution $\phi(t)$ in some interval $[t_0 - \delta,  t_0 + \delta]$, where $\delta$ is a positive number.
 ```
 
 ## Systems of Differential Equations

@@ -18,14 +18,16 @@ parts:
     chapters: 
     - file: chaps/00/chap00_B_symbols
     - file: chaps/00/chap00_B_biexpan   
-    - file: chaps/00/chap00_A0_DE
-      sections: 
-      - glob: chaps/00/chap00_A*
+
     
   - caption: Lectures
     maxdepth: 1
     numbered: true      
     chapters:
+    - file: chaps/00/chap00_A0_DE
+      sections: 
+      - glob: chaps/00/chap00_A*
+          
     - file: chaps/01/chap01_0
       sections: 
       - glob: chaps/01/chap01_*   
