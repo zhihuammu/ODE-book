@@ -119,7 +119,7 @@ $$
 \diff{y}{x} = f(x,y), \quad y(x_0) = y_0.
 $$
 
-If $f$ and $\displaystyle\pdiff{f}{y}$ are continuous functions in some rectangle
+If $f$ and $\displaystyle\pdiff{f}{y}$ are continuous functions (see also [Lipschitz continuity](https://en.wikipedia.org/wiki/Lipschitz_continuity)) in some rectangle
 
 $$
 R=\left\{ (x,y): a<x<b, ~ c<y<d \right\}
