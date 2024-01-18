@@ -1,5 +1,5 @@
 (chap:stability1)=
-# Multistep Methods: Stability I 
+# Multistep Methods: Zero-Stability and Convergence 
 
 **Learning Objective**
 

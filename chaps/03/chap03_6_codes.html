@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>3.6. Computer Programs &#8212; Linear Multistep Methods</title>
+    <title>4.6. Computer Programs &#8212; Linear Multistep Methods</title>
   
   
   
@@ -75,11 +75,11 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/odefavicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.7. Chapter 3 Exercises" href="chap03_7_exercise.html" />
-    <link rel="prev" title="3.5. Predictor-Corrector Methods" href="chap03_5_predictorCorrector.html" />
+    <link rel="next" title="4.7. Chapter 3 Exercises" href="chap03_7_exercise.html" />
+    <link rel="prev" title="4.5. Predictor-Corrector Methods" href="chap03_5_predictorCorrector.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Thursday 18 January 2024 13:12:21"/>
+    <meta name="docbuild:last-update" content="Thursday 18 January 2024 23:25:07"/>
   </head>
   
   
@@ -188,80 +188,80 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_symbols.html">Symbols and Notation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_biexpan.html">Binomial Expansion</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_A0_DE.html">Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A1_definition.html">Definitions, Classification and Terminology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A2_ode.html">Ordinary Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A3_analytical.html">Analytical Methods for ODEs</a></li>
-</ul>
-</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">1. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../01/chap01_1_complexNumber.html">1.1. Complex Numbers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../01/chap01_2_sequence.html">1.2. Sequences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../01/chap01_3_differenceEquation.html">1.3. Difference Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../01/chap01_4_homogenous.html">1.4. Homogeneous Linear Difference Equations with Constant Coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../01/chap01_5_exercise.html">1.5. Chapter 1 Exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_A0_DE.html">1. Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A1_definition.html">1.1. Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A2_ode.html">1.2. Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A3_analytical.html">1.3. Analytical Methods for ODEs</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02/chap02_0.html">2. Interpolating Polynomial</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../02/chap02_1_introduction.html">2.1. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02/chap02_2_differenceOperator.html">2.2. Finite Difference Operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02/chap02_3_interpolation.html">2.3. Gregory-Newton Interpolation Formulae</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02/chap02_4_differenceTable.html">2.4. Finite Difference Tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02/chap02_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">2. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_1_complexNumber.html">2.1. Complex Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_2_sequence.html">2.2. Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_3_differenceEquation.html">2.3. Difference Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_4_homogenous.html">2.4. Homogeneous Linear Difference Equations with Constant Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_5_exercise.html">2.5. Chapter 1 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap03_0.html">3. Multistep Methods: Derivation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chap03_1_multistepMethod.html">3.1. Multistep Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_2_derivation.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_3_explicit.html">3.3. Explicit  Multistep Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_4_implicit.html">3.4. Implicit  Multistep Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_5_predictorCorrector.html">3.5. Predictor-Corrector Methods</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.6. Computer Programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap03_7_exercise.html">3.7. Chapter 3 Exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02/chap02_0.html">3. Gregory-Newton Interpolating Polynomial</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_1_introduction.html">3.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_2_differenceOperator.html">3.2. Finite Difference Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_3_interpolation.html">3.3. Gregory-Newton Interpolation Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_4_differenceTable.html">3.4. Finite Difference Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_5_exercise.html">3.5. Chapter 2 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04/chap04_0.html">4. Multistep Methods: Order and Error Constants</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../04/chap04_1_errorIntegration.html">4.1. Derivation of Local Error Terms for Integration Formulae</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04/chap04_2_errorConstant.html">4.2. Order and Error Constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04/chap04_3_MilineDevice.html">4.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04/chap04_4_exercise.html">4.4. Chapter 4 Exercises</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap03_0.html">4. Multistep Methods: Derivation through Integration</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chap03_1_multistepMethod.html">4.1. Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_2_derivation.html">4.2. Derivation of Multistep Methods by Numerical Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_3_explicit.html">4.3. Explicit  Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_4_implicit.html">4.4. Implicit  Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_5_predictorCorrector.html">4.5. Predictor-Corrector Methods</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.6. Computer Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap03_7_exercise.html">4.7. Chapter 3 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../05/chap05_0.html">5. Multistep Methods: Stability I</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../05/chap05_1_experiment.html">5.1. An exploratory experiment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05/chap05_2_rootCondition.html">5.2. Characteristic Polynomials and Root Condition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05/chap05_3_convergence.html">5.3. Zero-Stability, Consistency and Convergence Theorem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05/chap05_4_exercise.html">5.4. Chapter 5 Exercise</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04/chap04_0.html">5. Multistep Methods: Accuracy and Error Constants</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_1_errorIntegration.html">5.1. Derivation of Local Error Terms for Integration Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_2_errorConstant.html">5.2. Order and Error Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_3_MilineDevice.html">5.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_4_exercise.html">5.4. Chapter 4 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">6. Multistep Methods: Stability II</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_experiment.html">6.1. An experiment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_stabilityInterval.html">6.2. Interval and Region of Absolute Stability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_rootLocus.html">6.3. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_4_boundaryRootLocus.html">6.4. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exampleCode.html">6.5. Example MATLAB Programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_6_exercise.html">6.6. Chapter 6 Exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05/chap05_0.html">6. Multistep Methods: Zero-Stability and Convergence</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_1_experiment.html">6.1. An exploratory experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_2_rootCondition.html">6.2. Characteristic Polynomials and Root Condition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_3_convergence.html">6.3. Zero-Stability, Consistency and Convergence Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_4_exercise.html">6.4. Chapter 5 Exercise</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../07/chap07_1_introduction.html">7.1. Introduction and background</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../07/chap07_2_stiffSystem.html">7.2. Stiff Systems of Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../07/chap07_3_method.html">7.3. Methods for Stiff Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../07/chap07_4_codeExample.html">7.4. MATLAB Program 4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../07/chap07_5_exercise.html">7.5. Chapter 7 Exercise</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">7. Multistep Methods: Stability Interval and Region</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_experiment.html">7.1. An experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_stabilityInterval.html">7.2. Interval and Region of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_rootLocus.html">7.3. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_4_boundaryRootLocus.html">7.4. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exampleCode.html">7.5. Example MATLAB Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_6_exercise.html">7.6. Chapter 6 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../08/chap08_0.html">8. Sparse Matrices</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_1_introduction.html">8.1. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_2_sparseMatrix.html">8.2. Sparse Matrices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_3_graphTheory.html">8.3. Matrix Sparsity and Graph Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_4_storage.html">8.4. Sparse Matrices Storage and Reordering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_5_reordering.html">8.5. Reordering and Matrix Bandwidth</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_6_exercise.html">8.6. Chapter 8 Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_7_answers.html">8.7. Answers to Chapter 8 Exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">8. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_1_introduction.html">8.1. Introduction and background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_2_stiffSystem.html">8.2. Stiff Systems of Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_3_method.html">8.3. Methods for Stiff Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_4_codeExample.html">8.4. MATLAB Program 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_5_exercise.html">8.5. Chapter 7 Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08/chap08_0.html">9. Sparse Matrices</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_1_introduction.html">9.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_2_sparseMatrix.html">9.2. Sparse Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_3_graphTheory.html">9.3. Matrix Sparsity and Graph Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_4_storage.html">9.4. Sparse Matrices Storage and Reordering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_5_reordering.html">9.5. Reordering and Matrix Bandwidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_6_exercise.html">9.6. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_7_answers.html">9.7. Answers to Chapter 8 Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -418,11 +418,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#program-design">3.6.1. Program Design</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-programs">3.6.2. Example Programs</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-1-matlab-and-python">3.6.2.1. Program 1 (Matlab and Python)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-2-matlab-and-python">3.6.2.2. Program 2 (Matlab and Python)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-3-matlab-only">3.6.2.3. Program 3 (Matlab only)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#program-design">4.6.1. Program Design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-programs">4.6.2. Example Programs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-1-matlab-and-python">4.6.2.1. Program 1 (Matlab and Python)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-2-matlab-and-python">4.6.2.2. Program 2 (Matlab and Python)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-3-matlab-only">4.6.2.3. Program 3 (Matlab only)</a></li>
 </ul>
 </li>
 </ul>
@@ -437,9 +437,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="computer-programs">
-<h1><span class="section-number">3.6. </span>Computer Programs<a class="headerlink" href="#computer-programs" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4.6. </span>Computer Programs<a class="headerlink" href="#computer-programs" title="Permalink to this heading">#</a></h1>
 <section id="program-design">
-<span id="ch03-program-design"></span><h2><span class="section-number">3.6.1. </span>Program Design<a class="headerlink" href="#program-design" title="Permalink to this heading">#</a></h2>
+<span id="ch03-program-design"></span><h2><span class="section-number">4.6.1. </span>Program Design<a class="headerlink" href="#program-design" title="Permalink to this heading">#</a></h2>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
 <div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
@@ -459,7 +459,7 @@ document.write(`
 </div>
 <div class="sd-col sd-d-flex-column sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
 <div class="proof algorithm admonition" id="algorithm-LMM">
-<p class="admonition-title"><span class="caption-number">Algorithm 3.1 </span> (Linear Multistep Method for IVPs)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 4.1 </span> (Linear Multistep Method for IVPs)</p>
 <section class="algorithm-content" id="proof-content">
 <p><strong>Define</strong> the IVP</p>
 <ul class="simple">
@@ -487,7 +487,7 @@ document.write(`
 </div>
 </section>
 <section id="example-programs">
-<span id="ch03-example-program"></span><h2><span class="section-number">3.6.2. </span>Example Programs<a class="headerlink" href="#example-programs" title="Permalink to this heading">#</a></h2>
+<span id="ch03-example-program"></span><h2><span class="section-number">4.6.2. </span>Example Programs<a class="headerlink" href="#example-programs" title="Permalink to this heading">#</a></h2>
 <p>In order to illustrate the predictor-corrector methods computationally,
 three programs with the corresponding function definitions and
 the solution tables are appended below:</p>
@@ -502,9 +502,9 @@ ABM method for the remaining integration points.</p></li>
 methods) from the ODE solver routines built-in Matlab. This will be
 discussed in detail using Matlab documentation attached.</p></li>
 </ul>
-<p>Run these programs to check your results for <a class="reference internal" href="chap03_5_predictorCorrector.html#example-3.2">Example 3.2</a>.</p>
+<p>Run these programs to check your results for <a class="reference internal" href="chap03_5_predictorCorrector.html#example-3.2">Example 4.2</a>.</p>
 <section id="program-1-matlab-and-python">
-<span id="ch03-program1"></span><h3><span class="section-number">3.6.2.1. </span>Program 1 (Matlab and Python)<a class="headerlink" href="#program-1-matlab-and-python" title="Permalink to this heading">#</a></h3>
+<span id="ch03-program1"></span><h3><span class="section-number">4.6.2.1. </span>Program 1 (Matlab and Python)<a class="headerlink" href="#program-1-matlab-and-python" title="Permalink to this heading">#</a></h3>
 <p>Using the <strong>analytical solution</strong> to produce starting values.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
@@ -639,7 +639,7 @@ Python</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="program-2-matlab-and-python">
-<span id="ch03-program2"></span><h3><span class="section-number">3.6.2.2. </span>Program 2 (Matlab and Python)<a class="headerlink" href="#program-2-matlab-and-python" title="Permalink to this heading">#</a></h3>
+<span id="ch03-program2"></span><h3><span class="section-number">4.6.2.2. </span>Program 2 (Matlab and Python)<a class="headerlink" href="#program-2-matlab-and-python" title="Permalink to this heading">#</a></h3>
 <p>Using the <strong>RK4</strong> method to produce starting values.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
@@ -781,7 +781,7 @@ Python</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="program-3-matlab-only">
-<span id="ch03-program3"></span><h3><span class="section-number">3.6.2.3. </span>Program 3 (Matlab only)<a class="headerlink" href="#program-3-matlab-only" title="Permalink to this heading">#</a></h3>
+<span id="ch03-program3"></span><h3><span class="section-number">4.6.2.3. </span>Program 3 (Matlab only)<a class="headerlink" href="#program-3-matlab-only" title="Permalink to this heading">#</a></h3>
 <p>The following code has been tested under <strong>Matlab 2022</strong></p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">%6G6Z3017 Computational Methods in ODEs - Chapter 3, Example 2 (Matlab Program 3).</span>
 <span class="linenos"> 2</span><span class="c">%Scriptfile to solve a single 1st order ordinary differential equation, using</span>
@@ -846,7 +846,7 @@ Python</label><div class="sd-tab-content docutils">
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/03"
+            path: "./chaps\03"
         },
         predefinedOutput: true
     }
@@ -869,7 +869,7 @@ Python</label><div class="sd-tab-content docutils">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.5. </span>Predictor-Corrector Methods</p>
+        <p class="prev-next-title"><span class="section-number">4.5. </span>Predictor-Corrector Methods</p>
       </div>
     </a>
     <a class="right-next"
@@ -877,7 +877,7 @@ Python</label><div class="sd-tab-content docutils">
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.7. </span>Chapter 3 Exercises</p>
+        <p class="prev-next-title"><span class="section-number">4.7. </span>Chapter 3 Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -897,11 +897,11 @@ Python</label><div class="sd-tab-content docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#program-design">3.6.1. Program Design</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-programs">3.6.2. Example Programs</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-1-matlab-and-python">3.6.2.1. Program 1 (Matlab and Python)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-2-matlab-and-python">3.6.2.2. Program 2 (Matlab and Python)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-3-matlab-only">3.6.2.3. Program 3 (Matlab only)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#program-design">4.6.1. Program Design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-programs">4.6.2. Example Programs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-1-matlab-and-python">4.6.2.1. Program 1 (Matlab and Python)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-2-matlab-and-python">4.6.2.2. Program 2 (Matlab and Python)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-3-matlab-only">4.6.2.3. Program 3 (Matlab only)</a></li>
 </ul>
 </li>
 </ul>
@@ -937,7 +937,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 18 January 2024 13:12:21.
+  Last updated on Thursday 18 January 2024 23:25:07.
   <br/>
 </p>
   </div>

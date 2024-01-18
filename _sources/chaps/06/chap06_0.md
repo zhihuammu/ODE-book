@@ -1,5 +1,5 @@
 (chap:stability2)=
-# Multistep Methods: Stability II 
+# Multistep Methods: Stability Interval and Region 
 
 **Learning Objective**
 

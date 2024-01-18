@@ -1,5 +1,5 @@
 (chap:derivation)=
-# Multistep Methods: Derivation
+# Multistep Methods: Derivation through Integration
 
 **Learning Objectives**:
 

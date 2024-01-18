@@ -1,5 +1,5 @@
 (chap:errorConstant)=
-# Multistep Methods: Order and Error Constants 
+# Multistep Methods: Accuracy and Error Constants 
 
 **Learning Objective**
 

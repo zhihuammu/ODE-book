@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Analytical Methods for ODEs &#8212; Linear Multistep Methods</title>
+    <title>1.3. Analytical Methods for ODEs &#8212; Linear Multistep Methods</title>
   
   
   
@@ -73,11 +73,11 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/odefavicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1. Complex Numbers and Difference Equations" href="../01/chap01_0.html" />
-    <link rel="prev" title="Ordinary Differential Equations" href="chap00_A2_ode.html" />
+    <link rel="next" title="2. Complex Numbers and Difference Equations" href="../01/chap01_0.html" />
+    <link rel="prev" title="1.2. Ordinary Differential Equations" href="chap00_A2_ode.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Thursday 18 January 2024 13:12:21"/>
+    <meta name="docbuild:last-update" content="Thursday 18 January 2024 23:25:07"/>
   </head>
   
   
@@ -185,83 +185,83 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../overview/readingList.html">Further Reading List</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00_B_symbols.html">Symbols and Notation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap00_B_biexpan.html">Binomial Expansion</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap00_A0_DE.html">Differential Equations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chap00_A1_definition.html">Definitions, Classification and Terminology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap00_A2_ode.html">Ordinary Differential Equations</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Analytical Methods for ODEs</a></li>
-</ul>
-</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">1. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../01/chap01_1_complexNumber.html">1.1. Complex Numbers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../01/chap01_2_sequence.html">1.2. Sequences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../01/chap01_3_differenceEquation.html">1.3. Difference Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../01/chap01_4_homogenous.html">1.4. Homogeneous Linear Difference Equations with Constant Coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../01/chap01_5_exercise.html">1.5. Chapter 1 Exercises</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap00_A0_DE.html">1. Differential Equations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chap00_A1_definition.html">1.1. Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap00_A2_ode.html">1.2. Ordinary Differential Equations</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.3. Analytical Methods for ODEs</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02/chap02_0.html">2. Interpolating Polynomial</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../02/chap02_1_introduction.html">2.1. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02/chap02_2_differenceOperator.html">2.2. Finite Difference Operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02/chap02_3_interpolation.html">2.3. Gregory-Newton Interpolation Formulae</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02/chap02_4_differenceTable.html">2.4. Finite Difference Tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../02/chap02_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">2. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_1_complexNumber.html">2.1. Complex Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_2_sequence.html">2.2. Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_3_differenceEquation.html">2.3. Difference Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_4_homogenous.html">2.4. Homogeneous Linear Difference Equations with Constant Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_5_exercise.html">2.5. Chapter 1 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03/chap03_0.html">3. Multistep Methods: Derivation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../03/chap03_1_multistepMethod.html">3.1. Multistep Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03/chap03_2_derivation.html">3.2. Derivation of Multistep Methods by Numerical Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03/chap03_3_explicit.html">3.3. Explicit  Multistep Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03/chap03_4_implicit.html">3.4. Implicit  Multistep Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03/chap03_5_predictorCorrector.html">3.5. Predictor-Corrector Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03/chap03_6_codes.html">3.6. Computer Programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03/chap03_7_exercise.html">3.7. Chapter 3 Exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02/chap02_0.html">3. Gregory-Newton Interpolating Polynomial</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_1_introduction.html">3.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_2_differenceOperator.html">3.2. Finite Difference Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_3_interpolation.html">3.3. Gregory-Newton Interpolation Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_4_differenceTable.html">3.4. Finite Difference Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_5_exercise.html">3.5. Chapter 2 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04/chap04_0.html">4. Multistep Methods: Order and Error Constants</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../04/chap04_1_errorIntegration.html">4.1. Derivation of Local Error Terms for Integration Formulae</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04/chap04_2_errorConstant.html">4.2. Order and Error Constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04/chap04_3_MilineDevice.html">4.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04/chap04_4_exercise.html">4.4. Chapter 4 Exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03/chap03_0.html">4. Multistep Methods: Derivation through Integration</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_1_multistepMethod.html">4.1. Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_2_derivation.html">4.2. Derivation of Multistep Methods by Numerical Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_3_explicit.html">4.3. Explicit  Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_4_implicit.html">4.4. Implicit  Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_5_predictorCorrector.html">4.5. Predictor-Corrector Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_6_codes.html">4.6. Computer Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_7_exercise.html">4.7. Chapter 3 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../05/chap05_0.html">5. Multistep Methods: Stability I</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../05/chap05_1_experiment.html">5.1. An exploratory experiment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05/chap05_2_rootCondition.html">5.2. Characteristic Polynomials and Root Condition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05/chap05_3_convergence.html">5.3. Zero-Stability, Consistency and Convergence Theorem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05/chap05_4_exercise.html">5.4. Chapter 5 Exercise</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04/chap04_0.html">5. Multistep Methods: Accuracy and Error Constants</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_1_errorIntegration.html">5.1. Derivation of Local Error Terms for Integration Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_2_errorConstant.html">5.2. Order and Error Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_3_MilineDevice.html">5.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_4_exercise.html">5.4. Chapter 4 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">6. Multistep Methods: Stability II</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_experiment.html">6.1. An experiment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_stabilityInterval.html">6.2. Interval and Region of Absolute Stability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_rootLocus.html">6.3. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_4_boundaryRootLocus.html">6.4. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exampleCode.html">6.5. Example MATLAB Programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06/chap06_6_exercise.html">6.6. Chapter 6 Exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05/chap05_0.html">6. Multistep Methods: Zero-Stability and Convergence</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_1_experiment.html">6.1. An exploratory experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_2_rootCondition.html">6.2. Characteristic Polynomials and Root Condition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_3_convergence.html">6.3. Zero-Stability, Consistency and Convergence Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_4_exercise.html">6.4. Chapter 5 Exercise</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">7. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../07/chap07_1_introduction.html">7.1. Introduction and background</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../07/chap07_2_stiffSystem.html">7.2. Stiff Systems of Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../07/chap07_3_method.html">7.3. Methods for Stiff Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../07/chap07_4_codeExample.html">7.4. MATLAB Program 4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../07/chap07_5_exercise.html">7.5. Chapter 7 Exercise</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">7. Multistep Methods: Stability Interval and Region</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_experiment.html">7.1. An experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_stabilityInterval.html">7.2. Interval and Region of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_rootLocus.html">7.3. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_4_boundaryRootLocus.html">7.4. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exampleCode.html">7.5. Example MATLAB Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_6_exercise.html">7.6. Chapter 6 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../08/chap08_0.html">8. Sparse Matrices</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_1_introduction.html">8.1. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_2_sparseMatrix.html">8.2. Sparse Matrices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_3_graphTheory.html">8.3. Matrix Sparsity and Graph Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_4_storage.html">8.4. Sparse Matrices Storage and Reordering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_5_reordering.html">8.5. Reordering and Matrix Bandwidth</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_6_exercise.html">8.6. Chapter 8 Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08/chap08_7_answers.html">8.7. Answers to Chapter 8 Exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">8. Stiff Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_1_introduction.html">8.1. Introduction and background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_2_stiffSystem.html">8.2. Stiff Systems of Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_3_method.html">8.3. Methods for Stiff Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_4_codeExample.html">8.4. MATLAB Program 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_5_exercise.html">8.5. Chapter 7 Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08/chap08_0.html">9. Sparse Matrices</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_1_introduction.html">9.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_2_sparseMatrix.html">9.2. Sparse Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_3_graphTheory.html">9.3. Matrix Sparsity and Graph Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_4_storage.html">9.4. Sparse Matrices Storage and Reordering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_5_reordering.html">9.5. Reordering and Matrix Bandwidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_6_exercise.html">9.6. Chapter 8 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_7_answers.html">9.7. Answers to Chapter 8 Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -418,15 +418,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-equations">Separable Equations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-equations-with-constant-coefficients">Linear Equations with Constant Coefficients</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneous-odes">Homogeneous ODEs</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-odes">First-order ODEs</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-odes">Second-order ODEs</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#higher-order-odes">Higher-order ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-equations">1.3.1. Separable Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-equations-with-constant-coefficients">1.3.2. Linear Equations with Constant Coefficients</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneous-odes">1.3.2.1. Homogeneous ODEs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-odes">1.3.2.1.1. First-order ODEs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-odes">1.3.2.1.2. Second-order ODEs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#higher-order-odes">1.3.2.1.3. Higher-order ODEs</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonhomogeneous-odes">Nonhomogeneous ODEs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonhomogeneous-odes">1.3.2.2. Nonhomogeneous ODEs</a></li>
 </ul>
 </li>
 </ul>
@@ -441,7 +441,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="analytical-methods-for-odes">
-<span id="chap-pre-3"></span><h1>Analytical Methods for ODEs<a class="headerlink" href="#analytical-methods-for-odes" title="Permalink to this heading">#</a></h1>
+<span id="chap-pre-3"></span><h1><span class="section-number">1.3. </span>Analytical Methods for ODEs<a class="headerlink" href="#analytical-methods-for-odes" title="Permalink to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#separable-equations" id="id1">Separable Equations</a></p></li>
@@ -460,18 +460,18 @@ document.write(`
 </ul>
 </nav>
 <section id="separable-equations">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink">Separable Equations</a><a class="headerlink" href="#separable-equations" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">1.3.1. </span>Separable Equations</a><a class="headerlink" href="#separable-equations" title="Permalink to this heading">#</a></h2>
 <div class="proof definition admonition" id="definition-0">
-<span id="index-0"></span><p class="admonition-title"><span class="caption-number">Definition 5 </span> (Separable Equation)</p>
+<span id="index-0"></span><p class="admonition-title"><span class="caption-number">Definition 1.6 </span> (Separable Equation)</p>
 <section class="definition-content" id="proof-content">
 <p>A first-order differential equation of the form</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-separable">
-<span class="eqno">(12)<a class="headerlink" href="#equation-eq-ode-separable" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-eq-ode-separable" title="Permalink to this equation">#</a></span>\[
 \diff{y}{x} = g(x) h(y)
 \]</div>
 <p>is said to be separable or to have separable variables.</p>
 </section>
-</div><p>To solve the separable ODE <a class="reference internal" href="#equation-eq-ode-separable">(12)</a>, we re-arrange it as</p>
+</div><p>To solve the separable ODE <a class="reference internal" href="#equation-eq-ode-separable">(1.7)</a>, we re-arrange it as</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{1}{h(y)} \dy= g(x) \dx, 
@@ -487,7 +487,7 @@ document.write(`
 H(y) = G(x) + C.
 \]</div>
 <div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 6 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 1.6 </span></p>
 <section class="example-content" id="proof-content">
 <p>Solve <span class="math notranslate nohighlight">\((1+x)\dy - y \dx=0\)</span></p>
 <div class="solution admonition">
@@ -519,7 +519,7 @@ y &amp; = e^{\ln |1+x| + c_1} \\
 </div>
 </section>
 </div><div class="proof example admonition" id="example-2">
-<p class="admonition-title"><span class="caption-number">Example 7 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 1.7 </span></p>
 <section class="example-content" id="proof-content">
 <p>Solve <span class="math notranslate nohighlight">\(\displaystyle \diff{y}{x} = \frac{x-5}{y^2}\)</span>.</p>
 <div class="solution admonition">
@@ -543,16 +543,16 @@ y^2 \dy = (x-5) \dx
 </section>
 </div></section>
 <section id="linear-equations-with-constant-coefficients">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Linear Equations with Constant Coefficients</a><a class="headerlink" href="#linear-equations-with-constant-coefficients" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">1.3.2. </span>Linear Equations with Constant Coefficients</a><a class="headerlink" href="#linear-equations-with-constant-coefficients" title="Permalink to this heading">#</a></h2>
 <p>Here we focus on a particular type of <span class="math notranslate nohighlight">\(n\)</span>-th order ODE given as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear-constant">
-<span class="eqno">(13)<a class="headerlink" href="#equation-eq-ode-linear-constant" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-eq-ode-linear-constant" title="Permalink to this equation">#</a></span>\[
 a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(x),
 \quad a_n \neq 0
 \]</div>
 <p>where the coefficients <span class="math notranslate nohighlight">\(a_p~(p=0, 1, \ldots, n)\)</span> are constants.</p>
 <div class="proof definition admonition" id="definition-3">
-<span id="index-1"></span><p class="admonition-title"><span class="caption-number">Definition 6 </span> (Differential Operator <span class="math notranslate nohighlight">\(\D\)</span>)</p>
+<span id="index-1"></span><p class="admonition-title"><span class="caption-number">Definition 1.7 </span> (Differential Operator <span class="math notranslate nohighlight">\(\D\)</span>)</p>
 <section class="definition-content" id="proof-content">
 <p>We define <span class="math notranslate nohighlight">\(\D\)</span> as the <span class="target" id="index-2"></span>differential operator, which can be applied on a function <span class="math notranslate nohighlight">\(y=y(x)\)</span> to obtain its derivative</p>
 <div class="math notranslate nohighlight">
@@ -564,14 +564,14 @@ a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(x),
 \[
     \D^n y = \diff[n]{y}{x}.
 \]</div>
-<p id="index-3">Thus we can write the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(13)</a> in an <strong>operator form</strong> as</p>
+<p id="index-3">Thus we can write the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(1.8)</a> in an <strong>operator form</strong> as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-operator-form">
-<span class="eqno">(14)<a class="headerlink" href="#equation-eq-ode-operator-form" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(1.9)<a class="headerlink" href="#equation-eq-ode-operator-form" title="Permalink to this equation">#</a></span>\[
 \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = g(x).
 \]</div>
 <p>We define the overall operation on <span class="math notranslate nohighlight">\(y\)</span> as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-operator-ld">
-<span class="eqno">(15)<a class="headerlink" href="#equation-eq-ode-operator-ld" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(1.10)<a class="headerlink" href="#equation-eq-ode-operator-ld" title="Permalink to this equation">#</a></span>\[
 \L (\D)= a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0,
 \]</div>
 <p>then the equation can also be written as</p>
@@ -581,33 +581,33 @@ a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(x),
 \]</div>
 </section>
 </div><span class="target" id="index-4"></span><span class="target" id="index-5"></span><div class="proof definition admonition" id="definition-4">
-<span id="index-6"></span><p class="admonition-title"><span class="caption-number">Definition 7 </span> (Characteristic Polynomial and Characteristic Equation)</p>
+<span id="index-6"></span><p class="admonition-title"><span class="caption-number">Definition 1.8 </span> (Characteristic Polynomial and Characteristic Equation)</p>
 <section class="definition-content" id="proof-content">
-<p>For equation <a class="reference internal" href="#equation-eq-ode-linear-constant">(13)</a>, we define its <strong><span class="target" id="index-7"></span>characteristic polynomial</strong> as</p>
+<p>For equation <a class="reference internal" href="#equation-eq-ode-linear-constant">(1.8)</a>, we define its <strong><span class="target" id="index-7"></span>characteristic polynomial</strong> as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear-constant-char-polynomial">
-<span class="eqno">(16)<a class="headerlink" href="#equation-eq-ode-linear-constant-char-polynomial" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(1.11)<a class="headerlink" href="#equation-eq-ode-linear-constant-char-polynomial" title="Permalink to this equation">#</a></span>\[
 \L (z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0.
 \]</div>
-<p>Note: We can simply replace the operator <span class="math notranslate nohighlight">\(\D\)</span> in formula <a class="reference internal" href="#equation-eq-ode-operator-ld">(15)</a> with <span class="math notranslate nohighlight">\(z\)</span> to obtain the characteristic polynomial.</p>
+<p>Note: We can simply replace the operator <span class="math notranslate nohighlight">\(\D\)</span> in formula <a class="reference internal" href="#equation-eq-ode-operator-ld">(1.10)</a> with <span class="math notranslate nohighlight">\(z\)</span> to obtain the characteristic polynomial.</p>
 <p>The equation</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear-constant-char-equation">
-<span class="eqno">(17)<a class="headerlink" href="#equation-eq-ode-linear-constant-char-equation" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(1.12)<a class="headerlink" href="#equation-eq-ode-linear-constant-char-equation" title="Permalink to this equation">#</a></span>\[
 \L (z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0 = 0
 \]</div>
-<p>is called the <strong><span class="target" id="index-8"></span>characteristic equation</strong> of the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(13)</a>.</p>
+<p>is called the <strong><span class="target" id="index-8"></span>characteristic equation</strong> of the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(1.8)</a>.</p>
 <p>Note: In some books, the characteristic equation is also called <em>auxiliary equation</em>.</p>
 </section>
 </div><section id="homogeneous-odes">
-<span id="chapx-homo-ode-sol"></span><h3><a class="toc-backref" href="#id3" role="doc-backlink">Homogeneous ODEs</a><a class="headerlink" href="#homogeneous-odes" title="Permalink to this heading">#</a></h3>
-<p>When the right hand side of equation <a class="reference internal" href="#equation-eq-ode-linear-constant">(13)</a> vanishes, i.e. <span class="math notranslate nohighlight">\(g(x)\)</span>, we obtain a linear homogeneous ordinary differential equation with constant coefficients</p>
+<span id="chapx-homo-ode-sol"></span><h3><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">1.3.2.1. </span>Homogeneous ODEs</a><a class="headerlink" href="#homogeneous-odes" title="Permalink to this heading">#</a></h3>
+<p>When the right hand side of equation <a class="reference internal" href="#equation-eq-ode-linear-constant">(1.8)</a> vanishes, i.e. <span class="math notranslate nohighlight">\(g(x)\)</span>, we obtain a linear homogeneous ordinary differential equation with constant coefficients</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear-homogeneous-constant">
-<span class="eqno">(18)<a class="headerlink" href="#equation-eq-ode-linear-homogeneous-constant" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(1.13)<a class="headerlink" href="#equation-eq-ode-linear-homogeneous-constant" title="Permalink to this equation">#</a></span>\[
 \L (\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = 0
 \]</div>
 <div class="proof theorem admonition" id="theorem-5">
-<span id="index-9"></span><p class="admonition-title"><span class="caption-number">Theorem 2 </span> (Superposition Principle — Homogeneous Equations)</p>
+<span id="index-9"></span><p class="admonition-title"><span class="caption-number">Theorem 1.2 </span> (Superposition Principle — Homogeneous Equations)</p>
 <section class="theorem-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(y_1(x)\)</span>, <span class="math notranslate nohighlight">\(y_2(x)\)</span>, … , <span class="math notranslate nohighlight">\(y_n(x)\)</span> be solutions to the homogeneous <span class="math notranslate nohighlight">\(n\)</span>-th order differential equation <a class="reference internal" href="#equation-eq-ode-linear-homogeneous-constant">(18)</a> on an interval <span class="math notranslate nohighlight">\(I\)</span>, then the linear combination</p>
+<p>Let <span class="math notranslate nohighlight">\(y_1(x)\)</span>, <span class="math notranslate nohighlight">\(y_2(x)\)</span>, … , <span class="math notranslate nohighlight">\(y_n(x)\)</span> be solutions to the homogeneous <span class="math notranslate nohighlight">\(n\)</span>-th order differential equation <a class="reference internal" href="#equation-eq-ode-linear-homogeneous-constant">(1.13)</a> on an interval <span class="math notranslate nohighlight">\(I\)</span>, then the linear combination</p>
 <div class="math notranslate nohighlight">
 \[
     y=c_1 y_1(x) + c_2 y_2(x) + \cdots + c_n y_n(x)
@@ -621,7 +621,7 @@ a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(x),
 <li><p>Higher-order ODEs</p></li>
 </ul>
 <section id="first-order-odes">
-<h4><a class="toc-backref" href="#id4" role="doc-backlink">First-order ODEs</a><a class="headerlink" href="#first-order-odes" title="Permalink to this heading">#</a></h4>
+<h4><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">1.3.2.1.1. </span>First-order ODEs</a><a class="headerlink" href="#first-order-odes" title="Permalink to this heading">#</a></h4>
 <p>Solve <span class="math notranslate nohighlight">\(a_1 y' + a_0 y =0\)</span></p>
 <div class="solution admonition">
 <p class="admonition-title">Solution</p>
@@ -677,7 +677,7 @@ y = C e^{z x} = C e^{-\frac{a_0}{a_1} x}
 </div>
 </section>
 <section id="second-order-odes">
-<h4><a class="toc-backref" href="#id5" role="doc-backlink">Second-order ODEs</a><a class="headerlink" href="#second-order-odes" title="Permalink to this heading">#</a></h4>
+<h4><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">1.3.2.1.2. </span>Second-order ODEs</a><a class="headerlink" href="#second-order-odes" title="Permalink to this heading">#</a></h4>
 <p>Solve <span class="math notranslate nohighlight">\(a y'' + b y'+ c y=0\)</span></p>
 <div class="solution admonition">
 <p class="admonition-title">Solution</p>
@@ -728,7 +728,7 @@ z_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
 </ul>
 </div>
 <div class="proof example admonition" id="example-6">
-<p class="admonition-title"><span class="caption-number">Example 8 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 1.8 </span></p>
 <section class="example-content" id="proof-content">
 <p>Solving the following ODEs:</p>
 <ol class="arabic simple">
@@ -753,7 +753,7 @@ z_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
 </section>
 </div></section>
 <section id="higher-order-odes">
-<h4><a class="toc-backref" href="#id6" role="doc-backlink">Higher-order ODEs</a><a class="headerlink" href="#higher-order-odes" title="Permalink to this heading">#</a></h4>
+<h4><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">1.3.2.1.3. </span>Higher-order ODEs</a><a class="headerlink" href="#higher-order-odes" title="Permalink to this heading">#</a></h4>
 <p>Solve an <span class="math notranslate nohighlight">\(n\)</span>-th order ODE
 <span class="math notranslate nohighlight">\(
 \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = 0
@@ -807,20 +807,20 @@ a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0 = 0
 </section>
 </section>
 <section id="nonhomogeneous-odes">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink">Nonhomogeneous ODEs</a><a class="headerlink" href="#nonhomogeneous-odes" title="Permalink to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">1.3.2.2. </span>Nonhomogeneous ODEs</a><a class="headerlink" href="#nonhomogeneous-odes" title="Permalink to this heading">#</a></h3>
 <p>Here we consider a linear nonhomogeneous ODE with constant coefficients given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear-nonhomogeneous-constant">
-<span class="eqno">(19)<a class="headerlink" href="#equation-eq-ode-linear-nonhomogeneous-constant" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(1.14)<a class="headerlink" href="#equation-eq-ode-linear-nonhomogeneous-constant" title="Permalink to this equation">#</a></span>\[
 \L (\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = g(x), \quad g(x)\neq 0
 \]</div>
-<p>The solution <span class="math notranslate nohighlight">\(y(x)\)</span> to equation <a class="reference internal" href="#equation-eq-ode-linear-nonhomogeneous-constant">(19)</a> includes two parts:</p>
+<p>The solution <span class="math notranslate nohighlight">\(y(x)\)</span> to equation <a class="reference internal" href="#equation-eq-ode-linear-nonhomogeneous-constant">(1.14)</a> includes two parts:</p>
 <ul class="simple">
 <li><p>A homogeneous component <span class="math notranslate nohighlight">\(y_h(x)\)</span>, which is the general solution to the homogeneous equation <span class="math notranslate nohighlight">\(\L (\D) y_h = 0\)</span>. In some books <span class="math notranslate nohighlight">\(y_h (x)\)</span> is also called complementary solution.</p></li>
 <li><p>A particular component <span class="math notranslate nohighlight">\(y_p(x)\)</span>, which is a particular solution to the nonhomogeneous equation <span class="math notranslate nohighlight">\(\L (\D) y_p = g(x)\)</span>.</p></li>
 </ul>
-<p>In conclusion, the solution to equation <a class="reference internal" href="#equation-eq-ode-linear-nonhomogeneous-constant">(19)</a> is</p>
+<p>In conclusion, the solution to equation <a class="reference internal" href="#equation-eq-ode-linear-nonhomogeneous-constant">(1.14)</a> is</p>
 <div class="math notranslate nohighlight" id="equation-eq-inhomo-ode-sol">
-<span class="eqno">(20)<a class="headerlink" href="#equation-eq-inhomo-ode-sol" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(1.15)<a class="headerlink" href="#equation-eq-inhomo-ode-sol" title="Permalink to this equation">#</a></span>\[\begin{split}
 \left\{
 \begin{aligned}
  \L (\D) y_h(x) &amp; = 0 \\
@@ -831,7 +831,7 @@ a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0 = 0
 \end{split}\]</div>
 <p id="index-10">The way to find <span class="math notranslate nohighlight">\(y_h(x)\)</span> is the same as described in <a class="reference internal" href="#chapx-homo-ode-sol"><span class="std std-ref">Homogeneous ODEs</span></a>. Here we will introduce the <strong><span class="target" id="index-11"></span>Undetermined Coefficients Method</strong> to find the particular solution <span class="math notranslate nohighlight">\(y_p(x)\)</span></p>
 <div class="proof example admonition" id="example-7">
-<p class="admonition-title"><span class="caption-number">Example 9 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 1.9 </span></p>
 <section class="example-content" id="proof-content">
 <p>Find the solution to</p>
 <div class="math notranslate nohighlight">
@@ -906,7 +906,7 @@ y''+3y'+2y=3t
 </div>
 </section>
 </div><div class="proof example admonition" id="example-8">
-<p class="admonition-title"><span class="caption-number">Example 10 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 1.10 </span></p>
 <section class="example-content" id="proof-content">
 <p>Find a particular solution to</p>
 <div class="math notranslate nohighlight">
@@ -948,7 +948,7 @@ y_p(t)=\frac{1}{2}e^{3t}
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/00"
+            path: "./chaps\00"
         },
         predefinedOutput: true
     }
@@ -971,7 +971,7 @@ y_p(t)=\frac{1}{2}e^{3t}
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Ordinary Differential Equations</p>
+        <p class="prev-next-title"><span class="section-number">1.2. </span>Ordinary Differential Equations</p>
       </div>
     </a>
     <a class="right-next"
@@ -979,7 +979,7 @@ y_p(t)=\frac{1}{2}e^{3t}
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Complex Numbers and Difference Equations</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Complex Numbers and Difference Equations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -999,15 +999,15 @@ y_p(t)=\frac{1}{2}e^{3t}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-equations">Separable Equations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-equations-with-constant-coefficients">Linear Equations with Constant Coefficients</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneous-odes">Homogeneous ODEs</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-odes">First-order ODEs</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-odes">Second-order ODEs</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#higher-order-odes">Higher-order ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-equations">1.3.1. Separable Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-equations-with-constant-coefficients">1.3.2. Linear Equations with Constant Coefficients</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneous-odes">1.3.2.1. Homogeneous ODEs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-odes">1.3.2.1.1. First-order ODEs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-odes">1.3.2.1.2. Second-order ODEs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#higher-order-odes">1.3.2.1.3. Higher-order ODEs</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonhomogeneous-odes">Nonhomogeneous ODEs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonhomogeneous-odes">1.3.2.2. Nonhomogeneous ODEs</a></li>
 </ul>
 </li>
 </ul>
@@ -1043,7 +1043,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 18 January 2024 13:12:21.
+  Last updated on Thursday 18 January 2024 23:25:07.
   <br/>
 </p>
   </div>
