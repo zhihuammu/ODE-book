@@ -1,5 +1,5 @@
 (chap:sparseMatrix:exercise)=
-# Chapter 8 Exercises
+# Chapter 9 Exercises
 
 You should try the following exercise questions first, then check with the answers. 
 

@@ -1,5 +1,5 @@
 (chap:stability1:exercise)=
-# Chapter 5 Exercise
+# Chapter 6 Exercise
 
 You should try the following exercise questions first, then check with the answers. 
 

@@ -111,13 +111,13 @@ where $y_0$, $y_1$, ... , $y_{n-1}$ are given constants, then we call this probl
 ```
 
 ```{prf:definition} Lipschitz Continuity
-For a real-value function $f: I \subseteq \R \rightarrow \R$, if there exists a real non-negative constant $K$ and 
+For a real-value function $f: I \subseteq \R \rightarrow \R$, if there exists a real non-negative constant $K$ and at the same the function $f$ satisfies the condition
 
 $$
 |f(a) - f(b)| \leq K |a-b| \quad \forall a, b \in I, 
 $$(eq:IVP:Lipschitz)
 
-then $f$ is Lipschitz continuous, and Eq. {eq}`eq:IVP:Lipschitz` is called the Lipschitz continuity condition.
+then $f$ is Lipschitz continuous, and the inequality {eq}`eq:IVP:Lipschitz` is called the Lipschitz continuity condition.
 ```
 
 
