@@ -1,14 +1,15 @@
 # Teaching Schedule
 
 | Week | Lecture | Lab| Assessment | 
-|----|--------|---------| ----------|
-|  1   | [Chapter 1: Complex Number and Difference Equations](chap01:complexNumber) | [Chapter 1 Exercises](chap01:exercises) |
-|  2   | [Chapter 2: Interpolating Polynomial](chap02:interpolating)                | [Chapter 2 Exercises](chap02:exercises) |
-|  3   | [Chapter 3: Multistep Methods: Derivation by Finite Difference formulae](chap:derivation) |   [Chapter 3 Exercises](chap:derivation:exercises)  |
-|  4   | [Chapter 4: Multistep Methods: Order and Error Constants](chap:errorConstant) |   [Chapter 4 Exercises](chap:errorConstant:exercise)  | <span style="color:green">**1CWK40 release**</span> |
-|  5   | [Chapter 5: Multistep Methods: Stability I](chap:stability1)               | [Chapter 5 Exercises](chap:stability1:exercise)  |
-|  6   | [Chapter 6: Multistep Methods: Stability II](chap:stability2)              | [Chapter 6 Exercises](chap:stability2:exercise) |
-|  7   | [Chapter 7: Stiff Differential Equations](chap:stiff)                      | [Chapter 7 Exercises](chap:stiff:exercise)  |
-| 8--9 | [Chapter 8: Computational Methods with Sparse Matrices](chap:sparseMatrix) | [Chapter 8 Exercises](chap:sparseMatrix:exercise) | 
-| 10--11   | Consolidation and Revision|                                         |  
-|    |                                           |                                         |  <span style="color:red">**1CWK40 due**<br>11/12/2024</span>  |
+|:----:|--------|---------| ----------|
+|  1   | [](chap:differentialEquation)  | |
+|  2   | [](chap:complexNumber)         | [](chap:complexNumber:exercises) |
+|  3   | [](chap:interpolating)         | [](chap:interpolating:exercises) |
+|  4   | [](chap:derivation)            | [](chap:derivation:exercises)     | <span style="color:green">**1CWK40 release**</span> |
+|  5   | [](chap:errorConstant)         | [](chap:errorConstant:exercise)   | 
+|  6   | [](chap:stability1)            | [](chap:stability1:exercise)      |
+|  7   | [](chap:stability2)            | [](chap:stability2:exercise)      |
+|  8   | [](chap:stiff)                 | [](chap:stiff:exercise)           |
+|  9   | [](chap:sparseMatrix)          | [](chap:sparseMatrix:exercise)    | 
+| 10--11 | Consolidation and Revision   |                                   |  
+|      |                                |                                   |  <span style="color:red">**1CWK40 due**<br>11/12/2024</span>  |

@@ -1,5 +1,5 @@
 (chap:stiff:exercise)=
-# Chapter 7 Exercise
+# Chapter 8 Exercise
 
 You should try the following exercise questions first, then check with the answers.
 

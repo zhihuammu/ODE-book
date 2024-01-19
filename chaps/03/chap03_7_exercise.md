@@ -1,5 +1,5 @@
 (chap:derivation:exercises)=
-# Chapter 3 Exercises 
+# Chapter 4 Exercises 
 
 You should try the following exercise questions first, then check with the answers. 
 

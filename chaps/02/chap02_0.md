@@ -1,4 +1,4 @@
-(chap02:interpolating)=
+(chap:interpolating)=
 # Gregory-Newton Interpolating Polynomial
 
 **Learning Objectives:**

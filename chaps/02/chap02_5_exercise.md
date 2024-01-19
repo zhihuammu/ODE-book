@@ -1,5 +1,5 @@
-(chap02:exercises)=
-# Chapter 2 Exercises
+(chap:interpolating:exercises)=
+# Chapter 3 Exercises
 
 You should try the following exercise questions first, then check with the answers. 
 
