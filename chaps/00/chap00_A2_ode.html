@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="1.1. Definitions, Classification and Terminology" href="chap00_A1_definition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Friday 19 January 2024 19:23:39"/>
+    <meta name="docbuild:last-update" content="Saturday 20 January 2024 22:30:06"/>
   </head>
   
   
@@ -534,15 +534,15 @@ y^{(n-1)}(t_0) = &amp; ~y_{n-1}
 </div><div class="proof definition admonition" id="definition-6">
 <span id="index-10"></span><p class="admonition-title"><span class="caption-number">Definition 1.5 </span> (Lipschitz Continuity)</p>
 <section class="definition-content" id="proof-content">
-<p>For a real-value function <span class="math notranslate nohighlight">\(f: I \subseteq \R \rightarrow \R\)</span>, if there exists a real non-negative constant <span class="math notranslate nohighlight">\(K\)</span> and at the same the function <span class="math notranslate nohighlight">\(f\)</span> satisfies the condition</p>
+<p>For a real-value function <span class="math notranslate nohighlight">\(f: I \subseteq \R \rightarrow \R\)</span>, if there is a real non-negative constant <span class="math notranslate nohighlight">\(K\)</span> such that</p>
 <div class="math notranslate nohighlight" id="equation-eq-ivp-lipschitz">
 <span class="eqno">(1.6)<a class="headerlink" href="#equation-eq-ivp-lipschitz" title="Permalink to this equation">#</a></span>\[
-|f(a) - f(b)| \leq K |a-b| \quad \forall a, b \in I, 
+|f(a) - f(b)| \leq K |a-b|, \qquad \forall a, b \in I, 
 \]</div>
-<p>then <span class="math notranslate nohighlight">\(f\)</span> is Lipschitz continuous, and the inequality <a class="reference internal" href="#equation-eq-ivp-lipschitz">(1.6)</a> is called the Lipschitz continuity condition.</p>
+<p>then <span class="math notranslate nohighlight">\(f\)</span> is Lipschitz continuous, and the inequality <a class="reference internal" href="#equation-eq-ivp-lipschitz">(1.6)</a> is called the Lipschitz continuity condition. We can also say <span class="math notranslate nohighlight">\(f\)</span> satisfies the Lipschitz condition, or simply call <span class="math notranslate nohighlight">\(f\)</span> a Lipschitz function.</p>
 </section>
 </div><div class="proof theorem admonition" id="theorem-7">
-<span id="index-11"></span><p class="admonition-title"><span class="caption-number">Theorem 1.1 </span> (Existence and Uniqueness of Solution)</p>
+<span id="index-11"></span><p class="admonition-title"><span class="caption-number">Theorem 1.1 </span> (Existence and Uniqueness)</p>
 <section class="theorem-content" id="proof-content">
 <p>Consider the initial value problem</p>
 <div class="math notranslate nohighlight">
@@ -554,7 +554,7 @@ y^{(n-1)}(t_0) = &amp; ~y_{n-1}
 \[
 R=\left\{ (t, y): a&lt;t&lt;b, ~ c&lt;y&lt;d \right\}
 \]</div>
-<p>that contains the point <span class="math notranslate nohighlight">\((t_0, y_0)\)</span>, then the initial value problem has a unique solution <span class="math notranslate nohighlight">\(\phi(t)\)</span> in some interval <span class="math notranslate nohighlight">\([t_0 - \delta,  t_0 + \delta]\)</span>, where <span class="math notranslate nohighlight">\(\delta\)</span> is a positive number.</p>
+<p>that contains the point <span class="math notranslate nohighlight">\((t_0, y_0)\)</span>, then the initial value problem has a unique solution <span class="math notranslate nohighlight">\(y=\phi(t)\)</span> in some interval <span class="math notranslate nohighlight">\([t_0 - \delta,  t_0 + \delta]\)</span>, where <span class="math notranslate nohighlight">\(\delta\)</span> is a positive number.</p>
 </section>
 </div><section id="systems-of-differential-equations">
 <h2><span class="section-number">1.2.1. </span>Systems of Differential Equations<a class="headerlink" href="#systems-of-differential-equations" title="Permalink to this heading">#</a></h2>
@@ -679,7 +679,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 19 January 2024 19:23:39.
+  Last updated on Saturday 20 January 2024 22:30:06.
   <br/>
 </p>
   </div>
