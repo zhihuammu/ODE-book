@@ -111,20 +111,20 @@ where $y_0$, $y_1$, ... , $y_{n-1}$ are given constants, then we call this probl
 ```
 
 ```{prf:definition} Lipschitz Continuity
-For a real-value function $f: I \subseteq \R \rightarrow \R$, if there exists a real non-negative constant $K$ and at the same the function $f$ satisfies the condition
+For a real-value function $f: I \subseteq \R \rightarrow \R$, if there exists a real non-negative constant $K$ such that
 
 $$
-|f(a) - f(b)| \leq K |a-b| \quad \forall a, b \in I, 
+|f(a) - f(b)| \leq K |a-b|, \qquad \forall a, b \in I, 
 $$(eq:IVP:Lipschitz)
 
-then $f$ is Lipschitz continuous, and the inequality {eq}`eq:IVP:Lipschitz` is called the Lipschitz continuity condition.
+then $f$ is Lipschitz continuous, and the inequality {eq}`eq:IVP:Lipschitz` is called the Lipschitz continuity condition. We can also say $f$ satisfies the Lipschitz condition, or simply call $f$ a Lipschitz function.
 ```
 
 
 ```{index} Ordinary Differential Equation; Existence and Uniqueness
 ```
 
-```{prf:theorem} Existence and Uniqueness of Solution
+```{prf:theorem} Existence and Uniqueness
 Consider the initial value problem
 
 $$
@@ -137,7 +137,7 @@ $$
 R=\left\{ (t, y): a<t<b, ~ c<y<d \right\}
 $$
 
-that contains the point $(t_0, y_0)$, then the initial value problem has a unique solution $\phi(t)$ in some interval $[t_0 - \delta,  t_0 + \delta]$, where $\delta$ is a positive number.
+that contains the point $(t_0, y_0)$, then the initial value problem has a unique solution $y=\phi(t)$ in some interval $[t_0 - \delta,  t_0 + \delta]$, where $\delta$ is a positive number.
 ```
 
 ## Systems of Differential Equations
