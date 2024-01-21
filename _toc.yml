@@ -17,7 +17,7 @@ parts:
     numbered: false
     chapters: 
     - file: chaps/00/chap00_B_symbols
-    - file: chaps/00/chap00_B_biexpan   
+    - file: chaps/00/chap00_B_formula
 
     
   - caption: Lectures
