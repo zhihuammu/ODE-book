@@ -67,17 +67,17 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathcal{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/00/chap00_A3_analytical';</script>
     <link rel="shortcut icon" href="../../_static/odefavicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. Complex Numbers and Difference Equations" href="../01/chap01_0.html" />
+    <link rel="next" title="1.4. Chapter 1 Exercises" href="chap00_A4_exercise.html" />
     <link rel="prev" title="1.2. Ordinary Differential Equations" href="chap00_A2_ode.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Saturday 20 January 2024 22:30:06"/>
+    <meta name="docbuild:last-update" content="Sunday 21 January 2024 23:37:06"/>
   </head>
   
   
@@ -185,7 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00_B_symbols.html">Symbols and Notation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap00_B_biexpan.html">Binomial Expansion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap00_B_formula.html">Formulas and Theorems</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="current nav bd-sidenav">
@@ -193,6 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="chap00_A1_definition.html">1.1. Definitions, Classification and Terminology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap00_A2_ode.html">1.2. Ordinary Differential Equations</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.3. Analytical Methods for ODEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap00_A4_exercise.html">1.4. Chapter 1 Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">2. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -509,7 +510,7 @@ H(y) = G(x) + C.
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-y &amp; = e^{\ln |1+x| + c_1} \\
+|y| &amp; = e^{\ln |1+x| + c_1} \\
   &amp; = e^{c_1} |1+x| \\
   &amp; = C |1+x|
 \end{aligned}
@@ -562,7 +563,7 @@ a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(x),
 \[
     \D^n y = \diff[n]{y}{x}.
 \]</div>
-<p id="index-3">Thus we can write the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(1.8)</a> in an <strong>operator form</strong> as</p>
+<p id="index-3">Thus we can write the ODE <a class="reference internal" href="#equation-eq-ode-linear-constant">(1.8)</a> in its <strong>operator form</strong> as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-operator-form">
 <span class="eqno">(1.9)<a class="headerlink" href="#equation-eq-ode-operator-form" title="Permalink to this equation">#</a></span>\[
 \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = g(x).
@@ -597,7 +598,7 @@ a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(x),
 </section>
 </div><section id="homogeneous-odes">
 <span id="chapx-homo-ode-sol"></span><h3><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">1.3.2.1. </span>Homogeneous ODEs</a><a class="headerlink" href="#homogeneous-odes" title="Permalink to this heading">#</a></h3>
-<p>When the right hand side of equation <a class="reference internal" href="#equation-eq-ode-linear-constant">(1.8)</a> vanishes, i.e. <span class="math notranslate nohighlight">\(g(x)\)</span>, we obtain a linear homogeneous ordinary differential equation with constant coefficients</p>
+<p>When the right hand side of equation <a class="reference internal" href="#equation-eq-ode-linear-constant">(1.8)</a> vanishes, i.e. <span class="math notranslate nohighlight">\(g(x)=0\)</span>, we obtain a linear homogeneous ordinary differential equation with constant coefficients</p>
 <div class="math notranslate nohighlight" id="equation-eq-ode-linear-homogeneous-constant">
 <span class="eqno">(1.13)<a class="headerlink" href="#equation-eq-ode-linear-homogeneous-constant" title="Permalink to this equation">#</a></span>\[
 \L (\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = 0
@@ -973,11 +974,11 @@ y_p(t)=\frac{1}{2}e^{3t}
       </div>
     </a>
     <a class="right-next"
-       href="../01/chap01_0.html"
+       href="chap00_A4_exercise.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Complex Numbers and Difference Equations</p>
+        <p class="prev-next-title"><span class="section-number">1.4. </span>Chapter 1 Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1041,7 +1042,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Saturday 20 January 2024 22:30:06.
+  Last updated on Sunday 21 January 2024 23:37:06.
   <br/>
 </p>
   </div>

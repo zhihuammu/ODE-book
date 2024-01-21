@@ -1,8 +1,9 @@
+# Formulas and Theorems
 
 :::{index} Binomial Expansion
 :::
 
-# Binomial Expansion
+## Binomial Expansion
 
 For any two real numbers $x$ and $y$, and a whole number $n$ as the power, the [binomial expansion](https://en.wikipedia.org/wiki/Binomial_theorem), also named binomial theorem, describes the algebraic expansion of powers of a binomial as below
 
@@ -65,7 +66,7 @@ $$
 $$(eq:bi:exap:variant:general)
 
 
-# Mean Value Theorem
+## Mean Value Theorem
 :::{prf:theorem} Mean Value Theorem
 Let  $f=f(x)$, $x \in \R$  be continuous over the closed interval  $[a, b]$
 and differentiable over the open interval  $(a, b)$. 

@@ -31,30 +31,14 @@ We will also touch on graph theory and sparse matrix computation to:
 Ordinary differential equations have wide applications in science and engineering:
 
 - Physics
-    - Fluid Dynamics
-
-    <!-- ```{image} /images/dam3d_0006b.png
-    :width: 500px
-    :align: center
-    ``` -->
-
+    - Mechanics
     - Electrical Engineering
 
 - Biology
-    <!-- ```{image} /images/virus.png
-    :width: 500 px
-    :align: center
-    ``` -->
+    - Population Dynamics (Level 5: Numerical Methods and Modelling)
+    - Disease Dynamics
 
 - Chemical Kinetics
-
-    <!-- $$
-    \begin{aligned}
-        \frac{\partial A}{\partial t}&=-k_1 A \\
-        \frac{\partial B}{\partial t}&=k_1 A - k_2 B \\
-        \frac{\partial C}{\partial t}&=k_2 B
-    \end{aligned}
-    $$ -->
 
 - Economics
 

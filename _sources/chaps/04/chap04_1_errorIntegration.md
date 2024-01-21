@@ -103,7 +103,7 @@ $x_0 \leq z \leq x_2$
 :::
 
 :::{prf:theorem} Mean Value Theorem
-Let  $f$  be continuous over the closed interval  $[a, b]$
+Let  $f=f(x)$, $x \in \R$  be continuous over the closed interval  $[a, b]$
 and differentiable over the open interval  $(a, b)$. 
 Then, there exists at least one point  $c\in (a,b)$ such that
 

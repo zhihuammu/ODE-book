@@ -64,7 +64,7 @@ $$
 
 $$
 \begin{aligned}
-y & = e^{\ln |1+x| + c_1} \\
+|y| & = e^{\ln |1+x| + c_1} \\
   & = e^{c_1} |1+x| \\
   & = C |1+x|
 \end{aligned}
@@ -126,7 +126,7 @@ $$
 ```{index} pair: Ordinary Differential Equation; Operator Form
 ```
 
-Thus we can write the ODE {eq}`eq:ode:linear:constant` in an **operator form** as
+Thus we can write the ODE {eq}`eq:ode:linear:constant` in its **operator form** as
 
 $$
 \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = g(x).
@@ -175,7 +175,7 @@ Note: In some books, the characteristic equation is also called *auxiliary equat
 (chapX-homo-ode-sol)=
 ### Homogeneous ODEs
 
-When the right hand side of equation {eq}`eq:ode:linear:constant` vanishes, i.e. $g(x)$, we obtain a linear homogeneous ordinary differential equation with constant coefficients
+When the right hand side of equation {eq}`eq:ode:linear:constant` vanishes, i.e. $g(x)=0$, we obtain a linear homogeneous ordinary differential equation with constant coefficients
 
 $$
 \L (\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = 0

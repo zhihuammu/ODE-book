@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Binomial Expansion &#8212; Linear Multistep Methods</title>
+    <title>Formulas and Theorems &#8212; Linear Multistep Methods</title>
   
   
   
@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathcal{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/00/chap00_B_biexpan';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/00/chap00_B_formula';</script>
     <link rel="shortcut icon" href="../../_static/odefavicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Symbols and Notation" href="chap00_B_symbols.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Sunday 21 January 2024 22:29:04"/>
+    <meta name="docbuild:last-update" content="Sunday 21 January 2024 23:37:06"/>
   </head>
   
   
@@ -187,8 +187,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00_B_symbols.html">Symbols and Notation</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Binomial Expansion</a></li>
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Formulas and Theorems</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="nav bd-sidenav">
@@ -326,7 +325,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/chaps/00/chap00_B_biexpan.md" target="_blank"
+      <li><a href="../../_sources/chaps/00/chap00_B_formula.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -410,7 +409,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Binomial Expansion</h1>
+    <h1>Formulas and Theorems</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -420,13 +419,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Binomial Expansion</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-expansion">Binomial Expansion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-s-general-binomial-expansion">Newton’s general binomial expansion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-value-theorem">Mean Value Theorem</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-value-theorem">Mean Value Theorem</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -437,8 +433,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="binomial-expansion">
-<span id="index-0"></span><h1>Binomial Expansion<a class="headerlink" href="#binomial-expansion" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="formulas-and-theorems">
+<h1>Formulas and Theorems<a class="headerlink" href="#formulas-and-theorems" title="Permalink to this heading">#</a></h1>
+<section id="binomial-expansion">
+<span id="index-0"></span><h2>Binomial Expansion<a class="headerlink" href="#binomial-expansion" title="Permalink to this heading">#</a></h2>
 <p>For any two real numbers <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, and a whole number <span class="math notranslate nohighlight">\(n\)</span> as the power, the <a class="reference external" href="https://en.wikipedia.org/wiki/Binomial_theorem">binomial expansion</a>, also named binomial theorem, describes the algebraic expansion of powers of a binomial as below</p>
 <div class="math notranslate nohighlight" id="equation-eq-bi-exap">
 <span class="eqno">(1)<a class="headerlink" href="#equation-eq-bi-exap" title="Permalink to this equation">#</a></span>\[\begin{split}
@@ -463,6 +461,7 @@ document.write(`
 <span class="eqno">(3)<a class="headerlink" href="#equation-eq-bi-exap-variant" title="Permalink to this equation">#</a></span>\[
 (1+y)^{n}=1+ny+\frac{n(n-1)}{2!} y^{2}+\frac{n(n-1)(n-2)}{3!}y^{3}+\cdots +ny^{n-1}+y^{n}.
 \]</div>
+</section>
 <section id="newton-s-general-binomial-expansion">
 <span id="index-2"></span><h2>Newton’s general binomial expansion<a class="headerlink" href="#newton-s-general-binomial-expansion" title="Permalink to this heading">#</a></h2>
 <p>Instead of strictly using a whole number <span class="math notranslate nohighlight">\(n\)</span> as the power in the binomial formula <a class="reference internal" href="#equation-eq-bi-exap">(1)</a>, we can loose the condition to introduce any real number <span class="math notranslate nohighlight">\(s\)</span> as the power. First we replace the whole number <span class="math notranslate nohighlight">\(n\)</span> with a real number <span class="math notranslate nohighlight">\(s\)</span> to get the generalised binomial coefficient</p>
@@ -485,9 +484,8 @@ document.write(`
 (1+y)^s = 1 + s y + \frac{s(s-1)}{2!}y^2+\frac{s(s-1)(s-2)}{3!}y^3 + \cdots
 \]</div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="mean-value-theorem">
-<h1>Mean Value Theorem<a class="headerlink" href="#mean-value-theorem" title="Permalink to this heading">#</a></h1>
+<section id="mean-value-theorem">
+<h2>Mean Value Theorem<a class="headerlink" href="#mean-value-theorem" title="Permalink to this heading">#</a></h2>
 <div class="proof theorem admonition" id="theorem-0">
 <p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Mean Value Theorem)</p>
 <section class="theorem-content" id="proof-content">
@@ -500,6 +498,7 @@ f'(c)=\frac{f(b)-f(a)}{b-a}
 \]</div>
 </section>
 </div></section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -565,13 +564,10 @@ f'(c)=\frac{f(b)-f(a)}{b-a}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Binomial Expansion</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-expansion">Binomial Expansion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-s-general-binomial-expansion">Newton’s general binomial expansion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-value-theorem">Mean Value Theorem</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-value-theorem">Mean Value Theorem</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
@@ -604,7 +600,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Sunday 21 January 2024 22:29:04.
+  Last updated on Sunday 21 January 2024 23:37:06.
   <br/>
 </p>
   </div>

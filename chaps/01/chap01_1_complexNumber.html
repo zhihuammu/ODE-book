@@ -67,7 +67,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathcal{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "dy": "\\mathrm{d}y", "dx": "\\mathrm{d}x", "ds": "\\mathrm{d}s", "dt": "\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/01/chap01_1_complexNumber';</script>
     <link rel="shortcut icon" href="../../_static/odefavicon.png"/>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="2. Complex Numbers and Difference Equations" href="chap01_0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Saturday 20 January 2024 22:30:06"/>
+    <meta name="docbuild:last-update" content="Sunday 21 January 2024 23:37:06"/>
   </head>
   
   
@@ -185,7 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_symbols.html">Symbols and Notation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_biexpan.html">Binomial Expansion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_formula.html">Formulas and Theorems</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="current nav bd-sidenav">
@@ -193,6 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../00/chap00_A1_definition.html">1.1. Definitions, Classification and Terminology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../00/chap00_A2_ode.html">1.2. Ordinary Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../00/chap00_A3_analytical.html">1.3. Analytical Methods for ODEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A4_exercise.html">1.4. Chapter 1 Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chap01_0.html">2. Complex Numbers and Difference Equations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -435,18 +436,18 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Definition 2.2 </span> (Complex number and Complex conjugate)</p>
 <section class="definition-content" id="proof-content">
 <p>A <span class="target" id="index-2"></span>complex number is a number in the form of</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a94aa2cb-ce8c-4f1a-acdf-5f190ac49a10">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-a94aa2cb-ce8c-4f1a-acdf-5f190ac49a10" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7ec59488-7c0c-4a7e-8884-063ecb873b86">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-7ec59488-7c0c-4a7e-8884-063ecb873b86" title="Permalink to this equation">#</a></span>\[\begin{equation}
     z=x+\i y,\qquad x \in \R, y\in \mathbb{R},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x\)</span> is the real component of the complex number and <span class="math notranslate nohighlight">\(\i y\)</span> is its imaginary component. We often call <span class="math notranslate nohighlight">\(y\)</span> the imaginary component for simplicity. The modulus of the complex number is calculated as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fd69e615-2a47-4aeb-b708-1ef242301fa3">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-fd69e615-2a47-4aeb-b708-1ef242301fa3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-30d34680-cfbe-4f1c-8eca-1cfd1b0f74fe">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-30d34680-cfbe-4f1c-8eca-1cfd1b0f74fe" title="Permalink to this equation">#</a></span>\[\begin{equation}
     |z|=\sqrt{x^2+y^2}.
 \end{equation}\]</div>
 <p>Its <span class="target" id="index-3"></span>complex conjugate is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d10d0f8e-251d-4d34-9a85-ca11294733c5">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-d10d0f8e-251d-4d34-9a85-ca11294733c5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-107ae02f-4a54-45ad-a081-1c9bd77061bd">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-107ae02f-4a54-45ad-a081-1c9bd77061bd" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \bar{z}=x-\i y.
 \end{equation}\]</div>
 </section>
@@ -455,8 +456,8 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Definition 2.3 </span> (Complex Arithmetic)</p>
 <section class="definition-content" id="proof-content">
 <p>The arithmetic operations on two complex numbers given as <span class="math notranslate nohighlight">\(z_1=x_1+\i y_1\)</span> and <span class="math notranslate nohighlight">\(z_2=x_2+\i y_2\)</span> are defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fa573b8c-0bf5-4601-a425-2e530a0e680d">
-<span class="eqno">(2.4)<a class="headerlink" href="#equation-fa573b8c-0bf5-4601-a425-2e530a0e680d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c033c082-4141-40df-9610-39a056b89d90">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-c033c082-4141-40df-9610-39a056b89d90" title="Permalink to this equation">#</a></span>\[\begin{align}
 \text{``$+$''}:\quad ~ &amp; ~ z_1+z_2=(x_1+\i y_1)+(x_2+\i y_2)=(x_1+x_2)+\i (y_1+y_2), \\
 \text{``$-$''}:\quad ~ &amp; ~ z_1-z_2=(x_1+\i y_1)-(x_2+\i y_2)=(x_1-x_2)+\i (y_1-y_2), \\
 \text{``$\times$''}:\quad ~ &amp; ~ z_1\cdot z_2=(x_1+ \i y_1)\cdot(x_2+\i y_2)=(x_1+x_2)+\i (y_1+y_2), \\
@@ -488,8 +489,8 @@ document.write(`
 <span id="index-4"></span><p class="admonition-title"><span class="caption-number">Definition 2.4 </span> (Complex number set)</p>
 <section class="definition-content" id="proof-content">
 <p>We denote the set of all the complex numbers as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dc3efed4-fd0c-4c4e-94a9-00f05fb5e986">
-<span class="eqno">(2.5)<a class="headerlink" href="#equation-dc3efed4-fd0c-4c4e-94a9-00f05fb5e986" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-de737b28-cf9a-4ebc-a902-bfdc9e752256">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-de737b28-cf9a-4ebc-a902-bfdc9e752256" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \mathbb{C}=\{z|z=x+\i y, ~x\in \R, y\in \mathbb{R}\}.
 \end{equation}\]</div>
 </section>
@@ -612,7 +613,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Saturday 20 January 2024 22:30:06.
+  Last updated on Sunday 21 January 2024 23:37:06.
   <br/>
 </p>
   </div>

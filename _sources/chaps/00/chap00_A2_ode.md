@@ -104,7 +104,7 @@ y'(t_0) = & ~y_1, \\
 y^{(n-1)}(t_0) = & ~y_{n-1}
 $$ (eq:IVP:initial:condition)
 
-where $y_0$, $y_1$, ... , $y_{n-1}$ are given constants, then we call this problem an initial value problem.  The values specified in {eq}`eq:IVP:initial:condition` are called initial conditions.
+where $y_0$, $y_1$, ... , $y_{n-1}$ are given constants, then we call this problem an initial value problem (or Cauchy problem).  The values specified in {eq}`eq:IVP:initial:condition` are called initial conditions. 
 ```
 
 ```{index} Ordinary Differential Equation; Lipschitz Continuity
@@ -125,6 +125,7 @@ then $f$ is Lipschitz continuous, and the inequality {eq}`eq:IVP:Lipschitz` is c
 ```
 
 ```{prf:theorem} Existence and Uniqueness
+:label: theo-existence
 Consider the initial value problem
 
 $$
@@ -138,6 +139,15 @@ R=\left\{ (t, y): a<t<b, ~ c<y<d \right\}
 $$
 
 that contains the point $(t_0, y_0)$, then the initial value problem has a unique solution $y=\phi(t)$ in some interval $[t_0 - \delta,  t_0 + \delta]$, where $\delta$ is a positive number.
+```
+
+```{prf:remark}
+The conditions stated in {prf:ref}`theo-existence` are sufficient but not necessary. When these conditions are not satisfied, we may see different scenarios for an IVP:
+1. it has no solution,
+2. it has a solution and the solution is unique,
+3. or it has multiple solutions.
+
+In the rest of our discussions, we will assume {prf:ref}`theo-existence` holds.
 ```
 
 ## Systems of Differential Equations
