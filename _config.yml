@@ -55,7 +55,7 @@ sphinx:
           "C": "\\mathbb{C}"
           "E": "\\mathrm{E}"
           "S": "\\mathrm{S}"
-          "D": "\\mathrm{D}"          
+          "D": "\\mathcal{D}"          
           "L": "\\mathrm{L}"        
           "F": "\\mathscr{F}"     
           "dy": "\\mathrm{d}y"
