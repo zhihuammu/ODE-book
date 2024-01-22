@@ -58,6 +58,7 @@ sphinx:
           "D": "\\mathcal{D}"          
           "L": "\\mathrm{L}"        
           "F": "\\mathscr{F}"     
+          "d": "\\mathrm{d}"          
           "dy": "\\mathrm{d}y"
           "dx": "\\mathrm{d}x"
           "ds": "\\mathrm{d}s"
