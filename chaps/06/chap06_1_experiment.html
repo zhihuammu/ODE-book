@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -42,9 +42,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="7. Multistep Methods: Stability Interval and Region" href="chap06_0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Sunday 21 January 2024 23:37:06"/>
+    <meta name="docbuild:last-update" content="Monday 22 January 2024 14:00:30"/>
   </head>
   
   
@@ -85,7 +85,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
 
@@ -128,18 +128,12 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <header>
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-  </header>
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -428,7 +422,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="an-experiment">
 <h1><span class="section-number">7.1. </span>An experiment<a class="headerlink" href="#an-experiment" title="Permalink to this heading">#</a></h1>
@@ -526,6 +520,11 @@ c5= 251/720
 <section id="code-implementation">
 <h2><span class="section-number">7.1.2. </span>Code Implementation<a class="headerlink" href="#code-implementation" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib is building the font cache; this may take a moment.
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>First, let’s try a step size <span class="math notranslate nohighlight">\(h=0.05\)</span></p></li>
@@ -631,7 +630,7 @@ c5= 251/720
  20  1.000 1.44419e+00 -3.44187e+00 1.00005e+00 4.44142e-01
 </pre></div>
 </div>
-<img alt="../../_images/230fb60c55cb75ece2f3a3e109d9723bb436093a46a00890b41a218a3078f7e0.svg" src="../../_images/230fb60c55cb75ece2f3a3e109d9723bb436093a46a00890b41a218a3078f7e0.svg" /></div>
+<img alt="../../_images/3209302a601414cadb3ef3572ce12d38f69925553b271cd4014053cf44b7c79b.svg" src="../../_images/3209302a601414cadb3ef3572ce12d38f69925553b271cd4014053cf44b7c79b.svg" /></div>
 </div>
 <ul class="simple">
 <li><p>It seems the errors are too large, so let’s try a smaller step size <span class="math notranslate nohighlight">\(h=0.025\)</span>.</p></li>
@@ -763,7 +762,7 @@ c5= 251/720
  40  1.000 1.00005e+00 9.99533e-01 1.00005e+00 1.31874e-06
 </pre></div>
 </div>
-<img alt="../../_images/d86cc345507823d36d979828e30a630ec83abc9a02413ce7bde1d5b488725bb1.svg" src="../../_images/d86cc345507823d36d979828e30a630ec83abc9a02413ce7bde1d5b488725bb1.svg" /></div>
+<img alt="../../_images/e84540bc2428ff2ec1f0829926fe1297d29c6d432a20bc7e0290f169c70ead31.svg" src="../../_images/e84540bc2428ff2ec1f0829926fe1297d29c6d432a20bc7e0290f169c70ead31.svg" /></div>
 </div>
 <p>The solution looks quite good now.</p>
 <div class="question admonition">
@@ -791,7 +790,7 @@ c5= 251/720
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\06"
+            path: "./chaps/06"
         },
         predefinedOutput: true
     }
@@ -835,7 +834,6 @@ c5= 251/720
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -877,7 +875,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Sunday 21 January 2024 23:37:06.
+  Last updated on Monday 22 January 2024 14:00:30.
   <br/>
 </p>
   </div>
@@ -895,8 +893,8 @@ By Dr Zhihua Ma
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

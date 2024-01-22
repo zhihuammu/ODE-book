@@ -152,7 +152,7 @@ In the rest of our discussions, we will assume {prf:ref}`theo-existence` holds.
 
 ## Systems of Differential Equations
 
-A system of ordinary differential equations is two or more
+A system of ordinary differential equations includes two or more
 equations involving the derivatives of two or more unknown functions of a single
 independent variable. For example, if $x$ and $y$ denote dependent variables and $t$
 denotes the independent variable, then a system of two first-order differential
@@ -161,17 +161,10 @@ equations is given by
 $$
 \begin{aligned}
 \diff{x}{t} = & f(t, x, y) \\
-\diff{y}{y} = & g(t, x, y)
+\diff{y}{t} = & g(t, x, y)
 \end{aligned}
 $$
 
 A solution of a system such as (9) is a pair of differentiable functions $x=\phi_1(t)$, $y=\phi_2(t)$, defined on a common interval $I$, that satisfy each equation of the system
 on this interval.
 
-<!-- ## Analytical Solution Methods
-
-
-$\N$, $\N_0$
-$\Z$
-$\R$
-$\C$ -->

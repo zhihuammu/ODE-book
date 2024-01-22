@@ -2,7 +2,7 @@
 
 | Week | Lecture | Lab| Assessment | 
 |:----:|--------|---------| ----------|
-|  1   | [](chap:differentialEquation)  | |
+|  1   | [](chap:differentialEquation)  | [](chap:differentialEquation:exercises)|
 |  2   | [](chap:complexNumber)         | [](chap:complexNumber:exercises) |
 |  3   | [](chap:interpolating)         | [](chap:interpolating:exercises) |
 |  4   | [](chap:derivation)            | [](chap:derivation:exercises)     | <span style="color:green">**1CWK40 release**</span> |
