@@ -19,8 +19,8 @@
     \addplot[domain = 0:3,	thick, 	black, ] {4*x/3};
     \addplot[domain = 0:3,	thick, 	black, ] {-4*x/3};
     
-    \coordinate (xaxis) at (\pgfkeysvalueof{/pgfplots/xmax},0);
-    \coordinate (origin) at (0,0);
+    \coordinate (xaxis) at (axis cs:\pgfkeysvalueof{/pgfplots/xmax},0);
+    \coordinate (origin) at (axis cs:0,0);
     %\addplot [->,blue] coordinates {(0, 0) (2, 3)} coordinate [at end] (A) ;
     \path (xaxis) -- (origin) -- (A)
     pic [
