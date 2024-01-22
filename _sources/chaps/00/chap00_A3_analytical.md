@@ -175,7 +175,7 @@ Note: In some books, the characteristic equation is also called *auxiliary equat
 (chapX-homo-ode-sol)=
 ### Homogeneous ODEs
 
-When the right hand side of equation {eq}`eq:ode:linear:constant` vanishes, i.e. $g(x)=0$, we obtain a linear homogeneous ordinary differential equation with constant coefficients
+When the right hand side of equation {eq}`eq:ode:linear:constant` vanishes, i.e. $g(x)\equiv 0$, we obtain a linear homogeneous ordinary differential equation with constant coefficients
 
 $$
 \L (\D) y = \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = 0

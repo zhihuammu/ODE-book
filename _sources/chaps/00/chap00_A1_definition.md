@@ -179,7 +179,7 @@ For an $n$-th order ordinary differential equation, we can express it in
     ```
     - **Homogeneous**
 
-        Equation {eq}`eq:ode:linear` is *homogeneous* if $g(x) = 0$.
+        Equation {eq}`eq:ode:linear` is *homogeneous* if $g(x) \equiv 0$.
 
     ```{index} pair: Differential Equation; Nonhomogeneous
     ```
