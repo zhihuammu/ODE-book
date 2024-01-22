@@ -155,7 +155,7 @@ Solve the following initial value problems defined by separable ODEs
 
     $$\frac{\dy}{y}=2x \dx$$
 
-    $$ \ln |y| = x^2 + c1 $$
+    $$ \ln |y| = x^2 + c_1 $$
 
     $$ y=e^{x^2+c_1}=c e^{x^2}$$
 
