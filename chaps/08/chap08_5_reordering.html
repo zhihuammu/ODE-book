@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -42,9 +42,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="9.4. Sparse Matrices Storage and Reordering" href="chap08_4_storage.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Tuesday 23 January 2024 16:23:03"/>
+    <meta name="docbuild:last-update" content="Tuesday 23 January 2024 21:52:50"/>
   </head>
   
   
@@ -85,7 +85,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
 
@@ -128,12 +128,18 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <header>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
   
+  </header>
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -424,7 +430,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="reordering-and-matrix-bandwidth">
 <h1><span class="section-number">9.5. </span>Reordering and Matrix Bandwidth<a class="headerlink" href="#reordering-and-matrix-bandwidth" title="Permalink to this heading">#</a></h1>
@@ -634,7 +640,7 @@ A=
 </div>
 <div class="sd-col sd-d-flex-column docutils">
 <p>Graph</p>
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-c9c970a5f35bebf064d1e865b245392da367372b.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-c9c970a5f35bebf064d1e865b245392da367372b.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -729,7 +735,7 @@ B=
 \end{split}\]</div>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-42115cd37bd1aae255efa352c022147eb3f2a7b9.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-42115cd37bd1aae255efa352c022147eb3f2a7b9.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -804,23 +810,23 @@ Example MATLAB code:</p>
 <span class="nb">xlabel</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;nonzeros=%d (%.1f%%)&#39;</span><span class="p">,</span><span class="n">nz</span><span class="p">,</span><span class="n">nz</span><span class="o">*</span><span class="n">pct</span><span class="p">));</span>
 </pre></div>
 </div>
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-6111af12eefea9175535e9984c46518b60cb7cb4.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-6111af12eefea9175535e9984c46518b60cb7cb4.svg" alt="Figure made with TikZ" /></p>
 </div><p>Figure 5 below shows the nonzero pattern of the original matrix A, the
 ordered matrix B, matrix C, ordered by the CM method, and matrix D is
 found by using the MATLAB function <code class="docutils literal notranslate"><span class="pre">symrcm</span></code></p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-713df8cca1ce93f95f50d1c95f8a3d4abf3ba47f.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-713df8cca1ce93f95f50d1c95f8a3d4abf3ba47f.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-83ff1d9a6455dc6a0f1c2851df8b427b1ec52491.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-83ff1d9a6455dc6a0f1c2851df8b427b1ec52491.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-cf7fc766a86317718f788928fea4cc0c71da7c0a.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-cf7fc766a86317718f788928fea4cc0c71da7c0a.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-9418f92b1523d57ede712cc7f639afc00601cdc4.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-9418f92b1523d57ede712cc7f639afc00601cdc4.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -864,7 +870,7 @@ corresponding adjacency graph from
 \end{split}\]</div>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-2eab16d0894046785ee23b6689d2c345ce652696.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-2eab16d0894046785ee23b6689d2c345ce652696.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -946,7 +952,7 @@ until complete labelling is obtained as shown:</p>
         \end{bmatrix}\end{split}\]</div>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-787b539b7889cdf9bddf82b828e63018ecd560dd.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-787b539b7889cdf9bddf82b828e63018ecd560dd.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -966,10 +972,10 @@ down-arrow effect).</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-651ebe8bdeb057cee327d68f5c6b15da2e61ee24.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-651ebe8bdeb057cee327d68f5c6b15da2e61ee24.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-a5e3aea9f9f0033a13984ef33e1065aadce09e45.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-a5e3aea9f9f0033a13984ef33e1065aadce09e45.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -1024,7 +1030,7 @@ corresponding adjacency graph from <a class="reference internal" href="#ch08-exa
        \end{bmatrix}\end{split}\]</div>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-2eab16d0894046785ee23b6689d2c345ce652696.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-2eab16d0894046785ee23b6689d2c345ce652696.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -1100,7 +1106,7 @@ the resulting adjacency matrix and graph:</p>
         \end{bmatrix}\end{split}\]</div>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-24fb31a4adb303b29896b786ef0475f491531831.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-24fb31a4adb303b29896b786ef0475f491531831.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -1121,10 +1127,10 @@ similar to the Column Count algorithm.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-4b43bc24433dd889a46bb397faddb776172cc129.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-4b43bc24433dd889a46bb397faddb776172cc129.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-a370f46cf3fa9934497cd765c50e86facb9be27a.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-a370f46cf3fa9934497cd765c50e86facb9be27a.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -1149,28 +1155,28 @@ for the original matrix <span class="math notranslate nohighlight">\(bw =18\)</s
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-961aca406d2df38553c9dba22a5e539b898771cb.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-961aca406d2df38553c9dba22a5e539b898771cb.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-be8a54a002c5c7ff5fbed413e75429d950add1b0.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-be8a54a002c5c7ff5fbed413e75429d950add1b0.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-de20332985e4ce71aa6a6c852aedf7ba131dbf86.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-de20332985e4ce71aa6a6c852aedf7ba131dbf86.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-703630afc392ee56370b7463284179e40cb83980.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-703630afc392ee56370b7463284179e40cb83980.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-94414e0515194f2d582a5bcc901c95f9a5e488dc.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-94414e0515194f2d582a5bcc901c95f9a5e488dc.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-9782ae7ebadc1d74060eba24a06ab71f67870d21.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-9782ae7ebadc1d74060eba24a06ab71f67870d21.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-9b906dde14aeb9c3a8be0b67a5ee9686d888615f.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-9b906dde14aeb9c3a8be0b67a5ee9686d888615f.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-c0621e8a57e90e83b775ee7e94a3b68107e78831.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-c0621e8a57e90e83b775ee7e94a3b68107e78831.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <p>Figure 6. Comparison between reordering schemes for a <span class="math notranslate nohighlight">\(20 \times 20\)</span> symmetric matrix</p>
 </div>
@@ -1256,7 +1262,7 @@ its corresponding adjacency graph.</p>
       \end{bmatrix}\end{split}\]</div>
 </div>
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-b7f8f9d3b05612433872e7c15bf779d9b9bc1c09.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-b7f8f9d3b05612433872e7c15bf779d9b9bc1c09.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -1276,31 +1282,31 @@ with the MATLAB commands are summerised in Figure 7.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
 <div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-b69c57e40ec7c147aded2518bf717a73de76d64d.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-b69c57e40ec7c147aded2518bf717a73de76d64d.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-25350b405f99468ffa4a3140e25fc23e7bd6073d.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-25350b405f99468ffa4a3140e25fc23e7bd6073d.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-53824ecba7e308f1bb5212bbe0f364ab0de0476a.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-53824ecba7e308f1bb5212bbe0f364ab0de0476a.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-4cc699d69c475340368aee5438ff5deca4212173.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-4cc699d69c475340368aee5438ff5deca4212173.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-c777cd5da65657120f4afa51c17e70d59515aa19.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-c777cd5da65657120f4afa51c17e70d59515aa19.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-9cbbff5bb995a3502a3bd5f758c93606abd2ac6e.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-9cbbff5bb995a3502a3bd5f758c93606abd2ac6e.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-2f84f6be81188fda65fae56494a94ef141ceaf11.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-2f84f6be81188fda65fae56494a94ef141ceaf11.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-3530748538a4371f3a970d326b865b6c90e28692.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-3530748538a4371f3a970d326b865b6c90e28692.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 <div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
-<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-aed90c3fd1e595a2c66d43a27b6751a3bc0eb750.png" alt="Figure made with TikZ" /></p>
+<div class="figure" style="text-align: center"><p><img  src="../../_images/tikz-aed90c3fd1e595a2c66d43a27b6751a3bc0eb750.svg" alt="Figure made with TikZ" /></p>
 </div></div>
 </div>
 </div>
@@ -1366,7 +1372,7 @@ computing time.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/08"
+            path: "./chaps\08"
         },
         predefinedOutput: true
     }
@@ -1409,6 +1415,7 @@ computing time.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1453,7 +1460,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 23 January 2024 16:23:03.
+  Last updated on Tuesday 23 January 2024 21:52:50.
   <br/>
 </p>
   </div>
@@ -1471,8 +1478,8 @@ By Dr Zhihua Ma
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
 
   <footer class="bd-footer">
   </footer>
