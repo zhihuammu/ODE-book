@@ -256,7 +256,7 @@ Solve the following homogeneous ODEs for $y=y(x)$, $x\in\R$
 
 Solve the following non-homogeneous ODEs for $y=y(x)$, $x \in \R$
 
-1. $y''+3y'+2y$
+1. $y''+3y'+2y=2e^{3x}$
 
 2. $y''+3y'+2y=x^2$
 
@@ -266,26 +266,34 @@ Solve the following non-homogeneous ODEs for $y=y(x)$, $x \in \R$
 
 
 ```{solution} ch0-ex-q5
+1. $y''+3y'+2y=2e^{3x}$
 
+    $$y=c_1 e^{-x} + c_2 e^{-2x} + \tfrac{1}{10}e^{3x}$$
+
+2. $y''+3y'+2y=x^2$
+
+    $$y=c_1 e^{-x} + c_2 e^{-2x} + \tfrac{1}{2}x^2-\tfrac{3}{2}x+\tfrac{7}{4} $$
+
+3. $y'''+6y''+11y'+6y=\cos 5x$
+
+    $$y=c_1 e^{-x}+c_2 e^{-2x}+c_3 e^{-3x}-\tfrac{36}{6409}\cos 5x - \tfrac{35}{12818}\sin 5x$$
 ```
 
 
 ```{exercise}
 :label: ch0-ex-6
 
-Solve the following initial value problems
+Solve the following initial value problems for $y=y(x)$, $x \in [0, \infty)$
 
-1. $y'=-2y$, $x \in [0, \infty)$, $y(0)=1$
+2. $y'=y+x$, $y(0)=1$
 
-2. $y'=y+x$, $x\in [0, \infty)$, $y(0)=1$
+3. $y'=-y+x+1$, $y(0)=1$
 
-3. $y'=-y+x+1$, $x\in [0, 1]$, $y(0)=1$
+4. $y'=-40y+40x+1$, $y(0)=4$
 
-4. $y'=-40y+40x+1$, $x \in [0, \infty)$, $y(0)=4$
+5. $y'=-100y+\cos x$, $y(0)=1$
 
-5. $y'=-100y+\cos x$, $x \in [0, \infty)$, $y(0)=1$
-
-6. $y'=-20y'-19y$, $x \in [0, \infty)$,  $y(0)=2$,  $y'(0)=-20$
+6. $y'=-20y'-19y$, $y'(0)=-20$
 ```
 
 ```{solution} ch0-ex-6
