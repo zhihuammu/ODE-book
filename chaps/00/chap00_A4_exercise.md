@@ -293,7 +293,7 @@ Solve the following initial value problems for $y=y(x)$, $x \in [0, \infty)$
 
 5. $y'=-100y+\cos x$, $y(0)=1$
 
-6. $y'=-20y'-19y$, $y'(0)=-20$
+6. $y''=-20y'-19y$, $y(0)=2$, $y'(0)=-20$
 ```
 
 ```{solution} ch0-ex-6
