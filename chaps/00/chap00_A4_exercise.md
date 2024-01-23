@@ -19,6 +19,7 @@ Determine the type, order, degree, linearity and homogeneity of the following di
 ```                                                                                    
 %second-order homogeneous ode
 ```{solution} ch0-ex-q1
+:class: dropdown
 
 | equation |  type | order | degree | linearity  | homogeneity  |
 | -- | -- | -- | --  | --  | -- |
@@ -58,6 +59,8 @@ Find the general solution to the following separable ODEs
 
 
 ```{solution} ch0-ex-q2
+:class: dropdown
+
 1. $\displaystyle y\dy = x \dx$
 
     $$\d \left(\frac{1}{2}y^2\right) = \d \left(\frac{1}{2}x^2\right) $$
@@ -151,6 +154,8 @@ Solve the following initial value problems defined by separable ODEs
 
 
 ```{solution} ch0-ex-q3
+:class: dropdown
+
 1. $\displaystyle \diff{y}{x}=2xy$, $y(0)=1$
 
     $$\frac{\dy}{y}=2x \dx$$
@@ -228,24 +233,61 @@ Solve the following homogeneous ODEs for $y=y(x)$, $x\in\R$
 ```
 
 ```{solution} ch0-ex-q4
+:class: dropdown
 1. $y''+y=0 $
 
-    $$ y=c_1 \cos x + c_2 \sin x $$
+    $$z^2+1=0 $$
+
+    $$z_{1, 2} = 0\pm \i$$
+
+    $$ y & = e^{0x} (c_1 \cos x + c_2 \sin x) \\
+         & = c_1 \cos x + c_2 \sin x
+    $$
     
 2. $y'''+3y''+3y'+y=0$
+
+    $$ z^3+3z^2+3z+1 = 0 $$
+
+    $$ & (z^3+1) + (3z^2+3z)\\
+    = & (z+1)(z^2-z+1) + 3z(z+1) \\
+    = & (z+1)(z^2+2z+1) \\
+    = & (z+1)^3 \\
+    = & 0  
+    $$
+
+    $$z_{1, 2, 3} = -1 $$
 
     $$ y=c_1 e^{-x}+c_2 x e^{-x} + c_3 x^2 e^{-x}$$
 
 3. $2y''-5y'-3y=0$
 
+    $$2z^2-5z-3 = 0$$
+
+    $$(2z+1)(z-3)=0 $$
+
+    $$z_{1}=-\tfrac{1}{2}, \quad z_2=3$$
+
     $$ y=c_1 e^{-\frac{1}{2}x} + c_2 e^{3x}$$
 
 4. $y''-10y'+25y=0$
    
-    $$y=c_1 e^{5x} + c_2 x e^{5x}$$
-    
+    $$z^2-10z+25=0$$
+
+    $$(z-5)^2=0$$
+
+    $$z_{1,2}=5$$
+
+    $$y=c_1 e^{5x} + c_2 x e^{5x}$$    
 
 5. $20y''+4y'+y=0$
+
+    $$20z^2+4z+1=0$$
+
+    $$
+    z_{1,2} & =\frac{-4\pm \sqrt{4^2-4(20)(1)}}{2(20)} \\
+            & = \frac{-4\pm 8 \i}{40} \\
+            & = -0.1 \pm 0.2 \i
+    $$
 
     $$ y=e^{-0.1x} (c_1 \cos 0.2x + c_2 \sin 0.2x) $$
 ```
@@ -266,15 +308,111 @@ Solve the following non-homogeneous ODEs for $y=y(x)$, $x \in \R$
 
 
 ```{solution} ch0-ex-q5
+:class: dropdown
 1. $y''+3y'+2y=2e^{3x}$
 
-    $$y=c_1 e^{-x} + c_2 e^{-2x} + \tfrac{1}{10}e^{3x}$$
+    $$y_h''+3y_h'+2y_h=0$$
+
+    $$z^2+3z+2=0$$
+
+    $$z_1=-1, \quad z_2 = -2$$
+
+    $$y_h=c_1 e^{-x} + c_2 e^{-2x}$$
+
+    $$y_p=Ae^{3x}$$
+
+    $$y_p'=3Ae^{3x}$$
+
+    $$y_p''=9Ae^{3x}$$
+
+    $$
+     & y_p''+3y_p'+2y_p \\
+    = & ~ 9Ae^{3x} + 3 (3Ae^{3x})  + 2 (Ae^{3x}) \\
+    = & ~ 20 Ae^{3x} \\
+    = & ~ 2 e^{3x}
+    $$
+
+    $$A=\tfrac{1}{10}$$
+
+    $$
+    y & = y_h + y_p \\
+      & =c_1 e^{-x} + c_2 e^{-2x} + \tfrac{1}{10}e^{3x}
+    $$
 
 2. $y''+3y'+2y=x^2$
 
-    $$y=c_1 e^{-x} + c_2 e^{-2x} + \tfrac{1}{2}x^2-\tfrac{3}{2}x+\tfrac{7}{4} $$
+    $$y_h''+3y_h'+2y_h=0$$
+
+    $$z^2+3z+2=0$$
+
+    $$z_1=-1, \quad z_2 = -2$$
+
+    $$y_h=c_1 e^{-x} + c_2 e^{-2x}$$
+
+    $$y_p=Ax^2+Bx+C$$
+
+    $$y_p'=2Ax+B$$
+
+    $$y_p''=2A$$
+
+    $$
+      & y_p'' + 3y_p'+2y_p \\ 
+    = & ~ 2A+3(2Ax+B)+2(Ax^2+Bx+C) \\
+    = & ~ 2Ax^2 + (6A+2B)x + (2A+3B+2C) \\
+    = & x^2
+    $$
+
+    $$A=\tfrac{1}{2}, \quad B=-\tfrac{3}{2}, \quad C=\tfrac{7}{4}$$
+
+    $$y_p=\tfrac{1}{2}x^2-\tfrac{3}{2}x+\tfrac{7}{4}$$
+
+    $$
+    y & = y_h + y_p \\
+      & =c_1 e^{-x} + c_2 e^{-2x} + \tfrac{1}{2}x^2-\tfrac{3}{2}x+\tfrac{7}{4}
+    $$
 
 3. $y'''+6y''+11y'+6y=\cos 5x$
+
+    $$z^3+6z^2+11z+6=0$$
+
+    $$
+      &   z^3+6z^2+11z+6 \\
+    = & ~ z^3+6z^2+5z+6z+6 \\
+    = & ~ z(z^2+6z+5)+6(z+1) \\
+    = & ~ z(z+1)(z+5)+6(z+1) \\
+    = & ~ (z+1)[z(z+5)+6] \\
+    = & ~ (z+1)(z^2+5z+6) \\
+    = & ~ (z+1)(z+2)(z+3) \\
+    = & ~ 0
+    $$
+
+    $$
+    z_1 = -1, \quad z_2 = -2, \quad z_3=-3
+    $$
+
+    $$y_h=c_1 e^{-x} + c_2 e^{-2x} + c_3 e^{-3x}$$
+
+    $$y_p = A \cos 5x + B \sin 5x$$
+
+    $$y_p'= -5A \sin 5x + 5B \cos 5x$$
+
+    $$y_p''= -25A \cos 5x - 25B \sin 5x$$
+
+    $$y_p'''= 125A \sin 5x - 125B \cos 5x$$
+
+    $$
+      & y_p'''+6y_p''+11y_p'+6y_p \\
+    = &~(125A \sin 5x - 125B \cos 5x) \\
+      & + 6(-25A \cos 5x - 25B \sin 5x) \\
+      & + 11(-5A \sin 5x + 5B \cos 5x) \\
+      & + 6(A \cos 5x + B \sin 5x) \\
+    = & (70A-144B) \sin 5x + (-144A-70B) \cos 5x \\
+    = & \cos 5x
+    $$
+
+    $$
+    A=-\tfrac{36}{6409}, \quad B=-\tfrac{35}{12818}
+    $$
 
     $$y=c_1 e^{-x}+c_2 e^{-2x}+c_3 e^{-3x}-\tfrac{36}{6409}\cos 5x - \tfrac{35}{12818}\sin 5x$$
 ```
@@ -285,17 +423,152 @@ Solve the following non-homogeneous ODEs for $y=y(x)$, $x \in \R$
 
 Solve the following initial value problems for $y=y(x)$, $x \in [0, \infty)$
 
-2. $y'=y+x$, $y(0)=1$
+1. $y'=y+x$, $y(0)=1$
 
-3. $y'=-y+x+1$, $y(0)=1$
+2. $y'=-y+x+1$, $y(0)=1$
 
-4. $y'=-40y+40x+1$, $y(0)=4$
+3. $y'=-40y+40x+1$, $y(0)=4$
 
-5. $y'=-100y+\cos x$, $y(0)=1$
+4. $y'=-100y+\cos x$, $y(0)=1$
 
-6. $y''=-20y'-19y$, $y(0)=2$, $y'(0)=-20$
+5. $y''=-20y'-19y$, $y(0)=2$, $y'(0)=-20$
 ```
 
 ```{solution} ch0-ex-6
+:class: dropdown
 
+1. $y'=y+x$, $y(0)=1$
+
+    $$y'+y=x$$
+
+    $$z-1=0$$
+
+    $$z=1$$
+
+    $$y_h = c e^x$$
+
+    $$y_p=Ax+B$$
+
+    $$y_p'=A$$
+
+    $$y_p'-y_p = A- (Ax+B) = x$$
+
+    $$A=-1, \quad B=-1 $$
+
+    $$y_p=-x-1$$
+
+    $$y=y_h+y_p=ce^x-x-1$$
+
+    $$y(0)=c-1=1 $$
+
+    $$c=2$$
+
+    $$y=y_h+y_p=2e^x-x-1$$
+
+2. $y'=-y+x+1$, $y(0)=1$
+
+    $$y'+y=x+1$$
+
+    $$z+1=0$$
+
+    $$z=-1$$
+
+    $$y_h=ce^{-x}$$
+
+    $$y_p=Ax+B$$
+
+    $$y_p'+y_p=A+(Ax+B)=x+1$$
+
+    $$A=1, \quad B=0$$
+
+    $$y_p=x$$
+
+    $$y=y_h+y_p=ce^{-x}+x$$
+
+    $$y(0)=c+0=1$$
+
+    $$c=1$$
+
+    $$y=e^{-x}+x$$
+
+3. $y'=-40y+40x+1$, $y(0)=4$
+
+    $$y'+40y=40x+1$$
+
+    $$z+40=0$$
+
+    $$z=-40$$
+
+    $$y_h=ce^{-40x}$$
+
+    $$y_p=Ax+B$$
+
+    $$y_p'+40y_p = A + 40(Ax+B)=40x+1$$
+
+    $$A=1, \quad B=0$$
+
+    $$y_p=x$$
+
+    $$y=y_h+y_p=ce^{-40x}+x$$
+
+    $$y(0)=c=4$$
+
+    $$y=4e^{-40x}+x $$
+
+4. $y'=-100y+\cos x$, $y(0)=1$
+
+    $$y'+100y=\cos x$$
+
+    $$z+100=0$$
+
+    $$z=-100$$
+
+    $$y_h = c e^{-100x}$$
+
+    $$y_p = A \cos x + B \sin x$$
+
+    $$y_p'=-A \sin x + B \cos x$$
+
+    $$y_p'+100 y_p & = (-A\sin x+ B \cos x)+100(A\cos x+B\sin x) \\
+                   & = (100B-A) \sin x + (100A+B) \cos x \\
+                   & = \cos x
+    $$
+
+    $$
+    & 100B-A = 0\\
+    & 100A+B = 1
+    $$
+
+    $$A=\tfrac{100}{10001}, \quad B=\tfrac{1}{10001} $$
+
+    $$y_p = \tfrac{100}{10001} \cos x + \tfrac{1}{10001} \sin x$$
+
+    $$y=y_h+y_p = c e^{-100x}+ \tfrac{100}{10001} \cos x + \tfrac{1}{10001} \sin x $$
+
+    $$y(0)=c+\tfrac{100}{10001}=1$$
+
+    $$c=\tfrac{9901}{10001}$$
+
+    $$y=\tfrac{9901}{10001}e^{-1000x} + \tfrac{100}{10001} \cos x + \tfrac{1}{10001} \sin x $$
+
+5. $y''=-20y'-19y$, $y(0)=2$, $y'(0)=-20$
+
+    $$y''+20y'+19y=0$$
+
+    $$z^2+20z+19=0$$
+
+    $$z_1 = -1, \quad z_2 = -19$$
+
+    $$y=c_1 e^{-x}+c_2 e^{-19x}$$
+
+    $$y'=-c_1 e^{-x}-19 c_2 e^{-19x}$$
+
+    $$    
+    y(0) & = c_1 + c_2 = 2\\
+    y'(0)& = -c_1 -19 c_2 = -20    
+    $$
+
+    $$c_1= 1, \quad c_2 = 1$$
+
+    $$ y=e^{-x} + e^{-19x} $$
 ```
