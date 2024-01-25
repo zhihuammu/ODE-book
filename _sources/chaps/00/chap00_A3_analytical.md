@@ -42,7 +42,7 @@ $$
 Solve $(1+x)\dy - y \dx=0$
 
 :::{admonition} Solution
-:class: solution
+:class: solution, dropdown
 <!-- **Solution:** -->
 Re-arranging the equation as
 
@@ -76,7 +76,7 @@ $$
 Solve $\displaystyle \diff{y}{x} = \frac{x-5}{y^2}$.
 
 :::{admonition} Solution
-:class: solution
+:class: solution, dropdown
 Rearranging the equation as
 
 $$
@@ -185,10 +185,10 @@ $$(eq:ode:linear:homogeneous:constant)
 ```
 
 ```{prf:theorem} Superposition Principle --- Homogeneous Equations
-Let $y_1(x)$, $y_2(x)$, ... , $y_n(x)$ be solutions to the homogeneous $n$-th order differential equation {eq}`eq:ode:linear:homogeneous:constant` on an interval $I$, then the linear combination
+Let $\phi_1(x)$, $\phi_2(x)$, ... , $\phi_n(x)$ be solutions to the homogeneous $n${sup}`th` order differential equation {eq}`eq:ode:linear:homogeneous:constant` on an interval $I$, then the linear combination
 
 $$
-    y=c_1 y_1(x) + c_2 y_2(x) + \cdots + c_n y_n(x)
+    y=c_1 \phi_1(x) + c_2 \phi_2(x) + \cdots + c_n \phi_n(x)
 $$
 
 where $c_p ~ (p=1, 2, \ldots, n)$ are arbitrary constants, is also a solution on the interval.
@@ -305,18 +305,18 @@ can be:
     y=c_1 e^{z x} + c_2 x e^{z x}
     $$
 
-- Case 3: two complex conjugate solution ($z_{1,2} = \alpha \pm i \beta \in \C$);. 
+- Case 3: two conjugate complex solutions ($z_{1,2} = \alpha \pm \i \beta \in \C$);. 
 
     The general solution of the second-order ODE is
 
     $$
-    y=C_1 e^{(\alpha + i \beta) x} + C_2 e^{(\alpha - i \beta) x}
+    y=k_1 e^{(\alpha + \i \beta) x} + k_2 e^{(\alpha - \i \beta) x}
     $$
 
     or we can write it as
 
     $$
-    y=c_1 e^{\alpha x} \cos \beta x + c_2 e^{\alpha x} \sin \beta x
+    y=e^{\alpha x}  \left(c_1 \cos \beta x + c_2 \sin \beta x \right), \quad c_1, c_2 \in \C
     $$
 
 ```
@@ -329,7 +329,7 @@ Solving the following ODEs:
 3. $y''+4y'+7y=0$
 
 :::{admonition} Solution
-:class: solution
+:class: solution, dropdown
 1. $2z^2-5z-3=(2z+1)(z-3)=0$,  $\quad z_1=-\frac{1}{2}$ and $z_2=3$
 
     $y=c_1 e^{-\frac{x}{2}}+c_2 e^{3x}$
@@ -346,7 +346,7 @@ Solving the following ODEs:
 ```
 
 #### Higher-order ODEs
-Solve an $n$-th order ODE 
+Solve an $n${sup}`th` order ODE 
 $
 \left( a_n \D^n + a_{n-1} \D^{n-1} + \cdots + a_1 \D + a_0 \right) y = 0
 $
@@ -439,7 +439,7 @@ y''+3y'+2y=3t
 $$
 
 :::{admonition} Solution
-:class: solution
+:class: solution, dropdown
 <!-- :class: hint -->
 
 - Step 1: find a particular solution to the equation
@@ -522,7 +522,7 @@ y''+3y'+2y=10e^{3t}
 $$
 
 :::{admonition} Solution
-:class: solution
+:class: solution ,dropdown
 The right hand side is $10e^{3t}$, so we guess $y_p(t)=Ae^{3t}$. Substituting our guess into the differential equation, we can get
 
 $$
