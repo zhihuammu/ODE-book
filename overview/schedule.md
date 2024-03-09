@@ -1,4 +1,4 @@
-# Teaching Schedule
+# Schedule
 
 <!-- | Week | Lecture | Lab| Assessment | 
 |:----:|--------|---------| ----------|
