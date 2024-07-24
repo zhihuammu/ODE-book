@@ -165,6 +165,6 @@ $$
 \end{aligned}
 $$
 
-A solution of a system such as (9) is a pair of differentiable functions $x=\phi_1(t)$, $y=\phi_2(t)$, defined on a common interval $I$, that satisfy each equation of the system
+A solution to a system such as the above one is a pair of differentiable functions $x=\phi_1(t)$, $y=\phi_2(t)$, defined on a common interval $I$, that satisfy each equation of the system
 on this interval.
 
