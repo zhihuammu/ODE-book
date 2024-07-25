@@ -348,7 +348,7 @@ find the general solution to the corresponding difference equation.
 ```{admonition} Solution
 :class: dropdown, solution
 
-$$1+\sqrt{3}=2 e^{\i \frac{\pi}{3}},~ 1+\i = \sqrt{2} e^{\i\frac{\pi}{4}},$$
+$$1+\sqrt{3}\i=2 e^{\i \frac{\pi}{3}},~ 1+\i = \sqrt{2} e^{\i\frac{\pi}{4}},$$
 
 so the general solution is 
 
