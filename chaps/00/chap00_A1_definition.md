@@ -148,7 +148,7 @@ For an $n$-th order ordinary differential equation, we can express it in
 
     - **Linear**
 
-        An $n$-th order ordinary equation is linear if it can be expressed as
+        An $n$-th order ordinary differential equation is linear if it can be expressed as
 
          $$
         a_n(x) y^{(n)} + a_{n-1}(x) y^{(n-1)} + \cdots + a_1(x) y' + a_0(x) y = g(x),
