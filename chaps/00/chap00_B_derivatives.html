@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Derivatives &#8212; Linear Multistep Methods</title>
+    <title>Differentiation Rules &#8212; Linear Multistep Methods</title>
   
   
   
@@ -67,17 +67,17 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "d": "\\mathrm{d}", "dy": "~\\mathrm{d}y", "dx": "~\\mathrm{d}x", "ds": "~\\mathrm{d}s", "dt": "~\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "d": "\\mathrm{d}", "arcsec": "\\mathrm{arcsec}~", "arccot": "\\mathrm{arccot}~", "arccsc": "\\mathrm{arccsc}~", "sech": "\\mathrm{sech}", "csch": "\\mathrm{csch}", "dy": "~\\mathrm{d}y", "dx": "~\\mathrm{d}x", "ds": "~\\mathrm{d}s", "dt": "~\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/00/chap00_B_derivatives';</script>
     <link rel="shortcut icon" href="../../_static/odefavicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Integrals" href="chap00_B_integrals.html" />
+    <link rel="next" title="Table of Integrals" href="chap00_B_integrals.html" />
     <link rel="prev" title="Formulas and Theorems" href="chap00_B_formula.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Wednesday 14 August 2024 16:14:23"/>
+    <meta name="docbuild:last-update" content="Wednesday 14 August 2024 17:53:33"/>
   </head>
   
   
@@ -188,8 +188,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chap00_B_symbols.html">Symbols and Notation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chap00_B_formula.html">Formulas and Theorems</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Derivatives</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chap00_B_integrals.html">Integrals</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap00_B_integrals.html">Table of Integrals</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="nav bd-sidenav">
@@ -398,7 +398,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -409,11 +411,25 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Derivatives</h1>
+    <h1>Differentiation Rules</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-formulas">General Formulas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric-functions">Trigonometric Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-trigonometric-functions">Inverse Trigonometric Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-and-logarithmic-functions">Exponential and Logarithmic Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic-functions">Hyperbolic Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-hyperbolic-functions">Inverse Hyperbolic Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-equations">Parametric Equations</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -423,8 +439,71 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="derivatives">
-<h1>Derivatives<a class="headerlink" href="#derivatives" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="differentiation-rules">
+<h1>Differentiation Rules<a class="headerlink" href="#differentiation-rules" title="Permalink to this heading">#</a></h1>
+<section id="general-formulas">
+<h2>General Formulas<a class="headerlink" href="#general-formulas" title="Permalink to this heading">#</a></h2>
+<p>Assume <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> are differentiable functions of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(c\)</span> is a constant.</p>
+<div class="math notranslate nohighlight">
+\[u'=\diff{u}{x}, \quad v'=\diff{v}{x}\]</div>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{c}{x}=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(u+v)=u' + v'\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(u-v)=u' - v'\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(cu) = c u'\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(uv) = u'v + u v' \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}\biggl(\frac{u}{v}\biggr) = \frac{u'v - u v'}{v^2} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x} (x^n) = n x^{n-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}\biggl\{f\biggl(g(x)\biggr)\biggr\}= \diff{f}{g} \cdot \diff{g}{x}\)</span></p></li>
+</ol>
+</section>
+<section id="trigonometric-functions">
+<h2>Trigonometric Functions<a class="headerlink" href="#trigonometric-functions" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple" start="9">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\sin x) = \cos x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\cos x) = -\sin x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\tan x) = \sec^2 x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\sec x) = \sec x \tan x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\cot x) = -\csc^2 x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\csc x) = -\csc x \cot x\)</span></p></li>
+</ol>
+</section>
+<section id="inverse-trigonometric-functions">
+<h2>Inverse Trigonometric Functions<a class="headerlink" href="#inverse-trigonometric-functions" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple" start="15">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\arcsin x) = \frac{1}{1-x^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\arccos x) = -\frac{1}{1-x^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\arctan x) = \frac{1}{1+x^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\arcsec x) = \frac{1}{|x|\sqrt{x^2-1}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\arccot x) = -\frac{1}{1+x^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\arccsc x) = -\frac{1}{|x|\sqrt{x^2-1}}\)</span></p></li>
+</ol>
+</section>
+<section id="exponential-and-logarithmic-functions">
+<h2>Exponential and Logarithmic Functions<a class="headerlink" href="#exponential-and-logarithmic-functions" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple" start="21">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x} (e^x) = e^x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x} (a^x) = a^x \ln a\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x} (\ln x) = \frac{1}{x}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x} (\log_a x) = \frac{1}{x \ln a}\)</span></p></li>
+</ol>
+</section>
+<section id="hyperbolic-functions">
+<h2>Hyperbolic Functions<a class="headerlink" href="#hyperbolic-functions" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple" start="25">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\sinh x) = \cosh x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\cosh x) = \sinh x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\tanh x) = \sech^2 ~x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\sech x) = -\sech ~x \tanh x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\coth x) = -\csch^2 ~x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{}{x}(\csch x) = -\csch ~x ~\coth x\)</span></p></li>
+</ol>
+</section>
+<section id="inverse-hyperbolic-functions">
+<h2>Inverse Hyperbolic Functions<a class="headerlink" href="#inverse-hyperbolic-functions" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="parametric-equations">
+<h2>Parametric Equations<a class="headerlink" href="#parametric-equations" title="Permalink to this heading">#</a></h2>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p><span class="math notranslate nohighlight">\(F(x)\)</span></p></th>
@@ -477,6 +556,7 @@ document.write(`
 </tbody>
 </table>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -522,7 +602,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Integrals</p>
+        <p class="prev-next-title">Table of Integrals</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -533,7 +613,26 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-formulas">General Formulas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric-functions">Trigonometric Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-trigonometric-functions">Inverse Trigonometric Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-and-logarithmic-functions">Exponential and Logarithmic Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic-functions">Hyperbolic Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-hyperbolic-functions">Inverse Hyperbolic Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-equations">Parametric Equations</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -563,7 +662,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 14 August 2024 16:14:23.
+  Last updated on Wednesday 14 August 2024 17:53:33.
   <br/>
 </p>
   </div>
