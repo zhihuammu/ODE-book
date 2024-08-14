@@ -18,6 +18,7 @@ parts:
     chapters: 
     - file: chaps/00/chap00_B_symbols
     - file: chaps/00/chap00_B_formula
+    - file: chaps/00/chap00_B_derivatives    
     - file: chaps/00/chap00_B_integrals
 
     
