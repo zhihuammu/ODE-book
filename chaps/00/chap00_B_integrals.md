@@ -1,4 +1,4 @@
-# Integrals
+# Table of Integrals
 
 :::{index} Integrals
 :::

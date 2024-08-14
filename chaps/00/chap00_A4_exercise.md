@@ -549,7 +549,7 @@ Solve the following initial value problems for $y=y(x)$, $x \in [0, \infty)$
 
     $$c=\tfrac{9901}{10001}$$
 
-    $$y=\tfrac{9901}{10001}e^{-1000x} + \tfrac{100}{10001} \cos x + \tfrac{1}{10001} \sin x $$
+    $$y=\tfrac{9901}{10001}e^{-100x} + \tfrac{100}{10001} \cos x + \tfrac{1}{10001} \sin x $$
 
 5. $y''=-20y'-19y$, $y(0)=2$, $y'(0)=-20$
 
