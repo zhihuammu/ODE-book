@@ -3,7 +3,7 @@
 
 You should try the following exercise questions first, then check with the answers. 
 
-For detailed solutions, you can download {download}`the full solutions for Chapter 1 Exercises </exSol/Ex1/Ex1_Solution_annotated.pdf>`.
+For detailed solutions, you can download {download}`the full solutions for Chapter 2 Exercises </exSol/Ex1/Ex1_Solution_annotated.pdf>`.
 
 :::{exercise}
 :label: ch1-ex-q1
@@ -36,7 +36,7 @@ Simplify the following expressions used to calculate $z$, and find the real and 
 
 For the following second-order homogeneous linear difference equation
 
-$$y_{n+2} - 2 a y_{n+1}+ a^2 y_n =0, \quad a\in R, a\ne0,$$
+$$y_{n+2} - 2 a y_{n+1}+ a^2 y_n =0, \quad a\in \R,~ a\ne0,$$
 
 prove that 
 
