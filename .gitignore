@@ -5,4 +5,5 @@ _build/
 *.log
 *.gz
 *.code-workspace
+*.autosave
 conf.py
