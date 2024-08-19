@@ -27,7 +27,7 @@
 19. $\displaystyle \int \frac{1}{\sqrt{a^2+x^2}} \dx = \sinh^{-1}\biggl(\frac{x}{a}\biggl) + C, \quad (a>0)$
 20. $\displaystyle \int \frac{1}{\sqrt{x^2-a^2}} \dx = \cosh^{-1}\biggl(\frac{x}{a}\biggl) + C, \quad (x>a>0)$
 
-
+<!-- 
 ## Forms involving $ax+b$
 
 ## Forms involving $a^2+x^2$
@@ -46,4 +46,4 @@
 
 ## Hyperbolic Forms
 
-## Definite Integrals
+## Definite Integrals -->
