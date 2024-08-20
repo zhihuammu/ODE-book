@@ -3,6 +3,7 @@
 :::{index} Binomial Expansion
 :::
 
+(chap:sec:Binomial Expansion)=
 ## Binomial Expansion
 
 For any two real numbers $x$ and $y$, and a whole number $n$ as the power, the [binomial expansion](https://en.wikipedia.org/wiki/Binomial_theorem), also named binomial theorem, describes the algebraic expansion of powers of a binomial as below
@@ -39,7 +40,8 @@ $$(eq:bi:exap:variant)
 :::{index} Binomial Expansion; general binomial expansion
 :::
 
-## Newton's general binomial expansion
+(chap:sec:generalBinomialExpansion)=
+## Newton's generalised binomial theorem
 
 Instead of strictly using a whole number $n$ as the power in the binomial formula {eq}`eq:bi:exap`, we can loose the condition to introduce any real number $s$ as the power. First we replace the whole number $n$ with a real number $s$ to get the generalised binomial coefficient 
 

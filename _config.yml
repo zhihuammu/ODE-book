@@ -42,7 +42,7 @@ html:
   
 sphinx:
   config:
-    proof_minimal_theme: true
+    # proof_minimal_theme: true
     # bibtex_reference_style: author_year    
     html_show_copyright: true
     language: en                                       

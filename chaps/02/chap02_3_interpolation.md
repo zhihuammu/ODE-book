@@ -53,7 +53,7 @@ $$\begin{aligned}
 \end{aligned}
 $$
 
-We need to work out $(1 + \Delta)^s=?$ Let's look at the Binomial Expansion first
+<!-- We need to work out $(1 + \Delta)^s=?$ Let's look at {ref}`chap:sec:generalBinomialExpansion` first
 
 ::::{note} 
 $$
@@ -72,9 +72,12 @@ where
 $$\begin{pmatrix} n \\ k \end{pmatrix} = \dfrac{n!}{k!(n-k)!}
 	=\dfrac{n(n-1)(n-2)\cdots(n-k+1)}{k!}$$
 
-::::
+$$
+(1+y)^s = 1 + s y + \frac{s(s-1)}{2!}y^2+\frac{s(s-1)(s-2)}{3!}y^3 + \cdots
+$$(eq:bi:exap:variant:general)
+:::: -->
 
-So the shift operator can be expanded as
+By using {ref}`chap:sec:generalBinomialExpansion`, we can expand the shift operator as
 
 $$
 \begin{align}
