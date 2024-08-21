@@ -5,7 +5,7 @@ You should try the following exercise questions first, then check with the answe
 
 For detailed solutions, you can download
 
-- {download}`excel solutions for Exercises 2.1 -- 2.6 </exSol/Ex2/Ex2_Q1-Q6.xlsx>`
+- {download}`excel solutions for Exercises 3.1 -- 3.6 </exSol/Ex2/Ex2_Q1-Q6.xlsx>`
 
 ::::{exercise}
 :label: ch2-ex-q1
@@ -201,12 +201,23 @@ Find the full solution in Moodle.
 ::::{exercise}
 :label: ch2-ex-q4
 
-Following the method used to derive the Gregory-Newton forward interpolation formula, derive the  Gregory-Newton backward difference interpolation formula.
+Following the method used to derive the Gregory-Newton forward interpolation formula, derive the  Gregory-Newton backward difference interpolation formula {eq}`eq:GN:backward`.
 ::::
+
+:::{note}
+$$
+x_{j-1} < x < x_{j}, \qquad s=\frac{x-x_j}{h} < 0
+$$
+
+$$
+f(x_j + sh) = f_{j+s} = (\E^{-1})^{-s} f_j = (1-\nabla)^{-s} f_j
+$$
+
+Use Newton's general binomial theorem to expand $(1-\nabla)^{-s}$
+:::
 
 ::::{solution} ch2-ex-q4
 :class: dropdown
-Use Binomial Expansion to expand $(1-\nabla)^{-s}$. See
 
 - {download}`handwritten full solution for Exercise 2.7 </exSol/Ex2/Ex2_Q7_solution_annotated.pdf>`
 ::::
