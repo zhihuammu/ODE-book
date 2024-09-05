@@ -72,9 +72,9 @@ $$(eq:bi:exap:variant:general)
 :::{prf:theorem} Mean Value Theorem
 Let  $f=f(x)$, $x \in \R$  be continuous over the closed interval  $[a, b]$
 and differentiable over the open interval  $(a, b)$. 
-Then, there exists at least one point  $c\in (a,b)$ such that
+Then, there exists at least one point  $\xi\in (a,b)$ such that
 
 $$
-f'(c)=\frac{f(b)-f(a)}{b-a}
+f'(\xi)=\frac{f(b)-f(a)}{b-a}
 $$
 :::
