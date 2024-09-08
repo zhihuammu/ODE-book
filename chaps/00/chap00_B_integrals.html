@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Differentiation Rules" href="chap00_B_derivatives.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Sunday 08 September 2024 14:20:24"/>
+    <meta name="docbuild:last-update" content="Sunday 08 September 2024 21:12:30"/>
   </head>
   
   
@@ -424,6 +424,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-forms">Basic Forms</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forms-involving-ax-b">Forms involving <span class="math notranslate nohighlight">\(ax+b\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forms-involving-a-2-x-2">Forms involving <span class="math notranslate nohighlight">\(a^2+x^2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Forms involving <span class="math notranslate nohighlight">\(a^2-x^2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forms-involving-x-2-a-2">Forms involving <span class="math notranslate nohighlight">\(x^2-a^2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-and-logarithmic-forms">Exponential and Logarithmic Forms</a></li>
 </ul>
             </nav>
         </div>
@@ -485,23 +488,60 @@ document.write(`
 </section>
 <section id="forms-involving-a-2-x-2">
 <h2>Forms involving <span class="math notranslate nohighlight">\(a^2+x^2\)</span><a class="headerlink" href="#forms-involving-a-2-x-2" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple" start="32">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{1}{a^2+x^2} \dx = \frac{1}{a} \tan^{-1}\frac{x}{a} +C \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{1}{(a^2+x^2)^2} \dx= \frac{x}{2a^2(a^2+x^2)} + \frac{1}{2a^3} \tan^{-1} \frac{x}{a} + C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{1}{\sqrt{a^2+x^2}} \dx = \sinh^{-1} \frac{x}{a} + C = \ln (x+\sqrt{a^2+x^2} + C)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \sqrt{a^2+x^2} \dx = \frac{x}{2}\sqrt{a^2+x^2} + \frac{a^2}{2} \ln (x+\sqrt{a^2+x^2}) + C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int x^2 \sqrt{a^2+x^2} \dx = \frac{x}{8}(a^2+2x^2)\sqrt{a^2+x^2} - \frac{a^4}{8} \ln (x+\sqrt{a^2+x^2}) + C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{\sqrt{a^2+x^2}}{x} \dx = \sqrt{a^2+x^2} - a \ln \left| \frac{a+\sqrt{a^2+x^2}}{x} \right| + C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{\sqrt{a^2+x^2}}{x^2} \dx = \ln (x+\sqrt{a^2+x^2}) - \frac{\sqrt{a^2+x^2}}{x} + C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{x^2}{\sqrt{a^2+x^2}} \dx = -\frac{a^2}{2}\ln (x+\sqrt{a^2+x^2}) + \frac{x\sqrt{a^2+x^2}}{2}+C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{1}{x\sqrt{a^2+x^2}} \dx = -\frac{1}{a} \ln \left| \frac{a+\sqrt{a^2+x^2}}{x} \right| + C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{1}{x^2 \sqrt{a^2+x^2}} \dx = -\frac{\sqrt{a^2+x^2}}{a^2x} + C\)</span></p></li>
+</ol>
+</section>
+<section id="id1">
+<h2>Forms involving <span class="math notranslate nohighlight">\(a^2-x^2\)</span><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple" start="42">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{1}{a^2-x^2} \dx = \frac{1}{2a} \ln \left|\frac{x+a}{x-a}\right|+C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int  \frac{1}{(a^2-x^2)^2} = \frac{x}{2a^2(a^2-x^2)} + \frac{1}{4a^3} \ln \left| \frac{x+a}{x-a} \right| + C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{1}{\sqrt{a^2-x^2}} \dx= \sin^{-1} \frac{x}{a}+C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \sqrt{a^2-x^2} \dx = \frac{x}{2} \sqrt{a^2-x^2}+\frac{a^2}{2} \sin^{-1} \frac{x}{a}+C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int x^2 \sqrt{a^2-x^2} \dx = \frac{a^4}{8} \sin^{-1} \frac{x}{a} - \frac{1}{8} x \sqrt{a^2-x^2} (a^2-2x^2) +C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{\sqrt{a^2-x^2}}{x} \dx= \sqrt{a^2-x^2} - a \ln \left| \frac{a+\sqrt{a^2-x^2}}{x} \right| + C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{\sqrt{a^2-x^2}}{x^2} \dx = -\sin^{-1}\frac{x}{a} - \frac{\sqrt{a^2-x^2}}{x} + C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{1}{\sqrt{a^2-x^2}}\dx = \frac{a^2}{2} \sin^{-1} \frac{x}{a} - \frac{1}{2}x \sqrt{a^2-x^2} + C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{1}{x\sqrt{a^2-x^2}} \dx = - \frac{1}{a} \ln \left| \frac{a+\sqrt{a^2-x^2}}{x} \right|+C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{1}{x^2 \sqrt{a^2-x^2}} \dx = - \frac{\sqrt{a^2-x^2}}{a^2x} +C\)</span></p></li>
+</ol>
+</section>
+<section id="forms-involving-x-2-a-2">
+<h2>Forms involving <span class="math notranslate nohighlight">\(x^2-a^2\)</span><a class="headerlink" href="#forms-involving-x-2-a-2" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple" start="52">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{1}{\sqrt{x^2-a^2}} \dx = \ln \left| x+\sqrt{x^2-a^2}\right|+C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \sqrt{x^2-a^2} \dx = \frac{x}{2} \sqrt{x^2-a^2} - \frac{a^2}{2} \ln \left| x+\sqrt{x^2-a^2}\right| + C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int (\sqrt{x^2-a^2})^n \dx = \frac{x(\sqrt{x^2-a^2})^n}{n+1} - \frac{na^2}{n+1} \int (\sqrt{x^2-a^2})^{n-2} \dx, \quad n\neq -1 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int \frac{1}{(\sqrt{x^2-a^2})^n} \dx= \frac{x(\sqrt{x^2-a^2})^{2-n}}{(2-n)a^2} - \frac{n-3}{(n-2)a^2} \int \frac{1}{(\sqrt{x^2-a^2})^{n-2}}, \quad n\neq 2\)</span></p></li>
+</ol>
 <!-- 
-
-## Forms involving $a^2-x^2$
-
-## Forms involving $x^2-a^2$
-
 ## Trigonometric Forms
 
-## Inverse Trigonometric Forms
-
-## Exponential and Logarithmic Forms
-
-## Forms involving $\sqrt{2ax-x^2}$, $a>0$
+## Inverse Trigonometric Forms-->
+</section>
+<section id="exponential-and-logarithmic-forms">
+<h2>Exponential and Logarithmic Forms<a class="headerlink" href="#exponential-and-logarithmic-forms" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple" start="109">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int e^{ax} \dx = \frac{1}{a}e^{ax} + C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int b^{ax} \dx = \frac{1}{a} \frac{b^{ax}}{\ln b} + C,  \quad b&gt;0, ~ b\neq 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int x e^{ax} \dx = \frac{e^{ax}}{a^2}(ax-1) + C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \int x^n e^{ax} \dx = \frac{1}{a}x^n e^{ax}-\frac{n}{a} \int x^{n-1} e^{ax} \dx\)</span></p></li>
+</ol>
+<!-- ## Forms involving $\sqrt{2ax-x^2}$, $a>0$
 
 ## Hyperbolic Forms
 
-## Definite Integrals --></section>
+## Definite Integrals  --></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -571,6 +611,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-forms">Basic Forms</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forms-involving-ax-b">Forms involving <span class="math notranslate nohighlight">\(ax+b\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forms-involving-a-2-x-2">Forms involving <span class="math notranslate nohighlight">\(a^2+x^2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Forms involving <span class="math notranslate nohighlight">\(a^2-x^2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forms-involving-x-2-a-2">Forms involving <span class="math notranslate nohighlight">\(x^2-a^2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-and-logarithmic-forms">Exponential and Logarithmic Forms</a></li>
 </ul>
   </nav></div>
 
@@ -604,7 +647,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Sunday 08 September 2024 14:20:24.
+  Last updated on Sunday 08 September 2024 21:12:30.
   <br/>
 </p>
   </div>
