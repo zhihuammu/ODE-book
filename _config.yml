@@ -59,6 +59,8 @@ sphinx:
           "D": "\\mathrm{D}"          
           "L": "\\mathrm{L}"        
           "F": "\\mathscr{F}"     
+          "Laplace": ["\\mathscr{L}\\left\\{{#1}\\right\\}",1]
+          "invLaplace": ["\\mathscr{L}^{-1}\\{{#1}\\}",1]
           "d": "\\mathrm{d}"          
           "arcsec": "\\mathrm{arcsec}~"
           "arccot": "\\mathrm{arccot}~"
