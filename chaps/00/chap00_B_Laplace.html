@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>6.4. Chapter 6 Exercise &#8212; Linear Multistep Methods</title>
+    <title>Laplace Transform &#8212; Linear Multistep Methods</title>
   
   
   
@@ -69,15 +69,15 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "Laplace": ["\\mathscr{L}\\left\\{{#1}\\right\\}", 1], "invLaplace": ["\\mathscr{L}^{-1}\\{{#1}\\}", 1], "d": "\\mathrm{d}", "arcsec": "\\mathrm{arcsec}~", "arccot": "\\mathrm{arccot}~", "arccsc": "\\mathrm{arccsc}~", "sech": "\\mathrm{sech}", "csch": "\\mathrm{csch}", "dy": "~\\mathrm{d}y", "dx": "~\\mathrm{d}x", "ds": "~\\mathrm{d}s", "dt": "~\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/05/chap05_4_exercise';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/00/chap00_B_Laplace';</script>
     <link rel="shortcut icon" href="../../_static/odefavicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7. Multistep Methods: Stability Interval and Region" href="../06/chap06_0.html" />
-    <link rel="prev" title="6.3. Zero-Stability, Consistency and Convergence Theorem" href="chap05_3_convergence.html" />
+    <link rel="next" title="1. Introduction to Differential Equations" href="chap00_A0_DE.html" />
+    <link rel="prev" title="Table of Integrals" href="chap00_B_integrals.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Thursday 12 September 2024 21:40:52"/>
+    <meta name="docbuild:last-update" content="Thursday 12 September 2024 22:09:36"/>
   </head>
   
   
@@ -141,6 +141,8 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -183,20 +185,21 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../overview/readingList.html">Further Reading List</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_symbols.html">Symbols and Notation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_formula.html">Formulas and Theorems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_derivatives.html">Differentiation Rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_integrals.html">Table of Integrals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_Laplace.html">Laplace Transform</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap00_B_symbols.html">Symbols and Notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap00_B_formula.html">Formulas and Theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap00_B_derivatives.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap00_B_integrals.html">Table of Integrals</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Laplace Transform</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_A0_DE.html">1. Introduction to Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A1_definition.html">1.1. Definitions, Classification and Terminology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A2_ode.html">1.2. Ordinary Differential Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A3_analytical.html">1.3. Analytical Methods for ODEs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A4_exercise.html">1.4. Chapter 1 Exercises</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="chap00_A0_DE.html">1. Introduction to Differential Equations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chap00_A1_definition.html">1.1. Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap00_A2_ode.html">1.2. Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap00_A3_analytical.html">1.3. Analytical Methods for ODEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap00_A4_exercise.html">1.4. Chapter 1 Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">2. Complex Numbers and Difference Equations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -232,11 +235,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../04/chap04_4_exercise.html">5.4. Chapter 5 Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap05_0.html">6. Multistep Methods: Zero-Stability and Convergence</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chap05_1_experiment.html">6.1. An exploratory experiment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap05_2_rootCondition.html">6.2. Characteristic Polynomials and Root Condition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap05_3_convergence.html">6.3. Zero-Stability, Consistency and Convergence Theorem</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.4. Chapter 6 Exercise</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05/chap05_0.html">6. Multistep Methods: Zero-Stability and Convergence</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_1_experiment.html">6.1. An exploratory experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_2_rootCondition.html">6.2. Characteristic Polynomials and Root Condition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_3_convergence.html">6.3. Zero-Stability, Consistency and Convergence Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_4_exercise.html">6.4. Chapter 6 Exercise</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">7. Multistep Methods: Stability Interval and Region</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -326,7 +329,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/chaps/05/chap05_4_exercise.md" target="_blank"
+      <li><a href="../../_sources/chaps/00/chap00_B_Laplace.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -397,7 +400,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -408,11 +413,28 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 6 Exercise</h1>
+    <h1>Laplace Transform</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Laplace Transform</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties">Properties</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-laplace-transforms">Table of Laplace Transforms</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-laplace-transform">Inverse Laplace Transform</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -422,107 +444,70 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="chapter-6-exercise">
-<span id="chap-stability1-exercise"></span><h1><span class="section-number">6.4. </span>Chapter 6 Exercise<a class="headerlink" href="#chapter-6-exercise" title="Permalink to this heading">#</a></h1>
-<p>You should try the following exercise questions first, then check with the answers.</p>
-<ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../_downloads/58471d6fc9e21740f7357afc4e29f7ba/Ex5_1-2_sol.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Handwritten</span> <span class="pre">solution</span> <span class="pre">for</span> <span class="pre">Exercises</span> <span class="pre">5.1</span> <span class="pre">and</span> <span class="pre">5.2</span></code></a></p></li>
-</ul>
-<div class="exercise admonition" id="ch5-ex-q1">
-
-<p class="admonition-title"><span class="caption-number">Exercise 6.1 </span></p>
-<section id="exercise-content">
-<p>Find the first and second characteristic polynomials and investigate
-the stability of the following multistep methods.</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(y_{j+1} ~=~ y_j + \frac{h}{2}(3f_j - f_{j-1})\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(y_{j+1} + 9y_j - 9y_{j-1} - y_{j-2} ~=~ 6h\,(f_j + f_{j-1})\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(y_{j+1} ~=~ 4y_j - 3y_{j-1} - 2hf_{j-1}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(y_{j+1} ~=~ 2y_{j-1} - y_j + \frac{h}{2}(5f_j + f_{j-1})\)</span></p></li>
-</ol>
-</section>
-</div>
-<div class="solution dropdown admonition" id="chaps/05/chap05_4_exercise-solution-1">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#ch5-ex-q1"> Exercise 6.1</a></p>
-<section id="solution-content">
-<ol class="arabic simple">
-<li><p>Roots are 0 and 1</p></li>
-<li><p>Roots are 1, -0.1, -9.9</p></li>
-<li><p>Roots are 1 and 3</p></li>
-<li><p>Roots are 1 and -2</p></li>
-</ol>
-</section>
-</div>
-<div class="exercise admonition" id="ch5-ex-q2">
-
-<p class="admonition-title"><span class="caption-number">Exercise 6.2 </span></p>
-<section id="exercise-content">
-<p>Consider the multistep methods in <a class="reference internal" href="#ch5-ex-q1"><span class="std std-numref">Exercise 6.1</span></a>,
-determine their order of accuracy and error constants using the techniques
-covered in <a class="reference internal" href="../04/chap04_2_errorConstant.html#chap-errorconstant-constants"><span class="std std-ref">Order and Error Constants</span></a>.</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="chaps/05/chap05_4_exercise-solution-3">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#ch5-ex-q2"> Exercise 6.2</a></p>
-<section id="solution-content">
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> order, <span class="math notranslate nohighlight">\(\frac{5}{12}\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(4^\text{th}\)</span> order, <span class="math notranslate nohighlight">\(\frac{1}{10}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> order, <span class="math notranslate nohighlight">\(\frac{2}{3}\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(2^\text{nd}\)</span> order, <span class="math notranslate nohighlight">\(\frac{1}{4}\)</span></p></li>
-</ol>
-</section>
-</div>
-<div class="exercise admonition" id="ch5-ex-q3">
-
-<p class="admonition-title"><span class="caption-number">Exercise 6.3 </span></p>
-<section id="exercise-content">
-<p>Investigate the stability of the following explicit 2-step method
-(i.e. mid-point rule):</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="laplace-transform">
+<h1>Laplace Transform<a class="headerlink" href="#laplace-transform" title="Permalink to this heading">#</a></h1>
+<section id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
-\[\begin{aligned}
-            y_{j+1} ~=~ y_{j-1}+2hf_{j}
-        
-    \end{aligned}\]</div>
-<p>Use this method to approximate the solution to the
-following initial value problem:</p>
+\[\displaystyle F(s) = \Laplace{f(t)}(s)=\int_0^\infty e^{-st} f(t) \dt\]</div>
+</section>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \Laplace{f+g} = \Laplace{f} + \Laplace{g}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \Laplace{cf} = c\Laplace{f}\)</span> for any constant <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \Laplace{e^{at}f(t)}(s)=F(s-a)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \Laplace{f'}(s)=sF(s) - f(0)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \Laplace{f''}(s)=s^2F(s) -sf(0)- f'(0)\)</span>.</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="table-of-laplace-transforms">
+<h1>Table of Laplace Transforms<a class="headerlink" href="#table-of-laplace-transforms" title="Permalink to this heading">#</a></h1>
+<table class="table table-left">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(f(t)\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(F(s)=\Laplace{f}(s)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{1}{s}\)</span>, <span class="math notranslate nohighlight">\(\quad s&gt;0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(e^{at}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{1}{s-a}\)</span>, <span class="math notranslate nohighlight">\(\quad s&gt;a\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(t^n\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{n!}{s^{n+1}}\)</span>, <span class="math notranslate nohighlight">\(\quad s&gt;0\)</span> , <span class="math notranslate nohighlight">\(\quad n=1,2,\ldots\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sin bt\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{b}{s^2+b^2}\)</span>, <span class="math notranslate nohighlight">\(\quad s&gt;0\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\cos bt\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{s}{s^2+b^2}\)</span>, <span class="math notranslate nohighlight">\(\quad s&gt;0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(e^{at} t^n\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{n!}{(s-a)^{n+1}}\)</span>, <span class="math notranslate nohighlight">\(\quad s&gt;a\)</span>, <span class="math notranslate nohighlight">\(\quad n=1,2,\ldots\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(e^{at} \sin bt\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{b}{(s-a)^2+b^2}\)</span>, <span class="math notranslate nohighlight">\(\quad s&gt;a\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(e^{at} \cos bt\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{s-a}{(s-a)^2+b^2}\)</span>, <span class="math notranslate nohighlight">\(\quad s&gt;a\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sinh bt\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{b}{s^2-b^2}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\cosh bt\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{s}{s^2-b^2}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<section id="inverse-laplace-transform">
+<h2>Inverse Laplace Transform<a class="headerlink" href="#inverse-laplace-transform" title="Permalink to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
-\[\begin{aligned}
-            &amp;&amp; y'(x) \,&amp;=\, \lambda y &amp; y(0)\,&amp;=\,1 &amp; 0 &amp;\leq \,x\, \leq 5 &amp;&amp;
-        
-    \end{aligned}\]</div>
-<p>using <span class="math notranslate nohighlight">\(\lambda = -2\)</span>, with <span class="math notranslate nohighlight">\(h = 0.02\)</span> and
-<span class="math notranslate nohighlight">\(h = 0.05\)</span>. Use the analytic solution <span class="math notranslate nohighlight">\(y_{ex} = e^{-2x}\)</span> to find the
-starting values, and plot the solution curves. Next, solve the same
-problem with the same parameters using the two-step AB method. By
-considering the stability of the methods and the errors in the
-calculations, compare the two solution methods and comment on your
-results.</p>
-<!-- Note: You could simply use an Excel sheet to both find
-the approximate solution and plot the results. -->
+\[f(t) = \invLaplace{F(s)}\]</div>
 </section>
-</div>
-<div class="solution dropdown admonition" id="chaps/05/chap05_4_exercise-solution-5">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#ch5-ex-q3"> Exercise 6.3</a></p>
-<section id="solution-content">
-<ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../_downloads/d0eaf32731cb42ea0d9bdc32935cbf60/Ex5_3_Solution.mlx"><code class="xref download docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">solution</span> <span class="pre">for</span> <span class="pre">Exercise</span> <span class="pre">5.3</span></code></a></p></li>
-</ul>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row docutils">
-<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<a class="reference internal image-reference" href="../../_images/fig-chap05-c4ans3-h005.svg"><img alt="../../_images/fig-chap05-c4ans3-h005.svg" class="align-center" src="../../_images/fig-chap05-c4ans3-h005.svg" width="600px" /></a>
-</div>
-<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<a class="reference internal image-reference" href="../../_images/fig-chap05-c4ans3-h002.svg"><img alt="../../_images/fig-chap05-c4ans3-h002.svg" class="align-center" src="../../_images/fig-chap05-c4ans3-h002.svg" width="600px" /></a>
-</div>
-</div>
-</div>
-</section>
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -538,7 +523,7 @@ the approximate solution and plot the results. -->
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\05"
+            path: "./chaps\00"
         },
         predefinedOutput: true
     }
@@ -556,20 +541,20 @@ the approximate solution and plot the results. -->
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="chap05_3_convergence.html"
+       href="chap00_B_integrals.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6.3. </span>Zero-Stability, Consistency and Convergence Theorem</p>
+        <p class="prev-next-title">Table of Integrals</p>
       </div>
     </a>
     <a class="right-next"
-       href="../06/chap06_0.html"
+       href="chap00_A0_DE.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Multistep Methods: Stability Interval and Region</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Introduction to Differential Equations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -580,7 +565,29 @@ the approximate solution and plot the results. -->
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Laplace Transform</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties">Properties</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-laplace-transforms">Table of Laplace Transforms</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-laplace-transform">Inverse Laplace Transform</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -610,7 +617,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 12 September 2024 21:40:52.
+  Last updated on Thursday 12 September 2024 22:09:36.
   <br/>
 </p>
   </div>
