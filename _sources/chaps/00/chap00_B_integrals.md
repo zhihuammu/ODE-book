@@ -4,6 +4,10 @@
 :::{index} Integrals
 :::
 
+```{contents}
+:local:
+```
+
 ## Basic Forms
 
 1. $\displaystyle \int k \dx = kx+C, \quad k \in \R $

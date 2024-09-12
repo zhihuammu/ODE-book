@@ -1,5 +1,8 @@
 # Differentiation Rules
 
+```{contents}
+:local:
+```
 
 ## General Formulas
 Assume $u$ and $v$ are differentiable functions of $x$, $c$ is a constant.
