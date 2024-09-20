@@ -16,7 +16,7 @@ $$\displaystyle F(s) = \Laplace{f(t)}(s)=\int_0^\infty e^{-st} f(t) \dt$$
 
 5. $\displaystyle \Laplace{f''}(s)=s^2F(s) -sf(0)- f'(0)$.
 
-# Table of Laplace Transforms
+## Table of Laplace Transforms
 
 :::{table} 
 :align: left  
