@@ -368,7 +368,7 @@ $$
     y=c_1 e^{z_1 x} + c_2 e^{z_2 x} + \cdots + c_n e^{z_n x}
     $$
 
-- Case 1: $n$ repeated real solutions ($z_1=z_2= \cdots =z_n=z \in \R$)
+- Case 2: $n$ repeated real solutions ($z_1=z_2= \cdots =z_n=z \in \R$)
 
     The general solution is
 
