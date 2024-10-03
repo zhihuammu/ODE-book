@@ -38,14 +38,14 @@ Note: We can replace the shift operator $\E$ with $z$ in Eq. {eq}`eq:DE:linear:c
 ::::{prf:theorem}
 Let $z_p~(p=1,2,3,\ldots,k)$ be any solution to the characteristic equation {eq}`eq:DE:linear:char`, then 
 \begin{equation}
-y_n = z_p^n
+\phi_n = z_p^n
 \end{equation}
 is a solution to the homogeneous equation {eq}`eq:DE:linear:homogeneous:constant`.
 
 :::{dropdown} Proof (click to show)
 <!-- :::{prf:proof} -->
 
-Substituting $y_n=z_p^n$ into Eq. {eq}`eq:DE:linear:homogeneous:constant:aux`, we get
+Substituting $\phi_n=z_p^n$ for $y_n$ into Eq. {eq}`eq:DE:linear:homogeneous:constant:aux`, we get
 \begin{align*}     
 \L (\E) z_p^n = ~ & \left(a_0 + a_1 \E + a_2 \E^2 + \ldots + a_{k-1}\E^{k-1}+a_k \E^k\right) z_p^n \\
 ~ = ~ &  a_0 z_p^n + a_1 z_p^{n+1} + a_2 z_p^{n+2} + \ldots + a_{k-1} z_p^{n+k-1} + a_{k} z_p^{n+k} \\
@@ -76,7 +76,7 @@ y_n = c_1 z_1^n + c_2 z_2^n + \ldots + c_k z_k^n,
 
 where the constants $c_p~(p=1,2,\ldots,k)$ are arbitrary.
 
-:::{dropdown} Proof (click to show)
+<!-- :::{dropdown} Proof (click to show)
 <!-- ::::{prf:proof} -->
 Substituting Eq. {eq}`eq:DE:linear:homo:sol` into Eq. {eq}`eq:DE:linear:homogeneous:constant:aux`, which is equivalent to equation {eq}`eq:DE:linear:homogeneous:constant`, we get 
 \begin{align*}
@@ -84,7 +84,7 @@ Substituting Eq. {eq}`eq:DE:linear:homo:sol` into Eq. {eq}`eq:DE:linear:homogene
 ~ = ~ & c_1 \L (\E) z_1^n + c_2 \L (\E) z_2^n + \ldots + c_k \L (\E)z_k^n \\
 ~ = ~ & c_1 \cdot 0 + c_2 \cdot 0 + \ldots + c_k \cdot 0 \\
 ~ = ~ & 0 
-\end{align*}
+\end{align*} -->
 ::::
 
 
