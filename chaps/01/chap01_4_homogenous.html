@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="2.3. Difference Equations" href="chap01_3_differenceEquation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Thursday 12 September 2024 21:40:52"/>
+    <meta name="docbuild:last-update" content="Thursday 03 October 2024 10:38:42"/>
   </head>
   
   
@@ -470,9 +470,9 @@ a_0 y_n + a_1 y_{n+1} + a_2 y_{n+2} + \ldots + a_{k-1} y_{n+k-1} + a_k y_{n+k} =
 <p class="admonition-title"><span class="caption-number">Theorem 2.2 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(z_p~(p=1,2,3,\ldots,k)\)</span> be any solution to the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(2.15)</a>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0379f190-3286-42e3-80cf-2756e77037c7">
-<span class="eqno">(2.16)<a class="headerlink" href="#equation-0379f190-3286-42e3-80cf-2756e77037c7" title="Permalink to this equation">#</a></span>\[\begin{equation}
-y_n = z_p^n
+<div class="amsmath math notranslate nohighlight" id="equation-419c646e-98f2-4ef5-8101-659101d2280a">
+<span class="eqno">(2.16)<a class="headerlink" href="#equation-419c646e-98f2-4ef5-8101-659101d2280a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\phi_n = z_p^n
 \end{equation}\]</div>
 <p>is a solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(2.12)</a>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -483,7 +483,7 @@ Proof (click to show)<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <!-- :::{prf:proof} -->
-<p class="sd-card-text">Substituting <span class="math notranslate nohighlight">\(y_n=z_p^n\)</span> into Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant-aux">(2.13)</a>, we get</p>
+<p class="sd-card-text">Substituting <span class="math notranslate nohighlight">\(\phi_n=z_p^n\)</span> for <span class="math notranslate nohighlight">\(y_n\)</span> into Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant-aux">(2.13)</a>, we get</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}     
 \L (\E) z_p^n = ~ &amp; \left(a_0 + a_1 \E + a_2 \E^2 + \ldots + a_{k-1}\E^{k-1}+a_k \E^k\right) z_p^n \\
@@ -500,8 +500,8 @@ Proof (click to show)<div class="sd-summary-down docutils">
 <p class="admonition-title"><span class="caption-number">Theorem 2.3 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Assume the <span class="math notranslate nohighlight">\(k\)</span> roots of  the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(2.15)</a> are distinct, then a fundamental set of solutions is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fffbc961-a18c-499b-9038-0a897f0c8120">
-<span class="eqno">(2.17)<a class="headerlink" href="#equation-fffbc961-a18c-499b-9038-0a897f0c8120" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bc6b304a-2e68-4a56-88b8-792e0adcf674">
+<span class="eqno">(2.17)<a class="headerlink" href="#equation-bc6b304a-2e68-4a56-88b8-792e0adcf674" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z_p^n \quad (p=1,2,\ldots,k).
 \end{equation}\]</div>
 <p>An immediate consequence of this theorem, for this particular case, is that the general solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(2.12)</a> is</p>
@@ -510,15 +510,9 @@ z_p^n \quad (p=1,2,\ldots,k).
 y_n = c_1 z_1^n + c_2 z_2^n + \ldots + c_k z_k^n,
 \end{equation}\]</div>
 <p>where the constants <span class="math notranslate nohighlight">\(c_p~(p=1,2,\ldots,k)\)</span> are arbitrary.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Proof (click to show)<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<!-- :::{dropdown} Proof (click to show)
 <!-- ::::{prf:proof} -->
-<p class="sd-card-text">Substituting Eq. <a class="reference internal" href="#equation-eq-de-linear-homo-sol">(2.18)</a> into Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant-aux">(2.13)</a>, which is equivalent to equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(2.12)</a>, we get</p>
+<p>Substituting Eq. <a class="reference internal" href="#equation-eq-de-linear-homo-sol">(2.18)</a> into Eq. <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant-aux">(2.13)</a>, which is equivalent to equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(2.12)</a>, we get</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 \L (\E) y_n  = ~ &amp; \L (\E) \left(c_1 z_1^n + c_2 z_2^n + \ldots + c_k z_k^n\right) \\
@@ -526,8 +520,7 @@ Proof (click to show)<div class="sd-summary-down docutils">
 ~ = ~ &amp; c_1 \cdot 0 + c_2 \cdot 0 + \ldots + c_k \cdot 0 \\
 ~ = ~ &amp; 0 
 \end{align*}\]</div>
-</div>
-</details></section>
+</section>
 </div><section id="first-order-difference-equations">
 <h2><span class="section-number">2.4.1. </span>First-order Difference Equations<a class="headerlink" href="#first-order-difference-equations" title="Permalink to this heading">#</a></h2>
 <p>Find the solution to</p>
@@ -874,7 +867,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 12 September 2024 21:40:52.
+  Last updated on Thursday 03 October 2024 10:38:42.
   <br/>
 </p>
   </div>
