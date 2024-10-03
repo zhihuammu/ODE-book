@@ -77,7 +77,6 @@ y_n = c_1 z_1^n + c_2 z_2^n + \ldots + c_k z_k^n,
 where the constants $c_p~(p=1,2,\ldots,k)$ are arbitrary.
 
 <!-- :::{dropdown} Proof (click to show)
-<!-- ::::{prf:proof} -->
 Substituting Eq. {eq}`eq:DE:linear:homo:sol` into Eq. {eq}`eq:DE:linear:homogeneous:constant:aux`, which is equivalent to equation {eq}`eq:DE:linear:homogeneous:constant`, we get 
 \begin{align*}
 \L (\E) y_n  = ~ & \L (\E) \left(c_1 z_1^n + c_2 z_2^n + \ldots + c_k z_k^n\right) \\
