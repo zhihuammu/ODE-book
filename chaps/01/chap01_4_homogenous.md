@@ -136,40 +136,40 @@ $$y_n = Q a^n.$$
 
 Find the solution to
 
-$$y_{n+2} + a y_{n+1} + b y_n = 0.$$
+$$A y_{n+2} + B y_{n+1} + C y_n = 0.$$
 
 :::{admonition} **Solution**
 :class: solution
 
 Substituting $y_n = z^n$ into the equation, we get
 
-$$z^{n+2} + a z^{n+1} + b z^n=0,$$
+$$A z^{n+2} + B z^{n+1} + C z^n=0,$$
 
 so
 
-$$z^n (z^2+az+b)=0,$$
+$$z^n (A z^2+B z+C)=0,$$
 
 obviously the characteristic equation is
 
-$$z^2+az+b=0,$$
+$$A z^2+Bz+C=0,$$
 
 ```{dropdown} Note
 To obtain the characteristic equation, we can also firstly write the difference equation into the $\E$ operator form
 
 $$
-\left(\E^2 + a\E + b\right) y_n = 0,
+\left(A\E^2 + B\E + C\right) y_n = 0,
 $$
 
 replacing $\E$ with $z$ gives the characteristic equation
 
 $$
-z^2 + a z + b = 0
+A z^2 + B z + C = 0
 $$
 ```
 
 and we get
 
-$$z_{1,2}=\frac{-a\pm \sqrt{a^2-4b}}{2}.$$
+$$z_{1,2}=\frac{-B\pm \sqrt{B^2-4AC}}{2A}.$$
 
 - Case 1: Two distinct real solutions;
 - Case 2: Two identical real solutions;
