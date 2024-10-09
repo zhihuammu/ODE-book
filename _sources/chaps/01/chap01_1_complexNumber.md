@@ -40,7 +40,7 @@ The arithmetic operations on two complex numbers given as $z_1=x_1+\i y_1$ and $
 \begin{align}
 \text{``$+$''}:\quad ~ & ~ z_1+z_2=(x_1+\i y_1)+(x_2+\i y_2)=(x_1+x_2)+\i (y_1+y_2), \\
 \text{``$-$''}:\quad ~ & ~ z_1-z_2=(x_1+\i y_1)-(x_2+\i y_2)=(x_1-x_2)+\i (y_1-y_2), \\
-\text{``$\times$''}:\quad ~ & ~ z_1\cdot z_2=(x_1+ \i y_1)\cdot(x_2+\i y_2)=(x_1+x_2)+\i (y_1+y_2), \\
+\text{``$\times$''}:\quad ~ & ~ z_1\cdot z_2=(x_1+ \i y_1)\cdot(x_2+\i y_2)=(x_1 x_2 - y_1 y_2)+\i (x_1 y_2+x_2 y_1), \\
 \text{``$\div$''}:\quad ~ & ~ \frac{z_1}{z_2}=\frac{(x_1+\i y_1)}{(x_2+\i y_2)}=\frac{(x_1+\i y_1)(x_2-\i y_2)}{(x_2+\i y_2)(x_2-\i y_2)}=\frac{(x_1+\i y_1)(x_2-\i y_2)}{x_2^2 + y_2^2}.
 \end{align}
 ````
