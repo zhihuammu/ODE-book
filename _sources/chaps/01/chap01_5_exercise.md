@@ -100,7 +100,7 @@ For each of the following difference equations, find the characteristic equation
 :::{exercise}
 :label: ch1-ex-q3
 
-For each of the following difference equations, form the characteristic equation, and from its roots determine the corresponding general solution:
+For each of the following difference equations, find the characteristic equation, and from its roots determine the corresponding general solution:
 		
 
 1. $y_{n+2}-9y_{n+1}+20y_n=0$

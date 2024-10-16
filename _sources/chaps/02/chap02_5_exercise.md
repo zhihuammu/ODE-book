@@ -16,7 +16,7 @@ Complete a difference table for the following data:
 |$f(x)$| 0.1823| 0.2231 | 0.2624| 0.3001| 0.3365 | 0.3716  |0.4055|
 
 What degree of polynomial is required to fit exactly all seven data
-pairs? What lesser-degree polynomial will nearly fit the data?
+points? What lesser-degree polynomial will nearly fit the data?
 Justify your answer.
 ::::
 
