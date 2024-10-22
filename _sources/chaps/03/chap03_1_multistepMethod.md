@@ -38,12 +38,8 @@ $\beta_i$ are constants. In an expanded form we can write this as
 \end{aligned}
 :::
 
-When $\,\beta_k=0\,$, the method is called an *explicit*
-or *open method* and equation {eq}`eq:ch02:1.2`
-gives $y_{j+k}$ explicitly in terms of
-previously determined values. When $\,\beta_k \neq 0\,$, the method is
-called an *implicit* or *closed method* because $y_{j+k}$ implicitly,
-through $f_{j+k}$, appears on the right hand side of equation{eq}`eq:ch02:1.2`.
++ When $\,\beta_k=0\,$, the method is called an *explicit* or *open method* and equation {eq}`eq:ch02:1.2` gives $y_{j+k}$ explicitly in terms of previously determined values. 
++ When $\,\beta_k \neq 0\,$, the method is called an *implicit* or *closed method* because $y_{j+k}$ implicitly, through $f_{j+k}$, appears on the right hand side of equation{eq}`eq:ch02:1.2`.
 ::::
 
 Two well known multistep method formulae are:
