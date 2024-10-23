@@ -9,10 +9,10 @@ You should try the following exercise questions first, then check with the answe
 Use a G-N interpolation formula to derive the following multistep
 formulae:
 
--   $ y_{j+2} = y_j + (f_{j+2} + 4f_{j+1} + f_j) $          [ G-N forward 0 to 2 ]
--   $ y_{j+2} = y_{j+1} + (5f_{j+2} + 8f_{j+1} - f_j) $     [ G-N forward 1 to 2 ]
--   $ y_{j+3} = y_{j-1} + (8f_{j+2} - 4f_{j+1} + 8f_j) $    [ G-N forward -1 to 3 ]
--   $ y_j     = y_{j-1} + (5f_j + 8f_{j-1} - f_{j-2}) $     [ G-N backward 0 to -1 ]
+-   $ y_{j+2} = y_j + \frac{h}{3}(f_{j+2} + 4f_{j+1} + f_j) $          [ G-N forward 0 to 2 ]
+-   $ y_{j+2} = y_{j+1} + \frac{h}{12}(5f_{j+2} + 8f_{j+1} - f_j) $     [ G-N forward 1 to 2 ]
+-   $ y_{j+3} = y_{j-1} + \frac{h}{3}(8f_{j+2} - 4f_{j+1} + 8f_j) $    [ G-N forward -1 to 3 ]
+-   $ y_j     = y_{j-1} + \frac{h}{12}(5f_j + 8f_{j-1} - f_{j-2}) $     [ G-N backward 0 to -1 ]
 
 <!-- Find the detailed solutions in Moodle. -->
 ::::
