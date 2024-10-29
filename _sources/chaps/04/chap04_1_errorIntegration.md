@@ -89,15 +89,15 @@ $$\begin{aligned}
 \end{aligned}$$ 
 
 Use the [Mean Value Theorem](https://en.wikipedia.org/wiki/Mean_value_theorem)
-and LET $\Delta^{4} f_0 = h^4f^{iv}(z)$ where
+and LET $\Delta^{4} f_0 = h^4f^{(iv)}(z)$ where
 $x_0 \leq z \leq x_2$
 
  $$\begin{aligned}
         \therefore \quad \epsilon ~&=~ h^5 \left\{
             \frac{1}{24} \left(-\frac{4}{15}\right)
-        \right\} f^{iv}(z)
+        \right\} f^{(iv)}(z)
         \\
-        \epsilon ~&=~ -\frac{1}{90}h^5f^{iv}(z).
+        \epsilon ~&=~ -\frac{1}{90}h^5f^{(iv)}(z).
     
 \end{aligned}$$
 :::
