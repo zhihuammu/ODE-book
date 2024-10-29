@@ -130,7 +130,7 @@ $$\begin{aligned}
 the error term 
 
 $$\begin{aligned}
-        \epsilon ~=~ \frac{14}{45}h^5 f^{iv}(z)
+        \epsilon ~=~ \frac{14}{45}h^5 f^{(iv)}(z)
         \quad for \quad x_{-1} \leq z \leq x_3
     
 \end{aligned}$$ 
@@ -187,11 +187,11 @@ $$\begin{aligned}
     
 \end{aligned}$$ 
 
-Let $\Delta^4 f_0 ~=~ h^4 f^{iv}(z)$ where
+Let $\Delta^4 f_0 ~=~ h^4 f^{(iv)}(z)$ where
 $x_{-1} \leq z \leq x_3$
 
  $$\begin{aligned}
-        \therefore \quad \epsilon ~=~ \frac{14}{45}\,h^5f^{iv}(z).
+        \therefore \quad \epsilon ~=~ \frac{14}{45}\,h^5f^{(iv)}(z).
     
 \end{aligned}$$
 :::
