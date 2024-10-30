@@ -201,7 +201,7 @@ Find the order and the error constants of the following formulae,
 
 2.  $\displaystyle y_{j+3} ~=~ y_{j+2} + \frac{h}{12}(23f_{j+2} - 16f_{j+1} + 5f_j)$
 
-    ::::{admonition} Solution
+    ::::::{admonition} Solution
     :class: solution, dropdown
     
     A comparison with
@@ -241,7 +241,9 @@ Find the order and the error constants of the following formulae,
     :language: matlab
     :::
 
-    ::::
+    
+
+    ::::::
 
 :::::
 
@@ -308,3 +310,29 @@ Note that when $\,a \!=\! 0\,$, then method {eq}`eq:ch03:4.1` is the
 two-step Adams-Moulton method, and if $\,a \!=\! -5\,$, it is an
 explicit method.
 :::
+
+(chap:errorConstant:constants:code)=
+## Computer programs for calculating error constants
+:::::{tab-set}
+
+::::{tab-item} MATLAB
+The following code has been tested under **Matlab 2024a**
+
+```{literalinclude} /codes/ODE_errorConstant_Matlab.m
+:linenos: True
+:language: matlab
+```
+
+::::
+
+::::{tab-item} Python
+
+```{literalinclude} /codes/ODE_errorConstant_Python.py
+:linenos: True
+:language: python
+```
+
+
+::::
+
+::::: 

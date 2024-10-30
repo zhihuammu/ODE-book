@@ -48,6 +48,8 @@ order and the error constants of the following formulae:
 
 4.  $\displaystyle y_{j+1} ~=~ y_j + \tfrac{h}{720}(1901f_j - 2774f_{j-1}
             + 2616f_{j-2} - 1274f_{j-3} + 251f_{j-4})$
+
+You can use the Matlab or Python program given in {numref}`chap:errorConstant:constants:code`.
 :::
 
 :::{solution} chap04-ex-4.2
