@@ -3,7 +3,7 @@
 
 You should try the following exercise questions first, then check with the answers. 
 
-- {download}`Handwritten solution for Exercises 5.1 and 5.2</exSol/Ex5/Ex5_1-2_sol.pdf>`
+- {download}`Handwritten solution for Exercises 6.1 and 6.2</exSol/Ex5/Ex5_1-2_sol.pdf>`
 
 :::{exercise}
 :label: ch5-ex-q1
