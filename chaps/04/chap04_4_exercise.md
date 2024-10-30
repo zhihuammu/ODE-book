@@ -48,14 +48,16 @@ order and the error constants of the following formulae:
 
 4.  $\displaystyle y_{j+1} ~=~ y_j + \tfrac{h}{720}(1901f_j - 2774f_{j-1}
             + 2616f_{j-2} - 1274f_{j-3} + 251f_{j-4})$
+
+You can use the Matlab or Python program given in {numref}`chap:errorConstant:constants:code`.
 :::
 
 :::{solution} chap04-ex-4.2
 :class: dropdown
 1. $\frac{-1}{24}h^4f'''(z)$,
-1. $\frac{-1}{90}h^5f^{iv}(z)$，
-1. $\frac{251}{720}h^5f^{iv}(z)$,
-1. $\frac{95}{288}h^6f^v(z)$
+1. $\frac{-1}{90}h^5f^{(iv)}(z)$，
+1. $\frac{251}{720}h^5f^{(iv)}(z)$,
+1. $\frac{95}{288}h^6f^{(v)}(z)$
 
 Video explanantion of 1 & 2
 <div align="center">
@@ -71,10 +73,10 @@ Predictor-Corrector method:
 
 $$\begin{aligned}
         y^{(p)}_{j+1} ~&=~ y_{j-3} + \tfrac{h}{3}(8f_j - 4f_{j-1} + 8f_{j-2})
-        + \tfrac{28}{90}h^5y^v(z_1)
+        + \tfrac{28}{90}h^5y^{(v)}(z_1)
         \\
         y^{(c)}_{j+1} ~&=~ y_{j-1} + \tfrac{h}{3}(f_{j+1} + 4f_j + f_{j-1})
-        - \tfrac{1}{90}h^5y^v(z_2)   
+        - \tfrac{1}{90}h^5y^{(v)}(z_2)   
 \end{aligned}$$
 :::
 
