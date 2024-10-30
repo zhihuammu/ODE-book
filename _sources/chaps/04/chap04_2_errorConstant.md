@@ -2,8 +2,8 @@
 # Order and Error Constants
 
 :::{prf:theorem} Global Error and Order of Accuracy
-If the {index}`local error` associated to a multistep formula is $\,O(h)^{p+1}$
-then, the {index}`global error` is expected to be $\,O(h)^p$, and we can say that
+If the {index}`local error` associated to a multistep formula is $\,O(h^{p+1})$
+then, the {index}`global error` is expected to be $\,O(h^p)$, and we can say that
 the method is of order $p$. To determine the order of a multistep method
 we can use the following approach.
 :::
@@ -16,7 +16,9 @@ $$\begin{aligned}
 \end{aligned}$$(eq:ch03:2.1)
 
 where $k$ denotes the number of steps and $\alpha_i$ and
-$\beta_i$ are constants. For example, the most general three-step method
+$\beta_i$ are constants.
+
+<!-- For example, the most general three-step method
 has the form 
 
 $$\begin{aligned}
@@ -43,7 +45,7 @@ $$\begin{aligned}
      \\[1ex]
     && \beta_0 &= \frac{5}{12},  & \beta_1 &= -\frac{16}{12},
      & \beta_2 &= \frac{23}{12}, & \beta_3 &= 0 &&
-\end{aligned}$$
+\end{aligned}$$ -->
 
  The exact solution of the differential equation at
 $x = x + ih$, (i.e. $\,y(x+ih)\,$), also satisfies equation {eq}`eq:ch03:2.1`, so we can write 
@@ -71,6 +73,8 @@ we can expand the right-hand side of equation
 {eq}`eq:ch03:2.3` as:
 
 - $\displaystyle i = 0\quad \alpha_0 y(x) - h\beta_0 y'(x) $
+- $\displaystyle i = 1\quad \alpha_1 \left[ y(x) + hy'(x) + \frac{h^2}{2!}y''(x) + \dots\right] 
+         -h\beta_1 \left[ y'(x) + hy''(x) + \frac{h^2}{2!}y'''(x) + \dots      \right] $
 - $\displaystyle i = 2\quad \alpha_2 \left[ y(x) + 2hy'(x) + \frac{(2h)^2}{2!}y''(x) + \dots  \right]
          -h\beta_2 \left[ y'(x) + 2hy''(x) + \frac{(2h)^2}{2!}y'''(x) + \dots \right]$
 - $\displaystyle i = 3\quad \alpha_3 \left[y(x) + 3hy'(x) + \frac{(3h)^2}{2!}y''(x) + \dots \right]
@@ -104,7 +108,7 @@ $$\begin{aligned}
         \frac{1}{p!}(\alpha_1 + 2^p\alpha_2 + 3^p\alpha_3 + \dots + k^p\alpha_k)
         - \frac{1}{(p-1)!}(\beta_1 + 2^{p-1}\beta_2 + 3^{p-1}\beta_3
                            + \dots + k^{p-1}\beta_k)
-    \right] y^p(x)
+    \right] y^{(p)}(x)
 \end{aligned}$$ 
 
 for $p = 2,3,\dots$
@@ -228,7 +232,7 @@ Find the order and the error constants of the following formulae,
                 C_4 ~&=~ \frac{1}{4!}(\alpha_1 + 2^4\alpha_2 + 3^4\alpha_3) - \frac{1}{3!}(\beta_1 + 2^3\beta_2 + 3^3\beta_3) ~=~ \frac{9}{24}\\            
     \end{aligned}$$
 
-    $\therefore$ The method is of order $3$ and the error constant in
+    $\therefore$ The method is of order $3$ and the error constant is
     $\dfrac{3}{8}$.
 
     Matlab code for error constant calculation:

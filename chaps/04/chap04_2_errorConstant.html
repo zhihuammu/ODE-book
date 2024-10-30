@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="5.1. Derivation of Local Error Terms for Integration Formulae" href="chap04_1_errorIntegration.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Tuesday 08 October 2024 23:11:39"/>
+    <meta name="docbuild:last-update" content="Tuesday 29 October 2024 23:08:08"/>
   </head>
   
   
@@ -427,8 +427,8 @@ document.write(`
 <div class="proof theorem admonition" id="theorem-0">
 <p class="admonition-title"><span class="caption-number">Theorem 5.2 </span> (Global Error and Order of Accuracy)</p>
 <section class="theorem-content" id="proof-content">
-<p>If the <span class="target" id="index-0"></span>local error associated to a multistep formula is <span class="math notranslate nohighlight">\(\,O(h)^{p+1}\)</span>
-then, the <span class="target" id="index-1"></span>global error is expected to be <span class="math notranslate nohighlight">\(\,O(h)^p\)</span>, and we can say that
+<p>If the <span class="target" id="index-0"></span>local error associated to a multistep formula is <span class="math notranslate nohighlight">\(\,O(h^{p+1})\)</span>
+then, the <span class="target" id="index-1"></span>global error is expected to be <span class="math notranslate nohighlight">\(\,O(h^p)\)</span>, and we can say that
 the method is of order <span class="math notranslate nohighlight">\(p\)</span>. To determine the order of a multistep method
 we can use the following approach.</p>
 </section>
@@ -439,32 +439,35 @@ we can use the following approach.</p>
     \hspace{1cm}\text{with}\ \alpha_k = 1    
 \end{aligned}\]</div>
 <p>where <span class="math notranslate nohighlight">\(k\)</span> denotes the number of steps and <span class="math notranslate nohighlight">\(\alpha_i\)</span> and
-<span class="math notranslate nohighlight">\(\beta_i\)</span> are constants. For example, the most general three-step method
-has the form</p>
-<div class="math notranslate nohighlight" id="equation-eq-ch03-2-2">
-<span class="eqno">(5.2)<a class="headerlink" href="#equation-eq-ch03-2-2" title="Permalink to this equation">#</a></span>\[\begin{aligned}
+<span class="math notranslate nohighlight">\(\beta_i\)</span> are constants.</p>
+<!-- For example, the most general three-step method
+has the form 
+
+$$\begin{aligned}
     \alpha_0 y_j + \alpha_1 y_{j+1} + \alpha_2 y_{j+2} + \alpha_3 y_{j+3}
     ~=~ h \bigl[
         \beta_0 f_j + \beta_1 f_{j+1} + \beta_2 f_{j+2} + \beta_3 f_{j+3}
     \bigr]
-\end{aligned}\]</div>
-<p>Accordingly, for example, for the Adam-Bashforth
-three-step method</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
+\end{aligned}$$(eq:ch03:2.2)
+
+Accordingly, for example, for the Adam-Bashforth
+three-step method 
+
+$$\begin{aligned}
     y_{j+3}~=~y_{j+2}\,+\,\frac{h}{12} \bigl[
         23f_{j+2} - 16f_{j+1} + 5f_j
     \bigr]
-\end{aligned}\]</div>
-<p>we have the following coefficients</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-    &amp;&amp; \alpha_0 &amp;= 0,            &amp; \alpha_1 &amp;= 0,
-     &amp; \alpha_2 &amp;= -1,           &amp; \alpha_3 &amp;= 1 &amp;&amp;
+\end{aligned}$$ 
+
+we have the following coefficients 
+
+$$\begin{aligned}
+    && \alpha_0 &= 0,            & \alpha_1 &= 0,
+     & \alpha_2 &= -1,           & \alpha_3 &= 1 &&
      \\[1ex]
-    &amp;&amp; \beta_0 &amp;= \frac{5}{12},  &amp; \beta_1 &amp;= -\frac{16}{12},
-     &amp; \beta_2 &amp;= \frac{23}{12}, &amp; \beta_3 &amp;= 0 &amp;&amp;
-\end{aligned}\end{split}\]</div>
+    && \beta_0 &= \frac{5}{12},  & \beta_1 &= -\frac{16}{12},
+     & \beta_2 &= \frac{23}{12}, & \beta_3 &= 0 &&
+\end{aligned}$$ -->
 <p>The exact solution of the differential equation at
 <span class="math notranslate nohighlight">\(x = x + ih\)</span>, (i.e. <span class="math notranslate nohighlight">\(\,y(x+ih)\,\)</span>), also satisfies equation <a class="reference internal" href="#equation-eq-ch03-2-1">(5.1)</a>, so we can write</p>
 <div class="math notranslate nohighlight">
@@ -474,7 +477,7 @@ three-step method</p>
 \end{aligned}\]</div>
 <p>Thus the local error <span class="math notranslate nohighlight">\(T\)</span> is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch03-2-3">
-<span class="eqno">(5.3)<a class="headerlink" href="#equation-eq-ch03-2-3" title="Permalink to this equation">#</a></span>\[\begin{aligned}
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-eq-ch03-2-3" title="Permalink to this equation">#</a></span>\[\begin{aligned}
     T ~=~ \sum_{i=0}^{k} \alpha_i ~ y{(x+ih)} ~-~ h \sum_{i=0}^{k}
     \beta_i ~ f{(x+ih)}
 \end{aligned}\]</div>
@@ -485,9 +488,11 @@ three-step method</p>
     + \frac{(ih)^p}{p!}y^{(p)}(x)~,
 \end{aligned}\]</div>
 <p>we can expand the right-hand side of equation
-<a class="reference internal" href="#equation-eq-ch03-2-3">(5.3)</a> as:</p>
+<a class="reference internal" href="#equation-eq-ch03-2-3">(5.2)</a> as:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\displaystyle i = 0\quad \alpha_0 y(x) - h\beta_0 y'(x) \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle i = 1\quad \alpha_1 \left[ y(x) + hy'(x) + \frac{h^2}{2!}y''(x) + \dots\right] 
+       -h\beta_1 \left[ y'(x) + hy''(x) + \frac{h^2}{2!}y'''(x) + \dots      \right] \)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle i = 2\quad \alpha_2 \left[ y(x) + 2hy'(x) + \frac{(2h)^2}{2!}y''(x) + \dots  \right]
        -h\beta_2 \left[ y'(x) + 2hy''(x) + \frac{(2h)^2}{2!}y'''(x) + \dots \right]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle i = 3\quad \alpha_3 \left[y(x) + 3hy'(x) + \frac{(3h)^2}{2!}y''(x) + \dots \right]
@@ -520,7 +525,7 @@ attached to each term, later in the equation for <span class="math notranslate n
         \frac{1}{p!}(\alpha_1 + 2^p\alpha_2 + 3^p\alpha_3 + \dots + k^p\alpha_k)
         - \frac{1}{(p-1)!}(\beta_1 + 2^{p-1}\beta_2 + 3^{p-1}\beta_3
                            + \dots + k^{p-1}\beta_k)
-    \right] y^p(x)
+    \right] y^{(p)}(x)
 \end{aligned}\]</div>
 <p>for <span class="math notranslate nohighlight">\(p = 2,3,\dots\)</span></p>
 <p>Thus, let coefficients of <span class="math notranslate nohighlight">\(y(x) = C_0\)</span>, <span class="math notranslate nohighlight">\(~y'(x) = C_1\)</span>,…etc., then
@@ -638,7 +643,7 @@ principal or leading <span class="target" id="index-2"></span>local truncation e
             C_3 ~&amp;=~ \frac{1}{3!}(\alpha_1 + 2^3\alpha_2 + 3^3\alpha_3) - \frac{1}{2!}(\beta_1 + 2^2\beta_2 + 3^2\beta_3) ~=~ 0\\
             C_4 ~&amp;=~ \frac{1}{4!}(\alpha_1 + 2^4\alpha_2 + 3^4\alpha_3) - \frac{1}{3!}(\beta_1 + 2^3\beta_2 + 3^3\beta_3) ~=~ \frac{9}{24}\\            
 \end{aligned}\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(\therefore\)</span> The method is of order <span class="math notranslate nohighlight">\(3\)</span> and the error constant in
+<p><span class="math notranslate nohighlight">\(\therefore\)</span> The method is of order <span class="math notranslate nohighlight">\(3\)</span> and the error constant is
 <span class="math notranslate nohighlight">\(\dfrac{3}{8}\)</span>.</p>
 <p>Matlab code for error constant calculation:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%matlab code: calculating the error constant for chapter 3 example 3(ii)</span>
@@ -696,7 +701,7 @@ undetermined coefficients <span class="math notranslate nohighlight">\(\,\alpha_
 \end{aligned}\]</div>
 <p>and the method is</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch03-4-1">
-<span class="eqno">(5.4)<a class="headerlink" href="#equation-eq-ch03-4-1" title="Permalink to this equation">#</a></span>\[\begin{aligned}
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-eq-ch03-4-1" title="Permalink to this equation">#</a></span>\[\begin{aligned}
     y_{j+2} - (1 + a)y_{j+1} + ay_j ~=~ \frac{{h}}{12} \bigl[
         (5 + a)f_{j+2} + 8(1 - a)f_{j+1} - (1 + 5a)f_j
     \bigr]    
@@ -710,10 +715,10 @@ undetermined coefficients <span class="math notranslate nohighlight">\(\,\alpha_
     ~=~ -\frac{1}{3\times 5!}(17 + 13a)
 \end{aligned}\end{split}\]</div>
 <p>If <span class="math notranslate nohighlight">\(\,a \!\neq\! -1\,\)</span>, then <span class="math notranslate nohighlight">\(\,C_4 \!\neq\! 0\,\)</span>, and
-method <a class="reference internal" href="#equation-eq-ch03-4-1">(5.4)</a> is of order <span class="math notranslate nohighlight">\(3\)</span>. If <span class="math notranslate nohighlight">\(\,a \!=\! -1\,\)</span>, then
+method <a class="reference internal" href="#equation-eq-ch03-4-1">(5.3)</a> is of order <span class="math notranslate nohighlight">\(3\)</span>. If <span class="math notranslate nohighlight">\(\,a \!=\! -1\,\)</span>, then
 <span class="math notranslate nohighlight">\(\,C_4 \!=\! 0\,,~ C_5 \!\neq\! 0\,\,\)</span>, and method
-<a class="reference internal" href="#equation-eq-ch03-4-1">(5.4)</a>, which is now Simpson’s rule, is of order <span class="math notranslate nohighlight">\(4\)</span>.</p>
-<p>Note that when <span class="math notranslate nohighlight">\(\,a \!=\! 0\,\)</span>, then method <a class="reference internal" href="#equation-eq-ch03-4-1">(5.4)</a> is the
+<a class="reference internal" href="#equation-eq-ch03-4-1">(5.3)</a>, which is now Simpson’s rule, is of order <span class="math notranslate nohighlight">\(4\)</span>.</p>
+<p>Note that when <span class="math notranslate nohighlight">\(\,a \!=\! 0\,\)</span>, then method <a class="reference internal" href="#equation-eq-ch03-4-1">(5.3)</a> is the
 two-step Adams-Moulton method, and if <span class="math notranslate nohighlight">\(\,a \!=\! -5\,\)</span>, it is an
 explicit method.</p>
 </div>
@@ -805,7 +810,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 08 October 2024 23:11:39.
+  Last updated on Tuesday 29 October 2024 23:08:08.
   <br/>
 </p>
   </div>
