@@ -34,7 +34,7 @@ You should
 
 ## Accuracy
     
-We can find the error constant of the method (see Chapter 3). Rearranging the formula as
+We can find the error constant of the method (see {numref}`chap:errorConstant:constants`). Rearranging the formula as
 
 $$
 - 5 y_{n-2} + 4 y_{n-1} + y_n   = h \left( 2 f_{n-2} + 4  f_{n-1} + 0 f_n \right),
