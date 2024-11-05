@@ -1,7 +1,7 @@
 (chap:stability1)=
 # Multistep Methods: Zero-Stability and Convergence 
 
-**Learning Objective**
+**Learning Objectives**
 
 After completing this chapter, you should be able to:
 
