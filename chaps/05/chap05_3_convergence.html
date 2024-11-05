@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="6.2. Characteristic Polynomials and Root Condition" href="chap05_2_rootCondition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Tuesday 08 October 2024 23:11:39"/>
+    <meta name="docbuild:last-update" content="Tuesday 05 November 2024 15:24:52"/>
   </head>
   
   
@@ -431,6 +431,14 @@ document.write(`
 <p>This means no root of the
 first characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> has modulus greater that
 one, and every root of modulus one is simple.</p>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
+<p>In electrical engineering and control theory, the right hand side of the first-order ODE</p>
+<div class="math notranslate nohighlight">
+\[\diff{y}{x}=f(x, y)\]</div>
+<p>is called the input of the system. In this context, we can interpret <code class="docutils literal notranslate"><span class="pre">zero-stability</span></code> as the stability of the system with <strong>zero input</strong>.</p>
+<p>We use the root condition to assess whether the discretised system (difference equation) can remain stable under <strong>zero input</strong> condition.</p>
+</div>
 </section>
 </div><div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 6.7 </span> (Consistency)</p>
@@ -442,10 +450,15 @@ one, and every root of modulus one is simple.</p>
 \sum_{i=0}^{k}\alpha_i y_{j+i}~=~ h\sum_{i=0}^{k}\beta_i f_{j+i}, \qquad
      \text{with}~ \alpha_k =1 
 \]</div>
-<p>being <em>consistent</em> with the continuous integral equation</p>
+<p>being <em>consistent</em> with the continuous differential equation</p>
 <div class="math notranslate nohighlight">
 \[
-\int_{x_j}^{x_{j+k}} \dy = \int_{x_j}^{x_{j+k}} f \dx
+\diff{y}{x}  =  f(x, y) \dx
+\]</div>
+<p>or its integral</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{x_j}^{x_{j+k}} \diff{y}{x} \dx = \int_{x_j}^{x_{j+k}} f(x, y) \dx
 \]</div>
 <p>is that the method has an order of accuracy <span class="math notranslate nohighlight">\(p \geq 1\)</span>.</p>
 </section>
@@ -458,6 +471,17 @@ equivalent to <span class="math notranslate nohighlight">\(C_0 = 0\)</span>, <sp
      &amp; \sum_{i=0}^{k} i\alpha_i ~&amp;=~ \sum_{i=0}^{k} \beta_i\,. &amp;&amp;
 \end{aligned}
 \]</div>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
+<div class="math notranslate nohighlight">
+\[
+C_0= \alpha_0 + \alpha_1 + \cdots + \alpha_k
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+C_1= \left(\alpha_1 + 2\alpha_2 + 3\alpha_3 + \cdots + k\alpha_k\right) - \left( \beta_0 + \beta_1 + \cdots + \beta_k \right)
+\]</div>
+</div>
 <p>And in terms of the first and second characteristic polynomials <span class="math notranslate nohighlight">\(\rho(z)\)</span> and <span class="math notranslate nohighlight">\(\sigma(z)\)</span>, the condition of consistency can be expressed by the following relations - i.e. the linear multistep method <a class="reference internal" href="chap05_2_rootCondition.html#equation-eq-ch04-1-1">(6.1)</a> is consistent <em>iff</em>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -481,8 +505,8 @@ roots</em>.</p>
 <p>If a linear multistep method satisfies any of these three conditions, then it is a <em>consistent</em> method.</p>
 </section>
 </div><p>A linear multistep method which is zero-stable is frequently called
-‘stable’. Essentially a method is stable if errors introduced at one
-step are not propagated at subsequent steps.</p>
+‘stable’. Essentially a method is stable if errors produced at one
+step are not propagated (or amplified) at subsequent steps.</p>
 <p>In addition, it is also important for us to know whether the numerical solution <span class="math notranslate nohighlight">\(y\)</span><sub>num</sub> will approach
 the exact solution <span class="math notranslate nohighlight">\(y\)</span><sub>ex</sub> when we reduce the step size <span class="math notranslate nohighlight">\(h\)</span> towards zero.</p>
 <div class="proof definition admonition" id="definition-3">
@@ -508,7 +532,7 @@ the exact solution <span class="math notranslate nohighlight">\(y\)</span><sub>e
 </section>
 </div><p>Zero-stability ensures that
 the parasitic solutions of the general solution to a difference equation
-are damped out in the limit as <span class="math notranslate nohighlight">\(\,h \to 0\,\)</span> – this effect is related
+are damped out in the limit as <span class="math notranslate nohighlight">\(\,h \to 0\,\)</span> — this effect is related
 to the fundamental theorem on linear multistep methods by <strong>Dahlquist</strong>:</p>
 <div class="proof theorem admonition" id="theorem-4">
 <p class="admonition-title"><span class="caption-number">Theorem 6.2 </span> (Dahlquist Equivalence)</p>
@@ -737,7 +761,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 08 October 2024 23:11:39.
+  Last updated on Tuesday 05 November 2024 15:24:52.
   <br/>
 </p>
   </div>

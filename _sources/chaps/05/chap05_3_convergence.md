@@ -1,12 +1,29 @@
 # Zero-Stability, Consistency and Convergence Theorem
 
-:::{prf:definition} Zero-Stability
+::::{prf:definition} Zero-Stability
 A linear multistep method {eq}`eq:ch04:1.1` is said to be {index}`zero-stable` if it satisfies the root condition given in {prf:ref}`definition-root-condition`.
 
 This means no root of the
 first characteristic polynomial $\,\rho(z)\,$ has modulus greater that
 one, and every root of modulus one is simple.
+
+:::{note}
+:class: dropdown
+
+In electrical engineering and control theory, the right hand side of the first-order ODE 
+
+ $$\diff{y}{x}=f(x, y)$$
+
+is called the input of the system. In this context, we can interpret `zero-stability` as the stability of the system with **zero input**.
+
+We use the root condition to assess whether the discretised system (difference equation) can remain stable under **zero input** condition.
 :::
+
+::::
+
+
+
+
 
 :::{prf:definition} Consistency
 In numerical analysis, consistency is the property of a numerical method performing differentiation or integration in a way similar to the actual differentiation or integration. In another word, consistency tells how similar is the discrete system to the original continuous system.
@@ -18,10 +35,17 @@ $$
      \text{with}~ \alpha_k =1 
 $$
 
-being *consistent* with the continuous integral equation
+being *consistent* with the continuous differential equation
+
 
 $$
-\int_{x_j}^{x_{j+k}} \dy = \int_{x_j}^{x_{j+k}} f \dx
+\diff{y}{x}  =  f(x, y) \dx
+$$
+
+ or its integral
+
+$$
+\int_{x_j}^{x_{j+k}} \diff{y}{x} \dx = \int_{x_j}^{x_{j+k}} f(x, y) \dx
 $$
 
 is that the method has an order of accuracy $p \geq 1$.
@@ -37,6 +61,18 @@ $$
      & \sum_{i=0}^{k} i\alpha_i ~&=~ \sum_{i=0}^{k} \beta_i\,. &&
 \end{aligned}
 $$
+
+:::{note}
+:class: dropdown
+$$
+C_0= \alpha_0 + \alpha_1 + \cdots + \alpha_k
+$$
+
+$$
+C_1= \left(\alpha_1 + 2\alpha_2 + 3\alpha_3 + \cdots + k\alpha_k\right) - \left( \beta_0 + \beta_1 + \cdots + \beta_k \right)
+$$
+
+:::
 
 And in terms of the first and second characteristic polynomials $\rho(z)$ and $\sigma(z)$, the condition of consistency can be expressed by the following relations - i.e. the linear multistep method {eq}`eq:ch04:1.1` is consistent *iff*: 
 
@@ -64,8 +100,8 @@ If a linear multistep method satisfies any of these three conditions, then it is
 :::
 
 A linear multistep method which is zero-stable is frequently called
-'stable'. Essentially a method is stable if errors introduced at one
-step are not propagated at subsequent steps. 
+'stable'. Essentially a method is stable if errors produced at one
+step are not propagated (or amplified) at subsequent steps. 
 
 In addition, it is also important for us to know whether the numerical solution $y${sub}`num` will approach
 the exact solution $y${sub}`ex` when we reduce the step size $h$ towards zero. 
@@ -95,7 +131,7 @@ $$
 
 Zero-stability ensures that
 the parasitic solutions of the general solution to a difference equation
-are damped out in the limit as $\,h \to 0\,$ -- this effect is related
+are damped out in the limit as $\,h \to 0\,$ --- this effect is related
 to the fundamental theorem on linear multistep methods by **Dahlquist**:
 
 :::{prf:theorem} Dahlquist Equivalence

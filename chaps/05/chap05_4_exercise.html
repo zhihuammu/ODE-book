@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="6.3. Zero-Stability, Consistency and Convergence Theorem" href="chap05_3_convergence.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Wednesday 30 October 2024 13:43:54"/>
+    <meta name="docbuild:last-update" content="Tuesday 05 November 2024 15:31:32"/>
   </head>
   
   
@@ -426,7 +426,7 @@ document.write(`
 <span id="chap-stability1-exercise"></span><h1><span class="section-number">6.4. </span>Chapter 6 Exercise<a class="headerlink" href="#chapter-6-exercise" title="Permalink to this heading">#</a></h1>
 <p>You should try the following exercise questions first, then check with the answers.</p>
 <ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../_downloads/58471d6fc9e21740f7357afc4e29f7ba/Ex5_1-2_sol.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Handwritten</span> <span class="pre">solution</span> <span class="pre">for</span> <span class="pre">Exercises</span> <span class="pre">6.1</span> <span class="pre">and</span> <span class="pre">6.2</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/58471d6fc9e21740f7357afc4e29f7ba/Ex5_1-2_sol.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Handwritten</span> <span class="pre">solutions</span> <span class="pre">for</span> <span class="pre">Exercises</span> <span class="pre">6.1</span> <span class="pre">and</span> <span class="pre">6.2</span></code></a></p></li>
 </ul>
 <div class="exercise admonition" id="ch5-ex-q1">
 
@@ -508,19 +508,75 @@ the approximate solution and plot the results. -->
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#ch5-ex-q3"> Exercise 6.3</a></p>
 <section id="solution-content">
+<p>Re-arranging the equation gives</p>
+<div class="math notranslate nohighlight">
+\[
+- y_{j-1} + 0 y_j + y_{j+1} = h (0 f_{j-1} + 2 f_j + 0 f_{j+1}),
+\]</div>
+<p>so the coefficients are</p>
+<div class="math notranslate nohighlight">
+\[
+\alpha_0 = -1, \quad \alpha_1=0, \quad \alpha_2=1, \quad
+\beta_0=0, \quad \beta_1 = 2, \quad \beta_2=0,
+\]</div>
+<p>then the first characteristic polynomial is</p>
+<div class="math notranslate nohighlight">
+\[
+\rho(z) = \alpha_0 z^0 + \alpha_1 z^1 + \alpha^2 z^2 = -1 + z^2,
+\]</div>
+<p>with two distinct real roots</p>
+<div class="math notranslate nohighlight">
+\[
+    z_1 = 1, \quad z_2 = -1.
+\]</div>
+<p>Thus the method satisfies the root condition, so it is zero-stable.</p>
 <ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../_downloads/d0eaf32731cb42ea0d9bdc32935cbf60/Ex5_3_Solution.mlx"><code class="xref download docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">solution</span> <span class="pre">for</span> <span class="pre">Exercise</span> <span class="pre">5.3</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/d0eaf32731cb42ea0d9bdc32935cbf60/Ex5_3_Solution.mlx"><code class="xref download docutils literal notranslate"><span class="pre">Matlab</span> <span class="pre">solution</span> <span class="pre">for</span> <span class="pre">Exercise</span> <span class="pre">6.3</span></code></a></p></li>
 </ul>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
 <div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<a class="reference internal image-reference" href="../../_images/fig-chap05-c4ans3-h005.svg"><img alt="../../_images/fig-chap05-c4ans3-h005.svg" class="align-center" src="../../_images/fig-chap05-c4ans3-h005.svg" width="600px" /></a>
-</div>
-<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <a class="reference internal image-reference" href="../../_images/fig-chap05-c4ans3-h002.svg"><img alt="../../_images/fig-chap05-c4ans3-h002.svg" class="align-center" src="../../_images/fig-chap05-c4ans3-h002.svg" width="600px" /></a>
 </div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<a class="reference internal image-reference" href="../../_images/fig-chap05-c4ans3-h005.svg"><img alt="../../_images/fig-chap05-c4ans3-h005.svg" class="align-center" src="../../_images/fig-chap05-c4ans3-h005.svg" width="600px" /></a>
 </div>
 </div>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="ch6-ex-q4">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.4 </span></p>
+<section id="exercise-content">
+<p>Assess the zero-stability of the multi-step method given in
+<a class="reference internal" href="chap05_1_experiment.html#example-6.1">Example 6.1</a></p>
+<div class="math notranslate nohighlight">
+\[
+y_n = -4 y_{n-1} + 5 y_{n-2} + 4 h f_{n-1} + 2h f_{n-2}.
+\]</div>
+</section>
+</div>
+<div class="solution dropdown admonition" id="chaps/05/chap05_4_exercise-solution-7">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ch5-ex-q3"> Exercise 6.3</a></p>
+<section id="solution-content">
+<p>Re-arranging the equation gives</p>
+<div class="math notranslate nohighlight">
+\[
+-5 y_{n-2} + 4 y_{n-1} + y_n = h \left( 2 f_{n-2} + 4 f_{n-1} + 0 f_n \right),
+\]</div>
+<p>so the first characteristic polynomial is</p>
+<div class="math notranslate nohighlight">
+\[
+    \rho(z) = -5 + 4z + z^2,
+\]</div>
+<p>and it has two roots</p>
+<div class="math notranslate nohighlight">
+\[
+    z_1 = 1, \quad z_2 = -5.
+\]</div>
+<p>The method doesn’t satisfy the root condition, so it is not zero-stable.</p>
 </section>
 </div>
 </section>
@@ -610,7 +666,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 30 October 2024 13:43:54.
+  Last updated on Tuesday 05 November 2024 15:31:32.
   <br/>
 </p>
   </div>

@@ -341,19 +341,18 @@ Find the roots associated with the following characteristic polynomials:
     We can also use Matlab to find the roots of the polynomial
 
     ```matlab
-    p=[1 0 0 1 0];     %vector defining the coefficients of the polynomial
-    roots(p)         %solve the polynomial equation
+    syms z
+    solve(z^4+z)
     ```
 
     Output
 
     ```matlab
     ans =
-
-        0.0000 + 0.0000i
-       -1.0000 + 0.0000i
-        0.5000 + 0.8660i
-        0.5000 - 0.8660i
+                    -1
+                    0
+    1/2 - (3^(1/2)*1i)/2
+    (3^(1/2)*1i)/2 + 1/2
     ```    
 
     Because there are more than one root on the unit circle, the method

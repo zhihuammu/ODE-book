@@ -13,6 +13,7 @@ kernelspec:
 # An exploratory experiment
 
 :::{prf:example}
+:label: example-6.1
 Solve the following initial value problem
 
 $$

@@ -3,7 +3,7 @@
 
 You should try the following exercise questions first, then check with the answers. 
 
-- {download}`Handwritten solution for Exercises 6.1 and 6.2</exSol/Ex5/Ex5_1-2_sol.pdf>`
+- {download}`Handwritten solutions for Exercises 6.1 and 6.2</exSol/Ex5/Ex5_1-2_sol.pdf>`
 
 :::{exercise}
 :label: ch5-ex-q1
@@ -85,17 +85,36 @@ the approximate solution and plot the results. -->
 :::::{solution} ch5-ex-q3
 :class: dropdown
 
-- {download}`Matlab solution for Exercise 5.3</exSol/Ex5/Ex5_3_Solution.mlx>`
+Re-arranging the equation gives
+
+$$
+- y_{j-1} + 0 y_j + y_{j+1} = h (0 f_{j-1} + 2 f_j + 0 f_{j+1}),
+$$
+
+so the coefficients are
+
+$$
+\alpha_0 = -1, \quad \alpha_1=0, \quad \alpha_2=1, \quad
+\beta_0=0, \quad \beta_1 = 2, \quad \beta_2=0,
+$$
+
+then the first characteristic polynomial is
+
+$$
+\rho(z) = \alpha_0 z^0 + \alpha_1 z^1 + \alpha^2 z^2 = -1 + z^2,
+$$
+
+with two distinct real roots
+
+$$
+    z_1 = 1, \quad z_2 = -1.
+$$
+
+Thus the method satisfies the root condition, so it is zero-stable.
+
+- {download}`Matlab solution for Exercise 6.3</exSol/Ex5/Ex5_3_Solution.mlx>`
 
 ::::{grid}
-
-:::{grid-item} 
-:columns: 6
-```{image}  /images/05/fig-chap05-c4ans3-h005.svg    
-:width: 600px
-:align: center
-```
-:::
 
 :::{grid-item} 
 :columns: 6
@@ -105,6 +124,52 @@ the approximate solution and plot the results. -->
 ```
 :::
 
-::::
+:::{grid-item} 
+:columns: 6
+```{image}  /images/05/fig-chap05-c4ans3-h005.svg    
+:width: 600px
+:align: center
+```
+:::
 
 
+
+:::::
+
+
+:::{exercise}
+:label: ch6-ex-q4
+
+Assess the zero-stability of the multi-step method given in
+{prf:ref}`example-6.1`
+
+$$
+y_n = -4 y_{n-1} + 5 y_{n-2} + 4 h f_{n-1} + 2h f_{n-2}.
+$$
+:::
+
+:::::{solution} ch5-ex-q3
+:class: dropdown
+
+Re-arranging the equation gives
+
+$$
+-5 y_{n-2} + 4 y_{n-1} + y_n = h \left( 2 f_{n-2} + 4 f_{n-1} + 0 f_n \right),
+$$
+
+so the first characteristic polynomial is
+
+$$
+    \rho(z) = -5 + 4z + z^2,
+$$
+
+and it has two roots
+
+$$
+    z_1 = 1, \quad z_2 = -5.
+$$
+
+The method doesn't satisfy the root condition, so it is not zero-stable.
+
+
+:::::
