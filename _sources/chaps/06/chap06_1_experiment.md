@@ -27,7 +27,9 @@ $$
 
 You should
 1. Find the accuracy of the method;
-2. Implement the method in Matlab/Python, and compare the numerical solution with the exact solution
+2. Assess the zero-stability of the method;
+3. Examine the convergence of the method;
+3. Implement the method in Matlab/Python, and compare the numerical solution with the exact solution
 
     $$y=e^{-\lambda t}+t, \quad \lambda=10.$$
 :::
@@ -89,7 +91,27 @@ print("c4=",c4)
 print("c5=",c5)
 ```
 
-therefore the order of accuracy of the method is $4$.
+therefore the order of accuracy of the method is $4$, and so the method is consistent.
+
+## Zero-stability
+
+The first characteristic polynomial of the method is
+
+$$
+\rho(z) = \sum_{i=0}^{k} \alpha_i z^i = -z^3 + z^4 = -z^3 (1-z),
+$$
+
+and it has roots 
+
+$$
+z_{1,2,3}=0, z_4=1.
+$$
+
+The method satisfies the root condition, so it is zero-stable.
+
+## Convergence
+The method is both consistent and zero-stable, so it is convergent.
+
 
 ## Code Implementation
 

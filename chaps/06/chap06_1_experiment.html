@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="7. Multistep Methods: Stability Interval and Region" href="chap06_0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Tuesday 05 November 2024 15:24:52"/>
+    <meta name="docbuild:last-update" content="Monday 11 November 2024 16:30:32"/>
   </head>
   
   
@@ -421,7 +421,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy">7.1.1. Accuracy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-implementation">7.1.2. Code Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-stability">7.1.2. Zero-stability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence">7.1.3. Convergence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-implementation">7.1.4. Code Implementation</a></li>
 </ul>
             </nav>
         </div>
@@ -451,6 +453,8 @@ y_{j+1} = y_j + \frac{h}{24}\left(\,55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}\rig
 <p>You should</p>
 <ol class="arabic">
 <li><p>Find the accuracy of the method;</p></li>
+<li><p>Assess the zero-stability of the method;</p></li>
+<li><p>Examine the convergence of the method;</p></li>
 <li><p>Implement the method in Matlab/Python, and compare the numerical solution with the exact solution</p>
 <div class="math notranslate nohighlight">
 \[y=e^{-\lambda t}+t, \quad \lambda=10.\]</div>
@@ -524,10 +528,28 @@ c5= 251/720
 </div>
 </div>
 </div>
-<p>therefore the order of accuracy of the method is <span class="math notranslate nohighlight">\(4\)</span>.</p>
+<p>therefore the order of accuracy of the method is <span class="math notranslate nohighlight">\(4\)</span>, and so the method is consistent.</p>
+</section>
+<section id="zero-stability">
+<h2><span class="section-number">7.1.2. </span>Zero-stability<a class="headerlink" href="#zero-stability" title="Permalink to this heading">#</a></h2>
+<p>The first characteristic polynomial of the method is</p>
+<div class="math notranslate nohighlight">
+\[
+\rho(z) = \sum_{i=0}^{k} \alpha_i z^i = -z^3 + z^4 = -z^3 (1-z),
+\]</div>
+<p>and it has roots</p>
+<div class="math notranslate nohighlight">
+\[
+z_{1,2,3}=0, z_4=1.
+\]</div>
+<p>The method satisfies the root condition, so it is zero-stable.</p>
+</section>
+<section id="convergence">
+<h2><span class="section-number">7.1.3. </span>Convergence<a class="headerlink" href="#convergence" title="Permalink to this heading">#</a></h2>
+<p>The method is both consistent and zero-stable, so it is convergent.</p>
 </section>
 <section id="code-implementation">
-<h2><span class="section-number">7.1.2. </span>Code Implementation<a class="headerlink" href="#code-implementation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.1.4. </span>Code Implementation<a class="headerlink" href="#code-implementation" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 </div>
 <ul class="simple">
@@ -846,7 +868,9 @@ c5= 251/720
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy">7.1.1. Accuracy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-implementation">7.1.2. Code Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-stability">7.1.2. Zero-stability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence">7.1.3. Convergence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-implementation">7.1.4. Code Implementation</a></li>
 </ul>
   </nav></div>
 
@@ -880,7 +904,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 05 November 2024 15:24:52.
+  Last updated on Monday 11 November 2024 16:30:32.
   <br/>
 </p>
   </div>
