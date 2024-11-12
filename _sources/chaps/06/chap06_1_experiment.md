@@ -125,6 +125,7 @@ matplotlib_inline.backend_inline.set_matplotlib_formats("svg")
 - First, let's try a step size $h=0.05$
 
 ```{code-cell} ipython
+:tags: [hide-input]
 import math
 import numpy as np
 import matplotlib.pyplot as plt
