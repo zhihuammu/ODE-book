@@ -39,7 +39,7 @@ being *consistent* with the continuous differential equation
 
 
 $$
-\diff{y}{x}  =  f(x, y) \dx
+\diff{y}{x}  =  f(x, y) 
 $$
 
  or its integral
