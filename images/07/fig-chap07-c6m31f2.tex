@@ -45,12 +45,12 @@
             },
         	axis equal
         ]
-        \addplot [mark = none, smooth] table [col sep = comma] {bdf1.csv};
-        \addplot [mark = none, smooth] table [col sep = comma] {bdf2.csv};
-        \addplot [mark = none, smooth] table [col sep = comma] {bdf3.csv};
-        \addplot [mark = none, smooth] table [col sep = comma] {bdf4.csv};
-        \addplot [mark = none, smooth] table [col sep = comma] {bdf5.csv};
-        \addplot [mark = none, smooth] table [col sep = comma] {bdf6.csv};
+        \addplot [mark = none, smooth, line width=1pt, red] table [col sep = comma] {bdf1.csv};
+        \addplot [mark = none, smooth, line width=1pt, blue] table [col sep = comma] {bdf2.csv};
+        \addplot [mark = none, smooth, line width=1pt, green] table [col sep = comma] {bdf3.csv};
+        \addplot [mark = none, smooth, line width=1pt, orange] table [col sep = comma] {bdf4.csv};
+        \addplot [mark = none, smooth, line width=1pt, teal] table [col sep = comma] {bdf5.csv};
+        \addplot [mark = none, smooth, line width=1pt,] table [col sep = comma] {bdf6.csv};
         \node [anchor = south west, inner sep = 2pt] at (axis cs:2,0) {$k$=1};
         \node [anchor = south west, inner sep = 2pt] at (axis cs:4,0) {$k$=2};
         \node [anchor = south west, inner sep = 2pt] at (axis cs:6.8,0) {$k$=3};
