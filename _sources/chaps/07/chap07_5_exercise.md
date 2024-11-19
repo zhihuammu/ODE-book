@@ -21,7 +21,7 @@ $$
 :::
 
 ```{solution} ex-ch07-q1
-{download}`Matlab live script solution for Exercise 7.1 </exSol/Ex7/Ex7_1.mlx>`
+{download}`Matlab live script solution for Exercise 8.1 </exSol/Ex7/Ex7_1.mlx>`
 ```
 
 :::{exercise}
@@ -192,7 +192,7 @@ same BDF methods plot the region of absolute stability using
 :::
 
 :::{solution} ex-ch07-q6
-{download}`Matlab code for Exercise 7.6 </exSol/Ex7/Ex7_6.m>`
+{download}`Matlab code for Exercise 8.6 </exSol/Ex7/Ex7_6.m>`
 
 Solution are shown in the lecture notes {numref}`fig-chap07-c6m31f2`.
 :::
@@ -243,7 +243,7 @@ different solvers. Comment on your results.
 
 :::{solution} ex-ch07-q7
 
-{download}`Matlab code for Exercise 7.7 </exSol/Ex7/Ex7_7.m>`
+{download}`Matlab code for Exercise 8.7 </exSol/Ex7/Ex7_7.m>`
 
 The plot of the solutions is shown below:
 ```{figure} /images/07/fig-chap07-c6ans7.svg
