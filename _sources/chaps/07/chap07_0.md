@@ -5,11 +5,14 @@
 
 After completing this chapter, you should be able to:
 
-+ Understand when stiffness occurs for initial value problems,
++ Understand the differences between dense and sparse matrices,
 
-+ Calculate the stiffness ratio for a system of differential equations,
++ Determine the connectivity matrix of an adjacency graph,
 
-+ Use appropriate numerical methods to solve stiff problems.
++ Reorder a graph by using different methods including
+    + Reverse Cuthill and McKee
+    + Column Count 
+    + Minimum Degree 
 
 :::{tableofcontents}
 :::
