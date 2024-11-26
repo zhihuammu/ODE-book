@@ -71,7 +71,7 @@ A matrix can be stored in full or only by its nonzero elements. For
 example, it will have the same entries and their elements, eigenvalues
 and determinants are equal but the computation storages are different.
 In general, the computation storage of sparse matrices is proportional
-to the number of nonzero elements. The **whos** command in MATLAB
+to the number of nonzero elements. The `whos` command in MATLAB
 provides the general information about matrix size and storage as shown
 in {prf:ref}`example-8.5`.
 
