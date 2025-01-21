@@ -75,7 +75,7 @@ The following code has been tested under **Matlab 2022**
 
 ```{literalinclude} /codes/ch2_prog1.m
 :linenos: True
-:language: matlab
+:language: Matlab
 :emphasize-lines: 24,26
 ```
 

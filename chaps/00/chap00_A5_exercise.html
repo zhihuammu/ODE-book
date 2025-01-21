@@ -1,0 +1,1220 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>1.5. Chapter 1 Exercises &#8212; Linear Multistep Methods</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "Laplace": ["\\mathscr{L}\\left\\{{#1}\\right\\}", 1], "invLaplace": ["\\mathscr{L}^{-1}\\{{#1}\\}", 1], "d": "\\mathrm{d}", "arcsec": "\\mathrm{arcsec}~", "arccot": "\\mathrm{arccot}~", "arccsc": "\\mathrm{arccsc}~", "sech": "\\mathrm{sech}", "csch": "\\mathrm{csch}", "dy": "~\\mathrm{d}y", "dx": "~\\mathrm{d}x", "ds": "~\\mathrm{d}s", "dt": "~\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/00/chap00_A5_exercise';</script>
+    <link rel="icon" href="../../_static/odefavicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2. Complex Numbers and Difference Equations" href="../01/chap01_0.html" />
+    <link rel="prev" title="1.4. Applications of Ordinary Differential Equations" href="chap00_A4_applications.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Tuesday 21 January 2025 16:01:45"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo1.svg" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
+    <img src="../../_static/logo1.svg" class="logo__image only-dark pst-js-only" alt="Linear Multistep Methods - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/motivation.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/readingList.html">Further Reading List</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chap00_B_symbols.html">Symbols and Notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap00_B_formula.html">Formulas and Theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap00_B_derivatives.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap00_B_integrals.html">Table of Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap00_B_Laplace.html">Laplace Transform</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap00_A0_DE.html">1. Introduction to Differential Equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chap00_A1_definition.html">1.1. Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap00_A2_ode.html">1.2. Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap00_A3_analytical.html">1.3. Analytical Methods for ODEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap00_A4_applications.html">1.4. Applications of Ordinary Differential Equations</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.5. Chapter 1 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">2. Complex Numbers and Difference Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_1_complexNumber.html">2.1. Complex Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_2_sequence.html">2.2. Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_3_differenceEquation.html">2.3. Difference Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_4_homogenous.html">2.4. Homogeneous Linear Difference Equations with Constant Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02/chap02_0.html">3. Gregory-Newton Interpolating Polynomial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_1_introduction.html">3.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_2_differenceOperator.html">3.2. Finite Difference Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_3_interpolation.html">3.3. Gregory-Newton Interpolation Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_4_differenceTable.html">3.4. Finite Difference Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_5_exercise.html">3.5. Chapter 3 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03/chap03_0.html">4. Multistep Methods: Derivation through Integration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_1_multistepMethod.html">4.1. Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_2_derivation.html">4.2. Derivation of Multistep Methods by Numerical Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_3_explicit.html">4.3. Explicit  Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_4_implicit.html">4.4. Implicit  Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_5_predictorCorrector.html">4.5. Predictor-Corrector Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_6_codes.html">4.6. Computer Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_7_exercise.html">4.7. Chapter 4 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04/chap04_0.html">5. Multistep Methods: Accuracy and Error Constants</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_1_errorIntegration.html">5.1. Derivation of Local Error Terms for Integration Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_2_errorConstant.html">5.2. Order and Error Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_3_MilineDevice.html">5.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_4_exercise.html">5.4. Chapter 5 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05/chap05_0.html">6. Multistep Methods: Zero-Stability and Convergence</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_1_experiment.html">6.1. An exploratory experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_2_rootCondition.html">6.2. Characteristic Polynomials and Root Condition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_3_convergence.html">6.3. Zero-Stability, Consistency and Convergence Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_4_exercise.html">6.4. Chapter 6 Exercise</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">7. Multistep Methods: Stability Interval and Region</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_experiment.html">7.1. An experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_stabilityInterval.html">7.2. Interval and Region of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_rootLocus.html">7.3. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_4_boundaryRootLocus.html">7.4. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exampleCode.html">7.5. Example MATLAB Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_6_exercise.html">7.6. Chapter 7 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">8. Stiff Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_1_introduction.html">8.1. Introduction and background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_2_stiffSystem.html">8.2. Stiff Systems of Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_3_method.html">8.3. Methods for Stiff Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_4_codeExample.html">8.4. MATLAB Program 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_5_exercise.html">8.5. Chapter 8 Exercise</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08/chap08_0.html">9. Sparse Matrices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_1_introduction.html">9.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_2_sparseMatrix.html">9.2. Sparse Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_3_graphTheory.html">9.3. Matrix Sparsity and Graph Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_4_storage.html">9.4. Sparse Matrices Storage and Reordering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_5_reordering.html">9.5. Reordering and Matrix Bandwidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_6_exercise.html">9.6. Chapter 9 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_7_answers.html">9.7. Answers to Chapter 9 Exercises</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://uk.mathworks.com/help/matlab/ordinary-differential-equations.html">ODE Solvers in Matlab</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/integrate.html">ODE Solvers in Scipy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chaps/00/chap00_A5_exercise.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 1 Exercises</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-1-exercises">
+<span id="chap-differentialequation-exercises"></span><h1><span class="section-number">1.5. </span>Chapter 1 Exercises<a class="headerlink" href="#chapter-1-exercises" title="Permalink to this heading">#</a></h1>
+<div class="exercise admonition" id="ch0-ex-q1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1.1 </span></p>
+<section id="exercise-content">
+<p>Determine the type, order, degree, linearity and homogeneity of the following differential equations:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>equation</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>order</p></th>
+<th class="head"><p>degree</p></th>
+<th class="head"><p>linearity</p></th>
+<th class="head"><p>homogeneity</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\displaystyle \diff{y}{x}=4x^2 - y\)</span></p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\displaystyle \diff[2]{y}{x} - \left(\diff{y}{x}\right)^2 + 12xy=0\)</span></p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\displaystyle \left(\diff{y}{x}\right)^2 + x \diff{y}{x} - 3y^2=0\)</span></p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\displaystyle x\diff[2]{y}{x}-5\diff{y}{x}+3xy=\sin x\)</span></p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\displaystyle \pdiff[2]{u}{x}+\pdiff[2]{u}{y}=0\)</span></p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\displaystyle \pdiff{u}{t}+\pdiff{u}{x}=0\)</span></p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\displaystyle \pdiff{u}{t}+u\pdiff{u}{x}=0\)</span></p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\displaystyle \pdiff{u}{t}=\pdiff[2]{u}{x}\)</span></p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<div class="solution dropdown admonition" id="chaps/00/chap00_A5_exercise-solution-1">
+
+<p class="admonition-title">Solution to</p>
+<section id="solution-content">
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>equation</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>order</p></th>
+<th class="head"><p>degree</p></th>
+<th class="head"><p>linearity</p></th>
+<th class="head"><p>homogeneity</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\displaystyle \diff{y}{x}=4x^2 - y\)</span></p></td>
+<td><p>ODE</p></td>
+<td><p>first</p></td>
+<td><p>first</p></td>
+<td><p>linear</p></td>
+<td><p>non-homogeneous</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\displaystyle \diff[2]{y}{x} - \left(\diff{y}{x}\right)^2 + 12xy=0\)</span></p></td>
+<td><p>ODE</p></td>
+<td><p>second</p></td>
+<td><p>first</p></td>
+<td><p>nonlinear</p></td>
+<td><p>homogeneous</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\displaystyle \left(\diff{y}{x}\right)^2 + x \diff{y}{x} - 3y^2=0\)</span></p></td>
+<td><p>ODE</p></td>
+<td><p>first</p></td>
+<td><p>second</p></td>
+<td><p>nonlinear</p></td>
+<td><p>homogeneous</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\displaystyle x\diff[2]{y}{x}-5\diff{y}{x}+3xy=\sin x\)</span></p></td>
+<td><p>ODE</p></td>
+<td><p>second</p></td>
+<td><p>first</p></td>
+<td><p>linear</p></td>
+<td><p>non-homogeneous</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\displaystyle \pdiff[2]{u}{x}+\pdiff[2]{u}{y}=0\)</span></p></td>
+<td><p>PDE</p></td>
+<td><p>second</p></td>
+<td><p>first</p></td>
+<td><p>linear</p></td>
+<td><p>homogeneous</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\displaystyle \pdiff{u}{t}+\pdiff{u}{x}=0\)</span></p></td>
+<td><p>PDE</p></td>
+<td><p>first</p></td>
+<td><p>first</p></td>
+<td><p>linear</p></td>
+<td><p>homogeneous</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\displaystyle \pdiff{u}{t}+u\pdiff{u}{x}=0\)</span></p></td>
+<td><p>PDE</p></td>
+<td><p>first</p></td>
+<td><p>first</p></td>
+<td><p>nonlinear</p></td>
+<td><p>homogeneous</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\displaystyle \pdiff{u}{t}=\pdiff[2]{u}{x}\)</span></p></td>
+<td><p>PDE</p></td>
+<td><p>second</p></td>
+<td><p>first</p></td>
+<td><p>linear</p></td>
+<td><p>homogeneous</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="ch0-ex-q2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1.2 </span></p>
+<section id="exercise-content">
+<p>Find the general solution to the following separable ODEs</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle y\dy = x \dx\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{y}{x}=y \ln y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle y' = \frac{x^2}{y}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle y'=\frac{x^2}{y(1+x^3)}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle xy'=\sqrt{1-y^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{y}{x}=\frac{x-e^{-x}}{y+e^{y}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{y}{x}=\frac{x^2}{1+y^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle y'=\frac{2-e^x}{3+2y}\)</span></p></li>
+</ol>
+</section>
+</div>
+<div class="solution dropdown admonition" id="chaps/00/chap00_A5_exercise-solution-3">
+
+<p class="admonition-title">Solution to</p>
+<section id="solution-content">
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle y\dy = x \dx\)</span></p>
+<div class="math notranslate nohighlight">
+\[\d \left(\frac{1}{2}y^2\right) = \d \left(\frac{1}{2}x^2\right) \]</div>
+<div class="math notranslate nohighlight">
+\[y^2=x^2+c \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{y}{x}=y \ln y\)</span></p>
+<div class="math notranslate nohighlight">
+\[ \frac{\dy}{y\ln y}=\dx \]</div>
+<div class="math notranslate nohighlight">
+\[ \frac{\d \ln y}{\ln y} = \dx\]</div>
+<p>Let <span class="math notranslate nohighlight">\(u=\ln y\)</span></p>
+<div class="math notranslate nohighlight">
+\[\frac{\d u}{u} = dx\]</div>
+<div class="math notranslate nohighlight">
+\[\d \ln u = \dx \]</div>
+<div class="math notranslate nohighlight">
+\[\ln u = x + c_1 \]</div>
+<div class="math notranslate nohighlight">
+\[ u = e^{x+c_1} = c e^x \]</div>
+<div class="math notranslate nohighlight">
+\[ \ln y = c e^x \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle y' = \frac{x^2}{y}\)</span></p>
+<div class="math notranslate nohighlight">
+\[ \diff{y}{x} =  \frac{x^2}{y} \]</div>
+<div class="math notranslate nohighlight">
+\[ y \dy = x^2 \dx \]</div>
+<div class="math notranslate nohighlight">
+\[\d \left(\frac{1}{2}y^2\right)=\d \left(\frac{1}{3} x^3 \right)\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2}y^2 = \frac{1}{3}x^3 +c \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle y'=\frac{x^2}{y(1+x^3)}\)</span></p>
+<div class="math notranslate nohighlight">
+\[ y \dy = \frac{x^2}{1+x^3} \dx \]</div>
+<div class="math notranslate nohighlight">
+\[ \d \left(\frac{1}{2}y^2\right) =  \d \left(\frac{1}{3} \ln (1+x^3) \right)\]</div>
+<div class="math notranslate nohighlight">
+\[ \frac{1}{2}y^2 = \frac{1}{3} \ln (1+x^3) + c\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle xy'=\sqrt{1-y^2}\)</span></p>
+<div class="math notranslate nohighlight">
+\[ \frac{\dy}{\sqrt{1-y^2}}=\frac{\dx}{x} \]</div>
+<div class="math notranslate nohighlight">
+\[ \d (\sin^{-1} y) = \d (\ln x)\]</div>
+<div class="math notranslate nohighlight">
+\[ \sin^{-1} y = \ln x +c \]</div>
+<div class="math notranslate nohighlight">
+\[ y=\sin(\ln x + c ) \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{y}{x}=\frac{x-e^{-x}}{y+e^{y}}\)</span></p>
+<div class="math notranslate nohighlight">
+\[ (y+e^y) \dy = (x-e^{-x}) \dx \]</div>
+<div class="math notranslate nohighlight">
+\[ \d \left(\frac{1}{2}y^2 + e^y\right) = \d \left( \frac{1}{2}x^2 + e^{-x} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[ \frac{1}{2}y^2 + e^y = \frac{1}{2}x^2 + e^{-x} + c \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{y}{x}=\frac{x^2}{1+y^2}\)</span></p>
+<div class="math notranslate nohighlight">
+\[ (1+y^2) \dy = x^2 \dx \]</div>
+<div class="math notranslate nohighlight">
+\[ \d \left(y+\frac{1}{3}y^3\right) = \d \left(\frac{1}{3}x^3\right)\]</div>
+<div class="math notranslate nohighlight">
+\[ y+\frac{1}{3}y^3 = \frac{1}{3}x^3 +c\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle y'=\frac{2-e^x}{3+2y}\)</span></p>
+<div class="math notranslate nohighlight">
+\[ (3+2y) \dy = (2-e^x) dx \]</div>
+<div class="math notranslate nohighlight">
+\[ \d (3y+y^2) = \d (2x-e^x)\]</div>
+<div class="math notranslate nohighlight">
+\[ 3y+y^2= 2x-e^x + c\]</div>
+</li>
+</ol>
+</section>
+</div>
+<div class="exercise admonition" id="ch0-ex-q3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1.3 </span></p>
+<section id="exercise-content">
+<p>Solve the following initial value problems defined by separable ODEs</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{y}{x}=2xy\)</span>, <span class="math notranslate nohighlight">\(y(0)=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y^2 \dx + (x+1) \dy=0 \)</span>, <span class="math notranslate nohighlight">\(y(0)=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{P}{t}=rP\left(1-\frac{P}{M}\right)\)</span>, <span class="math notranslate nohighlight">\(P(0)=P_0\)</span>, <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(M\)</span> are constants, and <span class="math notranslate nohighlight">\(0&lt;P\ll M\)</span>.</p></li>
+</ol>
+</section>
+</div>
+<div class="solution dropdown admonition" id="chaps/00/chap00_A5_exercise-solution-5">
+
+<p class="admonition-title">Solution to</p>
+<section id="solution-content">
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{y}{x}=2xy\)</span>, <span class="math notranslate nohighlight">\(y(0)=1\)</span></p>
+<div class="math notranslate nohighlight">
+\[\frac{\dy}{y}=2x \dx\]</div>
+<div class="math notranslate nohighlight">
+\[ \ln |y| = x^2 + c_1 \]</div>
+<div class="math notranslate nohighlight">
+\[ y=e^{x^2+c_1}=c e^{x^2}\]</div>
+<div class="math notranslate nohighlight">
+\[ y(0)=c=1\]</div>
+<div class="math notranslate nohighlight">
+\[ y=e^{x^2}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(y^2 \dx + (x+1) \dy=0 \)</span>, <span class="math notranslate nohighlight">\(y(0)=1\)</span></p>
+<div class="math notranslate nohighlight">
+\[ y^2 \dx = -(x+1) \dy \]</div>
+<div class="math notranslate nohighlight">
+\[ \frac{\dx}{x+1}=-y^{-2} \dy\]</div>
+<div class="math notranslate nohighlight">
+\[ \d \ln (x+1) = \d y^{-1}\]</div>
+<div class="math notranslate nohighlight">
+\[ y^{-1} = \ln (x+1) + c\]</div>
+<div class="math notranslate nohighlight">
+\[ y= \frac{1}{\ln (x+1)+c}\]</div>
+<div class="math notranslate nohighlight">
+\[ y(0)=\frac{1}{\ln 1 + c} = 1\]</div>
+<div class="math notranslate nohighlight">
+\[ c=1\]</div>
+<div class="math notranslate nohighlight">
+\[ y= \frac{1}{\ln (x+1)+1} \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \diff{P}{t}=rP\left(1-\frac{P}{M}\right)\)</span>, <span class="math notranslate nohighlight">\(P(0)=P_0\)</span>, <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(M\)</span> are constants, and <span class="math notranslate nohighlight">\(0&lt;P\ll M\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[ \frac{1}{P \left(1-\frac{P}{M}\right)} \d P = r \d t \]</div>
+<div class="math notranslate nohighlight">
+\[ \left(\frac{1}{P} + \frac{1}{M-P}\right) \d P = r \d t \]</div>
+<div class="math notranslate nohighlight">
+\[ \d \ln P - d \ln (M-P) = \d (rt)\]</div>
+<div class="math notranslate nohighlight">
+\[ \d \ln \left(\frac{P}{M-P}\right) = \d (rt)\]</div>
+<div class="math notranslate nohighlight">
+\[ \ln \left(\frac{P}{M-P}\right) = rt + c_1 \]</div>
+<div class="math notranslate nohighlight">
+\[ \frac{P}{M-P} = c e^{rt} \]</div>
+<div class="math notranslate nohighlight">
+\[ P (1+c e^{rt}) = c e^{rt} M\]</div>
+<div class="math notranslate nohighlight">
+\[ P = \frac{c e^{rt} M}{1+c e^{rt}}\]</div>
+<div class="math notranslate nohighlight">
+\[ P(0) = \frac{cM}{1+c}=P_0\]</div>
+<div class="math notranslate nohighlight">
+\[ c(M-P_0)=P_0\]</div>
+<div class="math notranslate nohighlight">
+\[ c=\frac{P_0}{M-P_0}\]</div>
+<div class="math notranslate nohighlight">
+\[ P = \frac{\frac{P_0}{M-P_0} e^{rt} M}{1+\frac{P_0}{M-P_0} e^{rt}}\]</div>
+<div class="math notranslate nohighlight">
+\[ P = \frac{M P_0 e^{rt}}{M+P_0 (e^{rt}-1)}\]</div>
+</li>
+</ol>
+</section>
+</div>
+<div class="exercise admonition" id="ch0-ex-q4">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1.4 </span></p>
+<section id="exercise-content">
+<p>Solve the following homogeneous ODEs for <span class="math notranslate nohighlight">\(y=y(x)\)</span>, <span class="math notranslate nohighlight">\(x\in\R\)</span></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(y''+y=0 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y'''+3y''+3y'+y=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2y''-5y'-3y=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y''-10y'+25y=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(20y''+4y'+y=0\)</span></p></li>
+</ol>
+</section>
+</div>
+<div class="solution dropdown admonition" id="chaps/00/chap00_A5_exercise-solution-7">
+
+<p class="admonition-title">Solution to</p>
+<section id="solution-content">
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(y''+y=0 \)</span></p>
+<div class="math notranslate nohighlight">
+\[z^2+1=0 \]</div>
+<div class="math notranslate nohighlight">
+\[z_{1, 2} = 0\pm \i\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split} y &amp; = e^{0x} (c_1 \cos x + c_2 \sin x) \\
+         &amp; = c_1 \cos x + c_2 \sin x
+    \end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(y'''+3y''+3y'+y=0\)</span></p>
+<div class="math notranslate nohighlight">
+\[ z^3+3z^2+3z+1 = 0 \]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split} &amp; (z^3+1) + (3z^2+3z)\\
+    = &amp; (z+1)(z^2-z+1) + 3z(z+1) \\
+    = &amp; (z+1)(z^2+2z+1) \\
+    = &amp; (z+1)^3 \\
+    = &amp; 0  
+    \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[z_{1, 2, 3} = -1 \]</div>
+<div class="math notranslate nohighlight">
+\[ y=c_1 e^{-x}+c_2 x e^{-x} + c_3 x^2 e^{-x}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(2y''-5y'-3y=0\)</span></p>
+<div class="math notranslate nohighlight">
+\[2z^2-5z-3 = 0\]</div>
+<div class="math notranslate nohighlight">
+\[(2z+1)(z-3)=0 \]</div>
+<div class="math notranslate nohighlight">
+\[z_{1}=-\tfrac{1}{2}, \quad z_2=3\]</div>
+<div class="math notranslate nohighlight">
+\[ y=c_1 e^{-\frac{1}{2}x} + c_2 e^{3x}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(y''-10y'+25y=0\)</span></p>
+<div class="math notranslate nohighlight">
+\[z^2-10z+25=0\]</div>
+<div class="math notranslate nohighlight">
+\[(z-5)^2=0\]</div>
+<div class="math notranslate nohighlight">
+\[z_{1,2}=5\]</div>
+<div class="math notranslate nohighlight">
+\[y=c_1 e^{5x} + c_2 x e^{5x}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(20y''+4y'+y=0\)</span></p>
+<div class="math notranslate nohighlight">
+\[20z^2+4z+1=0\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    z_{1,2} &amp; =\frac{-4\pm \sqrt{4^2-4(20)(1)}}{2(20)} \\
+            &amp; = \frac{-4\pm 8 \i}{40} \\
+            &amp; = -0.1 \pm 0.2 \i
+    \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[ y=e^{-0.1x} (c_1 \cos 0.2x + c_2 \sin 0.2x) \]</div>
+</li>
+</ol>
+</section>
+</div>
+<div class="exercise admonition" id="ch0-ex-q5">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1.5 </span></p>
+<section id="exercise-content">
+<p>Solve the following non-homogeneous ODEs for <span class="math notranslate nohighlight">\(y=y(x)\)</span>, <span class="math notranslate nohighlight">\(x \in \R\)</span></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(y''+3y'+2y=2e^{3x}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y''+3y'+2y=x^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y'''+6y''+11y'+6y=\cos 5x\)</span></p></li>
+</ol>
+</section>
+</div>
+<div class="solution dropdown admonition" id="chaps/00/chap00_A5_exercise-solution-9">
+
+<p class="admonition-title">Solution to</p>
+<section id="solution-content">
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(y''+3y'+2y=2e^{3x}\)</span></p>
+<div class="math notranslate nohighlight">
+\[y_h''+3y_h'+2y_h=0\]</div>
+<div class="math notranslate nohighlight">
+\[z^2+3z+2=0\]</div>
+<div class="math notranslate nohighlight">
+\[z_1=-1, \quad z_2 = -2\]</div>
+<div class="math notranslate nohighlight">
+\[y_h=c_1 e^{-x} + c_2 e^{-2x}\]</div>
+<div class="math notranslate nohighlight">
+\[y_p=Ae^{3x}\]</div>
+<div class="math notranslate nohighlight">
+\[y_p'=3Ae^{3x}\]</div>
+<div class="math notranslate nohighlight">
+\[y_p''=9Ae^{3x}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+     &amp; y_p''+3y_p'+2y_p \\
+    = &amp; ~ 9Ae^{3x} + 3 (3Ae^{3x})  + 2 (Ae^{3x}) \\
+    = &amp; ~ 20 Ae^{3x} \\
+    = &amp; ~ 2 e^{3x}
+    \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[A=\tfrac{1}{10}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    y &amp; = y_h + y_p \\
+      &amp; =c_1 e^{-x} + c_2 e^{-2x} + \tfrac{1}{10}e^{3x}
+    \end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(y''+3y'+2y=x^2\)</span></p>
+<div class="math notranslate nohighlight">
+\[y_h''+3y_h'+2y_h=0\]</div>
+<div class="math notranslate nohighlight">
+\[z^2+3z+2=0\]</div>
+<div class="math notranslate nohighlight">
+\[z_1=-1, \quad z_2 = -2\]</div>
+<div class="math notranslate nohighlight">
+\[y_h=c_1 e^{-x} + c_2 e^{-2x}\]</div>
+<div class="math notranslate nohighlight">
+\[y_p=Ax^2+Bx+C\]</div>
+<div class="math notranslate nohighlight">
+\[y_p'=2Ax+B\]</div>
+<div class="math notranslate nohighlight">
+\[y_p''=2A\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+      &amp; y_p'' + 3y_p'+2y_p \\ 
+    = &amp; ~ 2A+3(2Ax+B)+2(Ax^2+Bx+C) \\
+    = &amp; ~ 2Ax^2 + (6A+2B)x + (2A+3B+2C) \\
+    = &amp; x^2
+    \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[A=\tfrac{1}{2}, \quad B=-\tfrac{3}{2}, \quad C=\tfrac{7}{4}\]</div>
+<div class="math notranslate nohighlight">
+\[y_p=\tfrac{1}{2}x^2-\tfrac{3}{2}x+\tfrac{7}{4}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    y &amp; = y_h + y_p \\
+      &amp; =c_1 e^{-x} + c_2 e^{-2x} + \tfrac{1}{2}x^2-\tfrac{3}{2}x+\tfrac{7}{4}
+    \end{split}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(y'''+6y''+11y'+6y=\cos 5x\)</span></p>
+<div class="math notranslate nohighlight">
+\[z^3+6z^2+11z+6=0\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+      &amp;   z^3+6z^2+11z+6 \\
+    = &amp; ~ z^3+6z^2+5z+6z+6 \\
+    = &amp; ~ z(z^2+6z+5)+6(z+1) \\
+    = &amp; ~ z(z+1)(z+5)+6(z+1) \\
+    = &amp; ~ (z+1)[z(z+5)+6] \\
+    = &amp; ~ (z+1)(z^2+5z+6) \\
+    = &amp; ~ (z+1)(z+2)(z+3) \\
+    = &amp; ~ 0
+    \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+    z_1 = -1, \quad z_2 = -2, \quad z_3=-3
+    \]</div>
+<div class="math notranslate nohighlight">
+\[y_h=c_1 e^{-x} + c_2 e^{-2x} + c_3 e^{-3x}\]</div>
+<div class="math notranslate nohighlight">
+\[y_p = A \cos 5x + B \sin 5x\]</div>
+<div class="math notranslate nohighlight">
+\[y_p'= -5A \sin 5x + 5B \cos 5x\]</div>
+<div class="math notranslate nohighlight">
+\[y_p''= -25A \cos 5x - 25B \sin 5x\]</div>
+<div class="math notranslate nohighlight">
+\[y_p'''= 125A \sin 5x - 125B \cos 5x\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+      &amp; y_p'''+6y_p''+11y_p'+6y_p \\
+    = &amp;~(125A \sin 5x - 125B \cos 5x) \\
+      &amp; + 6(-25A \cos 5x - 25B \sin 5x) \\
+      &amp; + 11(-5A \sin 5x + 5B \cos 5x) \\
+      &amp; + 6(A \cos 5x + B \sin 5x) \\
+    = &amp; (70A-144B) \sin 5x + (-144A-70B) \cos 5x \\
+    = &amp; \cos 5x
+    \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+    A=-\tfrac{36}{6409}, \quad B=-\tfrac{35}{12818}
+    \]</div>
+<div class="math notranslate nohighlight">
+\[y=c_1 e^{-x}+c_2 e^{-2x}+c_3 e^{-3x}-\tfrac{36}{6409}\cos 5x - \tfrac{35}{12818}\sin 5x\]</div>
+</li>
+</ol>
+</section>
+</div>
+<div class="exercise admonition" id="ch0-ex-6">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1.6 </span></p>
+<section id="exercise-content">
+<p>Solve the following initial value problems for <span class="math notranslate nohighlight">\(y=y(x)\)</span>, <span class="math notranslate nohighlight">\(x \in [0, \infty)\)</span></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(y'=y+x\)</span>, <span class="math notranslate nohighlight">\(y(0)=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y'=-y+x+1\)</span>, <span class="math notranslate nohighlight">\(y(0)=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y'=-40y+40x+1\)</span>, <span class="math notranslate nohighlight">\(y(0)=4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y'=-100y+\cos x\)</span>, <span class="math notranslate nohighlight">\(y(0)=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y''=-20y'-19y\)</span>, <span class="math notranslate nohighlight">\(y(0)=2\)</span>, <span class="math notranslate nohighlight">\(y'(0)=-20\)</span></p></li>
+</ol>
+</section>
+</div>
+<div class="solution dropdown admonition" id="chaps/00/chap00_A5_exercise-solution-11">
+
+<p class="admonition-title">Solution to</p>
+<section id="solution-content">
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(y'=y+x\)</span>, <span class="math notranslate nohighlight">\(y(0)=1\)</span></p>
+<div class="math notranslate nohighlight">
+\[y'+y=x\]</div>
+<div class="math notranslate nohighlight">
+\[z-1=0\]</div>
+<div class="math notranslate nohighlight">
+\[z=1\]</div>
+<div class="math notranslate nohighlight">
+\[y_h = c e^x\]</div>
+<div class="math notranslate nohighlight">
+\[y_p=Ax+B\]</div>
+<div class="math notranslate nohighlight">
+\[y_p'=A\]</div>
+<div class="math notranslate nohighlight">
+\[y_p'-y_p = A- (Ax+B) = x\]</div>
+<div class="math notranslate nohighlight">
+\[A=-1, \quad B=-1 \]</div>
+<div class="math notranslate nohighlight">
+\[y_p=-x-1\]</div>
+<div class="math notranslate nohighlight">
+\[y=y_h+y_p=ce^x-x-1\]</div>
+<div class="math notranslate nohighlight">
+\[y(0)=c-1=1 \]</div>
+<div class="math notranslate nohighlight">
+\[c=2\]</div>
+<div class="math notranslate nohighlight">
+\[y=y_h+y_p=2e^x-x-1\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(y'=-y+x+1\)</span>, <span class="math notranslate nohighlight">\(y(0)=1\)</span></p>
+<div class="math notranslate nohighlight">
+\[y'+y=x+1\]</div>
+<div class="math notranslate nohighlight">
+\[z+1=0\]</div>
+<div class="math notranslate nohighlight">
+\[z=-1\]</div>
+<div class="math notranslate nohighlight">
+\[y_h=ce^{-x}\]</div>
+<div class="math notranslate nohighlight">
+\[y_p=Ax+B\]</div>
+<div class="math notranslate nohighlight">
+\[y_p'+y_p=A+(Ax+B)=x+1\]</div>
+<div class="math notranslate nohighlight">
+\[A=1, \quad B=0\]</div>
+<div class="math notranslate nohighlight">
+\[y_p=x\]</div>
+<div class="math notranslate nohighlight">
+\[y=y_h+y_p=ce^{-x}+x\]</div>
+<div class="math notranslate nohighlight">
+\[y(0)=c+0=1\]</div>
+<div class="math notranslate nohighlight">
+\[c=1\]</div>
+<div class="math notranslate nohighlight">
+\[y=e^{-x}+x\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(y'=-40y+40x+1\)</span>, <span class="math notranslate nohighlight">\(y(0)=4\)</span></p>
+<div class="math notranslate nohighlight">
+\[y'+40y=40x+1\]</div>
+<div class="math notranslate nohighlight">
+\[z+40=0\]</div>
+<div class="math notranslate nohighlight">
+\[z=-40\]</div>
+<div class="math notranslate nohighlight">
+\[y_h=ce^{-40x}\]</div>
+<div class="math notranslate nohighlight">
+\[y_p=Ax+B\]</div>
+<div class="math notranslate nohighlight">
+\[y_p'+40y_p = A + 40(Ax+B)=40x+1\]</div>
+<div class="math notranslate nohighlight">
+\[A=1, \quad B=0\]</div>
+<div class="math notranslate nohighlight">
+\[y_p=x\]</div>
+<div class="math notranslate nohighlight">
+\[y=y_h+y_p=ce^{-40x}+x\]</div>
+<div class="math notranslate nohighlight">
+\[y(0)=c=4\]</div>
+<div class="math notranslate nohighlight">
+\[y=4e^{-40x}+x \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(y'=-100y+\cos x\)</span>, <span class="math notranslate nohighlight">\(y(0)=1\)</span></p>
+<div class="math notranslate nohighlight">
+\[y'+100y=\cos x\]</div>
+<div class="math notranslate nohighlight">
+\[z+100=0\]</div>
+<div class="math notranslate nohighlight">
+\[z=-100\]</div>
+<div class="math notranslate nohighlight">
+\[y_h = c e^{-100x}\]</div>
+<div class="math notranslate nohighlight">
+\[y_p = A \cos x + B \sin x\]</div>
+<div class="math notranslate nohighlight">
+\[y_p'=-A \sin x + B \cos x\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}y_p'+100 y_p &amp; = (-A\sin x+ B \cos x)+100(A\cos x+B\sin x) \\
+                   &amp; = (100B-A) \sin x + (100A+B) \cos x \\
+                   &amp; = \cos x
+    \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    &amp; 100B-A = 0\\
+    &amp; 100A+B = 1
+    \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[A=\tfrac{100}{10001}, \quad B=\tfrac{1}{10001} \]</div>
+<div class="math notranslate nohighlight">
+\[y_p = \tfrac{100}{10001} \cos x + \tfrac{1}{10001} \sin x\]</div>
+<div class="math notranslate nohighlight">
+\[y=y_h+y_p = c e^{-100x}+ \tfrac{100}{10001} \cos x + \tfrac{1}{10001} \sin x \]</div>
+<div class="math notranslate nohighlight">
+\[y(0)=c+\tfrac{100}{10001}=1\]</div>
+<div class="math notranslate nohighlight">
+\[c=\tfrac{9901}{10001}\]</div>
+<div class="math notranslate nohighlight">
+\[y=\tfrac{9901}{10001}e^{-100x} + \tfrac{100}{10001} \cos x + \tfrac{1}{10001} \sin x \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(y''=-20y'-19y\)</span>, <span class="math notranslate nohighlight">\(y(0)=2\)</span>, <span class="math notranslate nohighlight">\(y'(0)=-20\)</span></p>
+<div class="math notranslate nohighlight">
+\[y''+20y'+19y=0\]</div>
+<div class="math notranslate nohighlight">
+\[z^2+20z+19=0\]</div>
+<div class="math notranslate nohighlight">
+\[z_1 = -1, \quad z_2 = -19\]</div>
+<div class="math notranslate nohighlight">
+\[y=c_1 e^{-x}+c_2 e^{-19x}\]</div>
+<div class="math notranslate nohighlight">
+\[y'=-c_1 e^{-x}-19 c_2 e^{-19x}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}    
+    y(0) &amp; = c_1 + c_2 = 2\\
+    y'(0)&amp; = -c_1 -19 c_2 = -20    
+    \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[c_1= 1, \quad c_2 = 1\]</div>
+<div class="math notranslate nohighlight">
+\[ y=e^{-x} + e^{-19x} \]</div>
+</li>
+</ol>
+</section>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chaps\00"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chap00_A4_applications.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.4. </span>Applications of Ordinary Differential Equations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../01/chap01_0.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Complex Numbers and Difference Equations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Zhihua Ma
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023--2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Tuesday 21 January 2025 16:01:45.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
