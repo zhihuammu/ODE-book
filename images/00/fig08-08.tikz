@@ -1,0 +1,9 @@
+\begin{circuitikz}[european voltages]
+	\draw (0,0)
+	to[V=$E$] (0,4) % The voltage source
+	to[short] (0,4)
+	to[R=$R$] (6,4) % The resistor		
+	to[L=$L$] (6,0) % The inductor
+	to[C=$C$] (0,0) % The capacitor
+	to[short] (0,0);
+\end{circuitikz}

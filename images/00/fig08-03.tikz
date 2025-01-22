@@ -1,0 +1,24 @@
+\begin{tikzpicture}[declare function={cbrt(\x)=sign(\x)*pow(abs(\x),1/3);}]
+	\begin{axis}[
+		xmin = -1, xmax = 52,
+		ymin = 800, ymax = 1020,
+		%ticks=none,
+		xtick distance = 10,
+		ytick distance = 50,
+		%grid = both,
+		minor tick num = 4,
+		%major grid style = {lightgray!45},
+		%minor grid style = {lightgray!25},
+		axis lines = center,
+		axis line style = thick,
+		xlabel = {$t$},
+		ylabel = {$P(t)$},
+		width=12cm,
+		height=8cm,
+		axis y line=middle, 
+		axis x line=middle   
+		]		
+			
+		\addplot[smooth,samples=501,thick,blue,domain=0:50] {800/(0.8+0.2*exp(-x))};				
+	\end{axis}
+\end{tikzpicture}   

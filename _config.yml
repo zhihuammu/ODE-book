@@ -43,7 +43,7 @@ html:
 sphinx:
   config:
     # proof_minimal_theme: true
-    # bibtex_reference_style: author_year    
+    bibtex_reference_style: author_year    
     html_show_copyright: true
     language: en                                       
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

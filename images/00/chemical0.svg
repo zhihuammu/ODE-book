@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="windows-1252"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="222.5 251.81 372.759 88" xmlns:latexdraw="http://latexdraw.sourceforge.net/namespaces/latexdraw" version="1.1" baseProfile="full">
+    <g>
+        <g latexdraw:type="drawing" id="id851911008">
+            <g latexdraw:type="square" id="id2142168695">
+                <rect x="243.5" y="272.8103485107422" width="46.0" height="46.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+            </g>
+            <g latexdraw:type="text" id="id1758984690" fill="black" latexdraw:position="bl">
+                <text x="257.0" y="303.3103485107422">$\Large{A}$</text>
+            </g>
+        </g>
+        <g latexdraw:type="drawing" id="id1318162675">
+            <g latexdraw:type="text" id="id1291358083" fill="black" latexdraw:position="bl">
+                <text x="398.0" y="302.3103485107422">$\LARGE{B}$</text>
+            </g>
+            <g latexdraw:type="square" id="id642036221">
+                <rect x="384.5" y="272.8103485107422" width="46.0" height="46.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+            </g>
+        </g>
+        <g latexdraw:type="text" id="id1199223141" fill="black" latexdraw:position="bl">
+            <text x="330.41379310344854" y="290.20689655172447">$\Large{\alpha}$</text>
+        </g>
+        <g latexdraw:type="text" id="id646236597" fill="black" latexdraw:position="bl">
+            <text x="471.06896551724185" y="292.31034482758673">$\Large{\beta}$</text>
+        </g>
+        <g latexdraw:type="drawing" id="id1031154485">
+            <g latexdraw:type="text" id="id1719945942" fill="black" latexdraw:position="bl">
+                <text x="543.7586206896553" y="304.31034114443025">$\LARGE{C}$</text>
+            </g>
+            <g latexdraw:type="square" id="id716555844">
+                <rect x="528.2586206896553" y="272.81034114443025" width="46.0" height="46.0" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="none"/>
+            </g>
+        </g>
+        <g latexdraw:type="joinedLines" id="id1568235657">
+            <polyline points="288.4310344827584,295.81035114156725 383.60344827586187,295.81035114156725 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-end="url(#arrow1-1568235657)"/>
+        </g>
+        <g latexdraw:type="joinedLines" id="id320141012">
+            <polyline points="431.53448275862024,295.81034903690687 526.7068965517233,295.81034903690687 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-end="url(#arrow1-320141012)"/>
+        </g>
+    </g>
+    <defs>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="auto" id="arrow1-1568235657">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="auto" id="arrow1-320141012">
+            <path d="M 0.0 0.0 L -9.304166666666667 -3.322916666666667 L -9.304166666666667 0.0 L -9.304166666666667 3.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="2" latexdraw:tbarSizeNum="5"/>
+        </marker>
+    </defs>
+    <metadata>
+        <latexdraw:metadata>
+            <latexdraw:centreHoriz>false</latexdraw:centreHoriz>
+            <latexdraw:positionVert/>
+            <latexdraw:zoom>1.4500000000000004</latexdraw:zoom>
+            <latexdraw:vpx>0.446</latexdraw:vpx>
+            <latexdraw:vpy>0.387</latexdraw:vpy>
+        </latexdraw:metadata>
+    </metadata>
+</svg>

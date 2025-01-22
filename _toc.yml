@@ -9,7 +9,7 @@ parts:
     chapters:
     - file: overview/motivation
     - file: overview/schedule
-    - file: overview/assessments
+    # - file: overview/assessments
     - file: overview/readingList
   
   - caption: Prerequisite

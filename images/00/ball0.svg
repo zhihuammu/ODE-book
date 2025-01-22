@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="442 279 92 279.5" xmlns:latexdraw="http://latexdraw.sourceforge.net/namespaces/latexdraw" version="1.1" baseProfile="full">
+    <g>
+        <g latexdraw:type="joinedLines" id="id51259434">
+            <polyline points="483.25,538.5 485.25,299.0 " stroke="black" stroke-width="2.0" fill="none" latexdraw:rotationAngle="0.0" marker-start="url(#arrow0-51259434)" marker-end="url(#arrow1-51259434)"/>
+        </g>
+        <g latexdraw:type="circle" id="id978074749">
+            <circle cx="484.25" cy="390.24998474121094" r="21.25" latexdraw:borderPos="outer" stroke="black" stroke-width="2.0" fill="#808080"/>
+        </g>
+        <g latexdraw:type="text" id="id149478637" fill="black" latexdraw:position="bl">
+            <text x="514.0" y="404.0">$\LARGE{m}$</text>
+        </g>
+        <g latexdraw:type="text" id="id1030897190" fill="black" latexdraw:position="bl">
+            <text x="503.0" y="313.0">$\LARGE{\gamma v}$</text>
+        </g>
+        <g latexdraw:type="text" id="id2072788230" fill="black" latexdraw:position="bl">
+            <text x="502.0" y="529.0">$\LARGE{m g}$</text>
+        </g>
+    </g>
+    <defs>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="90.478" id="arrow0-51259434">
+            <path d="M 0.0 0.0 L -25.291666666666668 -6.322916666666667 L -25.291666666666668 0.0 L -25.291666666666668 6.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="5" latexdraw:tbarSizeNum="5"/>
+        </marker>
+        <marker overflow="visible" markerUnits="userSpaceOnUse" orient="270.478" id="arrow1-51259434">
+            <path d="M 0.0 0.0 L -25.291666666666668 -6.322916666666667 L -25.291666666666668 0.0 L -25.291666666666668 6.322916666666667 z" fill="black" stroke="black" latexdraw:arrSizeNum="5" latexdraw:tbarSizeNum="5"/>
+        </marker>
+    </defs>
+    <metadata>
+        <latexdraw:metadata>
+            <latexdraw:centreHoriz>false</latexdraw:centreHoriz>
+            <latexdraw:positionVert/>
+            <latexdraw:zoom>1.0</latexdraw:zoom>
+            <latexdraw:vpx>0.474</latexdraw:vpx>
+            <latexdraw:vpy>0.398</latexdraw:vpy>
+        </latexdraw:metadata>
+    </metadata>
+</svg>
