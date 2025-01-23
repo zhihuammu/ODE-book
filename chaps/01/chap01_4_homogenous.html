@@ -64,7 +64,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "Laplace": ["\\mathscr{L}\\left\\{{#1}\\right\\}", 1], "invLaplace": ["\\mathscr{L}^{-1}\\{{#1}\\}", 1], "d": "\\mathrm{d}", "arcsec": "\\mathrm{arcsec}~", "arccot": "\\mathrm{arccot}~", "arccsc": "\\mathrm{arccsc}~", "sech": "\\mathrm{sech}", "csch": "\\mathrm{csch}", "dy": "~\\mathrm{d}y", "dx": "~\\mathrm{d}x", "ds": "~\\mathrm{d}s", "dt": "~\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "Laplace": ["\\mathscr{L}\\left\\{{#1}\\right\\}", 1], "invLaplace": ["\\mathscr{L}^{-1}\\left\\{{#1}\\right\\}", 1], "d": "\\mathrm{d}", "arcsec": "\\mathrm{arcsec}~", "arccot": "\\mathrm{arccot}~", "arccsc": "\\mathrm{arccsc}~", "sech": "\\mathrm{sech}", "csch": "\\mathrm{csch}", "dy": "~\\mathrm{d}y", "dx": "~\\mathrm{d}x", "ds": "~\\mathrm{d}s", "dt": "~\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/01/chap01_4_homogenous';</script>
     <link rel="icon" href="../../_static/odefavicon.png"/>
@@ -75,7 +75,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Tuesday 21 January 2025 16:01:45"/>
+    <meta name="docbuild:last-update" content="Thursday 23 January 2025 21:41:33"/>
   </head>
   
   
@@ -168,7 +168,7 @@
 </button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../overview/motivation.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../overview/schedule.html">Schedule</a></li>
@@ -188,7 +188,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../00/chap00_A1_definition.html">1.1. Definitions, Classification and Terminology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../00/chap00_A2_ode.html">1.2. Ordinary Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../00/chap00_A3_analytical.html">1.3. Analytical Methods for ODEs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A4_applications.html">1.4. Applications of Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A4_applications.html">1.4. Applications of ODEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../00/chap00_A5_exercise.html">1.5. Chapter 1 Exercises</a></li>
 </ul>
 </details></li>
@@ -460,8 +460,8 @@ a_0 y_n + a_1 y_{n+1} + a_2 y_{n+2} + \ldots + a_{k-1} y_{n+k-1} + a_k y_{n+k} =
 <p class="admonition-title"><span class="caption-number">Theorem 2.2 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(z_p~(p=1,2,3,\ldots,k)\)</span> be any solution to the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(2.15)</a>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ad4b7146-61b5-4f0f-a727-f009f9fcf3f3">
-<span class="eqno">(2.16)<a class="headerlink" href="#equation-ad4b7146-61b5-4f0f-a727-f009f9fcf3f3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f5dfccf8-805d-49cc-8419-4b69629e4fda">
+<span class="eqno">(2.16)<a class="headerlink" href="#equation-f5dfccf8-805d-49cc-8419-4b69629e4fda" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \phi_n = z_p^n
 \end{equation}\]</div>
 <p>is a solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(2.12)</a>.</p>
@@ -490,8 +490,8 @@ Proof (click to show)<div class="sd-summary-down docutils">
 <p class="admonition-title"><span class="caption-number">Theorem 2.3 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Assume the <span class="math notranslate nohighlight">\(k\)</span> roots of  the characteristic equation <a class="reference internal" href="#equation-eq-de-linear-char">(2.15)</a> are distinct, then a fundamental set of solutions is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5f5ae44-b99a-4648-ba74-efaaea434aa3">
-<span class="eqno">(2.17)<a class="headerlink" href="#equation-b5f5ae44-b99a-4648-ba74-efaaea434aa3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-29eb2f0c-1b78-4339-9d3a-5ba8b7813e05">
+<span class="eqno">(2.17)<a class="headerlink" href="#equation-29eb2f0c-1b78-4339-9d3a-5ba8b7813e05" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z_p^n \quad (p=1,2,\ldots,k).
 \end{equation}\]</div>
 <p>An immediate consequence of this theorem, for this particular case, is that the general solution to the homogeneous equation <a class="reference internal" href="#equation-eq-de-linear-homogeneous-constant">(2.12)</a> is</p>
@@ -508,6 +508,7 @@ Substituting Eq. {eq}`eq:DE:linear:homo:sol` into Eq. {eq}`eq:DE:linear:homogene
 ~ = ~ & c_1 \cdot 0 + c_2 \cdot 0 + \ldots + c_k \cdot 0 \\
 ~ = ~ & 0 
 \end{align*} -->
+<p>Note: <strong>There will be a coursework question asking you to prove this theorem.</strong></p>
 </section>
 </div><section id="first-order-difference-equations">
 <h2><span class="section-number">2.4.1. </span>First-order Difference Equations<a class="headerlink" href="#first-order-difference-equations" title="Permalink to this heading">#</a></h2>
@@ -856,7 +857,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 21 January 2025 16:01:45.
+  Last updated on Thursday 23 January 2025 21:41:33.
   <br/>
 </p>
   </div>

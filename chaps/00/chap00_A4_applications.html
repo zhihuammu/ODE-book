@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>1.4. Applications of Ordinary Differential Equations &#8212; Linear Multistep Methods</title>
+    <title>1.4. Applications of ODEs &#8212; Linear Multistep Methods</title>
   
   
   
@@ -64,7 +64,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "Laplace": ["\\mathscr{L}\\left\\{{#1}\\right\\}", 1], "invLaplace": ["\\mathscr{L}^{-1}\\{{#1}\\}", 1], "d": "\\mathrm{d}", "arcsec": "\\mathrm{arcsec}~", "arccot": "\\mathrm{arccot}~", "arccsc": "\\mathrm{arccsc}~", "sech": "\\mathrm{sech}", "csch": "\\mathrm{csch}", "dy": "~\\mathrm{d}y", "dx": "~\\mathrm{d}x", "ds": "~\\mathrm{d}s", "dt": "~\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "Laplace": ["\\mathscr{L}\\left\\{{#1}\\right\\}", 1], "invLaplace": ["\\mathscr{L}^{-1}\\left\\{{#1}\\right\\}", 1], "d": "\\mathrm{d}", "arcsec": "\\mathrm{arcsec}~", "arccot": "\\mathrm{arccot}~", "arccsc": "\\mathrm{arccsc}~", "sech": "\\mathrm{sech}", "csch": "\\mathrm{csch}", "dy": "~\\mathrm{d}y", "dx": "~\\mathrm{d}x", "ds": "~\\mathrm{d}s", "dt": "~\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/00/chap00_A4_applications';</script>
     <link rel="icon" href="../../_static/odefavicon.png"/>
@@ -75,7 +75,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Tuesday 21 January 2025 16:01:45"/>
+    <meta name="docbuild:last-update" content="Thursday 23 January 2025 21:41:33"/>
   </head>
   
   
@@ -168,7 +168,7 @@
 </button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../overview/motivation.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../overview/schedule.html">Schedule</a></li>
@@ -188,7 +188,7 @@
 <li class="toctree-l2"><a class="reference internal" href="chap00_A1_definition.html">1.1. Definitions, Classification and Terminology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap00_A2_ode.html">1.2. Ordinary Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap00_A3_analytical.html">1.3. Analytical Methods for ODEs</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.4. Applications of Ordinary Differential Equations</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.4. Applications of ODEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap00_A5_exercise.html">1.5. Chapter 1 Exercises</a></li>
 </ul>
 </details></li>
@@ -400,7 +400,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Applications of Ordinary Differential Equations</h1>
+    <h1>Applications of ODEs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -410,15 +410,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physics">1.4.1. Physics</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanics">1.4.1.1. Mechanics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-transfer-forensic-science">1.4.1.2. Heat Transfer – Forensic Science</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-circuits">1.4.1.3. Electric Circuits</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chemical-reactions">1.4.2. Chemical Reactions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-dynamics">1.4.3. Population Dynamics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macro-economics">1.4.4. Macro-Economics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinetics">1.4.1. Kinetics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-transfer-forensic-science">1.4.2. Heat Transfer – Forensic Science</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-circuits">1.4.3. Electric Circuits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chemical-reactions">1.4.4. Chemical Reactions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-dynamics">1.4.5. Population Dynamics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#economics">1.4.6. Economics</a></li>
 </ul>
             </nav>
         </div>
@@ -430,44 +427,72 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="applications-of-ordinary-differential-equations">
-<span id="chap-pre-4"></span><h1><span class="section-number">1.4. </span>Applications of Ordinary Differential Equations<a class="headerlink" href="#applications-of-ordinary-differential-equations" title="Permalink to this heading">#</a></h1>
-<nav class="contents local" id="contents">
-<ul class="simple">
-<li><p><a class="reference internal" href="#physics" id="id1">Physics</a></p>
-<ul>
-<li><p><a class="reference internal" href="#mechanics" id="id2">Mechanics</a></p></li>
-<li><p><a class="reference internal" href="#heat-transfer-forensic-science" id="id3">Heat Transfer – Forensic Science</a></p></li>
-<li><p><a class="reference internal" href="#electric-circuits" id="id4">Electric Circuits</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#chemical-reactions" id="id5">Chemical Reactions</a></p></li>
-<li><p><a class="reference internal" href="#population-dynamics" id="id6">Population Dynamics</a></p></li>
-<li><p><a class="reference internal" href="#macro-economics" id="id7">Macro-Economics</a></p></li>
-</ul>
-</nav>
-<section id="physics">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">1.4.1. </span>Physics</a><a class="headerlink" href="#physics" title="Permalink to this heading">#</a></h2>
-<section id="mechanics">
-<h3><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">1.4.1.1. </span>Mechanics</a><a class="headerlink" href="#mechanics" title="Permalink to this heading">#</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="applications-of-odes">
+<span id="chap-pre-4"></span><h1><span class="section-number">1.4. </span>Applications of ODEs<a class="headerlink" href="#applications-of-odes" title="Permalink to this heading">#</a></h1>
+<section id="kinetics">
+<h2><span class="section-number">1.4.1. </span>Kinetics<a class="headerlink" href="#kinetics" title="Permalink to this heading">#</a></h2>
 <div class="proof example admonition" id="example-0">
 <p class="admonition-title"><span class="caption-number">Example 1.11 </span></p>
 <section class="example-content" id="proof-content">
-<p>The motion of an free falling object with mass <span class="math notranslate nohighlight">\(m\)</span> is given by</p>
-<div class="math notranslate nohighlight">
-\[
+<figure class="align-default" id="free-fall">
+<a class="reference internal image-reference" href="../../_images/ball.svg"><img alt="../../_images/ball.svg" height="250px" src="../../_images/ball.svg" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">A free falling object and the forces acting on it.</span><a class="headerlink" href="#free-fall" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The motion of a free falling object with mass <span class="math notranslate nohighlight">\(m\)</span> is given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-ode-freefall">
+<span class="eqno">(1.16)<a class="headerlink" href="#equation-eq-ode-freefall" title="Permalink to this equation">#</a></span>\[
     m\diff{v}{t}  = m g - \gamma v
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(v\)</span> is its speed, <span class="math notranslate nohighlight">\(g\)</span> the gravitational acceleration, <span class="math notranslate nohighlight">\(\gamma\)</span> the air friction coefficient.</p>
 <p>Find <span class="math notranslate nohighlight">\(v(t)\)</span> given that <span class="math notranslate nohighlight">\(m=0.025\)</span>kg, <span class="math notranslate nohighlight">\(\gamma=0.007\)</span>kg/s, <span class="math notranslate nohighlight">\(g=9.8\)</span> m/s<sup>2</sup> and <span class="math notranslate nohighlight">\(v(0)=0\)</span>m/s.</p>
 <div class="solution dropdown admonition">
 <p class="admonition-title">Solution</p>
-<p>xxx</p>
+<p>The given equation describing the physics is a first-order linear non-homogeneous equation, we will find its analytical solution then use a numerical method to solve the problem.</p>
+<p>Re-arrange Eq. <a class="reference internal" href="#equation-eq-ode-freefall">(1.16)</a> as</p>
+<div class="math notranslate nohighlight">
+\[
+    \diff{v}{t}+\frac{\gamma}{m} v = g,
+\]</div>
+<p>we can decompose the equations into homogeneous and non-homogenous parts</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{aligned}
+    v'_{h} + \frac{\gamma}{m} v_h &amp; = 0 \\
+    v'_{p} + \frac{\gamma}{m} v_p &amp; = g 
+    \end{aligned}
+\end{split}\]</div>
+<p>The homogeneous solution is</p>
+<div class="math notranslate nohighlight">
+\[
+    v_h(t)=C e^{-\frac{\gamma}{m} t}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(C\)</span> is a constant to be determined, and the non-homogeneous solution is</p>
+<div class="math notranslate nohighlight">
+\[
+    v_p(t)= \frac{mg}{\gamma},
+\]</div>
+<p>so the overall solution is</p>
+<div class="math notranslate nohighlight">
+\[
+    v(t)=v_h(t)+v_p(t)=C e^{-\frac{\gamma}{m} t}+\frac{mg}{\gamma},
+\]</div>
+<p>By using the initial condition <span class="math notranslate nohighlight">\(v(0)=0\)</span>, we can find</p>
+<div class="math notranslate nohighlight">
+\[
+    C=-\frac{mg}{\gamma}
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+    v(t)=\frac{mg}{\gamma} \biggl(1-e^{-\frac{\gamma}{m} t}\biggr) = \frac{245}{7}\biggl(1-e^{-\frac{7}{25} t}\biggr).
+\]</div>
 </div>
 </section>
 </div></section>
 <section id="heat-transfer-forensic-science">
-<h3><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">1.4.1.2. </span>Heat Transfer – Forensic Science</a><a class="headerlink" href="#heat-transfer-forensic-science" title="Permalink to this heading">#</a></h3>
+<h2><span class="section-number">1.4.2. </span>Heat Transfer – Forensic Science<a class="headerlink" href="#heat-transfer-forensic-science" title="Permalink to this heading">#</a></h2>
 <div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 1.12 </span></p>
 <section class="example-content" id="proof-content">
@@ -476,25 +501,275 @@
 \[
  \diff{T}{t}=\beta(T-T_R),	
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(T\)</span> is the temperature of the corpse, <span class="math notranslate nohighlight">\(\beta\)</span> is a constant, and <span class="math notranslate nohighlight">\(T_R\)</span> is room temperature.</p>
+<p>where <span class="math notranslate nohighlight">\(T\)</span> is the temperature of the corpse, <span class="math notranslate nohighlight">\(\beta\)</span> is a constant, and <span class="math notranslate nohighlight">\(T_R\)</span> is room temperature. A normal body temperature for adults is generally around <span class="math notranslate nohighlight">\(98.6\)</span><sup>o</sup>F (<span class="math notranslate nohighlight">\(37\)</span><sup>o</sup>C).</p>
+<p>Note: <strong>This will be a coursework question!</strong></p>
+</section>
+</div><div class="docutils">
+</div>
+</section>
+<section id="electric-circuits">
+<h2><span class="section-number">1.4.3. </span>Electric Circuits<a class="headerlink" href="#electric-circuits" title="Permalink to this heading">#</a></h2>
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 1.13 </span></p>
+<section class="example-content" id="proof-content">
+<figure class="align-default" id="rcl-circuit">
+<a class="reference internal image-reference" href="../../_images/circuit.svg"><img alt="../../_images/circuit.svg" height="300px" src="../../_images/circuit.svg" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.2 </span><span class="caption-text">A simple RLC series circuit.</span><a class="headerlink" href="#rcl-circuit" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The current, <span class="math notranslate nohighlight">\(I\)</span>, in a RLC circuit satisfies</p>
+<div class="math notranslate nohighlight">
+\[ 
+	L \diff[2]{I}{t} + R \diff{I}{t} + \frac{1}{C} I = \diff{E}{t}.
+\]</div>
+<p>Supposing <span class="math notranslate nohighlight">\(L=1 \)</span>, <span class="math notranslate nohighlight">\(R=5 \)</span>, <span class="math notranslate nohighlight">\(C=\frac{1}{6}\)</span> and <span class="math notranslate nohighlight">\(E(t)=-10\cos t\)</span>, solve this differential equation given that <span class="math notranslate nohighlight">\(I(0) = I'(0) = 0\)</span> (a passive circuit).</p>
 <div class="solution dropdown admonition">
 <p class="admonition-title">Solution</p>
-<p>xxx</p>
+<p>By substituting the known conditions, the given differential equation can be simplified as</p>
+<div class="math notranslate nohighlight">
+\[ 
+	\diff[2]{I}{t} + 5 \diff{I}{t} + 6 I = 10 \sin t.
+\]</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Method 1 (Solution Decomposition)</label><div class="sd-tab-content docutils">
+<p>Decompose the equation into homogeneous and non-homogenous parts</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    I''_h + 5 I'_h + 6 I_h &amp; = 0 \\
+    I''_p + 5 I'_p + 6 I_p &amp; = 10 \sin t
+\end{align*}\]</div>
+<p>For the homogeneous equation, its characteristic equation</p>
+<div class="math notranslate nohighlight">
+\[
+    z^2 + 5z +6=0
+\]</div>
+<p>has two distinct roots <span class="math notranslate nohighlight">\(z_1 = -2\)</span> and <span class="math notranslate nohighlight">\(z_2=-3\)</span>, so the homogeneous solution is</p>
+<div class="math notranslate nohighlight">
+\[
+    I_h = C_1 e^{-2t} + C_2 e^{-3t}.
+\]</div>
+<p>The right hand side of the non-homogeneous is a sinusoidal function, we guess the particular solution is given by</p>
+<div class="math notranslate nohighlight">
+\[
+    I_p = A \cos t + B \sin t,
+\]</div>
+<p>thus its first and second derivatives are</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    I'_p  &amp; = -A \sin t + B \cos t, \\ 
+    I''_p &amp; = -A \cos t - B \sin t.
+\end{align*}\]</div>
+<p>Therefore, non-homogeneous equation is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+        &amp; I''_p + 5 I'_p + 6 I_p \\
+    = &amp; (-A \cos t - B \sin t) + 5(-A \sin t + B \cos t) +6 (A \cos t + B \sin t) \\
+    = &amp; (5B+5A) \cos t + (5B-5A) \sin t \\
+    = &amp; 10 \sin t. 
+\end{align*}\]</div>
+<p>This requires two conditions</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    5B+5A &amp; = 0, \\
+    5B-5A &amp; = 10,
+\end{align*}\]</div>
+<p>so we get <span class="math notranslate nohighlight">\(A=-1\)</span> and <span class="math notranslate nohighlight">\(B=1\)</span>.</p>
+<p>Therefore, the particular solution is</p>
+<div class="math notranslate nohighlight">
+\[
+    I_p = -\cos t + \sin t.
+\]</div>
+<p>The overall solution is</p>
+<div class="math notranslate nohighlight">
+\[
+    I = I_h + I_p = C_1 e^{-2t} + C_2 e^{-3t} -\cos t + \sin t,
+\]</div>
+<p>and its derivative is</p>
+<div class="math notranslate nohighlight">
+\[
+    I'= -2 C_1 e^{-2t} -3 C_2 e^{-3t} + \sin t + \cos t.
+\]</div>
+<p>Using the initial conditions <span class="math notranslate nohighlight">\(I(0)=I'(0)=0\)</span>,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    I(0)  &amp; = C_1 + C_2 -1 =0, \\
+    I'(0) &amp; = -2 C_1 - 3 C_2 +1 =0,
+\end{align*}\]</div>
+<p>we get <span class="math notranslate nohighlight">\(C_1=2\)</span> and <span class="math notranslate nohighlight">\(C_2 =-1\)</span>, so the solution is</p>
+<div class="math notranslate nohighlight">
+\[
+    I(t) = 2 e^{-2t} - e^{-3t} - \cos t + \sin t.
+\]</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Method 2 (Laplace Transform)</label><div class="sd-tab-content docutils">
+<p>Taking Laplace transforms of both sides:</p>
+<div class="math notranslate nohighlight">
+\[
+	\Laplace{\diff[2]{I}{t} + 5 \diff{I}{t} + 6 I} = \Laplace{10 \sin t},
+\]</div>
+<p>we get</p>
+<div class="math notranslate nohighlight">
+\[
+	\biggl( s^2 \bar{I}(s) - s I(0) - I'(0) \biggr) + 5 \biggl( s \bar{I}(s) - I(0) \biggr) + 6 \bar{I}(s) = \frac{10}{s^2+1}.
+\]</div>
+<p>Substitute the initial conditions to obtain</p>
+<div class="math notranslate nohighlight">
+\[
+	(s^2+5s+6)\bar{I}(s)  = \frac{10}{s^2+1}.
+\]</div>
+<p>Splitting into partial fractions gives</p>
+<div class="math notranslate nohighlight">
+\[
+	\bar{I}(s) = \frac{2}{s+2} - \frac{1}{s+3} + \frac{1}{s^2+1} - \frac{s}{s^2+1}.
+\]</div>
+<p>Take inverse Laplace transforms to get</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+	I(t) &amp; = \invLaplace{\bar{I}(s)} \\
+         &amp; = \invLaplace{\frac{2}{s+2} - \frac{1}{s+3} + \frac{1}{s^2+1} - \frac{s}{s^2+1}} \\
+         &amp; = 2 e^{-2t} - e^{-3t} + \sin t - \cos t.
+\end{align*}\]</div>
+</div>
+</div>
 </div>
 </section>
 </div></section>
-<section id="electric-circuits">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">1.4.1.3. </span>Electric Circuits</a><a class="headerlink" href="#electric-circuits" title="Permalink to this heading">#</a></h3>
-</section>
-</section>
 <section id="chemical-reactions">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">1.4.2. </span>Chemical Reactions</a><a class="headerlink" href="#chemical-reactions" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.4.4. </span>Chemical Reactions<a class="headerlink" href="#chemical-reactions" title="Permalink to this heading">#</a></h2>
+<div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 1.14 </span></p>
+<section class="example-content" id="proof-content">
+<p>A chemical substance <span class="math notranslate nohighlight">\(A\)</span> changes into substance <span class="math notranslate nohighlight">\(B\)</span> at a rate <span class="math notranslate nohighlight">\(\alpha\)</span> times the amount of <span class="math notranslate nohighlight">\(A\)</span> present. Substance <span class="math notranslate nohighlight">\(B\)</span> changes into <span class="math notranslate nohighlight">\(C\)</span> at a rate <span class="math notranslate nohighlight">\(\beta\)</span> times the amount of <span class="math notranslate nohighlight">\(B\)</span> present.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/chemical.svg"><img alt="../../_images/chemical.svg" height="80px" src="../../_images/chemical.svg" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.3 </span><span class="caption-text">Chemical reactions of three substances.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If initially only substance <span class="math notranslate nohighlight">\(A\)</span> is present and its amount is <span class="math notranslate nohighlight">\(M\)</span>, show that the amount of <span class="math notranslate nohighlight">\(C\)</span> present at time <span class="math notranslate nohighlight">\(t\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+    M + M \biggl(  \frac{\beta e^{-\alpha t}-\alpha e^{-\beta t}}{\alpha-\beta} \biggr).
+\]</div>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>From the given question, we can form a system of ODEs</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{aligned}
+        \diff{A}{t} &amp; = - \alpha A \\
+        \diff{B}{t} &amp; = \alpha A - \beta B \\
+        \diff{C}{t} &amp; = \beta B
+    \end{aligned}
+\end{split}\]</div>
+<p>By using the initial condition <span class="math notranslate nohighlight">\(A(0)=M\)</span>, we can find the solution for substance <span class="math notranslate nohighlight">\(A\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+    A(t) = M e^{-\alpha t}.
+\]</div>
+<p>The equation for substance <span class="math notranslate nohighlight">\(B\)</span> then is</p>
+<div class="math notranslate nohighlight">
+\[
+    \diff{B}{t} + \beta B = M e^{-\alpha t},
+\]</div>
+<p>so its general solution is</p>
+<div class="math notranslate nohighlight">
+\[
+    B(t) = K e^{-\beta t} - \frac{\alpha M}{\alpha - \beta} e^{-\alpha t},
+\]</div>
+<p>by using the initial condition <span class="math notranslate nohighlight">\(B(0)=0\)</span>, we can find the solution for substance</p>
+<div class="math notranslate nohighlight">
+\[
+    B(t) = \frac{\alpha M}{\alpha - \beta} ( e^{-\beta t} - e^{-\alpha t}).
+\]</div>
+<p>Thus the equation for substance <span class="math notranslate nohighlight">\(C\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+    \diff{C}{t} = \beta B(t) = \frac{\alpha \beta M}{\alpha - \beta} ( e^{-\beta t} - e^{-\alpha t}),
+\]</div>
+<p>so we can obtain the general solution by integrating the equation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{aligned}
+    C(t) &amp; = \int \frac{\alpha \beta M}{\alpha - \beta} ( e^{-\beta t} - e^{-\alpha t}) \dt \\
+         &amp; = \frac{\alpha \beta M}{\alpha - \beta} \biggl( \frac{e^{-\beta t}}{-\beta}- \frac{e^{-\alpha t}}{-\alpha}\biggr) + K_2 \\
+         &amp; = \frac{M}{\alpha - \beta} (\beta e^{-\alpha t} - \alpha e^{-\beta t}) + K_2 \\
+    \end{aligned}
+\end{split}\]</div>
+<p>By using the initial condition <span class="math notranslate nohighlight">\(c(0)=0\)</span>, we can find <span class="math notranslate nohighlight">\(K_2=M\)</span> and so the solution is</p>
+<div class="math notranslate nohighlight">
+\[
+    C(t) = M + \frac{M}{\alpha - \beta} (\beta e^{-\alpha t} - \alpha e^{-\beta t})
+\]</div>
+</div>
 </section>
+</div></section>
 <section id="population-dynamics">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">1.4.3. </span>Population Dynamics</a><a class="headerlink" href="#population-dynamics" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.4.5. </span>Population Dynamics<a class="headerlink" href="#population-dynamics" title="Permalink to this heading">#</a></h2>
+<div class="proof example admonition" id="example-4">
+<p class="admonition-title"><span class="caption-number">Example 1.15 </span></p>
+<section class="example-content" id="proof-content">
+<p>The population of a certain species of fish living in a large lake at time <span class="math notranslate nohighlight">\(t\)</span> can be modelled using Verhulst’s equation, otherwise known as the logistic equation,</p>
+<div class="math notranslate nohighlight">
+\[
+    \diff{P}{t} = P (\beta - \delta P),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(P(t)\)</span> is the population of fish measured in tens of thousands, and <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\delta\)</span> are constants representing the birth and death rates of the fish living in the lake, respectively. Suppose that <span class="math notranslate nohighlight">\(\beta=1\)</span>, <span class="math notranslate nohighlight">\(\delta = 10^{-3}\)</span>, and the initial population is 800. Solve this initial value problem and interpret the results in physical terms.</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>Using the methods of separation of variables gives</p>
+<div class="math notranslate nohighlight">
+\[ 
+    \int \frac{1}{P (\beta - \delta P)} \d P = \int \dt.
+\]</div>
+<p>The solution to the integral on the left may be determined using partial fractions. The general solution is</p>
+<div class="math notranslate nohighlight">
+\[ 
+    P(t) = \frac{\beta N e^{\beta t}}{\beta - \delta N + N \delta e^{\beta t}}.
+\]</div>
+<p>Substituting the initial conditions, the solution is</p>
+<div class="math notranslate nohighlight">
+\[ 
+    P(t) = \frac{800}{0.8+0.2 e^{-t}}.
+\]</div>
+<p>Thus as time increases, the population of fish tends to a value of 1000. The solution curve is plotted in the following figure</p>
+<figure class="align-default" id="fish-population">
+<a class="reference internal image-reference" href="../../_images/population.svg"><img alt="../../_images/population.svg" height="300px" src="../../_images/population.svg" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.4 </span><span class="caption-text">The population of fish in a lake.</span><a class="headerlink" href="#fish-population" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
 </section>
-<section id="macro-economics">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">1.4.4. </span>Macro-Economics</a><a class="headerlink" href="#macro-economics" title="Permalink to this heading">#</a></h2>
+</div></section>
+<section id="economics">
+<h2><span class="section-number">1.4.6. </span>Economics<a class="headerlink" href="#economics" title="Permalink to this heading">#</a></h2>
+<div class="proof example admonition" id="example-5">
+<p class="admonition-title"><span class="caption-number">Example 1.16 </span></p>
+<section class="example-content" id="proof-content">
+<p>The Harrod-Domar model was developed to analyse business cycles originally but later was used to explain an economy’s growth rate through savings and capital productivity. Output, <span class="math notranslate nohighlight">\(Y\)</span>, is a function of capital stock, <span class="math notranslate nohighlight">\(K\)</span>, <span class="math notranslate nohighlight">\(Y=F(K)\)</span>, and the marginal productivity,</p>
+<div class="math notranslate nohighlight">
+\[
+    \diff{Y}{K}=c=\text{constant}.
+\]</div>
+<p>The model postulates that the output growth rate is given by</p>
+<div class="math notranslate nohighlight">
+\[
+    \frac{1}{Y} \diff{Y}{t} = sc - \delta,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(s\)</span> is the savings rate, and <span class="math notranslate nohighlight">\(\delta\)</span> the capital depreciation rate. The straightforward solution,</p>
+<div class="math notranslate nohighlight">
+\[
+    Y(t) = Y_0 e^{(sc-\delta)t},
+\]</div>
+<p>clearly demonstrates that increasing investment through savings and productivity boosts economic growth but does not take into account labour input and population size.</p>
+</section>
+</div><p>See <a class="reference external" href="https://www.intechopen.com/chapters/76374"><em>Anastasios Tsoularis (2020)</em></a> for more examples of ODEs in dynamic economics.</p>
 </section>
 </section>
 
@@ -563,15 +838,12 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physics">1.4.1. Physics</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanics">1.4.1.1. Mechanics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-transfer-forensic-science">1.4.1.2. Heat Transfer – Forensic Science</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-circuits">1.4.1.3. Electric Circuits</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chemical-reactions">1.4.2. Chemical Reactions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-dynamics">1.4.3. Population Dynamics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macro-economics">1.4.4. Macro-Economics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinetics">1.4.1. Kinetics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-transfer-forensic-science">1.4.2. Heat Transfer – Forensic Science</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-circuits">1.4.3. Electric Circuits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chemical-reactions">1.4.4. Chemical Reactions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-dynamics">1.4.5. Population Dynamics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#economics">1.4.6. Economics</a></li>
 </ul>
   </nav></div>
 
@@ -605,7 +877,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 21 January 2025 16:01:45.
+  Last updated on Thursday 23 January 2025 21:41:33.
   <br/>
 </p>
   </div>

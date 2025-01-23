@@ -64,7 +64,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "Laplace": ["\\mathscr{L}\\left\\{{#1}\\right\\}", 1], "invLaplace": ["\\mathscr{L}^{-1}\\{{#1}\\}", 1], "d": "\\mathrm{d}", "arcsec": "\\mathrm{arcsec}~", "arccot": "\\mathrm{arccot}~", "arccsc": "\\mathrm{arccsc}~", "sech": "\\mathrm{sech}", "csch": "\\mathrm{csch}", "dy": "~\\mathrm{d}y", "dx": "~\\mathrm{d}x", "ds": "~\\mathrm{d}s", "dt": "~\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "Laplace": ["\\mathscr{L}\\left\\{{#1}\\right\\}", 1], "invLaplace": ["\\mathscr{L}^{-1}\\left\\{{#1}\\right\\}", 1], "d": "\\mathrm{d}", "arcsec": "\\mathrm{arcsec}~", "arccot": "\\mathrm{arccot}~", "arccsc": "\\mathrm{arccsc}~", "sech": "\\mathrm{sech}", "csch": "\\mathrm{csch}", "dy": "~\\mathrm{d}y", "dx": "~\\mathrm{d}x", "ds": "~\\mathrm{d}s", "dt": "~\\mathrm{d}t", "i": "\\mathbf{\\hat{i}}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/02/chap02_2_differenceOperator';</script>
     <link rel="icon" href="../../_static/odefavicon.png"/>
@@ -75,7 +75,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Tuesday 21 January 2025 16:01:45"/>
+    <meta name="docbuild:last-update" content="Thursday 23 January 2025 21:41:33"/>
   </head>
   
   
@@ -168,7 +168,7 @@
 </button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Unit Guide</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../overview/motivation.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../overview/schedule.html">Schedule</a></li>
@@ -188,7 +188,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../00/chap00_A1_definition.html">1.1. Definitions, Classification and Terminology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../00/chap00_A2_ode.html">1.2. Ordinary Differential Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../00/chap00_A3_analytical.html">1.3. Analytical Methods for ODEs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A4_applications.html">1.4. Applications of Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A4_applications.html">1.4. Applications of ODEs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../00/chap00_A5_exercise.html">1.5. Chapter 1 Exercises</a></li>
 </ul>
 </details></li>
@@ -461,13 +461,13 @@
 <p class="admonition-title"><span class="caption-number">Definition 3.1 </span> (Forward Difference)</p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order <span class="target" id="index-1"></span>forward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between the next member and itself:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d5df592f-3132-4277-a2e7-0871e773061e">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-d5df592f-3132-4277-a2e7-0871e773061e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7ca8d144-c2ef-4a1d-ae34-7687d9ad12b9">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-7ca8d144-c2ef-4a1d-ae34-7687d9ad12b9" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta f_j = f_{j+1} - f_j,
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k-\)</span>th order forward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2eb62e18-7296-47ba-9fa2-318ef392ae84">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-2eb62e18-7296-47ba-9fa2-318ef392ae84" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-aa9a8428-e782-4469-a285-f1f4efa53785">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-aa9a8428-e782-4469-a285-f1f4efa53785" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta^k f_j= \Delta\left(\Delta^{k-1} f_j \right).
 \end{equation}\]</div>
 </section>
@@ -519,13 +519,13 @@
 <p class="admonition-title"><span class="caption-number">Definition 3.2 </span> (Backward Difference)</p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order <span class="target" id="index-2"></span>backward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between itself and the previous member:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fec4341e-d621-4ccc-92c2-dfd1099a3928">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-fec4341e-d621-4ccc-92c2-dfd1099a3928" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-68c5c716-55ca-4c44-b38d-215104ff19f2">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-68c5c716-55ca-4c44-b38d-215104ff19f2" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla f_j = f_{j} - f_{j-1},
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k\)</span>-th order backward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fef19c71-86dc-47a4-9787-7e590e644993">
-<span class="eqno">(3.4)<a class="headerlink" href="#equation-fef19c71-86dc-47a4-9787-7e590e644993" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fb2a9bd8-6971-49d3-8282-277246251102">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-fb2a9bd8-6971-49d3-8282-277246251102" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla^k f_j= \nabla\left(\nabla^{k-1} f_j \right).
 \end{equation}\]</div>
 </section>
@@ -580,8 +580,8 @@
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>,
 we define <span class="math notranslate nohighlight">\(\E\)</span> as an operator <span class="target" id="index-3"></span>shifting a member in a sequence to the next member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f35a1369-dfab-4361-bf9d-1e58e12d8fcb">
-<span class="eqno">(3.5)<a class="headerlink" href="#equation-f35a1369-dfab-4361-bf9d-1e58e12d8fcb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6bc7a1bd-d60d-4ffd-9803-2e3417475e31">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-6bc7a1bd-d60d-4ffd-9803-2e3417475e31" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \E  f_j = f_{j+1},
 \end{equation}\]</div>
 <p>and shifting a member forward <span class="math notranslate nohighlight">\(k\)</span> times gives</p>
@@ -589,8 +589,8 @@ we define <span class="math notranslate nohighlight">\(\E\)</span> as an operato
 \[\E ^k f_j= \E  (\E ^{k-1}f_j)= f_{j+k}.\]</div>
 <p>Similarly, we define <span class="math notranslate nohighlight">\(\E ^{-1}\)</span> as an operator shifting a member in a
 sequence to the previous member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aa7f36a4-903e-4194-a392-2b4b0694ea9e">
-<span class="eqno">(3.6)<a class="headerlink" href="#equation-aa7f36a4-903e-4194-a392-2b4b0694ea9e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a2bd7ac4-42ee-4667-9b55-aae57c6189d4">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-a2bd7ac4-42ee-4667-9b55-aae57c6189d4" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \E ^{-1} f_j = f_{j-1}
 \end{equation}\]</div>
 <p>and shifting a member backward <span class="math notranslate nohighlight">\(k\)</span> (<span class="math notranslate nohighlight">\(k&gt;0\)</span>) times gives</p>
@@ -772,7 +772,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 21 January 2025 16:01:45.
+  Last updated on Thursday 23 January 2025 21:41:33.
   <br/>
 </p>
   </div>
