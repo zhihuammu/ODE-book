@@ -1,12 +1,6 @@
 (chap:pre:4)=
 # Applications of ODEs
 
-<!-- ```{contents}
-:local:
-``` -->
-
-<!-- ## Physics -->
-
 ## Kinetics
 ::::{prf:example}
 
@@ -92,59 +86,6 @@ $$
 where $T$ is the temperature of the corpse, $\beta$ is a constant, and $T_R$ is room temperature. A normal body temperature for adults is generally around $98.6$<sup>o</sup>F ($37$<sup>o</sup>C).
 
 Note: **This will be a coursework question!**
-
-<!-- :::{admonition} Solution
-:class: solution
-
-The given heat transfer equation is a first-order linear non-homogeneous ODE, by decomposing the solution into homogeneous and non-homogeneous parts we can get the general solution
-
-$$
-T(t)=C e^{\beta t} + T_R, 
-$$
-where $T_R=68$<sup>o</sup>F.
-
-Supposing the murder occurred at $t=0$ and the corpse was found at time $t_A$, so we know
-
-$$
-    \begin{aligned}
-    T_0 & =T(0)=C e^{\beta \cdot 0} + 68=98.6 \\
-    T_A & =T(t_A)=C e^{\beta \cdot t_A} + 68=75, \\
-    T_B & =T(t_A+1) = C e^{\beta (t_A+1)} + 68=70,
-    \end{aligned}
-$$
-
-and we can find that $C=30.6$ and $\beta = \ln \frac{2}{7}$.
-
-At $t=t_A$ 
-
-$$
-    T_A = 30.6 e^{\beta \cdot t_A} + 68=75,
-$$
-
-therefore
-
-$$
-    \begin{aligned}
-    t_A  & = \biggl( \ln \frac{7}{30.6} \biggr) \div \beta \\
-         & = \biggl( \ln \frac{7}{30.6} \biggr) \div \biggl(\ln \frac{2}{7} \biggr) \\
-         & = 1.18 \quad \text{hours}.
-    \end{aligned}
-$$
-
-::: -->
-
-::::
-
-<!-- ### Electric Circuits
-
-```{figure} /images/00/circuit.svg
----
-height: 300px
-name: RCL circuit
----
-A simple RLC series circuit.
-``` -->
-
 
 
 ## Chemical Reactions
@@ -279,7 +220,7 @@ The population of fish in a lake.
 ## Economics
 
 ::::{prf:example}
-The Harrod-Domar model was developed independently by Roy Harrod [6] and Evsey Domar [7] to analyze business cycles originally but later was used to explain an economy’s growth rate through savings and capital productivity. Output, $Y$, is a function of capital stock, $K$, $Y=F(K)$, and the marginal productivity, 
+The Harrod-Domar model was developed to analyse business cycles originally but later was used to explain an economy’s growth rate through savings and capital productivity. Output, $Y$, is a function of capital stock, $K$, $Y=F(K)$, and the marginal productivity, 
 
 $$
     \diff{Y}{K}=c=\text{constant}.
@@ -304,6 +245,6 @@ clearly demonstrates that increasing investment through savings and productivity
 
 ::::
 
-See [**Anastasios Tsoularis, 2020**](https://www.intechopen.com/chapters/76374) for more examples of ODEs in dynamic economics.
+See [*Anastasios Tsoularis (2020)*](https://www.intechopen.com/chapters/76374) for more examples of ODEs in dynamic economics.
 
 

@@ -84,6 +84,8 @@ Substituting Eq. {eq}`eq:DE:linear:homo:sol` into Eq. {eq}`eq:DE:linear:homogene
 ~ = ~ & c_1 \cdot 0 + c_2 \cdot 0 + \ldots + c_k \cdot 0 \\
 ~ = ~ & 0 
 \end{align*} -->
+
+Note: **There will be a coursework question asking you to prove this theorem.**
 ::::
 
 
