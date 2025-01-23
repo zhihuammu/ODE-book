@@ -88,6 +88,159 @@ where $T$ is the temperature of the corpse, $\beta$ is a constant, and $T_R$ is 
 Note: **This will be a coursework question!**
 
 
+## Electric Circuits
+
+::::::{prf:example}
+
+```{figure} /images/00/circuit.svg
+---
+height: 300px
+name: RCL circuit
+---
+A simple RLC series circuit.
+```
+
+The current, $I$, in a RLC circuit satisfies
+
+$$ 
+	L \diff[2]{I}{t} + R \diff{I}{t} + \frac{1}{C} I = \diff{E}{t}.
+$$
+Supposing $L=1 $, $R=5 $, $C=\frac{1}{6}$ and $E(t)=-10\cos t$, solve this differential equation given that $I(0) = I'(0) = 0$ (a passive circuit).
+
+:::::{admonition} Solution
+:class: solution, dropdown
+
+By substituting the known conditions, the given differential equation can be simplified as
+
+$$ 
+	\diff[2]{I}{t} + 5 \diff{I}{t} + 6 I = 10 \sin t.
+$$
+
+
+::::{tab-set}
+```{tab-item} Method 1 (Solution Decomposition)
+Decompose the equation into homogeneous and non-homogenous parts
+
+\begin{align*}
+    I''_h + 5 I'_h + 6 I_h & = 0 \\
+    I''_p + 5 I'_p + 6 I_p & = 10 \sin t
+\end{align*}
+
+For the homogeneous equation, its characteristic equation 
+
+$$
+    z^2 + 5z +6=0
+$$
+
+has two distinct roots $z_1 = -2$ and $z_2=-3$, so the homogeneous solution is
+
+$$
+    I_h = C_1 e^{-2t} + C_2 e^{-3t}.
+$$
+
+The right hand side of the non-homogeneous is a sinusoidal function, we guess the particular solution is given by
+
+$$
+    I_p = A \cos t + B \sin t,
+$$
+
+thus its first and second derivatives are
+\begin{align*}
+    I'_p  & = -A \sin t + B \cos t, \\ 
+    I''_p & = -A \cos t - B \sin t.
+\end{align*}
+
+Therefore, non-homogeneous equation is
+\begin{align*}
+        & I''_p + 5 I'_p + 6 I_p \\
+    = & (-A \cos t - B \sin t) + 5(-A \sin t + B \cos t) +6 (A \cos t + B \sin t) \\
+    = & (5B+5A) \cos t + (5B-5A) \sin t \\
+    = & 10 \sin t. 
+\end{align*}
+
+This requires two conditions
+\begin{align*}
+    5B+5A & = 0, \\
+    5B-5A & = 10,
+\end{align*}
+so we get $A=-1$ and $B=1$.
+
+Therefore, the particular solution is
+
+$$
+    I_p = -\cos t + \sin t.
+$$
+
+The overall solution is
+
+$$
+    I = I_h + I_p = C_1 e^{-2t} + C_2 e^{-3t} -\cos t + \sin t,
+$$
+
+and its derivative is
+
+$$
+    I'= -2 C_1 e^{-2t} -3 C_2 e^{-3t} + \sin t + \cos t.
+$$
+
+Using the initial conditions $I(0)=I'(0)=0$,
+\begin{align*}
+    I(0)  & = C_1 + C_2 -1 =0, \\
+    I'(0) & = -2 C_1 - 3 C_2 +1 =0,
+\end{align*}
+we get $C_1=2$ and $C_2 =-1$, so the solution is
+
+$$
+    I(t) = 2 e^{-2t} - e^{-3t} - \cos t + \sin t.
+$$
+
+
+```
+
+```{tab-item} Method 2 (Laplace Transform)
+
+Taking Laplace transforms of both sides:
+
+$$
+	\Laplace{\diff[2]{I}{t} + 5 \diff{I}{t} + 6 I} = \Laplace{10 \sin t},
+$$
+
+we get
+
+$$
+	\biggl( s^2 \bar{I}(s) - s I(0) - I'(0) \biggr) + 5 \biggl( s \bar{I}(s) - I(0) \biggr) + 6 \bar{I}(s) = \frac{10}{s^2+1}.
+$$
+
+Substitute the initial conditions to obtain
+
+$$
+	(s^2+5s+6)\bar{I}(s)  = \frac{10}{s^2+1}.
+$$
+
+Splitting into partial fractions gives
+
+$$
+	\bar{I}(s) = \frac{2}{s+2} - \frac{1}{s+3} + \frac{1}{s^2+1} - \frac{s}{s^2+1}.
+$$
+
+Take inverse Laplace transforms to get
+\begin{align*}
+	I(t) & = \invLaplace{\bar{I}(s)} \\
+         & = \invLaplace{\frac{2}{s+2} - \frac{1}{s+3} + \frac{1}{s^2+1} - \frac{s}{s^2+1}} \\
+         & = 2 e^{-2t} - e^{-3t} + \sin t - \cos t.
+\end{align*}
+
+```
+::::
+
+:::::
+
+
+
+
+
+::::::
+
 ## Chemical Reactions
 
 ::::{prf:example}
