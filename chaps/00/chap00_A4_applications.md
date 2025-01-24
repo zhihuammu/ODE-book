@@ -86,6 +86,7 @@ $$
 where $T$ is the temperature of the corpse, $\beta$ is a constant, and $T_R$ is room temperature. A normal body temperature for adults is generally around $98.6$<sup>o</sup>F ($37$<sup>o</sup>C).
 
 Note: **This will be a coursework question!**
+::::
 
 
 ## Electric Circuits
