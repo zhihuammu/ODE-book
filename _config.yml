@@ -44,7 +44,9 @@ sphinx:
   config:
     # proof_minimal_theme: true
     bibtex_reference_style: author_year    
-    html_show_copyright: true
+    html_show_copyright: True
+    html_show_search_summary: True
+    html_show_sphinx: True
     language: en                                       
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     mathjax3_config:
@@ -74,7 +76,7 @@ sphinx:
           "i" : "\\mathbf{\\hat{i}}"
           "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}",3,'']
           "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}",3,'']
-    hide_solutions: false
+    hide_solutions: False
     html_theme_options: 
       navigation_with_keys: True
       show_toc_level  : 3      
