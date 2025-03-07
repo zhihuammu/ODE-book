@@ -1,7 +1,7 @@
 (chap:pre:4)=
 # Applications of ODEs
 
-## Kinematics
+## Kinetics
 ::::{prf:example}
 
 ```{figure} /images/00/ball.svg
