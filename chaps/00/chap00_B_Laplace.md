@@ -37,4 +37,4 @@ $$\displaystyle F(s) = \Laplace{f(t)}(s)=\int_0^\infty e^{-st} f(t) \dt$$
 
 ## Inverse Laplace Transform
 
-$$f(t) = \invLaplace{F(s)}$$
+$$f(t) = \invLaplace{F(s)}(t)$$
