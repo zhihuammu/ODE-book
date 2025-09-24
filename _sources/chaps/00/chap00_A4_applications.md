@@ -1,7 +1,7 @@
 (chap:pre:4)=
 # Applications of ODEs
 
-## Kinetics
+## Kinematics
 ::::{prf:example}
 
 ```{figure} /images/00/ball.svg
@@ -333,7 +333,7 @@ $$
     \diff{P}{t} = P (\beta - \delta P),
 $$
 
-where $P(t)$ is the population of fish measured in tens of thousands, and $\beta$ and $\delta$ are constants representing the birth and death rates of the fish living in the lake, respectively. Suppose that $\beta=1$, $\delta = 10^{-3}$, and the initial population is 800. Solve this initial value problem and interpret the results in physical terms.	
+where $P(t)$ is the population of fish measured in tens of thousands, and $\beta$ and $\delta$ are constants representing the birth and death rates of the fish living in the lake, respectively. Suppose that $\beta=1$, $\delta = 10^{-3}$, and the initial population is $N=800$. Solve this initial value problem and interpret the results in physical terms.	
 
 ::::{admonition} Solution
 :class: solution, dropdown
