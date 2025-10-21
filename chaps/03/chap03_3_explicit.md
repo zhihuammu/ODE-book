@@ -23,7 +23,7 @@ $$\begin{aligned}
     ~=~ y_{j+2} &+ h\int_{2}^{3} \left(
     f_j + s\Delta f_j + \frac{s(s-1)}{2!}\Delta^2 f_j
     \right) \ds\\
-    &+ h\int_{2}^{3} \frac{s(s-1)(s-2)}{3!}f'''(z) \ds
+    &+ h^4\int_{2}^{3} \frac{s(s-1)(s-2)}{3!}f'''(z) \ds
     
 \end{aligned}$$ 
 

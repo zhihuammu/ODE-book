@@ -67,6 +67,6 @@ Two well known multistep method formulae are:
     $$ 
     
     Here $\,k = 3\,$ and
-    $\,\beta_3 = \frac{9}{24} \neq 0\,$; thus, this is a closed formula
+    $\,\beta_4 = \frac{9}{24} \neq 0\,$; thus, this is a closed formula
     and starting values are $\,y_{j+3}\,$, $\,y_{j+2}\,$ and
     $\,y_{j+1}\,$.
