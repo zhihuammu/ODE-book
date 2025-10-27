@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="5.1. Derivation of Local Error Terms for Integration Formulae" href="chap04_1_errorIntegration.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Friday 07 March 2025 14:04:02"/>
+    <meta name="docbuild:last-update" content="Monday 27 October 2025 14:57:29"/>
   </head>
   
   
@@ -732,12 +732,54 @@ method <a class="reference internal" href="#equation-eq-ch03-4-1">(5.3)</a> is o
 two-step Adams-Moulton method, and if <span class="math notranslate nohighlight">\(\,a \!=\! -5\,\)</span>, it is an
 explicit method.</p>
 </div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+MATLAB</label><div class="sd-tab-content docutils">
+<p>The following code has been tested under <strong>Matlab 2024a</strong></p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">syms</span><span class="w"> </span><span class="s">a0</span><span class="w"> </span><span class="s">a1</span><span class="w"> </span><span class="s">b0</span><span class="w"> </span><span class="s">b1</span><span class="w"> </span><span class="s">b2</span>
+
+<span class="n">a2</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
+
+<span class="n">C0</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a0</span><span class="o">+</span><span class="n">a1</span><span class="o">+</span><span class="n">a2</span><span class="p">;</span>
+<span class="n">C1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">a2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b0</span><span class="o">+</span><span class="n">b1</span><span class="o">+</span><span class="n">b2</span><span class="p">);</span>
+<span class="n">C2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">2</span><span class="o">*</span><span class="n">a2</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">b2</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">C3</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">3</span><span class="o">*</span><span class="n">a2</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">2</span><span class="o">*</span><span class="n">b2</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">C4</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">4</span><span class="o">*</span><span class="n">a2</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span>^<span class="mi">3</span><span class="o">*</span><span class="n">b2</span><span class="p">)</span><span class="o">/</span><span class="nb">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+<span class="n">solve</span><span class="p">([</span><span class="n">C0</span><span class="p">,</span><span class="w"> </span><span class="n">C1</span><span class="p">,</span><span class="w"> </span><span class="n">C2</span><span class="p">,</span><span class="w"> </span><span class="n">C3</span><span class="p">,</span><span class="w"> </span><span class="n">C4</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">a0</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">b0</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">])</span><span class="w"> </span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">a2</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+
+<span class="n">a0</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a0, a1, b0, b1, b2&#39;</span><span class="p">);</span>
+
+<span class="n">C0</span> <span class="o">=</span> <span class="n">a0</span><span class="o">+</span><span class="n">a1</span><span class="o">+</span><span class="n">a2</span><span class="p">;</span>
+<span class="n">C1</span> <span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">a2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b0</span><span class="o">+</span><span class="n">b1</span><span class="o">+</span><span class="n">b2</span><span class="p">);</span>
+<span class="n">C2</span> <span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">a2</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">b2</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">C3</span> <span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">a2</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">b2</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">C4</span> <span class="o">=</span> <span class="p">(</span><span class="n">a1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">a2</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">b1</span><span class="o">+</span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">b2</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+<span class="n">solution</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">([</span><span class="n">C0</span><span class="p">,</span> <span class="n">C1</span><span class="p">,</span> <span class="n">C2</span><span class="p">,</span> <span class="n">C3</span><span class="p">,</span> <span class="n">C4</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </div><section id="computer-programs-for-calculating-error-constants">
 <span id="chap-errorconstant-constants-code"></span><h2><span class="section-number">5.2.1. </span>Computer programs for calculating error constants<a class="headerlink" href="#computer-programs-for-calculating-error-constants" title="Permalink to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 MATLAB</label><div class="sd-tab-content docutils">
 <p>The following code has been tested under <strong>Matlab 2024a</strong></p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c">%Matlab code for calculating the error constants of a linear multistep method</span>
@@ -761,8 +803,8 @@ MATLAB</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 Python</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 2</span><span class="sd">Python code for calculating the error constants of a linear multistep method</span>
@@ -899,7 +941,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 07 March 2025 14:04:02.
+  Last updated on Monday 27 October 2025 14:57:29.
   <br/>
 </p>
   </div>

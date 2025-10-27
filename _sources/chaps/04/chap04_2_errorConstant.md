@@ -253,7 +253,7 @@ derive a linear multistep method of given structure and maximal order
 (see {prf:ref}`ch04-example-4`, below).
 :::
 
-:::{prf:example}
+::::::{prf:example}
 :label: ch04-example-4
 
 Construct an implicit linear two-step method of maximal order,
@@ -310,6 +310,26 @@ Note that when $\,a \!=\! 0\,$, then method {eq}`eq:ch03:4.1` is the
 two-step Adams-Moulton method, and if $\,a \!=\! -5\,$, it is an
 explicit method.
 :::
+
+:::::{tab-set}
+::::{tab-item} MATLAB
+The following code has been tested under **Matlab 2024a**
+
+```{literalinclude} /codes/ch5_example4_matlab.m
+:language: matlab
+```
+::::
+
+::::{tab-item} Python
+
+```{literalinclude} /codes/ch5_example4_python.py
+:language: python
+```
+::::
+::::: 
+
+::::::
+
 
 (chap:errorConstant:constants:code)=
 ## Computer programs for calculating error constants
