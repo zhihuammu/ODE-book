@@ -282,7 +282,7 @@ The solution looks quite good now.
 ```{admonition} Questions
 :class: question
 
-When the step size is $h=0.05$, the numerical solution is unstable. After we reduced it to $h=0.0025$, the solution become stable. 
+When the step size is $h=0.05$, the numerical solution is unstable. After we reduced it to $h=0.0025$, the solution becomes stable. 
 
 - Shall we limit the step size to keep the solution stable?
 
