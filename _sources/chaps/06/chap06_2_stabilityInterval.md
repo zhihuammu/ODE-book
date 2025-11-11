@@ -20,7 +20,7 @@ $$(eq:ch05:1.2)
 
  where $\lambda$ is a (real or complex) constant.
 
-:::{prf:definition} Abosolute Stability
+:::{prf:definition} Absolute Stability
 A linear multistep method is said to be *{index}`absolutely stable`* in a region
 $\,\Re\,$ of the complex plane if for all $\,h\lambda\,$ all roots of
 the stability polynomial $\,\L (z,h\lambda)$ associated with the
@@ -32,6 +32,8 @@ $$
     & i &= 1,\,2,\dots,k &&
 \end{aligned}
 $$(eq:ch05:1.3)
+
+
 :::
 
 :::{prf:definition} Relative Stability
@@ -49,6 +51,17 @@ $$(eq:ch05:1.4)
 
  where $z_1(h\lambda) = +1$ is a simple root (i.e. the
 parasitic roots are less in magnitude than the principal root).
+:::
+
+:::{note}
+The stability polynomial of a linear multistep method is also called characteristic polynomial, and it is calculated as
+
+$$
+\L (z, h\lambda) = \sum_{i=0}^k \left(\alpha_i - h\lambda \beta_i\right) z^i
+= \rho(z) - h\lambda \sigma(z)
+$$
+
+In some textbooks, the stability polynomial is also expressed as $\pi (z, h\lambda)$.
 :::
 
 :::{prf:definition} Stability Interval

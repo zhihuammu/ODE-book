@@ -36,7 +36,7 @@ $$
 $$
 
  Since
-$\qquad \pi ~=~ \rho(z) - h\lambda\sigma(z) ~=~ 0
+$\qquad \L(z, h\lambda) ~=~ \rho(z) - h\lambda\sigma(z) ~=~ 0
     \qquad\Rightarrow\qquad
     h\lambda ~=~\dfrac{\rho(z)}{\sigma(z)}$
 
