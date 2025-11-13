@@ -168,6 +168,7 @@ show that
     \begin{aligned}
     h \lambda = \frac{\rho(z)}{\sigma(z)} 
              = \frac{z^2 - 1}{\frac{1}{2}z  + \frac{3}{2}}
+            & = \frac{2(z^2 - 1)}{z  + 3} \\
             & = \frac{2(e^{\i 2\theta}-1)}{e^{\i\theta}+3} \\
             & = \frac{2(e^{\i 2\theta}-1)(e^{-\i\theta+3})}{(e^{\i\theta}+3)(e^{-\i\theta+3})} \\
             & = \frac{2\left[-6\sin^2 \theta + \i \sin \theta (6\cos \theta +2)\right]}{10+6\cos \theta} \\
