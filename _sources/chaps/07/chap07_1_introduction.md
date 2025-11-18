@@ -164,8 +164,8 @@ $$
 \end{aligned}
 $$
 
-the general solution of this difference equation is (see
-Chapter 4), 
+the general solution of this difference equation is (see 
+Aliakbar Montazer Haghighi and Dimitar P. Mishev, 2013, [Difference and differential equations with applications in queueing theory](https://ebookcentral.proquest.com/lib/mmu/detail.action?docID=1207568), Chapter 4), 
 
 $$
 \begin{aligned}
