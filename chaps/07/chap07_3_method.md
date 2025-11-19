@@ -63,7 +63,7 @@ using the Boundary Locus method are shown in the following diagram.
 
 ```{figure} /images/07/fig-chap07-c6m31f2.svg
 ---
-width: 300px
+width: 500px
 name: fig-chap07-c6m31f2
 ---
 Stability regions of BDF methods.
