@@ -63,17 +63,58 @@ using the Boundary Locus method are shown in the following diagram.
 
 ```{figure} /images/07/fig-chap07-c6m31f2.svg
 ---
-width: 500px
+width: 300px
 name: fig-chap07-c6m31f2
 ---
 Stability regions of BDF methods.
 ```
 
-:::{note}
+::::{note}
 Note that all these methods have unbounded region of absolute stability
 which makes them particularly suitable for the solution of stiff
 problems. The detail consideration of the stability theories of these
 methods is outside the scope of this course and complete treatment of
 this topic can be found in Gear C.W. (1969), Lambert J.D. (1973) and
 Hairer E. and Wanner G. (1996).
-:::
+
+
+
+
+<!-- ![BDF1](/images/07/stabilityRegion-BDF1.svg) -->
+
+```{image} /images/07/stabilityRegion-BDF1.svg
+:alt: BDF1
+:scale: 80%
+:align: center
+```
+
+```{image} /images/07/stabilityRegion-BDF2.svg
+:alt: BDF2
+:scale: 80%
+:align: center
+```
+
+```{image} /images/07/stabilityRegion-BDF3.svg
+:alt: BDF3
+:scale: 80%
+:align: center
+```
+
+```{image} /images/07/stabilityRegion-BDF4.svg
+:alt: BDF4
+:scale: 80%
+:align: center
+```
+
+```{image} /images/07/stabilityRegion-BDF5.svg
+:alt: BDF5
+:scale: 80%
+:align: center
+```
+
+```{image} /images/07/stabilityRegion-BDF6.svg
+:alt: BDF6
+:scale: 80%
+:align: center
+```
+::::
