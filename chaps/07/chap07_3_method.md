@@ -84,37 +84,37 @@ Hairer E. and Wanner G. (1996).
 
 ```{image} /images/07/stabilityRegion-BDF1.svg
 :alt: BDF1
-:scale: 80%
+:scale: 100%
 :align: center
 ```
 
 ```{image} /images/07/stabilityRegion-BDF2.svg
 :alt: BDF2
-:scale: 80%
+:scale: 100%
 :align: center
 ```
 
 ```{image} /images/07/stabilityRegion-BDF3.svg
 :alt: BDF3
-:scale: 80%
+:scale: 100%
 :align: center
 ```
 
 ```{image} /images/07/stabilityRegion-BDF4.svg
 :alt: BDF4
-:scale: 80%
+:scale: 100%
 :align: center
 ```
 
 ```{image} /images/07/stabilityRegion-BDF5.svg
 :alt: BDF5
-:scale: 80%
+:scale: 100%
 :align: center
 ```
 
 ```{image} /images/07/stabilityRegion-BDF6.svg
 :alt: BDF6
-:scale: 80%
+:scale: 100%
 :align: center
 ```
 ::::
