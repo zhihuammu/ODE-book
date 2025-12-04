@@ -6,4 +6,5 @@ _build/
 *.gz
 *.code-workspace
 *.autosave
+*.dvi
 conf.py
