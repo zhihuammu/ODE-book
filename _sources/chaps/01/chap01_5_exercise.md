@@ -104,7 +104,7 @@ For each of the following difference equations, find the characteristic equation
 		
 
 1. $y_{n+2}-9y_{n+1}+20y_n=0$
-2. $y_{n+2}+y_{n}+y_{n-1}=0$        
+2. $y_{n+2}+y_{n+1}+y_{n}=0$        
 3. $y_{n+2}=\dfrac{y_{n+1}+y_{n-1}}{2}$
 4. $y_{n+2}=-\dfrac{y_{n+1}+y_{n-1}}{2}$
 5. $y_{n+4}-16 y_n=0$
