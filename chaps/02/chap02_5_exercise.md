@@ -47,7 +47,7 @@ improved.
 ::::{solution} ch2-ex-q2
 :class: dropdown
 $P_1(4.12) = 17.92$, $P_2 = 17.4976$, $P_3 = 17.41875$,
-    $P_4 = 17.39785$, $P_5 = 17.39135$.
+    $P_4 = 17.39785$, $P_5 = 17.39134$.
 
 Find the full solution in Moodle.
 ::::
