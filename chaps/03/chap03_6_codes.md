@@ -184,7 +184,7 @@ Output:
 
 (ch03:program3)=
 ### Program 3 (Matlab only)
-The following code has been tested under **Matlab 2022**
+The following code has been tested under **Matlab 2025**
 
 :::{literalinclude} /codes/ch2_prog3.m
 :linenos: True
