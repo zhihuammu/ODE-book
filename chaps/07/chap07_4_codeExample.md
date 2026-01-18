@@ -9,7 +9,7 @@
 Computed result using Matlab stiff ODE solver -- ode15s, for t=0:60,
 RelTol=1.e-6, AbsTol=1.e-6
 
-::: none
+```none
  i      t         y1         y2         y3 
 ------------------------------------------------
  1   0.00e+00   1.00e+00   0.00e+00   0.00e+00
@@ -28,7 +28,7 @@ RelTol=1.e-6, AbsTol=1.e-6
 14   4.00e+01   7.16e-01   9.19e-06   2.84e-01
 15   5.00e+01   6.93e-01   8.34e-06   3.07e-01
 16   6.00e+01   6.74e-01   7.71e-06   3.26e-01
-:::
+```
 
 
 ```{figure} /images/07/ch6_stiff_1_result1.svg

@@ -1,7 +1,3 @@
-%Solve a single 1st order ordinary differential equation, using a non-stiff
-% ODE solver, called ode113, from the Matlab ODE solver routines
-% based on Adam-Bashforth-Moulton methods.
-
 %%1-> Define the IVP
 % declare an ode function (definition given at the end of the code)
 f=@odeFunc;
