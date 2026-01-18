@@ -71,12 +71,12 @@ Using the **analytical solution** to produce starting values.
 :::::{tab-set}
 
 ::::{tab-item} MATLAB
-The following code has been tested under **Matlab 2022**
+The following code has been tested under **Matlab 2025**
 
 ```{literalinclude} /codes/ch2_prog1.m
 :linenos: True
 :language: matlab
-:emphasize-lines: 24,26
+:emphasize-lines: 28,30
 ```
 
 The output of this code is:
@@ -131,12 +131,12 @@ Using the **RK4** method to produce starting values.
 :::::{tab-set}
 
 ::::{tab-item} MATLAB
-The following code has been tested under **Matlab 2022**
+The following code has been tested under **Matlab 2025**
 
 ```{literalinclude} /codes/ch2_prog2.m
 :linenos: True
 :language: matlab
-:emphasize-lines: 25,28
+:emphasize-lines: 32,34
 ```
 
 Output:
@@ -184,7 +184,7 @@ Output:
 
 (ch03:program3)=
 ### Program 3 (Matlab only)
-The following code has been tested under **Matlab 2022**
+The following code has been tested under **Matlab 2025**
 
 :::{literalinclude} /codes/ch2_prog3.m
 :linenos: True
