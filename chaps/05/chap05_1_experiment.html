@@ -72,7 +72,7 @@
     <link rel="prev" title="6. Multistep Methods: Zero-Stability and Convergence" href="chap05_0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Sunday 21 December 2025 11:25:29"/>
+    <meta name="docbuild:last-update" content="Sunday 18 January 2026 15:00:48"/>
   </head>
   
   
@@ -530,32 +530,41 @@ c5= 2/15
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
 Matlab</label><div class="sd-tab-content docutils">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Scriptfile to solve a single 1st order Ordinary Differential Equation,</span>
-<span class="c">%using the exact solution to calculate the starting values and </span>
-<span class="c">% a 2-step method of third-order accuracy</span>
-<span class="c">% for the remaining integration time span.</span>
-<span class="c">%</span>
-
-<span class="k">function</span><span class="w"> </span><span class="nf">ch5_example1_implement</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
 <span class="nb">clc</span>
-<span class="nb">clear</span>
+<span class="c">%%1-&gt; Define the IVP</span>
+<span class="c">% declare an ode function (definition given at the end of the code)</span>
+<span class="n">f</span><span class="p">=@</span><span class="n">odeFunc</span><span class="p">;</span>
 
+<span class="c">% interval of definition</span>
 <span class="n">L</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
-<span class="n">nsteps</span><span class="p">=</span><span class="mi">11</span><span class="p">;</span><span class="w">           </span><span class="c">%number of steps, including initial step</span>
-<span class="n">h</span><span class="p">=</span><span class="n">L</span><span class="o">/</span><span class="p">(</span><span class="n">nsteps</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span><span class="w">      </span><span class="c">%steplength h</span>
-<span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mf">0.0</span><span class="p">;</span><span class="w">   </span><span class="c">%set starting value of the independent variable t</span>
-<span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mf">1.0</span><span class="p">;</span><span class="w">   </span><span class="c">%set initial value of the dependent variable y</span>
+
+<span class="c">% number of steps</span>
+<span class="n">nsteps</span><span class="p">=</span><span class="mi">11</span><span class="p">;</span><span class="w">  </span><span class="c">%number of steps</span>
+
+<span class="c">% step size</span>
+<span class="n">h</span><span class="p">=</span><span class="n">L</span><span class="o">/</span><span class="p">(</span><span class="n">nsteps</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span><span class="w">      </span>
+
+<span class="c">% initial conditions</span>
+<span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mf">0.0</span><span class="p">;</span><span class="w">   </span><span class="c">%independent variable time t</span>
+<span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mf">1.0</span><span class="p">;</span><span class="w">   </span><span class="c">%initial value of the dependent variable y</span>
 <span class="n">F</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w"> </span><span class="c">%calculate the value of y&#39;=F, at t(1), y(1).</span>
+
+<span class="c">%%2-&gt; Produce starting values</span>
 <span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="w">               </span><span class="c">%calculate the first 3 starting values using the exact solution</span>
 <span class="w">    </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="p">;</span><span class="w">          </span><span class="c">%calculate the next step in t</span>
 <span class="w">    </span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">))</span><span class="o">+</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span><span class="w">   </span><span class="c">%exact solution used for calculating starting values</span>
 <span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
 <span class="k">end</span>
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">5</span><span class="p">:</span><span class="n">nsteps</span><span class="w">      </span><span class="c">%calculate the remaining y values using a 2-step method</span>
-<span class="w">    </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="p">;</span><span class="w">    </span>
+
+<span class="c">%%3-&gt; Apply a multistep method</span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">5</span><span class="p">:</span><span class="n">nsteps</span><span class="w">      </span><span class="c">%calculate the remaining y values using ABM 4th order method</span>
+<span class="w">    </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="p">;</span>
 <span class="w">    </span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">2</span><span class="p">));</span>
 <span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
 <span class="k">end</span>
+
+<span class="c">%%4-&gt; Output the result</span>
 <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;  x         y          F         y_ex      AbsError&#39;</span><span class="p">);</span>
 <span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">nsteps</span>
 <span class="w">    </span><span class="n">yex</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">))</span><span class="o">+</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span>
@@ -571,8 +580,9 @@ Matlab</label><div class="sd-tab-content docutils">
 <span class="nb">legend</span><span class="p">(</span><span class="s">&#39;numerical&#39;</span><span class="p">,</span><span class="s">&#39;exact&#39;</span><span class="p">,</span><span class="s">&#39;Location&#39;</span><span class="p">,</span><span class="s">&#39;northwest&#39;</span><span class="p">,</span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
 <span class="c">% --------------------------------------------------------------------------</span>
 <span class="c">% Defining the ODE problem (or function) to be solved</span>
-<span class="k">function</span><span class="w"> </span>f<span class="p">=</span><span class="nf">f</span><span class="p">(</span>t,y<span class="p">)</span>
-<span class="n">f</span><span class="p">=</span><span class="o">-</span><span class="n">y</span><span class="o">+</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="k">function</span><span class="w"> </span>f<span class="p">=</span><span class="nf">odeFunc</span><span class="p">(</span>t,y<span class="p">)</span>
+<span class="w">    </span><span class="n">f</span><span class="p">=</span><span class="o">-</span><span class="n">y</span><span class="o">+</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="k">end</span>
 </pre></div>
 </div>
 </div>
@@ -785,7 +795,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Sunday 21 December 2025 11:25:29.
+  Last updated on Sunday 18 January 2026 15:00:48.
   <br/>
 </p>
   </div>
