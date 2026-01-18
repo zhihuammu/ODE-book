@@ -65,6 +65,7 @@ discussed in detail using Matlab documentation attached.
 
 Run these programs to check your results for {prf:ref}`example-3.2`.
 
+
 (ch03:program1)=
 ### Program 1 (Matlab and Python)
 Using the **analytical solution** to produce starting values.
@@ -124,6 +125,7 @@ The output of this code is:
 ::::
 
 ::::: 
+
 
 (ch03:program2)=
 ### Program 2 (Matlab and Python)

@@ -8,7 +8,7 @@ f=@odeFunc;
 L=1;
 
 % number of steps
-nsteps=21;  %number of steps
+nsteps=11;  %number of steps
 
 % step size
 h=L/(nsteps-1);      
