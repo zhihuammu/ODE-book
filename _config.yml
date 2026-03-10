@@ -87,6 +87,7 @@ sphinx:
     html_theme_options: 
       navigation_with_keys: True
       show_toc_level  : 3      
+      use_sidenotes: True
     html_last_updated_fmt : "%A %d %B %Y %H:%M:%S"
   extra_extensions:
     - sphinx_proof
