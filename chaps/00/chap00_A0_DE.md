@@ -26,6 +26,6 @@ After completing this chapter, you should be able to
 
 Although we won't cover the above topics in our lectures, we will refer them when necessary. Students should read through this chapter to ensure they have the prerequisite knowledge for learning computational methods in ordinary differential equations. -->
 
-```{margin} **Here is my margin content**
+<!-- ```{margin} **Here is my margin content**
 Test margin note!
-```
+``` -->
