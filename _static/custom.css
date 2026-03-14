@@ -56,7 +56,7 @@ div.remark {
 *********************************************/
 div.example {
 	border-color: var(--example-border-color);
-	background-color: none;
+	background-color: transparent;
 }
 
 /* div.example p.admonition-title {
