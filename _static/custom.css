@@ -59,9 +59,11 @@ div.example {
 	background-color: transparent;
 }
 
-/* div.example p.admonition-title {
+/*
+div.example p.admonition-title {
 	background-color: var(--example-title-color);
-} */
+} 
+*/
 
 div.example p.admonition-title:after {
   /* content: "\f0cb"; the fa-list-ol icon */
