@@ -14,10 +14,20 @@
   --caution-border-color: #fd7e14;
   --grey-title-color: rgba(204,204,204,.2);
   --grey-border-color: #ccc;
-  --example-title-color: rgba(235, 247, 236, 1);
+  /* --example-title-color: rgba(235, 247, 236, 1); */
   --example-border-color: #29A745;
   --exercise-title-color: rgba(253, 126, 20, 0.2);
   --exercise-border-color: #fd7e14;   
+}
+
+
+/*********************************************
+* header *
+*********************************************/
+
+h1 {
+    /* color: #003B71 !important; */
+    /* color: #fd7e14 !important; */
 }
 
 /*********************************************
@@ -54,6 +64,7 @@ div.remark {
 /*********************************************
 * example *
 *********************************************/
+
 div.example {
 	border-color: var(--example-border-color);
 	background-color: transparent;
@@ -66,7 +77,6 @@ div.example p.admonition-title {
 */
 
 div.example p.admonition-title:after {
-  /* content: "\f0cb"; the fa-list-ol icon */
   content: "\f03a"; 
 }
 
