@@ -132,11 +132,6 @@ div.solution {
 }
 
 div.solution  p.admonition-title:after {
-  /* color: green; */
-  /* the fa-reply icon */
-  /* content: "\f3e5";     */
-
-  /* the fa-key icon */
   content: "\f084";      
 }
 

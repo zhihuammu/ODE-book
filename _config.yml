@@ -90,6 +90,7 @@ sphinx:
       show_toc_level  : 3      
       use_sidenotes: True
     html_last_updated_fmt : "%A %d %B %Y %H:%M:%S"
+    exercise_style: ""
   extra_extensions:
     - sphinx_proof
     - sphinx_exercise        
