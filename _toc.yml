@@ -63,24 +63,14 @@ parts:
       sections:
       - glob: chaps/08/chap08_*         
 
-  # - caption: Foundation Maths
-  #   maxdepth: 1
-  #   numbered: true      
-  #   chapters:      
-  #   - file: chaps/append/chap01
-  #   - file: chaps/append/chap02
-
   - caption: Appendix
     numbered: false
     chapters:  
-    #- file: chaps/append/chap*
-    #- file: chaps/append/chapZ_test
-    #- file: chaps/append/chap02Clean
+    - file: chaps/append/chap01
+    - file: chaps/append/chap02        
     - file: genindex
     - url: https://uk.mathworks.com/help/matlab/ordinary-differential-equations.html
       title: ODE Solvers in Matlab
     - url: https://docs.scipy.org/doc/scipy/reference/integrate.html
       title: ODE Solvers in Scipy    
 
-    # - file: chaps/append/chapY_odeSolvers
-    # - file: chaps/append/chapZ_test
