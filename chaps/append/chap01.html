@@ -1,0 +1,1387 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Basic Algebra &#8212; Linear Multistep Methods</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=79838d2f" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=c73c0f3e"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "Laplace": ["\\mathscr{L}\\left\\{{#1}\\right\\}", 1], "invLaplace": ["\\mathscr{L}^{-1}\\left\\{{#1}\\right\\}", 1], "d": "\\mathrm{d}", "arcsec": "\\mathrm{arcsec}~", "arccot": "\\mathrm{arccot}~", "arccsc": "\\mathrm{arccsc}~", "sech": "\\mathrm{sech}", "csch": "\\mathrm{csch}", "dy": "~\\mathrm{d}y", "dx": "~\\mathrm{d}x", "ds": "~\\mathrm{d}s", "dt": "~\\mathrm{d}t", "i": "\\mathbf{i}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/append/chap01';</script>
+    <link rel="icon" href="../../_static/odefavicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapter 2: Linear Equations" href="chap02.html" />
+    <link rel="prev" title="9.7. Answers to Chapter 9 Exercises" href="../08/chap08_7_answers.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Monday 30 March 2026 22:14:16"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo1.svg" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
+    <img src="../../_static/logo1.svg" class="logo__image only-dark pst-js-only" alt="Linear Multistep Methods - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/motivation.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/readingList.html">Further Reading List</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_symbols.html">Symbols and Notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_formula.html">Formulas and Theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_derivatives.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_integrals.html">Table of Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_Laplace.html">Laplace Transform</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_A0_DE.html">1. Introduction to Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A1_definition.html">1.1. Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A2_ode.html">1.2. Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A3_analytical.html">1.3. Analytical Methods for ODEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A4_applications.html">1.4. Applications of ODEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A5_exercise.html">1.5. Chapter 1 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">2. Complex Numbers and Difference Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_1_complexNumber.html">2.1. Complex Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_2_sequence.html">2.2. Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_3_differenceEquation.html">2.3. Difference Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_4_homogenous.html">2.4. Homogeneous Linear Difference Equations with Constant Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02/chap02_0.html">3. Gregory-Newton Interpolating Polynomial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_1_introduction.html">3.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_2_differenceOperator.html">3.2. Finite Difference Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_3_interpolation.html">3.3. Gregory-Newton Interpolation Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_4_differenceTable.html">3.4. Finite Difference Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_5_exercise.html">3.5. Chapter 3 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03/chap03_0.html">4. Multistep Methods: Derivation through Integration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_1_multistepMethod.html">4.1. Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_2_derivation.html">4.2. Derivation of Multistep Methods by Numerical Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_3_explicit.html">4.3. Explicit  Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_4_implicit.html">4.4. Implicit  Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_5_predictorCorrector.html">4.5. Predictor-Corrector Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_6_codes.html">4.6. Computer Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_7_exercise.html">4.7. Chapter 4 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04/chap04_0.html">5. Multistep Methods: Accuracy and Error Constants</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_1_errorIntegration.html">5.1. Derivation of Local Error Terms for Integration Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_2_errorConstant.html">5.2. Order and Error Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_3_MilineDevice.html">5.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_4_exercise.html">5.4. Chapter 5 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05/chap05_0.html">6. Multistep Methods: Zero-Stability and Convergence</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_1_experiment.html">6.1. An exploratory experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_2_rootCondition.html">6.2. Characteristic Polynomials and Root Condition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_3_convergence.html">6.3. Zero-Stability, Consistency and Convergence Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_4_exercise.html">6.4. Chapter 6 Exercise</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">7. Multistep Methods: Stability Interval and Region</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_experiment.html">7.1. An experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_stabilityInterval.html">7.2. Interval and Region of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_rootLocus.html">7.3. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_4_boundaryRootLocus.html">7.4. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exampleCode.html">7.5. Example MATLAB Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_6_exercise.html">7.6. Chapter 7 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">8. Stiff Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_1_introduction.html">8.1. Introduction and background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_2_stiffSystem.html">8.2. Stiff Systems of Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_3_method.html">8.3. Methods for Stiff Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_4_codeExample.html">8.4. MATLAB Program 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_5_exercise.html">8.5. Chapter 8 Exercise</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08/chap08_0.html">9. Sparse Matrices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_1_introduction.html">9.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_2_sparseMatrix.html">9.2. Sparse Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_3_graphTheory.html">9.3. Matrix Sparsity and Graph Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_4_storage.html">9.4. Sparse Matrices Storage and Reordering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_5_reordering.html">9.5. Reordering and Matrix Bandwidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_6_exercise.html">9.6. Chapter 9 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_7_answers.html">9.7. Answers to Chapter 9 Exercises</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Basic Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chap02.html">Chapter 2: Linear Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://uk.mathworks.com/help/matlab/ordinary-differential-equations.html">ODE Solvers in Matlab</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/integrate.html">ODE Solvers in Scipy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chaps/append/chap01.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Basic Algebra</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-algebra">What Is Algebra?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-algebraic-expressions">Creating Algebraic Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#substitution-and-bodmas">Substitution and BODMAS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powers-in-algebra">Powers in Algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roots">Roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gathering-like-terms-and-expanding-brackets">Gathering Like Terms and Expanding Brackets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-factorisation">Simple Factorisation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-expansions">Further Expansions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-method">General Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-method">Box Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smiley-face-method">‘Smiley Face’ Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moon-method">‘Moon’ Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorising-ax-2-bx-c">Factorising <span class="math notranslate nohighlight">\(Ax^2+Bx+C\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laws-of-indices">Laws of Indices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-and-polynomial-division">Polynomial and Polynomial Division</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-algebra">
+<h1>Basic Algebra<a class="headerlink" href="#basic-algebra" title="Link to this heading">#</a></h1>
+<p>Learning objectives:</p>
+<ul class="simple">
+<li><p>Create algebraic expressions from given contexts</p></li>
+<li><p>Use BODMAS</p></li>
+<li><p>Evaluate an algebraic expression by substitution, including
+expressions involving powers</p></li>
+<li><p>Simplify expressions by gathering terms and expanding brackets</p></li>
+<li><p>Factorise simple algebraic expressions</p></li>
+<li><p>Divide algebraic expressions</p></li>
+<li><p>Understand and apply laws of indices</p></li>
+</ul>
+<section id="what-is-algebra">
+<h2>What Is Algebra?<a class="headerlink" href="#what-is-algebra" title="Link to this heading">#</a></h2>
+<p>By now, you should already be familiar with arithmetic. In arithmetic,
+we only deal with numbers and mathematical operations on them like
+addition, subtraction, multiplication and division. The knowledge of
+arithmetic is very useful for solving simple problems but it will not be
+sufficient for more general and difficult problems. For example, if we
+know that a number and its half added together become 15, what is that
+number? You may well know the answer to this question, but without some
+basic knowledge of algebra it will probably take you some time to find
+it. So what is algebra? Basically, algebra is a branch of mathematics
+that has been developed to manipulate symbols. In algebra we use letters
+(English or Greek alphabets for example) to represent numbers or
+quantities of interest. In this chapter, first we will look at how to
+create simple algebraic expressions from given contexts and then look at
+some techniques that we can use to simplify them.</p>
+<p>Symbols used in algebra essentially represent quantities (with or
+without units) that could be known already or unknown yet. They can be
+constants, or variables, whose values can change from case to case.</p>
+<p>For example, we can use <span class="math notranslate nohighlight">\(g=9.8~ \mathrm{m/s}^2\)</span> to represent the
+gravitational acceleration on the Earth, we can use the letter <span class="math notranslate nohighlight">\(n\)</span> to
+represent the number of students in a class.</p>
+</section>
+<section id="creating-algebraic-expressions">
+<h2>Creating Algebraic Expressions<a class="headerlink" href="#creating-algebraic-expressions" title="Link to this heading">#</a></h2>
+<p>Why do we use letters to stand for quantities?</p>
+<p>Let’s look at some examples</p>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 1 </span></p>
+<section class="example-content" id="proof-content">
+<p>Errol buys
+<span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> apples and <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span> oranges. Apples are 39p
+each and oranges are 56p each. How much does he spend?
+$<span class="math notranslate nohighlight">\(\left .% \{
+      \begin{tabular}{ll}
+      \text{Total spent} =&amp; ~ \text{the number of apples that Errol buys times 39 pence} \\
+       &amp;  +  \text{the number of oranges that Errol buys times 56 pence} 
+      \end{tabular}
+    \right \}
+    \label{eq:1.1}\)</span><span class="math notranslate nohighlight">\( 
+If we use the letters \)</span>\boldsymbol{x}<span class="math notranslate nohighlight">\( and
+\)</span>\boldsymbol{y}<span class="math notranslate nohighlight">\( to represent, respectively, the number of apples and
+the number of oranges that Errol buys, we can write the total spent as
+\)</span><span class="math notranslate nohighlight">\(39x+56y \quad \text{(units in pence)}
+    \label{eq:1.2}\)</span>$</p>
+</section>
+</div><p>Suppose that Errol buys <span class="math notranslate nohighlight">\(\boldsymbol{z}\)</span> pineapples as well and they are
+£1.6 each, the total cost is now
+$<span class="math notranslate nohighlight">\(39x+56y+160z  \quad \text{(units in pence)}
+    \label{eq:1.3}\)</span>$</p>
+<p>The £1.6 has to be expressed as 160p so that we are adding together
+pence throughout the whole expression. In general, we can only add
+things of the same type.</p>
+<p>When internet calls at off-peak time are charged at 3p per minute then
+the cost of a call can be calculated from the formula
+$<span class="math notranslate nohighlight">\(\text{Cost (in p)} = 3 \times \text{time on call (in minutes)}\)</span>$ This
+ensures that if we double the time on call we will double the cost. For
+instance the cost of a 20 minute call is 60p. If we double the time to
+40 minutes the call doubles to 120p.</p>
+<p>In mathematics we could reduce this to $<span class="math notranslate nohighlight">\(\label{eq:1.4}
+    C=3\times t\)</span>$ Remember that the symbols represent the cost and the
+time and the corresponding units are pence and minutes.</p>
+<p>These are examples of the simplest form of <strong>algebraic notation</strong>. The
+abbreviation using symbols saves time and enables us to concentrate on
+the important issues associated with the formula. In fact in algebra
+when two values are placed side by side we assume they are to be
+multiplied so we would normally write the formula in
+<a href="#eq:1.4" data-reference-type="eqref"
+data-reference="eq:1.4">[eq:1.4]</a> above as $<span class="math notranslate nohighlight">\(C=3t\)</span>$</p>
+<p>The quantities <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span>, <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{z}\)</span>
+in <a href="#eq:1.2" data-reference-type="eqref"
+data-reference="eq:1.2">[eq:1.2]</a> and
+<a href="#eq:1.3" data-reference-type="eqref"
+data-reference="eq:1.3">[eq:1.3]</a> for cost are <strong>variables</strong>; they
+stand for any one of a range of possible values. A variable may be given
+a specific value when we want to work out a particular sum.</p>
+<p>Similarly, in <a href="#eq:1.4" data-reference-type="eqref"
+data-reference="eq:1.4">[eq:1.4]</a>, the values for <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(C\)</span> will
+change from call to call and so they are also called variables. We tend
+to think we can choose the time to be any value within reason. The cost
+then depends on the value we have chosen. Because of this we call <span class="math notranslate nohighlight">\(t\)</span>
+the <strong>independent</strong> variable and <span class="math notranslate nohighlight">\(C\)</span> the <strong>dependent</strong> variable.</p>
+<p><a href="#eq:1.2" data-reference-type="eqref"
+data-reference="eq:1.2">[eq:1.2]</a> defines a function for calculating
+the cost in terms of the variables <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> and
+<span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span>, which works whatever values are given to
+<span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span>.</p>
+<p>We use variables and functions to describe general properties. This has
+huge advantages over specifying properties in a multitude of individual
+specific cases. From the general cases, we can establish patterns which
+can be used to solve other similar problems.</p>
+<p>Because variables represent numbers, we manipulate expressions involving
+variables using the rules of arithmetic.</p>
+<div class="exercise admonition" id="exercise:1.1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1 </span></p>
+<section id="exercise-content">
+<ol class="arabic simple">
+<li><p>Write algebraic expression (equation) for each the following:</p>
+<ol class="arabic simple">
+<li><p>The number that is 4 more than <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> is 7</p></li>
+<li><p>The number that is twice <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> is 5.</p></li>
+<li><p>The number that is half of <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span> is 8.</p></li>
+<li><p>The number that is 6 less than <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span> is 4.</p></li>
+<li><p>The number that is a quarter of <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> is 2.</p></li>
+</ol>
+</li>
+<li><p>Determine the appropriate formulae in each of the following cases
+and write it down in abbreviated form using symbols. State clearly
+what the symbols represent and the corresponding units.</p>
+<ol class="arabic simple">
+<li><p>The cost of a rope is equal to its length in metres times 90p
+per metre.</p></li>
+<li><p>The distance travelled on a journey in miles is equal to the
+average speed multiplied by the time taken.</p></li>
+<li><p>The concentration of a substance in solution is equal to the
+mass of the substance divided by the volume of the solution.</p></li>
+<li><p>The area of a triangle is equal to half the base times the
+perpendicular height.</p></li>
+<li><p>The cost in pence of an electricity bill is the standing charge
+plus 0.9 times the number of units used.</p></li>
+</ol>
+</li>
+<li><p>Evaluate the following algebraic expressions when <span class="math notranslate nohighlight">\(x=10\)</span> and <span class="math notranslate nohighlight">\(y=5\)</span>.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x+y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x-y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(xy\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{x}{y}\)</span></p></li>
+</ol>
+</li>
+<li><p>Susan buys 7 apples at <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> pence each and 4 bananas at
+<span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span> pence each. She spends £1. Write an equation for
+this.</p></li>
+<li><p>Jarred pays £<span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> for a bus ticket. The following week
+the price has risen by £2. In total he spent £<span class="math notranslate nohighlight">\(\boldsymbol{T}\)</span> on
+the two bus tickets. Write an equation expressing this information.</p></li>
+<li><p>Fred runs <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> miles and John runs 3 times as far. John
+runs <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span> miles. Write an equation that relates
+<span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span>.</p></li>
+</ol>
+</section>
+</div>
+</section>
+<section id="substitution-and-bodmas">
+<h2>Substitution and BODMAS<a class="headerlink" href="#substitution-and-bodmas" title="Link to this heading">#</a></h2>
+<p>In the previous section, we have created a number of algebraic
+expressions. In Example <a href="#example:1A" data-reference-type="ref"
+data-reference="example:1A">[example:1A]</a>, the cost for Errol to buy
+<span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span> apples and <span class="math notranslate nohighlight">\(\boldsymbol{y}\)</span> oranges is represented by
+the algebraic expression $<span class="math notranslate nohighlight">\(39x+56y.\)</span><span class="math notranslate nohighlight">\( If at one time he buys 5 apples
+and 4 oranges, how much will he pay? To work out this we simply replace
+\)</span>\boldsymbol{x}<span class="math notranslate nohighlight">\( with number 5 and \)</span>\boldsymbol{y}<span class="math notranslate nohighlight">\( with 4 and then the
+total cost will be
+\)</span><span class="math notranslate nohighlight">\(39 \times  5+56 \times 4=195+216=419~ \text{(pence) or} ~4.19~ \text{(pounds)} .\)</span>$</p>
+<p>This process of replacing letters (symbols) in an algebraic expression
+with actual numbers and then working out the final numerical value is
+called <strong>evaluation by substitution</strong>.</p>
+<p>Evaluate <span class="math notranslate nohighlight">\(2x+4y+10\)</span> when <span class="math notranslate nohighlight">\(x=1.4\)</span>, <span class="math notranslate nohighlight">\(y=2.2\)</span>.</p>
+<p>Substituting <span class="math notranslate nohighlight">\(x=1.4\)</span> and <span class="math notranslate nohighlight">\(y=2.2\)</span> into <span class="math notranslate nohighlight">\(2x+4y+10\)</span>, we have
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+    &amp; 2x+4y+10 \\
+    =~ &amp; 2\times 1.4+4\times 2.2+10  \\
+    =~ &amp; 2.8 + 8.8 + 10\\
+    =~ &amp; 21.6
+\end{aligned}\)</span>$</p>
+<p>In algebra we use letters or symbols to represent numbers <strong>so the
+operations on them must follow the same rules that numbers obey.</strong>  The
+BODMAS rule tells us the order in which the mathematical operations must
+performed.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>BIDMAS</strong></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-left"><p><strong>BODMAS</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>B</strong>rackets</p></td>
+<td class="text-center"><p>First priority</p></td>
+<td class="text-left"><p><strong>B</strong>rackets</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>I</strong>ndex</p></td>
+<td class="text-center"><p>Second priority</p></td>
+<td class="text-left"><p>Exp<strong>o</strong>nents and ro<strong>o</strong>ts</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>D</strong>ivision</p></td>
+<td class="text-center"><p>Third priority</p></td>
+<td class="text-left"><p><strong>D</strong>ivision</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>M</strong>ultiplication</p></td>
+<td class="text-center"><p>Third priority</p></td>
+<td class="text-left"><p><strong>M</strong>ultiplication</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>A</strong>ddition</p></td>
+<td class="text-center"><p>Fourth priority</p></td>
+<td class="text-left"><p><strong>A</strong>ddition</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>S</strong>ubtraction</p></td>
+<td class="text-center"><p>Fourth priority</p></td>
+<td class="text-left"><p><strong>S</strong>ubtraction</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If an expression contains two operations with the same priority, we
+evaluate by working from left to right.</p>
+<ol class="arabic">
+<li><p>To evaluate an expression such as $<span class="math notranslate nohighlight">\(11-3+14,\)</span>$ we would follow the
+<strong>BODMAS</strong> rule giving 22 as the answer.</p>
+<p>Since addition and subtraction are of equal priority we scan the
+expression from left to right calculating as we go.</p>
+<p>Similarly to find the value of  <span class="math notranslate nohighlight">\(a+b-c\)</span>  we first add <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span> and
+then subtract <span class="math notranslate nohighlight">\(c\)</span>.</p>
+</li>
+<li><p>When dealing with a numerical expression such as $<span class="math notranslate nohighlight">\(3+5 \times 2\)</span>$ we
+perform the multiplication before the addition (to get 13).</p>
+<p>So when evaluating the algebraic expression $<span class="math notranslate nohighlight">\(a+bc,\)</span><span class="math notranslate nohighlight">\( we would find
+the value of \)</span>b \times c<span class="math notranslate nohighlight">\( first and then add the value of \)</span>a$.</p>
+</li>
+<li><p>To override the normal rules of precedence we use <strong>brackets</strong>.<br />
+Thus to calculate $<span class="math notranslate nohighlight">\(6 \times (2+8)\)</span><span class="math notranslate nohighlight">\( we perform the addition before
+the multiplication. This gives an answer of 60.  
+Likewise to find the value of \)</span><span class="math notranslate nohighlight">\(a(b+c)\)</span><span class="math notranslate nohighlight">\( we first add \)</span>b<span class="math notranslate nohighlight">\( to \)</span>c<span class="math notranslate nohighlight">\( and
+then multiply the result by \)</span>a$.</p></li>
+</ol>
+<p>Since algebraic symbols only follow the rules of numbers if a rule does
+not work for numbers, it does not work for algebra either.</p>
+<p>To add fractions we do not simply add the denominators and the
+numerators. This would give us the wrong answer. For instance,</p>
+<p><span class="math notranslate nohighlight">\(\dfrac 1 2+\dfrac 1 3\)</span> does not equal <span class="math notranslate nohighlight">\(\dfrac{1+1}{2+3}=\dfrac 2 5\)</span></p>
+<p>so in algebra <span class="math notranslate nohighlight">\(\dfrac a c+\dfrac b d\)</span> is not equal to <span class="math notranslate nohighlight">\(\dfrac{a+b}{c+d}\)</span></p>
+<p><span id="exercise:1.2" label="exercise:1.2"></span> Evaluate the
+following expressions when <span class="math notranslate nohighlight">\(w=3\)</span>, <span class="math notranslate nohighlight">\(x=5\)</span>, <span class="math notranslate nohighlight">\(y=12\)</span> and <span class="math notranslate nohighlight">\(z=2\)</span> without using
+a calculator</p>
+<p>2</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(10x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2y-11\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w+2z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((w+2)z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(17-3w\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((x+1)(y-7)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3x-y+z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(5x+3z-3x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac y w\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{x+3} z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac 1 x+\dfrac 1 w\)</span></p></li>
+</ol>
+</section>
+<section id="powers-in-algebra">
+<h2>Powers in Algebra<a class="headerlink" href="#powers-in-algebra" title="Link to this heading">#</a></h2>
+<p>In Arithmetic, when a number is multiplied to itself several times, we
+can use a short-hand form called power or index to represent it. For
+example, $<span class="math notranslate nohighlight">\(2\times 2\times 2\times 2\)</span><span class="math notranslate nohighlight">\( can be written as \)</span>2^4<span class="math notranslate nohighlight">\( (2 raised
+to the power of 4). Similarly, in algebra we write \)</span>a^2<span class="math notranslate nohighlight">\( for the product
+\)</span>a\times a<span class="math notranslate nohighlight">\(,   \)</span>a^3<span class="math notranslate nohighlight">\( for \)</span>a\times a\times a$, and so on. The calculation
+of a power takes precedence over multiplication and division.</p>
+<p>To find the value of <span class="math notranslate nohighlight">\(5a^2\)</span> we first calculate a<sup>2</sup> and then
+multiply by 5 so, if <span class="math notranslate nohighlight">\(a=3\)</span>, <span class="math notranslate nohighlight">\(a^2=9\)</span> and <span class="math notranslate nohighlight">\(5a^2=45\)</span>.</p>
+<p>If we had wanted to perform the multiplication first, we would have
+written <span class="math notranslate nohighlight">\((5a)^2\)</span>. Since <span class="math notranslate nohighlight">\(a=3\)</span>, <span class="math notranslate nohighlight">\(5a=15\)</span> and</p>
+<p><span class="math notranslate nohighlight">\((5a)^2=15\times 15=225\)</span>.</p>
+<p>Take care here. Failing to make the calculations in the right order is a
+very common error.</p>
+<p><span id="exercise:1.3" label="exercise:1.3"></span></p>
+<ol class="arabic">
+<li><p>Find the value of the following expressions when <span class="math notranslate nohighlight">\(x=3\)</span> and <span class="math notranslate nohighlight">\(y=2\)</span>.</p>
+<p>2</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(3x^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((3x)^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3y^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((x+y)^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(xy^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((xy)^2\)</span></p></li>
+</ol>
+</li>
+<li><p>Write down the algebraic expression corresponding to the following
+instructions expressed in words.</p>
+<ol class="arabic simple">
+<li><p>Multiply <span class="math notranslate nohighlight">\(\boldsymbol{u}\)</span> by 6 and then cube the result.</p></li>
+<li><p>Halve the square of <span class="math notranslate nohighlight">\(\boldsymbol{v}\)</span>.</p></li>
+<li><p>Add <span class="math notranslate nohighlight">\(\boldsymbol{p}\)</span> to twice of <span class="math notranslate nohighlight">\(\boldsymbol{q}\)</span> and square the
+result.</p></li>
+<li><p>Subtract <span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span> cubed from <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span> squared.</p></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="roots">
+<h2>Roots<a class="headerlink" href="#roots" title="Link to this heading">#</a></h2>
+<p>When a number multiplies itself, we can use power to represent the
+operation, for example $<span class="math notranslate nohighlight">\(3\times 3 = 3^2 = 9\)</span><span class="math notranslate nohighlight">\( Here we know \)</span>9<span class="math notranslate nohighlight">\( is a
+square number. And we call \)</span>3<span class="math notranslate nohighlight">\( a square root of \)</span>9<span class="math notranslate nohighlight">\(, and write this as
+\)</span><span class="math notranslate nohighlight">\(\sqrt[2]{9}=\sqrt{9}=3\)</span><span class="math notranslate nohighlight">\( At the same time
+\)</span><span class="math notranslate nohighlight">\((-3)\times (-3) = (-3)^2=9,\)</span><span class="math notranslate nohighlight">\( so \)</span>-3<span class="math notranslate nohighlight">\( is also a square root of \)</span>9$.</p>
+<p>A positive number has two opposite square roots. For example <span class="math notranslate nohighlight">\(5\)</span> and
+<span class="math notranslate nohighlight">\(-5\)</span> are the square roots of <span class="math notranslate nohighlight">\(25\)</span>. A real number has only one cube root.</p>
+<p>In general, if we have
+$<span class="math notranslate nohighlight">\(\underbrace{a \times a \times a \cdots a \times a }_{n} = a^n = b\)</span><span class="math notranslate nohighlight">\(
+then the \)</span>n^\text{th}<span class="math notranslate nohighlight">\( root of \)</span>b<span class="math notranslate nohighlight">\( is \)</span><span class="math notranslate nohighlight">\(\left\{
+\begin{aligned}
+     ~  \sqrt[n]{b},  \quad &amp; n~ \text{is odd}, \quad &amp; b \in \mathbb{R} \\
+     ~  \pm\sqrt[n]{b}, \quad &amp; n~ \text{is even}, \quad &amp; b \geq 0 \\
+\end{aligned}
+    \right.\)</span><span class="math notranslate nohighlight">\( We can write the \)</span>n^\text{th}<span class="math notranslate nohighlight">\( root of \)</span>b<span class="math notranslate nohighlight">\( as
+\)</span><span class="math notranslate nohighlight">\(\sqrt[n]{b}=b^{\frac{1}{n}},\)</span>$ so</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sqrt{9}=9^{\frac{1}{2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sqrt[3]{8}=8^{\frac{1}{3}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sqrt[10]{x}=x^{\frac{1}{10}}\)</span></p></li>
+</ul>
+</section>
+<section id="gathering-like-terms-and-expanding-brackets">
+<h2>Gathering Like Terms and Expanding Brackets<a class="headerlink" href="#gathering-like-terms-and-expanding-brackets" title="Link to this heading">#</a></h2>
+<p>Algebraic expressions can sometimes be shortened by combining terms. One
+instance of this can arise when the same term appears twice in a sum.
+Thus we can simplify</p>
+<p><span class="math notranslate nohighlight">\(a+a+9\)</span>  to  <span class="math notranslate nohighlight">\(2a+9\)</span></p>
+<p>We can still simplify the expression if one or both of these terms are
+multiplied by a constant or if the terms are subtracted.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(2a=a+a\)</span>  and  <span class="math notranslate nohighlight">\(3a=a+a+a\)</span> <span class="math notranslate nohighlight">\({\Rightarrow}\)</span>  <span class="math notranslate nohighlight">\(2a+3a=5a\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(6b=b+b+b+b+b+b\)</span>  and  <span class="math notranslate nohighlight">\(4b=b+b+b+b\)</span>  <span class="math notranslate nohighlight">\({\Rightarrow}\)</span> <span class="math notranslate nohighlight">\(6b-4b=2b\)</span></p></li>
+</ol>
+<p>We call this process <strong>“gathering like terms”</strong>. Algebraic expressions
+may contain two or more sets of like terms and constants also.</p>
+<p>In the expression   <span class="math notranslate nohighlight">\(8x+5y+2+3x-y-3\)</span></p>
+<p><span class="math notranslate nohighlight">\(8x\)</span> and  <span class="math notranslate nohighlight">\(3x\)</span> are like terms  and 5y and y are like terms. Gathering
+like terms together we get $<span class="math notranslate nohighlight">\(8x+3x+5y-y+2-3\)</span><span class="math notranslate nohighlight">\( which simplifies to
+ \)</span>11x+4y-1$.</p>
+<p>Be careful not to combine unlike terms in this way. We cannot simplify
+<span class="math notranslate nohighlight">\(11x+4y-1\)</span> any further.</p>
+<p><span id="exercise:1.4" label="exercise:1.4"></span> Simplify the
+following expressions by gathering like terms where possible.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(6p+3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(10q-4q\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(7x+4y-2x+3y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(4z^2+z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a+3b+2c+4a-5b\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(4s^2+8r^2+1+s^2-3r^2+3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(12u+8v+5w+6u+7v-5w+1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(xy+xz+yz\)</span></p></li>
+</ol>
+<p>When creating algebraic expressions, frequently we use brackets to group
+some quantities together. To simplify certain algebraic expressions,
+such as, <span class="math notranslate nohighlight">\(1.2(2x+4y)\)</span>, sometimes we need to remove all the brackets in
+them first. To do this, you need to use the number or letter in front of
+the brackets to <em>multiply every term inside them</em>. This process is
+called <strong>expanding the brackets</strong>. For example, after expanding the
+brackets, the above expression will become <span class="math notranslate nohighlight">\(2.4x+4.8y\)</span>. Notice that the
+<span class="math notranslate nohighlight">\(1.2\)</span> multiplies every term in the brackets not just the first one. This
+remains true when there are more than two terms in the brackets and when
+the terms are negative.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(2(p+q+r)=2p+2q+2r\)</span> (Not <span class="math notranslate nohighlight">\(2p+q+r\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(5(2x^2-y^2)=10x^2-5y^2\)</span></p></li>
+</ol>
+<p>When there is a negative term outside the brackets, it is important to
+remember that the product of two negative terms is positive. This
+includes the case where there is only a subtraction sign preceding the
+brackets, as in Example <a href="#example:1K" data-reference-type="ref"
+data-reference="example:1K">[example:1K]</a> (d) below. In practice,
+this implies there is <span class="math notranslate nohighlight">\(-1\)</span> before the brackets. Getting the signs wrong,
+when expanding brackets, is another very common error.</p>
+<p>Once we have expanded two or more sets of brackets we may be able to
+gather like terms.</p>
+<p><span id="example:1K" label="example:1K"></span></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\begin{aligned}[t] 9(2x+y)-7(x-y) &amp; = 18x+9y-7x+7y \\
+            &amp; = 18x-7x+9y+7y \\
+            &amp; = 11x+16y            
+        \end{aligned}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\begin{aligned}[t]
+            13x-(x-7) &amp; = 13x-x+7 \\
+                      &amp; = 12x+7
+        \end{aligned}\)</span></p></li>
+</ol>
+<p><span id="exercise:1.5" label="exercise:1.5"></span> Expand the brackets
+in the following expressions, simplifying your answer where possible.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(4(x+y)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(10(3a-5b)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(6(u+v-20)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2(4a+3b)+3(a+3b)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(5(2s+t)-2(2s-t)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(8(p+2q-2r)-7(p-2q-3r)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(4x+5y-(2x-3y+5)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(6(x^2+y^2+1)-(x^2+y^2)-2(x^2-2y^2-1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x^2(x^2-2x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x^2(x^2-5x+2)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x(2x+1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x(-x+1)-2x(3x+1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2x^2(x-3)+5x(x^2+2x-1)\)</span></p></li>
+</ol>
+</section>
+<section id="simple-factorisation">
+<h2>Simple Factorisation<a class="headerlink" href="#simple-factorisation" title="Link to this heading">#</a></h2>
+<p>The reverse process of ‘expanding the brackets’ is called
+<strong>factorising</strong>. An example will suffice.</p>
+<p>If we expand <span class="math notranslate nohighlight">\(10(2x+3y)\)</span> we get   <span class="math notranslate nohighlight">\(20x+30y\)</span>.<br />
+If, however, we start with the expression <span class="math notranslate nohighlight">\(20x+30y\)</span> and rewrite it as
+the product of two factors</p>
+<p>i.e.  as <span class="math notranslate nohighlight">\(10(2x+3y)\)</span>,</p>
+<p>we say the expression has been factorised.</p>
+<p>We can only factorise terms when they have a <strong>common factor</strong>, for
+instance, we could not factorise <span class="math notranslate nohighlight">\(15x+14y\)</span> because none of the factors
+of the first term, 3, 5 and <span class="math notranslate nohighlight">\(x\)</span> are factors of the second term.</p>
+<p>Spotting the common factor is the essential first step in the
+factorisation process. Once the process is completed we can always check
+our answer by expanding the brackets to see if we obtain the original
+expression.</p>
+<ol class="arabic simple">
+<li><p>All the terms in the expression  <span class="math notranslate nohighlight">\(3x+6y-18z\)</span>  have a factor 3.<br />
+To find the second factor we divide each term by 3 giving us
+<span class="math notranslate nohighlight">\(x+2y-6z\)</span>.<br />
+Hence we believe that $<span class="math notranslate nohighlight">\(3x+6y-18z=3(x+2y-6z).\)</span><span class="math notranslate nohighlight">\( If we now expand the
+brackets we get \)</span>3x+6y-18z$, so our factorisation is indeed correct.</p></li>
+<li><p>The term <span class="math notranslate nohighlight">\(2x\)</span> is common to all the terms in the expression
+ <span class="math notranslate nohighlight">\(8xy+6x^2\)</span>.<br />
+Dividing each of the terms by <span class="math notranslate nohighlight">\(2x\)</span> we get <span class="math notranslate nohighlight">\(4y+3x\)</span>. Hence we think
+that $<span class="math notranslate nohighlight">\(8xy+6x^2=2x(4y+3x).\)</span>$</p></li>
+</ol>
+<p><span id="exercise:1.6" label="exercise:1.6"></span> Factorise the
+following expressions.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(7u+21v\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(16x+24y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z^2+3z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(8p-20q+12r\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2a^2-11ab\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(49xyz+8yz\)</span></p></li>
+</ol>
+<p>Check your answers by expanding them.</p>
+</section>
+<section id="further-expansions">
+<h2>Further Expansions<a class="headerlink" href="#further-expansions" title="Link to this heading">#</a></h2>
+<p>We normally write the product of two or more sets of terms in brackets
+without the multiplication sign. Thus the expression <span class="math notranslate nohighlight">\((x+2)\times (x+3)\)</span>
+is written <span class="math notranslate nohighlight">\((x+2)(x+3)\)</span>. When expanding such an expression involving two
+pairs of brackets we must multiply every term in the first bracket by
+every term in the second.</p>
+<section id="general-method">
+<h3>General Method<a class="headerlink" href="#general-method" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>Two brackets</strong>:<br />
+The general rule for expanding two brackets is that <em>every term in
+the first bracket should multiply every term in the second bracket</em>.
+Of course, we can also treat one bracket as a single symbol, then
+deal with the expression as one bracket multiplying one symbol. For
+example $$\begin{aligned}
+(a+b)(c+d)&amp;=a(c+d)+b(c+d) \
+&amp;=ac+ad+bc+bd</p>
+<p>\end{aligned}$<span class="math notranslate nohighlight">\( here we treat \)</span>(c+d)<span class="math notranslate nohighlight">\( as a single symbol first, and
+let it multiply every term in \)</span>(a+b)$.</p>
+</li>
+<li><p><strong>Multiple brackets</strong>:<br />
+To expand multiple brackets, we can iteratively expand two brackets.
+For example $$\begin{aligned}
+(a+b)(c+d)(e+f+g)
+~=~&amp;(ac+ad+bc+bd)(e+f+g)  \
+~=~&amp;ace+ade+bce+bde \
+~&amp;~+acf+adf+bcf+bdf \
+~&amp;~+ acg + adg + bcg +bdg</p>
+<p>\end{aligned}$<span class="math notranslate nohighlight">\( here we firstly expand the first two brackets
+\)</span>(a+b)(c+d)<span class="math notranslate nohighlight">\(, then expand the remaining two brackets
+\)</span>(ac+ad+bc+bd)(e+f+g)$.</p>
+</li>
+</ul>
+</section>
+<section id="box-method">
+<h3>Box Method<a class="headerlink" href="#box-method" title="Link to this heading">#</a></h3>
+<p>We can justify the process and determine the answer using a diagram of a
+rectangle.</p>
+<p>We can see that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+(x+2)(x+3)&amp; = (\text{length}) \times (\text{height of rectangle}) \\
+         &amp; = \text{the area of the rectangle}  \\
+         &amp; =x^2+2x+3x+6,    
+\end{aligned}\end{split}\]</div>
+<p>c|c|c| &amp; &amp;<br />
+<span class="math notranslate nohighlight">\(x\)</span> &amp; <span class="math notranslate nohighlight">\(x^2\)</span> &amp; <span class="math notranslate nohighlight">\(2x\)</span><br />
+<span class="math notranslate nohighlight">\(3\)</span> &amp; <span class="math notranslate nohighlight">\(3x\)</span> &amp; <span class="math notranslate nohighlight">\(6\)</span></p>
+<p>and gathering like terms gives $<span class="math notranslate nohighlight">\((x+2)(x+3)=x^2+2x+3x+6.\)</span>$</p>
+<p>Again when multiplying the terms we need to remember that the product of
+two negative terms is a positive one.</p>
+</section>
+<section id="smiley-face-method">
+<h3>‘Smiley Face’ Method<a class="headerlink" href="#smiley-face-method" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    &amp;=x^2+6+2x+3x \\
+    &amp;=x^2+5x+6    
+\end{aligned}\end{split}\]</div>
+</section>
+<section id="moon-method">
+<h3>‘Moon’ Method<a class="headerlink" href="#moon-method" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    &amp;=x^2+6+2x+3x \\
+    &amp;=x^2+5x+6    
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}\begin{aligned}
+(x-3)^2 =&amp;(x-3)(x-3)  \\
+        =&amp;x^2-3x-3x+9 \\
+        =&amp;x^2-6x+9      
+\end{aligned}$$ Notice that $(x-3)^2$ is not equal to $x^2-9$.\end{split}\\&lt;span id=&quot;exercise:1.7&quot; label=&quot;exercise:1.7&quot;&gt;&lt;/span&gt; Simplify the
+following expressions by expanding brackets\\1.  $(x+5)(x+2)$\\2.  $(x-2)(x+1)$\\3.  $(x-10)(x-1)$\\4.  $(y-4)(y+4)$\\5.  $(z+5)^2$\\6.  $(s-1)^2$\\## Further Factorisation\\### Factorising $x^2+Bx+C$\\We described earlier how it was possible to expand an algebraic
+expression and to conduct the reverse process of factorisation. For
+instance we could expand the expression $u(3+v)$ to obtain $3u+uv$ and
+we could factorise $3u+uv$ back to $u(3+v)$. On the last page we
+considered the expansion of products of brackets. We showed that
+$$(x+2)(x+3)=x^2+5x+6$$ and now, as you might expect, we discuss how we
+might factorise an expression such as $$x^2+5x+6$$ back to the original
+pair of brackets. This is not as easy a problem as one might expect.
+Sometimes the factorisation is not possible, at least using ordinary
+numbers. Even when factorisation is possible it is not always clear what
+the original brackets were. However, there are clues. Consider the
+following expansion $$(x+a)(x+b)=x^2+ax+bx+ab$$ We assume we are given
+the expression on the right and wish to find the constants $a$ and $b$.\\The expression can be written $x^2+x(a+b)+ab$ . The clues to the values
+of $a$ and $b$ are therefore\\1.  their sum is the term multiplying $x$, and\\2.  their product is the constant term.\\Factorise $x^2+6x+8$\\By clue (ii) the product of $a$ and $b$ is $8$ so assuming they are
+integers the possible pairs of brackets are\\1.  $(x+1)(x+8)$\\2.  $(x+2)(x+4)$\\3.  $(x-1)(x-8)$\\4.  $(x-2)(x-4)$\\but by clue (i) the sum of $a$ and $b$ is $6$ . This is only true for
+the second pair of brackets. Hence $$x^2+6x+8=(x+2)(x+4)\end{aligned}\end{align} \]</div>
+<p><span id="exercise:1.8" label="exercise:1.8"></span> Factorise each of
+the following expressions.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x^2+4x+3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x^2+7x+10\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x^2+8x+12\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x^2-7x+6\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x^2-x-6\)</span></p></li>
+</ol>
+<p>Check your answers by expanding them.</p>
+</section>
+<section id="factorising-ax-2-bx-c">
+<h3>Factorising <span class="math notranslate nohighlight">\(Ax^2+Bx+C\)</span><a class="headerlink" href="#factorising-ax-2-bx-c" title="Link to this heading">#</a></h3>
+<p>Supposing a general quadratics <span class="math notranslate nohighlight">\(Ax^2+Bx+C\)</span> can be factorised as
+$<span class="math notranslate nohighlight">\(Ax^2+Bx+C=(ax+b)(cx+d),\)</span><span class="math notranslate nohighlight">\( we can expand the two brackets to find the
+relations between the coefficients \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+    (ax+b)(cx+d)&amp;=acx^2+adx+bcx+bd \\
+                &amp;=acx^2+(ad+bc)x+bd \\
+                &amp;=Ax^2 + B x + C.
+\end{aligned}\)</span>$ We get the following clues:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(A=ac\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C=bd\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(B=ad+bc\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((ad)\cdot(bc)=A\cdot C = (ac)\cdot(bd)\)</span></p></li>
+</ol>
+<p>Using clues (iii) and (iv), we can work out the factorisation through
+the following steps:</p>
+<ol class="arabic simple">
+<li><p>Multiply <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(C\)</span>, denote the result as <span class="math notranslate nohighlight">\(D=A\cdot C\)</span></p></li>
+<li><p>Factorise <span class="math notranslate nohighlight">\(D\)</span> as <span class="math notranslate nohighlight">\(D=B_1 \cdot B_2\)</span>, and make sure <span class="math notranslate nohighlight">\(B_1 + B_2 = B\)</span></p></li>
+<li><p>Split <span class="math notranslate nohighlight">\(Bx\)</span> as <span class="math notranslate nohighlight">\(Bx=B_1 x + B_2 x\)</span></p></li>
+<li><p>Factorise <span class="math notranslate nohighlight">\((Ax^2+B_1 x)+(B_2 x+C)\)</span></p></li>
+</ol>
+<p>Factorise <span class="math notranslate nohighlight">\(2x^2+5x+3\)</span></p>
+<p><strong>Solution</strong>:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(2\times3= 6\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(6=1\times 6\)</span>, <span class="math notranslate nohighlight">\(6=2\times 3\)</span>, <span class="math notranslate nohighlight">\(2+3=5\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(5x=2x+3x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\begin{aligned}[t]
+        2x^2+5x+3&amp;=2x^2+2x+3x+3\\
+                 &amp;=(2x^2+2x)+(3x+3)\\
+                 &amp;=2x(x+1)+3(x+1)\\
+                 &amp;=(2x+3)(x+1)
+    \end{aligned}\)</span></p></li>
+</ol>
+<p>Factorise <span class="math notranslate nohighlight">\(2x^2+3x-2\)</span></p>
+<p><strong>Solution</strong>:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(2\times(-2)= -4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(-4=1\times (-4)\)</span>, <span class="math notranslate nohighlight">\(-4=-1\times 4\)</span>, <span class="math notranslate nohighlight">\(-4=-2\times 2\)</span>, <span class="math notranslate nohighlight">\(-1+4=3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3x=-x+4x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\begin{aligned}[t]
+        2x^2+3x-2&amp;=2x^2-x+4x-2\\
+                 &amp;=(2x^2-x)+(4x-2)\\
+                 &amp;=x(2x-1)+2(2x-1)\\
+                 &amp;=(x+2)(2x-1)
+    \end{aligned}\)</span></p></li>
+</ol>
+<p><span id="exercise:Sec1.9.2" label="exercise:Sec1.9.2"></span> Factorise
+each of the following expressions.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(8x^2+18x+9\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(6x^2+17x+12\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(12x^2-8x-7\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(15x^2+x-2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(12x^2-17x+6\)</span></p></li>
+</ol>
+<p>Check your answers by expanding them.</p>
+</section>
+</section>
+<section id="laws-of-indices">
+<h2>Laws of Indices<a class="headerlink" href="#laws-of-indices" title="Link to this heading">#</a></h2>
+<p>The laws of indices listed below can be used for simplifying many
+algebraic expressions involving powers. For examples, the first law says
+that to multiply two numbers with the same base we can simply add the
+indices and the second law states that to divide two numbers with same
+base we can subtract the indices.</p>
+<p>On the other hand, the sixth law gives the definition for negative
+powers. According to this law, for example, <span class="math notranslate nohighlight">\(2^{-3}\)</span> means
+<span class="math notranslate nohighlight">\(\dfrac{1}{2^3}\)</span> , that is <span class="math notranslate nohighlight">\(\dfrac{1}{8}\)</span>.</p>
+<p>|c|p4cm|l|   &amp; Laws of indices &amp;<br />
+.&amp; <span class="math notranslate nohighlight">\(b^n \times b^m = b^{n+m}\)</span> &amp; <span class="math notranslate nohighlight">\(x^2 \times x^7= x^{2+7}=x^9\)</span><br />
+.&amp; <span class="math notranslate nohighlight">\(b^n \div b^m = b^{n-m}\)</span> &amp; <span class="math notranslate nohighlight">\(x^{11} \div x^6= x^{11-6}=x^5\)</span><br />
+.&amp; <span class="math notranslate nohighlight">\((b^n)^m = b^{nm}\)</span> &amp; <span class="math notranslate nohighlight">\((x^3)^4 = x^{3\times 4}= x^{12}\)</span><br />
+.&amp; <span class="math notranslate nohighlight">\(b^1 =b\)</span> &amp; i.e. power 1 can be omitted.<br />
+.&amp; <span class="math notranslate nohighlight">\(b^0 =1\)</span> &amp; this gives the definition for zero power.<br />
+.&amp; <span class="math notranslate nohighlight">\(b^{-n}=\dfrac{1}{b^n}\)</span> &amp; <span class="math notranslate nohighlight">\(x^{-8} =\dfrac{1}{x^8}\)</span></p>
+<p><span id="exercise:1.9" label="exercise:1.9"></span></p>
+<ol class="arabic">
+<li><p>Use the laws of indices to simplify the following expressions:</p>
+<p>2</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(a^{3} \times a^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a^{3} \times a^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a^{31} \times a^{29}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a^{6} \div a^{4}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a^{9} \div a^{2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((a^3)^4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a^3 \div a^{-2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a^3 \times a^{-1} \times a^{5}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a^3 \times a^2 \div  a^7\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((a^{-2})^{-4}\)</span></p></li>
+</ol>
+</li>
+<li><p>Simplify the following expressions as far as possible:</p>
+<p>2</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(2^2 \times 2^3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3^2 \times 3^3 \div 3^4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{x^2 \times x^4}{x \times x^3}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((2^3)^4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{x^3 \times (x^2)^5}{x^7}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{(u^4)^{\frac{1}{2}}}{(u^{\frac{1}{2}})^6 \times u^{-2}}\)</span></p></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="polynomial-and-polynomial-division">
+<h2>Polynomial and Polynomial Division<a class="headerlink" href="#polynomial-and-polynomial-division" title="Link to this heading">#</a></h2>
+<p>A polynomial is an algebraic expression involving a sum of powers in one
+or more variables multiplied by coefficients. A polynomial in one
+variable (i.e., a univariate polynomial) with constant coefficients is
+given by $<span class="math notranslate nohighlight">\(\label{eq:polynomial}
+    a_n x^n + a_{n-1} x^{n-1} + + a_{n-2} x^{n-2} \cdots + a_2 x^2 + a_1 x + a_0.\)</span>$</p>
+<ul class="simple">
+<li><p>In a polynomial, the indices should be <strong>whole</strong> numbers
+(non-negative integers) only.</p></li>
+<li><p>The highest power in a univariate polynomial is called its
+<strong>degree</strong>, or sometimes its order.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a_n\)</span>, <span class="math notranslate nohighlight">\(a_{n-1}\)</span>, <span class="math notranslate nohighlight">\(a_{n-2}\)</span>, …, <span class="math notranslate nohighlight">\(a_2\)</span>, <span class="math notranslate nohighlight">\(a_1\)</span> and <span class="math notranslate nohighlight">\(a_0\)</span> are constants
+and they are called the <strong>coefficients</strong> of the polynomial.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Polynomial</p></th>
+<th class="head text-left"><p>Degree</p></th>
+<th class="head text-left"><p>Name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(a_0\)</span></p></td>
+<td class="text-left"><p>0</p></td>
+<td class="text-left"><p>constant</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(a_1 x + a_0\)</span>, <span class="math notranslate nohighlight">\(a_1 \neq 0\)</span></p></td>
+<td class="text-left"><p>1</p></td>
+<td class="text-left"><p>linear</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(a_2 x^2 + a_1 x + a_0\)</span>, <span class="math notranslate nohighlight">\(a_2 \neq 0\)</span></p></td>
+<td class="text-left"><p>2</p></td>
+<td class="text-left"><p>quadratic</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(a_3 x^3 + a_2 x^2 + a_1 x + a_0\)</span>, <span class="math notranslate nohighlight">\(a_3 \neq 0\)</span></p></td>
+<td class="text-left"><p>3</p></td>
+<td class="text-left"><p>cubic</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Algebraic expression</p></th>
+<th class="head text-center"><p>Polynomial?</p></th>
+<th class="head text-left"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(4x^3+3x^2-4x+6\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(x^7+3x^6+x^4+3x^2-x+2\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(x^3+3x^2-4\sqrt{x}+6\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(-4\sqrt{x}=-4x^\frac{1}{2}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(3x^2-9x+6\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(3x^2+\dfrac{6}{x}-4\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\dfrac{6}{x}=6x^{-1}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(x^{-3}+3x^2+4\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(x+\sin x\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\sin x\)</span>  is not a power function</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Similar to the division of numbers, we can also divide one polynomial by
+another polynomial of the same or lower degree.</p>
+<p>Supposing <span class="math notranslate nohighlight">\(x\neq 1\)</span>, find</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\((2x^2+x-3) \div (x-1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((x^3-1)\div (x-1)\)</span></p></li>
+</ol>
+<p><strong>Solution</strong>:</p>
+<p>2</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\((2x^2+x-3) \div (x-1)\)</span> $<span class="math notranslate nohighlight">\(\PolyLongDiv[]{s}{t}\)</span><span class="math notranslate nohighlight">\(
+\)</span>\therefore~(2x^2+x-3) \div (x-1)=2x+3$</p></li>
+<li><p><span class="math notranslate nohighlight">\((x^3-1)\div (x-1)\)</span> $<span class="math notranslate nohighlight">\(\PolyLongDiv[]{s}{t}\)</span><span class="math notranslate nohighlight">\(
+\)</span>\therefore~(x^3-1)\div (x-1)=x^2+x+1$</p></li>
+</ol>
+<p>Simplify the following</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\dfrac{ x^4 + x^3 +7 x^2 - 6x +8}{x^2+2x+8}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{ 8x^3 -10 x^2 - x +8}{x-1}\)</span></p></li>
+</ol>
+<p><strong>Solution</strong>:</p>
+<ol class="arabic">
+<li><p>$<span class="math notranslate nohighlight">\(\PolyLongDiv[]{s}{t}\)</span>$</p>
+<p><span class="math notranslate nohighlight">\(\therefore~\dfrac{ x^4 + x^3 +7 x^2 - 6x +8}{x^2+2x+8}=x^2-x+1.\)</span></p>
+</li>
+<li><p>$<span class="math notranslate nohighlight">\(\PolyLongDiv[]{s}{t}\)</span>$</p>
+<p><span class="math notranslate nohighlight">\(\therefore~\dfrac{8x^3 -10 x^2 - x +8}{x-1}=8x^2-2x-3+\dfrac{5}{x-1}.\)</span></p>
+</li>
+</ol>
+<p><span id="exercise:1:new01" label="exercise:1:new01"></span></p>
+<ol class="arabic simple">
+<li><p>Simplify each of the following</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\((x^3+5x^2+5x-2)\div(x+2)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((5x^3-13x^2+10x-8)\div(-x+2)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((6x^4+13x-19)\div(-x+1)\)</span></p></li>
+</ol>
+</li>
+<li><p>For the polynomial <span class="math notranslate nohighlight">\(2x^3+7x^2-43x+42\)</span></p>
+<ol class="arabic simple">
+<li><p>Use algebraic division to show that <span class="math notranslate nohighlight">\(x-2\)</span> is a factor of it;</p></li>
+<li><p>Factorise the polynomial completely.</p></li>
+</ol>
+</li>
+<li><p>For the polynomial <span class="math notranslate nohighlight">\(12x^3+16x^2-3x-4\)</span></p>
+<ol class="arabic simple">
+<li><p>Use algebraic division to show that <span class="math notranslate nohighlight">\(2x+1\)</span> is a factor of it;</p></li>
+<li><p>Factorise the polynomial completely.</p></li>
+</ol>
+</li>
+<li><p>Simplify each of the following</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\dfrac{27x^3-9x^2-3x-10}{3x-2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{x^4+3x^3-x^2-x+6}{x+3}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{2x^4-5x^3+2x^2+5x-10}{x-2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{7x^4-10x^3+3x^2+3x-3}{x-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{2x^4+8x^3-5x^2-4x+2}{x^2+4x-2}\)</span></p></li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chaps\append"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../08/chap08_7_answers.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">9.7. </span>Answers to Chapter 9 Exercises</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chap02.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 2: Linear Equations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-algebra">What Is Algebra?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-algebraic-expressions">Creating Algebraic Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#substitution-and-bodmas">Substitution and BODMAS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#powers-in-algebra">Powers in Algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roots">Roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gathering-like-terms-and-expanding-brackets">Gathering Like Terms and Expanding Brackets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-factorisation">Simple Factorisation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-expansions">Further Expansions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-method">General Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-method">Box Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smiley-face-method">‘Smiley Face’ Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moon-method">‘Moon’ Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorising-ax-2-bx-c">Factorising <span class="math notranslate nohighlight">\(Ax^2+Bx+C\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laws-of-indices">Laws of Indices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-and-polynomial-division">Polynomial and Polynomial Division</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Zhihua Ma
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023--2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Monday 30 March 2026 22:14:16.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

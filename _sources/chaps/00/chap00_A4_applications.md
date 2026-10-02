@@ -69,7 +69,7 @@ $$
 and
 
 $$
-    v(t)=\frac{mg}{\gamma} \biggl(1-e^{-\frac{\gamma}{m} t}\biggr) = \frac{245}{7}\biggl(1-e^{-\frac{7}{25} t}\biggr).
+    v(t)=\frac{mg}{\gamma} \biggl(1-e^{-\frac{\gamma}{m} t}\biggr) = 35\biggl(1-e^{-\frac{7}{25} t}\biggr).
 $$
 :::
 ::::
@@ -85,7 +85,7 @@ $$
 
 where $T$ is the temperature of the corpse, $\beta$ is a constant, and $T_R$ is room temperature. A normal body temperature for adults is generally around $98.6$<sup>o</sup>F ($37$<sup>o</sup>C).
 
-Note: **This will be a coursework question!**
+<!-- Note: **This will be a coursework question!** -->
 ::::
 
 

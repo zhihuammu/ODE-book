@@ -1,0 +1,721 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Linear Equations &#8212; Linear Multistep Methods</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=79838d2f" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=c73c0f3e"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "Laplace": ["\\mathscr{L}\\left\\{{#1}\\right\\}", 1], "invLaplace": ["\\mathscr{L}^{-1}\\left\\{{#1}\\right\\}", 1], "d": "\\mathrm{d}", "arcsec": "\\mathrm{arcsec}~", "arccot": "\\mathrm{arccot}~", "arccsc": "\\mathrm{arccsc}~", "sech": "\\mathrm{sech}", "csch": "\\mathrm{csch}", "dy": "~\\mathrm{d}y", "dx": "~\\mathrm{d}x", "ds": "~\\mathrm{d}s", "dt": "~\\mathrm{d}t", "i": "\\mathbf{i}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/append/chap02Clean';</script>
+    <link rel="icon" href="../../_static/odefavicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Index" href="../../genindex.html" />
+    <link rel="prev" title="TEST ONLY" href="chapZ_test.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Monday 30 March 2026 15:45:55"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo1.svg" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
+    <img src="../../_static/logo1.svg" class="logo__image only-dark pst-js-only" alt="Linear Multistep Methods - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/motivation.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/readingList.html">Further Reading List</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_symbols.html">Symbols and Notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_formula.html">Formulas and Theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_derivatives.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_integrals.html">Table of Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_Laplace.html">Laplace Transform</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_A0_DE.html">1. Introduction to Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A1_definition.html">1.1. Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A2_ode.html">1.2. Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A3_analytical.html">1.3. Analytical Methods for ODEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A4_applications.html">1.4. Applications of ODEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A5_exercise.html">1.5. Chapter 1 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">2. Complex Numbers and Difference Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_1_complexNumber.html">2.1. Complex Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_2_sequence.html">2.2. Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_3_differenceEquation.html">2.3. Difference Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_4_homogenous.html">2.4. Homogeneous Linear Difference Equations with Constant Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02/chap02_0.html">3. Gregory-Newton Interpolating Polynomial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_1_introduction.html">3.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_2_differenceOperator.html">3.2. Finite Difference Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_3_interpolation.html">3.3. Gregory-Newton Interpolation Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_4_differenceTable.html">3.4. Finite Difference Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_5_exercise.html">3.5. Chapter 3 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03/chap03_0.html">4. Multistep Methods: Derivation through Integration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_1_multistepMethod.html">4.1. Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_2_derivation.html">4.2. Derivation of Multistep Methods by Numerical Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_3_explicit.html">4.3. Explicit  Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_4_implicit.html">4.4. Implicit  Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_5_predictorCorrector.html">4.5. Predictor-Corrector Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_6_codes.html">4.6. Computer Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_7_exercise.html">4.7. Chapter 4 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04/chap04_0.html">5. Multistep Methods: Accuracy and Error Constants</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_1_errorIntegration.html">5.1. Derivation of Local Error Terms for Integration Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_2_errorConstant.html">5.2. Order and Error Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_3_MilineDevice.html">5.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_4_exercise.html">5.4. Chapter 5 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05/chap05_0.html">6. Multistep Methods: Zero-Stability and Convergence</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_1_experiment.html">6.1. An exploratory experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_2_rootCondition.html">6.2. Characteristic Polynomials and Root Condition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_3_convergence.html">6.3. Zero-Stability, Consistency and Convergence Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_4_exercise.html">6.4. Chapter 6 Exercise</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">7. Multistep Methods: Stability Interval and Region</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_experiment.html">7.1. An experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_stabilityInterval.html">7.2. Interval and Region of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_rootLocus.html">7.3. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_4_boundaryRootLocus.html">7.4. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exampleCode.html">7.5. Example MATLAB Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_6_exercise.html">7.6. Chapter 7 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">8. Stiff Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_1_introduction.html">8.1. Introduction and background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_2_stiffSystem.html">8.2. Stiff Systems of Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_3_method.html">8.3. Methods for Stiff Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_4_codeExample.html">8.4. MATLAB Program 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_5_exercise.html">8.5. Chapter 8 Exercise</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08/chap08_0.html">9. Sparse Matrices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_1_introduction.html">9.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_2_sparseMatrix.html">9.2. Sparse Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_3_graphTheory.html">9.3. Matrix Sparsity and Graph Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_4_storage.html">9.4. Sparse Matrices Storage and Reordering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_5_reordering.html">9.5. Reordering and Matrix Bandwidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_6_exercise.html">9.6. Chapter 9 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_7_answers.html">9.7. Answers to Chapter 9 Exercises</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapZ_test.html">TEST ONLY</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Linear Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://uk.mathworks.com/help/matlab/ordinary-differential-equations.html">ODE Solvers in Matlab</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/integrate.html">ODE Solvers in Scipy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chaps/append/chap02Clean.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Linear Equations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-balance-method">The ‘Balance’ Method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-linear-equations">Advanced Linear Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-equations-involving-brackets">Linear Equations Involving Brackets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-equations-involving-fractions">Linear Equations Involving Fractions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="linear-equations">
+<h1>Linear Equations<a class="headerlink" href="#linear-equations" title="Link to this heading">#</a></h1>
+<p>Learning objectives:</p>
+<ul class="simple">
+<li><p>Solve linear equations in one unknown in which the unknown appears
+on either side or on both sides of the equation using the
+‘<em>balance</em>’ method.</p></li>
+<li><p>Solve linear equations involving fractions.</p></li>
+</ul>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>A puzzle — I’m thinking of a number; 8 more than my number is 12. What
+number am I thinking of?</p>
+<p>Let <span class="math notranslate nohighlight">\(x\)</span> stand for the number I’m thinking of, then we have two equal
+quantities, one of which involves <span class="math notranslate nohighlight">\(x\)</span>, i.e. the information given above
+can be written as $<span class="math notranslate nohighlight">\(x+8=12
+\label{eq:2.1}\)</span>$</p>
+<p>This is an <strong>equation</strong> and we use the equals sign ‘=’ to denote that
+the two expressions are equal or equivalent. An equation consist of an =
+sign in the middle and two “sides”. In this equation the unknown <span class="math notranslate nohighlight">\(x\)</span>
+occurs only to the first power, it’s called a <strong>linear equation</strong>. It is
+often helpful to number equations so that we can easily refer to the
+whole equation.</p>
+<p>In order to keep equal quantities on both sides of an equation, we
+always do the same thing to both sides of the equation.</p>
+<p>We can find <span class="math notranslate nohighlight">\(x\)</span> by subtracting 8 from both sides of
+<a href="#eq:2.1" data-reference-type="eqref"
+data-reference="eq:2.1">[eq:2.1]</a> to give $<span class="math notranslate nohighlight">\(\begin{aligned}
+x+8-8 &amp; =12-8 \\
+\text{i.e.} \hspace{2cm} x &amp; =4
+\end{aligned}\)</span>$</p>
+<p>Another puzzle - I’m thinking of a number; 4 times my number is equal to
+20. What number am I thinking of?</p>
+<p>Again, let <span class="math notranslate nohighlight">\(x\)</span> stand for the number I’m thinking of, then the
+information given above can be written as $<span class="math notranslate nohighlight">\(4x=20
+\label{eq:2.2}\)</span><span class="math notranslate nohighlight">\( divide both sides of
+&lt;a href=&quot;#eq:2.2&quot; data-reference-type=&quot;eqref&quot;
+data-reference=&quot;eq:2.2&quot;&gt;[eq:2.2]&lt;/a&gt; by 4 and we get \)</span><span class="math notranslate nohighlight">\(x=5\)</span>$</p>
+</section>
+<section id="the-balance-method">
+<h2>The ‘Balance’ Method<a class="headerlink" href="#the-balance-method" title="Link to this heading">#</a></h2>
+<p>The guiding principle is simple but often forgotten. If the equation is
+to remain an equation then any change on one side must be matched by an
+equivalent change on the other. To change one side without changing the
+other to the same extent would mean that we could no longer use the
+equal sign. There are many ways of making these changes.</p>
+<p>Here are two of the most important:</p>
+<ol class="arabic">
+<li><p>We can add (or subtract) the same term to both sides.</p>
+<p>Suppose we have the equation $<span class="math notranslate nohighlight">\(x-8=3\)</span><span class="math notranslate nohighlight">\( Adding 8 to both sides gives
+us \)</span><span class="math notranslate nohighlight">\(x=11\)</span>$</p>
+</li>
+<li><p>We can multiply (or divide) both sides by the same term</p>
+<p>Suppose we have the equation $<span class="math notranslate nohighlight">\(2a=16b\)</span><span class="math notranslate nohighlight">\( Dividing both sides by 2
+gives us \)</span><span class="math notranslate nohighlight">\(a=8b\)</span>$</p>
+</li>
+</ol>
+<p>Suppose we have the equation $<span class="math notranslate nohighlight">\(4x+5=25\)</span><span class="math notranslate nohighlight">\( Subtracting 5 from both sides
+gives \)</span><span class="math notranslate nohighlight">\(4x=20\)</span><span class="math notranslate nohighlight">\( Dividing both sides by 4 gives us \)</span><span class="math notranslate nohighlight">\(x=5\)</span>$</p>
+<p><span id="exercise:2.1" label="exercise:2.1"></span> Solve the following
+equations.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x+5=20\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x-3=14\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2x=18\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{x}{3}=22\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(4+x=9\)</span></p></li>
+</ol>
+<p><span id="ex:2.1" label="ex:2.1"></span></p>
+</section>
+<section id="advanced-linear-equations">
+<h2>Advanced Linear Equations<a class="headerlink" href="#advanced-linear-equations" title="Link to this heading">#</a></h2>
+<p>All the equations in Exercise
+<a href="#ex:2.1" data-reference-type="ref"
+data-reference="ex:2.1">[ex:2.1]</a> could be solved using a single
+operation. Sadly most equations require two or more steps (sometimes
+many more steps) before the answer can be obtained. The steps often
+consist of eliminating unwanted terms.</p>
+<p>We are now going to look at solving linear equations in one unknown in
+which the unknown appears on either side or on both sides of the
+equation.</p>
+<p>Solve for <span class="math notranslate nohighlight">\(x\)</span> $<span class="math notranslate nohighlight">\(4x+2=x+14.\)</span><span class="math notranslate nohighlight">\( First we remove the \)</span>+2<span class="math notranslate nohighlight">\( from the Left Hand
+side of the equation above by subtracting 2 from both sides
+\)</span><span class="math notranslate nohighlight">\(4x-x=14-2.\)</span><span class="math notranslate nohighlight">\( Now to remove the \)</span>x<span class="math notranslate nohighlight">\( from the Right Hand side, we
+subtract \)</span>x<span class="math notranslate nohighlight">\( from both sides giving us the equation \)</span><span class="math notranslate nohighlight">\(3x=12.\)</span><span class="math notranslate nohighlight">\( Finally
+to remove the 3 multiplying \)</span>x<span class="math notranslate nohighlight">\( on the Left Hand side we divide both
+sides by 3. The solution of the equation is therefore \)</span><span class="math notranslate nohighlight">\(x=4.\)</span>$</p>
+<p>Solve for <span class="math notranslate nohighlight">\(x\)</span> $<span class="math notranslate nohighlight">\(\frac{x}{7}-4=8\)</span><span class="math notranslate nohighlight">\( First we add \)</span>4<span class="math notranslate nohighlight">\( to both sides
+\)</span><span class="math notranslate nohighlight">\(\frac{x}{7}=12,\)</span><span class="math notranslate nohighlight">\( and now we multiply both sides by \)</span>7<span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(x=84.\)</span>$</p>
+<p>Remember that at every stage of the solution both sides of the equation
+must be treated in the same way.</p>
+<p><span id="exercise:2.2" label="exercise:2.2"></span> Solve the following
+equations.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(6x+1=10\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3y-5=13\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(4z+3=3z+12\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(5u-8=4u+11\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(6+11t=8t+15\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(16-2s=4+4s\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{8+r}{3}=3r\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{1-q}{5}=\dfrac{1+q}{7}\)</span></p></li>
+</ol>
+</section>
+<section id="linear-equations-involving-brackets">
+<h2>Linear Equations Involving Brackets<a class="headerlink" href="#linear-equations-involving-brackets" title="Link to this heading">#</a></h2>
+<p>The cost of jeans in Matalan is £10 less than in M&amp;S and I can buy 2
+pairs in Matalan for £5 more than I pay in M&amp;S. How much do they cost in
+M&amp;S?</p>
+<p>Let <span class="math notranslate nohighlight">\(x\)</span> stand for the cost in M&amp;S, then the cost in Matalan is <span class="math notranslate nohighlight">\(x-10\)</span></p>
+<p>Equating the costs of the purchases we get $<span class="math notranslate nohighlight">\(2(x-10)=x+5
+\label{eq:2.3}\)</span>$</p>
+<p></p>
+<ul class="simple">
+<li><p>So that we can separate out the <em><strong>x’s</strong></em> from the numbers, we need
+to expand <span class="math notranslate nohighlight">\(2(x-10)\)</span> in its equivalent form of <span class="math notranslate nohighlight">\(2x-20\)</span>.<br />
+<a href="#eq:2.3" data-reference-type="eqref"
+data-reference="eq:2.3">[eq:2.3]</a> can now be written as
+$<span class="math notranslate nohighlight">\(2x-20=x+5
+            \label{eq:2.4}\)</span>$</p></li>
+<li><p>We need the terms involving <span class="math notranslate nohighlight">\(x\)</span> in
+<a href="#eq:2.4" data-reference-type="eqref"
+data-reference="eq:2.4">[eq:2.4]</a> all together on one side of the
+equality, so we subtract <span class="math notranslate nohighlight">\(x\)</span> from both sides so there is no <span class="math notranslate nohighlight">\(x\)</span> on
+the right hand side $<span class="math notranslate nohighlight">\(2x-x-20=x-x+5\)</span><span class="math notranslate nohighlight">\( Collecting like terms we have
+\)</span><span class="math notranslate nohighlight">\(x-20=5\)</span><span class="math notranslate nohighlight">\( Adding 20 to both sides we get \)</span><span class="math notranslate nohighlight">\(x=25\)</span>$</p></li>
+</ul>
+</section>
+<section id="linear-equations-involving-fractions">
+<h2>Linear Equations Involving Fractions<a class="headerlink" href="#linear-equations-involving-fractions" title="Link to this heading">#</a></h2>
+<p>Consider Exercise <a href="#exercise:2.2" data-reference-type="ref"
+data-reference="exercise:2.2">[exercise:2.2]</a> number 8
+$<span class="math notranslate nohighlight">\(\frac{1-q}{5}=\frac{1+q}{7}
+\label{eq:2.5}\)</span><span class="math notranslate nohighlight">\( Multiplying both sides by 5 gives
+\)</span><span class="math notranslate nohighlight">\(1-q=\frac{5(1+q)}{7}
+\label{eq:2.6}\)</span><span class="math notranslate nohighlight">\( Multiplying both sides by 7 gives \)</span><span class="math notranslate nohighlight">\(7(1-q)=5(1+q)
+\label{eq:2.7}\)</span><span class="math notranslate nohighlight">\( We could omit the middle step and go straight from
+equation &lt;a href=&quot;#eq:2.5&quot; data-reference-type=&quot;eqref&quot;
+data-reference=&quot;eq:2.5&quot;&gt;[eq:2.5]&lt;/a&gt; to
+&lt;a href=&quot;#eq:2.7&quot; data-reference-type=&quot;eqref&quot;
+data-reference=&quot;eq:2.7&quot;&gt;[eq:2.7]&lt;/a&gt;. This method is sometimes known as
+**cross multiplication**.
+\)</span><span class="math notranslate nohighlight">\(\dfrac{1-q \tikzmark{a}}{5\tikzmark{b}}=\dfrac{\tikzmark{c}1+q}{\tikzmark{d}7}
+\crossmultiplynd{a}{d}
+\crossmultiplydn{b}{c}\)</span>$</p>
+<p>Find <span class="math notranslate nohighlight">\(x\)</span> when $<span class="math notranslate nohighlight">\(\dfrac{1+x}{1-x}=4\)</span><span class="math notranslate nohighlight">\( First we multiply both sides of the
+equation by \)</span>1-x<span class="math notranslate nohighlight">\(, \)</span><span class="math notranslate nohighlight">\(1+x=4(1-x).\)</span><span class="math notranslate nohighlight">\( Now multiply out the brackets on the
+Right Hand side, \)</span><span class="math notranslate nohighlight">\(1+x=4-4x\)</span><span class="math notranslate nohighlight">\( Bring terms in \)</span>x<span class="math notranslate nohighlight">\( to the same side of the
+equation by adding \)</span>4x<span class="math notranslate nohighlight">\( to both sides \)</span><span class="math notranslate nohighlight">\(1+x+4x=4\)</span><span class="math notranslate nohighlight">\( Collect terms to get
+\)</span><span class="math notranslate nohighlight">\(1+5x=4\)</span><span class="math notranslate nohighlight">\( Subtract \)</span>1<span class="math notranslate nohighlight">\( from both sides of the equation to get \)</span><span class="math notranslate nohighlight">\(5x=3\)</span><span class="math notranslate nohighlight">\(
+Finally, divide both sides by \)</span>5<span class="math notranslate nohighlight">\( to get \)</span><span class="math notranslate nohighlight">\(x=\frac{3}{5}\)</span>$</p>
+<p><span id="exercise:2.3" label="exercise:2.3"></span> Find the value of
+<span class="math notranslate nohighlight">\(x\)</span> satisfying each of the following equations.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(14-3x=5(x-10)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3(x+2)=8-(2-x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(5=\dfrac{x+3}{x-3}\)</span></p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chaps\append"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapZ_test.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">TEST ONLY</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../genindex.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Index</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-balance-method">The ‘Balance’ Method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-linear-equations">Advanced Linear Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-equations-involving-brackets">Linear Equations Involving Brackets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-equations-involving-fractions">Linear Equations Involving Fractions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Zhihua Ma
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023--2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Monday 30 March 2026 15:45:55.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
