@@ -66,8 +66,8 @@ parts:
   - caption: Appendix
     numbered: false
     chapters:  
-    - file: chaps/append/chap01
-    - file: chaps/append/chap02        
+    # - file: chaps/append/chap01
+    # - file: chaps/append/chap02        
     - file: genindex
     - url: https://uk.mathworks.com/help/matlab/ordinary-differential-equations.html
       title: ODE Solvers in Matlab
