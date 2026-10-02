@@ -85,7 +85,8 @@ Substituting Eq. {eq}`eq:DE:linear:homo:sol` into Eq. {eq}`eq:DE:linear:homogene
 ~ = ~ & 0 
 \end{align*} -->
 
-Note: **There will be a coursework question asking you to prove this theorem.**
+<!-- Note: **There will be a coursework question asking you to prove this theorem.** -->
+**Try proving this theorem by yourself!**
 ::::
 
 
