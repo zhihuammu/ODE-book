@@ -102,7 +102,7 @@ name: RCL circuit
 A simple RLC series circuit.
 ```
 
-The current, $I$, in a RLC circuit satisfies
+The current, $I$, in a RLC (resistor-inductor-capacitor) circuit satisfies
 
 $$ 
 	L \diff[2]{I}{t} + R \diff{I}{t} + \frac{1}{C} I = \diff{E}{t}.
