@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>7.1. An experiment &#8212; Linear Multistep Methods</title>
   
@@ -30,11 +30,11 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
@@ -49,11 +49,11 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=c73c0f3e"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../../_static/tabs.js?v=3ee01567"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Monday 12 October 2026 15:17:47"/>
+    <meta name="docbuild:last-update" content="Friday 02 October 2026 10:30:51"/>
   </head>
   
   
@@ -364,7 +364,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -388,7 +388,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -477,8 +477,8 @@ y_{j+1} = y_j + \frac{h}{24}\left(\,55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}\rig
 <p>Using Python to calculate the error constant</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">fractions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fraction</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span>
 
 <span class="n">a0</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>      
 <span class="n">a1</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>      
@@ -547,22 +547,22 @@ z_{1,2,3}=0, z_4=1.
 <li><p>First, let’s try a step size <span class="math notranslate nohighlight">\(h=0.05\)</span></p></li>
 </ul>
 <div class="cell tag_hide-input docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;text.usetex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">lam</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">lam</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">lam</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">y</span><span class="o">+</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">lam</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">lam</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">lam</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">t</span><span class="p">;</span>
 
 <span class="c1">#interval of definition</span>
@@ -653,28 +653,28 @@ z_{1,2,3}=0, z_4=1.
  20  1.000 1.44419e+00 -3.44187e+00 1.00005e+00 4.44142e-01
 </pre></div>
 </div>
-<img alt="../../_images/759ee9c5e187619900d000c9d24968dc21b977062b19de6de0e1db90eeadef04.svg" src="../../_images/759ee9c5e187619900d000c9d24968dc21b977062b19de6de0e1db90eeadef04.svg" /></div>
+<img alt="../../_images/c2a2490e14a6028126e3f7e3481b533547f4b8cca2495735ad11875339ad6344.svg" src="../../_images/c2a2490e14a6028126e3f7e3481b533547f4b8cca2495735ad11875339ad6344.svg" /></div>
 </div>
 <ul class="simple">
 <li><p>It seems the errors are too large, so let’s try a smaller step size <span class="math notranslate nohighlight">\(h=0.025\)</span>.</p></li>
 </ul>
 <div class="cell tag_hide-input docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;text.usetex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">lam</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">lam</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">lam</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">y</span><span class="o">+</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">lam</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">yexact</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">lam</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">lam</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">t</span><span class="p">;</span>
 
 <span class="c1">#interval of definition</span>
@@ -785,7 +785,7 @@ z_{1,2,3}=0, z_4=1.
  40  1.000 1.00005e+00 9.99533e-01 1.00005e+00 1.31874e-06
 </pre></div>
 </div>
-<img alt="../../_images/9eca815fbdf1b4200e932c825b7dc3cfe608da12f44cd3259073681800df31c1.svg" src="../../_images/9eca815fbdf1b4200e932c825b7dc3cfe608da12f44cd3259073681800df31c1.svg" /></div>
+<img alt="../../_images/3cc8d5376eb9a2878683e91b0642e042f072cfb3400e7fffe787ef3e17400043.svg" src="../../_images/3cc8d5376eb9a2878683e91b0642e042f072cfb3400e7fffe787ef3e17400043.svg" /></div>
 </div>
 <p>The solution looks quite good now.</p>
 <div class="question admonition">
@@ -813,7 +813,7 @@ z_{1,2,3}=0, z_4=1.
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/06"
+            path: "./chaps\06"
         },
         predefinedOutput: true
     }
@@ -859,11 +859,12 @@ z_{1,2,3}=0, z_4=1.
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy">7.1.1. Accuracy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-stability">7.1.2. Zero-stability</a></li>
@@ -902,7 +903,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Monday 12 October 2026 15:17:47.
+  Last updated on Friday 02 October 2026 10:30:51.
   <br/>
 </p>
   </div>
