@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>3.2. Finite Difference Operators &#8212; Linear Multistep Methods</title>
   
@@ -30,11 +30,11 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
@@ -49,11 +49,11 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=c73c0f3e"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../_static/tabs.js?v=3ee01567"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Friday 02 October 2026 10:30:51"/>
+    <meta name="docbuild:last-update" content="Monday 12 October 2026 15:17:47"/>
   </head>
   
   
@@ -364,7 +364,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -388,7 +388,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -462,13 +462,13 @@
 <p class="admonition-title"><span class="caption-number">Definition 3.1 </span> (Forward Difference)</p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order <span class="target" id="index-1"></span>forward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between the next member and itself:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-05751878-c522-46d5-8f30-476eacd3cfc0">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-05751878-c522-46d5-8f30-476eacd3cfc0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-13dec30b-ec32-4078-86ed-0486c6bd5377">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-13dec30b-ec32-4078-86ed-0486c6bd5377" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta f_j = f_{j+1} - f_j,
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k-\)</span>th order forward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e27e85cd-0b71-4170-810a-9a507755dcf1">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-e27e85cd-0b71-4170-810a-9a507755dcf1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-769448e0-e883-409c-864d-af0d4ab984a3">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-769448e0-e883-409c-864d-af0d4ab984a3" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta^k f_j= \Delta\left(\Delta^{k-1} f_j \right).
 \end{equation}\]</div>
 </section>
@@ -490,21 +490,21 @@
 <li><p><strong>Second-order Forward Difference</strong>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-    \Delta^2 f_j &amp; = \Delta(\Delta f_j) \\
-                &amp; = \Delta(f_{j+1} - f_j) \\
-                &amp; = \Delta(f_{j+1}) - \Delta(f_j) \\
-                &amp; = (f_{j+2} - f_{j+1}) - (f_{j+1} - f_j) \\
-                &amp; = f_{j+2} - 2f_{j+1} + f_j
-  \end{align*}\]</div>
+  \Delta^2 f_j &amp; = \Delta(\Delta f_j) \\
+              &amp; = \Delta(f_{j+1} - f_j) \\
+              &amp; = \Delta(f_{j+1}) - \Delta(f_j) \\
+              &amp; = (f_{j+2} - f_{j+1}) - (f_{j+1} - f_j) \\
+              &amp; = f_{j+2} - 2f_{j+1} + f_j
+\end{align*}  \]</div>
 </li>
 <li><p><strong>Third-order Forward Difference</strong>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-    \Delta^3 f_j &amp; = \Delta(\Delta^2 f_j)\\
-                &amp; =\Delta(f_{j+2} - 2f_{j+1} + f_j)  \\
-                &amp; = (f_{j+3}-f_{j+2}) - 2(f_{j+2}-f_{j+1}) + (f_{j+1} - f_{j}) \\
-                &amp; = f_{j+3} - 3f_{j+2} + 3f_{j+1} - f_j
-  \end{align*}\]</div>
+  \Delta^3 f_j &amp; = \Delta(\Delta^2 f_j)\\
+              &amp; =\Delta(f_{j+2} - 2f_{j+1} + f_j)  \\
+              &amp; = (f_{j+3}-f_{j+2}) - 2(f_{j+2}-f_{j+1}) + (f_{j+1} - f_{j}) \\
+              &amp; = f_{j+3} - 3f_{j+2} + 3f_{j+1} - f_j
+\end{align*}  \]</div>
 </li>
 <li><p><strong>Higher-order Forward Difference</strong>:</p>
 <div class="math notranslate nohighlight">
@@ -520,13 +520,13 @@
 <p class="admonition-title"><span class="caption-number">Definition 3.2 </span> (Backward Difference)</p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order <span class="target" id="index-2"></span>backward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between itself and the previous member:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-32a9d885-99da-4ed6-8ee2-b09e91a3364f">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-32a9d885-99da-4ed6-8ee2-b09e91a3364f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ac67c256-c143-4eec-a626-16b37cf83f02">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-ac67c256-c143-4eec-a626-16b37cf83f02" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla f_j = f_{j} - f_{j-1},
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k\)</span>-th order backward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-91181fdb-ba05-46ba-9b04-db0fd0fdbd18">
-<span class="eqno">(3.4)<a class="headerlink" href="#equation-91181fdb-ba05-46ba-9b04-db0fd0fdbd18" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-147bf71b-b9b2-4676-b876-08ddc6f55dd3">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-147bf71b-b9b2-4676-b876-08ddc6f55dd3" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla^k f_j= \nabla\left(\nabla^{k-1} f_j \right).
 \end{equation}\]</div>
 </section>
@@ -548,21 +548,21 @@
 <li><p><strong>Second-order Backward Difference</strong>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-  \nabla^2 f_j &amp; = \nabla(\nabla(f_j)) \\
-              &amp; = \nabla(f_j - f_{j-1}) \\
-              &amp; = \nabla(f_j) - \nabla(f_{j-1}) \\
-              &amp; = (f_j - f_{j-1}) - (f_{j-1} - f_{j-2}) \\
-              &amp; = f_j - 2f_{j-1} + f_{j-2} 
-  \end{align*}\]</div>
+\nabla^2 f_j &amp; = \nabla(\nabla(f_j)) \\
+            &amp; = \nabla(f_j - f_{j-1}) \\
+            &amp; = \nabla(f_j) - \nabla(f_{j-1}) \\
+            &amp; = (f_j - f_{j-1}) - (f_{j-1} - f_{j-2}) \\
+            &amp; = f_j - 2f_{j-1} + f_{j-2} 
+\end{align*}                     \]</div>
 </li>
 <li><p><strong>Third-order Backward Difference</strong>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-    \nabla^3 f_j &amp; = \nabla(\nabla^2 f_j)\\
-                &amp; =\nabla(f_{j} - 2f_{j-1} + f_{j-2})  \\
-                &amp; = (f_{j}-f_{j-1}) - 2(f_{j-1}-f_{j-2}) + (f_{j-2} - f_{j-3}) \\
-                &amp; = f_j - 3f_{j-1} + 3f_{j-2} - f_{j-3}
-  \end{align*}\]</div>
+  \nabla^3 f_j &amp; = \nabla(\nabla^2 f_j)\\
+              &amp; =\nabla(f_{j} - 2f_{j-1} + f_{j-2})  \\
+              &amp; = (f_{j}-f_{j-1}) - 2(f_{j-1}-f_{j-2}) + (f_{j-2} - f_{j-3}) \\
+              &amp; = f_j - 3f_{j-1} + 3f_{j-2} - f_{j-3}
+\end{align*}  \]</div>
 </li>
 <li><p><strong>Higher-order Forward Difference</strong>:</p>
 <div class="math notranslate nohighlight">
@@ -581,8 +581,8 @@
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>,
 we define <span class="math notranslate nohighlight">\(\E\)</span> as an operator <span class="target" id="index-3"></span>shifting a member in a sequence to the next member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a4110c8a-b100-42e1-9525-f3c0f1787d9a">
-<span class="eqno">(3.5)<a class="headerlink" href="#equation-a4110c8a-b100-42e1-9525-f3c0f1787d9a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a931e232-1957-4703-a0ef-d90fa18a137f">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-a931e232-1957-4703-a0ef-d90fa18a137f" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \E  f_j = f_{j+1},
 \end{equation}\]</div>
 <p>and shifting a member forward <span class="math notranslate nohighlight">\(k\)</span> times gives</p>
@@ -590,8 +590,8 @@ we define <span class="math notranslate nohighlight">\(\E\)</span> as an operato
 \[\E ^k f_j= \E  (\E ^{k-1}f_j)= f_{j+k}.\]</div>
 <p>Similarly, we define <span class="math notranslate nohighlight">\(\E ^{-1}\)</span> as an operator shifting a member in a
 sequence to the previous member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5a2971b-4c72-4380-96bf-1dd37f3a0c7d">
-<span class="eqno">(3.6)<a class="headerlink" href="#equation-b5a2971b-4c72-4380-96bf-1dd37f3a0c7d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-048c8b51-183a-4a7c-ab73-68b0e6602ac0">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-048c8b51-183a-4a7c-ab73-68b0e6602ac0" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \E ^{-1} f_j = f_{j-1}
 \end{equation}\]</div>
 <p>and shifting a member backward <span class="math notranslate nohighlight">\(k\)</span> (<span class="math notranslate nohighlight">\(k&gt;0\)</span>) times gives</p>
@@ -680,7 +680,7 @@ relations:</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\02"
+            path: "./chaps/02"
         },
         predefinedOutput: true
     }
@@ -726,12 +726,11 @@ relations:</p>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+  <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-data-points-and-general-sequences">3.2.1. Discrete Data Points and General Sequences</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-difference-operator-delta">3.2.2. Forward Difference Operator <span class="math notranslate nohighlight">\(\Delta\)</span></a></li>
@@ -770,7 +769,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 02 October 2026 10:30:51.
+  Last updated on Monday 12 October 2026 15:17:47.
   <br/>
 </p>
   </div>

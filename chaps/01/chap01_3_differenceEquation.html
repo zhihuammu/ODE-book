@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>2.3. Difference Equations &#8212; Linear Multistep Methods</title>
   
@@ -30,11 +30,11 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
@@ -49,11 +49,11 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=c73c0f3e"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../_static/tabs.js?v=3ee01567"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Friday 02 October 2026 10:30:51"/>
+    <meta name="docbuild:last-update" content="Monday 12 October 2026 15:17:47"/>
   </head>
   
   
@@ -364,7 +364,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -416,8 +416,8 @@
   <section class="tex2jax_ignore mathjax_ignore" id="difference-equations">
 <h1><span class="section-number">2.3. </span>Difference Equations<a class="headerlink" href="#difference-equations" title="Link to this heading">#</a></h1>
 <p>For some sequences, their algebraic expressions are directly given, such as the sequences we defined in <a class="reference internal" href="chap01_2_sequence.html#equation-eq-sequence-example-1">(2.6)</a> and <a class="reference internal" href="chap01_2_sequence.html#equation-eq-sequence-example-2">(2.7)</a>. While for some other sequences, a member of a sequence <span class="math notranslate nohighlight">\(y_n\)</span> is determined by one or several previous members of the sequence, e.g.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9cd91024-2e6a-4634-91ac-f065784a6767">
-<span class="eqno">(2.8)<a class="headerlink" href="#equation-9cd91024-2e6a-4634-91ac-f065784a6767" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b801c9f5-8f74-43c1-b240-8508b9296527">
+<span class="eqno">(2.8)<a class="headerlink" href="#equation-b801c9f5-8f74-43c1-b240-8508b9296527" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp; y_n = y_{n-1}, \\
 &amp; y_n = y_{n-1}+3, \\
 &amp; y_n = 2y_{n-1}, \\
@@ -554,7 +554,7 @@ a_0(n) y_n + a_1(n) y_{n+1} + a_2(n) y_{n+2} + \ldots + a_k(n) y_{n+k} = 0,
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\01"
+            path: "./chaps/01"
         },
         predefinedOutput: true
     }
@@ -624,7 +624,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 02 October 2026 10:30:51.
+  Last updated on Monday 12 October 2026 15:17:47.
   <br/>
 </p>
   </div>
