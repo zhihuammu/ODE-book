@@ -219,5 +219,5 @@ Use Newton's general binomial theorem to expand $(1-\nabla)^{-s}$
 ::::{solution} ch2-ex-q4
 :class: dropdown
 
-- {download}`handwritten full solution for Exercise 2.7 </exSol/Ex2/Ex2_Q7_solution_annotated.pdf>`
+- {download}`handwritten full solution for Exercise 3.7 </exSol/Ex2/Ex2_Q7_solution_annotated.pdf>`
 ::::
