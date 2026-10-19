@@ -6,7 +6,7 @@ point to compute the solution at the next. The methods thus obtained are simple
 and easy to program. On the other hand, they are inefficient in that they do not
 make use of all the previous computed results.
 
-It seems plausible that more
+It seems plausible that higher
 accuracy can be obtained if the values of $\,y_{j+1}\,$ is made to depend not
 only on $y_j$ but also on $y_{j-1}$ and $y_{j-2}$, for example. However, one-step methods are
 useful for calculating the first few starting points. Once the values at a
