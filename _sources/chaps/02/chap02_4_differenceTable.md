@@ -213,7 +213,7 @@ $\,\sin(0.55) = 0.5227\,$ to $4$ decimal places.
 
 -   $3^\text{rd}$ order differences are constant;
 
--   the function can be approximated by a $3^\text{rd}$ order
+-   the function can be approximated by a $3^\text{rd}$-degree
     polynomial 
     $f(x)=x^3$;
 
