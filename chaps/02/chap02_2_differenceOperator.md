@@ -145,7 +145,13 @@ $$\nabla f(x) = f(x)-f(x-h)$$
                       - \frac{n(n-1)(n-2)}{3!}f_{j-3} + \dots
   $$  
 
-
+```{figure} /images/02/difference-show.svg
+---
+height: 350px
+name: differences
+---
+Forward and backward differences.
+```
 
 ## Shift operators $\E$ and $\E ^{-1}$
 ::::{prf:definition}

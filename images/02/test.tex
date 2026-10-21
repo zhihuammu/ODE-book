@@ -1,0 +1,43 @@
+% \usepackage[usenames,dvipsnames]{pstricks}
+% \usepackage{pstricks-add}
+% \usepackage{epsfig}
+% \usepackage{pst-grad} % For gradients
+% \usepackage{pst-plot} % For axes
+% \usepackage[space]{grffile} % For spaces in paths
+% \usepackage{etoolbox} % For spaces in paths
+% \makeatletter % For spaces in paths
+% \patchcmd\Gread@eps{\@inputcheck#1 }{\@inputcheck"#1"\relax}{}{}
+% \makeatother
+% 
+\begin{figure}
+\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+{
+\begin{pspicture}(0,-4.8539243)(9.930992,2.2365048)
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 5.0,arrowlength=2.0,arrowinset=0.0]{->}(0.010042846,-4.0995674)(9.410043,-4.1195674)
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 5.0,arrowlength=2.0,arrowinset=0.0]{->}(0.85626674,-4.8438177)(0.8904603,1.571021)
+\rput[bl](9.6109915,-4.251294){\Large{$x$}}
+\rput[bl](0.7620732,1.7465049){\Large{$f$}}
+\psbezier[linecolor=black, linewidth=0.04](0.14658934,-3.55302)(1.1399078,-3.6293762)(2.392077,-3.2162764)(3.8675401,-2.4574422895192445)(5.3430033,-1.6986082)(6.355644,-0.43028882)(6.6014614,0.19654973)
+\pscircle[linecolor=black, linewidth=0.02, fillstyle=solid,fillcolor=black, dimen=outer](3.9162207,-2.3774812){0.10071429}
+\pscircle[linecolor=black, linewidth=0.02, fillstyle=solid,fillcolor=black, dimen=outer](5.653202,-1.0758684){0.10071429}
+\pscircle[linecolor=black, linewidth=0.02, fillstyle=solid,fillcolor=black, dimen=outer](1.9163358,-3.2657301){0.10071429}
+\psline[linecolor=black, linewidth=0.02, linestyle=dashed, dash=0.17638889cm 0.10583334cm](1.9093716,-3.337971)(1.8972749,-4.135955)
+\psline[linecolor=blue, linewidth=0.04](3.9017103,-2.398455)(3.8767104,-3.241116)
+\psline[linecolor=magenta, linewidth=0.04](5.669049,-1.0907935)(5.6569524,-2.406116)
+\rput[bl](3.7746065,-4.6906915){\large{$x$}}
+\rput[bl](4.9859443,-4.72136){\large{$x+h$}}
+\rput[bl](1.3178157,-4.7371645){\large{$x-h$}}
+\rput[bl](1.175299,-2.405834){\large{$f(x-h)$}}
+\rput[bl](3.3172345,-1.9413177){\large{$f(x)$}}
+\rput[bl](4.4140086,-0.8058339){\large{$f(x+h)$}}
+\psline[linecolor=black, linewidth=0.02, linestyle=dashed, dash=0.17638889cm 0.10583334cm](2.0011055,-3.2574468)(3.923686,-3.2445436)
+\psline[linecolor=black, linewidth=0.02, linestyle=dashed, dash=0.17638889cm 0.10583334cm](3.9365892,-2.405834)(5.678525,-2.3929305)
+\rput[bl](5.7559443,-1.9155113){\textcolor{magenta}{$\Delta f(x)=f(x+h)-f(x)$}}
+\rput[bl](5.872073,-3.67035){\textcolor{blue}{$\nabla f(x)=f(x)-f(x-h)$}}
+\psline[linecolor=black, linewidth=0.02, linestyle=dashed, dash=0.17638889cm 0.10583334cm](3.8900168,-3.3444226)(3.87792,-4.1424065)
+\psline[linecolor=black, linewidth=0.02, linestyle=dashed, dash=0.17638889cm 0.10583334cm](5.6642103,-2.4992614)(5.6650167,-4.1230516)
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.872073,-3.4638984)(3.9494925,-2.7929306)
+\end{pspicture}
+}
+\end{figure}
+
