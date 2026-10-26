@@ -47,9 +47,9 @@ Some of the more common implicit methods are listed below:
     ~\ x_j < z_j < x_{j+1}$.
 
 It is important to compare an $m$--step Adams--Bashforth open method to
-an $(m\!-\!1)$--step Adams--Moulton closed method. Both require $m$
+an $(m-1)$--step Adams--Moulton closed method. Both require $m$
 evaluations of $f$ per step, and both have the terms
-$\,y^{m\!+\!1}(z)\,h^{m\!+\!1}\,$ in their local truncation errors. In
+$y^{(m+1)}(z)h^{m+1}\,$ in their local truncation errors. In
 general, the coefficients of the terms involving $f$ and those in the
 local truncation error are smaller for the Adams--Moulton methods. This
 means a greater stability for the closed methods and smaller rounding

@@ -1,43 +1,105 @@
-% \usepackage[usenames,dvipsnames]{pstricks}
-% \usepackage{pstricks-add}
-% \usepackage{epsfig}
-% \usepackage{pst-grad} % For gradients
-% \usepackage{pst-plot} % For axes
-% \usepackage[space]{grffile} % For spaces in paths
-% \usepackage{etoolbox} % For spaces in paths
-% \makeatletter % For spaces in paths
-% \patchcmd\Gread@eps{\@inputcheck#1 }{\@inputcheck"#1"\relax}{}{}
-% \makeatother
-% 
-\begin{figure}
-\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
-{
-\begin{pspicture}(0,-4.8539243)(9.930992,2.2365048)
-\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 5.0,arrowlength=2.0,arrowinset=0.0]{->}(0.010042846,-4.0995674)(9.410043,-4.1195674)
-\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 5.0,arrowlength=2.0,arrowinset=0.0]{->}(0.85626674,-4.8438177)(0.8904603,1.571021)
-\rput[bl](9.6109915,-4.251294){\Large{$x$}}
-\rput[bl](0.7620732,1.7465049){\Large{$f$}}
-\psbezier[linecolor=black, linewidth=0.04](0.14658934,-3.55302)(1.1399078,-3.6293762)(2.392077,-3.2162764)(3.8675401,-2.4574422895192445)(5.3430033,-1.6986082)(6.355644,-0.43028882)(6.6014614,0.19654973)
-\pscircle[linecolor=black, linewidth=0.02, fillstyle=solid,fillcolor=black, dimen=outer](3.9162207,-2.3774812){0.10071429}
-\pscircle[linecolor=black, linewidth=0.02, fillstyle=solid,fillcolor=black, dimen=outer](5.653202,-1.0758684){0.10071429}
-\pscircle[linecolor=black, linewidth=0.02, fillstyle=solid,fillcolor=black, dimen=outer](1.9163358,-3.2657301){0.10071429}
-\psline[linecolor=black, linewidth=0.02, linestyle=dashed, dash=0.17638889cm 0.10583334cm](1.9093716,-3.337971)(1.8972749,-4.135955)
-\psline[linecolor=blue, linewidth=0.04](3.9017103,-2.398455)(3.8767104,-3.241116)
-\psline[linecolor=magenta, linewidth=0.04](5.669049,-1.0907935)(5.6569524,-2.406116)
-\rput[bl](3.7746065,-4.6906915){\large{$x$}}
-\rput[bl](4.9859443,-4.72136){\large{$x+h$}}
-\rput[bl](1.3178157,-4.7371645){\large{$x-h$}}
-\rput[bl](1.175299,-2.405834){\large{$f(x-h)$}}
-\rput[bl](3.3172345,-1.9413177){\large{$f(x)$}}
-\rput[bl](4.4140086,-0.8058339){\large{$f(x+h)$}}
-\psline[linecolor=black, linewidth=0.02, linestyle=dashed, dash=0.17638889cm 0.10583334cm](2.0011055,-3.2574468)(3.923686,-3.2445436)
-\psline[linecolor=black, linewidth=0.02, linestyle=dashed, dash=0.17638889cm 0.10583334cm](3.9365892,-2.405834)(5.678525,-2.3929305)
-\rput[bl](5.7559443,-1.9155113){\textcolor{magenta}{$\Delta f(x)=f(x+h)-f(x)$}}
-\rput[bl](5.872073,-3.67035){\textcolor{blue}{$\nabla f(x)=f(x)-f(x-h)$}}
-\psline[linecolor=black, linewidth=0.02, linestyle=dashed, dash=0.17638889cm 0.10583334cm](3.8900168,-3.3444226)(3.87792,-4.1424065)
-\psline[linecolor=black, linewidth=0.02, linestyle=dashed, dash=0.17638889cm 0.10583334cm](5.6642103,-2.4992614)(5.6650167,-4.1230516)
-\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.872073,-3.4638984)(3.9494925,-2.7929306)
-\end{pspicture}
-}
-\end{figure}
+\documentclass{standalone}
+%\documentclass[convert={outfile=\fig-interpolation.svg}]{standalone}
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usepackage{calc}
+\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes}
 
+\usepackage{tkz-euclide}
+\usetikzlibrary{
+	angles,
+	quotes,
+}
+\usepackage{pgfplots}
+
+
+\usepackage{xcolor}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.0]
+	% Coordinate axes
+	\draw[black, line width=0.04cm, ->]
+	(0.010042846,-4.1645675) -- (9.410043,-4.1845675);
+	
+	\draw[black, line width=0.04cm, ->]
+	(0.85626674,-4.908818) -- (0.8904603,1.506021);
+	
+	% Axis labels
+	\node[anchor=west] at (9.6109915,-4.316294) {$x$};
+	\node[anchor=west] at (0.7620732,1.6815048) {$y$};
+	
+	% Function curve
+	\draw[black, line width=0.04cm]
+	(0.14658934,-3.61802)
+	.. controls (1.1399078,-3.6943762)
+	and (2.392077,-3.2812765)
+	.. (3.8675401,-2.522442289519245)
+	.. controls (5.3430033,-1.7636082)
+	and (6.355644,-0.49528882)
+	.. (6.6014614,0.13154973);
+	
+	% Points on the curve
+	\filldraw[black, line width=1pt]
+	(3.9162207,-2.4424813) circle (0.10071429);
+	
+	\filldraw[black, line width=1pt]
+	(5.653202,-1.1408684) circle (0.10071429);
+	
+	\filldraw[black, line width=1pt]
+	(1.9163358,-3.3307302) circle (0.10071429);
+	
+	% Dashed projection lines
+	\draw[black, line width=1pt, dashed, dash pattern=on 0.17638889cm off 0.10583334cm]
+	(1.9,-3.40) -- (1.9,-4.20);
+	
+	\draw[black, line width=1pt, dashed, dash pattern=on 0.17638889cm off 0.10583334cm]
+	(2.00,-3.32) -- (3.95,-3.32);
+	
+	\draw[black, line width=1pt, dashed, dash pattern=on 0.17638889cm off 0.10583334cm]
+	(3.94,-2.46) -- (5.68,-2.46);
+	
+	\draw[black, line width=1pt, dashed, dash pattern=on 0.17638889cm off 0.10583334cm]
+	(3.92,-3.33) -- (3.92,-4.15);
+	
+	\draw[black, line width=1pt, dashed, dash pattern=on 0.17638889cm off 0.10583334cm]
+	(5.66,-2.56) -- (5.66,-4.19);
+	
+	% Forward and backward differences
+	\draw[blue, line width=0.04cm]
+	(3.92,-2.5) -- (3.92,-3.32);
+	
+	\draw[magenta, line width=0.04cm]
+	(5.66,-1.1557935) -- (5.66,-2.471116);
+	
+	% Horizontal-axis sample labels
+	\node[anchor=west] at (3.8,-4.73) {$x$};
+	\node[anchor=west] at (5.0,-4.7) {$x+h$};
+	\node[anchor=west] at (1.3,-4.7) {$x-h$};
+	
+	% Function-value labels
+	\node[anchor=west] at (1.0, -2.9) { $f(x-h)$};
+	\node[anchor=west] at (3.5, -2) { $f(x)$};
+	\node[anchor=west] at (4.4 ,-0.8) { $f(x+h)$};
+	
+	% Difference labels
+	\node[anchor=west, text=magenta]
+	at (5.7559443,-1.9805113)
+	{$\Delta f(x)=f(x+h)-f(x)$};
+	
+	\node[anchor=west, text=blue]
+	at (5.872073,-3.73535)
+	{$\nabla f(x)=f(x)-f(x-h)$};
+	
+	% Secant/difference arrow
+	\draw[black, line width=0.04cm, ->]
+	(5.872073,-3.5288985) -- (3.9494925,-2.8579307);
+	
+\end{tikzpicture}
+\end{document}

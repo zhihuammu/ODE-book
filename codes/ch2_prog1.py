@@ -23,7 +23,7 @@ t[0]=0.0;
 y[0]=1.0;
 yp[0]=0.0;
 F[0]=f(t[0],y[0]);
-#calculate the first 3 starting values using the exact solution
+#calculate the next 3 starting values using the exact solution
 for i in range(1,4):
     t[i]=t[i-1]+h;
     y[i]=math.exp(-t[i])+t[i];

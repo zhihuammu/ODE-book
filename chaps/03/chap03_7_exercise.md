@@ -20,7 +20,7 @@ formulae:
 ::::{solution} ex3-q1
 :class: dropdown
 
-{download}`handwritten full solution for Exercise 3.1 </exSol/Ex3/Ex3_1_annotated.pdf>`
+{download}`handwritten full solution for Exercise 4.1 </exSol/Ex3/Ex3_1_annotated.pdf>`
 
 ::::
 
@@ -63,9 +63,9 @@ Comment on the accuracy of your results.
 
 $y_1 = -0.9000$, $y_2 = -0.8450$, $y_3 = -0.8114$, $y_4 = -0.8019$,  $y_5 = -0.8102$.
 
-- {download}`excel solution for Exercise 3.2 </exSol/Ex3/Ex3_2.xlsx>`
+- {download}`excel solution for Exercise 4.2 </exSol/Ex3/Ex3_2.xlsx>`
 
-- {download}`handwritten solution for Exercise 3.2 </exSol/Ex3/Ex3_2_handSol.pdf>`
+- {download}`handwritten solution for Exercise 4.2 </exSol/Ex3/Ex3_2_handSol.pdf>`
 
 - A video explanation
 

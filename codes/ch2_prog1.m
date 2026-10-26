@@ -15,7 +15,7 @@ F(1)=f(t(1),y(1)); %calculate the value of y'=F, at t(1), y(1).
 yp(1)=0.0;      %set first predictor value=0 (for formatting table of output)
 
 %%2-> Produce starting values
-for i=2:4               %calculate the first 3 starting values using the exact solution
+for i=2:4               %calculate the next 3 starting values using the exact solution
     t(i)=t(i-1)+h;          %calculate the next step in t
     y(i)=exp(-t(i))+t(i);   %exact solution used for calculating starting values
     F(i)=f(t(i),y(i));
