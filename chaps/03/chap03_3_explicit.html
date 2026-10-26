@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Wednesday 21 October 2026 09:43:00"/>
+    <meta name="docbuild:last-update" content="Monday 26 October 2026 11:36:05"/>
   </head>
   
   
@@ -415,7 +415,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="explicit-multistep-methods">
 <h1><span class="section-number">4.3. </span>Explicit  Multistep Methods<a class="headerlink" href="#explicit-multistep-methods" title="Link to this heading">#</a></h1>
-<p>Although any type of the interpolating polynomials can be used for
+<p>Although any type of the interpolating/extrapolating polynomials can be used for
 deriving the multistep methods, some can lead to algebraically easier
 derivation. Since the derivation is algebraically detailed we derive
 only a simple three–step method by substituting the G–N forward
@@ -431,7 +431,8 @@ and using the relation</p>
 <span class="math notranslate nohighlight">\(x_j + 3h = x_j + sh\)</span>, <span class="math notranslate nohighlight">\(\therefore\,s = 3\)</span>]</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-    \therefore\quad y_{j+3} ~=~ y_{j+2} &amp;+ \int_{x_{j+2}}^{x_{j+3}} \left(
+    \therefore \quad y_{j+3} ~=~  y_{j+2} &amp; + \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx  \\    
+     ~=~ y_{j+2} &amp;+ \int_{x_{j+2}}^{x_{j+3}} \left(
     f_j + s\Delta f_j + \frac{s(s-1)}{2!}\Delta^2 f_j + \dots
     \right) \dx\\
     ~=~ y_{j+2} &amp;+ h\int_{2}^{3} \left(
@@ -694,7 +695,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 21 October 2026 09:43:00.
+  Last updated on Monday 26 October 2026 11:36:05.
   <br/>
 </p>
   </div>

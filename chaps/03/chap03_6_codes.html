@@ -78,7 +78,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Wednesday 21 October 2026 09:43:00"/>
+    <meta name="docbuild:last-update" content="Monday 26 October 2026 12:51:31"/>
   </head>
   
   
@@ -523,7 +523,7 @@ MATLAB</label><div class="sd-tab-content docutils">
 <span class="linenos">15</span><span class="n">yp</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mf">0.0</span><span class="p">;</span><span class="w">      </span><span class="c">%set first predictor value=0 (for formatting table of output)</span>
 <span class="linenos">16</span>
 <span class="linenos">17</span><span class="c">%%2-&gt; Produce starting values</span>
-<span class="linenos">18</span><span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="w">               </span><span class="c">%calculate the first 3 starting values using the exact solution</span>
+<span class="linenos">18</span><span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="w">               </span><span class="c">%calculate the next 3 starting values using the exact solution</span>
 <span class="linenos">19</span><span class="w">    </span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="p">;</span><span class="w">          </span><span class="c">%calculate the next step in t</span>
 <span class="linenos">20</span><span class="w">    </span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">))</span><span class="o">+</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span><span class="w">   </span><span class="c">%exact solution used for calculating starting values</span>
 <span class="linenos">21</span><span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
@@ -597,7 +597,7 @@ Python</label><div class="sd-tab-content docutils">
 <span class="linenos">23</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">1.0</span><span class="p">;</span>
 <span class="linenos">24</span><span class="n">yp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">0.0</span><span class="p">;</span>
 <span class="linenos">25</span><span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-<span class="linenos">26</span><span class="c1">#calculate the first 3 starting values using the exact solution</span>
+<span class="linenos">26</span><span class="c1">#calculate the next 3 starting values using the exact solution</span>
 <span class="linenos">27</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
 <span class="linenos">28</span>    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="p">;</span>
 <span class="linenos">29</span>    <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
@@ -951,7 +951,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 21 October 2026 09:43:00.
+  Last updated on Monday 26 October 2026 12:51:31.
   <br/>
 </p>
   </div>

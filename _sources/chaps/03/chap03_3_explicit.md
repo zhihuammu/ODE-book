@@ -1,6 +1,6 @@
 # Explicit  Multistep Methods
 
-Although any type of the interpolating polynomials can be used for
+Although any type of the interpolating/extrapolating polynomials can be used for
 deriving the multistep methods, some can lead to algebraically easier
 derivation. Since the derivation is algebraically detailed we derive
 only a simple three--step method by substituting the G--N forward
@@ -17,7 +17,8 @@ $$\begin{aligned}
 $x_j + 3h = x_j + sh$, $\therefore\,s = 3$\]
 
 $$\begin{aligned}
-    \therefore\quad y_{j+3} ~=~ y_{j+2} &+ \int_{x_{j+2}}^{x_{j+3}} \left(
+    \therefore \quad y_{j+3} ~=~  y_{j+2} & + \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx  \\    
+     ~=~ y_{j+2} &+ \int_{x_{j+2}}^{x_{j+3}} \left(
     f_j + s\Delta f_j + \frac{s(s-1)}{2!}\Delta^2 f_j + \dots
     \right) \dx\\
     ~=~ y_{j+2} &+ h\int_{2}^{3} \left(

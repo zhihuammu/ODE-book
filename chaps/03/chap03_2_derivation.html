@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Wednesday 21 October 2026 09:43:00"/>
+    <meta name="docbuild:last-update" content="Monday 26 October 2026 11:32:40"/>
   </head>
   
   
@@ -420,16 +420,21 @@ aim to determine <span class="math notranslate nohighlight">\(\,y_{j+3}\,\)</spa
 over the interval <span class="math notranslate nohighlight">\(\,[x_{j+2},x_{j+3}]\,\)</span>;</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch02-2-1">
 <span class="eqno">(4.4)<a class="headerlink" href="#equation-eq-ch02-2-1" title="Link to this equation">#</a></span>\[\begin{split}\begin{aligned}
-    \dy ~&amp;=~ f(x,y) \dx\\
-    \int_{x_{j+2}}^{x_{j+3}} \dy ~&amp;=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx\\
-    \therefore\quad y_{j+3} - y_{j+2} ~&amp;=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx\\
+    y'~ &amp; = ~ f(x,y) \\
+    \int_{x_{j+2}}^{x_{j+3}} y' \dx ~&amp;=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx\\
+    \biggl[ y(x) \biggr]_{x_{j+2}}^{x_{j+3}} ~&amp;=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx\\
+    \therefore\quad y(x_{j+3}) - y(x_{j+2}) ~&amp;=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx\\
     \text{or}\quad y_{j+3} ~&amp;=~ y_{j+2} + \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx     
 \end{aligned}\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here we use <span class="math notranslate nohighlight">\(y_{j+3}\)</span> and <span class="math notranslate nohighlight">\( y_{j+2}\)</span> to represent <span class="math notranslate nohighlight">\(y(x_{j+3})\)</span> and <span class="math notranslate nohighlight">\(y(x_{j+2})\)</span>, respectively.</p>
+</div>
 <p>To find the terms on the right hand side, we need to
 integrate <span class="math notranslate nohighlight">\(\displaystyle \int_{x_{j+2}}^{x_{j+3}} f(x,y)\,\dx\)</span>. The straight
-integration cannot be done since the value of <span class="math notranslate nohighlight">\(y\)</span> is not known. Instead,
-we integrate by approximating the function <span class="math notranslate nohighlight">\(\,f(x,y)\,\)</span> as an
-interpolating polynomial that is determined by using the previously
+integration cannot be done since <span class="math notranslate nohighlight">\(y(x)\)</span> is not known. Instead,
+we integrate by approximating the <strong>two-variable</strong> function <span class="math notranslate nohighlight">\(\,f(x,y)\,\)</span> as an
+<strong>single-variable</strong> interpolation/extrapolation polynomial that is determined by using the previously
 obtained or given data points (cf. interpolation and their application
 in numerical integration).</p>
 </section>
@@ -517,7 +522,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 21 October 2026 09:43:00.
+  Last updated on Monday 26 October 2026 11:32:40.
   <br/>
 </p>
   </div>

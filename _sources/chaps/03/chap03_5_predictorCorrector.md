@@ -46,7 +46,7 @@ $\,h=0.1\,$. Find solution in the interval $[0,~~1]$ and apply only one
 corrector iteration for each step.
 
 :::{hint}
-:class: dropdown
+<!-- :class: dropdown -->
 - Step 1 - find the starting values
 
     First, we calculate the starting values from the exact solution
@@ -124,7 +124,7 @@ corrector iteration for each step.
 
     To calculate the function value, we substitute $\,y_4^p = 1.0703229\,$
     and $\,x = 0.4\,$ in $\,f(x,y) = -y + x + 1\,$, to get
-    $f_4^p = 0.3296671$. This completes the $PE$ stage.
+    $f_4^p = 0.3296771$. This completes the $PE$ stage.
 
 - Step 3 - We now use $\,f_4^p = 0.3296771$ in the corrector formula to obtain a
     corrector value for $y_4$: 
