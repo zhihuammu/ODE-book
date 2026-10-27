@@ -1,10 +1,11 @@
+(Predictor-Corrector-Methods)=
 # Predictor-Corrector Methods
 
 Implicit methods are useful for so-called stiff equations, to be
 discussed later. However, another use of implicit methods is to combine
 an explicit with an implicit formula to form a predictor-corrector
 method. A commonly used {index}`predictor-corrector`` method is the combination of
-the fourth--order Adams methods: 
+the **fourth--order Adams methods**: 
 
 $$\begin{aligned}
     y^{(p)}_{j+1} ~&=~ y_j + \frac{{h}}{24}\bigl[

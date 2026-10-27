@@ -155,8 +155,7 @@ $$\begin{aligned}
 
 1.  Use the step-by-step method applied in {prf:ref}`example-3.2`, to find
     approximate solutions at $x = 0.4$ and $x = 0.5$ using the
-    $4^\text{th}$ order ABM predictor-corrector method (listed on
-    page 6 Chapter 2), with $\,h = 0.1\,$. Use the exact solution,
+    $4^\text{th}$ order ABM predictor-corrector method (see [](Predictor-Corrector-Methods)), with $\,h = 0.1\,$. Use the exact solution,
     $y_{ex} = 2 - 2x + x^2 - e^{-x}$, to calculate the starting
     values. Work to 7 decimal places. Note: you can use an Excel
     spreadsheet to carry out your calculations.
