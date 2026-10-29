@@ -6,16 +6,15 @@ undetermined coefficients. For this unit we only consider the former
 through the following examples.
 
 :::{prf:example}
-Use the Gregory-Newton forward-interpolation formula:
+Given a general sequence $\{f_j=f(x_j)\}_0^{\infty}$ with $x_j=jh$, use the Gregory-Newton forward-interpolation formula:
 
  $$\begin{aligned}
-        f_s ~&=~ f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0
-        + \frac{s(s-1)(s-2)}{3!}\Delta^3 f_0
-        + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_0
-    
+        f_{j+s} =~ f_j + s\Delta f_j & + \frac{s(s-1)}{2!}\Delta^2 f_j
+        + \frac{s(s-1)(s-2)}{3!}\Delta^3 f_j \\
+         ~ & + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_j + \cdots \\    
 \end{aligned}$$
 
-to derive the Simpson rule with error term $\epsilon$:
+to derive Simpson's rule with error term $\epsilon$:
 
 $$\begin{aligned}
         \int_{x_0}^{x_2} f(x)\,\dx ~=~ \frac{h}{3}(f_2 + 4f_1 + f_0) + \epsilon
@@ -26,7 +25,7 @@ $$\begin{aligned}
 :class: solution, dropdown
 
 $$\begin{aligned}
-        &Using      & s ~&=~ \frac{x - x_0}{h}, & \dx ~&=~ h\,\ds\\
+        &Using      & s ~&=~ \frac{x - x_0}{h}, & \dx ~&=~ h \ds\\
         &\therefore & x ~&=~ x_0,               &  s ~&=~ 0\\
         &           & x ~&=~ x_2,               &  s ~&=~ 2\\
     
