@@ -4,101 +4,87 @@
 :::{prf:theorem} Global Error and Order of Accuracy
 If the {index}`local error` associated to a multistep formula is $\,O(h^{p+1})$
 then, the {index}`global error` is expected to be $\,O(h^p)$, and we can say that
-the method is of order $p$. To determine the order of a multistep method
-we can use the following approach.
+the method's order of accuracy is $p$. 
 :::
 
-The most general linear multistep method has the form 
+To determine the order of accuracy of a multistep method we can calculate its error constant. In the following, we will give a brief derivation of the formulas for calculating error constants.
+
+Linear multistep methods can be written in the following general form 
 
 $$\begin{aligned}
     \sum_{i=0}^{k} \alpha_i y_{j+i} = h \sum_{i=0}^{k} \beta_i f_{j+i},
     \hspace{1cm}\text{with}\ \alpha_k = 1    
 \end{aligned}$$(eq:ch03:2.1)
 
-where $k$ denotes the number of steps and $\alpha_i$ and
-$\beta_i$ are constants.
+where $k$ denotes the number of steps,  $\alpha_i$ and $\beta_i$ are constants, $f(x, y)=y'(x)$.
 
-<!-- For example, the most general three-step method
-has the form 
+The exact solution of the differential equation at $x_{j+i} = x_j + ih$, i.e. $y(x_j+ih)$, satisfies an equation similar to {eq}`eq:ch03:2.1`
 
 $$\begin{aligned}
-    \alpha_0 y_j + \alpha_1 y_{j+1} + \alpha_2 y_{j+2} + \alpha_3 y_{j+3}
-    ~=~ h \bigl[
-        \beta_0 f_j + \beta_1 f_{j+1} + \beta_2 f_{j+2} + \beta_3 f_{j+3}
-    \bigr]
-\end{aligned}$$(eq:ch03:2.2)
-
-Accordingly, for example, for the Adam-Bashforth
-three-step method 
-
-$$\begin{aligned}
-    y_{j+3}~=~y_{j+2}\,+\,\frac{h}{12} \bigl[
-        23f_{j+2} - 16f_{j+1} + 5f_j
-    \bigr]
-\end{aligned}$$ 
-
-we have the following coefficients 
-
-$$\begin{aligned}
-    && \alpha_0 &= 0,            & \alpha_1 &= 0,
-     & \alpha_2 &= -1,           & \alpha_3 &= 1 &&
-     \\[1ex]
-    && \beta_0 &= \frac{5}{12},  & \beta_1 &= -\frac{16}{12},
-     & \beta_2 &= \frac{23}{12}, & \beta_3 &= 0 &&
-\end{aligned}$$ -->
-
- The exact solution of the differential equation at
-$x = x + ih$, (i.e. $\,y(x+ih)\,$), also satisfies equation {eq}`eq:ch03:2.1`, so we can write 
-
-$$\begin{aligned}
-    \sum_{i=0}^{k} \alpha_i ~ y{(x+ih)} ~=~ h \sum_{i=0}^{k}
-    \beta_i ~ f{(x+ih)} ~+~ T
+    \sum_{i=0}^{k} \alpha_i ~ y{(x_j+ih)} ~=~ h \sum_{i=0}^{k}
+    \beta_i ~ f{(x_j+ih)} ~+~ T
 \end{aligned}$$ 
 
 Thus the local error $T$ is given by 
 
 $$\begin{aligned}
-    T ~=~ \sum_{i=0}^{k} \alpha_i ~ y{(x+ih)} ~-~ h \sum_{i=0}^{k}
-    \beta_i ~ f{(x+ih)}
+    T ~=~ \sum_{i=0}^{k} \alpha_i ~ y{(x_j+ih)} ~-~ h \sum_{i=0}^{k}
+    \beta_i ~ f{(x_j+ih)} ~=~ \sum_{i=0}^{k} \varepsilon_i, 
 \end{aligned}$$(eq:ch03:2.3)
 
-Using the Taylor series expansion 
+where $\varepsilon_i = \alpha_i y(x_j+ih) - h \beta_i f(x_j+ih)$.
+
+Using the Taylor series expansions of 
+
+$$
+    y(x+ih) ~=~ y(x) + ihy'(x) + \frac{(ih)^2}{2!}y''(x) + \dots  + \frac{(ih)^p}{p!}y^{(p)}(x) + \dots
+$$ 
+
+and 
 
 $$\begin{aligned}
-    y(x+ih) ~=~ y(x) + ihy'(x) + \frac{(ih)^2}{2!}y''(x) + \dots
-    + \frac{(ih)^p}{p!}y^{(p)}(x)~,
-\end{aligned}$$ 
+    f(x+ih) &=~ f(x) + ihf'(x) + \frac{(ih)^2}{2!}f''(x) + \dots + \frac{(ih)^p}{p!}f^{(p)}(x) + \dots \\
+            &=~ y'(x) + ih y''(x) + \frac{(ih)^2}{2!}y'''(x) + \dots + \frac{(ih)^p}{p!}y^{(p+1)}(x) + \dots,
+\end{aligned} $$ 
 
-we can expand the right-hand side of equation
-{eq}`eq:ch03:2.3` as:
+we can expand $\varepsilon_i (i=0,1,\ldots,k)$ in equation {eq}`eq:ch03:2.3` around $x=x_j$ and calculate them as:
 
-- $\displaystyle i = 0\quad \alpha_0 y(x) - h\beta_0 y'(x) $
-- $\displaystyle i = 1\quad \alpha_1 \left[ y(x) + hy'(x) + \frac{h^2}{2!}y''(x) + \dots\right] 
-         -h\beta_1 \left[ y'(x) + hy''(x) + \frac{h^2}{2!}y'''(x) + \dots      \right] $
-- $\displaystyle i = 2\quad \alpha_2 \left[ y(x) + 2hy'(x) + \frac{(2h)^2}{2!}y''(x) + \dots  \right]
-         -h\beta_2 \left[ y'(x) + 2hy''(x) + \frac{(2h)^2}{2!}y'''(x) + \dots \right]$
-- $\displaystyle i = 3\quad \alpha_3 \left[y(x) + 3hy'(x) + \frac{(3h)^2}{2!}y''(x) + \dots \right]
-         -h\beta_3 \left[y'(x) + 3hy''(x) + \frac{(3h)^2}{2!}y'''(x) + \dots \right] $
+$$\begin{align*}
+\varepsilon_0 & =\alpha_0 \biggl[y(x) &\biggr]  &  - h\beta_0 \biggl[ y'(x) &\biggr ] &  \\
+\varepsilon_1 & =\alpha_1 \biggl[ y(x) + hy'(x) + \frac{h^2}{2!}y''(x) + \dots &\biggr] & 
+         -h\beta_1 \biggl[ y'(x) + hy''(x) + \frac{h^2}{2!}y'''(x) + \dots      &\biggr ] \\
+\varepsilon_2 & =\alpha_2 \biggl[ y(x) + 2hy'(x) + \frac{(2h)^2}{2!}y''(x) + \dots  &\biggr] &
+         -h\beta_2 \biggl[ y'(x) + 2hy''(x) + \frac{(2h)^2}{2!}y'''(x) + \dots & \biggr] &  \\ 
+\varepsilon_3 & =\alpha_3 \biggl[y(x) + 3hy'(x) + \frac{(3h)^2}{2!}y''(x) + \dots &\biggr] &
+         -h\beta_3 \biggl[y'(x) + 3hy''(x) + \frac{(3h)^2}{2!}y'''(x) + \dots &\biggr] &\\   
+         ~ & \vdots \\      
+\varepsilon_k & =\alpha_k \biggl[y(x) + khy'(x) + \frac{(kh)^2}{2!}y''(x) + \dots &\biggr] &
+         -h\beta_k \biggl[y'(x) + khy''(x) + \frac{(kh)^2}{2!}y'''(x) + \dots &\biggr] &\\   
+\end{align*}$$
 
-Thus, collecting the corresponding coefficients of $y(x),\,y',\,...$ we
-have the following expressions \[Note: we will add the stepsize $h$,
-attached to each term, later in the equation for $T$, shown below\]
+Thus, collecting the corresponding coefficients of $y(x),y'(x),y''(x),...$ we
+have the following expression for $T$
 
 $$\begin{aligned}
-    & \bigl[
+T = & ~  \varepsilon_0 + \varepsilon_1 + \dots \varepsilon_k  & \\
+  = & ~  \biggl[
         (\alpha_0 + \alpha_1 + \alpha_2 + \dots + \alpha_k)
-    \bigr]\,y(x)
-    \\
-    & \bigl[
+    \biggr]\,y(x) &    \\
+    & +  \biggl[
         (\alpha_1 + 2\alpha_2 + 3\alpha_3 + \dots + k\alpha_k)
         - (\beta_0 + \beta_1 + \beta_2 + \dots + \beta_k)
-    \bigr]\,y'(x)
-    \\
-    & \bigl[
+    \biggr] h y'(x) &     \\
+    & +  \biggl[
         \frac{1}{2!}(\alpha_1 + 2{^2}\alpha_2 + 3{^2}\alpha_3 + \dots + k{^2}\alpha_k)
         -
         \frac{1}{1!}({\beta_1} + {2}\beta_2 + \dots + {k}\beta_k)
-    \bigr]\,y''(x)
+    \biggr] h^2 y''(x) & \\
+    & +  \biggl[
+        \frac{1}{3!}(\alpha_1 + 2{^3}\alpha_2 + 3{^3}\alpha_3 + \dots + k{^3}\alpha_k)
+        -
+        \frac{1}{2!}({\beta_1} + 2^{2}\beta_2 + \dots + k^{2}\beta_k)
+    \biggr] h^3 y'''(x)  \\    
+    & + \dots
 \end{aligned}$$ 
 
 or in general, 
@@ -108,24 +94,25 @@ $$\begin{aligned}
         \frac{1}{p!}(\alpha_1 + 2^p\alpha_2 + 3^p\alpha_3 + \dots + k^p\alpha_k)
         - \frac{1}{(p-1)!}(\beta_1 + 2^{p-1}\beta_2 + 3^{p-1}\beta_3
                            + \dots + k^{p-1}\beta_k)
-    \right] y^{(p)}(x)
+    \right] h^p y^{(p)}(x)
 \end{aligned}$$ 
 
 for $p = 2,3,\dots$
 
-Thus, let coefficients of $y(x) = C_0$, $~y'(x) = C_1$,\...etc., then
-$T$ can be written as, 
+Then $T$ can be written as, 
 
 $$\begin{aligned}
-    T ~=~ C_0y(x) \,+\, C_1hy'(x) \,+\, C_2h^2y''(x) \,+\,
-    \dots \,+\, C_p\,h^p\,y^{(p)}(x)
+    T ~=~ C_0 y(x) +  C_1 h y'(x) + C_2 h^2 y''(x) + \cdots + C_p h^p y^{(p)}(x) + C_{p+1} h^{p+1} y^{(p+1)}(x) + \cdots
 \end{aligned}$$ 
 
-The term $C_{p+1}\,h^{p+1}\,y^{(p+1)}(x)~$ is called the
-principal or leading {index}`local truncation error` and $C_{p+1}\,$ is the
-*{index}`error constant`*. For a polynomial of degree $\,p\,$ we have
+If $~C_0 = C_1 = C_2 = \dots = C_p=0~$ and $~C_{p+1}\neq 0$, then:
+- $C_{p+1}\,h^{p+1}\,y^{(p+1)}(x)~$ is called the principal or leading {index}`local truncation error`, 
+- $C_{p+1}$ is called the *{index}`error constant`*, and
+- the method's order of accuracy is $p$.
+
+<!-- of the method. For a polynomial of degree $\,p\,$ we have
 $~y^{(p+1)}(x) = 0~$ and hence the method is of order $\,p\,$ if,
-$~C_0 = C_1 = C_2 = \dots = C_p=0,~$ and $~C_{p+1}\neq 0$.
+$~C_0 = C_1 = C_2 = \dots = C_p=0,~$ and $~C_{p+1}\neq 0$. -->
 
 :::{admonition} Summary
 :class: important

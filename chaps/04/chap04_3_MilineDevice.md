@@ -173,7 +173,7 @@ corrector formula, due to truncation, can be estimated by calculating
 
 $$
 \begin{aligned}
-\epsilon = \frac{C_5^{(c)}}{C_5^{(p)}-C_5^{(c)}} \left( y_{j+1}^{(c)} - y_{j+1}^{(p)} \right)
+T = \frac{C_5^{(c)}}{C_5^{(p)}-C_5^{(c)}} \left( y_{j+1}^{(c)} - y_{j+1}^{(p)} \right)
 \end{aligned}
 $$
 
@@ -187,7 +187,7 @@ $\,C_n^{(p)}h^ny^{(n)}(z_1)\,$ and the corrector formula has a truncation error 
 an estimate of the error arising from the truncation is given by,
 
 $$
- \epsilon
+ T
 = \frac{C_n^{(c)}}{C_n^{(p)}-C_n^{(c)}} \left( y_{j+1}^{(c)} - y_{j+1}^{(p)} \right) 
 $$(eq:ch03:3.7)
 
@@ -221,7 +221,7 @@ solution $(y = e^{-x} + x)$.
 
 $$
 \begin{aligned}
-        \epsilon ~&=~ \frac{C_5^{(c)}}{C_5^{(p)}-C_5^{(c)}} \left(y^{(c)} - y^{(p)}\right)\\[4pt]
+        T ~&=~ \frac{C_5^{(c)}}{C_5^{(p)}-C_5^{(c)}} \left(y^{(c)} - y^{(p)}\right)\\[4pt]
         &=~ \frac{-\frac{19}{720}}{\frac{251}{720}-\left(-\frac{19}{720}\right)} \left(1.3678784 - 1.3678801\right)\\[4pt]        
         &=~ -\frac{19}{270}(-1.7 \!\times\! 10^{-6})\\[4pt]
         &=~ 1.2 \!\times\! 10^{-7}.    

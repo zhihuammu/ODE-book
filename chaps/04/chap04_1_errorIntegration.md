@@ -14,10 +14,10 @@ Given a general sequence $\{f_j=f(x_j)\}_0^{\infty}$ with $x_j=jh$, use the Greg
          ~ & + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_j + \cdots \\    
 \end{aligned}$$
 
-to derive Simpson's rule with error term $\epsilon$:
+to derive Simpson's rule and its error term $T$ (local truncation error):
 
 $$\begin{aligned}
-        \int_{x_0}^{x_2} f(x)\,\dx ~=~ \frac{h}{3}(f_2 + 4f_1 + f_0) + \epsilon
+        \int_{x_0}^{x_2} f(x)\,\dx ~=~ \frac{h}{3}(f_2 + 4f_1 + f_0) + T
     
 \end{aligned}$$
 
@@ -34,7 +34,7 @@ $$\begin{aligned}
 $$\begin{aligned}
         \therefore \quad \int_{x_0}^{x_2} f(x)\,\dx ~&=~ h \int_{0}^{2} \left(
             f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0
-        \right)\,\ds + \epsilon
+        \right)\,\ds + T
         \\[1em]
         \text{Substituting} \quad \Delta f_0 ~&=~ f_1 - f_0,
         \quad \text{and} \quad \Delta^2 f_0 ~=~ f_2 - 2f_1 + f_0
@@ -44,13 +44,13 @@ $$\begin{aligned}
             sf_0 + \frac{s^2}{2}(f_1 - f_0) + \frac{1}{2}\left(
                 \frac{s^3}{3} - \frac{s^2}{2}
             \right)(f_2 - 2f_1 + f_0)
-        \right]_0^2 + \epsilon
+        \right]_0^2 + T
         \\
         &=~ h \left[
             2f_0 + 2(f_1 - f_0) + \frac{1}{3}(f_2 - 2f_1 + f_0)
-        \right] + \epsilon
+        \right] + T
         \\
-        &=~ \frac{h}{3}\bigl[f_0 + 4f_1 + f_2\bigr] + \epsilon
+        &=~ \frac{h}{3}\bigl[f_0 + 4f_1 + f_2\bigr] + T
     
 \end{aligned}$$
 
@@ -59,7 +59,7 @@ terms involving third and fourth differences (i.e. $\Delta^3$ and
 $\Delta^4$), thus 
 
 $$\begin{aligned}
-        \epsilon ~&=~ h \int_{0}^{2} \left\{
+        T ~&=~ h \int_{0}^{2} \left\{
             \frac{s(s-1)(s-2)}{3!}\Delta^3 f_0
             + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_0
         \right\}\ds
@@ -92,11 +92,11 @@ and LET $\Delta^{4} f_0 = h^4f^{(iv)}(z)$ where
 $x_0 \leq z \leq x_2$
 
  $$\begin{aligned}
-        \therefore \quad \epsilon ~&=~ h^5 \left\{
+        \therefore \quad T ~&=~ h^5 \left\{
             \frac{1}{24} \left(-\frac{4}{15}\right)
         \right\} f^{(iv)}(z)
         \\
-        \epsilon ~&=~ -\frac{1}{90}h^5f^{(iv)}(z).
+        T ~&=~ -\frac{1}{90}h^5f^{(iv)}(z).
     
 \end{aligned}$$
 :::
@@ -115,21 +115,27 @@ $$
 :::{prf:example}
 Use the Gregory-Newton forward-interpolation formula:
 
-$$f_s = f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0
+$$\begin{aligned}
+        f_{j+s} =~ f_j + s\Delta f_j & + \frac{s(s-1)}{2!}\Delta^2 f_j
+        + \frac{s(s-1)(s-2)}{3!}\Delta^3 f_j \\
+         ~ & + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_j + \cdots \\    
+\end{aligned}$$
+
+<!-- $$f_s = f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0
         + \frac{s(s-1)(s-2)}{3!}\Delta^3 f_0
-        + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_0$$
+        + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_0$$ -->
 
 to show that for Milne's formula: 
 
 $$\begin{aligned}
-        \int_{x_{-1}}^{x_3} f(x)\,\dx ~=~ \frac{4h}{3} (2f_0 - f_1 + 2f_2) + \epsilon
+        \int_{x_{-1}}^{x_3} f(x)\,\dx ~=~ \frac{4h}{3} (2f_0 - f_1 + 2f_2) + T
     
 \end{aligned}$$ 
 
-the error term 
+its error term (local truncation error)
 
 $$\begin{aligned}
-        \epsilon ~=~ \frac{14}{45}h^5 f^{(iv)}(z)
+        T ~=~ \frac{14}{45}h^5 f^{(iv)}(z)
         \quad for \quad x_{-1} \leq z \leq x_3
     
 \end{aligned}$$ 
@@ -153,7 +159,7 @@ terms involving third and fourth differences (i.e. $\Delta^3$ and
 $\Delta^4$), thus 
 
 $$\begin{aligned}
-        \epsilon ~&=~ h \int_{-1}^{3} \left\{
+        T ~&=~ h \int_{-1}^{3} \left\{
             \frac{s(s-1)(s-2)}{3!}\Delta^3 f_0
             + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_0
         \right\}\ds
@@ -190,7 +196,7 @@ Let $\Delta^4 f_0 ~=~ h^4 f^{(iv)}(z)$ where
 $x_{-1} \leq z \leq x_3$
 
  $$\begin{aligned}
-        \therefore \quad \epsilon ~=~ \frac{14}{45}\,h^5f^{(iv)}(z).
+        \therefore \quad T ~=~ \frac{14}{45}\,h^5f^{(iv)}(z).
     
 \end{aligned}$$
 :::
