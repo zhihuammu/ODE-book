@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Wednesday 21 October 2026 09:43:00"/>
+    <meta name="docbuild:last-update" content="Sunday 01 November 2026 21:45:20"/>
   </head>
   
   
@@ -422,25 +422,24 @@ through the following examples.</p>
 <div class="proof example admonition" id="example-0">
 <p class="admonition-title"><span class="caption-number">Example 5.1 </span></p>
 <section class="example-content" id="proof-content">
-<p>Use the Gregory-Newton forward-interpolation formula:</p>
+<p>Given a general sequence <span class="math notranslate nohighlight">\(\{f_j=f(x_j)\}_0^{\infty}\)</span> with <span class="math notranslate nohighlight">\(x_j=jh\)</span>, use the Gregory-Newton forward-interpolation formula:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+        f_{j+s} =~ f_j + s\Delta f_j &amp; + \frac{s(s-1)}{2!}\Delta^2 f_j
+        + \frac{s(s-1)(s-2)}{3!}\Delta^3 f_j \\
+         ~ &amp; + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_j + \cdots \\    
+\end{aligned}\end{split}\]</div>
+<p>to derive Simpson’s rule and its error term <span class="math notranslate nohighlight">\(T\)</span> (local truncation error):</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-        f_s ~&amp;=~ f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0
-        + \frac{s(s-1)(s-2)}{3!}\Delta^3 f_0
-        + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_0
-    
-\end{aligned}\]</div>
-<p>to derive the Simpson rule with error term <span class="math notranslate nohighlight">\(\epsilon\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
-        \int_{x_0}^{x_2} f(x)\,\dx ~=~ \frac{h}{3}(f_2 + 4f_1 + f_0) + \epsilon
+        \int_{x_0}^{x_2} f(x)\,\dx ~=~ \frac{h}{3}(f_2 + 4f_1 + f_0) + T
     
 \end{aligned}\]</div>
 <div class="solution dropdown admonition">
 <p class="admonition-title">Solution</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-        &amp;Using      &amp; s ~&amp;=~ \frac{x - x_0}{h}, &amp; \dx ~&amp;=~ h\,\ds\\
+        &amp;Using      &amp; s ~&amp;=~ \frac{x - x_0}{h}, &amp; \dx ~&amp;=~ h \ds\\
         &amp;\therefore &amp; x ~&amp;=~ x_0,               &amp;  s ~&amp;=~ 0\\
         &amp;           &amp; x ~&amp;=~ x_2,               &amp;  s ~&amp;=~ 2\\
     
@@ -449,7 +448,7 @@ through the following examples.</p>
 \[\begin{split}\begin{aligned}
         \therefore \quad \int_{x_0}^{x_2} f(x)\,\dx ~&amp;=~ h \int_{0}^{2} \left(
             f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0
-        \right)\,\ds + \epsilon
+        \right)\,\ds + T
         \\[1em]
         \text{Substituting} \quad \Delta f_0 ~&amp;=~ f_1 - f_0,
         \quad \text{and} \quad \Delta^2 f_0 ~=~ f_2 - 2f_1 + f_0
@@ -459,13 +458,13 @@ through the following examples.</p>
             sf_0 + \frac{s^2}{2}(f_1 - f_0) + \frac{1}{2}\left(
                 \frac{s^3}{3} - \frac{s^2}{2}
             \right)(f_2 - 2f_1 + f_0)
-        \right]_0^2 + \epsilon
+        \right]_0^2 + T
         \\
         &amp;=~ h \left[
             2f_0 + 2(f_1 - f_0) + \frac{1}{3}(f_2 - 2f_1 + f_0)
-        \right] + \epsilon
+        \right] + T
         \\
-        &amp;=~ \frac{h}{3}\bigl[f_0 + 4f_1 + f_2\bigr] + \epsilon
+        &amp;=~ \frac{h}{3}\bigl[f_0 + 4f_1 + f_2\bigr] + T
     
 \end{aligned}\end{split}\]</div>
 <p>For the derivation of the error term we integrate the
@@ -473,7 +472,7 @@ terms involving third and fourth differences (i.e. <span class="math notranslate
 <span class="math notranslate nohighlight">\(\Delta^4\)</span>), thus</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-        \epsilon ~&amp;=~ h \int_{0}^{2} \left\{
+        T ~&amp;=~ h \int_{0}^{2} \left\{
             \frac{s(s-1)(s-2)}{3!}\Delta^3 f_0
             + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_0
         \right\}\ds
@@ -505,11 +504,11 @@ and LET <span class="math notranslate nohighlight">\(\Delta^{4} f_0 = h^4f^{(iv)
 <span class="math notranslate nohighlight">\(x_0 \leq z \leq x_2\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-        \therefore \quad \epsilon ~&amp;=~ h^5 \left\{
+        \therefore \quad T ~&amp;=~ h^5 \left\{
             \frac{1}{24} \left(-\frac{4}{15}\right)
         \right\} f^{(iv)}(z)
         \\
-        \epsilon ~&amp;=~ -\frac{1}{90}h^5f^{(iv)}(z).
+        T ~&amp;=~ -\frac{1}{90}h^5f^{(iv)}(z).
     
 \end{aligned}\end{split}\]</div>
 </div>
@@ -530,19 +529,24 @@ f'(c)=\frac{f(b)-f(a)}{b-a}
 <section class="example-content" id="proof-content">
 <p>Use the Gregory-Newton forward-interpolation formula:</p>
 <div class="math notranslate nohighlight">
-\[f_s = f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0
+\[\begin{split}\begin{aligned}
+        f_{j+s} =~ f_j + s\Delta f_j &amp; + \frac{s(s-1)}{2!}\Delta^2 f_j
+        + \frac{s(s-1)(s-2)}{3!}\Delta^3 f_j \\
+         ~ &amp; + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_j + \cdots \\    
+\end{aligned}\end{split}\]</div>
+<!-- $$f_s = f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0
         + \frac{s(s-1)(s-2)}{3!}\Delta^3 f_0
-        + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_0\]</div>
+        + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_0$$ -->
 <p>to show that for Milne’s formula:</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-        \int_{x_{-1}}^{x_3} f(x)\,\dx ~=~ \frac{4h}{3} (2f_0 - f_1 + 2f_2) + \epsilon
+        \int_{x_{-1}}^{x_3} f(x)\,\dx ~=~ \frac{4h}{3} (2f_0 - f_1 + 2f_2) + T
     
 \end{aligned}\]</div>
-<p>the error term</p>
+<p>its error term (local truncation error)</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-        \epsilon ~=~ \frac{14}{45}h^5 f^{(iv)}(z)
+        T ~=~ \frac{14}{45}h^5 f^{(iv)}(z)
         \quad for \quad x_{-1} \leq z \leq x_3
     
 \end{aligned}\]</div>
@@ -563,7 +567,7 @@ terms involving third and fourth differences (i.e. <span class="math notranslate
 <span class="math notranslate nohighlight">\(\Delta^4\)</span>), thus</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-        \epsilon ~&amp;=~ h \int_{-1}^{3} \left\{
+        T ~&amp;=~ h \int_{-1}^{3} \left\{
             \frac{s(s-1)(s-2)}{3!}\Delta^3 f_0
             + \frac{s(s-1)(s-2)(s-3)}{4!}\Delta^4 f_0
         \right\}\ds
@@ -599,7 +603,7 @@ terms involving third and fourth differences (i.e. <span class="math notranslate
 <span class="math notranslate nohighlight">\(x_{-1} \leq z \leq x_3\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-        \therefore \quad \epsilon ~=~ \frac{14}{45}\,h^5f^{(iv)}(z).
+        \therefore \quad T ~=~ \frac{14}{45}\,h^5f^{(iv)}(z).
     
 \end{aligned}\]</div>
 </div>
@@ -689,7 +693,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Wednesday 21 October 2026 09:43:00.
+  Last updated on Sunday 01 November 2026 21:45:20.
   <br/>
 </p>
   </div>
