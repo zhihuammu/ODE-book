@@ -232,3 +232,13 @@ td {
   border: 0;
 }
 
+
+/*********************************************
+* Maths equations flushed left *
+*********************************************/
+
+/* For Jupyter Book configurations using MathJax */
+.MathJax_Display, mjx-container[display="true"] {
+    text-align: left !important;
+    padding-left: 2em;
+}

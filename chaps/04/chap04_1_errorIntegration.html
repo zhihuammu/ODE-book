@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>5.1. Derivation of Local Error Terms for Integration Formulae &#8212; Linear Multistep Methods</title>
   
@@ -30,17 +30,17 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=79838d2f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=3f3b9192" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -49,7 +49,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=c73c0f3e"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Monday 02 November 2026 14:57:33"/>
+    <meta name="docbuild:last-update" content="Monday 02 November 2026 18:11:40"/>
   </head>
   
   
@@ -446,25 +446,25 @@ through the following examples.</p>
 \end{aligned}\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-        \therefore \quad \int_{x_0}^{x_2} f(x)\,\dx ~&amp;=~ h \int_{0}^{2} \left(
-            f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0
-        \right)\,\ds + T
-        \\[1em]
-        \text{Substituting} \quad \Delta f_0 ~&amp;=~ f_1 - f_0,
-        \quad \text{and} \quad \Delta^2 f_0 ~=~ f_2 - 2f_1 + f_0
-        \quad \text{gives}
-        \\[1em]
-        \int_{x_0}^{x_2} f(x)\,\dx ~&amp;=~ h \left[
-            sf_0 + \frac{s^2}{2}(f_1 - f_0) + \frac{1}{2}\left(
-                \frac{s^3}{3} - \frac{s^2}{2}
-            \right)(f_2 - 2f_1 + f_0)
-        \right]_0^2 + T
-        \\
-        &amp;=~ h \left[
-            2f_0 + 2(f_1 - f_0) + \frac{1}{3}(f_2 - 2f_1 + f_0)
-        \right] + T
-        \\
-        &amp;=~ \frac{h}{3}\bigl[f_0 + 4f_1 + f_2\bigr] + T
+\therefore \quad \int_{x_0}^{x_2} f(x)\,\dx ~&amp;=~ h \int_{0}^{2} \left(
+    f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0
+\right)\,\ds + T
+\\[1em]
+\text{Substituting} \quad \Delta f_0 ~&amp;=~ f_1 - f_0,
+\quad \text{and} \quad \Delta^2 f_0 ~=~ f_2 - 2f_1 + f_0
+\quad \text{gives}
+\\[1em]
+\int_{x_0}^{x_2} f(x)\,\dx ~&amp;=~ h \left[
+    sf_0 + \frac{s^2}{2}(f_1 - f_0) + \frac{1}{2}\left(
+        \frac{s^3}{3} - \frac{s^2}{2}
+    \right)(f_2 - 2f_1 + f_0)
+\right]_0^2 + T
+\\
+&amp;=~ h \left[
+    2f_0 + 2(f_1 - f_0) + \frac{1}{3}(f_2 - 2f_1 + f_0)
+\right] + T
+\\
+&amp;=~ \frac{h}{3}\bigl[f_0 + 4f_1 + f_2\bigr] + T
     
 \end{aligned}\end{split}\]</div>
 <p>For the derivation of the error term we integrate the
@@ -547,7 +547,7 @@ f'(z)=\frac{f(b)-f(a)}{b-a}
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Proof for second-order difference (click to show)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">We can define a function g(x) as</p>
+<p class="sd-card-text">We can define a function <span class="math notranslate nohighlight">\(g(x)\)</span> as</p>
 <div class="math notranslate nohighlight">
 \[
     g(x) = f(x+h) - f(x) = \Delta f(x),
@@ -644,16 +644,17 @@ terms involving third and fourth differences (i.e. <span class="math notranslate
         \\
         &amp;=~ \frac{h}{24} \left[
             \frac{244}{5} - \frac{240}{2} + \frac{11}{3} + 75
-        \right] \Delta^4 f_0
+        \right] \Delta^4 f_0 \\
+        &amp;=~ \frac{14}{45} h {\Delta^4 f_0}
     
 \end{aligned}\end{split}\]</div>
 <p>Let <span class="math notranslate nohighlight">\(\Delta^4 f_0 ~=~ h^4 f^{(iv)}(z)\)</span> where
 <span class="math notranslate nohighlight">\(x_{-1} \leq z \leq x_3\)</span></p>
 <div class="math notranslate nohighlight">
-\[\begin{aligned}
-        \therefore \quad T ~=~ \frac{14}{45}\,h^5f^{(iv)}(z).
-    
-\end{aligned}\]</div>
+\[\begin{split}\begin{aligned}
+        \therefore \quad T &amp; =~ \frac{14}{45}\,h^5f^{(iv)}(z) \\
+                           &amp; =~ \frac{14}{45} h^5 y^{(v)}(z)    
+\end{aligned}\end{split}\]</div>
 </div>
 </section>
 </div></section>
@@ -671,7 +672,7 @@ terms involving third and fourth differences (i.e. <span class="math notranslate
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/04"
+            path: "./chaps\04"
         },
         predefinedOutput: true
     }
@@ -741,7 +742,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Monday 02 November 2026 14:57:33.
+  Last updated on Monday 02 November 2026 18:11:40.
   <br/>
 </p>
   </div>
