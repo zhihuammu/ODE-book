@@ -32,25 +32,25 @@ $$\begin{aligned}
 \end{aligned}$$
 
 $$\begin{aligned}
-        \therefore \quad \int_{x_0}^{x_2} f(x)\,\dx ~&=~ h \int_{0}^{2} \left(
-            f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0
-        \right)\,\ds + T
-        \\[1em]
-        \text{Substituting} \quad \Delta f_0 ~&=~ f_1 - f_0,
-        \quad \text{and} \quad \Delta^2 f_0 ~=~ f_2 - 2f_1 + f_0
-        \quad \text{gives}
-        \\[1em]
-        \int_{x_0}^{x_2} f(x)\,\dx ~&=~ h \left[
-            sf_0 + \frac{s^2}{2}(f_1 - f_0) + \frac{1}{2}\left(
-                \frac{s^3}{3} - \frac{s^2}{2}
-            \right)(f_2 - 2f_1 + f_0)
-        \right]_0^2 + T
-        \\
-        &=~ h \left[
-            2f_0 + 2(f_1 - f_0) + \frac{1}{3}(f_2 - 2f_1 + f_0)
-        \right] + T
-        \\
-        &=~ \frac{h}{3}\bigl[f_0 + 4f_1 + f_2\bigr] + T
+\therefore \quad \int_{x_0}^{x_2} f(x)\,\dx ~&=~ h \int_{0}^{2} \left(
+    f_0 + s\Delta f_0 + \frac{s(s-1)}{2!}\Delta^2 f_0
+\right)\,\ds + T
+\\[1em]
+\text{Substituting} \quad \Delta f_0 ~&=~ f_1 - f_0,
+\quad \text{and} \quad \Delta^2 f_0 ~=~ f_2 - 2f_1 + f_0
+\quad \text{gives}
+\\[1em]
+\int_{x_0}^{x_2} f(x)\,\dx ~&=~ h \left[
+    sf_0 + \frac{s^2}{2}(f_1 - f_0) + \frac{1}{2}\left(
+        \frac{s^3}{3} - \frac{s^2}{2}
+    \right)(f_2 - 2f_1 + f_0)
+\right]_0^2 + T
+\\
+&=~ h \left[
+    2f_0 + 2(f_1 - f_0) + \frac{1}{3}(f_2 - 2f_1 + f_0)
+\right] + T
+\\
+&=~ \frac{h}{3}\bigl[f_0 + 4f_1 + f_2\bigr] + T
     
 \end{aligned}$$
 
@@ -135,7 +135,7 @@ $$\begin{aligned}
 
 :::{dropdown} Proof for second-order difference (click to show)
 
-We can define a function g(x) as
+We can define a function $g(x)$ as
 
 $$
     g(x) = f(x+h) - f(x) = \Delta f(x),
@@ -242,7 +242,8 @@ $$\begin{aligned}
         \\
         &=~ \frac{h}{24} \left[
             \frac{244}{5} - \frac{240}{2} + \frac{11}{3} + 75
-        \right] \Delta^4 f_0
+        \right] \Delta^4 f_0 \\
+        &=~ \frac{14}{45} h {\Delta^4 f_0}
     
 \end{aligned}$$ 
 
@@ -250,8 +251,8 @@ Let $\Delta^4 f_0 ~=~ h^4 f^{(iv)}(z)$ where
 $x_{-1} \leq z \leq x_3$
 
  $$\begin{aligned}
-        \therefore \quad T ~=~ \frac{14}{45}\,h^5f^{(iv)}(z).
-    
+        \therefore \quad T & =~ \frac{14}{45}\,h^5f^{(iv)}(z) \\
+                           & =~ \frac{14}{45} h^5 y^{(v)}(z)    
 \end{aligned}$$
 :::
 
