@@ -6,9 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device &#8212; Linear Multistep Methods</title>
+    <title>5.3. Local Truncation Errors of Predictor-Corrector methods – Milne’s Device &#8212; Linear Multistep Methods</title>
   
   
   
@@ -30,11 +30,11 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
@@ -49,7 +49,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=c73c0f3e"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -72,11 +72,11 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="5.4. Chapter 5 Exercises" href="chap04_4_exercise.html" />
-    <link rel="prev" title="5.2. Order and Error Constants" href="chap04_2_errorConstant.html" />
+    <link rel="prev" title="5.2. Order of Accuracy and Error Constants" href="chap04_2_errorConstant.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Sunday 01 November 2026 22:55:34"/>
+    <meta name="docbuild:last-update" content="Monday 02 November 2026 14:00:34"/>
   </head>
   
   
@@ -221,8 +221,8 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chap04_0.html">5. Multistep Methods: Accuracy and Error Constants</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="chap04_1_errorIntegration.html">5.1. Derivation of Local Error Terms for Integration Formulae</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap04_2_errorConstant.html">5.2. Order and Error Constants</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.3. Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap04_2_errorConstant.html">5.2. Order of Accuracy and Error Constants</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.3. Local Truncation Errors of Predictor-Corrector methods – Milne’s Device</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap04_4_exercise.html">5.4. Chapter 5 Exercises</a></li>
 </ul>
 </details></li>
@@ -399,7 +399,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device</h1>
+    <h1>Local Truncation Errors of Predictor-Corrector methods – Milne’s Device</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -413,16 +413,16 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="estimate-of-truncation-error-at-each-step-for-predictor-corrector-methods-milne-s-device">
-<h1><span class="section-number">5.3. </span>Estimate of truncation error at each step for Predictor-Corrector methods – Milne’s Device<a class="headerlink" href="#estimate-of-truncation-error-at-each-step-for-predictor-corrector-methods-milne-s-device" title="Link to this heading">#</a></h1>
-<p>For Predictor-Corrector methods an estimate of error at each step can be
-found using the following procedure known as <span class="target" id="index-0"></span>Milne’s device. We
+  <section class="tex2jax_ignore mathjax_ignore" id="local-truncation-errors-of-predictor-corrector-methods-milne-s-device">
+<h1><span class="section-number">5.3. </span>Local Truncation Errors of Predictor-Corrector methods – Milne’s Device<a class="headerlink" href="#local-truncation-errors-of-predictor-corrector-methods-milne-s-device" title="Link to this heading">#</a></h1>
+<p>For Predictor-Corrector methods an estimate of local error at each step can be
+found by using the following procedure known as <span class="target" id="index-0"></span>Milne’s device. We
 illustrate the technique by finding the error of the
-Adam-Bashforth-Moulton method. The Predictor formula is</p>
+Adam-Bashforth-Moulton method. The predictor formula is</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch03-3-1">
 <span class="eqno">(5.4)<a class="headerlink" href="#equation-eq-ch03-3-1" title="Link to this equation">#</a></span>\[
 \begin{aligned}
-    y_{j+1}^{(p)} ~=~ y_j + \frac{h}{24} \left(
+    y_{j+1}^{(\text{pre})} ~=~ y_j + \frac{h}{24} \left(
         55f_{j} - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}
     \right)
 \end{aligned}
@@ -431,19 +431,19 @@ Adam-Bashforth-Moulton method. The Predictor formula is</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch03-3-2">
 <span class="eqno">(5.5)<a class="headerlink" href="#equation-eq-ch03-3-2" title="Link to this equation">#</a></span>\[
 \begin{aligned}
-    y_{j+1}^{(c)} ~=~ y_j + \frac{h}{24} \left(
-        9f_{j+1}^{(p)} + 19f_{j} - 5f_{j-1} + f_{j-2}
+    y_{j+1}^{(\text{cor})} ~=~ y_j + \frac{h}{24} \left(
+        9f_{j+1}^{(\text{pre})} + 19f_{j} - 5f_{j-1} + f_{j-2}
     \right)    
 \end{aligned}
 \]</div>
 <p>The exact solution of the differential equation at
-<span class="math notranslate nohighlight">\(x = x_{j+1},\, (Y_{j+1}),\,\)</span> satisfies the two similar equations:</p>
+<span class="math notranslate nohighlight">\(x = x_{j+1}\)</span>, i.e. <span class="math notranslate nohighlight">\(Y_{j+1}=y(x_{j+1})\)</span>, satisfies the two similar equations:</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch03-3-3">
 <span class="eqno">(5.6)<a class="headerlink" href="#equation-eq-ch03-3-3" title="Link to this equation">#</a></span>\[
 \begin{aligned}
     Y^{}_{j+1} &amp;= y_j
     + \frac{h}{24}(55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3})
-    + C^{(p)}_5 h^5y^{(5)}(z_1), &amp; x_{{j-3}} &amp;\leq z_1 \leq x_{{j+1}}
+    + C^{(\text{pre})}_5 h^5y^{(5)}(z_1), &amp; x_{{j-3}} &amp;\leq z_1 \leq x_{{j+1}}
 \end{aligned}
 \]</div>
 <div class="math notranslate nohighlight" id="equation-eq-ch03-3-4">
@@ -451,25 +451,25 @@ Adam-Bashforth-Moulton method. The Predictor formula is</p>
 \begin{aligned}
     Y_{j+1} &amp;= y_j
     + \frac{h}{24}(9F_{j+1} + 19f_j - 5f_{j-1} + f_{j-2})
-    +C^{(c)}_5 h^5y^{(5)}(z_2), &amp; x_{{j-2}} &amp;\leq z_2 \leq x_{{j+1}}    
+    +C^{(\text{cor})}_5 h^5y^{(5)}(z_2), &amp; x_{{j-2}} &amp;\leq z_2 \leq x_{{j+1}}    
 \end{aligned}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\displaystyle C^{(p)}_5=\frac{251}{720}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle  C^{(c)}_5=- \frac{19}{720}\)</span> are the error constants for the predictor and corrector, respectively; and <span class="math notranslate nohighlight">\(F_{j+1} = f(x_{j+1}, Y_{j+1})\)</span> is the exact value of function <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((x_{j+1}, Y_{j+1})\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(\displaystyle C^{(\text{pre})}_5=\frac{251}{720}\)</span> and <span class="math notranslate nohighlight">\(\displaystyle  C^{(\text{cor})}_5=- \frac{19}{720}\)</span> are the error constants for the predictor and corrector, respectively; and <span class="math notranslate nohighlight">\(F_{j+1} = f(x_{j+1}, Y_{j+1})\)</span> is the exact value of function <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((x_{j+1}, Y_{j+1})\)</span>.</p>
 <p>From equations <a class="reference internal" href="#equation-eq-ch03-3-1">(5.4)</a> and <a class="reference internal" href="#equation-eq-ch03-3-3">(5.6)</a></p>
 <div class="math notranslate nohighlight" id="equation-eq-ch03-3-5">
 <span class="eqno">(5.8)<a class="headerlink" href="#equation-eq-ch03-3-5" title="Link to this equation">#</a></span>\[
 \begin{aligned}
-    Y_{j+1} - y^{(p)}_{j+1} ~=~ C^{(p)}_5 h^5y^{(5)}(z_1)
+    Y_{j+1} - y^{(\text{pre})}_{j+1} ~=~ C^{(\text{pre})}_5 h^5y^{(5)}(z_1)
 \end{aligned}
 \]</div>
 <p>and from equations <a class="reference internal" href="#equation-eq-ch03-3-2">(5.5)</a>and <a class="reference internal" href="#equation-eq-ch03-3-4">(5.7)</a> we get</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-    Y_{j+1} - y_{j+1}^{(c)} ~&amp;=~  \frac{9h}{24}
-    \left(F_{j+1} - f_{j+1}^{(p)}\right) +C^{(c)}_5 h^5y^{(5)}(z_2)\\[4pt]    
+    Y_{j+1} - y_{j+1}^{(\text{cor})} ~&amp;=~  \frac{9h}{24}
+    \left(F_{j+1} - f_{j+1}^{(\text{pre})}\right) +C^{(\text{cor})}_5 h^5y^{(5)}(z_2)\\[4pt]    
     &amp;=~ \frac{9h}{24}
-    \left(f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(p)})\right) +C^{(c)}_5 h^5y^{(5)}(z_2)\\[4pt]
-    &amp;=~ \frac{3h}{8}(Y_{j+1} - y_{j+1}^{(c)})f_y(x_{j+1},\eta){+C^{(c)}_5 h^5y^{(5)}(z_2)}
+    \left(f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(\text{pre})})\right) +C^{(\text{cor})}_5 h^5y^{(5)}(z_2)\\[4pt]
+    &amp;=~ \frac{3h}{8}(Y_{j+1} - y_{j+1}^{(\text{cor})})f_y(x_{j+1},\eta){+C^{(\text{cor})}_5 h^5y^{(5)}(z_2)}
 \end{aligned}\end{split}\]</div>
 <div class="dropdown admonition note">
 <p class="admonition-title">Note</p>
@@ -477,29 +477,29 @@ Adam-Bashforth-Moulton method. The Predictor formula is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(p)}) 
-&amp; = f_y (x_{j+1},z) \left( Y_{j+1} - y_{j+1}^{(p)} \right) \\
-&amp; = f_y (x_{j+1},z) \left( Y_{j+1} - y_{j+1}^{(c)} \right)  \left[1+ \frac{y_{j+1}^{(c)}-y_{j+1}^{(p)}}{Y_{j+1}-y_{j+1}^{(c)}}   \right] \\
-&amp; = \left( Y_{j+1} - y_{j+1}^{(c)} \right)  f_y (x_{j+1},\eta)   \\
+f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(\text{pre})}) 
+&amp; = f_y (x_{j+1},z) \left( Y_{j+1} - y_{j+1}^{(\text{pre})} \right) \\
+&amp; = f_y (x_{j+1},z) \left( Y_{j+1} - y_{j+1}^{(\text{cor})} \right)  \left[1+ \frac{y_{j+1}^{(\text{cor})}-y_{j+1}^{(\text{pre})}}{Y_{j+1}-y_{j+1}^{(\text{cor})}}   \right] \\
+&amp; = \left( Y_{j+1} - y_{j+1}^{(\text{cor})} \right)  f_y (x_{j+1},\eta)   \\
 \end{aligned}
 \end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(Y_{j+1}\leq z \leq y_{j+1}^{(p)}\)</span>, <span class="math notranslate nohighlight">\(Y_{j+1}\leq \eta \leq y_{j+1}^{(c)}\)</span> and we assume</p>
+<p>where <span class="math notranslate nohighlight">\(Y_{j+1}\leq z \leq y_{j+1}^{(\text{pre})}\)</span>, <span class="math notranslate nohighlight">\(Y_{j+1}\leq \eta \leq y_{j+1}^{(\text{cor})}\)</span> and we assume</p>
 <div class="math notranslate nohighlight">
 \[
-f_y (x_{j+1},\eta) = f_y (x_{j+1},z) \left[1+ \frac{y_{j+1}^{(c)}-y_{j+1}^{(p)}}{Y_{j+1}-y_{j+1}^{(c)}}   \right]
+f_y (x_{j+1},\eta) = f_y (x_{j+1},z) \left[1+ \frac{y_{j+1}^{(\text{cor})}-y_{j+1}^{(\text{pre})}}{Y_{j+1}-y_{j+1}^{(\text{cor})}}   \right]
 \]</div>
 </div>
 <!-- and using the mean value theorem
 
  assuming that $\displaystyle \,f_y(x_{j+1},\eta) = \frac{\partial f}{\partial y} =
-\frac{f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(p)})}{(Y_{j+1} - y_{j+1}^{(c)})}\,$
+\frac{f(x_{j+1},Y_{j+1}) - f(x_{j+1},y_{j+1}^{(\text{pre})})}{(Y_{j+1} - y_{j+1}^{(\text{cor})})}\,$
 and $\,Y_{j+1} \leq \eta \leq y_{j+1}\,$.  -->
 <p>Thus</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-    \left(Y_{j+1} - y_{j+1}^{(c)}\right) \left\{
+    \left(Y_{j+1} - y_{j+1}^{(\text{cor})}\right) \left\{
         1 - \frac{3h}{8}f_y(x_{j+1},\eta)
-    \right\} ~=~ C_5^{(c)} h^5 y^{(5)}(z_2)
+    \right\} ~=~ C_5^{(\text{cor})} h^5 y^{(5)}(z_2)
 \end{aligned}\]</div>
 <p>We can now assume that <span class="math notranslate nohighlight">\(h\)</span> is chosen sufficiently small
 to ensure that</p>
@@ -511,7 +511,7 @@ to ensure that</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch03-3-6">
 <span class="eqno">(5.9)<a class="headerlink" href="#equation-eq-ch03-3-6" title="Link to this equation">#</a></span>\[
 \begin{aligned}
-    Y_{j+1} - y_{j+1}^{(c)} ~\simeq~ C_5^{(c)} h^5y^{(5)}(z_2)  
+    Y_{j+1} - y_{j+1}^{(\text{cor})} ~\simeq~ C_5^{(\text{cor})} h^5y^{(5)}(z_2)  
 \end{aligned}
 \]</div>
 <p>We also assume that <span class="math notranslate nohighlight">\(\,y^{(5)}(x)\,\)</span> does not vary strongly
@@ -521,43 +521,43 @@ derivatives between <a class="reference internal" href="#equation-eq-ch03-3-5">(
 gives</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{Y_{j+1}-y_{j+1}^{(p)}}{C_5^{(p)}}=\frac{Y_{j+1}-y_{j+1}^{(c)}}{C_5^{(c)}}
+\frac{Y_{j+1}-y_{j+1}^{(\text{pre})}}{C_5^{(\text{pre})}}=\frac{Y_{j+1}-y_{j+1}^{(\text{cor})}}{C_5^{(\text{cor})}}
 \]</div>
 <div class="dropdown admonition note">
 <p class="admonition-title">Note</p>
 <div class="math notranslate nohighlight">
 \[
-C_5^{(c)}Y_{j+1}-C_5^{(c)}y_{j+1}^{(p)}
-=C_5^{(p)} Y_{j+1}-C_5^{(p)}y_{j+1}^{(c)}
+C_5^{(\text{cor})}Y_{j+1}-C_5^{(\text{cor})}y_{j+1}^{(\text{pre})}
+=C_5^{(\text{pre})} Y_{j+1}-C_5^{(\text{pre})}y_{j+1}^{(\text{cor})}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\left(C_5^{(c)}-C_5^{(p)}\right)Y_{j+1} + C_5^{(p)}y_{j+1}^{(c)}
-= C_5^{(c)}y_{j+1}^{(p)}
+\left(C_5^{(\text{cor})}-C_5^{(\text{pre})}\right)Y_{j+1} + C_5^{(\text{pre})}y_{j+1}^{(\text{cor})}
+= C_5^{(\text{cor})}y_{j+1}^{(\text{pre})}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\left(C_5^{(c)}-C_5^{(p)}\right)Y_{j+1} + C_5^{(p)}y_{j+1}^{(c)}
-- C_5^{(c)} y_{j+1}^{(c)}
-= C_5^{(c)} \left( y_{j+1}^{(p)} - y_{j+1}^{(c)}\right)
+\left(C_5^{(\text{cor})}-C_5^{(\text{pre})}\right)Y_{j+1} + C_5^{(\text{pre})}y_{j+1}^{(\text{cor})}
+- C_5^{(\text{cor})} y_{j+1}^{(\text{cor})}
+= C_5^{(\text{cor})} \left( y_{j+1}^{(\text{pre})} - y_{j+1}^{(\text{cor})}\right)
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\left(C_5^{(c)}-C_5^{(p)}\right) \left(Y_{j+1} - y_{j+1}^{(c)}\right) 
-= C_5^{(c)} \left( y_{j+1}^{(p)} - y_{j+1}^{(c)}\right)
+\left(C_5^{(\text{cor})}-C_5^{(\text{pre})}\right) \left(Y_{j+1} - y_{j+1}^{(\text{cor})}\right) 
+= C_5^{(\text{cor})} \left( y_{j+1}^{(\text{pre})} - y_{j+1}^{(\text{cor})}\right)
 \]</div>
 </div>
 <div class="math notranslate nohighlight">
 \[\therefore \quad
- Y_{j+1} - y_{j+1}^{(c)}
-= \frac{C_5^{(c)}}{C_5^{(p)}-C_5^{(c)}} \left( y_{j+1}^{(c)} - y_{j+1}^{(p)} \right) 
+ Y_{j+1} - y_{j+1}^{(\text{cor})}
+= \frac{C_5^{(\text{cor})}}{C_5^{(\text{pre})}-C_5^{(\text{cor})}} \left( y_{j+1}^{(\text{cor})} - y_{j+1}^{(\text{pre})} \right) 
 \]</div>
 <p>Thus the error in the converged solution of the
 corrector formula, due to truncation, can be estimated by calculating</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
-T = \frac{C_5^{(c)}}{C_5^{(p)}-C_5^{(c)}} \left( y_{j+1}^{(c)} - y_{j+1}^{(p)} \right)
+T = \frac{C_5^{(\text{cor})}}{C_5^{(\text{pre})}-C_5^{(\text{cor})}} \left( y_{j+1}^{(\text{cor})} - y_{j+1}^{(\text{pre})} \right)
 \end{aligned}
 \]</div>
 <p>Note that, the reliability of this estimate depends on
@@ -565,12 +565,12 @@ the validity of the above assumptions including the assumption that the
 errors propagated from previous calculations are negligible.</p>
 <p>The above analysis easily generalizes to any predictor-corrector process
 in which the predictor formula has a truncation error of the form
-<span class="math notranslate nohighlight">\(\,C_n^{(p)}h^ny^{(n)}(z_1)\,\)</span> and the corrector formula has a truncation error of the form <span class="math notranslate nohighlight">\(\,C_n^{(c)}h^ny^{(n)}(z_2)\,\)</span>, then
+<span class="math notranslate nohighlight">\(\,C_n^{(\text{pre})}h^ny^{(n)}(z_1)\,\)</span> and the corrector formula has a truncation error of the form <span class="math notranslate nohighlight">\(\,C_n^{(\text{cor})}h^ny^{(n)}(z_2)\,\)</span>, then
 an estimate of the error arising from the truncation is given by,</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch03-3-7">
 <span class="eqno">(5.10)<a class="headerlink" href="#equation-eq-ch03-3-7" title="Link to this equation">#</a></span>\[
  T
-= \frac{C_n^{(c)}}{C_n^{(p)}-C_n^{(c)}} \left( y_{j+1}^{(c)} - y_{j+1}^{(p)} \right) 
+= \frac{C_n^{(\text{cor})}}{C_n^{(\text{pre})}-C_n^{(\text{cor})}} \left( y_{j+1}^{(\text{cor})} - y_{j+1}^{(\text{pre})} \right) 
 \]</div>
 <div class="proof example admonition" id="chap04-example-5">
 <p class="admonition-title"><span class="caption-number">Example 5.5 </span></p>
@@ -583,8 +583,8 @@ an estimate of the error arising from the truncation is given by,</p>
 \end{aligned}
 \]</div>
 <p>The predicted and corrected solutions produced by the fourth-order Adams-Bashforth-Moulton method <a class="reference internal" href="#equation-eq-ch03-3-1">(5.4)</a> and <a class="reference internal" href="#equation-eq-ch03-3-2">(5.5)</a> at <span class="math notranslate nohighlight">\(\,x \!=\! 1.0\)</span>, using
-<span class="math notranslate nohighlight">\(\,h \!=\! 0.1\)</span>, are <span class="math notranslate nohighlight">\(\,y^{(p)} \!=\! 1.3678801\)</span>,
-<span class="math notranslate nohighlight">\(\,y^{(c)} \!=\! 1.3678784\,\)</span>.</p>
+<span class="math notranslate nohighlight">\(\,h \!=\! 0.1\)</span>, are <span class="math notranslate nohighlight">\(\,y^{(\text{pre})} \!=\! 1.3678801\)</span>,
+<span class="math notranslate nohighlight">\(\,y^{(\text{cor})} \!=\! 1.3678784\,\)</span>.</p>
 <ul class="simple">
 <li><p>Apply the formula <a class="reference internal" href="#equation-eq-ch03-3-7">(5.10)</a> to estimate the error between the corrected solution and the exact solution.</p></li>
 <li><p>Compare this with the actual error calculated using the analytic
@@ -595,15 +595,15 @@ solution <span class="math notranslate nohighlight">\((y = e^{-x} + x)\)</span>.
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-        T ~&amp;=~ \frac{C_5^{(c)}}{C_5^{(p)}-C_5^{(c)}} \left(y^{(c)} - y^{(p)}\right)\\[4pt]
+        T ~&amp;=~ \frac{C_5^{(\text{cor})}}{C_5^{(\text{pre})}-C_5^{(\text{cor})}} \left(y^{(\text{cor})} - y^{(\text{pre})}\right)\\[4pt]
         &amp;=~ \frac{-\frac{19}{720}}{\frac{251}{720}-\left(-\frac{19}{720}\right)} \left(1.3678784 - 1.3678801\right)\\[4pt]        
         &amp;=~ -\frac{19}{270}(-1.7 \!\times\! 10^{-6})\\[4pt]
         &amp;=~ 1.2 \!\times\! 10^{-7}.    
 \end{aligned}
 \end{split}\]</div>
 <p>At <span class="math notranslate nohighlight">\(\,x \!=\! 1.0\)</span>, the actual error is
-<span class="math notranslate nohighlight">\(\,1.0 \!\times\! 10^{-6}\)</span>. Hence, the error formula underestimate the
-error by approximating one order of magnitude, which is perfectly
+<span class="math notranslate nohighlight">\(\,1.0 \!\times\! 10^{-6}\)</span>. Hence, the error formula underestimates the
+error by about one order of magnitude, which is reasonably
 acceptable for this problem.</p>
 </div>
 </section>
@@ -622,7 +622,7 @@ acceptable for this problem.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps\04"
+            path: "./chaps/04"
         },
         predefinedOutput: true
     }
@@ -645,7 +645,7 @@ acceptable for this problem.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5.2. </span>Order and Error Constants</p>
+        <p class="prev-next-title"><span class="section-number">5.2. </span>Order of Accuracy and Error Constants</p>
       </div>
     </a>
     <a class="right-next"
@@ -683,7 +683,7 @@ By Dr Zhihua Ma
 
   <p class="copyright">
     
-      © Copyright 2023--2025.
+      © Copyright 2023--2028.
       <br/>
     
   </p>
@@ -692,7 +692,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Sunday 01 November 2026 22:55:34.
+  Last updated on Monday 02 November 2026 14:00:34.
   <br/>
 </p>
   </div>

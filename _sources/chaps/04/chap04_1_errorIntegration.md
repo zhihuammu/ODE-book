@@ -1,8 +1,8 @@
 # Derivation of Local Error Terms for Integration Formulae
 
-The error terms associated with various integration formulae can be 
+Local truncation error terms associated with various integration formulae can be 
 derived by using the interpolating formulae or by the method of
-undetermined coefficients. For this unit we only consider the former
+undetermined coefficients. For this module we focus on the former
 through the following examples.
 
 :::{prf:example}
