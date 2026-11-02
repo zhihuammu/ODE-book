@@ -104,12 +104,60 @@ $x_0 \leq z \leq x_2$
 :::{prf:theorem} Mean Value Theorem
 Let  $f=f(x)$, $x \in \R$  be continuous over the closed interval  $[a, b]$
 and differentiable over the open interval  $(a, b)$. 
-Then, there exists at least one point  $c\in (a,b)$ such that
+Then, there exists at least one point  $z\in (a,b)$ such that
 
 $$
-f'(c)=\frac{f(b)-f(a)}{b-a}
+f'(z)=\frac{f(b)-f(a)}{b-a}
 $$
 :::
+
+::::{note}
+Let $a=x$ and $b=x+h$, we can obtain
+
+$$
+    f'(z)=\frac{f(x+h)-f(x)}{h} = \frac{\Delta f(x)}{h} \quad \text{for} \quad z \in (x, x+h) , 
+$$
+
+re-arranging the equation gives
+
+$$
+    \Delta f(x) = h f'(z). 
+$$
+
+For high-order differences, we have
+
+$$\begin{aligned}
+    \Delta^2 f(x) & = h^2 f''(z), \\ 
+    \Delta^3 f(x) & = h^3 f'''(z), \\ 
+                ~ & \vdots \\
+    \Delta^n f(x) & = h^n f^{(n)}(z) \quad \text{for} \quad z \in (x, x+nh). \\ 
+\end{aligned}$$
+
+:::{dropdown} Proof for second-order difference (click to show)
+
+We can define a function g(x) as
+
+$$
+    g(x) = f(x+h) - f(x) = \Delta f(x).
+$$
+
+Therefore, the second-order difference of $f(x)$ is
+
+$$
+\begin{aligned}
+    \Delta^2 f(x) & = \Delta (\Delta f(x)) \\
+                  & = \Delta g(x) \\
+                  & = h g'(z_1) \\
+                  & = h \biggl( f'(z_1+h) - f'(z_1) \biggr) \\
+                  & = h \frac{f'(z_1+h) - f'(z_1)}{h} h \\
+                  & = h f''(z_2) h \\
+                  & = h^2 f''(z_2)
+\end{aligned}
+$$
+
+:::
+
+::::
 
 
 :::{prf:example}
