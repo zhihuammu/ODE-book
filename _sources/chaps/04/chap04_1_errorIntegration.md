@@ -138,7 +138,13 @@ $$\begin{aligned}
 We can define a function g(x) as
 
 $$
-    g(x) = f(x+h) - f(x) = \Delta f(x).
+    g(x) = f(x+h) - f(x) = \Delta f(x),
+$$
+
+and the first-order difference of $g(x)$ can be expressed as
+
+$$
+    \Delta g(x) = h g'(z) \quad \text{for} \quad z \in (x, x+h).
 $$
 
 Therefore, the second-order difference of $f(x)$ is
@@ -147,11 +153,11 @@ $$
 \begin{aligned}
     \Delta^2 f(x) & = \Delta (\Delta f(x)) \\
                   & = \Delta g(x) \\
-                  & = h g'(z_1) \\
-                  & = h \biggl( f'(z_1+h) - f'(z_1) \biggr) \\
-                  & = h \frac{f'(z_1+h) - f'(z_1)}{h} h \\
-                  & = h f''(z_2) h \\
-                  & = h^2 f''(z_2)
+                  & = h g'(z) \\
+                  & = h \biggl( f'(z+h) - f'(z) \biggr) \\
+                  & = h \frac{f'(z+h) - f'(z)}{h} h \\
+                  & = h f''(\xi) h \\
+                  & = h^2 f''(\xi)
 \end{aligned}
 $$
 
