@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Monday 02 November 2026 14:00:34"/>
+    <meta name="docbuild:last-update" content="Monday 02 November 2026 14:49:15"/>
   </head>
   
   
@@ -518,13 +518,56 @@ and LET <span class="math notranslate nohighlight">\(\Delta^{4} f_0 = h^4f^{(iv)
 <section class="theorem-content" id="proof-content">
 <p>Let  <span class="math notranslate nohighlight">\(f=f(x)\)</span>, <span class="math notranslate nohighlight">\(x \in \R\)</span>  be continuous over the closed interval  <span class="math notranslate nohighlight">\([a, b]\)</span>
 and differentiable over the open interval  <span class="math notranslate nohighlight">\((a, b)\)</span>.
-Then, there exists at least one point  <span class="math notranslate nohighlight">\(c\in (a,b)\)</span> such that</p>
+Then, there exists at least one point  <span class="math notranslate nohighlight">\(z\in (a,b)\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[
-f'(c)=\frac{f(b)-f(a)}{b-a}
+f'(z)=\frac{f(b)-f(a)}{b-a}
 \]</div>
 </section>
-</div><div class="proof example admonition" id="example-2">
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Let <span class="math notranslate nohighlight">\(a=x\)</span> and <span class="math notranslate nohighlight">\(b=x+h\)</span>, we can obtain</p>
+<div class="math notranslate nohighlight">
+\[
+    f'(z)=\frac{f(x+h)-f(x)}{h} = \frac{\Delta f(x)}{h} \quad \text{for} \quad z \in (x, x+h) , 
+\]</div>
+<p>re-arranging the equation gives</p>
+<div class="math notranslate nohighlight">
+\[
+    \Delta f(x) = h f'(z). 
+\]</div>
+<p>For high-order differences, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \Delta^2 f(x) &amp; = h^2 f''(z), \\ 
+    \Delta^3 f(x) &amp; = h^3 f'''(z), \\ 
+                ~ &amp; \vdots \\
+    \Delta^n f(x) &amp; = h^n f^{(n)}(z) \quad \text{for} \quad z \in (x, x+nh). \\ 
+\end{aligned}\end{split}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Proof for second-order difference (click to show)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">We can define a function g(x) as</p>
+<div class="math notranslate nohighlight">
+\[
+    g(x) = f(x+h) - f(x) = \Delta f(x).
+\]</div>
+<p class="sd-card-text">Therefore, the second-order difference of <span class="math notranslate nohighlight">\(f(x)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+    \Delta^2 f(x) &amp; = \Delta (\Delta f(x)) \\
+                  &amp; = \Delta g(x) \\
+                  &amp; = h g'(z_1) \\
+                  &amp; = h \biggl( f'(z_1+h) - f'(z_1) \biggr) \\
+                  &amp; = h \frac{f'(z_1+h) - f'(z_1)}{h} h \\
+                  &amp; = h f''(z_2) h \\
+                  &amp; = h^2 f''(z_2)
+\end{aligned}
+\end{split}\]</div>
+</div>
+</details></div>
+<div class="proof example admonition" id="example-2">
 <p class="admonition-title"><span class="caption-number">Example 5.2 </span></p>
 <section class="example-content" id="proof-content">
 <p>Use the Gregory-Newton forward-interpolation formula:</p>
@@ -693,7 +736,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Monday 02 November 2026 14:00:34.
+  Last updated on Monday 02 November 2026 14:49:15.
   <br/>
 </p>
   </div>
