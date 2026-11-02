@@ -1,13 +1,11 @@
 (chap:errorConstant:constants)=
-# Order and Error Constants
+# Order of Accuracy and Error Constants
 
 :::{prf:theorem} Global Error and Order of Accuracy
-If the {index}`local error` associated to a multistep formula is $\,O(h^{p+1})$
-then, the {index}`global error` is expected to be $\,O(h^p)$, and we can say that
-the method's order of accuracy is $p$. 
+For a linear multistep method, if its{index}`local error` is $\,O(h^{p+1})$, then its {index}`global error` is expected to be $\,O(h^p)$, and we can say that the method's order of accuracy is $p$. 
 :::
 
-To determine the order of accuracy of a multistep method we can calculate its error constant. In the following, we will give a brief derivation of the formulas for calculating error constants.
+We can use the **error constant** of a multistep method to determine its order of accuracy. In the following, we will derive the formulae for calculating error constants.
 
 Linear multistep methods can be written in the following general form 
 
@@ -16,16 +14,16 @@ $$\begin{aligned}
     \hspace{1cm}\text{with}\ \alpha_k = 1    
 \end{aligned}$$(eq:ch03:2.1)
 
-where $k$ denotes the number of steps,  $\alpha_i$ and $\beta_i$ are constants, $f(x, y)=y'(x)$.
+where $k$ denotes the number of steps,  $\alpha_i$ and $\beta_i$ are constants.
 
 The exact solution of the differential equation at $x_{j+i} = x_j + ih$, i.e. $y(x_j+ih)$, satisfies an equation similar to {eq}`eq:ch03:2.1`
 
 $$\begin{aligned}
     \sum_{i=0}^{k} \alpha_i ~ y{(x_j+ih)} ~=~ h \sum_{i=0}^{k}
-    \beta_i ~ f{(x_j+ih)} ~+~ T
+    \beta_i ~ f{(x_j+ih)} ~+~ T ,
 \end{aligned}$$ 
 
-Thus the local error $T$ is given by 
+in which $T$ is the local error and given by 
 
 $$\begin{aligned}
     T ~=~ \sum_{i=0}^{k} \alpha_i ~ y{(x_j+ih)} ~-~ h \sum_{i=0}^{k}
@@ -33,6 +31,10 @@ $$\begin{aligned}
 \end{aligned}$$(eq:ch03:2.3)
 
 where $\varepsilon_i = \alpha_i y(x_j+ih) - h \beta_i f(x_j+ih)$.
+
+:::{note}
+Here we use $f(x)$ to denote $f(x,y(x))$, so $f(x_j+ih)$ means $f(x_j+ih, y(x_j+ih))$.
+:::
 
 Using the Taylor series expansions of 
 
