@@ -18,12 +18,12 @@ $$(eq:ch04:1.1)
 and the exact solution $y(x_{j+i})$ and its first derivative $f(x_{j+i})=y'(x_{j+i})$ satisfies a similar equation given by
 
 $$
-\sum_{i=0}^{k}\alpha_i y(x_{j+i})~=~ h\sum_{i=0}^{k}\beta_i f(x_{j+i}) + C_p h^p y^{(p)}(\xi),
+\sum_{i=0}^{k}\alpha_i y(x_{j+i})~=~ h\sum_{i=0}^{k}\beta_i f(x_{j+i}) + C_p h^p y^{(p)}(x_j),
 $$(eq:ch04:1.1.b) 
 
 where $C_p h^p y^{(p)}(\xi)$ is the truncation error.
 
-Subtracting equation {eq}`eq:ch04:1.1.b` from equation {eq}`eq:ch04:1.1.b` gives
+Subtracting equation {eq}`eq:ch04:1.1` from equation {eq}`eq:ch04:1.1.b` gives
 
 
 $$
