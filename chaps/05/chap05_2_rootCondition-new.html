@@ -1,0 +1,851 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>6.2. Characteristic Polynomials and Root Condition &#8212; Linear Multistep Methods</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=3f3b9192" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=c73c0f3e"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "Z": "\\mathbb{Z}", "R": "\\mathbb{R}", "C": "\\mathbb{C}", "E": "\\mathrm{E}", "S": "\\mathrm{S}", "D": "\\mathrm{D}", "L": "\\mathrm{L}", "F": "\\mathscr{F}", "Laplace": ["\\mathscr{L}\\left\\{{#1}\\right\\}", 1], "invLaplace": ["\\mathscr{L}^{-1}\\left\\{{#1}\\right\\}", 1], "d": "\\mathrm{d}", "arcsec": "\\mathrm{arcsec}~", "arccot": "\\mathrm{arccot}~", "arccsc": "\\mathrm{arccsc}~", "sech": "\\mathrm{sech}", "csch": "\\mathrm{csch}", "dy": "~\\mathrm{d}y", "dx": "~\\mathrm{d}x", "ds": "~\\mathrm{d}s", "dt": "~\\mathrm{d}t", "i": "\\mathbf{i}", "diff": ["\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}", 3, ""], "pdiff": ["\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}", 3, ""]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chaps/05/chap05_2_rootCondition-new';</script>
+    <link rel="icon" href="../../_static/odefavicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.3. Zero-Stability, Consistency and Convergence Theorem" href="chap05_3_convergence.html" />
+    <link rel="prev" title="6.1. An exploratory experiment" href="chap05_1_experiment.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Tuesday 03 November 2026 16:52:19"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo1.svg" class="logo__image only-light" alt="Linear Multistep Methods - Home"/>
+    <img src="../../_static/logo1.svg" class="logo__image only-dark pst-js-only" alt="Linear Multistep Methods - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Module Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/motivation.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/schedule.html">Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/readingList.html">Further Reading List</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisite</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_symbols.html">Symbols and Notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_formula.html">Formulas and Theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_derivatives.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_integrals.html">Table of Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00/chap00_B_Laplace.html">Laplace Transform</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00/chap00_A0_DE.html">1. Introduction to Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A1_definition.html">1.1. Definitions, Classification and Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A2_ode.html">1.2. Ordinary Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A3_analytical.html">1.3. Analytical Methods for ODEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A4_applications.html">1.4. Applications of ODEs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00/chap00_A5_exercise.html">1.5. Chapter 1 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/chap01_0.html">2. Complex Numbers and Difference Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_1_complexNumber.html">2.1. Complex Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_2_sequence.html">2.2. Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_3_differenceEquation.html">2.3. Difference Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_4_homogenous.html">2.4. Homogeneous Linear Difference Equations with Constant Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/chap01_5_exercise.html">2.5. Chapter 2 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02/chap02_0.html">3. Gregory-Newton Interpolating Polynomial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_1_introduction.html">3.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_2_differenceOperator.html">3.2. Finite Difference Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_3_interpolation.html">3.3. Gregory-Newton Interpolation Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_4_differenceTable.html">3.4. Finite Difference Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/chap02_5_exercise.html">3.5. Chapter 3 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03/chap03_0.html">4. Multistep Methods: Derivation through Integration</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_1_multistepMethod.html">4.1. Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_2_derivation.html">4.2. Derivation of Multistep Methods by Numerical Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_3_explicit.html">4.3. Explicit  Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_4_implicit.html">4.4. Implicit  Multistep Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_5_predictorCorrector.html">4.5. Predictor-Corrector Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_6_codes.html">4.6. Computer Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/chap03_7_exercise.html">4.7. Chapter 4 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04/chap04_0.html">5. Multistep Methods: Accuracy and Error Constants</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_1_errorIntegration.html">5.1. Derivation of Local Error Terms for Integration Formulae</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_2_errorConstant.html">5.2. Order of Accuracy and Error Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_3_MilineDevice.html">5.3. Local Truncation Errors of Predictor-Corrector methods – Milne’s Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/chap04_4_exercise.html">5.4. Chapter 5 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chap05_0.html">6. Multistep Methods: Zero-Stability and Convergence</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chap05_1_experiment.html">6.1. An exploratory experiment</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.2. Characteristic Polynomials and Root Condition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap05_3_convergence.html">6.3. Zero-Stability, Consistency and Convergence Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap05_4_exercise.html">6.4. Chapter 6 Exercise</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">7. Multistep Methods: Stability Interval and Region</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_experiment.html">7.1. An experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_stabilityInterval.html">7.2. Interval and Region of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_rootLocus.html">7.3. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_4_boundaryRootLocus.html">7.4. The Boundary Root Locus Method for Finding Regions of Absolute Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_5_exampleCode.html">7.5. Example MATLAB Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/chap06_6_exercise.html">7.6. Chapter 7 Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07/chap07_0.html">8. Stiff Differential Equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_1_introduction.html">8.1. Introduction and background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_2_stiffSystem.html">8.2. Stiff Systems of Differential Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_3_method.html">8.3. Methods for Stiff Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_4_codeExample.html">8.4. MATLAB Program 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/chap07_5_exercise.html">8.5. Chapter 8 Exercise</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08/chap08_0.html">9. Sparse Matrices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_1_introduction.html">9.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_2_sparseMatrix.html">9.2. Sparse Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_3_graphTheory.html">9.3. Matrix Sparsity and Graph Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_4_storage.html">9.4. Sparse Matrices Storage and Reordering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_5_reordering.html">9.5. Reordering and Matrix Bandwidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_6_exercise.html">9.6. Chapter 9 Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/chap08_7_answers.html">9.7. Answers to Chapter 9 Exercises</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://uk.mathworks.com/help/matlab/ordinary-differential-equations.html">ODE Solvers in Matlab</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/integrate.html">ODE Solvers in Scipy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chaps/05/chap05_2_rootCondition-new.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Characteristic Polynomials and Root Condition</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="characteristic-polynomials-and-root-condition">
+<h1><span class="section-number">6.2. </span>Characteristic Polynomials and Root Condition<a class="headerlink" href="#characteristic-polynomials-and-root-condition" title="Link to this heading">#</a></h1>
+<p>It is possible to derive any number of multistep methods of various
+order, but the most important factor related to each method is its
+stability property.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 6.1 </span> (Stability)</p>
+<section class="definition-content" id="proof-content">
+<p>Stability of a numerical method is its capability to keep errors at bay during computation. These errors are required to be dampened out eventually or remain bounded without contaminating the numerical solution significantly.</p>
+</section>
+</div><p>The general form of a <span class="math notranslate nohighlight">\(k\)</span>-step linear multistep method can be written as</p>
+<div class="math notranslate nohighlight" id="equation-eq-ch04-1-1">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-eq-ch04-1-1" title="Link to this equation">#</a></span>\[
+\sum_{i=0}^{k}\alpha_i y_{j+i}~=~ h\sum_{i=0}^{k}\beta_i f_{j+i} \qquad
+     \text{with}~ \alpha_k =1, 
+\]</div>
+<p>and the exact solution <span class="math notranslate nohighlight">\(y(x_{j+i})\)</span> and its first derivative <span class="math notranslate nohighlight">\(f(x_{j+i})=y'(x_{j+i})\)</span> satisfies a similar equation given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-ch04-1-1-b">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-eq-ch04-1-1-b" title="Link to this equation">#</a></span>\[
+\sum_{i=0}^{k}\alpha_i y(x_{j+i})~=~ h\sum_{i=0}^{k}\beta_i f(x_{j+i}) + C_p h^p y^{(p)}(\xi),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_p h^p y^{(p)}(\xi)\)</span> is the truncation error.</p>
+<p>Subtracting equation <a class="reference internal" href="#equation-eq-ch04-1-1-b">(6.2)</a> from equation <a class="reference internal" href="#equation-eq-ch04-1-1-b">(6.2)</a> gives</p>
+<div class="math notranslate nohighlight" id="equation-eq-ch04-1-1-c">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-eq-ch04-1-1-c" title="Link to this equation">#</a></span>\[
+\sum_{i=0}^{k}\alpha_i \biggl( y(x_{j+i}) - y_{j+i} \biggr)~=~ h\sum_{i=0}^{k}\beta_i \biggl( f(x_{j+i}) - f_{j+i} \biggr) + C_p h^p y^{(p)}(\xi),
+\]</div>
+<p>Let <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span>, we get a homogeneous linear difference equation</p>
+<div class="math notranslate nohighlight" id="equation-eq-ch04-1-1-d">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-eq-ch04-1-1-d" title="Link to this equation">#</a></span>\[
+\alpha_0 e_j + \alpha_1 e_{j+1} + \alpha_2 e_{j+2} + \cdots + \alpha_k e_{j+k} = 0,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(e_{j+i}=y(x_{j+i}) - y_{j+i}\)</span> is the error at <span class="math notranslate nohighlight">\(x_{j+i}\)</span>. The associated characteristic equation of <a class="reference internal" href="#equation-eq-ch04-1-1-d">(6.4)</a> is</p>
+<div class="math notranslate nohighlight" id="equation-eq-ch04-1-1-e">
+<span class="eqno">(6.5)<a class="headerlink" href="#equation-eq-ch04-1-1-e" title="Link to this equation">#</a></span>\[
+    \alpha_0 + \alpha_1 z + \alpha_2 z^2 + \dots + \alpha_k z^k = 0.
+\]</div>
+<ul>
+<li><p>If equation <a class="reference internal" href="#equation-eq-ch04-1-1-e">(6.5)</a> has <span class="math notranslate nohighlight">\(k\)</span> non-repeated roots <span class="math notranslate nohighlight">\(z_1 \neq z_2 \neq \ldots \neq z_k\)</span>, then the general solution to equation <a class="reference internal" href="#equation-eq-ch04-1-1-d">(6.4)</a> is</p>
+<div class="math notranslate nohighlight" id="equation-eq-eq-ch04-1-1-f">
+<span class="eqno">(6.7)<a class="headerlink" href="#equation-eq-eq-ch04-1-1-f" title="Link to this equation">#</a></span>\[
+    e_j = c_1 z_1^j + c_2 z_2^j + \cdots + c_k z_k^j.
+    \]</div>
+</li>
+<li><p>If equation <a class="reference internal" href="#equation-eq-ch04-1-1-e">(6.5)</a> has <span class="math notranslate nohighlight">\(k\)</span> repeated roots <span class="math notranslate nohighlight">\(z_1 = z_2 = \ldots = z_k = z\)</span>, then the general solution to equation <a class="reference internal" href="#equation-eq-ch04-1-1-d">(6.4)</a> is</p>
+<div class="math notranslate nohighlight" id="equation-eq-eq-ch04-1-1-f">
+<span class="eqno">(6.7)<a class="headerlink" href="#equation-eq-eq-ch04-1-1-f" title="Link to this equation">#</a></span>\[
+    e_j = ( c_1  + c_2 j + c_3 j^2 + \cdots + c_k j^{k-1} ) z^j.
+    \]</div>
+</li>
+</ul>
+<p>See <a class="reference internal" href="../01/chap01_4_homogenous.html#chap01-complexnumber-de"><span class="std std-numref">Section 2.4</span></a> for more details on difference and characteristic equations.</p>
+<div class="question admonition">
+<p class="admonition-title">Question</p>
+<p>What kind of conditions shall we impose to keep the error <span class="math notranslate nohighlight">\(e_{j}=y(x_{j}) - y_{j}\)</span> bounded for <span class="math notranslate nohighlight">\(j = 1, 2, 3, \ldots, n, \ldots\)</span>?</p>
+</div>
+<!-- 
+$$
+\frac{dy}{dx}= f(x,y) = \lambda y, \quad
+     y(x_0) \,=\,y_0
+$$(eq:ch04:1.2)
+
+where $\lambda$ is a constant.
+
+:::{note}
+:class: dropdown
+
+The general solution to the test problem {eq}`eq:ch04:1.2` is 
+
+$$
+\begin{aligned}
+    && y \,&=\, A\,e^{\lambda x}\,,
+    & y(x_0) &= y_0 ~~\Rightarrow~~ A = y_0\,e^{-\lambda x_0} &&
+\end{aligned}
+$$
+
+ thus, the exact solution is:
+$\displaystyle{y_j ~=~ y_0\,e^{\lambda(x_j-x_0)}.}$
+:::
+
+According to the test problem {eq}`eq:ch04:1.2`, we can substitute
+$
+    f_j = \lambda y_j
+$
+into equation {eq}`eq:ch04:1.1` and get
+
+$$
+\sum_{i=0}^{k}\alpha_i y_{j+i}~=~ h\lambda\sum_{i=0}^{k}\beta_i y_{j+i}~, 
+$$(eq:ch04:1.3)
+
+which can be re-arranged as
+
+$$
+\sum_{i=0}^{k}\gamma_i y_{j+i}=0~, ~\text{with}~ \gamma_i =\alpha_i - h\lambda \beta_i
+$$(eq:ch04:1.4)
+
+We can write equation {eq}`eq:ch04:1.4` in the operator form as
+
+$$
+\L (\E) y_j = 
+\left(\gamma_0 \E^0 + \gamma_1 \E^1 + \gamma_2 \E^2 + \cdots + \gamma_k \E^k \right) y_j =0~\,
+$$
+
+and get its {index}`characteristic equation`
+
+$$
+\L (z, h\lambda)=
+\gamma_0 + \gamma_1 z + \gamma_2 z^2 + \cdots + \gamma_k z^k = 0
+$$(eq:ch04:1.5)
+
+This is a polynomial equation of degree $k$ and has $k$
+roots, $\,z_1, z_2, \dots, z_k\,$, which may be real or complex.
+If these roots are distinct, the general solution of the difference
+equation {eq}`eq:ch04:1.4` is 
+
+$$
+\begin{aligned}
+y_j ~=~ A_1\, z_1^j + A_2\, z_2^j + \,\dots\, + A_k\,z_k^j
+\end{aligned}
+$$(eq:ch04:1.6)
+
+ where $A_1$, $A_2$, ..., $A_k$ are constant. See {numref}`chap01:complexNumber:DE` for more details on difference and characteristic equations.
+
+:::{admonition} Question
+:class: question
+
+What kind of conditions shall we impose to keep the general solution {eq}`eq:ch04:1.6` bounded?
+
+::: -->
+<div class="proof definition admonition" id="def:char-poly">
+<p class="admonition-title"><span class="caption-number">Definition 6.2 </span> (Characteristic Polynomials)</p>
+<section class="definition-content" id="proof-content">
+<p>For a general linear multistep method</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=0}^k \alpha_i y_{j+i} = h \sum_{i=0}^k f_{j+i},
+\]</div>
+<p>the expression in the form</p>
+<div class="math notranslate nohighlight" id="equation-eq-chap04-charpoly">
+<span class="eqno">(6.8)<a class="headerlink" href="#equation-eq-chap04-charpoly" title="Link to this equation">#</a></span>\[
+\L (z, h\lambda) = \sum_{i=0}^k \left(\alpha_i - h\lambda \beta_i\right) z^i
+\]</div>
+<p>is called its <strong><span class="target" id="index-0"></span>characteristic polynomial</strong>.</p>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
+<p>In some books, <span class="math notranslate nohighlight">\(\pi(z, h\lambda)\)</span> is used to represent the characteristic polynomial.</p>
+</div>
+<p>We call</p>
+<div class="math notranslate nohighlight" id="equation-eq-chap04-charpoly-first">
+<span class="eqno">(6.9)<a class="headerlink" href="#equation-eq-chap04-charpoly-first" title="Link to this equation">#</a></span>\[
+\rho(z) = \sum_{i=0}^{k} \alpha_i z^i
+\]</div>
+<p>the <strong><span class="target" id="index-1"></span>first characteristic polynomial</strong>, and</p>
+<div class="math notranslate nohighlight" id="equation-eq-chap04-charpoly-second">
+<span class="eqno">(6.10)<a class="headerlink" href="#equation-eq-chap04-charpoly-second" title="Link to this equation">#</a></span>\[
+\sigma(z) = \sum_{i=0}^{k} \beta_i z^i
+\]</div>
+<p>the <strong><span class="target" id="index-2"></span>second characteristic polynomial</strong> of the multistep method.</p>
+<p>These polynomails given in equations <a class="reference internal" href="#equation-eq-chap04-charpoly">(6.8)</a>, <a class="reference internal" href="#equation-eq-chap04-charpoly-first">(6.9)</a> and <a class="reference internal" href="#equation-eq-chap04-charpoly-second">(6.10)</a> have the following relation</p>
+<div class="math notranslate nohighlight" id="equation-eq-chap04-chapoly-relation">
+<span class="eqno">(6.11)<a class="headerlink" href="#equation-eq-chap04-chapoly-relation" title="Link to this equation">#</a></span>\[
+\L (z, h\lambda) = \rho(z) - h\lambda \sigma(z)
+\]</div>
+</section>
+</div><div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 6.2 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the characteristic polynomial <span class="math notranslate nohighlight">\(\L (z, h\lambda)\)</span> for a 2-step method</p>
+<div class="math notranslate nohighlight">
+\[
+\alpha_0 y_{j-2} + \alpha_1 y_{j-1} + \alpha_2 y_{j}
+= h(\beta_0f_{j-2 } + \beta_1 f_{j-1} + \beta_2 f_{j})    
+\]</div>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Solution</p>
+<ul>
+<li><p>Method 1:</p>
+<p>Substituting <span class="math notranslate nohighlight">\(\,f = \lambda\,y\,\)</span> into the 2-step method formula, we have</p>
+<div class="math notranslate nohighlight">
+\[
+    \alpha_0 y_{j-2} + \alpha_1 y_{j-1} + \alpha_2 y_{j}
+    = h\lambda(\beta_0 y_{j-2} + \beta_1 y_{j-1} + \beta_2 y_{j})    
+    \]</div>
+<p>and re-arrange it as</p>
+<div class="math notranslate nohighlight">
+\[
+    (\alpha_0-h\lambda \beta_0) y_{j-2}
+    + (\alpha_1-h\lambda \beta_1) y_{j-1}
+    + (\alpha_2-h\lambda \beta_2) y_{j} = 0
+    \]</div>
+<p>Writing the equation in shift operator form</p>
+<div class="math notranslate nohighlight">
+\[
+    \left[
+    (\alpha_0-h\lambda \beta_0) \E^0
+    + (\alpha_1-h\lambda \beta_1) \E^1
+    + (\alpha_2-h\lambda \beta_2) \E^2
+    \right] y_{j-2} =0 
+    \]</div>
+<p>so the characteristic polynomial is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{aligned}
+    \L (z, h\lambda) 
+    &amp;=\sum_{i=0}^{2} (\alpha_i - h\lambda \beta_i) z^i\\
+    &amp; = (\alpha_0-h\lambda \beta_0) z^0
+    + (\alpha_1-h\lambda \beta_1) z^1
+    + (\alpha_2-h\lambda \beta_2) z^2
+    \end{aligned}
+    \end{split}\]</div>
+</li>
+<li><p>Method 2:</p>
+<p>Using <a class="reference internal" href="#equation-eq-chap04-charpoly">(6.8)</a> given in <a class="reference internal" href="#def:char-poly">Definition 6.2</a>, we can quickly work out the characteristic polynomial for this 2-step method</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{aligned}
+    \L (z, h\lambda) 
+    &amp;=\sum_{i=0}^{2} (\alpha_i - h\lambda \beta_i) z^i\\
+    &amp; = (\alpha_0-h\lambda \beta_0) z^0
+    + (\alpha_1-h\lambda \beta_1) z^1
+    + (\alpha_2-h\lambda \beta_2) z^2
+    \end{aligned}
+    \end{split}\]</div>
+</li>
+</ul>
+</div>
+</section>
+</div><div class="proof definition admonition" id="definition-root-condition">
+<p class="admonition-title"><span class="caption-number">Definition 6.3 </span> (Root Condition)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\,z_1,z_2,\dots,z_k\,\)</span> denote the roots of the first
+characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> associated with a
+linear multistep method. If <span class="math notranslate nohighlight">\(\,|z_i|\leq1\,\)</span>, for each
+<span class="math notranslate nohighlight">\(\,i=1,2,...,k\,\)</span>, and all roots with absolute value <span class="math notranslate nohighlight">\(1\)</span> are simple
+roots (i.e. not repeated), then the difference method is said to satisfy
+the <strong><span class="target" id="index-3"></span>root condition</strong>.</p>
+</section>
+</div><div class="figure" id="id1" style="text-align: center"><p><img width="48%" src="../../_images/tikz-ea392d229e90d2ec97267bb4c58b1db4cdbf4185.svg" alt="Figure made with TikZ" /></p>
+<p><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Unit circle in the complex plane <span class="math notranslate nohighlight">\(\C\)</span>.</span></p>
+</div><div class="proof theorem admonition" id="theorem-4">
+<span id="index-4"></span><p class="admonition-title"><span class="caption-number">Theorem 6.1 </span> (Stability)</p>
+<section class="theorem-content" id="proof-content">
+<p>A linear multistep method of order <span class="math notranslate nohighlight">\(\,\geq1\,\)</span> is <code class="docutils literal notranslate"><span class="pre">stable</span></code> if the
+roots of its first characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> satisfies
+the root condition, i.e. the roots of <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> lie inside or on
+the unit circle, and the roots on the unit circle are distinct (or
+simple) - this is called the root condition.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-5">
+<p class="admonition-title"><span class="caption-number">Definition 6.4 </span> (Strong Stability)</p>
+<section class="definition-content" id="proof-content">
+<p>A method is <em><span class="target" id="index-5"></span>strongly stable</em> if the roots of <span class="math notranslate nohighlight">\(\rho(z) = 0\)</span> are inside
+the unit circle except for only one root, call <em>principal root</em>, with
+the magnitude of one(i.e. <span class="math notranslate nohighlight">\(|z| = 1\)</span>).</p>
+</section>
+</div><div class="proof definition admonition" id="definition-6">
+<p class="admonition-title"><span class="caption-number">Definition 6.5 </span> (Weak Stability)</p>
+<section class="definition-content" id="proof-content">
+<p>A method is <em><span class="target" id="index-6"></span>weakly stable</em> if it is stable (i.e. satisfies the root
+condition) but has more than one root on the unit circle.</p>
+</section>
+</div><div class="proof example admonition" id="example-7">
+<p class="admonition-title"><span class="caption-number">Example 6.3 </span></p>
+<section class="example-content" id="proof-content">
+<p>Find the roots associated with the following characteristic polynomials:</p>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(\rho(z)= z^3 + z \)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution (click to show)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(z^3 + z ~=~ 0\)</span><br />
+<span class="math notranslate nohighlight">\(\therefore\quad z(z^2 + 1) ~=~ 0\)</span><br />
+<span class="math notranslate nohighlight">\(\therefore\quad z_1 ~=~ 0, ~~ z_2 ~=~ i, ~~z_3 ~= -i\)</span></p>
+<p class="sd-card-text">We can also use Matlab to find the roots of the polynomial</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">];</span><span class="w">     </span><span class="c">%vector defining the coefficients of the polynomial</span>
+<span class="nb">roots</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w">         </span><span class="c">%solve the polynomial equation</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Output</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">ans</span><span class="w"> </span><span class="p">=</span>
+
+<span class="w">    </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span>0000<span class="nb">i</span>
+<span class="w">    </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span>0000<span class="nb">i</span>
+<span class="w">    </span><span class="mf">0.0000</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span>0000<span class="nb">i</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(z_1\)</span>, <span class="math notranslate nohighlight">\(z_2\)</span>, and <span class="math notranslate nohighlight">\(z_3\)</span> are shown on the unit circle. Because
+there are more than one root on the unit circle, the method is
+weakly stable.</p>
+<div class="figure" style="text-align: center"><p><img width="40%" src="../../_images/tikz-2046bc9f69c0cfdd831463cdd501286650d439f3.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\(\rho(z)=z^4 + z\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution (click to show)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(z^4 + z ~=~ 0\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+z^4 + z  &amp; = z(z^3 + 1) \\
+             &amp; = z (z+1) (z^2-z+1) \\
+\end{aligned}
+\end{split}\]</div>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(\therefore\quad z_1 ~=~ 0\)</span>, <span class="math notranslate nohighlight">\(z_2 = -1\)</span>,  <span class="math notranslate nohighlight">\(z_3 = \dfrac{1}{2} + i\dfrac{\sqrt{3}}{2}\)</span>, 
+<span class="math notranslate nohighlight">\(z_4 = \dfrac{1}{2} - i\dfrac{\sqrt{3}}{2}\)</span>.</p>
+<p class="sd-card-text">We can also use Matlab to find the roots of the polynomial</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">syms</span><span class="w"> </span><span class="s">z</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">z</span><span class="o">^</span><span class="mi">4</span><span class="o">+</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Output</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">ans</span><span class="w"> </span><span class="p">=</span>
+<span class="w">                </span><span class="o">-</span><span class="mi">1</span>
+<span class="w">                </span><span class="mi">0</span>
+<span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span>1<span class="nb">i</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="p">(</span><span class="mi">3</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span>1<span class="nb">i</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Because there are more than one root on the unit circle, the method
+is weakly stable.</p>
+<div class="figure" style="text-align: center"><p><img width="40%" src="../../_images/tikz-72087dd068e1a5a4befd6d55bf71ed47a44bf895.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+</details></li>
+</ol>
+</section>
+</div></section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chaps/05"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chap05_1_experiment.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6.1. </span>An exploratory experiment</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chap05_3_convergence.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6.3. </span>Zero-Stability, Consistency and Convergence Theorem</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Zhihua Ma
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023--2028.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Tuesday 03 November 2026 16:52:19.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
