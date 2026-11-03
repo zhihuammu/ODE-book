@@ -8,7 +8,6 @@ stability property.
 Stability of a numerical method is its capability to keep errors at bay during computation. These errors are required to be dampened out eventually or remain bounded without contaminating the numerical solution significantly.
 ```
 
-
 For simplicity, we study the stability by
 considering a general linear multistep method,
 
@@ -19,6 +18,7 @@ $$
 $$(eq:ch04:1.1) 
 
  and a test differential equation,
+
 
 
 $$
