@@ -6,9 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>6.3. Zero-Stability, Consistency and Convergence Theorem &#8212; Linear Multistep Methods</title>
+    <title>6.3. Consistency and Convergence &#8212; Linear Multistep Methods</title>
   
   
   
@@ -30,17 +30,17 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=79838d2f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=3f3b9192" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -49,7 +49,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=c73c0f3e"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -72,11 +72,11 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="6.4. Chapter 6 Exercise" href="chap05_4_exercise.html" />
-    <link rel="prev" title="6.2. Characteristic Polynomials and Root Condition" href="chap05_2_rootCondition-new.html" />
+    <link rel="prev" title="6.2. Root Condition and Zero-Stability" href="chap05_2_rootCondition-new.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Tuesday 03 November 2026 15:35:59"/>
+    <meta name="docbuild:last-update" content="Thursday 05 November 2026 16:51:34"/>
   </head>
   
   
@@ -227,13 +227,13 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chap05_0.html">6. Multistep Methods: Zero-Stability and Convergence</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chap05_1_experiment.html">6.1. An exploratory experiment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap05_2_rootCondition-new.html">6.2. Characteristic Polynomials and Root Condition</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.3. Zero-Stability, Consistency and Convergence Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap05_1_experiment.html">6.1. A numerical experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap05_2_rootCondition-new.html">6.2. Root Condition and Zero-Stability</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.3. Consistency and Convergence</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap05_4_exercise.html">6.4. Chapter 6 Exercise</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">7. Multistep Methods: Stability Interval and Region</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">7. Multistep Methods: Absolute Stability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_experiment.html">7.1. An experiment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_stabilityInterval.html">7.2. Interval and Region of Absolute Stability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_rootLocus.html">7.3. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
@@ -399,7 +399,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Zero-Stability, Consistency and Convergence Theorem</h1>
+    <h1>Consistency and Convergence</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -413,29 +413,33 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="zero-stability-consistency-and-convergence-theorem">
-<h1><span class="section-number">6.3. </span>Zero-Stability, Consistency and Convergence Theorem<a class="headerlink" href="#zero-stability-consistency-and-convergence-theorem" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="consistency-and-convergence">
+<h1><span class="section-number">6.3. </span>Consistency and Convergence<a class="headerlink" href="#consistency-and-convergence" title="Link to this heading">#</a></h1>
+<!-- ::::{prf:definition} Zero-Stability
+A linear multistep method {eq}`eq:ch04:1.1` is said to be {index}`zero-stable` if it satisfies the root condition given in {prf:ref}`definition-root-condition`.
+
+This means no root of the
+first characteristic polynomial $\,\rho(z)\,$ has modulus greater that
+one, and every root of modulus one is simple.
+
+:::{note}
+:class: dropdown
+
+In electrical engineering and control theory, the right hand side of the first-order ODE 
+
+ $$\diff{y}{x}=f(x, y)$$
+
+is called the input of the system. In this context, we can interpret `zero-stability` as the stability of the system with **zero input**.
+
+We use the root condition to assess whether the discretised system (difference equation) can remain stable under **zero input** condition.
+:::
+
+:::: -->
 <div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 6.6 </span> (Zero-Stability)</p>
+<p class="admonition-title"><span class="caption-number">Definition 6.5 </span> (Consistency)</p>
 <section class="definition-content" id="proof-content">
-<p>A linear multistep method <a class="reference internal" href="chap05_2_rootCondition-new.html#equation-eq-ch04-1-1">(6.1)</a> is said to be <span class="target" id="index-0"></span>zero-stable if it satisfies the root condition given in <a class="reference internal" href="chap05_2_rootCondition-new.html#definition-root-condition">Definition 6.3</a>.</p>
-<p>This means no root of the
-first characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> has modulus greater that
-one, and every root of modulus one is simple.</p>
-<div class="dropdown admonition note">
-<p class="admonition-title">Note</p>
-<p>In electrical engineering and control theory, the right hand side of the first-order ODE</p>
-<div class="math notranslate nohighlight">
-\[\diff{y}{x}=f(x, y)\]</div>
-<p>is called the input of the system. In this context, we can interpret <code class="docutils literal notranslate"><span class="pre">zero-stability</span></code> as the stability of the system with <strong>zero input</strong>.</p>
-<p>We use the root condition to assess whether the discretised system (difference equation) can remain stable under <strong>zero input</strong> condition.</p>
-</div>
-</section>
-</div><div class="proof definition admonition" id="definition-1">
-<p class="admonition-title"><span class="caption-number">Definition 6.7 </span> (Consistency)</p>
-<section class="definition-content" id="proof-content">
-<p>In numerical analysis, consistency is the property of a numerical method performing differentiation or integration in a way similar to the actual differentiation or integration. In another word, consistency tells how similar is the discrete system to the original continuous system.</p>
-<p>The condition for the discrete system produced by a linear multistep method <a class="reference internal" href="chap05_2_rootCondition-new.html#equation-eq-ch04-1-1">(6.1)</a></p>
+<p>In numerical analysis, consistency is the property of a numerical method performing differentiation or integration in a way similar to the actual differentiation or integration. In another word, consistency tells how closely the discrete system approximates the original continuous system as the step size shrinks toward zero.</p>
+<p>The condition for the discrete system produced by a linear multistep method</p>
 <div class="math notranslate nohighlight">
 \[
 \sum_{i=0}^{k}\alpha_i y_{j+i}~=~ h\sum_{i=0}^{k}\beta_i f_{j+i}, \qquad
@@ -444,35 +448,24 @@ one, and every root of modulus one is simple.</p>
 <p>being <em>consistent</em> with the continuous differential equation</p>
 <div class="math notranslate nohighlight">
 \[
-\diff{y}{x}  =  f(x, y) 
+y'(x)  =  f(x, y) 
 \]</div>
 <p>or its integral</p>
 <div class="math notranslate nohighlight">
 \[
-\int_{x_j}^{x_{j+k}} \diff{y}{x} \dx = \int_{x_j}^{x_{j+k}} f(x, y) \dx
+\int_{x_j}^{x_{j+k}} y'(x)  ~\mathrm{d} x = \int_{x_j}^{x_{j+k}} f(x, y) ~\mathrm{d} x
 \]</div>
 <p>is that the method has an order of accuracy <span class="math notranslate nohighlight">\(p \geq 1\)</span>.</p>
 </section>
-</div><p>In terms of error constants <span class="math notranslate nohighlight">\(C_p\)</span> introduced in <a class="reference internal" href="../04/chap04_2_errorConstant.html#chap-errorconstant-constants"><span class="std std-numref">Section 5.2</span></a>, the condition of consistency is
+</div><p>In terms of error constants <span class="math notranslate nohighlight">\(C_{p+1}\)</span> introduced in <a class="reference internal" href="../04/chap04_2_errorConstant.html#chap-errorconstant-constants"><span class="std std-numref">Section 5.2</span></a>, the condition of consistency is
 equivalent to <span class="math notranslate nohighlight">\(C_0 = 0\)</span>, <span class="math notranslate nohighlight">\(C_1 = 0\)</span>. This ensures the method has an order of accuracy <span class="math notranslate nohighlight">\(p\geq 1\)</span>. Thus the condition of consistency can also be expressed by the relations</p>
 <div class="math notranslate nohighlight">
-\[
+\[\begin{split}
 \begin{aligned}
-    &amp;&amp; \sum_{i=0}^{k}  \alpha_i ~&amp;=~ 0\,;
-     &amp; \sum_{i=0}^{k} i\alpha_i ~&amp;=~ \sum_{i=0}^{k} \beta_i\,. &amp;&amp;
+    C_0 &amp; = \alpha_0 + \alpha_1 + \cdots + \alpha_k = 0\\
+    C_1 &amp; = \left(\alpha_1 + 2\alpha_2 + 3\alpha_3 + \cdots + k\alpha_k\right) - \left( \beta_0 + \beta_1 + \cdots + \beta_k \right) = 0\\
 \end{aligned}
-\]</div>
-<div class="dropdown admonition note">
-<p class="admonition-title">Note</p>
-<div class="math notranslate nohighlight">
-\[
-C_0= \alpha_0 + \alpha_1 + \cdots + \alpha_k
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-C_1= \left(\alpha_1 + 2\alpha_2 + 3\alpha_3 + \cdots + k\alpha_k\right) - \left( \beta_0 + \beta_1 + \cdots + \beta_k \right)
-\]</div>
-</div>
+\end{split}\]</div>
 <p>And in terms of the first and second characteristic polynomials <span class="math notranslate nohighlight">\(\rho(z)\)</span> and <span class="math notranslate nohighlight">\(\sigma(z)\)</span>, the condition of consistency can be expressed by the following relations - i.e. the linear multistep method <a class="reference internal" href="chap05_2_rootCondition-new.html#equation-eq-ch04-1-1">(6.1)</a> is consistent <em>iff</em>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -484,7 +477,7 @@ C_1= \left(\alpha_1 + 2\alpha_2 + 3\alpha_3 + \cdots + k\alpha_k\right) - \left(
 always has a root at <span class="math notranslate nohighlight">\(+1\)</span>, i.e. the <em>principal root</em> <span class="math notranslate nohighlight">\(z_1\)</span>. The
 remaining roots <span class="math notranslate nohighlight">\(\,z_i\,, ~i=2,3,\dots,k\,\)</span>, are the <em>parasitic
 roots</em>.</p>
-<div class="proof remark admonition" id="remark-2">
+<div class="proof remark admonition" id="remark-1">
 <p class="admonition-title"><span class="caption-number">Remark 6.1 </span> (Condition of Consistency)</p>
 <section class="remark-content" id="proof-content">
 <p>In summary there are three equivalent conditions of consistency:</p>
@@ -500,8 +493,8 @@ roots</em>.</p>
 step are not propagated (or amplified) at subsequent steps.</p>
 <p>In addition, it is also important for us to know whether the numerical solution <span class="math notranslate nohighlight">\(y\)</span><sub>num</sub> will approach
 the exact solution <span class="math notranslate nohighlight">\(y\)</span><sub>ex</sub> when we reduce the step size <span class="math notranslate nohighlight">\(h\)</span> towards zero.</p>
-<div class="proof definition admonition" id="definition-3">
-<p class="admonition-title"><span class="caption-number">Definition 6.8 </span> (Convergence)</p>
+<div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 6.6 </span> (Convergence)</p>
 <section class="definition-content" id="proof-content">
 <p>For an initial value problem</p>
 <div class="math notranslate nohighlight">
@@ -525,14 +518,14 @@ the exact solution <span class="math notranslate nohighlight">\(y\)</span><sub>e
 the parasitic solutions of the general solution to a difference equation
 are damped out in the limit as <span class="math notranslate nohighlight">\(\,h \to 0\,\)</span> — this effect is related
 to the fundamental theorem on linear multistep methods by <strong>Dahlquist</strong>:</p>
-<div class="proof theorem admonition" id="theorem-4">
-<p class="admonition-title"><span class="caption-number">Theorem 6.2 </span> (Dahlquist Equivalence)</p>
+<div class="proof theorem admonition" id="theorem-3">
+<p class="admonition-title"><span class="caption-number">Theorem 6.1 </span> (Dahlquist Equivalence)</p>
 <section class="theorem-content" id="proof-content">
 <p>The necessary and sufficient conditions for a linear multistep method to
-be <span class="target" id="index-1"></span>convergent are that it is consistent and zero-stable.</p>
+be <span class="target" id="index-0"></span>convergent are that it is consistent and zero-stable.</p>
 </section>
-</div><div class="proof example admonition" id="example-5">
-<p class="admonition-title"><span class="caption-number">Example 6.4 </span></p>
+</div><div class="proof example admonition" id="example-4">
+<p class="admonition-title"><span class="caption-number">Example 6.3 </span></p>
 <section class="example-content" id="proof-content">
 <p>Investigate the convergence of the third order Adams-Bashforth formula:</p>
 <div class="math notranslate nohighlight">
@@ -596,8 +589,8 @@ satisfies the root condition and is zero-stable.</p>
 <p>Therefore the method is convergent.</p>
 </div>
 </section>
-</div><div class="proof example admonition" id="example-6">
-<p class="admonition-title"><span class="caption-number">Example 6.5 </span></p>
+</div><div class="proof example admonition" id="example-5">
+<p class="admonition-title"><span class="caption-number">Example 6.4 </span></p>
 <section class="example-content" id="proof-content">
 <p>Investigate the stability of the Milne’s predictor method:</p>
 <div class="math notranslate nohighlight">
@@ -648,7 +641,7 @@ method is consistent
 zero stable, the method is also convergent.</p>
 </div>
 </section>
-</div><div class="proof remark admonition" id="remark-7">
+</div><div class="proof remark admonition" id="remark-6">
 <p class="admonition-title"><span class="caption-number">Remark 6.2 </span> (Adams methods)</p>
 <section class="remark-content" id="proof-content">
 <p>The characteristic polynomial <span class="math notranslate nohighlight">\(\rho\)</span> for all Adams methods
@@ -680,7 +673,7 @@ all Adams methods are convergent.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/05"
+            path: "./chaps\05"
         },
         predefinedOutput: true
     }
@@ -703,7 +696,7 @@ all Adams methods are convergent.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6.2. </span>Characteristic Polynomials and Root Condition</p>
+        <p class="prev-next-title"><span class="section-number">6.2. </span>Root Condition and Zero-Stability</p>
       </div>
     </a>
     <a class="right-next"
@@ -750,7 +743,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 03 November 2026 15:35:59.
+  Last updated on Thursday 05 November 2026 16:51:34.
   <br/>
 </p>
   </div>

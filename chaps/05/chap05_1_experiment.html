@@ -6,9 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>6.1. An exploratory experiment &#8212; Linear Multistep Methods</title>
+    <title>6.1. A numerical experiment &#8212; Linear Multistep Methods</title>
   
   
   
@@ -30,17 +30,17 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=79838d2f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=3f3b9192" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -49,7 +49,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=c73c0f3e"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -71,12 +71,12 @@
     <link rel="icon" href="../../_static/odefavicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6.2. Characteristic Polynomials and Root Condition" href="chap05_2_rootCondition-new.html" />
+    <link rel="next" title="6.2. Root Condition and Zero-Stability" href="chap05_2_rootCondition-new.html" />
     <link rel="prev" title="6. Multistep Methods: Zero-Stability and Convergence" href="chap05_0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Tuesday 03 November 2026 15:35:59"/>
+    <meta name="docbuild:last-update" content="Thursday 05 November 2026 16:49:46"/>
   </head>
   
   
@@ -227,13 +227,13 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chap05_0.html">6. Multistep Methods: Zero-Stability and Convergence</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.1. An exploratory experiment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap05_2_rootCondition-new.html">6.2. Characteristic Polynomials and Root Condition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap05_3_convergence.html">6.3. Zero-Stability, Consistency and Convergence Theorem</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.1. A numerical experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap05_2_rootCondition-new.html">6.2. Root Condition and Zero-Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap05_3_convergence.html">6.3. Consistency and Convergence</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap05_4_exercise.html">6.4. Chapter 6 Exercise</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">7. Multistep Methods: Stability Interval and Region</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">7. Multistep Methods: Absolute Stability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_experiment.html">7.1. An experiment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_stabilityInterval.html">7.2. Interval and Region of Absolute Stability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_rootLocus.html">7.3. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
@@ -401,7 +401,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>An exploratory experiment</h1>
+    <h1>A numerical experiment</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -424,8 +424,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="an-exploratory-experiment">
-<h1><span class="section-number">6.1. </span>An exploratory experiment<a class="headerlink" href="#an-exploratory-experiment" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="a-numerical-experiment">
+<h1><span class="section-number">6.1. </span>A numerical experiment<a class="headerlink" href="#a-numerical-experiment" title="Link to this heading">#</a></h1>
 <div class="proof example admonition" id="example-6.1">
 <p class="admonition-title"><span class="caption-number">Example 6.1 </span></p>
 <section class="example-content" id="proof-content">
@@ -464,8 +464,8 @@ y_n = -4 y_{n-1} + 5 y_{n-2} + 4 h f_{n-1} + 2h f_{n-2}.
 <p>Using Python to calculate the error constant</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">fractions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fraction</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span>
 
 <span class="n">a0</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>      
 <span class="n">a1</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>      
@@ -575,11 +575,11 @@ Matlab</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
 Python</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">y</span><span class="o">+</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
 
 <span class="c1">#interval of definition</span>
@@ -695,7 +695,7 @@ Python</label><div class="sd-tab-content docutils">
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/05"
+            path: "./chaps\05"
         },
         predefinedOutput: true
     }
@@ -726,7 +726,7 @@ Python</label><div class="sd-tab-content docutils">
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.2. </span>Characteristic Polynomials and Root Condition</p>
+        <p class="prev-next-title"><span class="section-number">6.2. </span>Root Condition and Zero-Stability</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -783,7 +783,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 03 November 2026 15:35:59.
+  Last updated on Thursday 05 November 2026 16:49:46.
   <br/>
 </p>
   </div>

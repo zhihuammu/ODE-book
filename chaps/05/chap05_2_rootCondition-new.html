@@ -6,9 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>6.2. Characteristic Polynomials and Root Condition &#8212; Linear Multistep Methods</title>
+    <title>6.2. Root Condition and Zero-Stability &#8212; Linear Multistep Methods</title>
   
   
   
@@ -30,11 +30,11 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
@@ -49,7 +49,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=c73c0f3e"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -71,12 +71,12 @@
     <link rel="icon" href="../../_static/odefavicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6.3. Zero-Stability, Consistency and Convergence Theorem" href="chap05_3_convergence.html" />
-    <link rel="prev" title="6.1. An exploratory experiment" href="chap05_1_experiment.html" />
+    <link rel="next" title="6.3. Consistency and Convergence" href="chap05_3_convergence.html" />
+    <link rel="prev" title="6.1. A numerical experiment" href="chap05_1_experiment.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Tuesday 03 November 2026 16:52:19"/>
+    <meta name="docbuild:last-update" content="Thursday 05 November 2026 16:49:46"/>
   </head>
   
   
@@ -227,13 +227,13 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="chap05_0.html">6. Multistep Methods: Zero-Stability and Convergence</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="chap05_1_experiment.html">6.1. An exploratory experiment</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.2. Characteristic Polynomials and Root Condition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chap05_3_convergence.html">6.3. Zero-Stability, Consistency and Convergence Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap05_1_experiment.html">6.1. A numerical experiment</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.2. Root Condition and Zero-Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chap05_3_convergence.html">6.3. Consistency and Convergence</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chap05_4_exercise.html">6.4. Chapter 6 Exercise</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">7. Multistep Methods: Stability Interval and Region</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">7. Multistep Methods: Absolute Stability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_experiment.html">7.1. An experiment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_stabilityInterval.html">7.2. Interval and Region of Absolute Stability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_rootLocus.html">7.3. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
@@ -399,7 +399,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Characteristic Polynomials and Root Condition</h1>
+    <h1>Root Condition and Zero-Stability</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -413,17 +413,18 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="characteristic-polynomials-and-root-condition">
-<h1><span class="section-number">6.2. </span>Characteristic Polynomials and Root Condition<a class="headerlink" href="#characteristic-polynomials-and-root-condition" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="root-condition-and-zero-stability">
+<h1><span class="section-number">6.2. </span>Root Condition and Zero-Stability<a class="headerlink" href="#root-condition-and-zero-stability" title="Link to this heading">#</a></h1>
 <p>It is possible to derive any number of multistep methods of various
 order, but the most important factor related to each method is its
 stability property.</p>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 6.1 </span> (Stability)</p>
 <section class="definition-content" id="proof-content">
-<p>Stability of a numerical method is its capability to keep errors at bay during computation. These errors are required to be dampened out eventually or remain bounded without contaminating the numerical solution significantly.</p>
+<p>Stability of a numerical method is its ability to control the growth of perturbations, such as round-off and truncation errors, during the computation. A stable method ensures that these errors decay or remain bounded so that they do not grow uncontrollably and significantly corrupt the numerical solution.</p>
 </section>
-</div><p>The general form of a <span class="math notranslate nohighlight">\(k\)</span>-step linear multistep method can be written as</p>
+</div><!-- Stability of a numerical method is its capability to keep errors at bay during computation. These errors are required to be dampened out eventually or remain bounded without contaminating the numerical solution significantly. -->
+<p>The general form of a <span class="math notranslate nohighlight">\(k\)</span>-step linear multistep method can be written as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch04-1-1">
 <span class="eqno">(6.1)<a class="headerlink" href="#equation-eq-ch04-1-1" title="Link to this equation">#</a></span>\[
 \sum_{i=0}^{k}\alpha_i y_{j+i}~=~ h\sum_{i=0}^{k}\beta_i f_{j+i} \qquad
@@ -432,15 +433,15 @@ stability property.</p>
 <p>and the exact solution <span class="math notranslate nohighlight">\(y(x_{j+i})\)</span> and its first derivative <span class="math notranslate nohighlight">\(f(x_{j+i})=y'(x_{j+i})\)</span> satisfies a similar equation given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch04-1-1-b">
 <span class="eqno">(6.2)<a class="headerlink" href="#equation-eq-ch04-1-1-b" title="Link to this equation">#</a></span>\[
-\sum_{i=0}^{k}\alpha_i y(x_{j+i})~=~ h\sum_{i=0}^{k}\beta_i f(x_{j+i}) + C_p h^p y^{(p)}(\xi),
+\sum_{i=0}^{k}\alpha_i y(x_{j+i})~=~ h\sum_{i=0}^{k}\beta_i f(x_{j+i}) + C_p h^p y^{(p)}(x_j),
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(C_p h^p y^{(p)}(\xi)\)</span> is the truncation error.</p>
-<p>Subtracting equation <a class="reference internal" href="#equation-eq-ch04-1-1-b">(6.2)</a> from equation <a class="reference internal" href="#equation-eq-ch04-1-1-b">(6.2)</a> gives</p>
+<p>where <span class="math notranslate nohighlight">\(C_p h^p y^{(p)}(\xi)\)</span> is the leading truncation error of the method.</p>
+<p>Subtracting equation <a class="reference internal" href="#equation-eq-ch04-1-1">(6.1)</a> from equation <a class="reference internal" href="#equation-eq-ch04-1-1-b">(6.2)</a> gives</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch04-1-1-c">
 <span class="eqno">(6.3)<a class="headerlink" href="#equation-eq-ch04-1-1-c" title="Link to this equation">#</a></span>\[
 \sum_{i=0}^{k}\alpha_i \biggl( y(x_{j+i}) - y_{j+i} \biggr)~=~ h\sum_{i=0}^{k}\beta_i \biggl( f(x_{j+i}) - f_{j+i} \biggr) + C_p h^p y^{(p)}(\xi),
 \]</div>
-<p>Let <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span>, we get a homogeneous linear difference equation</p>
+<p>Let <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span>, we get a homogeneous linear difference equation for error terms <span class="math notranslate nohighlight">\(e_j, e_{j+1}, \ldots, e_{j+k}\)</span></p>
 <div class="math notranslate nohighlight" id="equation-eq-ch04-1-1-d">
 <span class="eqno">(6.4)<a class="headerlink" href="#equation-eq-ch04-1-1-d" title="Link to this equation">#</a></span>\[
 \alpha_0 e_j + \alpha_1 e_{j+1} + \alpha_2 e_{j+2} + \cdots + \alpha_k e_{j+k} = 0,
@@ -469,213 +470,114 @@ stability property.</p>
 <p class="admonition-title">Question</p>
 <p>What kind of conditions shall we impose to keep the error <span class="math notranslate nohighlight">\(e_{j}=y(x_{j}) - y_{j}\)</span> bounded for <span class="math notranslate nohighlight">\(j = 1, 2, 3, \ldots, n, \ldots\)</span>?</p>
 </div>
-<!-- 
-$$
-\frac{dy}{dx}= f(x,y) = \lambda y, \quad
-     y(x_0) \,=\,y_0
-$$(eq:ch04:1.2)
-
-where $\lambda$ is a constant.
-
-:::{note}
-:class: dropdown
-
-The general solution to the test problem {eq}`eq:ch04:1.2` is 
-
-$$
-\begin{aligned}
-    && y \,&=\, A\,e^{\lambda x}\,,
-    & y(x_0) &= y_0 ~~\Rightarrow~~ A = y_0\,e^{-\lambda x_0} &&
-\end{aligned}
-$$
-
- thus, the exact solution is:
-$\displaystyle{y_j ~=~ y_0\,e^{\lambda(x_j-x_0)}.}$
-:::
-
-According to the test problem {eq}`eq:ch04:1.2`, we can substitute
-$
-    f_j = \lambda y_j
-$
-into equation {eq}`eq:ch04:1.1` and get
-
-$$
-\sum_{i=0}^{k}\alpha_i y_{j+i}~=~ h\lambda\sum_{i=0}^{k}\beta_i y_{j+i}~, 
-$$(eq:ch04:1.3)
-
-which can be re-arranged as
-
-$$
-\sum_{i=0}^{k}\gamma_i y_{j+i}=0~, ~\text{with}~ \gamma_i =\alpha_i - h\lambda \beta_i
-$$(eq:ch04:1.4)
-
-We can write equation {eq}`eq:ch04:1.4` in the operator form as
-
-$$
-\L (\E) y_j = 
-\left(\gamma_0 \E^0 + \gamma_1 \E^1 + \gamma_2 \E^2 + \cdots + \gamma_k \E^k \right) y_j =0~\,
-$$
-
-and get its {index}`characteristic equation`
-
-$$
-\L (z, h\lambda)=
-\gamma_0 + \gamma_1 z + \gamma_2 z^2 + \cdots + \gamma_k z^k = 0
-$$(eq:ch04:1.5)
-
-This is a polynomial equation of degree $k$ and has $k$
-roots, $\,z_1, z_2, \dots, z_k\,$, which may be real or complex.
-If these roots are distinct, the general solution of the difference
-equation {eq}`eq:ch04:1.4` is 
-
-$$
-\begin{aligned}
-y_j ~=~ A_1\, z_1^j + A_2\, z_2^j + \,\dots\, + A_k\,z_k^j
-\end{aligned}
-$$(eq:ch04:1.6)
-
- where $A_1$, $A_2$, ..., $A_k$ are constant. See {numref}`chap01:complexNumber:DE` for more details on difference and characteristic equations.
-
-:::{admonition} Question
-:class: question
-
-What kind of conditions shall we impose to keep the general solution {eq}`eq:ch04:1.6` bounded?
-
-::: -->
 <div class="proof definition admonition" id="def:char-poly">
-<p class="admonition-title"><span class="caption-number">Definition 6.2 </span> (Characteristic Polynomials)</p>
+<p class="admonition-title"><span class="caption-number">Definition 6.2 </span> (First and Second characteristic polynomials)</p>
 <section class="definition-content" id="proof-content">
 <p>For a general linear multistep method</p>
 <div class="math notranslate nohighlight">
 \[
 \sum_{i=0}^k \alpha_i y_{j+i} = h \sum_{i=0}^k f_{j+i},
 \]</div>
-<p>the expression in the form</p>
-<div class="math notranslate nohighlight" id="equation-eq-chap04-charpoly">
-<span class="eqno">(6.8)<a class="headerlink" href="#equation-eq-chap04-charpoly" title="Link to this equation">#</a></span>\[
-\L (z, h\lambda) = \sum_{i=0}^k \left(\alpha_i - h\lambda \beta_i\right) z^i
-\]</div>
-<p>is called its <strong><span class="target" id="index-0"></span>characteristic polynomial</strong>.</p>
-<div class="dropdown admonition note">
-<p class="admonition-title">Note</p>
-<p>In some books, <span class="math notranslate nohighlight">\(\pi(z, h\lambda)\)</span> is used to represent the characteristic polynomial.</p>
-</div>
-<p>We call</p>
+<p>we call</p>
 <div class="math notranslate nohighlight" id="equation-eq-chap04-charpoly-first">
-<span class="eqno">(6.9)<a class="headerlink" href="#equation-eq-chap04-charpoly-first" title="Link to this equation">#</a></span>\[
+<span class="eqno">(6.8)<a class="headerlink" href="#equation-eq-chap04-charpoly-first" title="Link to this equation">#</a></span>\[
 \rho(z) = \sum_{i=0}^{k} \alpha_i z^i
 \]</div>
-<p>the <strong><span class="target" id="index-1"></span>first characteristic polynomial</strong>, and</p>
+<p>the <strong><span class="target" id="index-0"></span>first characteristic polynomial</strong>, and</p>
 <div class="math notranslate nohighlight" id="equation-eq-chap04-charpoly-second">
-<span class="eqno">(6.10)<a class="headerlink" href="#equation-eq-chap04-charpoly-second" title="Link to this equation">#</a></span>\[
+<span class="eqno">(6.9)<a class="headerlink" href="#equation-eq-chap04-charpoly-second" title="Link to this equation">#</a></span>\[
 \sigma(z) = \sum_{i=0}^{k} \beta_i z^i
 \]</div>
-<p>the <strong><span class="target" id="index-2"></span>second characteristic polynomial</strong> of the multistep method.</p>
-<p>These polynomails given in equations <a class="reference internal" href="#equation-eq-chap04-charpoly">(6.8)</a>, <a class="reference internal" href="#equation-eq-chap04-charpoly-first">(6.9)</a> and <a class="reference internal" href="#equation-eq-chap04-charpoly-second">(6.10)</a> have the following relation</p>
-<div class="math notranslate nohighlight" id="equation-eq-chap04-chapoly-relation">
-<span class="eqno">(6.11)<a class="headerlink" href="#equation-eq-chap04-chapoly-relation" title="Link to this equation">#</a></span>\[
+<p>the <strong><span class="target" id="index-1"></span>second characteristic polynomial</strong>.</p>
+<!-- 
+$$
 \L (z, h\lambda) = \rho(z) - h\lambda \sigma(z)
-\]</div>
+$$(eq:chap04:chapoly:relation)
+the **{index}`stability polynomial`** of the multistep method.
+
+:::{note}
+In some books, $\pi(z, h\lambda)$ is used to represent the stability polynomial.
+::: -->
 </section>
-</div><div class="proof example admonition" id="example-2">
-<p class="admonition-title"><span class="caption-number">Example 6.2 </span></p>
-<section class="example-content" id="proof-content">
-<p>Find the characteristic polynomial <span class="math notranslate nohighlight">\(\L (z, h\lambda)\)</span> for a 2-step method</p>
-<div class="math notranslate nohighlight">
-\[
+</div><!-- 
+:::{prf:example}
+Find the first and second characteristic polynomials and stability polynomial for a 2-step method 
+
+$$
 \alpha_0 y_{j-2} + \alpha_1 y_{j-1} + \alpha_2 y_{j}
 = h(\beta_0f_{j-2 } + \beta_1 f_{j-1} + \beta_2 f_{j})    
-\]</div>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Solution</p>
-<ul>
-<li><p>Method 1:</p>
-<p>Substituting <span class="math notranslate nohighlight">\(\,f = \lambda\,y\,\)</span> into the 2-step method formula, we have</p>
-<div class="math notranslate nohighlight">
-\[
-    \alpha_0 y_{j-2} + \alpha_1 y_{j-1} + \alpha_2 y_{j}
-    = h\lambda(\beta_0 y_{j-2} + \beta_1 y_{j-1} + \beta_2 y_{j})    
-    \]</div>
-<p>and re-arrange it as</p>
-<div class="math notranslate nohighlight">
-\[
-    (\alpha_0-h\lambda \beta_0) y_{j-2}
-    + (\alpha_1-h\lambda \beta_1) y_{j-1}
-    + (\alpha_2-h\lambda \beta_2) y_{j} = 0
-    \]</div>
-<p>Writing the equation in shift operator form</p>
-<div class="math notranslate nohighlight">
-\[
-    \left[
-    (\alpha_0-h\lambda \beta_0) \E^0
-    + (\alpha_1-h\lambda \beta_1) \E^1
-    + (\alpha_2-h\lambda \beta_2) \E^2
-    \right] y_{j-2} =0 
-    \]</div>
-<p>so the characteristic polynomial is</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+$$
+
+:::{admonition} Solution
+:class: solution, dropdown
+
+- First characteristic polynomial:
+    
+    $$
+    \rho(z) = \alpha_0 + \alpha_1 z + \alpha_2 z^2
+    $$
+
+- Second characteristic polynomial:
+
+    $$
+    \sigma(z) = \beta_0 + \beta_1 z + \beta_2 z^2
+    $$
+
+- Stability polynomial:
+
+    $$
     \begin{aligned}
-    \L (z, h\lambda) 
-    &amp;=\sum_{i=0}^{2} (\alpha_i - h\lambda \beta_i) z^i\\
-    &amp; = (\alpha_0-h\lambda \beta_0) z^0
-    + (\alpha_1-h\lambda \beta_1) z^1
-    + (\alpha_2-h\lambda \beta_2) z^2
+    L(z, h \lambda) & = ( \alpha_0 + \alpha_1 z + \alpha_2 z^2 ) - h \lambda (\beta_0 + \beta_1 z + \beta_2 z^2) \\
+                    & = (\alpha_0  - h \lambda \beta_0 ) + (\alpha_1 - h \lambda \beta_1) z + (\alpha_2 - h \lambda \beta_2) z^2
     \end{aligned}
-    \end{split}\]</div>
-</li>
-<li><p>Method 2:</p>
-<p>Using <a class="reference internal" href="#equation-eq-chap04-charpoly">(6.8)</a> given in <a class="reference internal" href="#def:char-poly">Definition 6.2</a>, we can quickly work out the characteristic polynomial for this 2-step method</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \begin{aligned}
-    \L (z, h\lambda) 
-    &amp;=\sum_{i=0}^{2} (\alpha_i - h\lambda \beta_i) z^i\\
-    &amp; = (\alpha_0-h\lambda \beta_0) z^0
-    + (\alpha_1-h\lambda \beta_1) z^1
-    + (\alpha_2-h\lambda \beta_2) z^2
-    \end{aligned}
-    \end{split}\]</div>
-</li>
-</ul>
-</div>
-</section>
-</div><div class="proof definition admonition" id="definition-root-condition">
+    $$
+-->
+<div class="docutils">
+<div class="proof definition admonition" id="definition-root-condition">
 <p class="admonition-title"><span class="caption-number">Definition 6.3 </span> (Root Condition)</p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\,z_1,z_2,\dots,z_k\,\)</span> denote the roots of the first
 characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> associated with a
 linear multistep method. If <span class="math notranslate nohighlight">\(\,|z_i|\leq1\,\)</span>, for each
 <span class="math notranslate nohighlight">\(\,i=1,2,...,k\,\)</span>, and all roots with absolute value <span class="math notranslate nohighlight">\(1\)</span> are simple
-roots (i.e. not repeated), then the difference method is said to satisfy
-the <strong><span class="target" id="index-3"></span>root condition</strong>.</p>
+roots (i.e. not repeated), then the method is said to satisfy
+the <strong><span class="target" id="index-2"></span>root condition</strong>.</p>
 </section>
-</div><div class="figure" id="id1" style="text-align: center"><p><img width="48%" src="../../_images/tikz-ea392d229e90d2ec97267bb4c58b1db4cdbf4185.svg" alt="Figure made with TikZ" /></p>
+</div></div>
+<div class="figure" id="id1" style="text-align: center"><p><img width="48%" src="../../_images/tikz-ea392d229e90d2ec97267bb4c58b1db4cdbf4185.svg" alt="Figure made with TikZ" /></p>
 <p><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Unit circle in the complex plane <span class="math notranslate nohighlight">\(\C\)</span>.</span></p>
-</div><div class="proof theorem admonition" id="theorem-4">
-<span id="index-4"></span><p class="admonition-title"><span class="caption-number">Theorem 6.1 </span> (Stability)</p>
-<section class="theorem-content" id="proof-content">
-<p>A linear multistep method of order <span class="math notranslate nohighlight">\(\,\geq1\,\)</span> is <code class="docutils literal notranslate"><span class="pre">stable</span></code> if the
-roots of its first characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> satisfies
-the root condition, i.e. the roots of <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> lie inside or on
-the unit circle, and the roots on the unit circle are distinct (or
-simple) - this is called the root condition.</p>
-</section>
-</div><div class="proof definition admonition" id="definition-5">
-<p class="admonition-title"><span class="caption-number">Definition 6.4 </span> (Strong Stability)</p>
+</div><div class="proof definition admonition" id="definition-3">
+<span id="index-3"></span><p class="admonition-title"><span class="caption-number">Definition 6.4 </span> (Zero-Stability)</p>
 <section class="definition-content" id="proof-content">
-<p>A method is <em><span class="target" id="index-5"></span>strongly stable</em> if the roots of <span class="math notranslate nohighlight">\(\rho(z) = 0\)</span> are inside
-the unit circle except for only one root, call <em>principal root</em>, with
-the magnitude of one(i.e. <span class="math notranslate nohighlight">\(|z| = 1\)</span>).</p>
+<p>A linear multistep is <strong>zero-stable</strong> if its first characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> satisfies
+the root condition given in <a class="reference internal" href="#definition-root-condition">Definition 6.3</a>, i.e. the roots of <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> lie inside or on
+the unit circle, and the roots on the unit circle are distinct.</p>
+<ul class="simple">
+<li><p>A zero-stable method is <code class="docutils literal notranslate"><span class="pre">strongly</span> <span class="pre">stable</span></code> if all the roots of <span class="math notranslate nohighlight">\(\rho(z)\)</span> are inside the unit circle except for only one root, called <em>principal root</em>, with the magnitude of one (i.e. <span class="math notranslate nohighlight">\(|z| = 1\)</span>).</p></li>
+<li><p>A zero-stable method is <code class="docutils literal notranslate"><span class="pre">weakly</span> <span class="pre">stable</span></code> if it but has more than one root on the unit circle.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In electrical engineering and control theory, the right hand side of a first-order ODE</p>
+<div class="math notranslate nohighlight">
+\[\diff{y}{x}=f(x, y)\]</div>
+<p>is called the input of the system. In this context, we can interpret <code class="docutils literal notranslate"><span class="pre">zero-stability</span></code> as the stability of the system with <strong>zero input</strong>.</p>
+<p>We use the root condition to assess whether the discretised system (difference equation) can remain stable under <strong>zero input</strong> condition.</p>
+</div>
 </section>
-</div><div class="proof definition admonition" id="definition-6">
-<p class="admonition-title"><span class="caption-number">Definition 6.5 </span> (Weak Stability)</p>
-<section class="definition-content" id="proof-content">
-<p>A method is <em><span class="target" id="index-6"></span>weakly stable</em> if it is stable (i.e. satisfies the root
-condition) but has more than one root on the unit circle.</p>
-</section>
-</div><div class="proof example admonition" id="example-7">
-<p class="admonition-title"><span class="caption-number">Example 6.3 </span></p>
+</div><!-- 
+:::{prf:definition} Strong Stability
+A zero-stable method is *{index}`strongly stable`* if the roots of $\rho(z)$ are inside
+the unit circle except for only one root, call *principal root*, with
+the magnitude of one (i.e. $|z| = 1$).
+:::
+
+:::{prf:definition} Weak Stability
+A zero-stable method is *{index}`weakly stable`* if it but has more than one root on the unit circle.
+::: 
+-->
+<div class="proof example admonition" id="example-4">
+<p class="admonition-title"><span class="caption-number">Example 6.2 </span></p>
 <section class="example-content" id="proof-content">
 <p>Find the roots associated with the following characteristic polynomials:</p>
 <ol class="arabic">
@@ -721,15 +623,15 @@ z^4 + z  &amp; = z(z^3 + 1) \\
 <span class="math notranslate nohighlight">\(z_4 = \dfrac{1}{2} - i\dfrac{\sqrt{3}}{2}\)</span>.</p>
 <p class="sd-card-text">We can also use Matlab to find the roots of the polynomial</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">syms</span><span class="w"> </span><span class="s">z</span>
-<span class="n">solve</span><span class="p">(</span><span class="n">z</span><span class="o">^</span><span class="mi">4</span><span class="o">+</span><span class="n">z</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">z</span>^<span class="mi">4</span><span class="o">+</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sd-card-text">Output</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">ans</span><span class="w"> </span><span class="p">=</span>
 <span class="w">                </span><span class="o">-</span><span class="mi">1</span>
 <span class="w">                </span><span class="mi">0</span>
-<span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span>1<span class="nb">i</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
-<span class="p">(</span><span class="mi">3</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span>1<span class="nb">i</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+<span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span>^<span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span>1<span class="nb">i</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="p">(</span><span class="mi">3</span>^<span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span>1<span class="nb">i</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
 </pre></div>
 </div>
 <p class="sd-card-text">Because there are more than one root on the unit circle, the method
@@ -754,7 +656,7 @@ is weakly stable.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/05"
+            path: "./chaps\05"
         },
         predefinedOutput: true
     }
@@ -777,7 +679,7 @@ is weakly stable.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6.1. </span>An exploratory experiment</p>
+        <p class="prev-next-title"><span class="section-number">6.1. </span>A numerical experiment</p>
       </div>
     </a>
     <a class="right-next"
@@ -785,7 +687,7 @@ is weakly stable.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.3. </span>Zero-Stability, Consistency and Convergence Theorem</p>
+        <p class="prev-next-title"><span class="section-number">6.3. </span>Consistency and Convergence</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -824,7 +726,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 03 November 2026 16:52:19.
+  Last updated on Thursday 05 November 2026 16:49:46.
   <br/>
 </p>
   </div>

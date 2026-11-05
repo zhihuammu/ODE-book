@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>3.2. Finite Difference Operators &#8212; Linear Multistep Methods</title>
   
@@ -30,17 +30,17 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=79838d2f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=3f3b9192" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -49,7 +49,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=c73c0f3e"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Tuesday 03 November 2026 15:35:59"/>
+    <meta name="docbuild:last-update" content="Thursday 05 November 2026 16:49:46"/>
   </head>
   
   
@@ -227,13 +227,13 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../05/chap05_0.html">6. Multistep Methods: Zero-Stability and Convergence</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../05/chap05_1_experiment.html">6.1. An exploratory experiment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05/chap05_2_rootCondition-new.html">6.2. Characteristic Polynomials and Root Condition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05/chap05_3_convergence.html">6.3. Zero-Stability, Consistency and Convergence Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_1_experiment.html">6.1. A numerical experiment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_2_rootCondition-new.html">6.2. Root Condition and Zero-Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/chap05_3_convergence.html">6.3. Consistency and Convergence</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../05/chap05_4_exercise.html">6.4. Chapter 6 Exercise</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">7. Multistep Methods: Stability Interval and Region</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/chap06_0.html">7. Multistep Methods: Absolute Stability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_1_experiment.html">7.1. An experiment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_2_stabilityInterval.html">7.2. Interval and Region of Absolute Stability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06/chap06_3_rootLocus.html">7.3. The Root Locus Method for Finding the Interval of Absolute Stability</a></li>
@@ -462,13 +462,13 @@
 <p class="admonition-title"><span class="caption-number">Definition 3.1 </span> (Forward Difference)</p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order <span class="target" id="index-1"></span>forward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between the next member and itself:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c56032b1-cde4-4e24-8dac-e006b80f855e">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-c56032b1-cde4-4e24-8dac-e006b80f855e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e668b63b-796b-4f2e-87e1-813d033b2331">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-e668b63b-796b-4f2e-87e1-813d033b2331" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta f_j = f_{j+1} - f_j,
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k-\)</span>th order forward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1b22bf1c-a013-44f8-b7d0-d8b283d48ef7">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-1b22bf1c-a013-44f8-b7d0-d8b283d48ef7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f1f3f78e-3e4c-4f49-a34d-ccf1dd438ada">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-f1f3f78e-3e4c-4f49-a34d-ccf1dd438ada" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \Delta^k f_j= \Delta\left(\Delta^{k-1} f_j \right).
 \end{equation}\]</div>
 </section>
@@ -490,21 +490,21 @@
 <li><p><strong>Second-order Forward Difference</strong>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-  \Delta^2 f_j &amp; = \Delta(\Delta f_j) \\
-              &amp; = \Delta(f_{j+1} - f_j) \\
-              &amp; = \Delta(f_{j+1}) - \Delta(f_j) \\
-              &amp; = (f_{j+2} - f_{j+1}) - (f_{j+1} - f_j) \\
-              &amp; = f_{j+2} - 2f_{j+1} + f_j
-\end{align*}  \]</div>
+    \Delta^2 f_j &amp; = \Delta(\Delta f_j) \\
+                &amp; = \Delta(f_{j+1} - f_j) \\
+                &amp; = \Delta(f_{j+1}) - \Delta(f_j) \\
+                &amp; = (f_{j+2} - f_{j+1}) - (f_{j+1} - f_j) \\
+                &amp; = f_{j+2} - 2f_{j+1} + f_j
+  \end{align*}\]</div>
 </li>
 <li><p><strong>Third-order Forward Difference</strong>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-  \Delta^3 f_j &amp; = \Delta(\Delta^2 f_j)\\
-              &amp; =\Delta(f_{j+2} - 2f_{j+1} + f_j)  \\
-              &amp; = (f_{j+3}-f_{j+2}) - 2(f_{j+2}-f_{j+1}) + (f_{j+1} - f_{j}) \\
-              &amp; = f_{j+3} - 3f_{j+2} + 3f_{j+1} - f_j
-\end{align*}  \]</div>
+    \Delta^3 f_j &amp; = \Delta(\Delta^2 f_j)\\
+                &amp; =\Delta(f_{j+2} - 2f_{j+1} + f_j)  \\
+                &amp; = (f_{j+3}-f_{j+2}) - 2(f_{j+2}-f_{j+1}) + (f_{j+1} - f_{j}) \\
+                &amp; = f_{j+3} - 3f_{j+2} + 3f_{j+1} - f_j
+  \end{align*}\]</div>
 </li>
 <li><p><strong>Higher-order Forward Difference</strong>:</p>
 <div class="math notranslate nohighlight">
@@ -520,13 +520,13 @@
 <p class="admonition-title"><span class="caption-number">Definition 3.2 </span> (Backward Difference)</p>
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>, the first-order <span class="target" id="index-2"></span>backward difference for an member <span class="math notranslate nohighlight">\(f_j\)</span> is the difference between itself and the previous member:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ca12b313-87e0-47cb-88eb-0484ed176c7c">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-ca12b313-87e0-47cb-88eb-0484ed176c7c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c874ac4f-c2f8-42c5-b255-20e645ec32d3">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-c874ac4f-c2f8-42c5-b255-20e645ec32d3" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla f_j = f_{j} - f_{j-1},
 \end{equation}\]</div>
 <p>and the <span class="math notranslate nohighlight">\(k\)</span>-th order backward difference is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-69789369-f6e2-41e9-bde3-1c3e46c47d56">
-<span class="eqno">(3.4)<a class="headerlink" href="#equation-69789369-f6e2-41e9-bde3-1c3e46c47d56" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0d360d79-2dcc-4e90-9e65-ecb4ff14f924">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-0d360d79-2dcc-4e90-9e65-ecb4ff14f924" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \nabla^k f_j= \nabla\left(\nabla^{k-1} f_j \right).
 \end{equation}\]</div>
 </section>
@@ -548,21 +548,21 @@
 <li><p><strong>Second-order Backward Difference</strong>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-\nabla^2 f_j &amp; = \nabla(\nabla(f_j)) \\
-            &amp; = \nabla(f_j - f_{j-1}) \\
-            &amp; = \nabla(f_j) - \nabla(f_{j-1}) \\
-            &amp; = (f_j - f_{j-1}) - (f_{j-1} - f_{j-2}) \\
-            &amp; = f_j - 2f_{j-1} + f_{j-2} 
-\end{align*}                     \]</div>
+  \nabla^2 f_j &amp; = \nabla(\nabla(f_j)) \\
+              &amp; = \nabla(f_j - f_{j-1}) \\
+              &amp; = \nabla(f_j) - \nabla(f_{j-1}) \\
+              &amp; = (f_j - f_{j-1}) - (f_{j-1} - f_{j-2}) \\
+              &amp; = f_j - 2f_{j-1} + f_{j-2} 
+  \end{align*}\]</div>
 </li>
 <li><p><strong>Third-order Backward Difference</strong>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-  \nabla^3 f_j &amp; = \nabla(\nabla^2 f_j)\\
-              &amp; =\nabla(f_{j} - 2f_{j-1} + f_{j-2})  \\
-              &amp; = (f_{j}-f_{j-1}) - 2(f_{j-1}-f_{j-2}) + (f_{j-2} - f_{j-3}) \\
-              &amp; = f_j - 3f_{j-1} + 3f_{j-2} - f_{j-3}
-\end{align*}  \]</div>
+    \nabla^3 f_j &amp; = \nabla(\nabla^2 f_j)\\
+                &amp; =\nabla(f_{j} - 2f_{j-1} + f_{j-2})  \\
+                &amp; = (f_{j}-f_{j-1}) - 2(f_{j-1}-f_{j-2}) + (f_{j-2} - f_{j-3}) \\
+                &amp; = f_j - 3f_{j-1} + 3f_{j-2} - f_{j-3}
+  \end{align*}\]</div>
 </li>
 <li><p><strong>Higher-order Forward Difference</strong>:</p>
 <div class="math notranslate nohighlight">
@@ -587,8 +587,8 @@
 <section class="definition-content" id="proof-content">
 <p>Given a sequence <span class="math notranslate nohighlight">\(\left\{f_j\right\}_{j=-\infty}^{+\infty}\)</span>,
 we define <span class="math notranslate nohighlight">\(\E\)</span> as an operator <span class="target" id="index-3"></span>shifting a member in a sequence to the next member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-23838b9d-3c2a-49e7-a508-156e11a52bcf">
-<span class="eqno">(3.5)<a class="headerlink" href="#equation-23838b9d-3c2a-49e7-a508-156e11a52bcf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1bbb8a9e-b340-43db-bc7b-65478b956a24">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-1bbb8a9e-b340-43db-bc7b-65478b956a24" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \E  f_j = f_{j+1},
 \end{equation}\]</div>
 <p>and shifting a member forward <span class="math notranslate nohighlight">\(k\)</span> times gives</p>
@@ -596,8 +596,8 @@ we define <span class="math notranslate nohighlight">\(\E\)</span> as an operato
 \[\E ^k f_j= \E  (\E ^{k-1}f_j)= f_{j+k}.\]</div>
 <p>Similarly, we define <span class="math notranslate nohighlight">\(\E ^{-1}\)</span> as an operator shifting a member in a
 sequence to the previous member</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2e225714-96ad-43f3-8345-b2518edf2a75">
-<span class="eqno">(3.6)<a class="headerlink" href="#equation-2e225714-96ad-43f3-8345-b2518edf2a75" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4567875e-6fdc-4e32-92f5-d201a86e69b0">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-4567875e-6fdc-4e32-92f5-d201a86e69b0" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \E ^{-1} f_j = f_{j-1}
 \end{equation}\]</div>
 <p>and shifting a member backward <span class="math notranslate nohighlight">\(k\)</span> (<span class="math notranslate nohighlight">\(k&gt;0\)</span>) times gives</p>
@@ -686,7 +686,7 @@ relations:</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/02"
+            path: "./chaps\02"
         },
         predefinedOutput: true
     }
@@ -776,7 +776,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 03 November 2026 15:35:59.
+  Last updated on Thursday 05 November 2026 16:49:46.
   <br/>
 </p>
   </div>

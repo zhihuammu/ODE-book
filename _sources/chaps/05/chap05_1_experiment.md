@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-# An exploratory experiment
+# A numerical experiment
 
 :::{prf:example}
 :label: example-6.1
