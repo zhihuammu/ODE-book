@@ -240,5 +240,5 @@ td {
 /* For Jupyter Book configurations using MathJax */
 .MathJax_Display, mjx-container[display="true"] {
     text-align: left !important;
-    padding-left: 1em;
+    padding-left: 2em;
 }

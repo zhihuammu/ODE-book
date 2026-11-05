@@ -1,6 +1,6 @@
-# Zero-Stability, Consistency and Convergence Theorem
+# Consistency and Convergence
 
-::::{prf:definition} Zero-Stability
+<!-- ::::{prf:definition} Zero-Stability
 A linear multistep method {eq}`eq:ch04:1.1` is said to be {index}`zero-stable` if it satisfies the root condition given in {prf:ref}`definition-root-condition`.
 
 This means no root of the
@@ -19,16 +19,12 @@ is called the input of the system. In this context, we can interpret `zero-stabi
 We use the root condition to assess whether the discretised system (difference equation) can remain stable under **zero input** condition.
 :::
 
-::::
-
-
-
-
+:::: -->
 
 :::{prf:definition} Consistency
-In numerical analysis, consistency is the property of a numerical method performing differentiation or integration in a way similar to the actual differentiation or integration. In another word, consistency tells how similar is the discrete system to the original continuous system.
+In numerical analysis, consistency is the property of a numerical method performing differentiation or integration in a way similar to the actual differentiation or integration. In another word, consistency tells how closely the discrete system approximates the original continuous system as the step size shrinks toward zero.
 
-The condition for the discrete system produced by a linear multistep method {eq}`eq:ch04:1.1`
+The condition for the discrete system produced by a linear multistep method 
 
 $$
 \sum_{i=0}^{k}\alpha_i y_{j+i}~=~ h\sum_{i=0}^{k}\beta_i f_{j+i}, \qquad
@@ -39,40 +35,28 @@ being *consistent* with the continuous differential equation
 
 
 $$
-\diff{y}{x}  =  f(x, y) 
+y'(x)  =  f(x, y) 
 $$
 
  or its integral
 
 $$
-\int_{x_j}^{x_{j+k}} \diff{y}{x} \dx = \int_{x_j}^{x_{j+k}} f(x, y) \dx
+\int_{x_j}^{x_{j+k}} y'(x)  ~\mathrm{d} x = \int_{x_j}^{x_{j+k}} f(x, y) ~\mathrm{d} x
 $$
 
 is that the method has an order of accuracy $p \geq 1$.
 :::
 
 
-In terms of error constants $C_p$ introduced in {numref}`chap:errorConstant:constants`, the condition of consistency is
+In terms of error constants $C_{p+1}$ introduced in {numref}`chap:errorConstant:constants`, the condition of consistency is
 equivalent to $C_0 = 0$, $C_1 = 0$. This ensures the method has an order of accuracy $p\geq 1$. Thus the condition of consistency can also be expressed by the relations 
 
 $$
 \begin{aligned}
-    && \sum_{i=0}^{k}  \alpha_i ~&=~ 0\,;
-     & \sum_{i=0}^{k} i\alpha_i ~&=~ \sum_{i=0}^{k} \beta_i\,. &&
+    C_0 & = \alpha_0 + \alpha_1 + \cdots + \alpha_k = 0\\
+    C_1 & = \left(\alpha_1 + 2\alpha_2 + 3\alpha_3 + \cdots + k\alpha_k\right) - \left( \beta_0 + \beta_1 + \cdots + \beta_k \right) = 0\\
 \end{aligned}
 $$
-
-:::{note}
-:class: dropdown
-$$
-C_0= \alpha_0 + \alpha_1 + \cdots + \alpha_k
-$$
-
-$$
-C_1= \left(\alpha_1 + 2\alpha_2 + 3\alpha_3 + \cdots + k\alpha_k\right) - \left( \beta_0 + \beta_1 + \cdots + \beta_k \right)
-$$
-
-:::
 
 And in terms of the first and second characteristic polynomials $\rho(z)$ and $\sigma(z)$, the condition of consistency can be expressed by the following relations - i.e. the linear multistep method {eq}`eq:ch04:1.1` is consistent *iff*: 
 
