@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Thursday 05 November 2026 16:51:34"/>
+    <meta name="docbuild:last-update" content="Friday 06 November 2026 11:10:20"/>
   </head>
   
   
@@ -466,11 +466,19 @@ equivalent to <span class="math notranslate nohighlight">\(C_0 = 0\)</span>, <sp
     C_1 &amp; = \left(\alpha_1 + 2\alpha_2 + 3\alpha_3 + \cdots + k\alpha_k\right) - \left( \beta_0 + \beta_1 + \cdots + \beta_k \right) = 0\\
 \end{aligned}
 \end{split}\]</div>
-<p>And in terms of the first and second characteristic polynomials <span class="math notranslate nohighlight">\(\rho(z)\)</span> and <span class="math notranslate nohighlight">\(\sigma(z)\)</span>, the condition of consistency can be expressed by the following relations - i.e. the linear multistep method <a class="reference internal" href="chap05_2_rootCondition-new.html#equation-eq-ch04-1-1">(6.1)</a> is consistent <em>iff</em>:</p>
+<p>In addition, <span class="math notranslate nohighlight">\(C_0\)</span> and <span class="math notranslate nohighlight">\(C_1\)</span> can be expressed in terms of the first and second characteristic polynomials <span class="math notranslate nohighlight">\(\rho(z)\)</span> and <span class="math notranslate nohighlight">\(\sigma(z)\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+    C_0 &amp; = \rho (1)\\
+    C_1 &amp; = \rho'(1) - \sigma(1) \\
+\end{aligned}
+\end{split}\]</div>
+<p>Thus condition of consistency can be expressed by the following relations - i.e. the linear multistep method <a class="reference internal" href="chap05_2_rootCondition-new.html#equation-eq-ch04-1-1">(6.1)</a> is consistent <em>iff</em>:</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
-    \rho(1) ~&amp;=~ 0\,, \qquad\text{and}\qquad \rho'(1) = \sigma(1)\,.
+    \rho(1) ~&amp;=~ 0  \qquad\text{and}\qquad \rho'(1) - \sigma(1)=0\,.
 \end{aligned}
 \]</div>
 <p>Thus, for a consistent method, the first characteristic polynomial
@@ -484,7 +492,7 @@ roots</em>.</p>
 <ol class="arabic simple">
 <li><p>The method’s order of accuracy <span class="math notranslate nohighlight">\(p \geq 1\)</span>.</p></li>
 <li><p>The error constants satisfy <span class="math notranslate nohighlight">\(C_0=0\)</span> and <span class="math notranslate nohighlight">\(C_1=0\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\rho(1)=0\)</span> and <span class="math notranslate nohighlight">\(\rho'(1)=\sigma(1)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho(1)=0\)</span> and <span class="math notranslate nohighlight">\(\rho'(1)-\sigma(1)=0\)</span>.</p></li>
 </ol>
 <p>If a linear multistep method satisfies any of these three conditions, then it is a <em>consistent</em> method.</p>
 </section>
@@ -743,7 +751,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 05 November 2026 16:51:34.
+  Last updated on Friday 06 November 2026 11:10:20.
   <br/>
 </p>
   </div>

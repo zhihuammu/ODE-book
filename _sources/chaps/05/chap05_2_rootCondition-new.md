@@ -30,8 +30,12 @@ Subtracting equation {eq}`eq:ch04:1.1` from equation {eq}`eq:ch04:1.1.b` gives
 
 
 $$
-\sum_{i=0}^{k}\alpha_i \biggl( y(x_{j+i}) - y_{j+i} \biggr)~=~ h\sum_{i=0}^{k}\beta_i \biggl( f(x_{j+i}) - f_{j+i} \biggr) + C_p h^p y^{(p)}(\xi),
+\sum_{i=0}^{k}\alpha_i \biggl( y(x_{j+i}) - y_{j+i} \biggr)~=~ h\sum_{i=0}^{k}\beta_i \biggl( f(x_{j+i}) - f_{j+i} \biggr) + C_p h^p y^{(p)}(\xi).
 $$(eq:ch04:1.1.c) 
+
+:::{note}
+In some sense, equation {eq}`eq:ch04:1.1.c` can be considered the error propagation equation of the discrete system. In the extreme case, when the right hand side of equation {eq}`eq:ch04:1.1.c` vanishes, will the errors be controlled or amplified?
+:::
 
 Let $h \rightarrow 0$, we get a homogeneous linear difference equation for error terms $e_j, e_{j+1}, \ldots, e_{j+k}$
 
@@ -142,7 +146,7 @@ $$
 :::{prf:definition} Root Condition
 :label: definition-root-condition
 Let $\,z_1,z_2,\dots,z_k\,$ denote the roots of the first
-characteristic polynomial $\,\rho(z)\,$ associated with a
+characteristic polynomial $\rho(z) = \alpha_0 + \alpha_1 z + \dots + \alpha_k z^k$ associated with a
 linear multistep method. If $\,|z_i|\leq1\,$, for each
 $\,i=1,2,...,k\,$, and all roots with absolute value $1$ are simple
 roots (i.e. not repeated), then the method is said to satisfy
@@ -188,7 +192,7 @@ the unit circle, and the roots on the unit circle are distinct.
 
 - A zero-stable method is `strongly stable` if all the roots of $\rho(z)$ are inside the unit circle except for only one root, called *principal root*, with the magnitude of one (i.e. $|z| = 1$).
 
-- A zero-stable method is `weakly stable` if it but has more than one root on the unit circle.
+- A zero-stable method is `weakly stable` if it has more than one root on the unit circle.
 
 :::{note}
 In electrical engineering and control theory, the right hand side of a first-order ODE 

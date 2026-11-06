@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Thursday 05 November 2026 16:49:46"/>
+    <meta name="docbuild:last-update" content="Friday 06 November 2026 10:01:28"/>
   </head>
   
   
@@ -439,8 +439,12 @@ stability property.</p>
 <p>Subtracting equation <a class="reference internal" href="#equation-eq-ch04-1-1">(6.1)</a> from equation <a class="reference internal" href="#equation-eq-ch04-1-1-b">(6.2)</a> gives</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch04-1-1-c">
 <span class="eqno">(6.3)<a class="headerlink" href="#equation-eq-ch04-1-1-c" title="Link to this equation">#</a></span>\[
-\sum_{i=0}^{k}\alpha_i \biggl( y(x_{j+i}) - y_{j+i} \biggr)~=~ h\sum_{i=0}^{k}\beta_i \biggl( f(x_{j+i}) - f_{j+i} \biggr) + C_p h^p y^{(p)}(\xi),
+\sum_{i=0}^{k}\alpha_i \biggl( y(x_{j+i}) - y_{j+i} \biggr)~=~ h\sum_{i=0}^{k}\beta_i \biggl( f(x_{j+i}) - f_{j+i} \biggr) + C_p h^p y^{(p)}(\xi).
 \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In some sense, equation <a class="reference internal" href="#equation-eq-ch04-1-1-c">(6.3)</a> can be considered the error propagation equation of the discrete system. In the extreme case, when the right hand side of equation <a class="reference internal" href="#equation-eq-ch04-1-1-c">(6.3)</a> vanishes, will the errors be controlled or amplified?</p>
+</div>
 <p>Let <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span>, we get a homogeneous linear difference equation for error terms <span class="math notranslate nohighlight">\(e_j, e_{j+1}, \ldots, e_{j+k}\)</span></p>
 <div class="math notranslate nohighlight" id="equation-eq-ch04-1-1-d">
 <span class="eqno">(6.4)<a class="headerlink" href="#equation-eq-ch04-1-1-d" title="Link to this equation">#</a></span>\[
@@ -537,7 +541,7 @@ $$
 <p class="admonition-title"><span class="caption-number">Definition 6.3 </span> (Root Condition)</p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\,z_1,z_2,\dots,z_k\,\)</span> denote the roots of the first
-characteristic polynomial <span class="math notranslate nohighlight">\(\,\rho(z)\,\)</span> associated with a
+characteristic polynomial <span class="math notranslate nohighlight">\(\rho(z) = \alpha_0 + \alpha_1 z + \dots + \alpha_k z^k\)</span> associated with a
 linear multistep method. If <span class="math notranslate nohighlight">\(\,|z_i|\leq1\,\)</span>, for each
 <span class="math notranslate nohighlight">\(\,i=1,2,...,k\,\)</span>, and all roots with absolute value <span class="math notranslate nohighlight">\(1\)</span> are simple
 roots (i.e. not repeated), then the method is said to satisfy
@@ -554,7 +558,7 @@ the root condition given in <a class="reference internal" href="#definition-root
 the unit circle, and the roots on the unit circle are distinct.</p>
 <ul class="simple">
 <li><p>A zero-stable method is <code class="docutils literal notranslate"><span class="pre">strongly</span> <span class="pre">stable</span></code> if all the roots of <span class="math notranslate nohighlight">\(\rho(z)\)</span> are inside the unit circle except for only one root, called <em>principal root</em>, with the magnitude of one (i.e. <span class="math notranslate nohighlight">\(|z| = 1\)</span>).</p></li>
-<li><p>A zero-stable method is <code class="docutils literal notranslate"><span class="pre">weakly</span> <span class="pre">stable</span></code> if it but has more than one root on the unit circle.</p></li>
+<li><p>A zero-stable method is <code class="docutils literal notranslate"><span class="pre">weakly</span> <span class="pre">stable</span></code> if it has more than one root on the unit circle.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -726,7 +730,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 05 November 2026 16:49:46.
+  Last updated on Friday 06 November 2026 10:01:28.
   <br/>
 </p>
   </div>
