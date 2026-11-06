@@ -58,11 +58,20 @@ $$
 \end{aligned}
 $$
 
-And in terms of the first and second characteristic polynomials $\rho(z)$ and $\sigma(z)$, the condition of consistency can be expressed by the following relations - i.e. the linear multistep method {eq}`eq:ch04:1.1` is consistent *iff*: 
+In addition, $C_0$ and $C_1$ can be expressed in terms of the first and second characteristic polynomials $\rho(z)$ and $\sigma(z)$ as
 
 $$
 \begin{aligned}
-    \rho(1) ~&=~ 0\,, \qquad\text{and}\qquad \rho'(1) = \sigma(1)\,.
+    C_0 & = \rho (1)\\
+    C_1 & = \rho'(1) - \sigma(1) \\
+\end{aligned}
+$$
+
+Thus condition of consistency can be expressed by the following relations - i.e. the linear multistep method {eq}`eq:ch04:1.1` is consistent *iff*: 
+
+$$
+\begin{aligned}
+    \rho(1) ~&=~ 0  \qquad\text{and}\qquad \rho'(1) - \sigma(1)=0\,.
 \end{aligned}
 $$
 
@@ -78,7 +87,7 @@ In summary there are three equivalent conditions of consistency:
 
 2. The error constants satisfy $C_0=0$ and $C_1=0$.
 
-3. $\rho(1)=0$ and $\rho'(1)=\sigma(1)$.
+3. $\rho(1)=0$ and $\rho'(1)-\sigma(1)=0$.
 
 If a linear multistep method satisfies any of these three conditions, then it is a *consistent* method.
 :::

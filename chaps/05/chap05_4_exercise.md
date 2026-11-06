@@ -118,7 +118,7 @@ Thus the method satisfies the root condition, so it is zero-stable.
 
 :::{grid-item} 
 :columns: 6
-```{image}  /images/05/fig-chap05-c4ans3-h002.svg    
+```{image}  /images/05/fig-chap05-c4ans3-h005.svg    
 :width: 600px
 :align: center
 ```
@@ -126,12 +126,11 @@ Thus the method satisfies the root condition, so it is zero-stable.
 
 :::{grid-item} 
 :columns: 6
-```{image}  /images/05/fig-chap05-c4ans3-h005.svg    
+```{image}  /images/05/fig-chap05-c4ans3-h002.svg    
 :width: 600px
 :align: center
 ```
 :::
-
 
 
 :::::
