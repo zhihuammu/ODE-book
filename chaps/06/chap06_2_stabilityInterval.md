@@ -1,24 +1,28 @@
 # Interval and Region of Absolute Stability
 
-Consider the linear multistep method 
+Let's consider a test equation, 
 
 $$
-\begin{aligned}
-    && \sum_{i=0}^{k} \alpha_iy_{j+i} ~&=~ h \sum_{i=0}^{k} \beta_if_{j+i}
-    & \text{with}\ \alpha_k = 1 &&
-\end{aligned}
-$$(eq:ch05:1.1)
-
- and a test differential equation, 
-
-$$
-\begin{aligned}
-    && \frac{\dy}{\dx} ~&=~ f(x,y) ~=~ \lambda\,y\,,
-    & y(x_0) = y_0 &&
-\end{aligned}
+    y'(x) = \lambda y,
 $$(eq:ch05:1.2)
 
  where $\lambda$ is a (real or complex) constant.
+
+:::{prf:definition} Stability Polynomial
+For a general linear multistep method
+
+$$
+\sum_{i=0}^{k} \alpha_i y_{j+i} = h \sum_{i=0}^{k} f_{j+i},
+$$
+
+we define
+
+$$
+\L (z, h\lambda) = \rho(z) - h\lambda \sigma(z)
+$$(eq:chap06:poly:stability)
+
+as its **stability polynomial**.
+:::
 
 :::{prf:definition} Absolute Stability
 A linear multistep method is said to be *{index}`absolutely stable`* in a region

@@ -30,20 +30,24 @@ Subtracting equation {eq}`eq:ch04:1.1` from equation {eq}`eq:ch04:1.1.b` gives
 
 
 $$
-\sum_{i=0}^{k}\alpha_i \biggl( y(x_{j+i}) - y_{j+i} \biggr)~=~ h\sum_{i=0}^{k}\beta_i \biggl( f(x_{j+i}) - f_{j+i} \biggr) + C_p h^p y^{(p)}(\xi).
+\sum_{i=0}^{k}\alpha_i \biggl( y(x_{j+i}) - y_{j+i} \biggr)~=~ h\sum_{i=0}^{k}\beta_i \biggl( f(x_{j+i}) - f_{j+i} \biggr) + C_p h^p y^{(p)}(\xi),
+$$
+
+which can be written in another form
+
+$$
+\sum_{i=0}^{k}\alpha_i e_{j+i}~=~ h\sum_{i=0}^{k}\beta_i \biggl( f(x_{j+i}) - f_{j+i} \biggr) + C_p h^p y^{(p)}(\xi),
 $$(eq:ch04:1.1.c) 
 
-:::{note}
-In some sense, equation {eq}`eq:ch04:1.1.c` can be considered the error propagation equation of the discrete system. In the extreme case, when the right hand side of equation {eq}`eq:ch04:1.1.c` vanishes, will the errors be controlled or amplified?
-:::
+where $e_{j+i}=y(x_{j+i}) - y_{j+i}$ is the error at $x_{j+i}$. Equation {eq}`eq:ch04:1.1.c` can be considered the error propagation equation of the discrete system. In the extreme case, when the right hand side of equation {eq}`eq:ch04:1.1.c` vanishes, will the errors be controlled or amplified?
 
 Let $h \rightarrow 0$, we get a homogeneous linear difference equation for error terms $e_j, e_{j+1}, \ldots, e_{j+k}$
 
 $$
 \alpha_0 e_j + \alpha_1 e_{j+1} + \alpha_2 e_{j+2} + \cdots + \alpha_k e_{j+k} = 0,
-$$(eq:ch04:1.1.d) 
+$$(eq:ch04:1.1.d)
 
-where $e_{j+i}=y(x_{j+i}) - y_{j+i}$ is the error at $x_{j+i}$. The associated characteristic equation of {eq}`eq:ch04:1.1.d` is
+and its characteristic equation is
 
 $$
     \alpha_0 + \alpha_1 z + \alpha_2 z^2 + \dots + \alpha_k z^k = 0.
