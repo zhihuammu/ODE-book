@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Friday 06 November 2026 10:01:28"/>
+    <meta name="docbuild:last-update" content="Monday 09 November 2026 13:29:47"/>
   </head>
   
   
@@ -437,20 +437,22 @@ stability property.</p>
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(C_p h^p y^{(p)}(\xi)\)</span> is the leading truncation error of the method.</p>
 <p>Subtracting equation <a class="reference internal" href="#equation-eq-ch04-1-1">(6.1)</a> from equation <a class="reference internal" href="#equation-eq-ch04-1-1-b">(6.2)</a> gives</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=0}^{k}\alpha_i \biggl( y(x_{j+i}) - y_{j+i} \biggr)~=~ h\sum_{i=0}^{k}\beta_i \biggl( f(x_{j+i}) - f_{j+i} \biggr) + C_p h^p y^{(p)}(\xi),
+\]</div>
+<p>which can be written in another form</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch04-1-1-c">
 <span class="eqno">(6.3)<a class="headerlink" href="#equation-eq-ch04-1-1-c" title="Link to this equation">#</a></span>\[
-\sum_{i=0}^{k}\alpha_i \biggl( y(x_{j+i}) - y_{j+i} \biggr)~=~ h\sum_{i=0}^{k}\beta_i \biggl( f(x_{j+i}) - f_{j+i} \biggr) + C_p h^p y^{(p)}(\xi).
+\sum_{i=0}^{k}\alpha_i e_{j+i}~=~ h\sum_{i=0}^{k}\beta_i \biggl( f(x_{j+i}) - f_{j+i} \biggr) + C_p h^p y^{(p)}(\xi),
 \]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In some sense, equation <a class="reference internal" href="#equation-eq-ch04-1-1-c">(6.3)</a> can be considered the error propagation equation of the discrete system. In the extreme case, when the right hand side of equation <a class="reference internal" href="#equation-eq-ch04-1-1-c">(6.3)</a> vanishes, will the errors be controlled or amplified?</p>
-</div>
+<p>where <span class="math notranslate nohighlight">\(e_{j+i}=y(x_{j+i}) - y_{j+i}\)</span> is the error at <span class="math notranslate nohighlight">\(x_{j+i}\)</span>. Equation <a class="reference internal" href="#equation-eq-ch04-1-1-c">(6.3)</a> can be considered the error propagation equation of the discrete system. In the extreme case, when the right hand side of equation <a class="reference internal" href="#equation-eq-ch04-1-1-c">(6.3)</a> vanishes, will the errors be controlled or amplified?</p>
 <p>Let <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span>, we get a homogeneous linear difference equation for error terms <span class="math notranslate nohighlight">\(e_j, e_{j+1}, \ldots, e_{j+k}\)</span></p>
 <div class="math notranslate nohighlight" id="equation-eq-ch04-1-1-d">
 <span class="eqno">(6.4)<a class="headerlink" href="#equation-eq-ch04-1-1-d" title="Link to this equation">#</a></span>\[
 \alpha_0 e_j + \alpha_1 e_{j+1} + \alpha_2 e_{j+2} + \cdots + \alpha_k e_{j+k} = 0,
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(e_{j+i}=y(x_{j+i}) - y_{j+i}\)</span> is the error at <span class="math notranslate nohighlight">\(x_{j+i}\)</span>. The associated characteristic equation of <a class="reference internal" href="#equation-eq-ch04-1-1-d">(6.4)</a> is</p>
+<p>and its characteristic equation is</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch04-1-1-e">
 <span class="eqno">(6.5)<a class="headerlink" href="#equation-eq-ch04-1-1-e" title="Link to this equation">#</a></span>\[
     \alpha_0 + \alpha_1 z + \alpha_2 z^2 + \dots + \alpha_k z^k = 0.
@@ -730,7 +732,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 06 November 2026 10:01:28.
+  Last updated on Monday 09 November 2026 13:29:47.
   <br/>
 </p>
   </div>

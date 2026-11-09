@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Thursday 05 November 2026 16:49:46"/>
+    <meta name="docbuild:last-update" content="Monday 09 November 2026 13:34:29"/>
   </head>
   
   
@@ -415,47 +415,51 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="interval-and-region-of-absolute-stability">
 <h1><span class="section-number">7.2. </span>Interval and Region of Absolute Stability<a class="headerlink" href="#interval-and-region-of-absolute-stability" title="Link to this heading">#</a></h1>
-<p>Consider the linear multistep method</p>
-<div class="math notranslate nohighlight" id="equation-eq-ch05-1-1">
-<span class="eqno">(7.1)<a class="headerlink" href="#equation-eq-ch05-1-1" title="Link to this equation">#</a></span>\[
-\begin{aligned}
-    &amp;&amp; \sum_{i=0}^{k} \alpha_iy_{j+i} ~&amp;=~ h \sum_{i=0}^{k} \beta_if_{j+i}
-    &amp; \text{with}\ \alpha_k = 1 &amp;&amp;
-\end{aligned}
-\]</div>
-<p>and a test differential equation,</p>
+<p>Let’s consider a test equation,</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch05-1-2">
 <span class="eqno">(7.2)<a class="headerlink" href="#equation-eq-ch05-1-2" title="Link to this equation">#</a></span>\[
-\begin{aligned}
-    &amp;&amp; \frac{\dy}{\dx} ~&amp;=~ f(x,y) ~=~ \lambda\,y\,,
-    &amp; y(x_0) = y_0 &amp;&amp;
-\end{aligned}
+    y'(x) = \lambda y,
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is a (real or complex) constant.</p>
 <div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 7.1 </span> (Absolute Stability)</p>
+<p class="admonition-title"><span class="caption-number">Definition 7.1 </span> (Stability Polynomial)</p>
+<section class="definition-content" id="proof-content">
+<p>For a general linear multistep method</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=0}^{k} \alpha_i y_{j+i} = h \sum_{i=0}^{k} f_{j+i},
+\]</div>
+<p>we define</p>
+<div class="math notranslate nohighlight" id="equation-eq-chap06-poly-stability">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-eq-chap06-poly-stability" title="Link to this equation">#</a></span>\[
+\L (z, h\lambda) = \rho(z) - h\lambda \sigma(z)
+\]</div>
+<p>as its <strong>stability polynomial</strong>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 7.2 </span> (Absolute Stability)</p>
 <section class="definition-content" id="proof-content">
 <p>A linear multistep method is said to be <em><span class="target" id="index-0"></span>absolutely stable</em> in a region
 <span class="math notranslate nohighlight">\(\,\Re\,\)</span> of the complex plane if for all <span class="math notranslate nohighlight">\(\,h\lambda\,\)</span> all roots of
 the stability polynomial <span class="math notranslate nohighlight">\(\,\L (z,h\lambda)\)</span> associated with the
 method satisfy</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch05-1-3">
-<span class="eqno">(7.3)<a class="headerlink" href="#equation-eq-ch05-1-3" title="Link to this equation">#</a></span>\[
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-eq-ch05-1-3" title="Link to this equation">#</a></span>\[
 \begin{aligned}
     &amp;&amp; \left| z_i(h\lambda) \right| \,&amp;&lt;\, 1,
     &amp; i &amp;= 1,\,2,\dots,k &amp;&amp;
 \end{aligned}
 \]</div>
 </section>
-</div><div class="proof definition admonition" id="definition-1">
-<p class="admonition-title"><span class="caption-number">Definition 7.2 </span> (Relative Stability)</p>
+</div><div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 7.3 </span> (Relative Stability)</p>
 <section class="definition-content" id="proof-content">
 <p>A linear multistep method is said to be <em><span class="target" id="index-1"></span>relatively stable</em> in a region
 <span class="math notranslate nohighlight">\(\,\Re\,\)</span> of the complex plane if, for all <span class="math notranslate nohighlight">\(\,h\lambda\,\)</span> all roots of
 the stability polynomial <span class="math notranslate nohighlight">\(\,\L (z,h\lambda)\)</span> associated with the
 method satisfy</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch05-1-4">
-<span class="eqno">(7.4)<a class="headerlink" href="#equation-eq-ch05-1-4" title="Link to this equation">#</a></span>\[
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-eq-ch05-1-4" title="Link to this equation">#</a></span>\[
 \begin{aligned}
     &amp;&amp; \left| z_i(h\lambda) \right| \,&amp;&lt;\, \left| z_1(h\lambda) \right|\,
     &amp; \qquad i &amp;= 2,\,3,\dots,k &amp;&amp;    
@@ -474,8 +478,8 @@ parasitic roots are less in magnitude than the principal root).</p>
 \]</div>
 <p>In some textbooks, the stability polynomial is also expressed as <span class="math notranslate nohighlight">\(\pi (z, h\lambda)\)</span>.</p>
 </div>
-<div class="proof definition admonition" id="definition-2">
-<p class="admonition-title"><span class="caption-number">Definition 7.3 </span> (Stability Interval)</p>
+<div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 7.4 </span> (Stability Interval)</p>
 <section class="definition-content" id="proof-content">
 <p>An interval <span class="math notranslate nohighlight">\((a,b)\)</span> of the real axis is said to be an <em><span class="target" id="index-2"></span>interval of absolute/relative stability</em> if the method is absolutely/relatively
 stable for all <span class="math notranslate nohighlight">\(\,h\lambda \in (a,b)\,\)</span>. If the method is absolutely
@@ -581,7 +585,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 05 November 2026 16:49:46.
+  Last updated on Monday 09 November 2026 13:34:29.
   <br/>
 </p>
   </div>
