@@ -190,7 +190,7 @@ the **{index}`root condition`**.
 ```
 
 ::::{prf:definition} Zero-Stability
-A linear multistep is **zero-stable** if its first characteristic polynomial $\,\rho(z)\,$ satisfies
+A linear multistep method is **zero-stable** if its first characteristic polynomial $\,\rho(z)\,$ satisfies
 the root condition given in {prf:ref}`definition-root-condition`, i.e. the roots of $\,\rho(z)\,$ lie inside or on
 the unit circle, and the roots on the unit circle are distinct.
 
