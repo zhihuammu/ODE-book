@@ -278,6 +278,9 @@ plt.show()
 
 The solution looks quite good now.
 
+```{prf:remark}
+Zero-stability determines whether a linear multistep method has inherent capability to control the growth of errors when there is no input to the discrete system from outside. However, this doesn't guarantee the method is stable for any given step size $h$.
+```
 
 ```{admonition} Questions
 :class: question

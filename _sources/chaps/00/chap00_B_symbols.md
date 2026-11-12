@@ -31,8 +31,8 @@
 | $T$, LTE    | local (truncation) error| 
 | $\L(\D)$   | linear differential operation|
 | $\L(\E)$   | linear shift operation|
-| $\L(z)$    | characteristic polynomial|
-| $\L(z, h\lambda)$, $\pi(z, h\lambda)$    | characteristic polynomial, stability polynomial|
+| $\pi(z)$    | characteristic polynomial|
+| $\pi(z, h\lambda)$, $\pi(z, h\lambda)$    | characteristic polynomial, stability polynomial|
 | $\rho(z)$    | first characteristic polynomial|
 | $\sigma(z)$    | second characteristic polynomial|
 | $\begin{pmatrix} n \\ k \end{pmatrix}$, $^n C_r$        | binomial coefficient |

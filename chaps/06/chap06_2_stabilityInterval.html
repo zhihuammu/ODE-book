@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>7.2. Interval and Region of Absolute Stability &#8212; Linear Multistep Methods</title>
   
@@ -30,11 +30,11 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
@@ -49,7 +49,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=c73c0f3e"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Tuesday 10 November 2026 15:54:58"/>
+    <meta name="docbuild:last-update" content="Thursday 12 November 2026 22:42:05"/>
   </head>
   
   
@@ -415,90 +415,91 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="interval-and-region-of-absolute-stability">
 <h1><span class="section-number">7.2. </span>Interval and Region of Absolute Stability<a class="headerlink" href="#interval-and-region-of-absolute-stability" title="Link to this heading">#</a></h1>
-<p>Let’s consider a test equation,</p>
+<p>In <a class="reference internal" href="../05/chap05_2_rootCondition-new.html#sec-zero-stability"><span class="std std-ref">Root Condition and Zero-Stability</span></a>, we derived the error propagation equation <a class="reference internal" href="../05/chap05_2_rootCondition-new.html#equation-eq-ch04-1-1-c">(6.3)</a> for a linear multistep method expressed as</p>
+<div class="math notranslate nohighlight" id="equation-eq-chap06-error-propagation-1">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-eq-chap06-error-propagation-1" title="Link to this equation">#</a></span>\[
+\sum_{i=0}^{k}\alpha_i e_{j+i}~=~ h\sum_{i=0}^{k}\beta_i \biggl( f(x_{j+i}) - f_{j+i} \biggr) + C_p h^p y^{(p)}(\xi).
+\]</div>
+<p>When dealing non-linear ODEs in real-world applications, we often linearise these equations in order to analyse their stability. Supposing <span class="math notranslate nohighlight">\(y'=f(x,y)\)</span> can be linearised as</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch05-1-2">
-<span class="eqno">(7.1)<a class="headerlink" href="#equation-eq-ch05-1-2" title="Link to this equation">#</a></span>\[
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-eq-ch05-1-2" title="Link to this equation">#</a></span>\[
     y'(x) = \lambda y,
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is a (real or complex) constant.</p>
+<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the eigenvalue of the system, then equation <a class="reference internal" href="#equation-eq-chap06-error-propagation-1">(7.1)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-eq-chap06-error-propagation-2">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-eq-chap06-error-propagation-2" title="Link to this equation">#</a></span>\[
+\sum_{i=0}^{k} (\alpha_i - h \lambda \beta_i)e_{j+i}~=~  C_p h^p y^{(p)}(\xi).
+\]</div>
+<p>Let the RHS of equation <a class="reference internal" href="#equation-eq-chap06-error-propagation-2">(7.3)</a> be zero, we can get</p>
+<div class="math notranslate nohighlight" id="equation-eq-chap06-error-propagation-3">
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-eq-chap06-error-propagation-3" title="Link to this equation">#</a></span>\[
+\sum_{i=0}^{k} (\alpha_i - h \lambda \beta_i)e_{j+i}~=~  0.
+\]</div>
+<p>Obviously, we need to let the errors tend to zero (or be bounded) to ensure that the method is stable.</p>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 7.1 </span> (Stability Polynomial)</p>
 <section class="definition-content" id="proof-content">
-<p>For a general linear multistep method</p>
+<p>We define</p>
+<div class="math notranslate nohighlight" id="equation-eq-chap06-poly-stability">
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-eq-chap06-poly-stability" title="Link to this equation">#</a></span>\[
+\pi (z, h\lambda) = \sum_{i=0}^k (\alpha_i - h \lambda \beta_i) z^i
+\]</div>
+<p>as the <strong>stability polynomial</strong> of a linear multistep method. Using the first and second characteristic polynomials, the stability polynomial can be also be calculated as</p>
 <div class="math notranslate nohighlight">
 \[
-\sum_{i=0}^{k} \alpha_i y_{j+i} = h \sum_{i=0}^{k} f_{j+i},
+\pi (z, h\lambda) = \rho(z) - h\lambda \sigma(z)
 \]</div>
-<p>we define</p>
-<div class="math notranslate nohighlight" id="equation-eq-chap06-poly-stability">
-<span class="eqno">(7.2)<a class="headerlink" href="#equation-eq-chap06-poly-stability" title="Link to this equation">#</a></span>\[
-\L (z, h\lambda) = \rho(z) - h\lambda \sigma(z)
-\]</div>
-<p>as its <strong>stability polynomial</strong>.</p>
+<p>In some books, the stability polynomial <span class="math notranslate nohighlight">\(\pi (z, h\lambda)\)</span> is also called the <em>characteristic polynomial</em>.</p>
 </section>
 </div><div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 7.2 </span> (Absolute Stability)</p>
 <section class="definition-content" id="proof-content">
-<p>A linear multistep method is said to be <em><span class="target" id="index-0"></span>absolutely stable</em> in a region
-<span class="math notranslate nohighlight">\(\,\Re\,\)</span> of the complex plane if for all <span class="math notranslate nohighlight">\(\,h\lambda\,\)</span> all roots of
-the stability polynomial <span class="math notranslate nohighlight">\(\,\L (z,h\lambda)\)</span> associated with the
-method satisfy</p>
+<p>A linear multistep method, when applied to a test problem <span class="math notranslate nohighlight">\(y'=\lambda y\)</span> with a given value of <span class="math notranslate nohighlight">\(h \lambda\)</span>, is said to be <strong>absolutely stable</strong> if all perturbations in the numerical solution tend to zero as <span class="math notranslate nohighlight">\(j \rightarrow \infty\)</span>. This requires that for the given value of <span class="math notranslate nohighlight">\(h\lambda\)</span> the moduli of all the roots of the stability polynomial <span class="math notranslate nohighlight">\(\pi(z, h\lambda)\)</span> are less than <span class="math notranslate nohighlight">\(1\)</span>.</p>
+</section>
+</div><!-- :::{prf:definition} Relative Stability
+A linear multistep method is said to be *{index}`relatively stable`* in a region
+$\mathcal{R}$ of the complex plane, if for all $h\lambda$, all roots of
+the stability polynomial $\pi (z,h\lambda)$ associated with the
+method satisfy 
+
+$$
+\begin{aligned}
+    && \left| z_i(h\lambda) \right| \,&<\, \left| z_1(h\lambda) \right|\,
+    & \qquad i &= 2,\,3,\dots,k &&    
+\end{aligned}
+$$(eq:ch05:1.4)
+
+ where $z_1(h\lambda) = 1$ is a simple root (i.e. the
+parasitic roots are less in magnitude than the principal root).
+::: -->
+<div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 7.3 </span> (Region of Absolute Stability)</p>
+<section class="definition-content" id="proof-content">
+<p>For a <span class="math notranslate nohighlight">\(k\)</span>-step linear multistep method, its region of absolute stability <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> is a subset of the complex plane in which the method is absolutely stable. <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> is the set of values <span class="math notranslate nohighlight">\(h\lambda\)</span> for which the moduli of all the roots of the stability polynomial <span class="math notranslate nohighlight">\(\pi(z, h\lambda)\)</span> are less than <span class="math notranslate nohighlight">\(1\)</span></p>
 <div class="math notranslate nohighlight" id="equation-eq-ch05-1-3">
-<span class="eqno">(7.3)<a class="headerlink" href="#equation-eq-ch05-1-3" title="Link to this equation">#</a></span>\[
-\begin{aligned}
-    &amp;&amp; \left| z_i(h\lambda) \right| \,&amp;&lt;\, 1,
-    &amp; i &amp;= 1,\,2,\dots,k &amp;&amp;
-\end{aligned}
+<span class="eqno">(7.6)<a class="headerlink" href="#equation-eq-ch05-1-3" title="Link to this equation">#</a></span>\[
+\mathcal{R} = \{ h\lambda \in \mathbb{C} : \pi(z_i, h\lambda)=0, |z_i (h\lambda)|&lt;1, i=1,2,\ldots, k \}, 
 \]</div>
+<p>Here, <span class="math notranslate nohighlight">\(z_i (h\lambda)\)</span> represents the <span class="math notranslate nohighlight">\(i\)</span>-th root of the stability <span class="math notranslate nohighlight">\(\pi(z_i, h\lambda)\)</span> for the given value <span class="math notranslate nohighlight">\(h\lambda\)</span>.</p>
 </section>
-</div><div class="proof definition admonition" id="definition-2">
-<p class="admonition-title"><span class="caption-number">Definition 7.3 </span> (Relative Stability)</p>
+</div><div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 7.4 </span> (Interval of Absolute Stability)</p>
 <section class="definition-content" id="proof-content">
-<p>A linear multistep method is said to be <em><span class="target" id="index-1"></span>relatively stable</em> in a region
-<span class="math notranslate nohighlight">\(\,\Re\,\)</span> of the complex plane if, for all <span class="math notranslate nohighlight">\(\,h\lambda\,\)</span> all roots of
-the stability polynomial <span class="math notranslate nohighlight">\(\,\L (z,h\lambda)\)</span> associated with the
-method satisfy</p>
-<div class="math notranslate nohighlight" id="equation-eq-ch05-1-4">
-<span class="eqno">(7.4)<a class="headerlink" href="#equation-eq-ch05-1-4" title="Link to this equation">#</a></span>\[
-\begin{aligned}
-    &amp;&amp; \left| z_i(h\lambda) \right| \,&amp;&lt;\, \left| z_1(h\lambda) \right|\,
-    &amp; \qquad i &amp;= 2,\,3,\dots,k &amp;&amp;    
-\end{aligned}
+<p>An interval <span class="math notranslate nohighlight">\(\mathcal{R}_0=(a,b)\)</span> of the real axis is said to be an <em><span class="target" id="index-0"></span>interval of absolute stability</em> if the method is absolutely stable for all real values of <span class="math notranslate nohighlight">\(h\lambda \in \mathcal{R}_0\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-eq-ch05-1-3-2">
+<span class="eqno">(7.7)<a class="headerlink" href="#equation-eq-ch05-1-3-2" title="Link to this equation">#</a></span>\[
+\mathcal{R}_0 = \{ h\lambda \in \mathbb{R} : \pi(z_i, h\lambda)=0, |z_i (h\lambda)|&lt;1, i=1,2,\ldots, k \}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(z_1(h\lambda) = +1\)</span> is a simple root (i.e. the
-parasitic roots are less in magnitude than the principal root).</p>
+<p>An interval of absolute stability is simply the intersection of region <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> with the real axis.</p>
 </section>
-</div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The stability polynomial of a linear multistep method is also called characteristic polynomial, and it is calculated as</p>
-<div class="math notranslate nohighlight">
-\[
-\L (z, h\lambda) = \sum_{i=0}^k \left(\alpha_i - h\lambda \beta_i\right) z^i
-= \rho(z) - h\lambda \sigma(z)
-\]</div>
-<p>In some textbooks, the stability polynomial is also expressed as <span class="math notranslate nohighlight">\(\pi (z, h\lambda)\)</span>.</p>
-</div>
-<div class="proof definition admonition" id="definition-3">
-<p class="admonition-title"><span class="caption-number">Definition 7.4 </span> (Stability Interval)</p>
-<section class="definition-content" id="proof-content">
-<p>An interval <span class="math notranslate nohighlight">\((a,b)\)</span> of the real axis is said to be an <em><span class="target" id="index-2"></span>interval of absolute/relative stability</em> if the method is absolutely/relatively
-stable for all <span class="math notranslate nohighlight">\(\,h\lambda \in (a,b)\,\)</span>. If the method is absolutely
-unstable for all <span class="math notranslate nohighlight">\(\,h\lambda \in (a,b)\,\)</span>, it is said to have no
-interval of absolute stability.</p>
-</section>
-</div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>An interval of absolute stability is simply the intersection
-of region <span class="math notranslate nohighlight">\(\Re\)</span> with the real axis.</p>
-</div>
-<p>Here it should be noted that the literature in this area contains many
+</div><p>Here it should be noted that the literature in this area contains many
 similar definitions. Sometimes the concept of absolute stability is
 defined so that the roots can have magnitude 1 and sometimes strictly
 <span class="math notranslate nohighlight">\(\,&lt;1\,\)</span>; it makes little difference, provided that the root with
 magnitude 1 is kept in mind when considering a problem and analysing the
 results - for references see Lambert (1971,1991) and Shampine (1994)
 from the reading list.</p>
-<p>In the following, through examples, we show two methods for finding the
+<p>In the following, through examples, we will show two methods for finding the
 interval and region of absolute stability for linear multistep methods.</p>
 </section>
 
@@ -515,7 +516,7 @@ interval and region of absolute stability for linear multistep methods.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./chaps/06"
+            path: "./chaps\06"
         },
         predefinedOutput: true
     }
@@ -585,7 +586,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Tuesday 10 November 2026 15:54:58.
+  Last updated on Thursday 12 November 2026 22:42:05.
   <br/>
 </p>
   </div>

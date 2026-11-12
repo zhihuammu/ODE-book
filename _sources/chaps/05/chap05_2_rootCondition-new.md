@@ -1,3 +1,4 @@
+(sec:zero-stability)=
 # Root Condition and Zero-Stability
 
 It is possible to derive any number of multistep methods of various
@@ -100,7 +101,7 @@ the **{index}`second characteristic polynomial`**.
 
 <!-- 
 $$
-\L (z, h\lambda) = \rho(z) - h\lambda \sigma(z)
+\pi (z, h\lambda) = \rho(z) - h\lambda \sigma(z)
 $$(eq:chap04:chapoly:relation)
 the **{index}`stability polynomial`** of the multistep method.
 

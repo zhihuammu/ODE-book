@@ -36,7 +36,7 @@ $$
 $$
 
  Since
-$\qquad \L(z, h\lambda) ~=~ \rho(z) - h\lambda\sigma(z) ~=~ 0
+$\qquad \pi(z, h\lambda) ~=~ \rho(z) - h\lambda\sigma(z) ~=~ 0
     \qquad\Rightarrow\qquad
     h\lambda ~=~\dfrac{\rho(z)}{\sigma(z)}$
 
@@ -92,7 +92,7 @@ we obtain the following table:
 
 
 These points are plotted in the complex $h\lambda$ plane, and the
-resulting region $\Re$, $\Re \subset \C$, of absolute stability is shown in the following
+resulting region $\mathcal{R}$, $\mathcal{R} \subset \C$, of absolute stability is shown in the following
 figure:
 
 ```{figure} /images/06/fig-chap06-c5m39f1shade.svg
@@ -150,9 +150,13 @@ them there is no restriction on $h$ in order to have stability of the
 type we have been considering.
 
 :::{prf:definition} $A$-stability
+A linear multistep method is $A$-stable if its region of absolute stability contains the entire left half of the complex plane.
+
+<!-- 
 The property that $\displaystyle\,\lim_{j \to \infty} y_j = 0\;$
 ($y_j\,$ approximated solution) for all $\,h>0\,$ and all complex
 $\lambda$ with $\,Real(\lambda)<0\,$ is called *{index}`A-stability`*.
+ -->
 :::
 
 For certain applications, stiff differential equations, the A-stability
@@ -170,7 +174,7 @@ $$
 
  is A-stable.
 
-:::{admonition} Solution
+<!-- :::{admonition} Solution
 :class: solution
 
 Applying this formula to the test equation $y' = \lambda y$ we find
@@ -214,6 +218,34 @@ $$
  This will be true for all $h\lambda$ with
 $Real(\lambda) < 0$, and thus the backward Euler formula is an A-stable
 method.
+::: -->
+
+:::{admonition} Solution
+:class: solution
+
+The stability polynomial of the method  
+
+$$
+\begin{align*}
+\pi (z, h\lambda) & = \sum_{i=0}^k (\alpha_i - h \lambda \beta_i) z^i \\
+                  & = -1 + (1-h\lambda) z.
+\end{align*}
+$$
+
+has one root
+
+$$
+z = \frac{1}{1-h\lambda},        
+$$
+
+and the modulus of the root is
+
+$$
+|z| = \frac{1}{|1-h\lambda|} = \frac{1}{\sqrt{\biggl(1-\mathrm{Re}(h\lambda)\biggr)^2 + \biggl(\mathrm{Im}(h\lambda)\biggr)^2}}.
+$$
+
+Obviously, for any $h\lambda \in \mathbb{C}$, if $\mathrm{Re}(h\lambda) < 0$, then $|z| < 1$. This means the region of absolute stability contains the entire left half of the complex plane. Therefore the backward Euler method is $A$-stable.
+
 :::
 
 It would have been useful to have A-stable multistep methods of order
