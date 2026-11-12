@@ -40,7 +40,7 @@ Thus the characteristic equation is
 
 $$
 \begin{aligned}
-\L (z, h\lambda) & = \sum_{i=0}^{k} \left(\alpha_i - h\lambda \beta_i \right) z^i \\
+\pi (z, h\lambda) & = \sum_{i=0}^{k} \left(\alpha_i - h\lambda \beta_i \right) z^i \\
 & = (\alpha_1 - h\lambda \beta_1) z +  (\alpha_0 - h\lambda \beta_0) \\
 & = (1-h\lambda) z - 1 \\
 & = 0
@@ -109,7 +109,7 @@ show that
     so we get the characteristic equation
 
     $$
-    \L (z, h\lambda) = z^2 - \frac{1}{2} h\lambda z - \left(1+\frac{3}{2} h \lambda\right)
+    \pi (z, h\lambda) = z^2 - \frac{1}{2} h\lambda z - \left(1+\frac{3}{2} h \lambda\right)
     =0
     $$
 
@@ -162,7 +162,7 @@ show that
     \rho(z) = z^2 - 1, \quad \sigma(z) = \frac{1}{2}z  + \frac{3}{2}
     $$
 
-    Let $\L (z,h\lambda)=\rho(z)-h\lambda \sigma(z)=0$ and $z=e^{\i\theta}$
+    Let $\pi(z,h\lambda)=\rho(z)-h\lambda \sigma(z)=0$ and $z=e^{\i\theta}$
 
     $$
     \begin{aligned}
@@ -264,7 +264,7 @@ Find the stability interval and region for the following methods:
         The characteristic equation is
 
         $$
-        \L (z, h\lambda) = z^3 - (1+\frac{23}{12}h\lambda) z^2 + \frac{16}{12}h\lambda z - \frac{5}{12} h \lambda=0
+        \pi (z, h\lambda) = z^3 - (1+\frac{23}{12}h\lambda) z^2 + \frac{16}{12}h\lambda z - \frac{5}{12} h \lambda=0
         $$
 
         Use Matlab
@@ -356,7 +356,7 @@ Find the stability interval and region for the following methods:
         The characteristic equation is
 
         $$
-        \L (z, h\lambda) = \left(1-\frac{5}{12}h\lambda\right)z^2
+        \pi (z, h\lambda) = \left(1-\frac{5}{12}h\lambda\right)z^2
         - \left(1+\frac{8}{12}h\lambda\right)z + \frac{1}{12} h \lambda
         =0
         $$
@@ -459,7 +459,7 @@ $$
 The characteristic polynomial is
 
 $$
-\L (z, h\lambda) = (1-\frac{1}{2}h\lambda)z - (1+\frac{1}{2}h\lambda)
+\pi (z, h\lambda) = (1-\frac{1}{2}h\lambda)z - (1+\frac{1}{2}h\lambda)
 $$
 
 $$

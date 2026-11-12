@@ -156,7 +156,7 @@ $$
 For equation {eq}`eq:ode:linear:constant`, we define its **{index}`characteristic polynomial`** as
 
 $$
-\L (z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0.
+\pi(z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0.
 $$(eq:ode:linear:constant:char:polynomial)
 
 Note: We can simply replace the operator $\D$ in formula {eq}`eq:ode:operator:LD` with $z$ to obtain the characteristic polynomial.
@@ -164,7 +164,7 @@ Note: We can simply replace the operator $\D$ in formula {eq}`eq:ode:operator:LD
 The equation
 
 $$
-\L (z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0 = 0
+\pi(z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0 = 0
 $$(eq:ode:linear:constant:char:equation)
 
 is called the **{index}`characteristic equation`** of the ODE {eq}`eq:ode:linear:constant`.
