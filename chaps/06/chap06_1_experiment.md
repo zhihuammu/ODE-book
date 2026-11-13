@@ -39,13 +39,16 @@ You should
 We can find the error constant of the method (see {numref}`chap:errorConstant:constants`). Rearranging the formula as
 
 $$
+\begin{aligned}
 & y_{j+1} - y_j + 0 y_{j-1} + 0 y_{j-2} + 0 y_{j-3}  \\
     = & h \left( 0 f_{j+1}+ \tfrac{5}{24}f_j - \tfrac{59}{24}f_{j-1} + \tfrac{37}{24}f_{j-2} - \tfrac{9}{24}f_{j-3} \right),
+\end{aligned}    
 $$
 
 so
 
 $$
+\begin{aligned}
 & \alpha_0 = 0, ~ 
 \alpha_1 = 0, ~ 
 \alpha_2 = 0, ~
@@ -56,6 +59,7 @@ $$
 \beta_2= -\tfrac{59}{24}, ~
 \beta_3= \tfrac{5}{24}, ~
 \beta_4=0
+\end{aligned}
 $$
 
 Using Python to calculate the error constant

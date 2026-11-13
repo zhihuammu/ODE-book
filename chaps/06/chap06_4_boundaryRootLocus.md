@@ -43,24 +43,24 @@ $\qquad \pi(z, h\lambda) ~=~ \rho(z) - h\lambda\sigma(z) ~=~ 0
 and we get
 $\displaystyle\qquad h\lambda ~=~ \frac{z^2 - z}{\frac{1}{2}(3z - 1)} ~=~ \frac{2(z^2 - z)}{3z - 1}\,$.
 
-Using the relation $z = e^{\i\theta}$ for the locus of points on the
+Using the relation $z = e^{\mathbf{i}\theta}$ for the locus of points on the
 boundary of the unit circle we get 
 
 $$
 \begin{aligned}
-        h\lambda ~=~ \frac{2(e^{\i 2\theta} - e^{i\theta})}{3e^{\i\theta} - 1}\,.    
+        h\lambda ~=~ \frac{2(e^{\mathbf{i}2\theta} - e^{\mathbf{i}\theta})}{3e^{\mathbf{i}\theta} - 1}\,.    
 \end{aligned}
 $$
 
  The following derivations illustrate in detail the steps
 required for finding the $x$, $y$ coordinates of the points on the
 boundary locus of the region of absolute stability. We can use
-$\,e^{\i n\theta} = \cos n\theta + \i\sin n\theta\,$ and get:
+$e^{\mathbf{i}n\theta} = \cos n\theta + \mathbf{i}\sin n\theta$ and get:
 
 
 $$
 \begin{aligned}
-        h\lambda ~=~ \frac{2\,(\cos2\theta + \i\sin2\theta - \cos\theta - \i\sin\theta)}{3(\cos\theta + \i\sin\theta) - 1}    
+        h\lambda ~=~ \frac{2\,(\cos2\theta + \mathbf{i}\sin2\theta - \cos\theta - \mathbf{i}\sin\theta)}{3(\cos\theta + \mathbf{i}\sin\theta) - 1}    
 \end{aligned}
 $$
 
@@ -70,7 +70,7 @@ separate the real and imaginary components as
 
 $$
 \begin{aligned}
-        h\lambda ~=~ x(\theta) + \i\,y(\theta) \qquad
+        h\lambda ~=~ x(\theta) + \mathbf{i}\,y(\theta) \qquad
         \text{where}&\qquad x(\theta) ~=~\frac{2(\cos\theta - 1)^2}{3\cos\theta - 5}
         \\[1ex]
         \text{and}&\qquad y(\theta) ~=~ \frac{2\sin\theta\,(\cos\theta - 2)}{3\cos\theta - 5}\,.    
@@ -92,7 +92,7 @@ we obtain the following table:
 
 
 These points are plotted in the complex $h\lambda$ plane, and the
-resulting region $\mathcal{R}$, $\mathcal{R} \subset \C$, of absolute stability is shown in the following
+resulting region $\mathcal{R}$, $\mathcal{R} \subset \mathbb{C}$, of absolute stability is shown in the following
 figure:
 
 ```{figure} /images/06/fig-chap06-c5m39f1shade.svg

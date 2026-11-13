@@ -305,12 +305,12 @@ can be:
     y=c_1 e^{z x} + c_2 x e^{z x}
     $$
 
-- Case 3: two conjugate complex solutions ($z_{1,2} = \alpha \pm \i \beta \in \C$);. 
+- Case 3: two conjugate complex solutions ($z_{1,2} = \alpha \pm \mathbf{i}\beta \in \C$);. 
 
     The general solution of the second-order ODE is
 
     $$
-    y=k_1 e^{(\alpha + \i \beta) x} + k_2 e^{(\alpha - \i \beta) x}
+    y=k_1 e^{(\alpha + \mathbf{i}\beta) x} + k_2 e^{(\alpha - \mathbf{i}\beta) x}
     $$
 
     or we can write it as
@@ -380,10 +380,10 @@ $$
 
     $$
     \begin{aligned}
-    z_{1,2} & = \alpha_1 \pm \i \beta_1 \\
-    z_{3,4} & = \alpha_2 \pm \i \beta_2 \\
+    z_{1,2} & = \alpha_1 \pm \mathbf{i}\beta_1 \\
+    z_{3,4} & = \alpha_2 \pm \mathbf{i}\beta_2 \\
               & \vdots ~ \\
-    z_{2m-1, 2m} & = \alpha_m \pm \i \beta_m 
+    z_{2m-1, 2m} & = \alpha_m \pm \mathbf{i}\beta_m 
     \end{aligned}
     $$
 

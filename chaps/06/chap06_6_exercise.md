@@ -169,11 +169,11 @@ show that
     h \lambda = \frac{\rho(z)}{\sigma(z)} 
              = \frac{z^2 - 1}{\frac{1}{2}z  + \frac{3}{2}}
             & = \frac{2(z^2 - 1)}{z  + 3} \\
-            & = \frac{2(e^{\i 2\theta}-1)}{e^{\i\theta}+3} \\
-            & = \frac{2(e^{\i 2\theta}-1)(e^{-\i\theta+3})}{(e^{\i\theta}+3)(e^{-\i\theta+3})} \\
-            & = \frac{2\left[-6\sin^2 \theta + \i \sin \theta (6\cos \theta +2)\right]}{10+6\cos \theta} \\
-            & = \frac{-6\sin^2 \theta }{5+3\cos \theta} + \i \frac{\sin \theta (6\cos \theta +2)}{5+3\cos \theta} \\
-            & = x(\theta) + \i y(\theta)
+            & = \frac{2(e^{\mathbf{i}2\theta}-1)}{e^{\i\theta}+3} \\
+            & = \frac{2(e^{\mathbf{i}2\theta}-1)(e^{-\i\theta+3})}{(e^{\i\theta}+3)(e^{-\i\theta+3})} \\
+            & = \frac{2\left[-6\sin^2 \theta + \mathbf{i}\sin \theta (6\cos \theta +2)\right]}{10+6\cos \theta} \\
+            & = \frac{-6\sin^2 \theta }{5+3\cos \theta} + \mathbf{i}\frac{\sin \theta (6\cos \theta +2)}{5+3\cos \theta} \\
+            & = x(\theta) + \mathbf{i}y(\theta)
     \end{aligned}
     $$
 

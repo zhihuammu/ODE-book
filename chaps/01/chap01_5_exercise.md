@@ -12,7 +12,7 @@ Simplify the following expressions used to calculate $z$, and find the real and 
 
 1. $\displaystyle z=\frac{4+3\i}{3-4\i}$,
 1. $\displaystyle z=e^{\i\theta}-e^{-\i\theta}$,
-1. $\displaystyle z=e^{\i 2\theta} \cdot e^{-\i\theta}$,
+1. $\displaystyle z=e^{\mathbf{i}2\theta} \cdot e^{-\i\theta}$,
 1. $\displaystyle z=\frac{2e^{\i\theta}(e^{\i\theta}-1)}{3e^{\i\theta}-1}$.
 
 :::
@@ -22,7 +22,7 @@ Simplify the following expressions used to calculate $z$, and find the real and 
 
 1.  $z=\i$
 
-1.  $z=\i 2\sin\theta$
+1.  $z=\mathbf{i}2\sin\theta$
 
 1. $z=\cos\theta+\i\sin\theta$
 
