@@ -150,7 +150,7 @@ them there is no restriction on $h$ in order to have stability of the
 type we have been considering.
 
 :::{prf:definition} $A$-stability
-A linear multistep method is $A$-stable if its region of absolute stability contains the entire left half of the complex plane.
+A linear multistep method is said to be $A$-stable if its region of absolute stability contains the entire left half of the complex plane.
 
 <!-- 
 The property that $\displaystyle\,\lim_{j \to \infty} y_j = 0\;$
@@ -172,7 +172,7 @@ $$
 \end{aligned}
 $$
 
- is A-stable.
+ is $A$-stable.
 
 <!-- :::{admonition} Solution
 :class: solution

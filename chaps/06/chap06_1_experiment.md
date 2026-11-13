@@ -36,7 +36,7 @@ You should
 
 
 ## Accuracy    
-We can find the error constant of the method (see Chapter 3). Rearranging the formula as
+We can find the error constant of the method (see {numref}`chap:errorConstant:constants`). Rearranging the formula as
 
 $$
 & y_{j+1} - y_j + 0 y_{j-1} + 0 y_{j-2} + 0 y_{j-3}  \\
