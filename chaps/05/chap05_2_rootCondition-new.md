@@ -158,7 +158,7 @@ roots (i.e. not repeated), then the method is said to satisfy
 the **{index}`root condition`**.
 :::
 
-```{tikz} Unit circle in the complex plane $\C$.
+```{tikz} Unit circle in the complex plane $\mathbb{C}$.
 :xscale: 48
 :libs: arrows.meta
 

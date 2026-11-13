@@ -23,13 +23,13 @@ is said to be separable or to have separable variables.
 To solve the separable ODE {eq}`eq:ode:separable`, we re-arrange it as
 
 $$
-\frac{1}{h(y)} \dy= g(x) \dx, 
+\frac{1}{h(y)} \mathrm{d}y= g(x) \mathrm{d}x, 
 $$
 
 then integrate both sides
 
 $$
-\int \frac{1}{h(y)} \dy= \int g(x) \dx, 
+\int \frac{1}{h(y)} \mathrm{d}y= \int g(x) \mathrm{d}x, 
 $$
 
 so we can get the implicit solution
@@ -39,7 +39,7 @@ H(y) = G(x) + C.
 $$
 
 ````{prf:example}
-Solve $(1+x)\dy - y \dx=0$
+Solve $(1+x)\mathrm{d}y - y \mathrm{d}x=0$
 
 :::{admonition} Solution
 :class: solution, dropdown
@@ -47,13 +47,13 @@ Solve $(1+x)\dy - y \dx=0$
 Re-arranging the equation as
 
 $$
-    \frac{1}{y} \dy  = \frac{1}{1+x} \dx
+    \frac{1}{y} \mathrm{d}y  = \frac{1}{1+x} \mathrm{d}x
 $$
 
 and integrating both sides
 
 $$
-  \int \frac{1}{y} \dy  = \int \frac{1}{1+x} \dx
+  \int \frac{1}{y} \mathrm{d}y  = \int \frac{1}{1+x} \mathrm{d}x
 $$
 
 so 
@@ -80,13 +80,13 @@ Solve $\displaystyle \diff{y}{x} = \frac{x-5}{y^2}$.
 Rearranging the equation as
 
 $$
-y^2 \dy = (x-5) \dx
+y^2 \mathrm{d}y = (x-5) \mathrm{d}x
 $$
 
 Integrating both sides
 
 $$
-\int y^2 \dy = \int (x-5) \dx 
+\int y^2 \mathrm{d}y = \int (x-5) \mathrm{d}x 
 $$
 
 So the implicit solution is
@@ -218,13 +218,13 @@ $$
 separating the variables
 
 $$
-\frac{1}{y}\dy  = -\frac{a_0}{a_1} \dx,
+\frac{1}{y}\mathrm{d}y  = -\frac{a_0}{a_1} \mathrm{d}x,
 $$
 
 integrating both sides
 
 $$
-\int \frac{1}{y}\dy  = \int -\frac{a_0}{a_1} \dx,
+\int \frac{1}{y}\mathrm{d}y  = \int -\frac{a_0}{a_1} \mathrm{d}x,
 $$
 
 $$
@@ -305,7 +305,7 @@ can be:
     y=c_1 e^{z x} + c_2 x e^{z x}
     $$
 
-- Case 3: two conjugate complex solutions ($z_{1,2} = \alpha \pm \mathbf{i}\beta \in \C$);. 
+- Case 3: two conjugate complex solutions ($z_{1,2} = \alpha \pm \mathbf{i}\beta \in \mathbb{C}$);. 
 
     The general solution of the second-order ODE is
 
@@ -316,7 +316,7 @@ can be:
     or we can write it as
 
     $$
-    y=e^{\alpha x}  \left(c_1 \cos \beta x + c_2 \sin \beta x \right), \quad c_1, c_2 \in \C
+    y=e^{\alpha x}  \left(c_1 \cos \beta x + c_2 \sin \beta x \right), \quad c_1, c_2 \in \mathbb{C}
     $$
 
 ```

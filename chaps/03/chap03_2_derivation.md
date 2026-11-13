@@ -9,10 +9,10 @@ over the interval $\,[x_{j+2},x_{j+3}]\,$;
 
 \begin{aligned}
     y'~ & = ~ f(x,y) \\
-    \int_{x_{j+2}}^{x_{j+3}} y' \dx ~&=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx\\
-    \biggl[ y(x) \biggr]_{x_{j+2}}^{x_{j+3}} ~&=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx\\
-    \therefore\quad y(x_{j+3}) - y(x_{j+2}) ~&=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx\\
-    \text{or}\quad y_{j+3} ~&=~ y_{j+2} + \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx     
+    \int_{x_{j+2}}^{x_{j+3}} y' \mathrm{d}x ~&=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \mathrm{d}x\\
+    \biggl[ y(x) \biggr]_{x_{j+2}}^{x_{j+3}} ~&=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \mathrm{d}x\\
+    \therefore\quad y(x_{j+3}) - y(x_{j+2}) ~&=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \mathrm{d}x\\
+    \text{or}\quad y_{j+3} ~&=~ y_{j+2} + \int_{x_{j+2}}^{x_{j+3}} f(x,y) \mathrm{d}x     
 \end{aligned}
 :::
 
@@ -21,7 +21,7 @@ $y_{j+3}$ and $y_{j+2}$ are numerical approximations of $y(x_{j+3})$ and $y(x_{j
 :::
 
 To find the terms on the right hand side, we need to
-integrate $\displaystyle \int_{x_{j+2}}^{x_{j+3}} f(x,y)\,\dx$. The straight
+integrate $\displaystyle \int_{x_{j+2}}^{x_{j+3}} f(x,y)\,\mathrm{d}x$. The straight
 integration cannot be done since $y(x)$ is not known. Instead,
 we integrate by approximating the **two-variable** function $\,f(x,y)\,$ as an
 **single-variable** interpolating/extrapolating polynomial that is determined by using the previously
