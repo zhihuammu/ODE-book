@@ -8,7 +8,7 @@ interpolation formula as the integrand in equation {eq}`eq:ch02:2.1`
 and using the relation 
 
 $$\begin{aligned}
-    x = x_j + sh, \quad \frac{\dx}{\ds} = h, \quad \text{and when}\quad
+    x = x_j + sh, \quad \frac{\mathrm{d}x}{\mathrm{d}s} = h, \quad \text{and when}\quad
     & x = x_{j+3},\quad s = 3\\
     & x = x_{j+2},\quad s = 2    
 \end{aligned}$$ 
@@ -17,14 +17,14 @@ $$\begin{aligned}
 $x_j + 3h = x_j + sh$, $\therefore\,s = 3$\]
 
 $$\begin{aligned}
-    \therefore \quad y_{j+3} ~=~  y_{j+2} & + \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx  \\    
+    \therefore \quad y_{j+3} ~=~  y_{j+2} & + \int_{x_{j+2}}^{x_{j+3}} f(x,y) \mathrm{d}x  \\    
      ~=~ y_{j+2} &+ \int_{x_{j+2}}^{x_{j+3}} \left(
     f_j + s\Delta f_j + \frac{s(s-1)}{2!}\Delta^2 f_j + \dots
-    \right) \dx\\
+    \right) \mathrm{d}x\\
     ~=~ y_{j+2} &+ h\int_{2}^{3} \left(
     f_j + s\Delta f_j + \frac{s(s-1)}{2!}\Delta^2 f_j
-    \right) \ds\\
-    &+ h^4\int_{2}^{3} \frac{s(s-1)(s-2)}{3!}f'''(z) \ds
+    \right) \mathrm{d}s\\
+    &+ h^4\int_{2}^{3} \frac{s(s-1)(s-2)}{3!}f'''(z) \mathrm{d}s
     
 \end{aligned}$$ 
 
@@ -60,7 +60,7 @@ suffices to take the terms in the G-N interpolation formula up to
 $\Delta^{p-1}$ (or $\nabla^{p-1}$) inclusive.
 
 ::::{prf:example}
-Consider the following table for $\,\dfrac{\dy}{\dx} = x + y\,$,
+Consider the following table for $\,\dfrac{\mathrm{d}y}{\mathrm{d}x} = x + y\,$,
 $\,y(0) = 1\,$. The values of $y(0.2)$ and $y(0.4)$ are calculated using
 a single--step method.
 

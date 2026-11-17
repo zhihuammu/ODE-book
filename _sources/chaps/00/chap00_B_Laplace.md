@@ -2,7 +2,7 @@
 
 ## Definition
 
-$$\displaystyle F(s) = \Laplace{f(t)}(s)=\int_0^\infty e^{-st} f(t) \dt$$
+$$\displaystyle F(s) = \Laplace{f(t)}(s)=\int_0^\infty e^{-st} f(t) \mathrm{d}t$$
 
 ## Properties
 

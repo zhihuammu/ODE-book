@@ -1,25 +1,5 @@
 # Consistency and Convergence
 
-<!-- ::::{prf:definition} Zero-Stability
-A linear multistep method {eq}`eq:ch04:1.1` is said to be {index}`zero-stable` if it satisfies the root condition given in {prf:ref}`definition-root-condition`.
-
-This means no root of the
-first characteristic polynomial $\,\rho(z)\,$ has modulus greater that
-one, and every root of modulus one is simple.
-
-:::{note}
-:class: dropdown
-
-In electrical engineering and control theory, the right hand side of the first-order ODE 
-
- $$\diff{y}{x}=f(x, y)$$
-
-is called the input of the system. In this context, we can interpret `zero-stability` as the stability of the system with **zero input**.
-
-We use the root condition to assess whether the discretised system (difference equation) can remain stable under **zero input** condition.
-:::
-
-:::: -->
 
 :::{prf:definition} Consistency
 In numerical analysis, consistency is the property of a numerical method performing differentiation or integration in a way similar to the actual differentiation or integration. In another word, consistency tells how closely the discrete system approximates the original continuous system as the step size shrinks toward zero.
@@ -116,7 +96,7 @@ when we reduce the step size $h$ towards zero, if the numerical solution $y${sub
 the exact solution $y${sub}`ex`, we says the numerical solution converges to the exact solution, and we call the numerical method a convergent method.
 
 $$
-\max _{t\in [0, T]} \| y_\text{num}(t) - y_\text{ex}(t) \| \rightarrow 0 \qquad \mbox{as} \qquad {h}\rightarrow 0.
+\max _{t\in [0, T]} \| y_\text{num}(t) - y_\text{ex}(t) \| \rightarrow 0 \qquad \text{as} \qquad {h}\rightarrow 0.
 $$
 
 :::

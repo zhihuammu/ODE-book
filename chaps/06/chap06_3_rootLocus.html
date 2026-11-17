@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Thursday 12 November 2026 22:42:05"/>
+    <meta name="docbuild:last-update" content="Friday 13 November 2026 17:07:39"/>
   </head>
   
   
@@ -526,21 +526,18 @@ Adams method</p>
 <p>when applied to <span class="math notranslate nohighlight">\(\,y' = \lambda y\)</span>.</p>
 <div class="solution admonition">
 <p class="admonition-title">Solution</p>
-<p>The characteristic equation is</p>
+<p>The stability polynomial is</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
         \pi(z,h\lambda) ~=~ \left(1 - \frac{5}{12}h\lambda\right)z^2
-        - \left(1 + \frac{8}{12}h\lambda\right)z + \frac{1}{12}h\lambda ~=~ 0    
+        - \left(1 + \frac{8}{12}h\lambda\right)z + \frac{1}{12}h\lambda ~=~ 0,
 \end{aligned}
 \]</div>
-<p>Let <span class="math notranslate nohighlight">\(a=\dfrac{h\lambda}{12} \)</span> and its roots are</p>
+<p>and its roots are</p>
 <div class="math notranslate nohighlight">
 \[
-\begin{aligned}
-        z_{1,2} = \frac{1 + 8a
-        \pm\sqrt{\left(1 + 8a\right)^2 - 4a\left(1 - 5a\right)}}{2(1 - 5a)}    
-\end{aligned}
+z_{1,2} = \frac{-(-1-\frac{8}{12}h\lambda)\pm\sqrt{(-1-\frac{8}{12}h\lambda)^2-4(1-\frac{5}{12}h\lambda)(\frac{1}{12}h\lambda)}}{2(1-\frac{5}{12}h\lambda)}
 \]</div>
 <p>The following table gives the calculated values of
 <span class="math notranslate nohighlight">\(|z_1|\)</span> and <span class="math notranslate nohighlight">\(|z_2|\)</span> for various <span class="math notranslate nohighlight">\(h\lambda\)</span>. Note that the interval
@@ -610,8 +607,8 @@ software package.</p>
 shown in the following Table.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Order</p></th>
-<th class="head"><p>Admas-Bashforth</p></th>
+<tr class="row-odd"><th class="head"><p>Order of Accuracy</p></th>
+<th class="head"><p>Adams-Bashforth</p></th>
 <th class="head"><p>Adams-Moulton</p></th>
 </tr>
 </thead>
@@ -645,8 +642,8 @@ shown in the following Table.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For all above methods as order increases, the interval of
-absolute stability decreases.</p>
+<p>For these Adams methods, when their order of accuracy increases,
+the interval of absolute stability shrinks.</p>
 </div>
 </section>
 
@@ -733,7 +730,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 12 November 2026 22:42:05.
+  Last updated on Friday 13 November 2026 17:07:39.
   <br/>
 </p>
   </div>

@@ -243,7 +243,7 @@ $$y_n = c_1 \left(-\frac{1}{2}\right)^n + c_2 n \left(-\frac{1}{2}\right)^n =\le
 ::::
 ````
 
-````{admonition} **Case (3) Two conjugate complex solutions: $z_{1,2}=\alpha\pm  \i \beta  \in \mathbb{C}$, $\i=\sqrt{-1}$**:
+````{admonition} **Case (3) Two conjugate complex solutions: $z_{1,2}=\alpha\pm  \mathbf{i}\beta  \in \mathbb{C}$, $\i=\sqrt{-1}$**:
 :class: important
 
 The general solution is 
@@ -263,7 +263,7 @@ $$ z^2 + \frac{1}{4}=0, $$
 
 so
 
-$$ z_{1,2}= \pm  \frac{1}{2} \i , $$
+$$ z_{1,2}= \pm  \frac{1}{2} \mathbf{i}, $$
 
 and
 
@@ -312,7 +312,7 @@ $$ y_n = \left( c_1  + c_2 n + c_3 n^2 \ldots + c_k n^{k-1} \right) z^n $$
 ````{admonition} Case (3) $m$-pair ($k=2m$) distinct complex conjugate roots:
 :class: important
 
-$$z_1 \sim  z_k = \alpha_p \pm \i \beta_p =r_p e^{\pm \i \theta_p}~ \left(\i^2=-1, ~ p=1,2,\ldots,m\right)$$
+$$z_1 \sim  z_k = \alpha_p \pm \mathbf{i}\beta_p =r_p e^{\pm \mathbf{i}\theta_p}~ \left(\i^2=-1, ~ p=1,2,\ldots,m\right)$$
 
 The general solution to the difference equation is
 
@@ -327,7 +327,7 @@ The general solution to the difference equation is
 ````{admonition} Case (4) $m$-pair ($k=2m$) repeated complex conjugate roots
 :class: important
 
-$$z_1 \sim  z_k = \alpha \pm \i \beta =r e^{\pm \i \theta}~ \left(i^2=-1, ~ p=1,2,\ldots,m\right)$$
+$$z_1 \sim  z_k = \alpha \pm \mathbf{i}\beta =r e^{\pm \mathbf{i}\theta}~ \left(i^2=-1, ~ p=1,2,\ldots,m\right)$$
 
 The general solution to the difference equation is
 
@@ -350,7 +350,7 @@ find the general solution to the corresponding difference equation.
 ```{admonition} Solution
 :class: dropdown, solution
 
-$$1+\sqrt{3}\i=2 e^{\i \frac{\pi}{3}},~ 1+\i = \sqrt{2} e^{\i\frac{\pi}{4}},$$
+$$1+\sqrt{3}\i=2 e^{\mathbf{i}\frac{\pi}{3}},~ 1+\mathbf{i}= \sqrt{2} e^{\i\frac{\pi}{4}},$$
 
 so the general solution is 
 

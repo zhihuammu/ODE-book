@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Thursday 12 November 2026 22:42:05"/>
+    <meta name="docbuild:last-update" content="Friday 13 November 2026 17:07:39"/>
   </head>
   
   
@@ -454,15 +454,18 @@ y_{j+1} = y_j + \frac{h}{24}\left(\,55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}\rig
 </section>
 </div><section id="accuracy">
 <h2><span class="section-number">7.1.1. </span>Accuracy<a class="headerlink" href="#accuracy" title="Link to this heading">#</a></h2>
-<p>We can find the error constant of the method (see Chapter 3). Rearranging the formula as</p>
+<p>We can find the error constant of the method (see <a class="reference internal" href="../04/chap04_2_errorConstant.html#chap-errorconstant-constants"><span class="std std-numref">Section 5.2</span></a>). Rearranging the formula as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
+\begin{aligned}
 &amp; y_{j+1} - y_j + 0 y_{j-1} + 0 y_{j-2} + 0 y_{j-3}  \\
     = &amp; h \left( 0 f_{j+1}+ \tfrac{5}{24}f_j - \tfrac{59}{24}f_{j-1} + \tfrac{37}{24}f_{j-2} - \tfrac{9}{24}f_{j-3} \right),
+\end{aligned}    
 \end{split}\]</div>
 <p>so</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
+\begin{aligned}
 &amp; \alpha_0 = 0, ~ 
 \alpha_1 = 0, ~ 
 \alpha_2 = 0, ~
@@ -473,6 +476,7 @@ y_{j+1} = y_j + \frac{h}{24}\left(\,55f_j - 59f_{j-1} + 37f_{j-2} - 9f_{j-3}\rig
 \beta_2= -\tfrac{59}{24}, ~
 \beta_3= \tfrac{5}{24}, ~
 \beta_4=0
+\end{aligned}
 \end{split}\]</div>
 <p>Using Python to calculate the error constant</p>
 <div class="cell docutils container">
@@ -908,7 +912,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 12 November 2026 22:42:05.
+  Last updated on Friday 13 November 2026 17:07:39.
   <br/>
 </p>
   </div>

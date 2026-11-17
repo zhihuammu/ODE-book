@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Thursday 12 November 2026 22:42:05"/>
+    <meta name="docbuild:last-update" content="Friday 13 November 2026 17:07:39"/>
   </head>
   
   
@@ -423,7 +423,7 @@ interpolation formula as the integrand in equation <a class="reference internal"
 and using the relation</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-    x = x_j + sh, \quad \frac{\dx}{\ds} = h, \quad \text{and when}\quad
+    x = x_j + sh, \quad \frac{\mathrm{d}x}{\mathrm{d}s} = h, \quad \text{and when}\quad
     &amp; x = x_{j+3},\quad s = 3\\
     &amp; x = x_{j+2},\quad s = 2    
 \end{aligned}\end{split}\]</div>
@@ -431,14 +431,14 @@ and using the relation</p>
 <span class="math notranslate nohighlight">\(x_j + 3h = x_j + sh\)</span>, <span class="math notranslate nohighlight">\(\therefore\,s = 3\)</span>]</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-    \therefore \quad y_{j+3} ~=~  y_{j+2} &amp; + \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx  \\    
+    \therefore \quad y_{j+3} ~=~  y_{j+2} &amp; + \int_{x_{j+2}}^{x_{j+3}} f(x,y) \mathrm{d}x  \\    
      ~=~ y_{j+2} &amp;+ \int_{x_{j+2}}^{x_{j+3}} \left(
     f_j + s\Delta f_j + \frac{s(s-1)}{2!}\Delta^2 f_j + \dots
-    \right) \dx\\
+    \right) \mathrm{d}x\\
     ~=~ y_{j+2} &amp;+ h\int_{2}^{3} \left(
     f_j + s\Delta f_j + \frac{s(s-1)}{2!}\Delta^2 f_j
-    \right) \ds\\
-    &amp;+ h^4\int_{2}^{3} \frac{s(s-1)(s-2)}{3!}f'''(z) \ds
+    \right) \mathrm{d}s\\
+    &amp;+ h^4\int_{2}^{3} \frac{s(s-1)(s-2)}{3!}f'''(z) \mathrm{d}s
     
 \end{aligned}\end{split}\]</div>
 <p>The last term on the right hand side is the error due to
@@ -467,7 +467,7 @@ suffices to take the terms in the G-N interpolation formula up to
 <div class="proof example admonition" id="example-0">
 <p class="admonition-title"><span class="caption-number">Example 4.1 </span></p>
 <section class="example-content" id="proof-content">
-<p>Consider the following table for <span class="math notranslate nohighlight">\(\,\dfrac{\dy}{\dx} = x + y\,\)</span>,
+<p>Consider the following table for <span class="math notranslate nohighlight">\(\,\dfrac{\mathrm{d}y}{\mathrm{d}x} = x + y\,\)</span>,
 <span class="math notranslate nohighlight">\(\,y(0) = 1\,\)</span>. The values of <span class="math notranslate nohighlight">\(y(0.2)\)</span> and <span class="math notranslate nohighlight">\(y(0.4)\)</span> are calculated using
 a single–step method.</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -695,7 +695,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 12 November 2026 22:42:05.
+  Last updated on Friday 13 November 2026 17:07:39.
   <br/>
 </p>
   </div>

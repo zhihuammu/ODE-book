@@ -93,23 +93,19 @@ $$
 
 :::{admonition} Solution
 :class: solution
-The characteristic equation is 
+The stability polynomial is 
 
 $$
 \begin{aligned}
         \pi(z,h\lambda) ~=~ \left(1 - \frac{5}{12}h\lambda\right)z^2
-        - \left(1 + \frac{8}{12}h\lambda\right)z + \frac{1}{12}h\lambda ~=~ 0    
+        - \left(1 + \frac{8}{12}h\lambda\right)z + \frac{1}{12}h\lambda ~=~ 0,
 \end{aligned}
 $$
 
- Let $a=\dfrac{h\lambda}{12} $ and its roots are
-
+and its roots are
 
 $$
-\begin{aligned}
-        z_{1,2} = \frac{1 + 8a
-        \pm\sqrt{\left(1 + 8a\right)^2 - 4a\left(1 - 5a\right)}}{2(1 - 5a)}    
-\end{aligned}
+z_{1,2} = \frac{-(-1-\frac{8}{12}h\lambda)\pm\sqrt{(-1-\frac{8}{12}h\lambda)^2-4(1-\frac{5}{12}h\lambda)(\frac{1}{12}h\lambda)}}{2(1-\frac{5}{12}h\lambda)}
 $$
 
  The following table gives the calculated values of
@@ -134,11 +130,13 @@ simple way of finding the interval of absolute stability using a
 software package.
 :::
 
+
+
 The interval of absolute stability for various order Adams methods is
 shown in the following Table.
 
 
-|Order   | Admas-Bashforth | Adams-Moulton |
+|Order of Accuracy  | Adams-Bashforth | Adams-Moulton |
 |--| -- | -- |
 |1  | $[ -2.00, 0 ]$  | $[-\infty, 0 ]\cup [2.00, \infty]$ |
 |2  | $[ -1.00, 0 ]$  | $[ -\infty, 0 ]$ |
@@ -147,7 +145,7 @@ shown in the following Table.
 |5  | $[ -0.16, 0 ]$  | $[ -1.84, 0 ]$ |
 |6  | $[ -0.09, 0 ]$  | $[ -1.19, 0 ]$ |
 
-:::{note}
-For all above methods as order increases, the interval of
-absolute stability decreases.
-:::
+```{note} 
+For these Adams methods, when their order of accuracy increases, 
+the interval of absolute stability shrinks.
+```

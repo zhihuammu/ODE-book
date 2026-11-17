@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Thursday 12 November 2026 22:42:05"/>
+    <meta name="docbuild:last-update" content="Friday 13 November 2026 17:07:39"/>
   </head>
   
   
@@ -421,17 +421,17 @@ over the interval <span class="math notranslate nohighlight">\(\,[x_{j+2},x_{j+3
 <div class="math notranslate nohighlight" id="equation-eq-ch02-2-1">
 <span class="eqno">(4.4)<a class="headerlink" href="#equation-eq-ch02-2-1" title="Link to this equation">#</a></span>\[\begin{split}\begin{aligned}
     y'~ &amp; = ~ f(x,y) \\
-    \int_{x_{j+2}}^{x_{j+3}} y' \dx ~&amp;=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx\\
-    \biggl[ y(x) \biggr]_{x_{j+2}}^{x_{j+3}} ~&amp;=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx\\
-    \therefore\quad y(x_{j+3}) - y(x_{j+2}) ~&amp;=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx\\
-    \text{or}\quad y_{j+3} ~&amp;=~ y_{j+2} + \int_{x_{j+2}}^{x_{j+3}} f(x,y) \dx     
+    \int_{x_{j+2}}^{x_{j+3}} y' \mathrm{d}x ~&amp;=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \mathrm{d}x\\
+    \biggl[ y(x) \biggr]_{x_{j+2}}^{x_{j+3}} ~&amp;=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \mathrm{d}x\\
+    \therefore\quad y(x_{j+3}) - y(x_{j+2}) ~&amp;=~ \int_{x_{j+2}}^{x_{j+3}} f(x,y) \mathrm{d}x\\
+    \text{or}\quad y_{j+3} ~&amp;=~ y_{j+2} + \int_{x_{j+2}}^{x_{j+3}} f(x,y) \mathrm{d}x     
 \end{aligned}\end{split}\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><span class="math notranslate nohighlight">\(y_{j+3}\)</span> and <span class="math notranslate nohighlight">\(y_{j+2}\)</span> are numerical approximations of <span class="math notranslate nohighlight">\(y(x_{j+3})\)</span> and <span class="math notranslate nohighlight">\(y(x_{j+2})\)</span>, respectively.</p>
 </div>
 <p>To find the terms on the right hand side, we need to
-integrate <span class="math notranslate nohighlight">\(\displaystyle \int_{x_{j+2}}^{x_{j+3}} f(x,y)\,\dx\)</span>. The straight
+integrate <span class="math notranslate nohighlight">\(\displaystyle \int_{x_{j+2}}^{x_{j+3}} f(x,y)\,\mathrm{d}x\)</span>. The straight
 integration cannot be done since <span class="math notranslate nohighlight">\(y(x)\)</span> is not known. Instead,
 we integrate by approximating the <strong>two-variable</strong> function <span class="math notranslate nohighlight">\(\,f(x,y)\,\)</span> as an
 <strong>single-variable</strong> interpolating/extrapolating polynomial that is determined by using the previously
@@ -522,7 +522,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 12 November 2026 22:42:05.
+  Last updated on Friday 13 November 2026 17:07:39.
   <br/>
 </p>
   </div>

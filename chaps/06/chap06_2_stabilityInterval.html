@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Thursday 12 November 2026 22:42:05"/>
+    <meta name="docbuild:last-update" content="Friday 13 November 2026 17:07:39"/>
   </head>
   
   
@@ -415,7 +415,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="interval-and-region-of-absolute-stability">
 <h1><span class="section-number">7.2. </span>Interval and Region of Absolute Stability<a class="headerlink" href="#interval-and-region-of-absolute-stability" title="Link to this heading">#</a></h1>
-<p>In <a class="reference internal" href="../05/chap05_2_rootCondition-new.html#sec-zero-stability"><span class="std std-ref">Root Condition and Zero-Stability</span></a>, we derived the error propagation equation <a class="reference internal" href="../05/chap05_2_rootCondition-new.html#equation-eq-ch04-1-1-c">(6.3)</a> for a linear multistep method expressed as</p>
+<p>In <a class="reference internal" href="../05/chap05_2_rootCondition-new.html#sec-zero-stability"><span class="std std-numref">Section 6.2</span></a>, we derived the error propagation equation <a class="reference internal" href="../05/chap05_2_rootCondition-new.html#equation-eq-ch04-1-1-c">(6.3)</a> for a linear multistep method expressed as</p>
 <div class="math notranslate nohighlight" id="equation-eq-chap06-error-propagation-1">
 <span class="eqno">(7.1)<a class="headerlink" href="#equation-eq-chap06-error-propagation-1" title="Link to this equation">#</a></span>\[
 \sum_{i=0}^{k}\alpha_i e_{j+i}~=~ h\sum_{i=0}^{k}\beta_i \biggl( f(x_{j+i}) - f_{j+i} \biggr) + C_p h^p y^{(p)}(\xi).
@@ -430,18 +430,37 @@
 <span class="eqno">(7.3)<a class="headerlink" href="#equation-eq-chap06-error-propagation-2" title="Link to this equation">#</a></span>\[
 \sum_{i=0}^{k} (\alpha_i - h \lambda \beta_i)e_{j+i}~=~  C_p h^p y^{(p)}(\xi).
 \]</div>
-<p>Let the RHS of equation <a class="reference internal" href="#equation-eq-chap06-error-propagation-2">(7.3)</a> be zero, we can get</p>
+<p>Equation <a class="reference internal" href="#equation-eq-chap06-error-propagation-2">(7.3)</a> is a non-homogeneous linear difference equation with constant coefficients. Its general solution includes a homogeneous solution and a particular solution. For simplicity, we can focus on the homogeneous equation</p>
 <div class="math notranslate nohighlight" id="equation-eq-chap06-error-propagation-3">
 <span class="eqno">(7.4)<a class="headerlink" href="#equation-eq-chap06-error-propagation-3" title="Link to this equation">#</a></span>\[
 \sum_{i=0}^{k} (\alpha_i - h \lambda \beta_i)e_{j+i}~=~  0.
 \]</div>
+<p>Its characteristic equation is</p>
+<div class="math notranslate nohighlight" id="equation-eq-chap06-error-propagation-3-characteristic">
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-eq-chap06-error-propagation-3-characteristic" title="Link to this equation">#</a></span>\[
+(\alpha_0 - h \lambda \beta_0) + (\alpha_1 - h \lambda \beta_1) z + (\alpha_2 - h \lambda \beta_2) z^2 + \cdots + (\alpha_k - h \lambda \beta_k) z^k=0.
+\]</div>
+<ul>
+<li><p>If equation <a class="reference internal" href="#equation-eq-chap06-error-propagation-3-characteristic">(7.5)</a> has <span class="math notranslate nohighlight">\(k\)</span> non-repeated roots <span class="math notranslate nohighlight">\(z_1 \neq z_2 \neq \ldots \neq z_k\)</span>, then the general solution to equation <a class="reference internal" href="#equation-eq-chap06-error-propagation-3">(7.4)</a> is</p>
+<div class="math notranslate nohighlight">
+\[
+    e_j = c_1 z_1^j + c_2 z_2^j + \cdots + c_k z_k^j.
+    \]</div>
+</li>
+<li><p>If equation <a class="reference internal" href="#equation-eq-chap06-error-propagation-3-characteristic">(7.5)</a> has <span class="math notranslate nohighlight">\(k\)</span> repeated roots <span class="math notranslate nohighlight">\(z_1 = z_2 = \ldots = z_k = z\)</span>, then the general solution to equation <a class="reference internal" href="#equation-eq-chap06-error-propagation-3">(7.4)</a> is</p>
+<div class="math notranslate nohighlight">
+\[
+    e_j = ( c_1  + c_2 j + c_3 j^2 + \cdots + c_k j^{k-1} ) z^j.
+    \]</div>
+</li>
+</ul>
 <p>Obviously, we need to let the errors tend to zero (or be bounded) to ensure that the method is stable.</p>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 7.1 </span> (Stability Polynomial)</p>
 <section class="definition-content" id="proof-content">
 <p>We define</p>
 <div class="math notranslate nohighlight" id="equation-eq-chap06-poly-stability">
-<span class="eqno">(7.5)<a class="headerlink" href="#equation-eq-chap06-poly-stability" title="Link to this equation">#</a></span>\[
+<span class="eqno">(7.6)<a class="headerlink" href="#equation-eq-chap06-poly-stability" title="Link to this equation">#</a></span>\[
 \pi (z, h\lambda) = \sum_{i=0}^k (\alpha_i - h \lambda \beta_i) z^i
 \]</div>
 <p>as the <strong>stability polynomial</strong> of a linear multistep method. Using the first and second characteristic polynomials, the stability polynomial can be also be calculated as</p>
@@ -454,7 +473,18 @@
 </div><div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 7.2 </span> (Absolute Stability)</p>
 <section class="definition-content" id="proof-content">
-<p>A linear multistep method, when applied to a test problem <span class="math notranslate nohighlight">\(y'=\lambda y\)</span> with a given value of <span class="math notranslate nohighlight">\(h \lambda\)</span>, is said to be <strong>absolutely stable</strong> if all perturbations in the numerical solution tend to zero as <span class="math notranslate nohighlight">\(j \rightarrow \infty\)</span>. This requires that for the given value of <span class="math notranslate nohighlight">\(h\lambda\)</span> the moduli of all the roots of the stability polynomial <span class="math notranslate nohighlight">\(\pi(z, h\lambda)\)</span> are less than <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>A linear multistep method, when applied to a test problem <span class="math notranslate nohighlight">\(y'=\lambda y\)</span> with a given value of <span class="math notranslate nohighlight">\(h \lambda\)</span>, is said to be <strong>absolutely stable</strong> if all perturbations in the numerical solution tend to zero as <span class="math notranslate nohighlight">\(j \rightarrow \infty\)</span>. This requires that for the given value of <span class="math notranslate nohighlight">\(h\lambda\)</span>, all the roots of the stability polynomial <span class="math notranslate nohighlight">\(\pi(z, h\lambda)\)</span> are within the unit circle in the complex plane</p>
+<div class="math notranslate nohighlight">
+\[
+|z_i (h\lambda) | &lt; 1, \quad i=1,2,\ldots,k
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(z_i (h\lambda)\)</span> represents the <span class="math notranslate nohighlight">\(i\)</span>-th root of the stability <span class="math notranslate nohighlight">\(\pi(z, h\lambda)\)</span> for the given <span class="math notranslate nohighlight">\(h\lambda\)</span>.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-2">
+<p class="admonition-title"><span class="caption-number">Remark 7.2 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Zero-stability requires all the roots of the first characteristic polynomial <span class="math notranslate nohighlight">\(\rho(z)\)</span> to be either within the unit circle in the complex plane or on the unit circle but not repeated.</p>
+<p>Absolute stability requires all the roots of the stability polynomial <span class="math notranslate nohighlight">\(\pi(z, h\lambda)\)</span> to be within the unit circle in the complex plane.</p>
 </section>
 </div><!-- :::{prf:definition} Relative Stability
 A linear multistep method is said to be *{index}`relatively stable`* in a region
@@ -472,35 +502,27 @@ $$(eq:ch05:1.4)
  where $z_1(h\lambda) = 1$ is a simple root (i.e. the
 parasitic roots are less in magnitude than the principal root).
 ::: -->
-<div class="proof definition admonition" id="definition-2">
+<div class="proof definition admonition" id="definition-3">
 <p class="admonition-title"><span class="caption-number">Definition 7.3 </span> (Region of Absolute Stability)</p>
 <section class="definition-content" id="proof-content">
-<p>For a <span class="math notranslate nohighlight">\(k\)</span>-step linear multistep method, its region of absolute stability <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> is a subset of the complex plane in which the method is absolutely stable. <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> is the set of values <span class="math notranslate nohighlight">\(h\lambda\)</span> for which the moduli of all the roots of the stability polynomial <span class="math notranslate nohighlight">\(\pi(z, h\lambda)\)</span> are less than <span class="math notranslate nohighlight">\(1\)</span></p>
+<p>For a <span class="math notranslate nohighlight">\(k\)</span>-step linear multistep method, its region of absolute stability <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> is the set of values <span class="math notranslate nohighlight">\(h\lambda\)</span> for which all the roots of the stability polynomial <span class="math notranslate nohighlight">\(\pi(z, h\lambda)\)</span> are within the unit circle in the complex plane</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch05-1-3">
-<span class="eqno">(7.6)<a class="headerlink" href="#equation-eq-ch05-1-3" title="Link to this equation">#</a></span>\[
-\mathcal{R} = \{ h\lambda \in \mathbb{C} : \pi(z_i, h\lambda)=0, |z_i (h\lambda)|&lt;1, i=1,2,\ldots, k \}, 
+<span class="eqno">(7.7)<a class="headerlink" href="#equation-eq-ch05-1-3" title="Link to this equation">#</a></span>\[
+\mathcal{R} = \{ h\lambda \in \mathbb{C} : \pi(z_i, h\lambda)=0, |z_i (h\lambda)|&lt;1, i=1,2,\ldots, k \}.
 \]</div>
-<p>Here, <span class="math notranslate nohighlight">\(z_i (h\lambda)\)</span> represents the <span class="math notranslate nohighlight">\(i\)</span>-th root of the stability <span class="math notranslate nohighlight">\(\pi(z_i, h\lambda)\)</span> for the given value <span class="math notranslate nohighlight">\(h\lambda\)</span>.</p>
 </section>
-</div><div class="proof definition admonition" id="definition-3">
+</div><div class="proof definition admonition" id="definition-4">
 <p class="admonition-title"><span class="caption-number">Definition 7.4 </span> (Interval of Absolute Stability)</p>
 <section class="definition-content" id="proof-content">
 <p>An interval <span class="math notranslate nohighlight">\(\mathcal{R}_0=(a,b)\)</span> of the real axis is said to be an <em><span class="target" id="index-0"></span>interval of absolute stability</em> if the method is absolutely stable for all real values of <span class="math notranslate nohighlight">\(h\lambda \in \mathcal{R}_0\)</span>.</p>
 <div class="math notranslate nohighlight" id="equation-eq-ch05-1-3-2">
-<span class="eqno">(7.7)<a class="headerlink" href="#equation-eq-ch05-1-3-2" title="Link to this equation">#</a></span>\[
+<span class="eqno">(7.8)<a class="headerlink" href="#equation-eq-ch05-1-3-2" title="Link to this equation">#</a></span>\[
 \mathcal{R}_0 = \{ h\lambda \in \mathbb{R} : \pi(z_i, h\lambda)=0, |z_i (h\lambda)|&lt;1, i=1,2,\ldots, k \}
 \]</div>
 <p>An interval of absolute stability is simply the intersection of region <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> with the real axis.</p>
 </section>
-</div><p>Here it should be noted that the literature in this area contains many
-similar definitions. Sometimes the concept of absolute stability is
-defined so that the roots can have magnitude 1 and sometimes strictly
-<span class="math notranslate nohighlight">\(\,&lt;1\,\)</span>; it makes little difference, provided that the root with
-magnitude 1 is kept in mind when considering a problem and analysing the
-results - for references see Lambert (1971,1991) and Shampine (1994)
-from the reading list.</p>
-<p>In the following, through examples, we will show two methods for finding the
-interval and region of absolute stability for linear multistep methods.</p>
+</div><p>Here it should be noted that the literature in this area contains many similar definitions. Sometimes the concept of absolute stability is defined so that the roots can have magnitude of <span class="math notranslate nohighlight">\(1\)</span> and sometimes strictly <em>less than</em> <span class="math notranslate nohighlight">\(1\)</span>; it makes little difference, provided that the root with magnitude of <span class="math notranslate nohighlight">\(1\)</span> is kept in mind when considering a problem and analysing the results - for references see Lambert (1971,1991) and Shampine (1994) from the reading list.</p>
+<p>In the following, through examples, we will show two methods for finding the interval and region of absolute stability for linear multistep methods.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -586,7 +608,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 12 November 2026 22:42:05.
+  Last updated on Friday 13 November 2026 17:07:39.
   <br/>
 </p>
   </div>

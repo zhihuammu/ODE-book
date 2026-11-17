@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Thursday 12 November 2026 22:42:05"/>
+    <meta name="docbuild:last-update" content="Friday 13 November 2026 17:07:39"/>
   </head>
   
   
@@ -467,12 +467,12 @@
 </div><p>To solve the separable ODE <a class="reference internal" href="#equation-eq-ode-separable">(1.7)</a>, we re-arrange it as</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{1}{h(y)} \dy= g(x) \dx, 
+\frac{1}{h(y)} \mathrm{d}y= g(x) \mathrm{d}x, 
 \]</div>
 <p>then integrate both sides</p>
 <div class="math notranslate nohighlight">
 \[
-\int \frac{1}{h(y)} \dy= \int g(x) \dx, 
+\int \frac{1}{h(y)} \mathrm{d}y= \int g(x) \mathrm{d}x, 
 \]</div>
 <p>so we can get the implicit solution</p>
 <div class="math notranslate nohighlight">
@@ -482,19 +482,19 @@ H(y) = G(x) + C.
 <div class="proof example admonition" id="example-1">
 <p class="admonition-title"><span class="caption-number">Example 1.6 </span></p>
 <section class="example-content" id="proof-content">
-<p>Solve <span class="math notranslate nohighlight">\((1+x)\dy - y \dx=0\)</span></p>
+<p>Solve <span class="math notranslate nohighlight">\((1+x)\mathrm{d}y - y \mathrm{d}x=0\)</span></p>
 <div class="solution dropdown admonition">
 <p class="admonition-title">Solution</p>
 <!-- **Solution:** -->
 <p>Re-arranging the equation as</p>
 <div class="math notranslate nohighlight">
 \[
-    \frac{1}{y} \dy  = \frac{1}{1+x} \dx
+    \frac{1}{y} \mathrm{d}y  = \frac{1}{1+x} \mathrm{d}x
 \]</div>
 <p>and integrating both sides</p>
 <div class="math notranslate nohighlight">
 \[
-  \int \frac{1}{y} \dy  = \int \frac{1}{1+x} \dx
+  \int \frac{1}{y} \mathrm{d}y  = \int \frac{1}{1+x} \mathrm{d}x
 \]</div>
 <p>so</p>
 <div class="math notranslate nohighlight">
@@ -520,12 +520,12 @@ H(y) = G(x) + C.
 <p>Rearranging the equation as</p>
 <div class="math notranslate nohighlight">
 \[
-y^2 \dy = (x-5) \dx
+y^2 \mathrm{d}y = (x-5) \mathrm{d}x
 \]</div>
 <p>Integrating both sides</p>
 <div class="math notranslate nohighlight">
 \[
-\int y^2 \dy = \int (x-5) \dx 
+\int y^2 \mathrm{d}y = \int (x-5) \mathrm{d}x 
 \]</div>
 <p>So the implicit solution is</p>
 <div class="math notranslate nohighlight">
@@ -631,12 +631,12 @@ a_1 \diff{y}{x} = - a_0 y,
 <p>separating the variables</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{1}{y}\dy  = -\frac{a_0}{a_1} \dx,
+\frac{1}{y}\mathrm{d}y  = -\frac{a_0}{a_1} \mathrm{d}x,
 \]</div>
 <p>integrating both sides</p>
 <div class="math notranslate nohighlight">
 \[
-\int \frac{1}{y}\dy  = \int -\frac{a_0}{a_1} \dx,
+\int \frac{1}{y}\mathrm{d}y  = \int -\frac{a_0}{a_1} \mathrm{d}x,
 \]</div>
 <div class="math notranslate nohighlight">
 \[
@@ -706,16 +706,16 @@ z_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
     y=c_1 e^{z x} + c_2 x e^{z x}
     \]</div>
 </li>
-<li><p>Case 3: two conjugate complex solutions (<span class="math notranslate nohighlight">\(z_{1,2} = \alpha \pm \i \beta \in \C\)</span>);.</p>
+<li><p>Case 3: two conjugate complex solutions (<span class="math notranslate nohighlight">\(z_{1,2} = \alpha \pm \mathbf{i}\beta \in \mathbb{C}\)</span>);.</p>
 <p>The general solution of the second-order ODE is</p>
 <div class="math notranslate nohighlight">
 \[
-    y=k_1 e^{(\alpha + \i \beta) x} + k_2 e^{(\alpha - \i \beta) x}
+    y=k_1 e^{(\alpha + \mathbf{i}\beta) x} + k_2 e^{(\alpha - \mathbf{i}\beta) x}
     \]</div>
 <p>or we can write it as</p>
 <div class="math notranslate nohighlight">
 \[
-    y=e^{\alpha x}  \left(c_1 \cos \beta x + c_2 \sin \beta x \right), \quad c_1, c_2 \in \C
+    y=e^{\alpha x}  \left(c_1 \cos \beta x + c_2 \sin \beta x \right), \quad c_1, c_2 \in \mathbb{C}
     \]</div>
 </li>
 </ul>
@@ -778,10 +778,10 @@ a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0 = 0
 <div class="math notranslate nohighlight">
 \[\begin{split}
     \begin{aligned}
-    z_{1,2} &amp; = \alpha_1 \pm \i \beta_1 \\
-    z_{3,4} &amp; = \alpha_2 \pm \i \beta_2 \\
+    z_{1,2} &amp; = \alpha_1 \pm \mathbf{i}\beta_1 \\
+    z_{3,4} &amp; = \alpha_2 \pm \mathbf{i}\beta_2 \\
               &amp; \vdots ~ \\
-    z_{2m-1, 2m} &amp; = \alpha_m \pm \i \beta_m 
+    z_{2m-1, 2m} &amp; = \alpha_m \pm \mathbf{i}\beta_m 
     \end{aligned}
     \end{split}\]</div>
 <p>The general solution is</p>
@@ -1038,7 +1038,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 12 November 2026 22:42:05.
+  Last updated on Friday 13 November 2026 17:07:39.
   <br/>
 </p>
   </div>

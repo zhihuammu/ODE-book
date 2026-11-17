@@ -309,7 +309,7 @@ so we can obtain the general solution by integrating the equation
 
 $$
     \begin{aligned}
-    C(t) & = \int \frac{\alpha \beta M}{\alpha - \beta} ( e^{-\beta t} - e^{-\alpha t}) \dt \\
+    C(t) & = \int \frac{\alpha \beta M}{\alpha - \beta} ( e^{-\beta t} - e^{-\alpha t}) \mathrm{d}t \\
          & = \frac{\alpha \beta M}{\alpha - \beta} \biggl( \frac{e^{-\beta t}}{-\beta}- \frac{e^{-\alpha t}}{-\alpha}\biggr) + K_2 \\
          & = \frac{M}{\alpha - \beta} (\beta e^{-\alpha t} - \alpha e^{-\beta t}) + K_2 \\
     \end{aligned}
@@ -342,7 +342,7 @@ where $P(t)$ is the population of fish measured in tens of thousands, and $\beta
 Using the methods of separation of variables gives
 
 $$ 
-    \int \frac{1}{P (\beta - \delta P)} \d P = \int \dt.
+    \int \frac{1}{P (\beta - \delta P)} \d P = \int \mathrm{d}t.
 $$	
 
 The solution to the integral on the left may be determined using partial fractions. The general solution is	

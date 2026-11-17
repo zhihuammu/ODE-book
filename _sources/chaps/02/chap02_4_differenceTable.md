@@ -50,7 +50,7 @@ Note that $ \Delta f_1 =\nabla f_2  $ and
 $  \Delta^2 f_0 =\nabla^2 f_2 .$
 
 ```{prf:remark}
-At same locations in a difference table, the forward and backward differences are the same. For example, if the sequences $\{f_n\} (n\in \Z)$ given in {numref}`table-forward-difference`
+At same locations in a difference table, the forward and backward differences are the same. For example, if the sequences $\{f_n\} (n\in \mathbb{Z})$ given in {numref}`table-forward-difference`
  and {numref}`table-backward-difference` are the same, then 
  
  $$

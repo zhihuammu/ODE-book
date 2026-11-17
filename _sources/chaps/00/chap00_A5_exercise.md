@@ -40,7 +40,7 @@ Determine the type, order, degree, linearity and homogeneity of the following di
 
 Find the general solution to the following separable ODEs
 
-1. $\displaystyle y\dy = x \dx$
+1. $\displaystyle y\mathrm{d}y = x \mathrm{d}x$
 
 2. $\displaystyle \diff{y}{x}=y \ln y$
 
@@ -61,7 +61,7 @@ Find the general solution to the following separable ODEs
 ```{solution} ch0-ex-q2
 :class: dropdown
 
-1. $\displaystyle y\dy = x \dx$
+1. $\displaystyle y\mathrm{d}y = x \mathrm{d}x$
 
     $$\d \left(\frac{1}{2}y^2\right) = \d \left(\frac{1}{2}x^2\right) $$
 
@@ -69,15 +69,15 @@ Find the general solution to the following separable ODEs
 
 2. $\displaystyle \diff{y}{x}=y \ln y$
 
-    $$ \frac{\dy}{y\ln y}=\dx $$
+    $$ \frac{\mathrm{d}y}{y\ln y}=\mathrm{d}x $$
 
-    $$ \frac{\d \ln y}{\ln y} = \dx$$
+    $$ \frac{\d \ln y}{\ln y} = \mathrm{d}x$$
 
     Let $u=\ln y$
 
     $$\frac{\d u}{u} = dx$$
 
-    $$\d \ln u = \dx $$
+    $$\d \ln u = \mathrm{d}x $$
 
     $$\ln u = x + c_1 $$
 
@@ -89,7 +89,7 @@ Find the general solution to the following separable ODEs
 
     $$ \diff{y}{x} =  \frac{x^2}{y} $$
 
-    $$ y \dy = x^2 \dx $$
+    $$ y \mathrm{d}y = x^2 \mathrm{d}x $$
 
     $$\d \left(\frac{1}{2}y^2\right)=\d \left(\frac{1}{3} x^3 \right)$$
 
@@ -97,7 +97,7 @@ Find the general solution to the following separable ODEs
 
 4. $\displaystyle y'=\frac{x^2}{y(1+x^3)}$
 
-    $$ y \dy = \frac{x^2}{1+x^3} \dx $$
+    $$ y \mathrm{d}y = \frac{x^2}{1+x^3} \mathrm{d}x $$
 
     $$ \d \left(\frac{1}{2}y^2\right) =  \d \left(\frac{1}{3} \ln (1+x^3) \right)$$
 
@@ -105,7 +105,7 @@ Find the general solution to the following separable ODEs
 
 5. $\displaystyle xy'=\sqrt{1-y^2}$
 
-    $$ \frac{\dy}{\sqrt{1-y^2}}=\frac{\dx}{x} $$
+    $$ \frac{\mathrm{d}y}{\sqrt{1-y^2}}=\frac{\mathrm{d}x}{x} $$
 
     $$ \d (\sin^{-1} y) = \d (\ln x)$$
 
@@ -115,7 +115,7 @@ Find the general solution to the following separable ODEs
 
 6. $\displaystyle \diff{y}{x}=\frac{x-e^{-x}}{y+e^{y}}$
 
-    $$ (y+e^y) \dy = (x-e^{-x}) \dx $$
+    $$ (y+e^y) \mathrm{d}y = (x-e^{-x}) \mathrm{d}x $$
 
     $$ \d \left(\frac{1}{2}y^2 + e^y\right) = \d \left( \frac{1}{2}x^2 + e^{-x} \right)$$
 
@@ -123,7 +123,7 @@ Find the general solution to the following separable ODEs
 
 7. $\displaystyle \diff{y}{x}=\frac{x^2}{1+y^2}$
 
-    $$ (1+y^2) \dy = x^2 \dx $$
+    $$ (1+y^2) \mathrm{d}y = x^2 \mathrm{d}x $$
 
     $$ \d \left(y+\frac{1}{3}y^3\right) = \d \left(\frac{1}{3}x^3\right)$$
 
@@ -131,7 +131,7 @@ Find the general solution to the following separable ODEs
 
 8. $\displaystyle y'=\frac{2-e^x}{3+2y}$
 
-    $$ (3+2y) \dy = (2-e^x) dx $$
+    $$ (3+2y) \mathrm{d}y = (2-e^x) dx $$
 
     $$ \d (3y+y^2) = \d (2x-e^x)$$ 
 
@@ -146,7 +146,7 @@ Solve the following initial value problems defined by separable ODEs
 
 1. $\displaystyle \diff{y}{x}=2xy$, $y(0)=1$
 
-2. $y^2 \dx + (x+1) \dy=0 $, $y(0)=1$
+2. $y^2 \mathrm{d}x + (x+1) \mathrm{d}y=0 $, $y(0)=1$
 
 3. $\displaystyle \diff{P}{t}=rP\left(1-\frac{P}{M}\right)$, $P(0)=P_0$, $r$ and $M$ are constants, and $0<P\ll M$.
 
@@ -158,7 +158,7 @@ Solve the following initial value problems defined by separable ODEs
 
 1. $\displaystyle \diff{y}{x}=2xy$, $y(0)=1$
 
-    $$\frac{\dy}{y}=2x \dx$$
+    $$\frac{\mathrm{d}y}{y}=2x \mathrm{d}x$$
 
     $$ \ln |y| = x^2 + c_1 $$
 
@@ -168,11 +168,11 @@ Solve the following initial value problems defined by separable ODEs
 
     $$ y=e^{x^2}$$
 
-2. $y^2 \dx + (x+1) \dy=0 $, $y(0)=1$
+2. $y^2 \mathrm{d}x + (x+1) \mathrm{d}y=0 $, $y(0)=1$
 
-    $$ y^2 \dx = -(x+1) \dy $$
+    $$ y^2 \mathrm{d}x = -(x+1) \mathrm{d}y $$
 
-    $$ \frac{\dx}{x+1}=-y^{-2} \dy$$
+    $$ \frac{\mathrm{d}x}{x+1}=-y^{-2} \mathrm{d}y$$
 
     $$ \d \ln (x+1) = \d y^{-1}$$
 

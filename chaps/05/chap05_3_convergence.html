@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Thursday 12 November 2026 22:42:05"/>
+    <meta name="docbuild:last-update" content="Friday 13 November 2026 17:07:39"/>
   </head>
   
   
@@ -415,26 +415,6 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="consistency-and-convergence">
 <h1><span class="section-number">6.3. </span>Consistency and Convergence<a class="headerlink" href="#consistency-and-convergence" title="Link to this heading">#</a></h1>
-<!-- ::::{prf:definition} Zero-Stability
-A linear multistep method {eq}`eq:ch04:1.1` is said to be {index}`zero-stable` if it satisfies the root condition given in {prf:ref}`definition-root-condition`.
-
-This means no root of the
-first characteristic polynomial $\,\rho(z)\,$ has modulus greater that
-one, and every root of modulus one is simple.
-
-:::{note}
-:class: dropdown
-
-In electrical engineering and control theory, the right hand side of the first-order ODE 
-
- $$\diff{y}{x}=f(x, y)$$
-
-is called the input of the system. In this context, we can interpret `zero-stability` as the stability of the system with **zero input**.
-
-We use the root condition to assess whether the discretised system (difference equation) can remain stable under **zero input** condition.
-:::
-
-:::: -->
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 6.5 </span> (Consistency)</p>
 <section class="definition-content" id="proof-content">
@@ -519,7 +499,7 @@ the exact solution <span class="math notranslate nohighlight">\(y\)</span><sub>e
 the exact solution <span class="math notranslate nohighlight">\(y\)</span><sub>ex</sub>, we says the numerical solution converges to the exact solution, and we call the numerical method a convergent method.</p>
 <div class="math notranslate nohighlight">
 \[
-\max _{t\in [0, T]} \| y_\text{num}(t) - y_\text{ex}(t) \| \rightarrow 0 \qquad \mbox{as} \qquad {h}\rightarrow 0.
+\max _{t\in [0, T]} \| y_\text{num}(t) - y_\text{ex}(t) \| \rightarrow 0 \qquad \text{as} \qquad {h}\rightarrow 0.
 \]</div>
 </section>
 </div><p>Zero-stability ensures that
@@ -751,7 +731,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Thursday 12 November 2026 22:42:05.
+  Last updated on Friday 13 November 2026 17:07:39.
   <br/>
 </p>
   </div>
