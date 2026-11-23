@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Friday 13 November 2026 17:07:39"/>
+    <meta name="docbuild:last-update" content="Monday 23 November 2026 15:23:12"/>
   </head>
   
   
@@ -415,19 +415,20 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-and-background">
 <h1><span class="section-number">8.1. </span>Introduction and background<a class="headerlink" href="#introduction-and-background" title="Link to this heading">#</a></h1>
-<p>Stiff differential equations are equations which are ill-conditioned in
-a computational sense. There are many definitions of the concept of
+<p>Stiff differential equations are differential equations for which standard numerical methods, particularly explicit methods, often require excessively small step size <span class="math notranslate nohighlight">\(h\)</span> to maintain numerical stability. Although there is no universally accepted definition of stiffness, a common characteristic of stiff problems is that the step size is constrained by stability requirements rather than by the accuracy needed to approximate the solution. This behaviour is frequently encountered in differential equations whose solutions contain components of the form <span class="math notranslate nohighlight">\(e^{\lambda t}\)</span>, where <span class="math notranslate nohighlight">\(\lambda\)</span> is real and negative or complex with a negative real part. Stiffness is particularly pronounced when the solution contains a rapidly decaying transient component together with another component that varies much more slowly. In such cases, the numerical method may be required to resolve the rapid decay for stability purposes, even after the transient has become negligible and the solution evolves on a much slower time scale. Such problems arise in many applications, including chemical kinetics and electrical circuit simulation.</p>
+<!-- Stiff differential equations are equations which are ill-conditioned in
+a computational sense. There are many definitions of
 stiff differential equations. The most important common feature of these
 definitions is that when such equations are being solved with standard
-numerical methods, the step size h is forced to be excessively small in
+numerical methods, the step size $h$ is forced to be excessively small in
 order to maintain stability. This characteristic can be seen with
 differential equations whose solutions contain terms of the form
-<span class="math notranslate nohighlight">\(e^{\lambda x}\)</span> where <span class="math notranslate nohighlight">\(\,\lambda\,\)</span> is a negative number (or complex
+$e^{\lambda x}$ where $\,\lambda\,$ is a negative number (or complex
 with a negative real part). The problem of stiffness is particularly
 enhanced when the solution consists of a transient part that decay
 rapidly to zero, together with another part which varies much less
 rapidly. Such a situations occur in a number of applications for example
-in chemical kinetics and in electrical circuits.</p>
+in chemical kinetics and in electrical circuits. -->
 <div class="proof example admonition" id="example-0">
 <p class="admonition-title"><span class="caption-number">Example 8.1 </span></p>
 <section class="example-content" id="proof-content">
@@ -435,18 +436,18 @@ in chemical kinetics and in electrical circuits.</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
-        y' ~=~ \lambda y + g(x)    
+        y' ~=~ \lambda y + p(t)    
 \end{aligned}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\lambda \leq 0\)</span>, and <span class="math notranslate nohighlight">\(g(x)\)</span> is a smooth, slowly
+<p>where <span class="math notranslate nohighlight">\(\lambda \leq 0\)</span>, and <span class="math notranslate nohighlight">\(p(t)\)</span> is a smooth, slowly
 varying function. The actual solution of the equation is</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
-        y ~=~ Ae^{\lambda x} + f(x)    
+        y ~=~ Ce^{\lambda t} + q(t)    
 \end{aligned}
 \]</div>
-<p>Here <span class="math notranslate nohighlight">\(\,\lambda x\,\)</span> will soon be sufficiently negative
+<p>Here <span class="math notranslate nohighlight">\(\,\lambda t\,\)</span> will soon be sufficiently negative
 that the first component will decay to insignificant level compared to
 the second. We generally can say, stiffness occurs when some components
 of the solution decay much faster than others.</p>
@@ -458,14 +459,14 @@ of the solution decay much faster than others.</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
-            y' ~&amp;=~ -40y + 40x + 1 &amp; y(0) &amp;= 4        
+            y' ~&amp;=~ -40y + 40t + 1 &amp; y(0) &amp;= 4        
 \end{aligned}
 \]</div>
 <p>The solution of this initial value problem is</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
-        y ~=~ 4e^{-40x} + x.        
+        y ~=~ 4e^{-40t} + t.        
 \end{aligned}
 \]</div>
 <div class="solution dropdown admonition">
@@ -484,21 +485,21 @@ z+40=0,
 <p>Therefore the complementary (homogeneous) solution to the problem is</p>
 <div class="math notranslate nohighlight">
 \[
-y_h = c e^{-40x}.
+y_h = C e^{-40t}.
 \]</div>
 <p>Now let’s try to find a particular solution to the problem</p>
 <div class="math notranslate nohighlight">
 \[
-(\D+40) y_p = 40x+1. 
+(\D+40) y_p = 40t+1. 
 \]</div>
-<p>Let  <span class="math notranslate nohighlight">\(y_p = Ax+B\)</span>, and we get</p>
+<p>Let  <span class="math notranslate nohighlight">\(y_p = At+B\)</span>, and we get</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-(\D+40) y_p &amp; = (\D+40) Ax+ (\D+40) B \\
-            &amp; = A+40Ax + 40B \\
-            &amp; = 40Ax+(A+40B) \\
-            &amp; = 40x+1
+(\D+40) y_p &amp; = (\D+40) At+ (\D+40) B \\
+            &amp; = A+40At + 40B \\
+            &amp; = 40At+(A+40B) \\
+            &amp; = 40t+1
 \end{aligned}
 \end{split}\]</div>
 <p>so</p>
@@ -509,16 +510,16 @@ A=1, \quad B=0.
 <p>Thus the solution to the IVP is</p>
 <div class="math notranslate nohighlight">
 \[
-y= y_h + y_p= c e^{-40x} + x 
+y= y_h + y_p= C e^{-40t} + t 
 \]</div>
-<p>Substituting the initial condition <span class="math notranslate nohighlight">\(y(0)=4\)</span>, we can get <span class="math notranslate nohighlight">\(c=4\)</span>, therefore the overall solution to this IVP is</p>
+<p>Substituting the initial condition <span class="math notranslate nohighlight">\(y(0)=4\)</span>, we can get <span class="math notranslate nohighlight">\(C=4\)</span>, therefore the overall solution to this IVP is</p>
 <div class="math notranslate nohighlight">
 \[
-y=4e^{-40x}+x
+y=4e^{-40t}+t
 \]</div>
 </div>
 <p>The solution consists of two parts. A slowly varying
-function, <span class="math notranslate nohighlight">\(x\)</span>, and a rapidly decreasing exponential term, <span class="math notranslate nohighlight">\(4e^{-40x}\)</span>.
+function, <span class="math notranslate nohighlight">\(t\)</span>, and a rapidly decreasing exponential term, <span class="math notranslate nohighlight">\(4e^{-40t}\)</span>.
 The diagram shows the graph of the solution.</p>
 <figure class="align-default" id="figure-fig-chap07-c6m39f1">
 <a class="reference internal image-reference" href="../../_images/fig-chap07-c6m39f1.svg"><img alt="../../_images/fig-chap07-c6m39f1.svg" src="../../_images/fig-chap07-c6m39f1.svg" width="300px" /></a>
@@ -527,11 +528,11 @@ The diagram shows the graph of the solution.</p>
 step length is shown below:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x_j\)</span></p></th>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(t_j\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(y_j\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(y_j\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(y_j\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(y(x_j)\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(y(t_j)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -574,7 +575,7 @@ step length is shown below:</p>
 </tbody>
 </table>
 </div>
-<p>The table shows nonsense results for <span class="math notranslate nohighlight">\(x \geq 0.5\)</span> except when <span class="math notranslate nohighlight">\(h = 0.01\)</span>
+<p>The table shows nonsense results for <span class="math notranslate nohighlight">\(t \geq 0.5\)</span> except when <span class="math notranslate nohighlight">\(h = 0.01\)</span>
 is used. However, numerically this is not efficient, because a
 comparatively small <span class="math notranslate nohighlight">\(h\)</span> is begin used to approximate the function in the
 region which it is almost like a straight line.</p>
@@ -610,13 +611,44 @@ small then <span class="math notranslate nohighlight">\((1 - 40h)^j\)</span> can
 magnitude as <span class="math notranslate nohighlight">\(j\)</span> increases. However, only when <span class="math notranslate nohighlight">\(|1 - 40h| &lt; 1\)</span>
 <span class="math notranslate nohighlight">\((i.e.\ 0 &lt; h &lt; \frac{1}{20})\)</span>, the numerical solution resembles the
 real solution.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For Euler method, we can also find its interval of absolute stability. Its stability polynomial is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\pi(z, h\lambda) &amp; = \rho(z) - h\lambda \sigma(z) \\
+                 &amp; = (z-1) - h\lambda
+\end{aligned}
+\end{split}\]</div>
+<p>so it has only one root</p>
+<div class="math notranslate nohighlight">
+\[
+        z = h\lambda + 1.
+\]</div>
+<p>To satisfy the absolute stability condition, the modulus of <span class="math notranslate nohighlight">\(z\)</span> should be less than <span class="math notranslate nohighlight">\(1\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+        |h\lambda + 1| &lt; 1,
+\]</div>
+<p>therefore</p>
+<div class="math notranslate nohighlight">
+\[
+        -2  &lt; h\lambda &lt; 0.
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\lambda=-40\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+        0.05 &lt; h &lt; 0
+\]</div>
+</div>
 </section>
 </div><p>Generally, stiff differential equations arise in physical conditions due
 to the existence of greatly varying <em><span class="target" id="index-0"></span>time constants</em>. Time constant is
-the term used to refer to the rate of decay. To find the time constant
+a term used to refer to the rate of decay. To find the time constant
 for a problem consider for example the equation <span class="math notranslate nohighlight">\(\,y' = \lambda y\,\)</span>
-which has the solution <span class="math notranslate nohighlight">\(\,Ae^{\lambda x}\,\)</span>. Interpreting the
-independent variable <span class="math notranslate nohighlight">\(\,x\,\)</span> to be time, if <span class="math notranslate nohighlight">\(\,\lambda\,\)</span> is negative
+which has the solution <span class="math notranslate nohighlight">\(\,Ce^{\lambda t}\,\)</span>. Interpreting the
+independent variable <span class="math notranslate nohighlight">\(\,t\,\)</span> to be time, if <span class="math notranslate nohighlight">\(\,\lambda\,\)</span> is negative
 then <span class="math notranslate nohighlight">\(\,y\,\)</span> decays by a factor of <span class="math notranslate nohighlight">\(\,e^{-1}\,\)</span> in time <span class="math notranslate nohighlight">\(\tau\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -716,7 +748,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 13 November 2026 17:07:39.
+  Last updated on Monday 23 November 2026 15:23:12.
   <br/>
 </p>
   </div>

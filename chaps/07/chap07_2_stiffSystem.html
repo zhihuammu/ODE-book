@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Friday 13 November 2026 17:07:39"/>
+    <meta name="docbuild:last-update" content="Monday 23 November 2026 15:23:12"/>
   </head>
   
   
@@ -415,26 +415,26 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="stiff-systems-of-differential-equations">
 <h1><span class="section-number">8.2. </span>Stiff Systems of Differential Equations<a class="headerlink" href="#stiff-systems-of-differential-equations" title="Link to this heading">#</a></h1>
-<p>Although there are situations when a single differential equation is
-stiff, in real life problems, stiffness is mainly a phenomenon related
-to systems of differential equations. A stiff system of differential
-equation, similarly, has a transient solution as well as a slowly
-varying or steady-state solution.</p>
-<p>Consider a general system of <span class="math notranslate nohighlight">\(\,n\,\)</span> ordinary differential equations of
+<p>In real-life applications, stiffness can also happen to a system of differential equations. Similar to a single stiff differential equation, the solution of a stiff system also has transient and slowly varying (or steady-state) components.</p>
+<p>For a general system of <span class="math notranslate nohighlight">\(\,n\,\)</span> nonlinear ordinary differential equations of
 the form</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-    \mathbf{y}' ~=~ \mathbf{f} (x,\mathbf{y})
+    \mathbf{y}' ~=~ \mathbf{f} (x,\mathbf{y}), 
 \end{aligned}\]</div>
-<p>given by</p>
+<p>we can linearise it as</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-    {\bf y^\prime} ~=~ {\bf \Lambda\,y} + {\bf g}(x).
+    {\bf y^\prime} ~=~ {\bf J \,y} + {\bf g}(x),
 \end{aligned}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\,\bf y\,\)</span> and <span class="math notranslate nohighlight">\(\,\bf g\,\)</span> are vectors with
-<span class="math notranslate nohighlight">\(\,n\,\)</span> components and <span class="math notranslate nohighlight">\(\,\bf \Lambda\,\)</span> is the <span class="target" id="index-0"></span>Jacobian matrix, <strong>J</strong>,
-of <span class="math notranslate nohighlight">\(\,\bf f\,\)</span> (i.e. <span class="math notranslate nohighlight">\(\,{\bf f}_y(x_j,y_j)\,\)</span> at some local point, or at
-some step, <span class="math notranslate nohighlight">\(\,j\,\)</span>). For example, for a system of three equations:</p>
+<span class="math notranslate nohighlight">\(\,n\,\)</span> components, and <span class="math notranslate nohighlight">\(\,\bf J\,\)</span> is the <span class="target" id="index-0"></span>Jacobian matrix
+of the system calculated as</p>
+<div class="math notranslate nohighlight">
+\[
+    [\mathbf{J}_{ij}] = \left[ \pdiff{f_i}{y_j}\right].
+\]</div>
+<p>For example, for a system of three equations:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
     y'_1 ~&amp;=~ f_1(x,y_1,y_2,y_3)
@@ -455,42 +455,39 @@ some step, <span class="math notranslate nohighlight">\(\,j\,\)</span>). For exa
 <p>Here, the eigenvalues <span class="math notranslate nohighlight">\(\,\lambda_i\,\)</span> of the Jacobian
 matrix play the part of <span class="math notranslate nohighlight">\(\,\lambda\,\)</span>. The system of equations is stiff
 if there is an eigenvalue, <span class="math notranslate nohighlight">\(\,\lambda_i\,\)</span>, of <span class="math notranslate nohighlight">\(\mathbf{f}\)</span>, with a
-negative real part of a very large magnitude. In a system of equations
-there are several <span class="math notranslate nohighlight">\(\,\lambda's\,\)</span> with corresponding time constants,</p>
+negative real part of a very large magnitude. In a system of equations, for each eigenvalue <span class="math notranslate nohighlight">\(\lambda_i\)</span>, there is a corresponding time constant</p>
 <div class="math notranslate nohighlight">
-\[\begin{aligned}
-    &amp;&amp; \tau_i ~&amp;=~ \dfrac{1}{|Real\,(\lambda_i)|} &amp; i &amp;= 1,2,...,n &amp;&amp;
-\end{aligned}\]</div>
+\[
+\tau_i = \dfrac{1}{|\text{Real}(\lambda_i)|}, \quad i= 1,2,\dots,n
+\]</div>
 <p><em>In a system of equations the larger the magnitude difference between
 the eigenvalues of the corresponding Jacobian matrix, the higher is the
 degree of stiffness</em>. The degree of stiffness can then be measured by
 calculating the <em><span class="target" id="index-1"></span>stiffness ratio</em>, <span class="math notranslate nohighlight">\(\,S(x)\,\)</span>, given by</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-    &amp;&amp; S(x) ~&amp;=~ \dfrac{\max{|Real\,(\lambda_i)|}}{\min{|Real\,(\lambda_i)|}}
+    &amp;&amp; S(x) ~&amp;=~ \dfrac{\max{|\text{Real}\,(\lambda_i)|}}{\min{|\text{Real}\,(\lambda_i)|}}
     &amp; i &amp;= 1,2,...,n &amp;&amp;
 \end{aligned}\]</div>
 <p>The higher the stiffness ratio the higher the degree of
 stiffness of the system.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The above system is a linear system and the terms in the
-Jacobian, <span class="math notranslate nohighlight">\(\dfrac{\partial \mathbf{f}}{\partial \mathbf{y}}\,\)</span>, and thus the corresponding
-eigenvalues are constant throughout the integration. For non-linear
-systems the terms in the Jacobian, <span class="math notranslate nohighlight">\(\dfrac{\partial \mathbf{f}}{\partial \mathbf{y}}\,\)</span>,
-and thus the corresponding eigenvalues can be a function of some
-variables in the system and they are calculated locally as the
-integration proceeds.</p>
-</div>
-<div class="proof example admonition" id="chap07-example-3">
+<div class="proof remark admonition" id="remark-0">
+<p class="admonition-title"><span class="caption-number">Remark 8.1 </span></p>
+<section class="remark-content" id="proof-content">
+<ul class="simple">
+<li><p>For a linear system, the eigenvalues <span class="math notranslate nohighlight">\(\lambda_i\)</span> of its Jacobian matrix are constant throughout the integration.</p></li>
+<li><p>For a non-linear system, the eigenvalues <span class="math notranslate nohighlight">\(\lambda_i\)</span> of its Jacobian matrix are functions of independent and dependent variables.  <span class="math notranslate nohighlight">\(\lambda_i\)</span> are calculated locally as the integration proceeds.</p></li>
+</ul>
+</section>
+</div><div class="proof example admonition" id="chap07-example-3">
 <p class="admonition-title"><span class="caption-number">Example 8.3 </span></p>
 <section class="example-content" id="proof-content">
 <p>Consider the non-linear system</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-        f_1 ~&amp;=~ -0.013y_1 + 10^3y_1y_3\\
-        f_2 ~&amp;=~ +2.5\times10^3y_2y_3\\
-        f_3 ~&amp;=~ 0.013y_1 - 10^3y_1y_3 - 2.5\times10^3y_2y_3
+        y_1' ~&amp;=~ -0.013y_1 + 10^3y_1y_3\\
+        y_2' ~&amp;=~ +2.5\times10^3y_2y_3\\
+        y_3' ~&amp;=~ 0.013y_1 - 10^3y_1y_3 - 2.5\times10^3y_2y_3
     
 \end{aligned}\end{split}\]</div>
 <p>with initial conditions</p>
@@ -772,7 +769,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 13 November 2026 17:07:39.
+  Last updated on Monday 23 November 2026 15:23:12.
   <br/>
 </p>
   </div>

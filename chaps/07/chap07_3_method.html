@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Friday 13 November 2026 17:07:39"/>
+    <meta name="docbuild:last-update" content="Monday 23 November 2026 15:23:12"/>
   </head>
   
   
@@ -415,13 +415,10 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="methods-for-stiff-equations">
 <h1><span class="section-number">8.3. </span>Methods for Stiff Equations<a class="headerlink" href="#methods-for-stiff-equations" title="Link to this heading">#</a></h1>
-<p>The above examples illustrate the problem of restriction on the value of
-<span class="math notranslate nohighlight">\(\,h\lambda\,\)</span> for the stability of stiff equations. The problem, then,
-is to find methods that do not restrict the step size for stability
-reasons.</p>
+<p>If we use explicit methods (or even some implicit methods) to solve stiff problems, then the step sizes usually have to be very small. Can we find efficient methods, which do not restrict the step size, for stiff problems?</p>
 <p>There are special methods for which the region of absolute stability
-consists of all complex values of <span class="math notranslate nohighlight">\(\,h\lambda\,\)</span> with
-<span class="math notranslate nohighlight">\(\,Real(h\lambda)&lt;0\,\)</span>. These methods are called <em>A-stable</em>, and with
+consists of all complex values of <span class="math notranslate nohighlight">\(h\lambda\)</span> with
+<span class="math notranslate nohighlight">\(\text{Real}(h\lambda)&lt;0\)</span>. These methods are called <em>A-stable</em>, and with
 them there is no restriction on <span class="math notranslate nohighlight">\(h\)</span> in order to have stability of the
 type we have been considering.</p>
 <p>The most widely used class of linear multistep methods for stiff
@@ -533,21 +530,27 @@ using the Boundary Locus method are shown in the following diagram.</p>
 <p><span class="caption-number">Fig. 8.1 </span><span class="caption-text">Stability regions of BDF methods.</span><a class="headerlink" href="#fig-chap07-c6m31f2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Note that all these methods have unbounded region of absolute stability
-which makes them particularly suitable for the solution of stiff
-problems. The detail consideration of the stability theories of these
+<div class="proof remark admonition" id="remark-0">
+<p class="admonition-title"><span class="caption-number">Remark 8.2 </span></p>
+<section class="remark-content" id="proof-content">
+<p>All the aforementioned BDF methods have unbounded region of absolute stability which makes them particularly suitable for solving stiff problems.</p>
+<ul class="simple">
+<li><p>BDF1 and BDF2 are <span class="math notranslate nohighlight">\(A\)</span>-stable.</p></li>
+<li><p>BDF3, BDF4, BDF5 and BDF6 are not <span class="math notranslate nohighlight">\(A\)</span>-stable, although their intervals of absolute stability include the complete negative part of the real number line.</p></li>
+</ul>
+<!-- The detail consideration of the stability theories of these
 methods is outside the scope of this course and complete treatment of
 this topic can be found in Gear C.W. (1969), Lambert J.D. (1973) and
-Hairer E. and Wanner G. (1996).</p>
-<!-- ![BDF1](/images/07/stabilityRegion-BDF1.svg) -->
+Hairer E. and Wanner G. (1996). -->
+</section>
+</div><!-- ![BDF1](/images/07/stabilityRegion-BDF1.svg) -->
 <a class="reference internal image-reference" href="../../_images/stabilityRegion-BDF1.svg"><img alt="BDF1" class="align-center" height="420" src="../../_images/stabilityRegion-BDF1.svg" width="560" /></a>
 <a class="reference internal image-reference" href="../../_images/stabilityRegion-BDF2.svg"><img alt="BDF2" class="align-center" height="420" src="../../_images/stabilityRegion-BDF2.svg" width="560" /></a>
 <a class="reference internal image-reference" href="../../_images/stabilityRegion-BDF3.svg"><img alt="BDF3" class="align-center" height="420" src="../../_images/stabilityRegion-BDF3.svg" width="560" /></a>
 <a class="reference internal image-reference" href="../../_images/stabilityRegion-BDF4.svg"><img alt="BDF4" class="align-center" height="420" src="../../_images/stabilityRegion-BDF4.svg" width="560" /></a>
 <a class="reference internal image-reference" href="../../_images/stabilityRegion-BDF5.svg"><img alt="BDF5" class="align-center" height="420" src="../../_images/stabilityRegion-BDF5.svg" width="560" /></a>
 <a class="reference internal image-reference" href="../../_images/stabilityRegion-BDF6.svg"><img alt="BDF6" class="align-center" height="420" src="../../_images/stabilityRegion-BDF6.svg" width="560" /></a>
+<div class="docutils">
 </div>
 </section>
 
@@ -634,7 +637,7 @@ By Dr Zhihua Ma
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Friday 13 November 2026 17:07:39.
+  Last updated on Monday 23 November 2026 15:23:12.
   <br/>
 </p>
   </div>

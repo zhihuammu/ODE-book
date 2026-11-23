@@ -1,36 +1,37 @@
 # Stiff Systems of Differential Equations
 
-Although there are situations when a single differential equation is
-stiff, in real life problems, stiffness is mainly a phenomenon related
-to systems of differential equations. A stiff system of differential
-equation, similarly, has a transient solution as well as a slowly
-varying or steady-state solution.
+In real-life applications, stiffness can also happen to a system of differential equations. Similar to a single stiff differential equation, the solution of a stiff system also has transient and slowly varying (or steady-state) components.
 
-Consider a general system of $\,n\,$ ordinary differential equations of
+For a general system of $\,n\,$ nonlinear ordinary differential equations of
 the form 
 
 $$
 
 \begin{aligned}
-    \mathbf{y}' ~=~ \mathbf{f} (x,\mathbf{y})
+    \mathbf{y}' ~=~ \mathbf{f} (x,\mathbf{y}), 
 \end{aligned}
 
 $$
 
- given by 
+we can linearise it as 
 
 $$
 
 \begin{aligned}
-    {\bf y^\prime} ~=~ {\bf \Lambda\,y} + {\bf g}(x).
+    {\bf y^\prime} ~=~ {\bf J \,y} + {\bf g}(x),
 \end{aligned}
 
 $$
 
  where $\,\bf y\,$ and $\,\bf g\,$ are vectors with
-$\,n\,$ components and $\,\bf \Lambda\,$ is the {index}`Jacobian matrix`, **J**,
-of $\,\bf f\,$ (i.e. $\,{\bf f}_y(x_j,y_j)\,$ at some local point, or at
-some step, $\,j\,$). For example, for a system of three equations:
+$\,n\,$ components, and $\,\bf J\,$ is the {index}`Jacobian matrix`
+of the system calculated as
+
+$$
+    [\mathbf{J}_{ij}] = \left[ \pdiff{f_i}{y_j}\right].
+$$
+
+For example, for a system of three equations:
 
 
 $$
@@ -62,16 +63,11 @@ $$
  Here, the eigenvalues $\,\lambda_i\,$ of the Jacobian
 matrix play the part of $\,\lambda\,$. The system of equations is stiff
 if there is an eigenvalue, $\,\lambda_i\,$, of $\mathbf{f}$, with a
-negative real part of a very large magnitude. In a system of equations
-there are several $\,\lambda's\,$ with corresponding time constants,
+negative real part of a very large magnitude. In a system of equations, for each eigenvalue $\lambda_i$, there is a corresponding time constant
 
 
 $$
-
-\begin{aligned}
-    && \tau_i ~&=~ \dfrac{1}{|Real\,(\lambda_i)|} & i &= 1,2,...,n &&
-\end{aligned}
-
+\tau_i = \dfrac{1}{|\text{Real}(\lambda_i)|}, \quad i= 1,2,\dots,n
 $$
 
 
@@ -85,7 +81,7 @@ calculating the *{index}`stiffness ratio`*, $\,S(x)\,$, given by
 $$
 
 \begin{aligned}
-    && S(x) ~&=~ \dfrac{\max{|Real\,(\lambda_i)|}}{\min{|Real\,(\lambda_i)|}}
+    && S(x) ~&=~ \dfrac{\max{|\text{Real}\,(\lambda_i)|}}{\min{|\text{Real}\,(\lambda_i)|}}
     & i &= 1,2,...,n &&
 \end{aligned}
 
@@ -94,15 +90,11 @@ $$
  The higher the stiffness ratio the higher the degree of
 stiffness of the system.
 
-:::{note}
-The above system is a linear system and the terms in the
-Jacobian, $\dfrac{\partial \mathbf{f}}{\partial \mathbf{y}}\,$, and thus the corresponding
-eigenvalues are constant throughout the integration. For non-linear
-systems the terms in the Jacobian, $\dfrac{\partial \mathbf{f}}{\partial \mathbf{y}}\,$,
-and thus the corresponding eigenvalues can be a function of some
-variables in the system and they are calculated locally as the
-integration proceeds.
-:::
+```{prf:remark}
+- For a linear system, the eigenvalues $\lambda_i$ of its Jacobian matrix are constant throughout the integration. 
+
+- For a non-linear system, the eigenvalues $\lambda_i$ of its Jacobian matrix are functions of independent and dependent variables.  $\lambda_i$ are calculated locally as the integration proceeds.
+```
 
 :::{prf:example}
 :label: chap07-example-3
@@ -112,9 +104,9 @@ Consider the non-linear system
 $$
 
 \begin{aligned}
-        f_1 ~&=~ -0.013y_1 + 10^3y_1y_3\\
-        f_2 ~&=~ +2.5\times10^3y_2y_3\\
-        f_3 ~&=~ 0.013y_1 - 10^3y_1y_3 - 2.5\times10^3y_2y_3
+        y_1' ~&=~ -0.013y_1 + 10^3y_1y_3\\
+        y_2' ~&=~ +2.5\times10^3y_2y_3\\
+        y_3' ~&=~ 0.013y_1 - 10^3y_1y_3 - 2.5\times10^3y_2y_3
     
 \end{aligned}
 

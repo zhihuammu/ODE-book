@@ -1,13 +1,10 @@
 # Methods for Stiff Equations
 
-The above examples illustrate the problem of restriction on the value of
-$\,h\lambda\,$ for the stability of stiff equations. The problem, then,
-is to find methods that do not restrict the step size for stability
-reasons.
+If we use explicit methods (or even some implicit methods) to solve stiff problems, then the step sizes usually have to be very small. Can we find efficient methods, which do not restrict the step size, for stiff problems?
 
 There are special methods for which the region of absolute stability
-consists of all complex values of $\,h\lambda\,$ with
-$\,Real(h\lambda)<0\,$. These methods are called *A-stable*, and with
+consists of all complex values of $h\lambda$ with
+$\text{Real}(h\lambda)<0$. These methods are called *A-stable*, and with
 them there is no restriction on $h$ in order to have stability of the
 type we have been considering.
 
@@ -69,16 +66,17 @@ name: fig-chap07-c6m31f2
 Stability regions of BDF methods.
 ```
 
-::::{note}
-Note that all these methods have unbounded region of absolute stability
-which makes them particularly suitable for the solution of stiff
-problems. The detail consideration of the stability theories of these
+```{prf:remark}
+All the aforementioned BDF methods have unbounded region of absolute stability which makes them particularly suitable for solving stiff problems. 
+
+- BDF1 and BDF2 are $A$-stable.
+- BDF3, BDF4, BDF5 and BDF6 are not $A$-stable, although their intervals of absolute stability include the complete negative part of the real number line.
+
+<!-- The detail consideration of the stability theories of these
 methods is outside the scope of this course and complete treatment of
 this topic can be found in Gear C.W. (1969), Lambert J.D. (1973) and
-Hairer E. and Wanner G. (1996).
-
-
-
+Hairer E. and Wanner G. (1996). -->
+```
 
 <!-- ![BDF1](/images/07/stabilityRegion-BDF1.svg) -->
 
@@ -118,3 +116,4 @@ Hairer E. and Wanner G. (1996).
 :align: center
 ```
 ::::
+
