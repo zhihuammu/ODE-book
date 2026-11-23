@@ -21,6 +21,7 @@ $$
 :::
 
 ```{solution} ex-ch07-q1
+:class: dropdown
 {download}`Matlab live script solution for Exercise 8.1 </exSol/Ex7/Ex7_1.mlx>`
 ```
 
@@ -156,7 +157,7 @@ tolerances RelTol and AbsTol and comment on your results.
 :::
 
 :::{solution} ex-ch07-q4
-
+:class: dropdown
 {download}`Matlab code using ode15s solver </exSol/Ex7/Ex7_4_ode15s.m>`
 
 {download}`Matlab code using ode113 solver </exSol/Ex7/Ex7_4_ode113.m>`
@@ -192,6 +193,8 @@ same BDF methods plot the region of absolute stability using
 :::
 
 :::{solution} ex-ch07-q6
+:class: dropdown
+
 {download}`Matlab code for Exercise 8.6 </exSol/Ex7/Ex7_6.m>`
 
 Solution are shown in the lecture notes {numref}`fig-chap07-c6m31f2`.
@@ -242,6 +245,7 @@ different solvers. Comment on your results.
 :::
 
 :::{solution} ex-ch07-q7
+:class: dropdown
 
 {download}`Matlab code for Exercise 8.7 </exSol/Ex7/Ex7_7.m>`
 
