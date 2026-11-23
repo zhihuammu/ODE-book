@@ -27,7 +27,7 @@ end
 
 figure(1)
 semilogy(t,y(:,1),t,y(:,2),t,y(:,3),'LineWidth',2);
-title(['Solution of the Robertson Problem for t=0:0.60s']);
+title(['Solution of the Robertson Problem for t=0:60s']);
 xlabel('time (Sec)'); ylabel('solution y');
 axis([tspan(1) tspan(end) 1.0e-12 10]);  
 
